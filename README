@@ -1,0 +1,416 @@
+
+# Process the markdown file
+# Now open file "oot.md" as read
+# 1. Set counter = 1
+# 2. Start a while loop to quit after reached end of file of "oot.md".     
+# 
+# - Only Read the block of text between two occurrences of "## here~![[" and next "## here~![[" in file "oot.md" or EOF whichever comes first and place into variable D. 
+#     variable D should only contains the block of text starting at ## here~![[ and stopping before the next ## here~![[. Skips any content before the first ## here~![[
+# - Copy variable B to BT
+# - If counter is even replace the string PICPOS in BT with "image-container-L", if counter is odd replace the string PICPOS in BT with "image-container-R"
+# - Replace the string FNAME in BT with the image file name found between "## here~![[" and "]]" in variable D. 
+# - Remove "## here~![[image file]]" from D
+# - Replace the string CTR in BT with the value of counter. 
+# - Replace the string TITLE in BT with the text found inside the font tag e.g <font color ….> text </font> tags in variable D
+# - Remove the font tags and its text from variable D
+# - Replace the string "story" in BT with the text remaining in variable D 
+# - Set A = A + BT
+# - Increment counter
+# - Go to top of loop. 
+# 
+# 4. Once EOF is reached and the loop is exited then set A = A + C
+# 5. Finally write the variable A into "oot.html". Overwrite "oot.html" if file exists. 
+
+# CHanges:
+# Title Page as First Page: Added a dedicated page-0 with your title content
+# Pagination System:
+#     - Each image/text block now lives in its own full-screen .page div
+#     - Only one page visible at a time with smooth transitions
+#     - Navigation Arrows:
+#     - Appear when hovering over left/right 20% of screen
+#     - Clicking arrows navigates between pages
+#     - Visual arrow indicators using CSS triangles
+#     - Swipe Gestures:
+#     - Touchstart/touchend event listeners
+#     - Left swipe = next page, Right swipe = previous page
+#    -  50px threshold for swipe detection
+# Dynamic Slider:
+#     - Appears when mouse enters bottom 1/8 of screen
+#     - Black background with opacity
+#     - Shows current page/total pages
+#     - Can drag to specific pages
+#     - Auto-updates during navigation
+#     - Responsive Design:
+#     - Works on both mobile (touch) and desktop (mouse)
+#     - Prevents accidental zooming with viewport meta tag
+#     - Visual Improvements:
+# Consistent 1.5em spacing between paragraphs
+# Better floating image handling
+# Smooth opacity transitions between pages
+# The code maintains all your original content processing while adding the new navigation features. 
+# The slider and page count are automatically calculated based on the number of entries found in your markdown file.
+# 
+# CHANGES:
+#     - add Down key, right key and page down key for next page. 
+#     - add up key, left key and page up key for prev page.
+#     - Changed slider background to rgba(0,0,0,0.5)
+#     - Added backdrop-filter: blur(5px) for frosted glass effect
+# CHANGES:
+# Combined Transitions:
+# Book Flip: please add 
+#     - 3D rotation on the Y-axis
+#     - Fade + Scale: Subtle zoom effect
+#     - Parallax: Background moves at different speed
+# Visual Elements:
+#     - Glass Morphism: Frosted content blocks with subtle borders
+#     - Progress Bar: Minimal top indicator
+#     - Responsive Images: Hover effects and proper scaling
+# Performance Optimized:
+#     - Hardware-accelerated transforms (transform: translateZ(0))
+#     - Smooth cubic-bezier timing functions
+#     - Backface visibility handling
+# Enhanced Readability:
+#     - Improved typography with Georgia font
+#     - Consistent spacing system
+#     - Mobile-responsive designimport re
+
+# please modify 
+#     - Fade + Scale: Subtle zoom effec
+#     - Glass Morphism: Frosted content blocks with subtle borders
+#     - Progress Bar: Minimal top indicator
+#     - improve styling of left and right arrow columns
+#     - Improve styling of slider bar
+# 
+# Add the background image "bkgrnd.jpeg"
+# Make the content block 50% transparent
+# Make the left and right columns 50% transparent
+# make the slide 505 transparent
+# please resend the code
+
+#1. Change content black and slider to rgba(0,0,0,.2) to give a frosted glass semi transparent Look
+#2. only show one page at a time. it seems like prior page images are visible through current page
+#3. please confirm left and right swipes work
+#4. please resend code
+
+# Add Smooth cubic-bezier timing for page transitions and for slider appear disapper
+# change width of slider to same as content block
+# change height of slider bar to 50%
+# Ad 10px margin between bottom of slider and bottom of page
+# change scroll bar on content block to rgba(0,0,0,.2)
+# IMprove typography with Georgia font
+# Resend entire code
+
+# Custom scroll bar is not working. Please fix
+# add hide / appear for right and left arows.
+# have left and right arrows sit inside  a  block similar to the slider bar
+# have the  block appear and dissappear like to slider bar
+# make the hieght of block be the same as the conten block and its wdith be the same as the slider height and have a 10 px margin from the end of the
+# resend entire code 
+
+# Make the right arrow block appear only when the mouse hovers over its area and have it diappear when the mouse leaves its area
+# Make the Left arrow block appear only when the mouse hovers over its area and have it dissapper when the mouse leaves its area
+# have both left and right arrows centered inside thier blocks
+# Make the slider appear only when the mouse hovers over its area and have it dissapper when the mouse leaves its area
+# Please resend the entire Code
+
+# reduce the size of the left and right arrows to half its size. DO not change the size of their blocks
+# remove borders from the slider, the left arrow block and the right arrow block
+# resend the entire code
+
+# whenever there is a new line in the content block replace it with <br>
+# resend entire code
+
+# replace "thought 1...21" on each page in the content block with the text in the <font .....> ... </font> tags in the content as was before
+# resend entire code
+
+# Reduce the gap between the TITLE (that between the font tags) and the start of the rest of the texxt to half what it is now
+# moving the slider does not change the page. please fix
+# resend entire code
+
+# the gap between the TITLE (that between the font tags) in the content block and the start of the rest of the texxt to half 
+# what it is now
+# get the image in the content blockto fade and scale and put a dark shadow behind it
+# resend the entire code
+
+# Get the image shadow to be more pronounced when mouse hovers on it.
+# Put the page number on the top right corner of the content block, juust left of the scroll bar
+# Make the font size of the page number 1/2 the size of the test in the content block. use a times roman font. 
+# do not display page # for the first page
+# Make the labels progress line on the slider bar black
+# make the progress line on the top black.
+# make the Left and right arrrow black
+# resend the entore code
+
+# increase the page number font size by 25%
+# change the circle in the slider bar to 2 vertical lines (like a slider button.) Make it black
+# add a flag COPY_ENABLE. set default to 1. when set to 1, the function copy_file is called. 
+# If COPY_ENABLE Set to 0, then function copy_file is skipped.
+# add a flag ARW_DISPLAY. Set default to 1. do nothing. keep current functionality.
+# if ARW_DISPLAY set to 0, the arrow blocks do not appear. they remain hidden, However the functionality is maintained.
+# resend entire code
+
+# if ARW_DISPLAY set to 0, keep both the arrow blocks and the both arrows hidden on mouse hover, but enable the page change on mouse hover
+# make no change to ARW_DISPLAY = 1
+# resend entire code
+
+# Retain <br> inside <font>tags>
+
+# If the font ag is missing or blank or NULL then skip the title section and move the rest of the content text to where the title would 
+# have been. with out any blank lines on top
+# resened entire code
+
+# If the Image filename between "## here~![[" and "]] is blank then skip the image block and move the title block 
+# and the rest of the content block to the left top, where the image would have been. 
+# if the font block is also missing or blank than move the text in the rest of the content block to top left where the image would have been
+# resend entire code.
+# ## here~![[TheaterOfTheMind.jpeg]]<font color="#f09e5a">My Enchanting<br>Journey</font>
+# The code now properly handles all cases:
+#.   - Blocks with both image and title
+#.   - BBlocks with image but no title
+#.   - BBlocks with title but no image
+#.   - BBlocks with only content (no image or title)
+#.   - BTruly empty blocks (skipped)
+
+# STart the slider label at zero
+# NOT DONE - in the context block convert <!-- and --> pair to HTML comments `` 
+# resend entire code
+
+#Please make the following modifications
+#
+# to the 
+#   CONFIG = {
+#       'input_path': "/Users/sri/Documents/iCloud-Obsidian/Documents/LIbravault/AA_Journal/MyBooks/Observations of Thoughts.md",
+#       'output_md': "oot.md",
+#       'output_html': "oot.html",
+#       'COPY_ENABLE': 1,  # 1 to enable file copying, 0 to disable
+#       'ARW_DISPLAY': 1   # 1 to show arrow blocks and arrows, 0 to hide everything (but keep clickable)
+# }
+# Add the following 
+#      - SLDR_DISPLAY:1
+#      - BkFontColor:#f0f0f0
+#      - BkImage:“Bgrnd.jpeg”
+#      - BkPage0_Title : ”Observations of Thought”
+#      - BkPage0_Description : ”Sri Rao - Thoughts from reading, listening, walking and living in Chicago”
+#      - BkPage0_Keywords : ”Sri Rao - Thoughts, books, reading, Chicago”
+#      - BkPage0_head3 : ”~***~”
+#
+# in the body {
+#           background-image: url('Bkgrnd.jpeg'); - USE BkImage
+#
+# Change the font color of content text; - USE BkFontColor
+#
+# Make the following changes
+#    <title>Observations of Thought</title>.  - USE BkPage0_Title here
+#    <meta name="description" content="Sri Rao - Thoughts from reading, listening and walking in Chicago"> - USE BkPage0_Description here
+#    <meta name="keywords" content="Sri Rao - Thoughts from reading, listening and walking in Chicago"> - USE BkPage_Keywords here
+# 
+# Make the following changes here
+#    <!-- Title Page -->
+#    <div class="page active" id="page-0">
+#        <div class="heading-container">
+#            <h1>Observations of Thought</h1>  - USE BkPage0_Title here
+#            <h2>Listen, Read, Walk</h2> - USE BkPage0_Description here
+#            <h3>~***~</h3> - USE BkPage0_head3
+#        </div>
+#    </div>
+#
+# Implement the following logic Logic for slider hide
+#    - if SLDR_DISPLAY = 1 do nothing, keep current slider functionality
+#.   - if SLDR_DISPLAY = 0 then completely hide the Slider block. Do not show the slider block or any of its contents,
+#                          even if the mouses hovers over the slider area
+#
+# Implement the following Logic for book name
+#     - place the BkPage0_Title on the TOp center of each page, except the first page (or page 0)
+#     - Place the BkPage0_Title at the same height as the page number and use the same font and color as the page number
+#
+# resend the entire updated code
+#
+# Please make both visible and hidden arrows configurable as a % of screen width
+# Please resend entire code.
+#
+# Preserved Elements:
+    # Keeps all <font> tags and their contents
+    # Preserves markdown links ([text](url))
+    # Preserves markdown images (![alt](url))
+# Removed Elements:
+    # Bold/italic formatting (**bold**, *italic*)
+    # Headers (# Header)
+    # Blockquotes (> quote)
+    # Lists (- item)
+    # Horizontal rules (---)
+    # Code blocks (code and code)
+    # **bold** or __bold__ → removed
+    # ==highlight== → removed
+    # *italics* or _italics_ → removed
+    # <u>underline</u> → removed
+    # <span>text</span> → removed (including any attributes)
+    # <em> tags: r'<em>(.*?)</em>'
+
+In the content text for each page there might be multiple <p...>...</p> tags
+i want to preserve everything inside these p tags including the p tags themselves so that the browser can process these p tag  appropriately.
+I want the current clean up operations to apply only to the sections outside these p tags.
+please make sure all the current cleanup applies to all the content outside the p tages
+
+On the content bloack of each page do the following
+1. outside p tags, replace new line with one blank line
+2. outside p tags, replace nultiple multiple blank lines with one blank line.
+3.  between 2 consective <p> tags do not insert a blank line
+make no other changes. please send entire clean_content function
+
+
+orginal content must be preserved inside parapgraphs tags 
+remove any changes made inside paragraphs
+please preserve comments
+please resend entire clean_content.
+   
+
+the following is the original
+![[000bRules.jpeg]]<font color="#f09e5a">The Toolbox</font>
+Tools for the journey: 
+
+<p style="color: darkgreen;" >Conviction: A resolve to be true to self, with all reflections, always. <br>Commitment: A complete ownership of all contents of the halo, as it was, as it is, and as it will be. </p>
+
+<p>Acceptance:  An acceptance that all is as it should be, no matter what!!. 
+The two wisemen:  Intuition,  Conscience. 
+Will to Act: The use of energy to direct action and to release residual footprints left in the halo.</p>
+
+These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.Apply with deliberateness
+
+the ptages are not rendering in the htmsl
+please fix
+please send entire code
+
+
+# 
+# WOrking on IOS Swipe Navigation
+# Updated Touch Event Handling:
+    # Replaced screenX with clientX for more reliable position tracking
+    # Simplified swipe detection logic
+    # Added proper passive event listeners
+# Enhanced CSS for iOS:
+    # Added -webkit-overflow-scrolling: touch for smooth scrolling
+    # Disabled text selection during swipes
+    # Removed tap highlight on interactive elements
+    # Prevented elastic bouncing with overscroll-behavior
+# Optimized Viewport Settings:
+    # Locked zooming and scaling
+    # Ensured proper viewport dimensions
+# Improved Swipe Detection:
+    # Uses percentage-based threshold calculation
+    # More reliable across different device sizes
+    # Clearer swipe direction detection
+
+# Include configuration items to 
+#   - Update title font size
+#   - Update Main conten block size
+#   - ImageWidth for desktop/laptop views
+#   - MobileImageWidth for mobile devices _ Plus other mobile sizing enhancements in @media
+
+# Add Clickable Table of Contents
+
+#as an example I have the following markdown table inside the content balck
+# 
+# | Header 1 | Header 2 |
+# |----------|----------|
+# | Cell 1   | Cell 2   |
+# | Cell 3   | Cell 4   |
+# 
+# I would like to convert it into an HTML table
+# <table>
+#   <thead>
+#     <tr>
+#       <th>Header 1</th>
+#       <th>Header 2</th>
+#     </tr>
+#   </thead>
+#   <tbody>
+#     <tr>
+#       <td>Cell 1</td>
+#       <td>Cell 2</td>
+#     </tr>
+#     <tr>
+#       <td>Cell 3</td>
+#       <td>Cell 4</td>
+#     </tr>
+#   </tbody>
+# </table>
+#
+# with width same as content block and a more pleasing styling.
+# 
+# run ootpr
+# Requesting the following modifications.
+# Back to contents button should appear for both TOC_ENABLE = True and TOC_ENABLE = false
+# back to content button and the page number and the book title that appears on every page should not scroll with the page
+# back to content button and the page number and the book title that appears on every page should appear in the page not outside of it
+# Add a CONFIG item called "Page0_skip" if set 1 one do not show Page0 and if set to zero show page 0
+# make sure to align all page numbers based on whether page0 and / or TOC is visible
+# please resend entire update code.
+
+# the following should not be visibile when Page0_skip is set to 1
+#    'BkPage0_Title': 'Observations of Thought',
+#    'BkPage0_Description': 'Sri Rao - Thoughts from reading, listening, walking and living in Chicago',
+#    'BkPage0_Tag': 'Listen Read Walk and Live in Chicago',
+#    'BkPage0_Keywords': 'Sri Rao - Thoughts, books, reading, Chicago',
+#    'BkPage0_head3': '~***~',
+# 
+# Change 
+# [clickable text](url) in md file To 
+# <a href="url" target="_blank">clickable Text</a>
+# 
+# 
+# (URL)  or url in md file to 
+# <a href="url" target="_blank">url</a>
+#
+# 
+# This will convert 
+# [Google](https://google.com) → <a href="https://google.com" target="_blank">Google</a>
+# https://google.com → <a href="https://google.com" target="_blank">https://google.com</a>
+# (https://google.com) → <a href="https://google.com" target="_blank">https://google.com</a>
+# 
+# NOne of the following worked inside the table cell
+# when using (https://yahoo.com) it showed up as https://yahoo.com"target="_blank">https://yaho.com - fix this to get the right format
+# www.google.com did not work
+# [clickable text](www.google.com) did not work
+# [clickable text](https://www.google.com) did not work
+
+# how do I change COPY_enable from 1 and 0 to True and False , 1 being True and Zero being False
+# how do I change ARW_DISPLAY from 1 and 0 to True and False , 1 being True and Zero being False
+# how do I change SLDR_DISPLAY from 1 and 0 to True and False , 1 being True and Zero being False
+# how do I change Page0_skip from 1 and 0 to True and False , 1 being True and Zero being False
+
+# I would like to verify the foolwoing is true and if not suggest changes to code.
+
+# When both flags are True:
+    # Skips title page (Page0_skip=True)
+    # Shows TOC first (TOC_Enable=True)
+    # TOC becomes page 0 in the navigation
+    # Page numbers start at 1 after TOC
+# When only TOC is enabled:
+    # Skip title page (Page0_skip=False)
+    # Shows title TOC (0) → content (1+)
+    # TOC becomes page 0 in the navigation
+    # Page numbers start at 1 after TOC
+# When only Page0_skip is True:
+    # Skips title page
+    # Goes directly to content (no TOC)
+    # Page numbers start at 1 After title page
+
+# 
+# Default config in same directory:
+    # python3 ootpt.py --config BookMark.json
+# 
+# Config in subdirectory:
+    # python3 ootpt.py --config OOT/BookMark.json"
+
+# Enter a new item call src_Path in the Json file and set it equal to the laoction of the json file.
+
+# create a new class called OpnList same as cack-to-list
+# ad BookList-btn to class back-to-list
+
+
+if Hide_page_number = false then
+ set pagnumber visibility property to visible
+ if Hide_page_number = true then 
+ set pagenumber visibility propoerty to hidden
+
+ 
