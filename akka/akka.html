@@ -400,40 +400,6 @@
             pointer-events: none;
         }
 
-        /* Image description styles */
-        .image-with-caption {
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-caption {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .image-with-caption:hover .image-caption {
-            opacity: 1;
-        }
-
-        .descriptive-image {
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .descriptive-image:hover {
-            transform: scale(1.02);
-        }
-
         /* Content Styles */
         .image-container {
             width: 90%;
@@ -673,13 +639,6 @@
                 overflow: hidden;
             }
 
-            /* Mobile touch-friendly version */
-            .image-caption {
-                opacity: 1; /* Always visible on mobile */
-                background: rgba(0, 0, 0, 0.8);
-                font-size: 0.7em;
-                padding: 6px 10px;
-            }
 
             /* Fix for iOS Safari */
             @supports (-webkit-touch-callout: none) {
@@ -934,13 +893,7 @@
         <div class="page" id="page-1">
             <div class="book-title">Akka</div>
             <div class="image-container right">
-                
-            <div class="image-with-caption">
-                <img src="Akka_LaterYears.jpeg" alt="Image 1" 
-                     title="Akka in 1976" class="descriptive-image">
-                <div class="image-caption">Akka in 1976</div>
-            </div>
-            
+                <img src="Akka_LaterYears.jpeg|Akka in 1976" alt="Image 1">
                 <p><span class="highlight-text"><span style="font-size: 0.8em">‘Akka’ - A quiet hero</span></span></p>
                 
     <div class="content-text" 
