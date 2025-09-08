@@ -1,0 +1,4 @@
+git rm --cached <*.*>
+git commit -m "Stop tracking <filename>"
+
+*.*
