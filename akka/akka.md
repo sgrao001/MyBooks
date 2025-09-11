@@ -30,7 +30,7 @@ For anyone else who reads this, I hope it offers a small glimpse into how one co
 In today's world of "in your face" progress, and "I deserve my wants" bravado, contemplating Akka’s journey helps me separate the grain from the chaff. Her life’s story teaches me that the fight for the greater good, even against all odds, can be won with honesty, dignity, and compassion. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Hassan_Map.jpeg | Hassn, Karnataka]]
+![[Hassan_Map.jpeg | Hassan, Karnataka]]
 ## Legacy of an ancient town
 <p style="color: #f09e5a;"><span class="highlight-text">Legacy of an ancient town</span></p>
 Akka was born in 1901 in Hassan (pronounced "Hah-sun"). There is no official record of her birth. She was most likely born in her maternal grandmother's home. 
@@ -62,7 +62,7 @@ Akka’s youth was a precarious balance. Nutrition was scarce. Many women and ch
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 
 <div style="break-after: page;"></div><br>
-![[Akka_Parents.jpeg | Akka's Parents]]
+![[Akka_Parents.jpeg | Akka's Parents ]]
 ## A fate ordained
 <p style="color: #f09e5a;"><span class="highlight-text">A fate ordained</span></p>
 This was the environment into which Akka was born. Akka was a light skinned child with green eyes. Her given name was “Narsubai”. 
@@ -245,7 +245,7 @@ Sathya, Akka's second daughter, had finished middle school and wanted to continu
 The wedding was celebrated at a neighbor’s, Mr & Mrs Nanjappa’s, home. The Nanjappa's were a kind people. They were well wishers of Akka. 
 
 Sathya went to live with her husband, near the Shimsha hydro electric plant. The plant was built in 1939, in the Shimshapura valley, by the then ruler of Mysore state. Sathya and Ramchandra Rao went on to have 5 children of their own.
-
+<div style="break-after: page;"></div><br>
 Both Sethubai and Sathya were expecting their first born at the same time. As was the custom, it fell upon Akka to care for, and pay for any expenses, the two mothers might incur during their pregnancy. The children were born healthy and Akka became a grandmother to a boy and a girl. She must have been very happy to receive her first grandchildren. 
 
 To meet her expenses, Akka sold her entire supply of rice paddy from the harvest, leaving no food for the remaining three children for the rest of the year. Once again, her father, Doddanna, came to her rescue, supporting them through that very difficult time.
