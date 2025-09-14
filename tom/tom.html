@@ -268,7 +268,7 @@
         .nav-arrow {
             width: 15px;
             height: 15px;
-            border: solid #000;
+            border: solid #ffffff;
             border-width: 0 3px 3px 0;
             display: inline-block;
             visibility: var(--arrow-visibility);
@@ -682,6 +682,7 @@
             top: 0;
 
             /* Width handling - auto for text, but constrained */
+            width: auto;
             max-width: calc(100% * 0.95) !important;
             font-size: .8em;
             padding: 3px 10px 3px 10px;
@@ -1035,8 +1036,8 @@
         <div class="toc-container toc-list">
             <h2>Table of Contents</h2>
             
-        <button onclick="window.open('https://asteroid-1753307163980.staticrun.app/', '_blank')" class="back-to-list">
-            Open Booklist
+        <button onclick="window.open('https://sgrao001.github.io/MyBooks/AboutMe.html', '_self')" class="back-to-list">
+            AboutMe
         </button>
         
             <div class="toc-button-container">
@@ -1621,11 +1622,12 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    let url = 'https://asteroid-1753307163980.staticrun.app/';
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe.html';
                     if (!url.startsWith('http')) {
                         url = 'https://' + url;
                     }
-                    window.open(url, '_blank');
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
                 });
             }
 
