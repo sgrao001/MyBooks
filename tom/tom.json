@@ -3,32 +3,42 @@
     "source_md": "Theater of the mind.md",
     "output_md": "tom.mdx",
     "output_html": "tom.html",
+
     "BkImage": "tom.jpeg",
+
     "COPY_ENABLE": true,
+
     "ARW_DISPLAY": false,
     "ARW_HOVER_WIDTH": 6.7,
     "ARW_VISIBLE_WIDTH": 5,
+
     "SLDR_DISPLAY": true,
-    "Page0_skip": false,       
-    "TOC_ENABLE": true,
-    "BkFontColor": "#ffffff",
+
+    "Page0_skip": false,  
+
+    "BkPage0_FontColor": "#89C2FF",   
+    "BkFontColor": "#ffffff",   
     "BkFontSize": "1em",
-    "TitleFontSize": "0.8em",
-    "BkFontSizeMobile390": "0.9em",
-    "TitleFontClr": "#D4E6FF",
-    "Hide_page_number": false,
-    "BkPage0_FontColor": "#89C2FF",
     "BkPage0_Title": "Theater of the mind",
     "BkPage0_Description": "My Journey",
     "BkPage0_Tag": "A Journey into the Self",
     "BkPage0_Keywords": "Sri Rao",
-    "BkPage0_head3": "~***~",
+    "BkPage0_head3": "~***~",  
+    "BkFontSizeMobile390": "0.9em",   
+    "BkListLink_show": true,
+    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
+
+    "TitleFontSize": "0.8em",
+    "TitleFontClr": "#D4E6FF",
+
+    "Hide_page_number": false,
+     
     "ImageWidthDesktop": "100%",
     "ImageWidthMobile": "95%",
-    "BkListLink_show": true,
-    "BkLinkURL": "https://asteroid-1753307163980.staticrun.app/",
+
     "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,
     "TOC_FontColor": "#D4E6FF",
+    "TOC_ENABLE": true,
     "TOCasList": true
 }
