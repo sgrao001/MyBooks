@@ -268,7 +268,7 @@
         .nav-arrow {
             width: 15px;
             height: 15px;
-            border: solid #000;
+            border: solid #abb8bb;
             border-width: 0 3px 3px 0;
             display: inline-block;
             visibility: var(--arrow-visibility);
@@ -682,6 +682,7 @@
             top: 0;
 
             /* Width handling - auto for text, but constrained */
+            width: auto;
             max-width: calc(50% * 0.95) !important;
             font-size: .8em;
             padding: 3px 10px 3px 10px;
@@ -1035,6 +1036,10 @@
         <div class="toc-container toc-list">
             <h2>Table of Contents</h2>
             
+        <button onclick="window.open('https://sgrao001.github.io/MyBooks/AboutMe.html', '_self')" class="back-to-list">
+            AboutMe
+        </button>
+        
             <div class="toc-button-container">
                 <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>‘Akka’ - A quiet hero</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>Legacy of an ancient town</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>A fate ordained</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-12" class="toc-link" style="display: flex; justify-content: space-between;"><span>The dawn of a family</span><span>12</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-16" class="toc-link" style="display: flex; justify-content: space-between;"><span>A widow's silence</span><span>16</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-19" class="toc-link" style="display: flex; justify-content: space-between;"><span>A tousle of fate and faith</span><span>19</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-25" class="toc-link" style="display: flex; justify-content: space-between;"><span>Finding a foothold</span><span>25</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-29" class="toc-link" style="display: flex; justify-content: space-between;"><span>Far away world's</span><span>29</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-33" class="toc-link" style="display: flex; justify-content: space-between;"><span>The City of dreams</span><span>33</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-36" class="toc-link" style="display: flex; justify-content: space-between;"><span>An unwelcome guest</span><span>36</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-42" class="toc-link" style="display: flex; justify-content: space-between;"><span>A home on Ratnavilas road</span><span>42</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-47" class="toc-link" style="display: flex; justify-content: space-between;"><span>A stranger in the house</span><span>47</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-50" class="toc-link" style="display: flex; justify-content: space-between;"><span>A Quiet Departure</span><span>50</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-54" class="toc-link" style="display: flex; justify-content: space-between;"><span>Honoring the lessons</span><span>54</span></a></div>
             </div>
@@ -2142,11 +2147,12 @@ It gives us the knowledge that we can all move forward with hard work, doing the
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    let url = 'https://asteroid-1753307163980.staticrun.app/';
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe.html';
                     if (!url.startsWith('http')) {
                         url = 'https://' + url;
                     }
-                    window.open(url, '_blank');
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
                 });
             }
 
