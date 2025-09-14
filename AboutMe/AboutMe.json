@@ -8,7 +8,7 @@
     
     "COPY_ENABLE": true,
     
-    "ARW_DISPLAY": true,
+    "ARW_DISPLAY": false,
     "ARW_HOVER_WIDTH": 6.7,
     "ARW_VISIBLE_WIDTH": 5,
     
@@ -19,14 +19,14 @@
     "BkPage0_FontColor": "#89C2FF",
     "BkFontColor": "#abb8bb",
     "BkFontSize": "1em",
-    "BkPage0_Title": "Projects",
+    "BkPage0_Title": "About Me",
     "BkPage0_Description": "AboutMe",
     "BkPage0_Tag": "AboutMe",
     "BkPage0_Keywords": "Sri Rao",
     "BkPage0_head3": "~***~",
     "BkFontSizeMobile390": "0.8em",
     "BkListLink_show": false,
-    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe.html",
+    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
     "TitleFontClr": "#D4E6FF",
     "TitleFontSize": "0.8em",
