@@ -1,0 +1,45 @@
+{
+    "source_path": "AboutMe/",
+    "source_md": "AboutMe.md",
+    "output_md": "AboutMe.mdx",
+    "output_html": "AboutMe.html",
+
+    "BkImage": "AboutMe-bkgrnd.jpeg",
+    
+    "COPY_ENABLE": true,
+    
+    "ARW_DISPLAY": true,
+    "ARW_HOVER_WIDTH": 6.7,
+    "ARW_VISIBLE_WIDTH": 5,
+    
+    "SLDR_DISPLAY": true,
+
+    "Page0_skip": true,
+
+    "BkPage0_FontColor": "#89C2FF",
+    "BkFontColor": "#abb8bb",
+    "BkFontSize": "1em",
+    "BkPage0_Title": "Projects",
+    "BkPage0_Description": "AboutMe",
+    "BkPage0_Tag": "AboutMe",
+    "BkPage0_Keywords": "Sri Rao",
+    "BkPage0_head3": "~***~",
+    "BkFontSizeMobile390": "0.8em",
+    "BkListLink_show": false,
+    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe.html",
+
+    "TitleFontClr": "#D4E6FF",
+    "TitleFontSize": "0.8em",
+
+    "Hide_page_number": false,
+
+    "ImageWidthDesktop": "50%",
+    "ImageWidthMobile": "95%",
+
+    "TOC_TITLE": "About Me and My Journey",
+    "TOC_POSITION": 0,
+    "TOC_FontColor": "#4682B4",
+    "TOC_ENABLE": true,
+    "TOCasList": true
+}
+
