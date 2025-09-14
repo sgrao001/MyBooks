@@ -3,33 +3,43 @@
     "source_md": "akka.md",
     "output_md": "akka.mdx",
     "output_html": "akka.html",
+
     "BkImage": "akka.jpeg",
+    
     "COPY_ENABLE": true,
+    
     "ARW_DISPLAY": false,
     "ARW_HOVER_WIDTH": 6.7,
     "ARW_VISIBLE_WIDTH": 5,
+    
     "SLDR_DISPLAY": true,
+
     "Page0_skip": false,
-    "TOC_ENABLE": true,
+
+    "BkPage0_FontColor": "#89C2FF",
     "BkFontColor": "#abb8bb",
     "BkFontSize": "1em",
-    "TitleFontSize": "0.8em",
-    "BkFontSizeMobile390": "0.8em",
-    "TitleFontClr": "#D4E6FF",
-    "Hide_page_number": false,
-    "BkPage0_FontColor": "#89C2FF",
     "BkPage0_Title": "Akka",
     "BkPage0_Description": "Akka - Quiet Hero",
     "BkPage0_Tag": "A Lasting Legacy",
     "BkPage0_Keywords": "Sri Rao",
     "BkPage0_head3": "~***~",
+    "BkFontSizeMobile390": "0.8em",
+    "BkListLink_show": true,
+    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
+
+    "TitleFontClr": "#D4E6FF",
+    "TitleFontSize": "0.8em",
+
+    "Hide_page_number": false,
+
     "ImageWidthDesktop": "50%",
     "ImageWidthMobile": "95%",
-    "BkListLink_show": false,
-    "BkLinkURL": "https://asteroid-1753307163980.staticrun.app/",
+
     "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,
     "TOC_FontColor": "#4682B4",
+    "TOC_ENABLE": true,
     "TOCasList": true
 }
 
