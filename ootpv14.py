@@ -7,6 +7,7 @@ import os
 import sys
 import logging
 from html import escape
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
@@ -266,7 +267,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .page-header {{
             position: fixed;
             top: 20px;
-            width: calc(85vw - 80px);
+            width: calc(94vw - 60px);
             display: flex;
             justify-content: space-between;
             z-index: 3;
@@ -416,7 +417,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .nav-arrow {{
             width: 15px;
             height: 15px;
-            border: solid #000;
+            border: solid {BkFontColor};
             border-width: 0 3px 3px 0;
             display: inline-block;
             visibility: var(--arrow-visibility);
@@ -464,7 +465,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 85vw;
+            width: 94vw;
             height: 40px;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -830,6 +831,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             top: 0;
 
             /* Width handling - auto for text, but constrained */
+            width: auto;
             max-width: calc({ImageWidthDesktop} * 0.95) !important;
             font-size: .8em;
             padding: 3px 10px 3px 10px;
@@ -1346,7 +1348,8 @@ FOOTER_TEMPLATE = """
                     if (!url.startsWith('http')) {
                         url = 'https://' + url;
                     }
-                    window.open(url, '_blank');
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
                 });
             }
 
@@ -1369,7 +1372,7 @@ FOOTER_TEMPLATE = """
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
-                    backButton.textContent = 'Back to Contents';
+                    backButton.textContent = 'Contents';
                     header.appendChild(backButton);
                 }
                 
@@ -1669,6 +1672,18 @@ FOOTER_TEMPLATE = """
             }
         }        
 
+        // Current date display
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                // hour: '2-digit',
+                // minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                new Date().toLocaleDateString('en-US', options);
+        });
         
     </script>
 </body>
@@ -1715,11 +1730,13 @@ def clean_content(content):
         """Convert markdown links to HTML links (3 supported formats)"""
         # Format 1: [text](url)
         if match.group(1) and match.group(2):
-            return f'<a href="{match.group(2)}" target="_blank">{match.group(1)}</a>'
+            #return f'<a href="{match.group(2)}" target="_blank">{match.group(1)}</a>'
+            return f'<a href="{match.group(2)}">{match.group(1)}</a>'
         # Format 2: plain URL (http://...)
         elif match.group(3):
             url = match.group(3)
-            return f'<a href="{url}" target="_blank">{url}</a>'
+            #return f'<a href="{url}" target="_blank">{url}</a>'
+            return f'<a href="{url}">{url}</a>'
         return match.group(0)
 
     # Process all link formats in the content
@@ -1791,19 +1808,22 @@ def convert_markdown_table_to_html(markdown_table):
         # Convert [text](url)
         text = re.sub(
             r'\[([^\]]+)\]\(([^)]+)\)',
-            r'<a href="\2" target="_blank">\1</a>',
+            #r'<a href="\2" target="_blank">\1</a>',
+            r'<a href="\2">\1</a>',
             text
         )
         # Convert (url)
         text = re.sub(
             r'\(((https?://[^\s)]+))\)',
-            r'<a href="\1" target="_blank">\1</a>',
+            #r'<a href="\1" target="_blank">\1</a>',
+            r'<a href="\1">\1</a>',
             text
         )
         # Convert plain URLs
         text = re.sub(
             r'(?<!["\'])(https?://[^\s<>]+)(?!["\'])',
-            r'<a href="\1" target="_blank">\1</a>',
+            #r'<a href="\1" target="_blank">\1</a>',
+            r'<a href="\1">\1</a>',
             text
         )
         return text
@@ -1905,9 +1925,10 @@ def generate_toc(content):
         if not url.startswith(('http://', 'https://')):
             url = f'https://{url}'
             
+        # ORIGINAL <button onclick="window.open('{url}', '_blank')" class="back-to-list">
         booklist_button = f"""
-        <button onclick="window.open('{url}', '_blank')" class="back-to-list">
-            Open Booklist
+        <button onclick="window.open('{url}', '_self')" class="back-to-list">
+            AboutMe
         </button>
         """
     
@@ -2196,19 +2217,36 @@ def process_markdown(content):
 
 
 
-
 def build_final_html(pages):
     """Assemble the final HTML document with responsive font scaling"""
     total_pages = len(pages)
+
+    # Get source file modification date
+    script_dir = Path(__file__).parent
+    source_md_path = resolve_relative_path(CONFIG['source_md'], script_dir)
+    if source_md_path.exists():
+        mod_time = datetime.fromtimestamp(source_md_path.stat().st_mtime)
+        #last_modified = mod_time.strftime('%B %d, %Y at %I:%M %p')
+        last_modified = mod_time.strftime('%b %d, %Y')
+    else:
+        last_modified = "Unknown date"
     
     # Create title page HTML if not skipped
+    #  Use this for current date... instead of .md modified date.
+    #       <div class="current-date">
+    #       <br><br>Updated on: <span id="currentDate"></span><br><br><br>
+    #       </div>"""
     title_page_html = ''
     if not CONFIG['Page0_skip']:
         title_page_html = f"""
     <div class="page active" id="page-0">
         <div class="heading-container">
             <h1>{escape(CONFIG['BkPage0_Title'])}</h1>
+            <br><br>
             <h2>{escape(CONFIG['BkPage0_Tag'])}</h2>
+            <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
+                <br><br>Last updated: {last_modified}<br><br>
+            </p>
             <h3>{escape(CONFIG['BkPage0_head3'])}</h3>
         </div>
     </div>
