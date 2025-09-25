@@ -1026,6 +1026,9 @@
         <div class="heading-container">
             <h1>Observation of Thoughts</h1>
             <h2>Listen Read Walk and Live in Chicago</h2>
+            <div class="current-date">
+                <br><br>Updated on: <span id="currentDate"></span><br><br><br>
+            </div>
             <h3>~***~</h3>
         </div>
     </div>
@@ -2054,6 +2057,18 @@ All may yet be well.
             }
         }        
 
+        // Current date display
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                // hour: '2-digit',
+                // minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                new Date().toLocaleDateString('en-US', options);
+        });
         
     </script>
 </body>
