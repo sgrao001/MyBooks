@@ -1026,6 +1026,9 @@
         <div class="heading-container">
             <h1>Akka</h1>
             <h2>A Lasting Legacy</h2>
+            <div class="current-date">
+                <br><br>Updated on: <span id="currentDate"></span><br><br><br>
+            </div>
             <h3>~***~</h3>
         </div>
     </div>
@@ -2475,6 +2478,18 @@ It gives us the knowledge that we can all move forward with hard work, doing the
             }
         }        
 
+        // Current date display
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                // hour: '2-digit',
+                // minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                new Date().toLocaleDateString('en-US', options);
+        });
         
     </script>
 </body>
