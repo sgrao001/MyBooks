@@ -169,6 +169,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             --arrow-opacity: ARW_OPACITY;
             --arrow-hover-opacity: ARW_HOVER_OPACITY;
             --arrow-hover-width: {ARW_HOVER_WIDTH}%;
+            --page-width: 94vw;
+            --page-height: 94vh;
         }}
 
         html {{
@@ -233,8 +235,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         /* change page width and height below to create varyong borders */
         .page {{
-            width: 94vw;
-            height: 94vh;
+            width: var(--page-width);
+            height: var(--page-height);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -267,7 +269,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .page-header {{
             position: fixed;
             top: 20px;
-            width: calc(94vw - 60px);
+            width: calc(var(--page-width) - 60px);
             display: flex;
             justify-content: space-between;
             z-index: 3;
@@ -465,7 +467,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 94vw;
+            width: var(--page-width);
             height: 40px;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
