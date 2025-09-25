@@ -468,10 +468,30 @@ I think of writing as an expanded form of painting. It allows me to add the nuan
 I would like to think that the readers of my words will get to explore their thoughts in a different light. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[]]
 
-2025-05-14 07:27
-[[header |Main]] | [[_Idx-AA_Journal|_Idx-AA_Journal]]
+![[Manipulate.jpeg]]
+## The Spider and the Web
+<p style="color: #f09e5a;"><span class="highlight-text">The Spider and the Web</span></p>
 
+I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
+I see their image floating into place at the center of the picture. I recognize the implication -  they represent the truth. They start placing artifacts of value around them, scattered about in a circle. They present the artifacts as reflections of their truth, as outcomes of their rightful behavior. 
 
+ The artifacts seem slightly out of focus. I say nothing. They notice my willingness to accept the scene, imperfect as it is. 
+ 
+ They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts around them. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle. 
+
+They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one before it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism. 
+
+They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene. 
+
+I am now committed to their story. The imperfections in their scene now become mine. The blurriness of my artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. 
+
+In the absence of introspection on their part, dissidence on my part, is a confirmation of my intent to cause them harm.  Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love. 
+
+They express surprise and shock, as they see me leave. But their pain doesn’t last long. They have located their next conquest. 
+
+The air is clear and fresh. My path is my own. I resolve to stay away from people who have surrounded themselves with many rings. 
+
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
