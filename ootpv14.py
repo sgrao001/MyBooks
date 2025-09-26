@@ -2217,27 +2217,23 @@ def process_markdown(content):
         
     return pages
 
-
-
-def build_final_html(pages):
-    """Assemble the final HTML document with responsive font scaling"""
-    total_pages = len(pages)
-
+def get_mdate(fname):
     # Get source file modification date
     script_dir = Path(__file__).parent
-    source_md_path = resolve_relative_path(CONFIG['source_md'], script_dir)
+    source_md_path = resolve_relative_path(fname, script_dir)
     if source_md_path.exists():
         mod_time = datetime.fromtimestamp(source_md_path.stat().st_mtime)
         #last_modified = mod_time.strftime('%B %d, %Y at %I:%M %p')
         last_modified = mod_time.strftime('%b %d, %Y')
     else:
         last_modified = "Unknown date"
-    
-    # Create title page HTML if not skipped
-    #  Use this for current date... instead of .md modified date.
-    #       <div class="current-date">
-    #       <br><br>Updated on: <span id="currentDate"></span><br><br><br>
-    #       </div>"""
+
+    return last_modified
+
+def build_final_html(pages):
+    """Assemble the final HTML document with responsive font scaling"""
+    total_pages = len(pages)
+
     title_page_html = ''
     if not CONFIG['Page0_skip']:
         title_page_html = f"""
@@ -2247,7 +2243,7 @@ def build_final_html(pages):
             <br><br>
             <h2>{escape(CONFIG['BkPage0_Tag'])}</h2>
             <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                <br><br>Last updated: {last_modified}<br><br>
+                <br><br>Last updated: {get_mdate(CONFIG['source_md'])}<br><br>
             </p>
             <h3>{escape(CONFIG['BkPage0_head3'])}</h3>
         </div>
