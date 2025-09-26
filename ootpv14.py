@@ -1692,6 +1692,19 @@ FOOTER_TEMPLATE = """
 </html>
 """
 
+def rep_mdate(content):
+    """Replace _getMdate("filename") patterns with actual modification dates (case-insensitive)"""
+    def replace_mdate(match):
+        filename = match.group(1)
+        date_value = get_mdate(filename)
+        # Simple approach using opacity for lighter appearance
+        return f'<span style="font-size: 0.8em; color: {CONFIG["BkFontColor"]}; opacity: 0.65;">{date_value}</span>'
+    
+    pattern = r'_getMdate\("([^"]+)"\)'
+    return re.sub(pattern, replace_mdate, content, flags=re.IGNORECASE)
+
+
+
 def clean_content(content):
     """Clean content while perfectly preserving paragraph content, processing fonts, and cleaning markdown"""
     
@@ -1800,7 +1813,10 @@ def clean_content(content):
     
     # Combine all parts
     processed_content = ''.join(processed_parts)
-    
+
+    # 9. REPLACE _getMdate PATTERNS WITH ACTUAL DATES
+    processed_content = rep_mdate(processed_content)
+
     return title, processed_content.strip()
 
 def convert_markdown_table_to_html(markdown_table):
