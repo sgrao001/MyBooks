@@ -468,10 +468,9 @@ I think of writing as an expanded form of painting. It allows me to add the nuan
 I would like to think that the readers of my words will get to explore their thoughts in a different light. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-
 ![[Manipulate.jpeg]]
-## The Spider and the Web
-<p style="color: #f09e5a;"><span class="highlight-text">The Spider and the Web</span></p>
+## Let’s make a circle 
+<p style="color: #f09e5a;"><span class="highlight-text">let’s make<br>a Circle</span></p>
 
 I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
@@ -489,9 +488,11 @@ I am now committed to their story. The imperfections in their scene now become m
 
 In the absence of introspection on their part, dissidence on my part, is a confirmation of my intent to cause them harm.  Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love. 
 
+They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon. 
+
 They express surprise and shock, as they see me leave. But their pain doesn’t last long. They have located their next conquest. 
 
-The air is clear and fresh. My path is my own. I resolve to stay away from people who have surrounded themselves with many rings. 
+The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
