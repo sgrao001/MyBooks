@@ -12,9 +12,8 @@ This does not show. for testing only
 | Cell 3   | https://www.cnn.com |
 
 <div style="break-after: page;"></div><br>
-![[ThreeElementsWassilyKandinsky1925.jpeg]]
-## An enchanting journey
-<p style="color: #f09e5a;"><span class="highlight-text">An enchanting journey</span></p>
+## An Enchanting Journey
+![[ThreeElementsWassilyKandinsky1925.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></p>
 There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. 
 The infinite can be transformed into less intimidating, even navigate-able explorations. 
 
@@ -23,23 +22,20 @@ Earth-fire-water; a necessity for life. Man-woman-child; the essential unit of f
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and *the* state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Awareness.jpeg]]
 ## Awareness
-<p style="color: #f09e5a;"><span class="highlight-text">Awareness</span></p>
+![[Awareness.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Awareness</span></p>
 I lie on the floor, on my left side, my head on my arm. I drive a red matchbox Citroen with springy wheels and a removable roof canoe. I hum the engine noise to myself - I hear the engine - I shift gears - I drive with precision around imaginary curves and turns - I keep humming - I park with precision in my imaginary spot - My humming keeps my attention fixed on my driving my Citroen across the balcony floor. The outside world fades and time stands still. 
 
 I become one with my being and my imagination. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Wall.jpeg]]
 ## Unity
-<p style="color: #f09e5a;"><span class="highlight-text">Unity</span></p>
+![[Wall.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Unity</span></p>
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Rope.jpeg]]
 ## Silence
-<p style="color: #f09e5a;"><span class="highlight-text">Silence</span></p>
+![[Rope.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Silence</span></p>
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look closely at the metal accordion gate. I notice the skipping rope hanging on the latch. I push the grip and watch the rope swing. I watch the swing reduce - and reduce - then slowly, begin to move in ever so small circles - now, I can now barely see it move - I watch the still, silent, unmoving rope - I feel the silence and the quiet within myself. 
 
 Silence filters the noise around me. I hear my thoughts. My thoughts are the voice of my soul. I dialog with my thoughts. We both listen. 
@@ -57,16 +53,14 @@ Silence respects time and grants me personal growth.
 Silence between the question and the answer is where “I” might be found. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Serenity.jpeg]]
 ## Serenity
-<p style="color: #f09e5a;"><span class="highlight-text">Serenity</span></p>
+![[Serenity.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Serenity</span></p>
 
 I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[AdiShankara-WhoAmI-800BCe.jpeg]]
 ## Who am I
-<p style="color: #f09e5a;"><span class="highlight-text">Who am I</span></p>
+![[AdiShankara-WhoAmI-800BCe.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Who am I</span></p>
 
 Advaita Vedānta tradition.  
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
@@ -76,15 +70,14 @@ I am Self, the supreme unconditioned Brahman.  <br>
 I am pure Awareness, always non-dual."</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Words.jpeg]]
 ## Words
-<p style="color: #f09e5a;"><span class="highlight-text">Words</span></p>
+![[Words.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Words</span></p>
 
 At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine.  Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “ 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
-## Acknowledgment
 <div style="break-after: page;"></div><br>
-![[Acknowledgement.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Acknowledgment </span></p>
+## Acknowledgment
+![[Acknowledgement.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Acknowledgment</span></p>
 I saw him cross in front of me. 
 
 He stopped. He sat still. He was barely visible. He was one with nature. I watched him closely. His eyes moved. He observed me. 
@@ -98,16 +91,14 @@ I captured this moment of silent mutual awareness. He was being generous with hi
 We moved on, to our different ways. I wonder where he will sleep tonight. Be well and thank you, Mr. Rabbit. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Vastness.jpeg]]
 ## Vastness
-<p style="color: #f09e5a;"><span class="highlight-text">Vastness</span></p>
+![[Vastness.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Vastness</span></p>
 
 They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Man&boy-EmilyFelcher2025.jpeg]]
 ## Man and Boy
-<p style="color: #f09e5a;"><span class="highlight-text">Man and Boy</span></p>
+![[Man&boy-EmilyFelcher2025.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Man and Boy</span></p>
 
 The man busies himself, burying his fears and polishing his victories. Recognition is his just reward and adulation is his honor due. 
 
@@ -119,9 +110,8 @@ The boy is luckier than the man. He is able to make time his friend.
 @em.the.artistt </p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[WheelOfLife.jpeg]]
 ## Wheels of Life
-<p style="color: #f09e5a;"><span class="highlight-text">Wheels of Life</span></p>
+![[WheelOfLife.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Wheels of Life</span></p>
 
 It took a while for life to come into focus. I see me, rolling my wheels along many roads and alongside many travelers.
 
@@ -130,9 +120,8 @@ I push the wheels with sticks that I find by the wayside. I am proud of the stic
 I look back to see my wheels moving along on their own. They are beckoning me to join. I don’t need sticks after all. I get behind my wheels. My wheels and I, we move along in harmony. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[FriendshipPicasso1908.jpeg]]
 ## Be well my friend
-<p style="color: #f09e5a;"><span class="highlight-text">Be well my friend</span></p>
+![[FriendshipPicasso1908.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Be Well my Friend</span></p>
 
 My life long best friend and protector needs my help. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
 
@@ -146,9 +135,8 @@ There is much promise on the other side,  the promise of unity. There is also sa
 That is the promise of what we will leave behind. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[LookingBack-EmilyFelcher2025.jpeg]]
 ## Footsteps
-<p style="color: #f09e5a;"><span class="highlight-text">Footsteps</span></p>
+![[LookingBack-EmilyFelcher2025.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Footsteps</span></p>
 
 Truth was often late coming to me, she got delayed crossing the bridge of believability. 
 
@@ -168,16 +156,14 @@ Kids deserve a chance to shape their contributions. My attempts to keep them fre
 @em.the.artistt </p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Nani.jpeg]]
 ## Nani
-<p style="color: #f09e5a;"><span class="highlight-text">Nani</span></p>
+![[Nani.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Nani</span></p>
 
 “I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[GeorgeInness-TheLastGlow1885.jpeg]]
 ## In Crossing
-<p style="color: #f09e5a;"><span class="highlight-text">In Crossing</span></p>
+![[GeorgeInness-TheLastGlow1885.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">In Crossing</span></p>
 
 I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure of intent. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light. 
 
@@ -186,9 +172,8 @@ I embrace the sense of achievement, for a past well-lived, gratitude for the tre
 We shall meet again. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[ClydeSinger-RushHour1937.jpeg]]
 ## CityVerse
-<p style="color: #f09e5a;"><span class="highlight-text">CityVerse</span></p>
+![[ClydeSinger-RushHour1937.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">CityVerse</span></p>
 
 A place that binds people and experiences together - to co-exist, to support and to flourish. A place of majestic structures, roads, and dreams.  A place where communities share discoveries,  joys and sorrows. A place of inspiration to create new stories and  share old ones.
 
@@ -208,9 +193,8 @@ There is a permanence to a city, a steadfast presence. There is continuity amids
 I find new offerings every day. I am grateful for it. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[EdwardMunch-Vampire1895.jpeg]]
 ## Duniya
-<p style="color: #f09e5a;"><span class="highlight-text">Duniya</span></p>
+![[EdwardMunch-Vampire1895.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Duniya</span></p>
 
 Love envelopes nature. It nurtures bonds of togetherness and extolls virtues of harmony. It builds communities of peace. 
 
@@ -221,17 +205,15 @@ One destroys, the other creates. One hurts, the other heals. One gains fame, the
 Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain  unread between the pages of time.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg]]
 ## Lessons
-<p style="color: #f09e5a;"><span class="highlight-text">Lessons</span></p>
+![[Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Lessons</span></p>
 
 Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
 (Adapted from NY30Rock)
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Stones.jpeg]]
-## Stones, wind and water
-<p style="color: #f09e5a;"><span class="highlight-text">Stones, wind and water</span></p>
+## Stones, Wind and Water
+![[Stones.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Stones, Wind and Water</span></p>
 
 Oh! How the mighty mountains have been ravaged by wind, water and time into pieces of stone scattered on the ground. 
 
@@ -242,9 +224,8 @@ Why did the stones on top forget that the higher they go, the harder they fall? 
 Why did they not seize the opportunity to be stable on the ground, to be next to each other, to be away from the wind, to be able to gather around and hold water for plants, and flowers and birds? Why did they not see themselves as stepping stones, leading a path in support of the glories in nature? Why did they not realize that this was their destiny?
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Wars.jpeg]]
 ## Manufacturing Conflict
-<p style="color: #f09e5a;"><span class="highlight-text">Manufacturing Conflict</span></p>
+![[Wars.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Manufacturing Conflict</span></p>
 
 Wars waged on, egged by the egos of lords, masquerading as ideology. 
 
@@ -258,9 +239,8 @@ Ego demands serf blood, and gets it. Ideology makes serfs act against their own 
 The lords are always the winners. History remembers them. The serfs have no names. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Ideology-NaziProps.jpeg]]
-## Ideologies & realities
-<p style="color: #f09e5a;"><span class="highlight-text">Ideologies & realities</span></p>
+## Ideologies & Realities
+![[Ideology-NaziProps.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Ideologies & Realities</span></p>
 
 “A heroic leader on a white horse rallies the troops, while the wounded valiantly struggle to get on their feet to resume the fight.” , “ with illusions of honor”, “knowingly welcoming death. ”
 
@@ -302,9 +282,8 @@ Should we accept simplicity and universality of love, harmony and well-being as 
 History tells us stories of ideology. Time will reveal the stories of reality. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[DamielHeller-Time.jpeg]]
 ## Time
-<p style="color: #f09e5a;"><span class="highlight-text">Time</span></p>
+![[DamielHeller-Time.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Time</span></p>
 
 Time is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous.  It creates no awareness of its presence. It has no enemies.
 
@@ -329,9 +308,8 @@ Humanity may pivot to re-claiming time for peace, harmony and well-being. We may
 Maybe, we will.
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[AlbrechtDurer-PrayingHands1507.jpeg]]
 ## Gratitude
-<p style="color: #f09e5a;"><span class="highlight-text">Gratitude</span></p>
+![[AlbrechtDurer-PrayingHands1507.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Gratitude</span></p>
 
 I have so much … so much, to be grateful for. i forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received.  
 
@@ -354,9 +332,8 @@ People ask me what I plan to do when I retire. i am hard pressed to find a bette
 There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities,  to pay and to receive as I go forward. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Energy.jpeg]]
 ## Energy
-<p style="color: #f09e5a;"><span class="highlight-text">Energy - food for the soul</span></p>
+![[Energy.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Energy - Food for the Soul</span></p>
 
 I sense that all things radiate energy. 
 
@@ -377,9 +354,8 @@ Over time we come to realize the nature and value of this gift. We realize that 
 Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg]]
 ## Acceptance
-<p style="color: #f09e5a;"><span class="highlight-text">Acceptance</span></p>
+![[ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Acceptance</span></p>
 
 Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK. 
 
@@ -393,9 +369,8 @@ No win or loss is lasting. Like shifting sands, moving across, no acceptance is 
 I accept my acceptances. </p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg]]
 ## Choices
-<p style="color: #f09e5a;"><span class="highlight-text">Choices</span></p>
+![[TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Choices</span></p>
 
 I have choices. I hear opinions. 
 
@@ -408,9 +383,8 @@ All will be judged based on the time and effort consumed to release residual ene
 Until then, there are choices and there are opinions. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[RepraisalsFromUprisingOf1857.jpeg]]
 ## Good and Bad
-<p style="color: #f09e5a;"><span class="highlight-text">Good and Bad</span></p>
+![[RepraisalsFromUprisingOf1857.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Good and Bad</span></p>
 
 We seek good. Good welcomes. It opens its doors.  Some come to be part of the good, and some come to profit from it. Good shares its fortunes, the bad eagerly takes it. 
 
@@ -451,11 +425,9 @@ Occasionally that seems to happens too. Could it be that Gaza is going through t
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">(Excerpts from William dalrymple)</p>
 
-
 <div style="break-after: page;"></div><br>
-![[WritingGeorgeLin.jpeg]]
 ## Writing
-<p style="color: #f09e5a;"><span class="highlight-text">Writing</span></p>
+![[WritingGeorgeLin.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Writing</span></p>
 
 Creativity thrives along the path from the knowledge core, to the edges of cognitive capacity. It is guided by pre-dispositions inherent to me. 
 
@@ -468,9 +440,8 @@ I think of writing as an expanded form of painting. It allows me to add the nuan
 I would like to think that the readers of my words will get to explore their thoughts in a different light. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-![[Manipulate.jpeg]]
 ## Let’s make a circle 
-<p style="color: #f09e5a;"><span class="highlight-text">let’s make<br>a Circle</span></p>
+![[Manipulate.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Let’s make a Circle</span></p>
 
 I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
