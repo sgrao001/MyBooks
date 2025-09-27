@@ -676,8 +676,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .highlight-text {{
             color: var(--primary-color);
-            font-weight: 600;
-            font-size: 1.2em;
+            font-weight: 300;
+            font-size: 1.1em;
             margin-bottom: 0.3em;
             display: inline-block;
             border-bottom: 2px solid var(--primary-color);
@@ -1027,7 +1027,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
        /* phones and such */ 
 
 
-        @media (max-width: 390px) {{
+        @media (max-width: 415px) {{
             body {{
                 margin-top: 0px !important;
                 height: 60% !important;
@@ -1099,6 +1099,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 width: {ImageWidthMobile} !important;
                 max-width: 100% !important;
                 height: auto !important;
+                float: none !important;
             }}
 
             /* FORCEe ALL CAPTION POPUPS to be CENTERED on mobile */
@@ -1106,7 +1107,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             .image-align-left .image-caption-popup,
             .image-align-right .image-caption-popup,
             .image-align-center .image-caption-popup {{
-                max-width: {ImageWidthMobile} !important;
+                width: {ImageWidthMobile} !important;
+                float: none;
                 margin: 0 !important;
                 left: 50% !important;
                 top: 0px !important;
@@ -2139,14 +2141,16 @@ def convert_inline_images(content):
             alignment = "left"  # Default to left if not specified
         
         # Add mobile alignment class
-        alignment_class = f" image-align-{alignment} mobile-align-center"
+        alignment_class = f" image-align-{alignment} mobile-align-center mobile-default-size"
         
         # NEW: Calculate width for caption based on size_spec
         caption_width_style = ""
         # Size handling with support for px, %, and plain numbers
         style_attr = ""
+
         if size_spec:
             size_spec = size_spec.strip()
+
             
             # Handle percentage values (e.g., "50%")
             #if size_spec.endswith('%'):
