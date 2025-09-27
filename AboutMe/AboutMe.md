@@ -34,17 +34,20 @@ If you would like to read about my journey and my interpretations, please follow
 
 ## Observation of Thoughts
 <p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p>
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. 
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
+_getMdate("oot/Observation of Thoughts.md")
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html">click here…</a></span></p>
 ## Theater of the Mind
 <p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p>
 
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self.   
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
+_getMdate("tom/Theater of the mind.md")
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html">click here…</a></span></p>
 ## Akka 
 <p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p>
 
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.<br>
+_getMdate("akka/akka.md")
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html">click here…</a></span></p>
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
