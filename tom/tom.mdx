@@ -15,7 +15,7 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
 
 ![[ Logo.jpeg | logo | 300 | center]]
 
-<div style="break-after: page;"></div>
+<div style="break-after: page;"></div><br>
 ## Introduction
 <p style="color: #f09e5a;"><span class="highlight-text">Introduction</span></p>
 It has been on a long journey, reading, listening, thinking, internalizing, and working to put my understanding into practice. It has been an exciting process, involving literally ‘miles and miles’ of walking. It has changed the way I look at myself and things around me.
