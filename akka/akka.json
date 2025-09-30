@@ -35,6 +35,7 @@
 
     "ImageWidthDesktop": "50%",
     "ImageWidthMobile": "95%",
+    "ResizeForMobile": true,
 
     "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,

@@ -153,7 +153,7 @@ With their meager resources, Akka worked tirelessly to hold the family together.
 
 In keeping with the customs of her time, Akka had arranged Sethubai’s marriage in 1926, when she was 11. She was to marry Prahalad Rao. Prahalad Rao was an educated young man and could speak english very well. 
 
-I met him when he was much older. I remember him as an avid fan of cricket. He was a proud man. However, he remained distant from Akka nd her family. Akka and my grandfather were concerned that he would not be affectionate towards their daughter. Their marriage proposal was likely supported by the fact that Prahalad Rao was a close family relative. 
+I met him when he was much older. I remember him as an avid fan of cricket. He was a proud man. However, he remained distant from Akka and her family. Akka and my grandfather were concerned that he would not be affectionate towards their daughter. Their marriage proposal was likely supported by the fact that Prahalad Rao was a close family relative. 
 
 Prahalad Rao worked at a silk factory in Mysore, boiling silk worm cocoons, that would later be weaved into fine silk cloth. The fumes from the boiling pots affected his lungs. He quit work at 40. They had a meager existence past that point. 
 <div style="break-after: page;"></div><br>
@@ -174,7 +174,7 @@ It was 1943. My father was 14 years old. By this time my grandfather’s career 
 
 He was assigned to support a village fair in Nanjangud, a neighboring town. There was to be a celebration in honor of the god 'Shiva'. It was anticipated that there would be a large number of people at the festivities. He was assigned the task of organizing the event. 
 
-Grandfather returned home from Nanjangud with a fever that would not subside. His illness got diagnosed as Cholera. It is not clear if that determination was a best guess or was a considered diagnosis. Ratna writes, “He breathed his last 24 hours later. “ e was 54 years old. In his final hours, my grandfather looked at Akka and said, "My chances of survival are low. I am sorry to be leaving the responsibilities of four kids to you."
+Grandfather returned home from Nanjangud with a fever that would not subside. His illness got diagnosed as Cholera. It is not clear if that determination was a best guess or was a considered diagnosis. Ratna writes, “He breathed his last 24 hours later. “ He was 54 years old. In his final hours, my grandfather looked at Akka and said, "My chances of survival are low. I am sorry to be leaving the responsibilities of four kids to you."
 
 This was a devastating blow to Akka. Akka was only 43. She knew that once she finished grieving her husband's death, her next challenge would be raising the four children at home with her — Sethubai was married and had moved out. The eldest was 18 and the youngest, 9. With my grandpa's death, Akka's world was upended. The stable life she knew vanished, leaving her to face a terrifying new reality. As her livelihood disappeared, the weight of providing food, clothing, and schooling for her children fell squarely on her shoulders. Her three unmarried daughters' futures suddenly looked bleak, their marriage prospects diminished without a male provider. With no marketable skills of her own, these desperate thoughts swirled relentlessly in her mind.
 <div style="break-after: page;"></div><br>
@@ -526,7 +526,7 @@ My father’s cousin Naga, with whom my father stayed when he first went to Bomb
 For Ratna and Manjula, the loss was immense. For Ratna, Akka had been her only anchor in life. As per my grandpa’s instruction, Akka had taken good care of Ratna. Ratna in turn, was incredibly devoted to Akka. She gave Akka her full attention and care. They truly took care of each other. It was as if this was a relationship that was leftover from a prior life that needed to be completed in this one. 
 <div style="break-after: page;"></div><br>
 ![[Ratna-later.jpeg | Ratna in later years]]
-Ratna writes,”Aka never left us. She is always there with me in spirit. Even today, I feel she sleeps with me. Her good wishes and blessings are always with us.“ Ratna kept Akka’a transistor radio at her own bedside. It had stopped working by this time. 
+Ratna writes,”Akka never left us. She is always there with me in spirit. Even today, I feel she sleeps with me. Her good wishes and blessings are always with us.“ Ratna kept Akka’a transistor radio at her own bedside. It had stopped working by this time. 
 
 After Akka passed away, I was in my final year of B.S. in engineering. I wanted to experience life in the college dorm. Ratna writes, “I am thankful you chose not to go and stayed with me instead.” In hindsight, i should have never thought to leave. 
 
