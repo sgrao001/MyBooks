@@ -10,16 +10,17 @@ This does not show. for testing only
 | Cell 1   | (https://yahoo.com)   |
 | Cell 3   | [here](https://www.google.com)   |
 | Cell 3   | https://www.cnn.com |
+image-align-{alignment} mobile-align-center mobile-default-size
 
 <div style="break-after: page;"></div><br>
 ## An Enchanting Journey
-![[ThreeElementsWassilyKandinsky1925.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></p>
+![[ThreeElementsWassilyKandinsky1925.jpeg  ]]<p style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></p>
 There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. 
 The infinite can be transformed into less intimidating, even navigate-able explorations. 
 
 Earth-fire-water; a necessity for life. Man-woman-child; the essential unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams. 
 
-In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and *the* state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.  
+In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Awareness

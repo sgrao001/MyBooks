@@ -34,7 +34,8 @@
     "Hide_page_number": false,
 
     "ImageWidthDesktop": "50%",
-    "ImageWidthMobile": "95%",
+    "ImageWidthMobile": "90%",
+    "ResizeForMobile": true, 
 
     "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,
