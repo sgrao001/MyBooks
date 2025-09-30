@@ -53,7 +53,6 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
-            padding: 2px 0;
         }
         /* Underline effect on hover */
         a:hover {
@@ -234,7 +233,7 @@
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            height: 85vh;
+            height: var(--page-height);
             width: 6.7%;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -256,11 +255,11 @@
         }
 
         .arrow-container.left {
-            left: 10px;
+            left: 0px;
         }
 
         .arrow-container.right {
-            right: 10px;
+            right: 0px;
         }
 
         .arrow-container:hover {
@@ -399,8 +398,7 @@
         .image-container img {
             position: relative;
             display: block;
-            margin: 0 25px 20px 0;
-            width: 50%;
+            max-width: 50%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
@@ -414,18 +412,27 @@
         /* Add alignment-specific float rules */
         .image-align-left img {
             float: left;
-            margin: 0 25px 20px 0;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
 
         .image-align-right img {
             float: right;
-            margin: 0 0 20px 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
 
         .image-align-center img {
             float: none;
-            margin: 20px auto;
             display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
         }
 
         .image-container img:hover {
@@ -437,14 +444,14 @@
 
         .text-only-container {
             width: 90%;
-            margin: 30px auto;
+            margin: 0px auto;
             padding: 0;
         }
 
         .toc-container {
             width: 90%;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0px auto;
+            padding: 0;
         }
         .toc-entry {
             margin: 8px 0;
@@ -552,19 +559,16 @@
         }
         h1 {
             font-size: 2.8em;
-            margin: 0 0 10px 0;
             color: #fff;
             font-weight: 700;
         }
         h2 {
             font-size: 1.4em;
-            margin: 0;
             font-weight: 400;
             color: rgba(255,255,255,0.8);
         }
         h3 {
             font-size: 1.3em;
-            margin: 20px 0;
             font-weight: 300;
             color: rgba(255,255,255,0.7);
         }
@@ -573,7 +577,6 @@
         /* TOC Container */
         .toc-container {
             width: 90%;
-            margin: 0 auto;
             padding: 20px;
         }
 
@@ -682,13 +685,16 @@
             /* REMOVE: left: 0; */
             /* Position relative to the image container */
             top: 0;
-
+            max-width: 100%;
             /* Width handling - auto for text, but constrained */
-            width: auto;
-            max-width: calc(50% * 0.95) !important;
+
             font-size: .8em;
-            padding: 3px 10px 3px 10px;
+            padding: 0px 10px 0px 10px ! important;
             box-sizing: border-box;
+            text-align: center !important;
+            font-size: 0.8em;
+            pointer-events: auto;
+            Display: block !important;
 
             /* INITIAL STATE - HIDDEN */
             opacity: 0 !important;
@@ -707,20 +713,20 @@
         }
         /* Position captions based on alignment */
         .image-align-left .image-caption-popup {
-            top: 20px;
-            left: 0;
+            top: 40px;
             right: auto;
         }
         .image-align-right .image-caption-popup {
-            top: 20px;
-            right: 0;
+            top: 40px;
+            right: 20px;
             left: auto;
         }
-
-        /*  keeep this together.  */
         .image-align-center .image-caption-popup {
-            left: 50% !important; /* Center horizontally */
-            transform: translateX(-50%) !important;
+            top: 20px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+            box-sizing: border-box !important;
         }
         /* Hover state for centered captions */
         .image-align-center .image-caption-popup:hover,
@@ -900,9 +906,7 @@
                     margin-top: 0 !important;
                 }
             }
-            .image-container img {
-                float: none;
-            }
+
             .back-to-toc {
                 font-size: 0.6em;
                 padding: 5px 5px;
@@ -925,50 +929,37 @@
             font-size: 0.65em !important;
             }
 
-            /* Force center alignment for mobile */
-            .mobile-align-center {
-                text-align: center !important;
-            }
-            
-            /* FORCE ALIGNMENT FORCE TO CENTER */
-            .mobile-align-center img {
-                float: none !important;
-                margin: 10px auto !important;
-                display: block !important;
-                box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-            }
-            .mobile-align-center img:hover {
-            opacity: 1;
-            transform: scale(1);
-            box-shadow: 0 10px 10px rgba(0,0,0,0.9);
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
-            }
 
             /* FORCE SIZE FORCE TO ImageWidthMobile */
-            /* Set mobile width for images without specified size */
-            .mobile-default-size img {
-                width: 95% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                float: none !important;
-            }
+            /* MOBILE_FORCE_PLACEHOLDER - This will be replaced with conditional CSS */
+            
+        /* FORCE SIZE FORCE TO ImageWidthMobile */
+        .mobile-default-size img {
+            width:  95% !important;
+            max-width:  95% !important;
+            margin-top: 20px !important;
+            margin-bottom: 40px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;            
+            left: 50% !important;
+            transform: translateX(-50%) !important;     
+            height: auto !important;
+            float: none !important;
+            display: block !important;
+        }
 
-            /* FORCEe ALL CAPTION POPUPS to be CENTERED on mobile */
-            /* Override all alignment-specific positioning */
-            .image-align-left .image-caption-popup,
-            .image-align-right .image-caption-popup,
-            .image-align-center .image-caption-popup {
-                width: 95% !important;
-                float: none;
-                margin: 0 !important;
-                left: 50% !important;
-                top: 0px !important;
-                right: auto !important;
-                transform: translateX(-50%) !important;
-                text-align: center !important;
-                font-size: 0.8em;
-                pointer-events: auto; /* Ensure clickable on mobile */
-            }            
+        /* FORCE ALL CAPTION POPUPS to be CENTERED on mobile */
+        .image-align-left .image-caption-popup,
+        .image-align-right .image-caption-popup,
+        .image-align-center .image-caption-popup {
+            width:  95% !important;
+            max-width:  95% !important;
+            top: 20px;
+            left: 50% !important; /* Center horizontally */
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+        }
+                  
 
             
             /* Make captions always visible on mobile when active */
@@ -1049,7 +1040,7 @@
                 --mobile-font-size: 0.8em">
         <br><br><br>Hello,<br><br>On most days over the past four decades, I, like many others, offered my perspective and abilities, to create “things” of value — contributions that joined with the work of others, flowing onward like rain droplets in streams, converging into rivers and finally reaching the sea. For this, I have been sufficiently compensated.<br><br>As I entered the sixth decade of my life, I became keenly aware of how wasteful it would be to halt my journey there. Limiting myself to offering my set pieces of “preconceived value” to an external stack of “value widgets” was striping away any meaning I had found for myself in my work. The value I received from my efforts was becoming transient and short-lived.
 <br>
-<div class="image-container image-align-right mobile-align-center mobile-default-size"><img src="AboutMe.jpeg" alt="Image" style="width: 35%;"><div class="image-caption-popup" style="--image-width: 35%; width: var(--image-width); max-width: var(--image-width);">Sri Rao</div></div>
+<div class="image-container image-align-right mobile-align-center mobile-default-size"><img src="AboutMe.jpeg" alt="Image" style="width: 35%;"><div class="image-caption-popup" style="width: 35%; ">Sri Rao</div></div>
 <br>
 I allowed myself the time, to pause, reflect, and reorient — to rethink how I should define what I value and which paths I might explore and why. I wished to create new meaningful experiences for myself.<br><br>I live in Chicago. I decided to live, walk, think, listen, read and write in the place that I had come to love. I was truly astonished by the energy and the resources, the city gave to me, to inspire and motivate myself. I began the journey into my self, to explore and experience the passion and harmony that I knew was buried there.  I concluded that I would do better directing my outward actions from the inside.<br><br>As I began to look around, I discovered gems of wisdom that people had graciously left for me  —  in books, conversations, images and artwork   —  in the streets, in coffee-shops, buildings, libraries and museums  — Inspirational gifts, given freely, that which they had acquired through much thought and effort.  It was like having an infinitely large group of well-wishers who were willing to share their journeys for my reference and guide me through my own. I wasn’t going it alone.<br><br>I became fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon two formats that seemed like they would work well.<p style="margin: 0 7.5%; font-style: italic;"><br>
 Not long ago, people used to send postcards, from their travels, to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. I found this approach worked well for me.<br><br>
@@ -1071,11 +1062,11 @@ I am deeply appreciative of life’s offerings that has brought me to this point
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
         <br><p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 26, 2025</span>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 30, 2025</span>
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html">click here…</a></span></p><p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
 <span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 26, 2025</span>
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html">click here…</a></span></p><p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.<br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 13, 2025</span>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 29, 2025</span>
 <span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html">click here…</a></span></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
