@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Update viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>About Me</title>
+    <meta name="description" content="AboutMe">
+    <meta name="keywords" content="Sri Rao">
+    <style>
+        :root {
+            --primary-color: #f09e5a;
+            --glass-bg: rgba(0, 0, 0, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --text-color: #abb8bb;
+            --arrow-block-display: flex;
+            --arrow-visibility: hidden;
+            --arrow-opacity: 0;
+            --arrow-hover-opacity: 0;
+            --arrow-hover-width: 12%;
+            --page-width: 94vw;
+            --page-height: 94vh;
+        }
+
+        html {
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-image: url('AboutMe-bkgrnd.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            touch-action: pan-y;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            overscroll-behavior: none;
+        }
+
+        a {
+            color: #4fc3f7 !important; /* Bright blue - adjust hue as needed */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        /* Underline effect on hover */
+        a:hover {
+            color: #82e9ff !important;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+        a:focus {
+            outline: 2px solid #ffeb3b;
+            outline-offset: 2px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #000;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* change page width and height below to create varyong borders */
+        .page {
+            width: var(--page-width);
+            height: var(--page-height);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            color: #abb8bb;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 1;
+            display: none;
+        }
+
+        /* Title Page (Page 0) Specific Styles */
+        #page-0 h1,
+        #page-0 h2,
+        #page-0 h3 {
+            color: #89C2FF !important;
+        }
+
+        /* Fixed header elements (page number, book title, back button) */
+        .page-header {
+            position: fixed;
+            top: 20px;
+            width: calc(var(--page-width) - 60px);
+            display: flex;
+            justify-content: space-between;
+            z-index: 3;
+            pointer-events: none;
+        }
+        /* Keep page number on right */
+        .page-number {
+                order: 2; /* Moves to far right */
+                right: 0px;
+                font-size: 0.85em;
+                background: transparent !important;
+                visibility: visible !important;
+        }
+
+        /* Center book title */
+        .book-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .back-to-toc {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8em;
+            padding: 5px 15px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            order: 2; /* Moves to left */
+            margin-right: auto; /* Pushes other elements right */
+            bottom: 60px; /* Above mobile slider */
+        }
+        .back-to-list {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8em;
+            padding: 5px 15px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            order: 2; /* Moves to left */
+            border-radius: 12px;
+            margin-right: auto; /* Pushes other elements right */
+            bottom: 60px; /* Above mobile slider */
+        }
+
+        .back-to-toc:hover {
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color);
+        }
+        .back-to-list:hover {
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color);
+        }
+
+        /* Fixed Custom Scrollbar */
+        .page::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .page::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .page::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        .page::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            display: block;
+        }
+
+        .page.exit {
+            transform: translate(-50%, -50%) scale(0.98);
+            opacity: 0;
+            display: none;
+        }
+
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
+        .arrow-container {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 85vh;
+            width: 12%;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: var(--arrow-opacity);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+
+        /* When arrows are visible (flex=True) */
+        .arrow-container[data-visible="true"] {
+            width: 5% !important;
+        }
+
+        .arrow-container.left {
+            left: 0px;
+        }
+
+        .arrow-container.right {
+            right: 0px;
+        }
+
+        .arrow-container:hover {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        .nav-arrow {
+            width: 15px;
+            height: 15px;
+            border: solid #abb8bb;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            visibility: var(--arrow-visibility);
+        }
+
+        .nav-arrow.left {
+            transform: rotate(135deg);
+        }
+
+        .nav-arrow.right {
+            transform: rotate(-45deg);
+        }
+
+        /* Arrow Hover Areas - Always present but visibility controlled */
+        .arrow-area {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: var(--arrow-hover-width);
+            z-index: 9;
+            display: flex;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .arrow-area.left {
+            left: 0;
+        }
+
+        .arrow-area.right {
+            right: 0;
+        }
+
+        .arrow-area.left:hover ~ .arrow-container.left {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        .arrow-area.right:hover ~ .arrow-container.right {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 40px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .slider-area {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }
+
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .slider-wrapper {
+            width: 80%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 10px auto;
+            -webkit-appearance: none;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 8px;
+            height: 20px;
+            background: #000;
+            cursor: pointer;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .slider-track {
+            position: absolute;
+            height: 6px;
+            background: #000;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }
+
+        /* Content Styles */
+        .image-container {
+            width: 100%;
+            position: relative;
+            overflow: visible; /* Changed from hidden to visible for captions */
+        }
+
+        .image-container img {
+            position: relative;
+            display: block;
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            shape-outside: margin-box;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0.95;
+            transform: scale(0.98);
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+        }
+
+        /* Add alignment-specific float rules */
+        .image-align-left img {
+            float: left;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-align-right img {
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-align-center img {
+            float: none;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
+        }
+
+        .image-container img:hover {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
+        }
+
+        .text-only-container {
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
+        }
+
+        .toc-container {
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
+        }
+        .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .toc-entry a {
+            color: #4682B4 !important;  /* Use configurable color */
+            text-decoration: none;
+            display: block;
+        }
+
+        .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+
+        /* Table Styles */
+        table {
+            width: auto;
+            max-width: 100%; /* Never exceed content block width */
+            table-layout: auto; /* Auto-size columns based on content */
+            word-wrap: break-word; /* Allow text wrapping */
+            border-collapse: collapse;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px ;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            background: rgba(15, 15, 15, 0.25) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Special styling for links in tables */
+        table a {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        table a:hover {
+            background: rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        table thead tr {
+            background: transparent !important;
+            position: relative; /* Needed for pseudo-element */
+            overflow: hidden; /* Contain the blur effect */
+        }
+
+            /* Set minimum column width (adjust 15% as needed) */
+        table th,
+        table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 15%; /* Minimum column width as % of table */
+            max-width: 100%; /* Prevent columns from overflowing */
+            word-break: break-word; /* Break long words if needed */
+            background: transparent !important;
+        }
+
+        table tbody tr {
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 300;
+            font-size: 1.1em;
+            margin-bottom: 0.3em;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 3px;
+        }
+
+        p {
+            margin-bottom: 1.8em;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        /* Make the paragraph inline */
+        p.inline {
+        display: inline;
+        }
+    
+        /* Hide the paragraph */
+        p.none {
+        display: none;
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #fff;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.4em;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+        }
+        h3 {
+            font-size: 1.3em;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ================== */
+        /* TOC Container */
+        .toc-container {
+            width: 90%;
+            padding: 20px;
+        }
+
+        .toc-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: flex-start !important; /* Add this to align items to the left */
+            width: 100%; /* Ensure full width */
+        }
+
+        .compact-button {
+            border: 2px solid #4fc3f7 !important; /* Blue border */
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 2px 0;
+            color: #abb8bb !important; /* Use your config color */
+        }
+
+        .compact-button:hover {
+            border-color: #82e9ff !important; /* Lighter blue on hover */
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color) !important;
+        }
+
+        /* List-style TOC */
+        .toc-list .toc-button-container {
+            display: block;
+        }
+
+        .toc-list .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .toc-list .toc-entry a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+
+        .toc-list .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        .toc-list .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+        .content-text {
+            font-size: inherit; /* Inherits from parent */
+        }
+
+        /*********************************************/
+        /* Multiple in-place images per page.                 */
+        /*********************************************/
+        .text-content-container {
+            width: 90%;
+            padding: 0;
+        }
+
+        /* Style for multiple image containers */
+        .image-container + .image-container {
+            margin-top: 10px;
+        }
+
+        /* Ensure images don't get too large when multiple are present */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Inline image styling */
+        .inline-image-wrapper {
+            display: block;
+            text-align: center;
+        }
+
+        .inline-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .inline-image-caption {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+        }
+
+        /*********************************************/
+        /* Caption Pop-up Box - Begin */
+        /*********************************************/
+        
+        .image-caption-popup {
+            position: absolute;
+            
+            /* REMOVE: left: 0; */
+            /* Position relative to the image container */
+            top: 0;
+            max-width: 100%;
+            /* Width handling - auto for text, but constrained */
+
+            font-size: .8em;
+            padding: 0px 10px 0px 10px ! important;
+            box-sizing: border-box;
+            text-align: center !important;
+            font-size: 0.8em;
+            pointer-events: auto;
+            Display: block !important;
+
+            /* INITIAL STATE - HIDDEN */
+            opacity: 0 !important;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            pointer-events: none;
+
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+        }
+        /* Position captions based on alignment */
+        .image-align-left .image-caption-popup {
+            top: 40px;
+            right: auto;
+        }
+        .image-align-right .image-caption-popup {
+            top: 40px;
+            right: 20px;
+            left: auto;
+        }
+        .image-align-center .image-caption-popup {
+            top: 20px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+            box-sizing: border-box !important;
+        }
+        /* Hover state for centered captions */
+        .image-align-center .image-caption-popup:hover,
+        .image-align-center img:hover ~ .image-caption-popup {
+            transform: translateX(-50%) t!important;
+        }
+        /*  keeep this together.  */        
+
+        /* SHOW / HIDE POP-UP when hovering over image OR pop-up itself */
+        .image-container img:hover ~ .image-caption-popup,
+        .image-caption-popup:hover {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+
+        /* Ensure z-index stacking */
+        body .page .image-container .image-caption-popup {
+            z-index: 1000 !important;
+        }
+        body .page .image-container img {
+            z-index: 2 !important;
+        }
+                
+        /* PERMANENTLY SHOW POPUP: Force all popups to be always visible 
+        .image-caption-popup {
+            top: 30px;
+            opacity: 1 !important;
+            transform: none; !important;
+            pointer-events: auto !important;
+            transition: none !important;
+        }
+        /*********************************************/
+        /* Caption Pop-up Box - End */
+        /*********************************************/
+
+       /* Tablets and such */
+
+        @media (max-width: 768px) {
+
+            body {
+                margin-top: 0px !important;
+                height: 75% !important;
+                overflow: hidden;
+            }
+
+            /* Fix for iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }        
+
+                /* Book title - below back button */
+            .book-title {
+                font-size: 0.75em; /* Slightly smaller */
+                margin-bottom: 15px !important;
+            } 
+
+            .back-to-List {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            } 
+
+            /* Page number - top right */
+        
+
+            a {
+                color: #00b0ff !important; /* Even brighter for mobile */
+            }
+
+            a:focus {
+                outline: 2px solid #ffeb3b;
+                outline-offset: 2px;
+            }
+
+            .text-only-container {
+                width: 100% !important;
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }
+
+            /* Improved spacing for mobile text */
+            p, h1, h2, h3 {
+                margin-bottom: 1.2em !important;
+                line-height: 1.6 !important;
+            }
+
+            /* Adjust heading sizes for mobile */
+            h1 { font-size: 2.2em !important; }
+            h2 { font-size: 1.3em !important; }
+            h3 { font-size: 1.1em !important; }
+
+            /* Mobile table styles */
+            table {
+                min-width: 0 !important /* ALlow Shrinking */
+                width: 100%; !important /* Full width on mobile */
+                overflow-x: visible !important; /* Disable scrolling */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                background: rgba(15, 15, 15, 0.3) !important;
+                font-size: 0.9em !important;
+            }
+            table * {
+            box-sizing: border-box !important; /* Include padding in width */
+            }
+            
+            table a {
+                padding: 3px 8px; /* Larger tap targets */
+                background: rgba(0, 0, 0, 0.2); /* More contrast */
+                margin: 0 auto !important;
+            }
+            .table-container {
+                width: calc(100% - 10px) !important;
+                overflow-x: visible !important; /* Disable scrolling */
+            }
+            table th,
+            table td {
+                min-width: 0% !important ; /* Larger minimum on small screens */
+                white-space: normal !important; /* Ensure wrapping on mobile */
+                width: auto !important; /* Reset widths */
+                max-width: 100% !important;      
+            }
+                /* Slightly stronger contrast on mobile for readability */
+            table thead tr {
+                background: rgba(0, 0, 0, 0.4) !important;
+            }
+            table td.important-column {
+                width: 60% !important;
+                word-break: break-word !important; /* Break long words */
+                overflow-wrap: anywhere !important; /* Emergency break */
+            }
+            table td {
+                hyphens: auto !important;
+                word-break: break-word !important; /* Break long words */
+                overflow-wrap: anywhere !important; /* Emergency break */
+            }
+            /* Force links/buttons to wrap */
+            table a, table button {
+            white-space: normal !important;
+            display: inline-block !important;
+            }
+
+            .toc-container {
+                width: 95%;
+                padding: 15px 5px;
+            }
+            
+            .toc-entry {
+                margin: 6px 0;
+            }
+        }
+
+       /* phones and such */ 
+
+
+        @media (max-width: 415px) {
+            body {
+                margin-top: 0px !important;
+                height: 60% !important;
+                overflow: hidden;
+            }
+
+            .page {
+                /* Adjust height calculation */
+                height: 60vh !important;
+            }
+            .content-text {
+                font-size: var(--mobile-font-size) !important;
+            }
+            
+            /* Fix for iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }
+
+            .back-to-toc {
+                font-size: 0.6em;
+                padding: 5px 5px;
+                border-radius: 10px;
+            }
+            .back-to-list {
+                font-size: 0.6em;
+            }
+        
+            .toc-container {
+                margin-top: 50px;
+                width: 95%;
+            }
+              /* Reduce gap after heading */
+            .toc-container h2 {
+                margin-bottom: 8px !important; /* Reduce space below title */
+            }
+            .compact-button {
+            padding: 3px 8px !important;
+            font-size: 0.65em !important;
+            }
+
+
+            /* FORCE SIZE FORCE TO ImageWidthMobile */
+            /* MOBILE_FORCE_PLACEHOLDER - This will be replaced with conditional CSS */
+            
+        /* FORCE SIZE FORCE TO ImageWidthMobile */
+        .mobile-default-size img {
+            width:  95% !important;
+            max-width:  95% !important;
+            margin-top: 20px !important;
+            margin-bottom: 40px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;            
+            left: 50% !important;
+            transform: translateX(-50%) !important;     
+            height: auto !important;
+            float: none !important;
+            display: block !important;
+        }
+
+        /* FORCE ALL CAPTION POPUPS to be CENTERED on mobile */
+        .image-align-left .image-caption-popup,
+        .image-align-right .image-caption-popup,
+        .image-align-center .image-caption-popup {
+            width:  95% !important;
+            max-width:  95% !important;
+            top: 20px;
+            left: 50% !important; /* Center horizontally */
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+        }
+                  
+
+            
+            /* Make captions always visible on mobile when active */
+            .image-caption-popup.mobile-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            /* ===== TABLE STYLES ===== */
+            .table-container {
+                width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                display: block;
+                margin: 15px 0;
+                background: rgba(0,0,0,0.1); /* Visual cue for scrollable area */
+                border-radius: 8px;
+                padding: 8px 0;
+            }
+
+            table {
+                display: table !important; /* Revert to table layout but allow scrolling */
+                width: auto !important;
+                min-width: 100% !important; /* Ensure it fills container */
+                white-space: nowrap;
+                font-size: 0.85em; /* Slightly smaller text for tables */
+            }
+
+            table th,
+            table td {
+                white-space: nowrap !important;
+                min-width: 100px !important; /* Reasonable minimum column width */
+            }
+
+            /* Optional scroll indicator */
+            .table-container::-webkit-scrollbar {
+                height: 5px;
+            }
+
+            .table-container::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.3);
+                border-radius: 5px;
+            }
+ 
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    
+
+    <div class="page" id="page-toc">
+        <div class="book-title">About Me</div>
+        <div class="toc-container toc-list">
+            <h2>About Me and My Journey</h2>
+            
+            <div class="toc-button-container">
+                <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>About me…</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Observation of Thoughts</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the Mind</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Akka</span><span>2</span></a></div>
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="page" id="page-1">
+            <div class="book-title">About Me</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.8em">
+        <br><br><br>Hello,<br><br>On most days over the past four decades, I, like many others, offered my perspective and abilities, to create “things” of value — contributions that joined with the work of others, flowing onward like rain droplets in streams, converging into rivers and finally reaching the sea. For this, I have been sufficiently compensated.<br><br>As I entered the sixth decade of my life, I became keenly aware of how wasteful it would be to halt my journey there. Limiting myself to offering my set pieces of “preconceived value” to an external stack of “value widgets” was striping away any meaning I had found for myself in my work. The value I received from my efforts was becoming transient and short-lived.
+<br>
+<div class="image-container image-align-right mobile-align-center mobile-default-size"><img src="AboutMe.jpeg" alt="Image" style="width: 35%;"><div class="image-caption-popup" style="width: 35%; ">Sri Rao</div></div>
+<br>
+I allowed myself the time, to pause, reflect, and reorient — to rethink how I should define what I value and which paths I might explore and why. I wished to create new meaningful experiences for myself.<br><br>I live in Chicago. I decided to live, walk, think, listen, read and write in the place that I had come to love. I was truly astonished by the energy and the resources, the city gave to me, to inspire and motivate myself. I began the journey into my self, to explore and experience the passion and harmony that I knew was buried there.  I concluded that I would do better directing my outward actions from the inside.<br><br>As I began to look around, I discovered gems of wisdom that people had graciously left for me  —  in books, conversations, images and artwork   —  in the streets, in coffee-shops, buildings, libraries and museums  — Inspirational gifts, given freely, that which they had acquired through much thought and effort.  It was like having an infinitely large group of well-wishers who were willing to share their journeys for my reference and guide me through my own. I wasn’t going it alone.<br><br>I became fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon two formats that seemed like they would work well.<p style="margin: 0 7.5%; font-style: italic;"><br>
+Not long ago, people used to send postcards, from their travels, to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. I found this approach worked well for me.<br><br>
+The second format I selected is a short story — drawn from historical events or 
+experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p><br>
+I am deeply appreciative of life’s offerings that has brought me to this point.<br><br>If you would like to read about my journey and my interpretations, please follow the links on the next page.
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-2">
+            <div class="book-title">About Me</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.8em">
+        <br><p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 30, 2025</span>
+<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html">click here…</a></span></p><p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 26, 2025</span>
+<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html">click here…</a></span></p><p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.<br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Sep 29, 2025</span>
+<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html">click here…</a></span></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+    <!-- Arrow Hover Areas - Always present -->
+    <div class="arrow-area left"></div>
+    <div class="arrow-area right"></div>
+    
+    <!-- Arrow Containers - Always present -->
+    <div class="arrow-container left" id="left-arrow-container" data-visible="false">
+    <div class="nav-arrow left"></div>
+    </div>
+    <div class="arrow-container right" id="right-arrow-container" data-visible="false">
+        <div class="nav-arrow right"></div>
+    </div>
+
+    <!-- Slider Hover Area -->
+    <div class="slider-area"></div>
+    
+    <!-- Slider Container -->
+    <div class="slider-container" id="slider-container" style="">
+        <div class="slider-wrapper">
+            <div class="slider-track" id="slider-track"></div>
+            <input type="range" min="0" max="3" value="0" class="slider" id="page-slider">
+        </div>
+        <div class="slider-info">
+            <span id="current-page">0</span>/<span id="total-pages">3</span>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 3;
+        const pages = document.querySelectorAll('.page');
+
+        const page0Skipped = true;
+
+        const slider = document.getElementById('page-slider');
+        const sliderTrack = document.getElementById('slider-track');
+        const progressBar = document.getElementById('progress-bar');
+        const currentPageDisplay = document.getElementById('current-page');
+        const totalPagesDisplay = document.getElementById('total-pages');
+        const leftArrowContainer = document.getElementById('left-arrow-container');
+        const rightArrowContainer = document.getElementById('right-arrow-container');
+        const sliderContainer = document.getElementById('slider-container');
+
+        // FIXED: Image caption handling
+        document.addEventListener('DOMContentLoaded', () => {
+            // Debug: Check if captions are being generated
+            console.log('Image captions found:', document.querySelectorAll('.image-caption-popup').length);
+            document.querySelectorAll('.image-caption-popup').forEach((caption, i) => {
+                console.log(`Caption ${i}:`, caption.textContent);
+            });
+
+            // Make captions click-to-toggle on mobile
+            document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                caption.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Toggle visibility
+                    if (caption.style.opacity === '1' || 
+                        getComputedStyle(caption).opacity === '1') {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    } else {
+                        caption.style.opacity = '1';
+                        caption.style.transform = 'translateY(0)';
+                        caption.classList.add('mobile-visible');
+                    }
+                });
+            });
+            
+            // Close all captions when clicking elsewhere (only on mobile)
+            document.addEventListener('click', (e) => {
+                // Only close if not clicking on a caption
+                if (!e.target.closest('.image-caption-popup')) {
+                    document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    });
+                }
+            });
+
+
+            // Manual pop-up toggle for testing
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('=== MANUAL POPUP TEST ===');
+                
+                let allPopupsVisible = false;
+                
+                // Add toggle button for testing
+                const testButton = document.createElement('button');
+                testButton.textContent = 'Toggle All Popups';
+                testButton.style.position = 'fixed';
+                testButton.style.top = '10px';
+                testButton.style.right = '10px';
+                testButton.style.zIndex = '9999';
+                testButton.style.padding = '10px';
+                testButton.style.background = 'red';
+                testButton.style.color = 'white';
+                testButton.style.border = 'none';
+                testButton.style.borderRadius = '5px';
+                testButton.style.cursor = 'pointer';
+                
+                testButton.addEventListener('click', () => {
+                    allPopupsVisible = !allPopupsVisible;
+                    const popups = document.querySelectorAll('.image-caption-popup');
+                    
+                    popups.forEach(popup => {
+                        if (allPopupsVisible) {
+                            popup.style.opacity = '1';
+                            popup.style.transform = 'translateY(0) scale(1)';
+                            popup.style.background = 'rgba(255,0,0,0.9)';
+                        } else {
+                            popup.style.opacity = '';
+                            popup.style.transform = '';
+                            popup.style.background = '';
+                        }
+                    });
+                    
+                    console.log('All popups', allPopupsVisible ? 'VISIBLE' : 'HIDDEN');
+                });
+                
+                document.body.appendChild(testButton);
+            });            
+            
+            // Add touch events for mobile
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.addEventListener('touchstart', (e) => {
+                    // Prevent default to avoid scrolling issues
+                    if (e.target.closest('.image-caption-popup')) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+            });
+        });        
+
+        // Determine initial page based on configuration
+        function getInitialPage() {
+            const page0Skipped = true;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            if (page0Skipped && hasTOC) {
+                return 0; // Start at TOC (page 0)
+            } else if (!page0Skipped && hasTOC) {
+                return 0; // Start at title page (page 0)
+            } else if (page0Skipped && !hasTOC) {
+                return 0; // Start at first content page (page 0)
+            } else {
+                return 0; // Start at title page (page 0)
+            }
+        }
+
+        // Initialize with correct active page
+        document.addEventListener('DOMContentLoaded', () => {
+            // First deactivate all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // If title page exists and isn't skipped, start there
+            if (!page0Skipped && document.getElementById('page-0')) {
+                currentPage = 0;
+                document.getElementById('page-0').classList.add('active');
+            } else {
+                // Otherwise start at TOC or first content page
+                currentPage = 0;
+                pages[currentPage].classList.add('active');
+            }
+
+            const booklistBtn = document.querySelector('.back-to-list');
+            if (booklistBtn) {
+                booklistBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html';
+                    if (!url.startsWith('http')) {
+                        url = 'https://' + url;
+                    }
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
+                });
+            }
+
+            updateSlider();
+            updateProgress();
+            
+            // Add header elements to all pages except the title page (if shown)
+            const startPage = true ? 0 : 1;
+
+            for (let i = startPage; i < pages.length; i++) {
+
+                // Skip TOC page
+                if (pages[i].id === 'page-toc') continue;            
+
+                const header = document.createElement('div');
+                header.className = 'page-header';
+                
+                // Back to TOC button (left side)
+                if (document.getElementById('page-toc')) {
+                    const backButton = document.createElement('a');
+                    backButton.className = 'back-to-toc';
+                    backButton.href = '#page-toc';
+                    backButton.textContent = 'Contents';
+                    header.appendChild(backButton);
+                }
+                
+                // Page number (right side)
+                const pageNumber = document.createElement('div');
+                pageNumber.className = 'page-number';
+                pageNumber.textContent = calculatePageNumber(i);
+                header.appendChild(pageNumber);
+                
+                pages[i].insertBefore(header, pages[i].firstChild);
+            }
+            
+            // Touch events for swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });            
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                    case 'PageDown':
+                        nextPage();
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                    case 'PageUp':
+                        prevPage();
+                        break;
+                }
+            });
+
+            // Update slider track fill
+            slider.addEventListener('input', updateSliderTrack);
+            updateSliderTrack();
+            
+            // Connect slider to page navigation
+            slider.addEventListener('change', function() {
+                goToPage(parseInt(this.value));
+            });
+            
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = document.querySelector(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top of page
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });            
+            });  
+
+            // Arrow click events
+            leftArrowContainer.addEventListener('click', prevPage);
+            rightArrowContainer.addEventListener('click', nextPage);
+
+            // TOC Navigation (handles both list and button styles)
+            document.querySelectorAll('.toc-link, .back-to-toc').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = targetId.startsWith('#') 
+                        ? document.querySelector(targetId)
+                        : document.getElementById(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.replace('#', '')) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+
+        // Calculate proper page number based on Page0_skip and TOC
+        function calculatePageNumber(index) {
+            const page0Skipped = true;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // Table of contents - TOC
+            if (page0Skipped && hasTOC) {
+                // Case 1: Both flags true
+                return index === 0 ? "" : index;
+            } else if (!page0Skipped && hasTOC) {
+                // Case 2: Only TOC enabled
+                return index === 0 ? "Title" : (index === 1 ? "" : index - 1);
+            } else if (page0Skipped && !hasTOC) {
+                // Case 3: Only Page0_skip enabled
+                return index + 1;
+            } else {
+                // Case 4: Neither flag set
+                return index === 0 ? "Title" : index;
+            }
+        }
+        
+
+        function updateSliderTrack() {
+            const value = slider.value;
+            const max = slider.max;
+            const percent = (value / max) * 100;
+            sliderTrack.style.width = `${percent}%`;
+        }
+
+        function goToPage(pageNum) {
+            if (pageNum < 0 || pageNum > totalPages) return;
+            
+            const currentActive = document.querySelector('.page.active');
+            if (currentActive) {
+                currentActive.classList.remove('active');
+                currentActive.classList.add('exit');
+            }
+            
+            setTimeout(() => {
+                if (currentActive) {
+                    currentActive.classList.remove('exit');
+                }
+                currentPage = pageNum;
+                pages[currentPage].classList.add('active');
+                updateSlider();
+                updateProgress();
+            }, 300);
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                goToPage(currentPage + 1);
+            }
+        }
+
+
+        function prevPage() {
+            if (currentPage > 0) {
+                // If we're on the first content page and page0 is skipped, don't go back
+                if (page0Skipped && currentPage === 0) {
+                    return;
+                }
+                goToPage(currentPage - 1);
+            }
+        }
+
+
+        function handleSwipe() {
+            const threshold = window.innerWidth * (CONFIG.ARW_HOVER_WIDTH / 100);
+            const distance = touchStartX - touchEndX;
+            
+            if (Math.abs(distance) < threshold) return;
+            
+            if (distance > 0) {
+                nextPage();
+            } else {
+                prevPage();
+            }
+        }
+        function updateSlider() {
+            slider.value = currentPage;
+            currentPageDisplay.textContent = currentPage;
+            updateSliderTrack();
+        }
+
+        function updateProgress() {
+            const progress = (currentPage / totalPages) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        
+        // The next set of functions are for code handling and encryption
+
+        // Generate a random IV for AES-GCM
+        function generateIV() {
+            return crypto.getRandomValues(new Uint8Array(12));
+        }
+
+        // Generate salt for key derivation
+        function generateSalt() {
+            return crypto.getRandomValues(new Uint8Array(16));
+        }
+
+        // Convert string to Uint8Array
+        function strToBuf(str) {
+            return new TextEncoder().encode(str);
+        }
+
+        // Convert Uint8Array to string
+        function bufToStr(buf) {
+            return new TextDecoder().decode(buf);
+        }
+
+        // Derive a key from password and salt using PBKDF2
+        async function deriveKey(password, salt) {
+            const passBuf = strToBuf(password);
+            const keyMaterial = await crypto.subtle.importKey(
+                "raw", passBuf, "PBKDF2", false, ["deriveKey"]
+            );
+            return crypto.subtle.deriveKey(
+                {
+                name: "PBKDF2",
+                salt: salt,
+                iterations: 100000,
+                hash: "SHA-256"
+                },
+                keyMaterial,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["encrypt", "decrypt"]
+            );
+        }
+
+        // Encrypt plaintext with password
+        async function encrypt(plaintext, password) {
+            const salt = generateSalt();
+            const iv = generateIV();
+            const key = await deriveKey(password, salt);
+            const encrypted = await crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                strToBuf(plaintext)
+            );
+            // Combine salt, iv, and encrypted data in base64 for storage/transmission
+            const combined = new Uint8Array(salt.byteLength + iv.byteLength + encrypted.byteLength);
+            combined.set(salt, 0);
+            combined.set(iv, salt.byteLength);
+            combined.set(new Uint8Array(encrypted), salt.byteLength + iv.byteLength);
+            return btoa(String.fromCharCode(...combined));
+        }
+
+        // Decrypt encrypted base64 string with password
+        async function decrypt(encryptedBase64, password) {
+            const combined = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
+            const salt = combined.slice(0, 16);
+            const iv = combined.slice(16, 28);
+            const data = combined.slice(28);
+            const key = await deriveKey(password, salt);
+            const decrypted = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                data
+            );
+            return bufToStr(decrypted);
+        }    
+
+        // Make this function async and use await
+        async function handleRedirect(inputId, correctCode, redirectUrl) {
+            const input = document.getElementById(inputId);
+
+            try {
+                const password = "your-strong-password";
+                
+                const decrypted = await decrypt(redirectUrl, password);
+                alert("Decrypted: " + decrypted);
+                
+                // Then the redirect logic
+                if (input.value === correctCode) {
+                    window.location.href = decrypted;
+                } else {
+                    alert("Invalid code - (" + input.value + "). Please try with the correct provided code.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred during encryption/decryption");
+            }
+        }        
+
+        // Current date display
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                // hour: '2-digit',
+                // minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                new Date().toLocaleDateString('en-US', options);
+        });
+        
+    </script>
+</body>
+</html>
