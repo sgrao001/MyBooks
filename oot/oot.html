@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Update viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Observation of Thoughts</title>
+    <meta name="description" content="Sri Rao - Thoughts from reading, listening, walking and living in Chicago">
+    <meta name="keywords" content="Sri Rao - Thoughts, books, reading, Chicago">
+    <style>
+        :root {
+            --primary-color: #f09e5a;
+            --glass-bg: rgba(0, 0, 0, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --text-color: #abb8bb;
+            --arrow-block-display: flex;
+            --arrow-visibility: hidden;
+            --arrow-opacity: 0;
+            --arrow-hover-opacity: 0;
+            --arrow-hover-width: 12%;
+            --page-width: 94vw;
+            --page-height: 94vh;
+        }
+
+        html {
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-image: url('oot.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            touch-action: pan-y;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            overscroll-behavior: none;
+        }
+
+        a {
+            color: #4fc3f7 !important; /* Bright blue - adjust hue as needed */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        /* Underline effect on hover */
+        a:hover {
+            color: #82e9ff !important;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+        a:focus {
+            outline: 2px solid #ffeb3b;
+            outline-offset: 2px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #000;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* change page width and height below to create varyong borders */
+        .page {
+            width: var(--page-width);
+            height: var(--page-height);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            color: #abb8bb;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 1;
+            display: none;
+        }
+
+        /* Title Page (Page 0) Specific Styles */
+        #page-0 h1,
+        #page-0 h2,
+        #page-0 h3 {
+            color: #89C2FF !important;
+        }
+
+        /* Fixed header elements (page number, book title, back button) */
+        .page-header {
+            position: fixed;
+            top: 20px;
+            width: calc(var(--page-width) - 60px);
+            display: flex;
+            justify-content: space-between;
+            z-index: 3;
+            pointer-events: none;
+        }
+        /* Keep page number on right */
+        .page-number {
+                order: 2; /* Moves to far right */
+                right: 0px;
+                font-size: 0.85em;
+                background: transparent !important;
+                visibility: visible !important;
+        }
+
+        /* Center book title */
+        .book-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .back-to-toc {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8em;
+            padding: 5px 15px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            order: 2; /* Moves to left */
+            margin-right: auto; /* Pushes other elements right */
+            bottom: 60px; /* Above mobile slider */
+        }
+        .back-to-list {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8em;
+            padding: 5px 15px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            order: 2; /* Moves to left */
+            border-radius: 12px;
+            margin-right: auto; /* Pushes other elements right */
+            bottom: 60px; /* Above mobile slider */
+        }
+
+        .back-to-toc:hover {
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color);
+        }
+        .back-to-list:hover {
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color);
+        }
+
+        /* Fixed Custom Scrollbar */
+        .page::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .page::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .page::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        .page::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            display: block;
+        }
+
+        .page.exit {
+            transform: translate(-50%, -50%) scale(0.98);
+            opacity: 0;
+            display: none;
+        }
+
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
+        .arrow-container {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 85vh;
+            width: 12%;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: var(--arrow-opacity);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+
+        /* When arrows are visible (flex=True) */
+        .arrow-container[data-visible="true"] {
+            width: 5% !important;
+        }
+
+        .arrow-container.left {
+            left: 0px;
+        }
+
+        .arrow-container.right {
+            right: 0px;
+        }
+
+        .arrow-container:hover {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        .nav-arrow {
+            width: 15px;
+            height: 15px;
+            border: solid #abb8bb;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            visibility: var(--arrow-visibility);
+        }
+
+        .nav-arrow.left {
+            transform: rotate(135deg);
+        }
+
+        .nav-arrow.right {
+            transform: rotate(-45deg);
+        }
+
+        /* Arrow Hover Areas - Always present but visibility controlled */
+        .arrow-area {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: var(--arrow-hover-width);
+            z-index: 9;
+            display: flex;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .arrow-area.left {
+            left: 0;
+        }
+
+        .arrow-area.right {
+            right: 0;
+        }
+
+        .arrow-area.left:hover ~ .arrow-container.left {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        .arrow-area.right:hover ~ .arrow-container.right {
+            opacity: var(--arrow-hover-opacity);
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 40px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .slider-area {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }
+
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .slider-wrapper {
+            width: 80%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 10px auto;
+            -webkit-appearance: none;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 8px;
+            height: 20px;
+            background: #000;
+            cursor: pointer;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .slider-track {
+            position: absolute;
+            height: 6px;
+            background: #000;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }
+
+        /* Content Styles */
+        .image-container {
+            width: 100%;
+            position: relative;
+            overflow: visible; /* Changed from hidden to visible for captions */
+        }
+
+        .image-container img {
+            position: relative;
+            display: block;
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            shape-outside: margin-box;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0.95;
+            transform: scale(0.98);
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+        }
+
+        /* Add alignment-specific float rules */
+        .image-align-left img {
+            float: left;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-align-right img {
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-align-center img {
+            float: none;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
+        }
+
+        .image-container img:hover {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
+        }
+
+        .text-only-container {
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
+        }
+
+        .toc-container {
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
+        }
+        .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .toc-entry a {
+            color: #4fc3f7 !important;  /* Use configurable color */
+            text-decoration: none;
+            display: block;
+        }
+
+        .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+
+        /* Table Styles */
+        table {
+            width: auto;
+            max-width: 100%; /* Never exceed content block width */
+            table-layout: auto; /* Auto-size columns based on content */
+            word-wrap: break-word; /* Allow text wrapping */
+            border-collapse: collapse;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px ;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            background: rgba(15, 15, 15, 0.25) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Special styling for links in tables */
+        table a {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        table a:hover {
+            background: rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        table thead tr {
+            background: transparent !important;
+            position: relative; /* Needed for pseudo-element */
+            overflow: hidden; /* Contain the blur effect */
+        }
+
+            /* Set minimum column width (adjust 15% as needed) */
+        table th,
+        table td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 15%; /* Minimum column width as % of table */
+            max-width: 100%; /* Prevent columns from overflowing */
+            word-break: break-word; /* Break long words if needed */
+            background: transparent !important;
+        }
+
+        table tbody tr {
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 300;
+            font-size: 1.1em;
+            margin-bottom: 0.3em;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 3px;
+        }
+
+        p {
+            margin-bottom: 1.8em;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        /* Make the paragraph inline */
+        p.inline {
+        display: inline;
+        }
+    
+        /* Hide the paragraph */
+        p.none {
+        display: none;
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #fff;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.4em;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+        }
+        h3 {
+            font-size: 1.3em;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ================== */
+        /* TOC Container */
+        .toc-container {
+            width: 90%;
+            padding: 20px;
+        }
+
+        .toc-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: flex-start !important; /* Add this to align items to the left */
+            width: 100%; /* Ensure full width */
+        }
+
+        .compact-button {
+            border: 2px solid #4fc3f7 !important; /* Blue border */
+            padding: 6px 12px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 2px 0;
+            color: #abb8bb !important; /* Use your config color */
+        }
+
+        .compact-button:hover {
+            border-color: #82e9ff !important; /* Lighter blue on hover */
+            background: rgba(0,0,0,0.4);
+            color: var(--primary-color) !important;
+        }
+
+        /* List-style TOC */
+        .toc-list .toc-button-container {
+            display: block;
+        }
+
+        .toc-list .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .toc-list .toc-entry a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+
+        .toc-list .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        .toc-list .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+        .content-text {
+            font-size: inherit; /* Inherits from parent */
+        }
+
+        /*********************************************/
+        /* Multiple in-place images per page.                 */
+        /*********************************************/
+        .text-content-container {
+            width: 90%;
+            padding: 0;
+        }
+
+        /* Style for multiple image containers */
+        .image-container + .image-container {
+            margin-top: 10px;
+        }
+
+        /* Ensure images don't get too large when multiple are present */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Inline image styling */
+        .inline-image-wrapper {
+            display: block;
+            text-align: center;
+        }
+
+        .inline-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .inline-image-caption {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+        }
+
+        /*********************************************/
+        /* Caption Pop-up Box - Begin */
+        /*********************************************/
+        
+        .image-caption-popup {
+            position: absolute;
+            
+            /* REMOVE: left: 0; */
+            /* Position relative to the image container */
+            top: 0;
+            max-width: 100%;
+            /* Width handling - auto for text, but constrained */
+
+            font-size: .8em;
+            padding: 0px 10px 0px 10px ! important;
+            box-sizing: border-box;
+            text-align: center !important;
+            font-size: 0.8em;
+            pointer-events: auto;
+            Display: block !important;
+
+            /* INITIAL STATE - HIDDEN */
+            opacity: 0 !important;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            pointer-events: none;
+
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+        }
+        /* Position captions based on alignment */
+        .image-align-left .image-caption-popup {
+            top: 40px;
+            right: auto;
+        }
+        .image-align-right .image-caption-popup {
+            top: 40px;
+            right: 20px;
+            left: auto;
+        }
+        .image-align-center .image-caption-popup {
+            top: 20px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+            box-sizing: border-box !important;
+        }
+        /* Hover state for centered captions */
+        .image-align-center .image-caption-popup:hover,
+        .image-align-center img:hover ~ .image-caption-popup {
+            transform: translateX(-50%) t!important;
+        }
+        /*  keeep this together.  */        
+
+        /* SHOW / HIDE POP-UP when hovering over image OR pop-up itself */
+        .image-container img:hover ~ .image-caption-popup,
+        .image-caption-popup:hover {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+
+        /* Ensure z-index stacking */
+        body .page .image-container .image-caption-popup {
+            z-index: 1000 !important;
+        }
+        body .page .image-container img {
+            z-index: 2 !important;
+        }
+                
+        /* PERMANENTLY SHOW POPUP: Force all popups to be always visible 
+        .image-caption-popup {
+            top: 30px;
+            opacity: 1 !important;
+            transform: none; !important;
+            pointer-events: auto !important;
+            transition: none !important;
+        }
+        /*********************************************/
+        /* Caption Pop-up Box - End */
+        /*********************************************/
+
+       /* Tablets and such */
+
+        @media (max-width: 768px) {
+
+            body {
+                margin-top: 0px !important;
+                height: 75% !important;
+                overflow: hidden;
+            }
+
+            /* Fix for iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }        
+
+                /* Book title - below back button */
+            .book-title {
+                font-size: 0.75em; /* Slightly smaller */
+                margin-bottom: 15px !important;
+            } 
+
+            .back-to-List {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            } 
+
+            /* Page number - top right */
+        
+
+            a {
+                color: #00b0ff !important; /* Even brighter for mobile */
+            }
+
+            a:focus {
+                outline: 2px solid #ffeb3b;
+                outline-offset: 2px;
+            }
+
+            .text-only-container {
+                width: 100% !important;
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }
+
+            /* Improved spacing for mobile text */
+            p, h1, h2, h3 {
+                margin-bottom: 1.2em !important;
+                line-height: 1.6 !important;
+            }
+
+            /* Adjust heading sizes for mobile */
+            h1 { font-size: 2.2em !important; }
+            h2 { font-size: 1.3em !important; }
+            h3 { font-size: 1.1em !important; }
+
+            /* Mobile table styles */
+            table {
+                min-width: 0 !important /* ALlow Shrinking */
+                width: 100%; !important /* Full width on mobile */
+                overflow-x: visible !important; /* Disable scrolling */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                background: rgba(15, 15, 15, 0.3) !important;
+                font-size: 0.9em !important;
+            }
+            table * {
+            box-sizing: border-box !important; /* Include padding in width */
+            }
+            
+            table a {
+                padding: 3px 8px; /* Larger tap targets */
+                background: rgba(0, 0, 0, 0.2); /* More contrast */
+                margin: 0 auto !important;
+            }
+            .table-container {
+                width: calc(100% - 10px) !important;
+                overflow-x: visible !important; /* Disable scrolling */
+            }
+            table th,
+            table td {
+                min-width: 0% !important ; /* Larger minimum on small screens */
+                white-space: normal !important; /* Ensure wrapping on mobile */
+                width: auto !important; /* Reset widths */
+                max-width: 100% !important;      
+            }
+                /* Slightly stronger contrast on mobile for readability */
+            table thead tr {
+                background: rgba(0, 0, 0, 0.4) !important;
+            }
+            table td.important-column {
+                width: 60% !important;
+                word-break: break-word !important; /* Break long words */
+                overflow-wrap: anywhere !important; /* Emergency break */
+            }
+            table td {
+                hyphens: auto !important;
+                word-break: break-word !important; /* Break long words */
+                overflow-wrap: anywhere !important; /* Emergency break */
+            }
+            /* Force links/buttons to wrap */
+            table a, table button {
+            white-space: normal !important;
+            display: inline-block !important;
+            }
+
+            .toc-container {
+                width: 95%;
+                padding: 15px 5px;
+            }
+            
+            .toc-entry {
+                margin: 6px 0;
+            }
+        }
+
+       /* phones and such */ 
+
+
+        @media (max-width: 415px) {
+            body {
+                margin-top: 0px !important;
+                height: 60% !important;
+                overflow: hidden;
+            }
+
+            .page {
+                /* Adjust height calculation */
+                height: 60vh !important;
+            }
+            .content-text {
+                font-size: var(--mobile-font-size) !important;
+            }
+            
+            /* Fix for iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }
+
+            .back-to-toc {
+                font-size: 0.6em;
+                padding: 5px 5px;
+                border-radius: 10px;
+            }
+            .back-to-list {
+                font-size: 0.6em;
+            }
+        
+            .toc-container {
+                margin-top: 50px;
+                width: 95%;
+            }
+              /* Reduce gap after heading */
+            .toc-container h2 {
+                margin-bottom: 8px !important; /* Reduce space below title */
+            }
+            .compact-button {
+            padding: 3px 8px !important;
+            font-size: 0.65em !important;
+            }
+
+
+            /* FORCE SIZE FORCE TO ImageWidthMobile */
+            /* MOBILE_FORCE_PLACEHOLDER - This will be replaced with conditional CSS */
+            
+        /* FORCE SIZE FORCE TO ImageWidthMobile */
+        .mobile-default-size img {
+            width:  90% !important;
+            max-width:  90% !important;
+            margin-top: 20px !important;
+            margin-bottom: 40px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;            
+            left: 50% !important;
+            transform: translateX(-50%) !important;     
+            height: auto !important;
+            float: none !important;
+            display: block !important;
+        }
+
+        /* FORCE ALL CAPTION POPUPS to be CENTERED on mobile */
+        .image-align-left .image-caption-popup,
+        .image-align-right .image-caption-popup,
+        .image-align-center .image-caption-popup {
+            width:  90% !important;
+            max-width:  90% !important;
+            top: 20px;
+            left: 50% !important; /* Center horizontally */
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
+            padding: 0px 10px 0px 10px ! important;
+        }
+                  
+
+            
+            /* Make captions always visible on mobile when active */
+            .image-caption-popup.mobile-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            /* ===== TABLE STYLES ===== */
+            .table-container {
+                width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                display: block;
+                margin: 15px 0;
+                background: rgba(0,0,0,0.1); /* Visual cue for scrollable area */
+                border-radius: 8px;
+                padding: 8px 0;
+            }
+
+            table {
+                display: table !important; /* Revert to table layout but allow scrolling */
+                width: auto !important;
+                min-width: 100% !important; /* Ensure it fills container */
+                white-space: nowrap;
+                font-size: 0.85em; /* Slightly smaller text for tables */
+            }
+
+            table th,
+            table td {
+                white-space: nowrap !important;
+                min-width: 100px !important; /* Reasonable minimum column width */
+            }
+
+            /* Optional scroll indicator */
+            .table-container::-webkit-scrollbar {
+                height: 5px;
+            }
+
+            .table-container::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.3);
+                border-radius: 5px;
+            }
+ 
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    
+    <div class="page active" id="page-0">
+        <div class="heading-container">
+            <h1>Observation of Thoughts</h1>
+            <br><br>
+            <h2>Listen Read Walk and Live in Chicago</h2>
+            <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
+                <br><br>Last updated: Sep 30, 2025<br><br>
+            </p>
+            <h3>~***~</h3>
+        </div>
+    </div>
+        
+
+    <div class="page" id="page-toc">
+        <div class="book-title">Observation of Thoughts</div>
+        <div class="toc-container toc-buttons">
+            <h2>Table of Contents</h2>
+            
+        <button onclick="window.open('https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html', '_self')" class="back-to-list">
+            AboutMe
+        </button>
+        
+            <div class="toc-button-container">
+                <a href="#page-1" class="back-to-toc compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="back-to-toc compact-button toc-link">Awareness(2)</a><a href="#page-3" class="back-to-toc compact-button toc-link">Unity(3)</a><a href="#page-4" class="back-to-toc compact-button toc-link">Silence(4)</a><a href="#page-5" class="back-to-toc compact-button toc-link">Serenity(5)</a><a href="#page-6" class="back-to-toc compact-button toc-link">Who am I(6)</a><a href="#page-7" class="back-to-toc compact-button toc-link">Words(7)</a><a href="#page-8" class="back-to-toc compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="back-to-toc compact-button toc-link">Vastness(9)</a><a href="#page-10" class="back-to-toc compact-button toc-link">Man and Boy(10)</a><a href="#page-11" class="back-to-toc compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="back-to-toc compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="back-to-toc compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="back-to-toc compact-button toc-link">Nani(14)</a><a href="#page-15" class="back-to-toc compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="back-to-toc compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="back-to-toc compact-button toc-link">Duniya(17)</a><a href="#page-18" class="back-to-toc compact-button toc-link">Lessons(18)</a><a href="#page-19" class="back-to-toc compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="back-to-toc compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="back-to-toc compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="back-to-toc compact-button toc-link">Time(22)</a><a href="#page-23" class="back-to-toc compact-button toc-link">Gratitude(23)</a><a href="#page-24" class="back-to-toc compact-button toc-link">Energy(24)</a><a href="#page-25" class="back-to-toc compact-button toc-link">Acceptance(25)</a><a href="#page-26" class="back-to-toc compact-button toc-link">Choices(26)</a><a href="#page-27" class="back-to-toc compact-button toc-link">Good and Bad(27)</a><a href="#page-28" class="back-to-toc compact-button toc-link">Writing(28)</a><a href="#page-29" class="back-to-toc compact-button toc-link">Let’s make a circle(29)</a>
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="page" id="page-1">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ThreeElementsWassilyKandinsky1925.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></p>There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. 
+The infinite can be transformed into less intimidating, even navigate-able explorations.<br><br>Earth-fire-water; a necessity for life. Man-woman-child; the essential unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams.<br><br>In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-2">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Awareness.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Awareness</span></p>I lie on the floor, on my left side, my head on my arm. I drive a red matchbox Citroen with springy wheels and a removable roof canoe. I hum the engine noise to myself - I hear the engine - I shift gears - I drive with precision around imaginary curves and turns - I keep humming - I park with precision in my imaginary spot - My humming keeps my attention fixed on my driving my Citroen across the balcony floor. The outside world fades and time stands still.<br><br>I become one with my being and my imagination.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-3">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Wall.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Unity</span></p>I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-4">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Rope.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Silence</span></p>I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look closely at the metal accordion gate. I notice the skipping rope hanging on the latch. I push the grip and watch the rope swing. I watch the swing reduce - and reduce - then slowly, begin to move in ever so small circles - now, I can now barely see it move - I watch the still, silent, unmoving rope - I feel the silence and the quiet within myself.<br><br>Silence filters the noise around me. I hear my thoughts. My thoughts are the voice of my soul. I dialog with my thoughts. We both listen.<br><br>Silence preserves my energy. I open up to new patterns, to new motivations. I recognize emotions for what they are. I become an observer, not an actor on my own stage.<br><br>Silence allows me to be with myself. I don’t have to accept. I don’t have to simplify or explain. I don’t have to partition myself. I don’t have to project. I am in agreement. I can remain close to my awareness of being. I can explore.<br><br>Silence grants me distance, it gives me clarity. I can develop a frame of reference that works for me. It gives me freedom to be authentic, fearless and purposeful.<br><br>My treasure is buried deep. It is the silence and a solo journey that will take me there.<br><br>Silence respects time and grants me personal growth.<br><br>Silence between the question and the answer is where “I” might be found.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-5">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Serenity.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Serenity</span></p>I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-6">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="AdiShankara-WhoAmI-800BCe.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Who am I</span></p>Advaita Vedānta tradition.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
+"I am other than name, form and action.  <br>
+My nature is ever free!  <br>
+I am Self, the supreme unconditioned Brahman.  <br>
+I am pure Awareness, always non-dual."</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-7">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Words.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Words</span></p>At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine.  Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-8">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Acknowledgement.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Acknowledgment</span></p>I saw him cross in front of me.<br><br>He stopped. He sat still. He was barely visible. He was one with nature. I watched him closely. His eyes moved. He observed me.<br><br>He appeared relaxed, trusting, comfortable, confident. I belong to a different species. Likely, he wanted nothing from me. Likely, he was just acknowledging of me, as I was of him.<br><br>We both stood motionless. In peace.<br><br>I captured this moment of silent mutual awareness. He was being generous with his presence. Does he know me from somewhere? I feel a closeness.<br><br>We moved on, to our different ways. I wonder where he will sleep tonight. Be well and thank you, Mr. Rabbit.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-9">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Vastness.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Vastness</span></p>They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-10">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Man&amp;boy-EmilyFelcher2025.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Man and Boy</span></p>The man busies himself, burying his fears and polishing his victories. Recognition is his just reward and adulation is his honor due.<br><br>The boy seeks love and acceptance, to understand that which childhood brings forth. After much wait, he finds it, buried inside him, gifts from distant people, from distant times. Freedom becomes his reward. After much delay, he teaches himself to pass it forward. He finds a purpose for his treasure.<br><br>The boy is luckier than the man. He is able to make time his friend.<p style="margin-left: 30px; font-size: 0.4em;">Emilyfelcher.wixsite.com/portfolio
+@em.the.artistt </p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-11">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="WheelOfLife.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Wheels of Life</span></p>It took a while for life to come into focus. I see me, rolling my wheels along many roads and alongside many travelers.<br><br>I push the wheels with sticks that I find by the wayside. I am proud of the sticks I find. Especially, the ones that are straight, strong and light. I spend time  sorting through sticks, Some are heavy and bent and some brake easily.  I notice people pushing wheels with all kinds of twigs and pieces of bark. I continue looking for sticks.<br><br>I look back to see my wheels moving along on their own. They are beckoning me to join. I don’t need sticks after all. I get behind my wheels. My wheels and I, we move along in harmony.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-12">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="FriendshipPicasso1908.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Be Well my Friend</span></p>My life long best friend and protector needs my help. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted.<br><br>I am there for him now, in deep gratitude. I align my mind and my soul, and share soothing conversations of rest, respect and love. We have so much to cherish.
+Together, we have been recipients of great treasures and blessings.<br><br>People journeying to great unknowns, to find us their best gifts, so we may come to be. They reach out, offering us strength and resolve to take our journey to where it leads.<br><br>There is much promise on the other side,  the promise of unity. There is also sadness, of parting ways one day. Like a rocket ship falling back to earth, he will see me off. I will feel great sadness as I look back fondly on times we had, things we made our own, and things we left behind. I will feel great joy as I realize that true treasure is that which we have gifted, some by design and some without. It has created a bond, an everlasting purpose.<br><br>That is the promise of what we will leave behind.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-13">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="LookingBack-EmilyFelcher2025.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Footsteps</span></p>Truth was often late coming to me, she got delayed crossing the bridge of believability.<br><br>My relationships with my many avatars of awareness, acknowledgement, understanding, acceptance, submission and release uncovered the true offerings of life and nature.<br><br>Going inwards before going outwards made my strength visible. They let me pass without a battle.<br><br>Shame has been the root of my pain.  Guilt lives in the house of prolonged blame. Guilt is the root of my self-doubt. My ego created greed and together they became the root of my conflicts. Letting them point out the bad’s and the good’s was at the root of my mistakes. I tried to give my thoughts, more attention than their words. Failing in that, was the root of my regrets.<br><br>My obligation has been an outcome of mis-directed responsibility, the former kept me trapped while the latter set me free. The real measure of my happiness has been the reduction of suffering in myself. My inheritance from people who survived over a few million years should have been sufficient for me to thrive for a few decades. My survival was never at stake, the freedom to reach my own realizations has always been. Silence has been my safe place. Silence has been my treasure.<br><br>Self interest is ubiquitous, self discipline is not. The irony about discipline is that once you have it, you don’t need it.  Being a non-conformist was natural. There was much to observe when alone. Sometimes there was more to be gained, but there was always more to be lost. I accept my losses. Discovery buried in the details gave me a sense of accomplishment. People who have hurt me come to mind so much easier than people who have helped me. I have not done well with gratitude.<br><br>Kids deserve a chance to shape their contributions. My attempts to keep them free from fears, illusions and  promises were partially successful.<p style="margin-left: 30px; font-size: 0.4em;">Emilyfelcher.wixsite.com/portfolio
+@em.the.artistt </p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-14">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Nani.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Nani</span></p>“I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-15">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="GeorgeInness-TheLastGlow1885.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">In Crossing</span></p>I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure of intent. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light.<br><br>I embrace the sense of achievement, for a past well-lived, gratitude for the treasures found, fondness for the memories left, hope for the work incomplete, promise for the desires unfulfilled, comfort for the beings in the woods, encouragement for the dreams carried, love for my fellow journeying souls,  respect for the togetherness offered, nostalgia for times spent. Peace for all.<br><br>We shall meet again.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-16">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ClydeSinger-RushHour1937.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">CityVerse</span></p>A place that binds people and experiences together - to co-exist, to support and to flourish. A place of majestic structures, roads, and dreams.  A place where communities share discoveries,  joys and sorrows. A place of inspiration to create new stories and  share old ones.<br><br>A place where countless experiences are beckoning from around every corner.
+A place that reveals the strength, in the struggles and successes, of times gone by. A place where every brick on every wall, tells of a design and a purpose for its being, placed there by a man, as an expression of his creativity and toil.<br><br>A place that provides camaraderie, and easy ways to get lost in a crowd. A place where the freedom to dream allows the  welcome of the unexpected.<br><br>A place where streams of energy emanate from every cobblestone. A place that gladly offers this energy to energize the body and the soul.<br><br>A place that is a kaleidoscope of movement. A place where every block shares a different promise and every street points to a different path.<br><br>A place that has become an essential part of my being. A place that creates a whole that is vastly greater than the sum of its parts and makes it available for all to partake.<br><br>There is a permanence to a city, a steadfast presence. There is continuity amidst change. There is strength in the diversity. There is promise in the uncertainty. There is peace in the chaos.<br><br>I find new offerings every day. I am grateful for it.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-17">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="EdwardMunch-Vampire1895.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Duniya</span></p>Love envelopes nature. It nurtures bonds of togetherness and extolls virtues of harmony. It builds communities of peace.<br><br>Power, shrouds itself in righteousness, grasps at strength and demands obedience to offer a pretense of peace.<br><br>One destroys, the other creates. One hurts, the other heals. One gains fame, the other remains anonymous. One fears, the other suffers.<br><br>Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain  unread between the pages of time.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-18">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Lessons</span></p>Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
+(Adapted from NY30Rock)<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-19">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Stones.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Stones, Wind and Water</span></p>Oh! How the mighty mountains have been ravaged by wind, water and time into pieces of stone scattered on the ground.<br><br>As time passed, the stones transformed themselves into pyramids, minarets and stupas, attempting to recapture the majesty, the power and the purpose of the mountains they came from.<br><br>Why did the stones on top forget that the higher they go, the harder they fall? Why did the stones on top forget, that growing bigger only makes the wind push harder? Why did the stones at the bottom not recognize the increased burden? Why did the stones at the bottom not see their purpose diminished?<br><br>Why did they not seize the opportunity to be stable on the ground, to be next to each other, to be away from the wind, to be able to gather around and hold water for plants, and flowers and birds? Why did they not see themselves as stepping stones, leading a path in support of the glories in nature? Why did they not realize that this was their destiny?<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-20">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Wars.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Manufacturing Conflict</span></p>Wars waged on, egged by the egos of lords, masquerading as ideology.<br><br>No matter who won, both are diminished. The lords will profit more if they collude to establish collective dominion over the serfs. But their egos goaded them to war.<br><br>The disproportional distribution of wealth, ensures that the winning serfs will get little or none of the spoils of war. The losing serfs and their families will suffer pain, dishonor, years of servitude and abject poverty. Serfs will risk their lives and a great many will loose it. 
+Blacksmith’s on both sides will profit, selling arrows, swords, spears and shields. Neighboring lords will smell blood in the water and join in, taking all they can.<br><br>Ego demands serf blood, and gets it. Ideology makes serfs act against their own self interest. Blows traded spawn never ending cycles of violence. War morphs from a choice made by the lords, to a necessity for the serfs. The lords nurse their bruised egos back to glory.<br><br>The lords are always the winners. History remembers them. The serfs have no names.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-21">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Ideology-NaziProps.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Ideologies & Realities</span></p>“A heroic leader on a white horse rallies the troops, while the wounded valiantly struggle to get on their feet to resume the fight.” , “ with illusions of honor”, “knowingly welcoming death. ”<br><br>Ideology is the primordial state of augmented reality serving to simplify it to willing listeners. Ideology insists, on the one hand, that its depiction of the underlying reality, albeit in its simplest form, is accurate, and on the other hand, its association with that reality is sacrosanct.<br><br>Ideology purports to enhance the value of reality by making it accessible, understandable and acceptable. It reduces the multitude of properties of reality, into a single dominant characteristic, to deliver a concrete shape that can be received  through simple abbreviations of thought. It reduces reality to a probability. It trains the mind to constrain reality, and claims this as necessary, for understanding to occur.<br><br>This “subligation” from reality, becomes our natural. It becomes the core of our progressive learning. It permits us to congratulate ourselves on our intelligence, our righteousness or any other attribute we wish to be identified with. We can now safely ignore what is “abrogated” from reality.<br><br>This partition of the “subligated” and “abrogated” is not absolute. It does not need to be. Participation can occur as an observer of reality, not an explainer of it.<br><br>The whole picture emerges, as I seek “descriptive adequacy”, not “explanatory clarity”. Ideology takes my freedom away.<br><br>Ideology positions itself to be more important than reality. Illusion becomes reality and reality is relegated to the realm of an “imagined” state. But, without reality there is no ideology.<br><br>Ideologies grouped together become rituals. Ideology grants an implied meaning to rituals indicating that somehow rituals have an impact on reality.<br><br>Winning an argument becomes a certainty if is preceded by a pivot from reality to ideology. Since reality has many detractors, it is the easiest pivot.<br><br>Filtering attributes of reality to project it on an already accepted ideology, masks the underlying harsh, impoliteness of truth.<br><br>In a contest with ideologies, reality loses the battle every time . It is a win of reason over knowledge.<br><br>Ideology explains that which we want to be true.  In its most harmful state,  ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization occurs when most of the damage is done.<br><br>We “buy organic sugar” because we believe that we engage in healthy pursuits. We “associate wealth with our self worth” because it is natural, not because it is a fetish. We “reward monopolies” because we believe they must be doing it better than everyone else.  We “consume” because we believe we deserve it. We “tolerate”, because we believe things could be far worse.  We “fight” because we believe we are on the side of the just. We “kill” because they “would do worse to us” or “in the name of what’s right” or as in it’s latest form, “to stop violence”, “to bring peace”. and on and on and on …<br><br>We are pre-disposed to adopting ideologies as explanations to uncomfortable truths. A gentle nudge completes the journey.  Once an association is established between any reality and any accepted ideology, the reality, no matter how grotesque it is,  inherits the qualities that the ideology purports to project.<br><br>Ideology gently cleanses our view of the undesirable state until truth is no longer necessary. It makes irrelevant all that is unsaid. It blurs the lies. It deflects responsibility. It negates our role in reality. It enables the death of hope. It  constrains us inside acceptable frames of reference.<br><br>We feel good. We don’t realize we are the “boiling frog.” We make freedom and self-expression the causality.  We accept that this as the best that is possible. We believe, “It really can’t be that bad”, “it will only get better”, “we, must therefore make the best of it”, “what better choice do we have”<br><br>Time tested structures in society, from the humble family unit, to corporations, to governments and religions, effectively use ideologies to favor the few and suppress the many.<br><br>Are we satisfied with descriptive adequacy or do we seek explanatory understanding? Do we rely on evidence gathered in due course of time, or do we draw conclusions based on reasoning? Do we understand how our biases define our acceptances? Do we have the freedom to dis-associate ideology from reality without fear of punishment?
+Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?<br><br>History tells us stories of ideology. Time will reveal the stories of reality.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-22">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="DamielHeller-Time.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Time</span></p>Time is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous.  It creates no awareness of its presence. It has no enemies.<br><br>The cognitive revolution in man started with an understanding of tense - past and future.  It gave man, memory and anticipation.<br><br>Understanding came from evaluating outcomes that occurred in the past. Hope came from plans and actions, to direct outcomes in the future.  Happiness and sadness came from occurrences in the past. Excitement and fear stem from anticipations of the future. Illusions of confidence, came from plans and action’s perceived ability to control future outcomes.<br><br>Value comes from favorable outcomes accumulating over time.  Time gave us a basis for measuring value. Achieved value depreciates in time. Value is rarely persistent.<br><br>Man discovered a purpose in life - “the desire to preserve or grow value over time”.  Gain of value represented security. Its potential loss became a threat. The desire to hoard value formed the basis of greed.  Greed became essential for the “new” survival. Greed was “good”.<br><br>History is an account of two dimensions, time and the transfer of value amongst men. The velocity of transfer has been proportional to the of brutality in the occurrence.<br><br>Man evolved from the pursuit of food, sex and shelter, to seeking value, fearing the loss of it, and acting in ever creative ways to secure as much of it as possible for himself.<br><br>This new found pursuit became the root of all good and all evil that mankind  brought upon himself and on nature. 
+The “hoarders of value” learnt to collaborate to grow. They learnt to deceive and to usurp another’s value. They learnt to adapt to new threats. They extinguished all species, whose behavior did not direct value to them. They  “domesticated” all else. They eliminated men, sparing only those willing to submit their value to them.<br><br>Humble men who were secure in the knowledge that three hours of hunting and gathering, each day, was sufficient to sustain life,  became insecure in a 24 hour pursuit of value for someone else. 
+Humanity may pivot to re-claiming time for peace, harmony and well-being. We may choose to focus on the awareness of our being and that of others and make time our friend. We may re-orient understanding and hope and put it to work for our collective well-being.<br><br>Maybe, we will.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-23">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="AlbrechtDurer-PrayingHands1507.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Gratitude</span></p>I have so much … so much, to be grateful for. i forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received.<br><br>Happiness is a gift that is short lived.  Efforts to reduce pain, without joy to fill the void, is an uphill battle.<br><br>If there ever was a switch that can turn  “on” happiness, I believe It is gratitude.<br><br>When gratitude is expressed, the grantor gets to recognize their effort as a success and be acknowledged for it. That opens the door to good feelings.<br><br>When gratitude is expressed, the receiver gets to enjoy the benefit of the gift and the knowledge that the grantor has been rewarded with expressed appreciation.<br><br>Gratitude accompanied by mutual respect, with no expectation of profit or recurrence on the part of the receiver, and an acceptable effort on the part of the grantor, grants favor to both.<br><br>The process of receiving a gift is the best motivator for paying it back to someone else in some other form. It pushes the wheels of life forward. It nurtures a community.<br><br>Feeling grateful for a gift received, or being thankful to be able to give one, is an instant “on” for good feelings and positivity.<br><br>People ask me what I plan to do when I retire. i am hard pressed to find a better use for my time.<br><br>There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities,  to pay and to receive as I go forward.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-24">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Energy.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Energy - Food for the Soul</span></p>I sense that all things radiate energy.<br><br>The non-living do so in quantities that are largely fixed in intensity and form - a stone might offer its energy as a result of where it is found, or it might present a particular color. It is largely static. It changes form only when acted upon by an external source of energy.<br><br>Mountainsides and caves are formed by flowing water - or - are made into beautiful sculptures by the skilled hands of man - or - chunks of carbon provide heat when burned - or - are pressed into diamonds over time.<br><br>Unlike stones, living beings continuously make decisions on what energy they absorb, how they interpret it, how they transform it, how much they radiate out, in what form and to whom.  They find purpose in employing this energy to make things of “matter”, to the benefit of all.<br><br>Humans, as compared to other living creatures, have evolved to the pinnacle of this capability.<br><br>The energy sources that we can tap into is limitless. What we do with it, however is limited by our awareness of its presence and its power to transform our imagination.<br><br>We all start out as unconscious consumers of energy, and employ it without much thought or purpose. We rely on our primordial instinct to direct its use.<br><br>Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that that we have the responsibility to use it for the benefit of all.<br><br>Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-25">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Acceptance</span></p>Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK.<br><br>Acceptance of a win incurs a responsibility and commitment that defines the final outcome from the win.<br><br>Acceptance of a defeat has no relevance to the unfolding situation, nor is it of any consequence to the people impacted. The winner defines the relevance and consequence. It may however, give the vanquished a few additional choices on how he conditions his personal response to the defeat.<br><br>No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I accept my wins. I accept my losses. <br><br>
+I accept my acceptances. </p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-26">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Choices</span></p>I have choices. I hear opinions.<br><br>Do I see the pitfalls? What do I consider, what do I discard?  Do I act now or wait? Do I choose a sinful path, or a virtuous one?. Do I pick ascent or descent? Do I push through to victory, do I retreat? Do I prioritize me or them? Do I know right from wrong?<br><br>All actions are an act of choice.<br><br>All will be judged based on the time and effort consumed to release residual energies in all participants. The final verdict becomes available only after all the healing and cleansing is done.<br><br>Until then, there are choices and there are opinions.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-27">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="RepraisalsFromUprisingOf1857.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Good and Bad</span></p>We seek good. Good welcomes. It opens its doors.  Some come to be part of the good, and some come to profit from it. Good shares its fortunes, the bad eagerly takes it.<br><br>The two take sides, like a child’s see-saw, sometimes one is up, sometimes the other.<br><br>The bad doesn’t have to play by the rules. It has an edge. It works persistently to exploit the advantage . Eventually the bad triumphs. But in their triumph they have destroyed the good - they have killed the goose that laid the golden egg.<br><br>The bad cannot survive without the good. They have nothing to feed on. They have to leave. If they stay they will feed on each other. They must leave,  before they empty the place of all life. They know they will be back, when the good has painstakingly rebuilt itself from the rubble.<br><br>So they leave. They leave behind despair and ruin. They leave behind numb pain. The bad have no desire to share in the pain. Ironically, it makes them feel “bad”.  So, they leave.<br><br>On their way out, they bad feel compelled to justify their actions, even paint them in a good light. It makes them feel “good”. Even the bad want to feel good. They excuse the bad by pointing to the “good they have done”.  They blame the good “for not seeing it”. They say the bad had to be done for the sake of the good. They say it’s self defense. They are victims too. If only the good hadn’t resisted so much. They even say they are sorry to have done it.<br><br>THE BAD - In 1857, the British rode in to observe their win, "The orders went out to shoot every soul," recorded Edward Vibart, a newly-orphaned 19-year-old subaltern. "It was literally murder.... I have seen many bloody and awful sights lately but such a one as I witnessed yesterday I pray I never see again. The women were all spared but their screams, on seeing their husbands and sons butchered, were most painful.... Heaven knows I feel no pity, but when some old grey bearded man is brought and shot before your very eyes, hard must be that man's heart I think who can look on with indifference....". Though the royal family had surrendered peacefully, most of the emperor's sixteen sons were tried and hung, while three were shot in cold blood, having first freely given up their arms, then been told to strip naked: "In 24 hours I disposed of the principal members of the house of Timur the Tartar," Captain William Hodson wrote to his sister the following day. "I am not cruel, but I confess I did enjoy the opportunity of ridding the earth of these wretches."<br><br>THE GOOD - Along a dark, dingy back passage of the fort, Russell was led to the cell of a frail 83-year-old man who was accused by the British of being one of the masterminds of the Great Rising, or Mutiny, of 1857, the most serious armed act of resistance to Western imperialism ever to be mounted anywhere in the world. "He was a dim, wandering-eyed, dreamy old man with a feeble hanging nether lip and toothless gums," wrote a surprised Russell. "Not a word came from his lips; in silence he sat day and night with his eyes cast on the ground, and as though utterly oblivious of the conditions in which he was placed.... His eyes had the dull, filmy look of very old age.... Some heard him quoting verses of his own composition, writing poetry on a wall with a burned stick." For all the tragedy of his life, he was able to see that the world continued to turn, and that however much the dogs might bark, the great caravan of life continues to move on. He wrote in a poem, shortly after his imprisonment, and as Mughal Delhi lay in ruins around him:<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
+Delhi was once a paradise,  <br>
+Where Love held sway and reigned;  <br>
+But its charm lies ravished now  <br>
+And only ruins remain.<br>
+<br>
+No tears were shed <br>
+when shroudless they  <br>
+Were laid in common graves;  <br>
+No prayers were read for the noble dead,  <br>
+Unmarked remain their graves<br>
+But things cannot remain, O Zafar,  <br>
+Thus, for who can tell?  <br>
+Through God's great mercy and the Prophet  <br>
+All may yet be well.
+</p>It is accurate to say that the Mughals did exactly this to the good residents of Delhi a few generations ago. The good then was in such plentitude that it may have transformed the then bad.<br><br>Occasionally that seems to happens too. Could it be that Gaza is going through this ordeal now?<p style="text-align: center; font-style: bold;"> ~***~ </p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">(Excerpts from William dalrymple)</p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-28">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="WritingGeorgeLin.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Writing</span></p>Creativity thrives along the path from the knowledge core, to the edges of cognitive capacity. It is guided by pre-dispositions inherent to me.<br><br>As I write my words, I receive the learning that the writing process offers to me. I learn to give meaning to my innermost thoughts, to polish them to a bright shine and to lay them out for all to see. Most of all, I experience an awareness of who I am.<br><br>When I read my own words, I get to bring my thoughts, experiences and my emotions back to life. I re-live the sights, the sounds, the smells to find new meaning in them. I get to understand where the words came from. I get to re-visit why I put them there.<br><br>I think of writing as an expanded form of painting. It allows me to add the nuances of thought. In my mind, a thoughts start with an image. Words allow me to explore my thoughts.<br><br>I would like to think that the readers of my words will get to explore their thoughts in a different light.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-29">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Manipulate.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Let’s make a Circle</span></p>I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture.<br><br>I see their image floating into place at the center of the picture. I recognize the implication -  they represent the truth. They start placing artifacts of value around them, scattered about in a circle. They present the artifacts as reflections of their truth, as outcomes of their rightful behavior.<br><br>The artifacts seem slightly out of focus. I say nothing. They notice my willingness to accept the scene, imperfect as it is. 
+ 
+ They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts around them. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle.<br><br>They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one before it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism.<br><br>They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene.<br><br>I am now committed to their story. The imperfections in their scene now become mine. The blurriness of my artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth.<br><br>In the absence of introspection on their part, dissidence on my part, is a confirmation of my intent to cause them harm.  Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love.<br><br>They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon.<br><br>They express surprise and shock, as they see me leave. But their pain doesn’t last long. They have located their next conquest.<br><br>The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-30">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br>
+    </div>
+    
+            </div>
+        </div>
+        
+    <!-- Arrow Hover Areas - Always present -->
+    <div class="arrow-area left"></div>
+    <div class="arrow-area right"></div>
+    
+    <!-- Arrow Containers - Always present -->
+    <div class="arrow-container left" id="left-arrow-container" data-visible="false">
+    <div class="nav-arrow left"></div>
+    </div>
+    <div class="arrow-container right" id="right-arrow-container" data-visible="false">
+        <div class="nav-arrow right"></div>
+    </div>
+
+    <!-- Slider Hover Area -->
+    <div class="slider-area"></div>
+    
+    <!-- Slider Container -->
+    <div class="slider-container" id="slider-container" style="">
+        <div class="slider-wrapper">
+            <div class="slider-track" id="slider-track"></div>
+            <input type="range" min="0" max="31" value="0" class="slider" id="page-slider">
+        </div>
+        <div class="slider-info">
+            <span id="current-page">0</span>/<span id="total-pages">31</span>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 31;
+        const pages = document.querySelectorAll('.page');
+
+        const page0Skipped = false;
+
+        const slider = document.getElementById('page-slider');
+        const sliderTrack = document.getElementById('slider-track');
+        const progressBar = document.getElementById('progress-bar');
+        const currentPageDisplay = document.getElementById('current-page');
+        const totalPagesDisplay = document.getElementById('total-pages');
+        const leftArrowContainer = document.getElementById('left-arrow-container');
+        const rightArrowContainer = document.getElementById('right-arrow-container');
+        const sliderContainer = document.getElementById('slider-container');
+
+        // FIXED: Image caption handling
+        document.addEventListener('DOMContentLoaded', () => {
+            // Debug: Check if captions are being generated
+            console.log('Image captions found:', document.querySelectorAll('.image-caption-popup').length);
+            document.querySelectorAll('.image-caption-popup').forEach((caption, i) => {
+                console.log(`Caption ${i}:`, caption.textContent);
+            });
+
+            // Make captions click-to-toggle on mobile
+            document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                caption.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Toggle visibility
+                    if (caption.style.opacity === '1' || 
+                        getComputedStyle(caption).opacity === '1') {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    } else {
+                        caption.style.opacity = '1';
+                        caption.style.transform = 'translateY(0)';
+                        caption.classList.add('mobile-visible');
+                    }
+                });
+            });
+            
+            // Close all captions when clicking elsewhere (only on mobile)
+            document.addEventListener('click', (e) => {
+                // Only close if not clicking on a caption
+                if (!e.target.closest('.image-caption-popup')) {
+                    document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    });
+                }
+            });
+
+
+            // Manual pop-up toggle for testing
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('=== MANUAL POPUP TEST ===');
+                
+                let allPopupsVisible = false;
+                
+                // Add toggle button for testing
+                const testButton = document.createElement('button');
+                testButton.textContent = 'Toggle All Popups';
+                testButton.style.position = 'fixed';
+                testButton.style.top = '10px';
+                testButton.style.right = '10px';
+                testButton.style.zIndex = '9999';
+                testButton.style.padding = '10px';
+                testButton.style.background = 'red';
+                testButton.style.color = 'white';
+                testButton.style.border = 'none';
+                testButton.style.borderRadius = '5px';
+                testButton.style.cursor = 'pointer';
+                
+                testButton.addEventListener('click', () => {
+                    allPopupsVisible = !allPopupsVisible;
+                    const popups = document.querySelectorAll('.image-caption-popup');
+                    
+                    popups.forEach(popup => {
+                        if (allPopupsVisible) {
+                            popup.style.opacity = '1';
+                            popup.style.transform = 'translateY(0) scale(1)';
+                            popup.style.background = 'rgba(255,0,0,0.9)';
+                        } else {
+                            popup.style.opacity = '';
+                            popup.style.transform = '';
+                            popup.style.background = '';
+                        }
+                    });
+                    
+                    console.log('All popups', allPopupsVisible ? 'VISIBLE' : 'HIDDEN');
+                });
+                
+                document.body.appendChild(testButton);
+            });            
+            
+            // Add touch events for mobile
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.addEventListener('touchstart', (e) => {
+                    // Prevent default to avoid scrolling issues
+                    if (e.target.closest('.image-caption-popup')) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+            });
+        });        
+
+        // Determine initial page based on configuration
+        function getInitialPage() {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            if (page0Skipped && hasTOC) {
+                return 0; // Start at TOC (page 0)
+            } else if (!page0Skipped && hasTOC) {
+                return 0; // Start at title page (page 0)
+            } else if (page0Skipped && !hasTOC) {
+                return 0; // Start at first content page (page 0)
+            } else {
+                return 0; // Start at title page (page 0)
+            }
+        }
+
+        // Initialize with correct active page
+        document.addEventListener('DOMContentLoaded', () => {
+            // First deactivate all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // If title page exists and isn't skipped, start there
+            if (!page0Skipped && document.getElementById('page-0')) {
+                currentPage = 0;
+                document.getElementById('page-0').classList.add('active');
+            } else {
+                // Otherwise start at TOC or first content page
+                currentPage = 0;
+                pages[currentPage].classList.add('active');
+            }
+
+            const booklistBtn = document.querySelector('.back-to-list');
+            if (booklistBtn) {
+                booklistBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html';
+                    if (!url.startsWith('http')) {
+                        url = 'https://' + url;
+                    }
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
+                });
+            }
+
+            updateSlider();
+            updateProgress();
+            
+            // Add header elements to all pages except the title page (if shown)
+            const startPage = false ? 0 : 1;
+
+            for (let i = startPage; i < pages.length; i++) {
+
+                // Skip TOC page
+                if (pages[i].id === 'page-toc') continue;            
+
+                const header = document.createElement('div');
+                header.className = 'page-header';
+                
+                // Back to TOC button (left side)
+                if (document.getElementById('page-toc')) {
+                    const backButton = document.createElement('a');
+                    backButton.className = 'back-to-toc';
+                    backButton.href = '#page-toc';
+                    backButton.textContent = 'Contents';
+                    header.appendChild(backButton);
+                }
+                
+                // Page number (right side)
+                const pageNumber = document.createElement('div');
+                pageNumber.className = 'page-number';
+                pageNumber.textContent = calculatePageNumber(i);
+                header.appendChild(pageNumber);
+                
+                pages[i].insertBefore(header, pages[i].firstChild);
+            }
+            
+            // Touch events for swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });            
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                    case 'PageDown':
+                        nextPage();
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                    case 'PageUp':
+                        prevPage();
+                        break;
+                }
+            });
+
+            // Update slider track fill
+            slider.addEventListener('input', updateSliderTrack);
+            updateSliderTrack();
+            
+            // Connect slider to page navigation
+            slider.addEventListener('change', function() {
+                goToPage(parseInt(this.value));
+            });
+            
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = document.querySelector(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top of page
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });            
+            });  
+
+            // Arrow click events
+            leftArrowContainer.addEventListener('click', prevPage);
+            rightArrowContainer.addEventListener('click', nextPage);
+
+            // TOC Navigation (handles both list and button styles)
+            document.querySelectorAll('.toc-link, .back-to-toc').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = targetId.startsWith('#') 
+                        ? document.querySelector(targetId)
+                        : document.getElementById(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.replace('#', '')) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+
+        // Calculate proper page number based on Page0_skip and TOC
+        function calculatePageNumber(index) {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // Table of contents - TOC
+            if (page0Skipped && hasTOC) {
+                // Case 1: Both flags true
+                return index === 0 ? "" : index;
+            } else if (!page0Skipped && hasTOC) {
+                // Case 2: Only TOC enabled
+                return index === 0 ? "Title" : (index === 1 ? "" : index - 1);
+            } else if (page0Skipped && !hasTOC) {
+                // Case 3: Only Page0_skip enabled
+                return index + 1;
+            } else {
+                // Case 4: Neither flag set
+                return index === 0 ? "Title" : index;
+            }
+        }
+        
+
+        function updateSliderTrack() {
+            const value = slider.value;
+            const max = slider.max;
+            const percent = (value / max) * 100;
+            sliderTrack.style.width = `${percent}%`;
+        }
+
+        function goToPage(pageNum) {
+            if (pageNum < 0 || pageNum > totalPages) return;
+            
+            const currentActive = document.querySelector('.page.active');
+            if (currentActive) {
+                currentActive.classList.remove('active');
+                currentActive.classList.add('exit');
+            }
+            
+            setTimeout(() => {
+                if (currentActive) {
+                    currentActive.classList.remove('exit');
+                }
+                currentPage = pageNum;
+                pages[currentPage].classList.add('active');
+                updateSlider();
+                updateProgress();
+            }, 300);
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                goToPage(currentPage + 1);
+            }
+        }
+
+
+        function prevPage() {
+            if (currentPage > 0) {
+                // If we're on the first content page and page0 is skipped, don't go back
+                if (page0Skipped && currentPage === 0) {
+                    return;
+                }
+                goToPage(currentPage - 1);
+            }
+        }
+
+
+        function handleSwipe() {
+            const threshold = window.innerWidth * (CONFIG.ARW_HOVER_WIDTH / 100);
+            const distance = touchStartX - touchEndX;
+            
+            if (Math.abs(distance) < threshold) return;
+            
+            if (distance > 0) {
+                nextPage();
+            } else {
+                prevPage();
+            }
+        }
+        function updateSlider() {
+            slider.value = currentPage;
+            currentPageDisplay.textContent = currentPage;
+            updateSliderTrack();
+        }
+
+        function updateProgress() {
+            const progress = (currentPage / totalPages) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        
+        // The next set of functions are for code handling and encryption
+
+        // Generate a random IV for AES-GCM
+        function generateIV() {
+            return crypto.getRandomValues(new Uint8Array(12));
+        }
+
+        // Generate salt for key derivation
+        function generateSalt() {
+            return crypto.getRandomValues(new Uint8Array(16));
+        }
+
+        // Convert string to Uint8Array
+        function strToBuf(str) {
+            return new TextEncoder().encode(str);
+        }
+
+        // Convert Uint8Array to string
+        function bufToStr(buf) {
+            return new TextDecoder().decode(buf);
+        }
+
+        // Derive a key from password and salt using PBKDF2
+        async function deriveKey(password, salt) {
+            const passBuf = strToBuf(password);
+            const keyMaterial = await crypto.subtle.importKey(
+                "raw", passBuf, "PBKDF2", false, ["deriveKey"]
+            );
+            return crypto.subtle.deriveKey(
+                {
+                name: "PBKDF2",
+                salt: salt,
+                iterations: 100000,
+                hash: "SHA-256"
+                },
+                keyMaterial,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["encrypt", "decrypt"]
+            );
+        }
+
+        // Encrypt plaintext with password
+        async function encrypt(plaintext, password) {
+            const salt = generateSalt();
+            const iv = generateIV();
+            const key = await deriveKey(password, salt);
+            const encrypted = await crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                strToBuf(plaintext)
+            );
+            // Combine salt, iv, and encrypted data in base64 for storage/transmission
+            const combined = new Uint8Array(salt.byteLength + iv.byteLength + encrypted.byteLength);
+            combined.set(salt, 0);
+            combined.set(iv, salt.byteLength);
+            combined.set(new Uint8Array(encrypted), salt.byteLength + iv.byteLength);
+            return btoa(String.fromCharCode(...combined));
+        }
+
+        // Decrypt encrypted base64 string with password
+        async function decrypt(encryptedBase64, password) {
+            const combined = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
+            const salt = combined.slice(0, 16);
+            const iv = combined.slice(16, 28);
+            const data = combined.slice(28);
+            const key = await deriveKey(password, salt);
+            const decrypted = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                data
+            );
+            return bufToStr(decrypted);
+        }    
+
+        // Make this function async and use await
+        async function handleRedirect(inputId, correctCode, redirectUrl) {
+            const input = document.getElementById(inputId);
+
+            try {
+                const password = "your-strong-password";
+                
+                const decrypted = await decrypt(redirectUrl, password);
+                alert("Decrypted: " + decrypted);
+                
+                // Then the redirect logic
+                if (input.value === correctCode) {
+                    window.location.href = decrypted;
+                } else {
+                    alert("Invalid code - (" + input.value + "). Please try with the correct provided code.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred during encryption/decryption");
+            }
+        }        
+
+        // Current date display
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                // hour: '2-digit',
+                // minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = 
+                new Date().toLocaleDateString('en-US', options);
+        });
+        
+    </script>
+</body>
+</html>
