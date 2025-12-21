@@ -300,10 +300,11 @@ History is an account of two dimensions, time and the transfer of value amongst 
 
 Man evolved from the pursuit of food, sex and shelter, to seeking value, fearing the loss of it, and acting in ever creative ways to secure as much of it as possible for himself. 
 
-This new found pursuit became the root of all good and all evil that mankind  brought upon himself and on nature. 
+This new found pursuit became the root of all good and all evil that mankind brought upon himself and on nature. 
 The “hoarders of value” learnt to collaborate to grow. They learnt to deceive and to usurp another’s value. They learnt to adapt to new threats. They extinguished all species, whose behavior did not direct value to them. They  “domesticated” all else. They eliminated men, sparing only those willing to submit their value to them. 
 
 Humble men who were secure in the knowledge that three hours of hunting and gathering, each day, was sufficient to sustain life,  became insecure in a 24 hour pursuit of value for someone else. 
+
 Humanity may pivot to re-claiming time for peace, harmony and well-being. We may choose to focus on the awareness of our being and that of others and make time our friend. We may re-orient understanding and hope and put it to work for our collective well-being. 
 
 Maybe, we will.
@@ -384,8 +385,8 @@ All will be judged based on the time and effort consumed to release residual ene
 Until then, there are choices and there are opinions. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-## Good and Bad
-![[RepraisalsFromUprisingOf1857.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Good and Bad</span></p>
+## The Good, The Bad
+![[RepraisalsFromUprisingOf1857.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">The Good, <br>The Bad</span></p>
 
 We seek good. Good welcomes. It opens its doors.  Some come to be part of the good, and some come to profit from it. Good shares its fortunes, the bad eagerly takes it. 
 
@@ -452,19 +453,91 @@ I see their image floating into place at the center of the picture. I recognize 
  
  They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts around them. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle. 
 
-They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one before it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism. 
+They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one inside it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism. 
 
 They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene. 
 
-I am now committed to their story. The imperfections in their scene now become mine. The blurriness of my artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. 
+I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. 
 
-In the absence of introspection on their part, dissidence on my part, is a confirmation of my intent to cause them harm.  Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love. 
+Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love. 
 
 They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon. 
 
-They express surprise and shock, as they see me leave. But their pain doesn’t last long. They have located their next conquest. 
+They express surprise and shock, as they see me leave. But their pain doesn’t last long. They get busy keeping their current conquests on life support. There is still more harvesting that is possible. 
+
+They get busy looking for their next conquest. 
 
 The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Diwali  
+![[Diwali.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>
+
+My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life. 
+
+The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward. 
+
+The light from my flame shows me other people on moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me. 
+
+The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away. 
+
+I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself. 
+
+I never imagined that one flame could transform the world into a bright, sparkling festival of lights. 
+
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Pathways to being. 
+![[PathToBe.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Pathways to being</span></p>
+
+Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration 
+
+We keep going around… 
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Just Asking
+![[JustAsking.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Just Asking</span></p>
+
+Was a dollop of passion dropped on us and we are now purposed with the pursuit of knowledge and excellence in the exercise of that passion?
+
+Are we to spend this life in fearful praise and patient anticipation because our self pronounced faith professes immense joy in the afterlife?
+
+Are we to immerse ourselves in efforts bringing value to others or find cures to ailments, because we are told, it is the right thing to do?
+
+Are we to receive small pleasures, like shells scattered on the beach, as our ultimate reward for each day? 
+
+Are we to skim the surface of life seeking nothing, finding nothing, but being content nonetheless?
+
+Are we to think of life as a game of chance and accept, wherever comes our way? 
+
+If the rewards of pursuit results in continuity of living, is the hunt worth the effort? Should we care? Doesn't life continues on its own to its eventual end?
+
+Will the pursuit of journey into the self reward us with the meaning of life? Does the self exist solely to provide us with a meaning? OR does the meaning exist because the self does?
+
+Are relationships formed to appreciate collective meaning? Is meaning of our existence served by the existence of others? What is our contribution to the collective meaning?
+
+Does life have a meaning? When we die does the meaning no longer exist? Is the collective meaning diminished by our death?
+
+Are we just a perturbation in contributing variables, as evolution takes its minute steps? Are we at the end of the path in evolution, or are we at the start of a new one?
+
+Since meaning is an attribute of awareness and understanding, Is the meaning of life whatever we want it to be at any given moment in time? 
+
+Are descriptors like happiness, suffering, love, compassion, respect, awe, and such, expressions of the meaning we attribute to life? 
+
+Is the meaning we attribute to our life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate. 
+
+Who assigns meaning to divinity? Why does that matter?
+
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div>
+## Fragility
+![[Fragility.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>
+
+The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose ones weakened self, into the divine, thereby projecting a permanence of the imagined state. 
+
+Notwithstanding, that lasting power comes from contributions made to the human condition through love, humility, patience and not from larger than life displays. 
+
+The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
