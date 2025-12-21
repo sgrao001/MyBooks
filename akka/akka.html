@@ -123,7 +123,6 @@
             display: flex;
             justify-content: space-between;
             z-index: 3;
-            pointer-events: none;
         }
         /* Keep page number on right */
         .page-number {
@@ -151,11 +150,14 @@
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             transition: all 0.3s ease;
-            pointer-events: auto;
-            order: 2; /* Moves to left */
-            margin-right: auto; /* Pushes other elements right */
-            bottom: 60px; /* Above mobile slider */
+            order: 2;
+            margin-right: auto;
+            posiiton: relative;
+            z-index: 9999;
+            pointer-events: auto !important;
+            cursor: pointer !important;
         }
+
         .back-to-list {
             color: var(--text-color);
             text-decoration: none;
@@ -167,10 +169,10 @@
             border-radius: 20px;
             transition: all 0.3s ease;
             pointer-events: auto;
-            order: 2; /* Moves to left */
+            order: 2;
             border-radius: 12px;
-            margin-right: auto; /* Pushes other elements right */
-            bottom: 60px; /* Above mobile slider */
+            margin-right: auto;
+            bottom: 60px;
         }
 
         .back-to-toc:hover {
@@ -231,9 +233,10 @@
         /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
         .arrow-container {
             position: fixed;
+            height: 85vh;
             top: 50%;
             transform: translateY(-50%);
-            height: 85vh;
+
             width: 12%;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -254,9 +257,6 @@
             width: 5% !important;
         }
 
-        .arrow-container.left {
-            left: 0px;
-        }
 
         .arrow-container.right {
             right: 0px;
@@ -286,8 +286,9 @@
         /* Arrow Hover Areas - Always present but visibility controlled */
         .arrow-area {
             position: fixed;
-            top: 0;
-            height: 100%;
+            height: 85vh;
+            top: 50%;
+            transform: translateY(-50%);
             width: var(--arrow-hover-width);
             z-index: 9;
             display: flex;
@@ -295,9 +296,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .arrow-area.left {
-            left: 0;
-        }
 
         .arrow-area.right {
             right: 0;
@@ -907,11 +905,6 @@
                 }
             }
 
-            .back-to-toc {
-                font-size: 0.6em;
-                padding: 5px 5px;
-                border-radius: 10px;
-            }
             .back-to-list {
                 font-size: 0.6em;
             }
@@ -2252,7 +2245,7 @@ It gives us the knowledge that we can all move forward with hard work, doing the
             rightArrowContainer.addEventListener('click', nextPage);
 
             // TOC Navigation (handles both list and button styles)
-            document.querySelectorAll('.toc-link, .back-to-toc').forEach(link => {
+            document.querySelectorAll('.back-to-toc').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
@@ -2279,6 +2272,7 @@ It gives us the knowledge that we can all move forward with hard work, doing the
                     }
                 });
             });
+                        
 
         });
 
