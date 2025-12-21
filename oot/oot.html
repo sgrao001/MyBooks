@@ -123,7 +123,6 @@
             display: flex;
             justify-content: space-between;
             z-index: 3;
-            pointer-events: none;
         }
         /* Keep page number on right */
         .page-number {
@@ -151,11 +150,14 @@
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             transition: all 0.3s ease;
-            pointer-events: auto;
-            order: 2; /* Moves to left */
-            margin-right: auto; /* Pushes other elements right */
-            bottom: 60px; /* Above mobile slider */
+            order: 2;
+            margin-right: auto;
+            posiiton: relative;
+            z-index: 9999;
+            pointer-events: auto !important;
+            cursor: pointer !important;
         }
+
         .back-to-list {
             color: var(--text-color);
             text-decoration: none;
@@ -167,10 +169,10 @@
             border-radius: 20px;
             transition: all 0.3s ease;
             pointer-events: auto;
-            order: 2; /* Moves to left */
+            order: 2;
             border-radius: 12px;
-            margin-right: auto; /* Pushes other elements right */
-            bottom: 60px; /* Above mobile slider */
+            margin-right: auto;
+            bottom: 60px;
         }
 
         .back-to-toc:hover {
@@ -231,9 +233,10 @@
         /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
         .arrow-container {
             position: fixed;
+            height: 85vh;
             top: 50%;
             transform: translateY(-50%);
-            height: 85vh;
+
             width: 12%;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -254,9 +257,6 @@
             width: 5% !important;
         }
 
-        .arrow-container.left {
-            left: 0px;
-        }
 
         .arrow-container.right {
             right: 0px;
@@ -286,8 +286,9 @@
         /* Arrow Hover Areas - Always present but visibility controlled */
         .arrow-area {
             position: fixed;
-            top: 0;
-            height: 100%;
+            height: 85vh;
+            top: 50%;
+            transform: translateY(-50%);
             width: var(--arrow-hover-width);
             z-index: 9;
             display: flex;
@@ -295,9 +296,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .arrow-area.left {
-            left: 0;
-        }
 
         .arrow-area.right {
             right: 0;
@@ -907,11 +905,6 @@
                 }
             }
 
-            .back-to-toc {
-                font-size: 0.6em;
-                padding: 5px 5px;
-                border-radius: 10px;
-            }
             .back-to-list {
                 font-size: 0.6em;
             }
@@ -1035,10 +1028,6 @@
         <div class="toc-container toc-buttons">
             <h2>Table of Contents</h2>
             
-        <button onclick="window.open('https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html', '_self')" class="back-to-list">
-            AboutMe
-        </button>
-        
             <div class="toc-button-container">
                 <a href="#page-1" class="back-to-toc compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="back-to-toc compact-button toc-link">Awareness(2)</a><a href="#page-3" class="back-to-toc compact-button toc-link">Unity(3)</a><a href="#page-4" class="back-to-toc compact-button toc-link">Silence(4)</a><a href="#page-5" class="back-to-toc compact-button toc-link">Serenity(5)</a><a href="#page-6" class="back-to-toc compact-button toc-link">Who am I(6)</a><a href="#page-7" class="back-to-toc compact-button toc-link">Words(7)</a><a href="#page-8" class="back-to-toc compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="back-to-toc compact-button toc-link">Vastness(9)</a><a href="#page-10" class="back-to-toc compact-button toc-link">Man and Boy(10)</a><a href="#page-11" class="back-to-toc compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="back-to-toc compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="back-to-toc compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="back-to-toc compact-button toc-link">Nani(14)</a><a href="#page-15" class="back-to-toc compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="back-to-toc compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="back-to-toc compact-button toc-link">Duniya(17)</a><a href="#page-18" class="back-to-toc compact-button toc-link">Lessons(18)</a><a href="#page-19" class="back-to-toc compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="back-to-toc compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="back-to-toc compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="back-to-toc compact-button toc-link">Time(22)</a><a href="#page-23" class="back-to-toc compact-button toc-link">Gratitude(23)</a><a href="#page-24" class="back-to-toc compact-button toc-link">Energy(24)</a><a href="#page-25" class="back-to-toc compact-button toc-link">Acceptance(25)</a><a href="#page-26" class="back-to-toc compact-button toc-link">Choices(26)</a><a href="#page-27" class="back-to-toc compact-button toc-link">The Good, The Bad(27)</a><a href="#page-28" class="back-to-toc compact-button toc-link">Writing(28)</a><a href="#page-29" class="back-to-toc compact-button toc-link">Let’s make a circle(29)</a><a href="#page-30" class="back-to-toc compact-button toc-link">Diwali(30)</a><a href="#page-31" class="back-to-toc compact-button toc-link">Pathways to being.(31)</a><a href="#page-32" class="back-to-toc compact-button toc-link">Just Asking(32)</a><a href="#page-33" class="back-to-toc compact-button toc-link">Fragility(33)</a>
             </div>
@@ -1505,7 +1494,7 @@ All may yet be well.
                 --mobile-font-size: 0.9em">
         <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Manipulate.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Let’s make a Circle</span></p>I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture.<br><br>I see their image floating into place at the center of the picture. I recognize the implication -  they represent the truth. They start placing artifacts of value around them, scattered about in a circle. They present the artifacts as reflections of their truth, as outcomes of their rightful behavior.<br><br>The artifacts seem slightly out of focus. I say nothing. They notice my willingness to accept the scene, imperfect as it is. 
  
- They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts around them. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle.<br><br>They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one inside it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism.<br><br>They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene.<br><br>I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth.<br><br>Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love.<br><br>They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon.<br><br>They express surprise and shock, as they see me leave. But their pain doesn’t last long. They get busy keeping their current conquests on life support. There is still more harvesting that is possible.<br><br>They get busy looking for their next conquest.<br><br>The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+ They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle.<br><br>They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one inside it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism.<br><br>They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene.<br><br>I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifact becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth.<br><br>Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk. Cut my losses and leave. I need the last draws of my courage to make my own path forward. I need support from people who offer it with love.<br><br>They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon.<br><br>They express surprise and shock, as they see me leave. But their pain doesn’t last long. They get busy keeping their current conquests on life support. There is still more harvesting that is being planned.<br><br>They get busy looking for their next conquest.<br><br>The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's.<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1520,7 +1509,7 @@ All may yet be well.
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Diwali.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life.<br><br>The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward.<br><br>The light from my flame shows me other people on moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me.<br><br>The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away.<br><br>I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself.<br><br>I never imagined that one flame could transform the world into a bright, sparkling festival of lights.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Diwali.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life.<br><br>The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward.<br><br>The light from my flame shows me other people moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me.<br><br>The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away.<br><br>I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself.<br><br>I never imagined that one flame could transform the world into a bright, sparkling festival of lights.<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1550,7 +1539,7 @@ All may yet be well.
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="JustAsking.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Just Asking</span></p>Was a dollop of passion dropped on us and we are now purposed with the pursuit of knowledge and excellence in the exercise of that passion?<br><br>Are we to spend this life in fearful praise and patient anticipation because our self pronounced faith professes immense joy in the afterlife?<br><br>Are we to immerse ourselves in efforts bringing value to others or find cures to ailments, because we are told, it is the right thing to do?<br><br>Are we to receive small pleasures, like shells scattered on the beach, as our ultimate reward for each day?<br><br>Are we to skim the surface of life seeking nothing, finding nothing, but being content nonetheless?<br><br>Are we to think of life as a game of chance and accept, wherever comes our way?<br><br>If the rewards of pursuit results in continuity of living, is the hunt worth the effort? Should we care? Doesn't life continues on its own to its eventual end?<br><br>Will the pursuit of journey into the self reward us with the meaning of life? Does the self exist solely to provide us with a meaning? OR does the meaning exist because the self does?<br><br>Are relationships formed to appreciate collective meaning? Is meaning of our existence served by the existence of others? What is our contribution to the collective meaning?<br><br>Does life have a meaning? When we die does the meaning no longer exist? Is the collective meaning diminished by our death?<br><br>Are we just a perturbation in contributing variables, as evolution takes its minute steps? Are we at the end of the path in evolution, or are we at the start of a new one?<br><br>Since meaning is an attribute of awareness and understanding, Is the meaning of life whatever we want it to be at any given moment in time?<br><br>Are descriptors like happiness, suffering, love, compassion, respect, awe, and such, expressions of the meaning we attribute to life?<br><br>Is the meaning we attribute to our life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate.<br><br>Who assigns meaning to divinity? Why does that matter?<p style="text-align: center; font-style: bold;"> ~***~ </p>
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="JustAsking.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Just Asking</span></p>Was a dollop of passion dropped on me and I am now purposed with the pursuit of knowledge and excellence in the exercise of that passion?<br><br>Am I to spend this life in fearful praise and patient anticipation because my self pronounced faith professes immense joy in the afterlife?<br><br>Am I to immerse myself in efforts, bringing value to others, or finding cures to ailments, because I am told, that it is the right thing to do?<br><br>Am I to receive small pleasures, like shells scattered on the beach, as my reward for each day?<br><br>Am I to skim the surface of life seeking nothing, finding nothing, but being content nonetheless?<br><br>Am I to think of life as a game of chance and accept, wherever comes my way?<br><br>If the rewards of pursuit results in continuity of living, is the hunt worth the effort? Should I care? Doesn't life continues on its own to its eventual end?<br><br>Will the pursuit of journey into the self reward me with the meaning of life? Does the self exist solely to provide me with a meaning? OR does the meaning exist because the self does?<br><br>Are relationships formed to appreciate collective meaning? Is meaning of my existence served by the existence of others? What is my contribution to the collective meaning?<br><br>Does life have a meaning? When I die does the meaning no longer exist? Is the collective meaning diminished by my death?<br><br>Am I a perturbation in contributing variables, as evolution takes its minute steps? Am I at the end of the path in evolution, or am I at the start of a new one? Most likely, I am in the middle, being irrelevant to the direction of evolution.<br><br>Since meaning is an attribute of awareness and understanding, is the meaning of my life whatever I want it to be at any given moment in time?<br><br>Are descriptors like happiness, suffering, love, compassion, respect, awe, and such, expressions of the meaning I attribute to my life?<br><br>Is the meaning I attribute to my life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate in me?<br><br>Who assigns meaning to divinity? Why does that matter?<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1565,7 +1554,7 @@ All may yet be well.
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Fragility.jpeg" alt="Image" style="width: 50%;"></div><br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose ones weakened self, into the divine, thereby projecting a permanence of the imagined state.<br><br>Notwithstanding, that lasting power comes from contributions made to the human condition through love, humility, patience and not from larger than life displays.<br><br>The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+        <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Fragility.jpeg" alt="Image" style="width: 50%;"></div><br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state.<br><br>Notwithstanding, that lasting power comes from contributions made to the human condition through love, humility, patience and not from larger than life displays.<br><br>The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained within “the divinity of kings”.<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1866,7 +1855,7 @@ All may yet be well.
             rightArrowContainer.addEventListener('click', nextPage);
 
             // TOC Navigation (handles both list and button styles)
-            document.querySelectorAll('.toc-link, .back-to-toc').forEach(link => {
+            document.querySelectorAll('.back-to-toc').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
@@ -1893,6 +1882,7 @@ All may yet be well.
                     }
                 });
             });
+                        
 
         });
 
