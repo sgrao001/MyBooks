@@ -9,7 +9,7 @@
     "COPY_ENABLE": true,
     
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 6.7,
+    "ARW_HOVER_WIDTH": 12,
     "ARW_VISIBLE_WIDTH": 5,
     
     "SLDR_DISPLAY": true,
@@ -22,10 +22,11 @@
     "BkPage0_Title": "Akka",
     "BkPage0_Description": "Akka - Quiet Hero",
     "BkPage0_Tag": "A Lasting Legacy",
-    "BkPage0_Keywords": "Sri Rao",
+    "Author_name": "Sri Rao",
+    "BkPage0_Keywords": "Sri Rao, Akka",
     "BkPage0_head3": "~***~",
     "BkFontSizeMobile390": "0.8em",
-    "BkListLink_show": true,
+    "BkListLink_show": false,
     "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
     "TitleFontClr": "#D4E6FF",
