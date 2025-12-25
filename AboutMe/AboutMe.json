@@ -9,7 +9,7 @@
     "COPY_ENABLE": true,
     
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 6.7,
+    "ARW_HOVER_WIDTH": 12,
     "ARW_VISIBLE_WIDTH": 5,
     
     "SLDR_DISPLAY": true,
@@ -22,6 +22,7 @@
     "BkPage0_Title": "About Me",
     "BkPage0_Description": "AboutMe",
     "BkPage0_Tag": "AboutMe",
+    "Author_name": "Sri Rao",
     "BkPage0_Keywords": "Sri Rao",
     "BkPage0_head3": "~***~",
     "BkFontSizeMobile390": "0.8em",
