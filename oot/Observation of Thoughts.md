@@ -230,7 +230,7 @@ Why did they not seize the opportunity to be stable on the ground, to be next to
 
 Wars waged on, egged by the egos of lords, masquerading as ideology. 
 
-No matter who won, both are diminished. The lords will profit more if they collude to establish collective dominion over the serfs. But their egos goaded them to war. 
+No matter who wins, both are diminished. The lords will profit more if they collude to establish collective dominion over the serfs. But their egos goaded them to war. 
 
 The disproportional distribution of wealth, ensures that the winning serfs will get little or none of the spoils of war. The losing serfs and their families will suffer pain, dishonor, years of servitude and abject poverty. Serfs will risk their lives and a great many will loose it. 
 Blacksmith’s on both sides will profit, selling arrows, swords, spears and shields. Neighboring lords will smell blood in the water and join in, taking all they can. 
@@ -249,11 +249,11 @@ Ideology is the primordial state of augmented reality serving to simplify it to 
 
 Ideology purports to enhance the value of reality by making it accessible, understandable and acceptable. It reduces the multitude of properties of reality, into a single dominant characteristic, to deliver a concrete shape that can be received  through simple abbreviations of thought. It reduces reality to a probability. It trains the mind to constrain reality, and claims this as necessary, for understanding to occur. 
 
-This “subligation” from reality, becomes our natural. It becomes the core of our progressive learning. It permits us to congratulate ourselves on our intelligence, our righteousness or any other attribute we wish to be identified with. We can now safely ignore what is “abrogated” from reality. 
+This “subligation” from reality, becomes our natural state. It becomes the core of our progressive learning. It permits us to congratulate ourselves on our intelligence, our righteousness or any other attribute we wish to be identified with. We can now safely ignore what is “abrogated” from reality. 
 
 This partition of the “subligated” and “abrogated” is not absolute. It does not need to be. Participation can occur as an observer of reality, not an explainer of it.  
 
-The whole picture emerges, as I seek “descriptive adequacy”, not “explanatory clarity”. Ideology takes my freedom away. 
+The whole picture emerges, when I seek “descriptive adequacy”, not “explanatory clarity”. Ideology takes my freedom away. 
 
 Ideology positions itself to be more important than reality. Illusion becomes reality and reality is relegated to the realm of an “imagined” state. But, without reality there is no ideology. 
 
@@ -263,9 +263,9 @@ Winning an argument becomes a certainty if is preceded by a pivot from reality t
 
 Filtering attributes of reality to project it on an already accepted ideology, masks the underlying harsh, impoliteness of truth.
 
-In a contest with ideologies, reality loses the battle every time . It is a win of reason over knowledge. 
+In a contest with ideologies, reality loses the battle every time . It is the win of reason over knowledge. 
 
-Ideology explains that which we want to be true.  In its most harmful state,  ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization occurs when most of the damage is done. 
+Ideology explains that which we want to be true.  In its most harmful state,  ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization occurs after most of the damage is done. 
 
 We “buy organic sugar” because we believe that we engage in healthy pursuits. We “associate wealth with our self worth” because it is natural, not because it is a fetish. We “reward monopolies” because we believe they must be doing it better than everyone else.  We “consume” because we believe we deserve it. We “tolerate”, because we believe things could be far worse.  We “fight” because we believe we are on the side of the just. We “kill” because they “would do worse to us” or “in the name of what’s right” or as in it’s latest form, “to stop violence”, “to bring peace”. and on and on and on …
 
@@ -273,7 +273,7 @@ We are pre-disposed to adopting ideologies as explanations to uncomfortable trut
 
 Ideology gently cleanses our view of the undesirable state until truth is no longer necessary. It makes irrelevant all that is unsaid. It blurs the lies. It deflects responsibility. It negates our role in reality. It enables the death of hope. It  constrains us inside acceptable frames of reference. 
 
-We feel good. We don’t realize we are the “boiling frog.” We make freedom and self-expression the causality.  We accept that this as the best that is possible. We believe, “It really can’t be that bad”, “it will only get better”, “we, must therefore make the best of it”, “what better choice do we have”
+We feel good. We don’t realize we are the “boiling frog.” We make freedom and self-expression the causality.  We accept that this as the best that is possible. We believe, “It really can’t be that bad”, “it will only get better”, “we, must therefore make the best of it”, “what better choice do we have”. 
 
 Time tested structures in society, from the humble family unit, to corporations, to governments and religions, effectively use ideologies to favor the few and suppress the many. 
 
@@ -303,7 +303,7 @@ Man evolved from the pursuit of food, sex and shelter, to seeking value, fearing
 This new found pursuit became the root of all good and all evil that mankind brought upon himself and on nature. 
 The “hoarders of value” learnt to collaborate to grow. They learnt to deceive and to usurp another’s value. They learnt to adapt to new threats. They extinguished all species, whose behavior did not direct value to them. They  “domesticated” all else. They eliminated men, sparing only those willing to submit their value to them. 
 
-Humble men who were secure in the knowledge that three hours of hunting and gathering, each day, was sufficient to sustain life,  became insecure in a 24 hour pursuit of value for someone else. 
+Humble men who were once secure in the knowledge that three hours of hunting and gathering, each day, was sufficient to sustain life,  became insecure in a 24 hour pursuit of value for someone else. 
 
 Humanity may pivot to re-claiming time for peace, harmony and well-being. We may choose to focus on the awareness of our being and that of others and make time our friend. We may re-orient understanding and hope and put it to work for our collective well-being. 
 
@@ -313,7 +313,7 @@ Maybe, we will.
 ## Gratitude
 ![[AlbrechtDurer-PrayingHands1507.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Gratitude</span></p>
 
-I have so much … so much, to be grateful for. i forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received.  
+I have so much … so much, to be grateful for. I forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received.  
 
 Happiness is a gift that is short lived.  Efforts to reduce pain, without joy to fill the void, is an uphill battle. 
 
@@ -359,7 +359,7 @@ Our respect for this offering shapes the essence of our life’s journey. The en
 ## Acceptance
 ![[ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Acceptance</span></p>
 
-Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK. 
+Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK at the time. 
 
 Acceptance of a win incurs a responsibility and commitment that defines the final outcome from the win. 
 
@@ -394,7 +394,7 @@ The two take sides, like a child’s see-saw, sometimes one is up, sometimes the
 
 The bad doesn’t have to play by the rules. It has an edge. It works persistently to exploit the advantage . Eventually the bad triumphs. But in their triumph they have destroyed the good - they have killed the goose that laid the golden egg. 
 
-The bad cannot survive without the good. They have nothing to feed on. They have to leave. If they stay they will feed on each other. They must leave,  before they empty the place of all life. They know they will be back, when the good has painstakingly rebuilt itself from the rubble. 
+The bad cannot survive without the good. They have nothing to feed on. They have to leave. If they stay they will feed on each other. They must leave,  before they empty the place of all life. But, they know they will be back, when the good has painstakingly rebuilt itself from the rubble. 
 
 So they leave. They leave behind despair and ruin. They leave behind numb pain. The bad have no desire to share in the pain. Ironically, it makes them feel “bad”.  So, they leave. 
 
@@ -451,23 +451,25 @@ I see their image floating into place at the center of the picture. I recognize 
 
  The artifacts seem slightly out of focus. I say nothing. They notice my willingness to accept the scene, imperfect as it is. 
  
- They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts around them. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle. 
+ They extoll their noble intentions and proclaim their struggles in building and maintaining these collections of artifacts. They describe the injustice the world mets out to them for their positions around the truth. I empathize with their struggle. 
 
 They continue to add more artifacts in ever expanding circles, each outer circle of artifacts gets blurrier than the one inside it. I am to believe that the artifacts are clear reflections of their central truth. But I see that the connections are getting more tenuous as I look outward. They sense  skepticism. 
 
 They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the  invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene. 
 
-I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifacts becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. 
+I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifact becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. I am no longer interested in my truth. 
 
-Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk away, cut my losses and leave. I need my last resources of courage to take my own path forward. I need support from people who offer it with love. 
+Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk. Cut my losses and leave. I need the last draws of my courage to make my own path forward. I need support from people who offer it with love. 
 
 They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon. 
 
-They express surprise and shock, as they see me leave. But their pain doesn’t last long. They get busy keeping their current conquests on life support. There is still more harvesting that is possible. 
+They express surprise and shock, as they see me leave. But their pain doesn’t last long. They get busy keeping their current conquests on life support. There is still more harvesting that is being planned. 
 
 They get busy looking for their next conquest. 
 
-The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
+To add to Carl Sagan’s quote from The Demon-Haunted World: “ Once you give a charlatan power over you, you almost never get it back.”; - “if you do get it back, it is corrupted enough, to where you will likely become a perpetrator of that which victimized you”.
+
+I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
@@ -478,7 +480,7 @@ My passion, my understanding and my perseverance, fuel my flame to illuminate th
 
 The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward. 
 
-The light from my flame shows me other people on moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me. 
+The light from my flame shows me other people moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me. 
 
 The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away. 
 
@@ -499,45 +501,82 @@ We keep going around…
 ## Just Asking
 ![[JustAsking.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Just Asking</span></p>
 
-Was a dollop of passion dropped on us and we are now purposed with the pursuit of knowledge and excellence in the exercise of that passion?
+Was a dollop of passion dropped on me and am I now purposed with the pursuit of knowledge and excellence in the exercise of that passion?
 
-Are we to spend this life in fearful praise and patient anticipation because our self pronounced faith professes immense joy in the afterlife?
+Am I to spend this life in fearful praise of the divine, and patient anticipation of a glorious afterlife, that my self pronounced faith professes will be mine?
 
-Are we to immerse ourselves in efforts bringing value to others or find cures to ailments, because we are told, it is the right thing to do?
+Am I to immerse myself in efforts, bringing value to others, or finding cures to ailments, because I am told, that it is the right thing to do?
 
-Are we to receive small pleasures, like shells scattered on the beach, as our ultimate reward for each day? 
+Am I to receive small pleasures, like shells scattered on the beach, as my reward for each day? 
 
-Are we to skim the surface of life seeking nothing, finding nothing, but being content nonetheless?
+Am I to skim the surface of life seeking nothing, finding nothing, but being content nonetheless?
 
-Are we to think of life as a game of chance and accept, wherever comes our way? 
+Am I to think of life as a game of chance and accept, whatever comes my way? 
 
-If the rewards of pursuit results in continuity of living, is the hunt worth the effort? Should we care? Doesn't life continues on its own to its eventual end?
+If the rewards of pursuit result in continuity of living, is the hunt worth the effort? Should I care? Doesn't life continue on its own, until its eventual end?
 
-Will the pursuit of journey into the self reward us with the meaning of life? Does the self exist solely to provide us with a meaning? OR does the meaning exist because the self does?
+Will the pursuit of journey into the self reward me with the meaning of life? Does the self exist solely to provide me with a meaning? OR does the meaning exist because the self does?
 
-Are relationships formed to appreciate collective meaning? Is meaning of our existence served by the existence of others? What is our contribution to the collective meaning?
+Are relationships formed to appreciate collective meaning? Is meaning of my existence served by the existence of others? What is my contribution to the collective meaning?
 
-Does life have a meaning? When we die does the meaning no longer exist? Is the collective meaning diminished by our death?
+Does life have a meaning? When I die does the meaning no longer exist? Is the collective meaning diminished by my death?
 
-Are we just a perturbation in contributing variables, as evolution takes its minute steps? Are we at the end of the path in evolution, or are we at the start of a new one?
+Am I a perturbation in contributing variables, as evolution takes its minute steps? Am I at the end of a branch in evolution, or am I at the start of a new one? Most likely, I am in the middle,  irrelevant to the direction of evolution.  
 
-Since meaning is an attribute of awareness and understanding, Is the meaning of life whatever we want it to be at any given moment in time? 
+Since meaning is an attribute of awareness and understanding, is the meaning of my life whatever I want it to be at any given moment in time? 
 
-Are descriptors like happiness, suffering, love, compassion, respect, awe, and such, expressions of the meaning we attribute to life? 
+Are descriptors like happiness, suffering, love, compassion, respect, awe,  expressions of the meaning I attribute to my life? 
 
-Is the meaning we attribute to our life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate. 
+Is the meaning I attribute to my life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate in me? 
 
-Who assigns meaning to divinity? Why does that matter?
+Does my ego require my life to have meaning? If I were to proclaim a meaning to my life, what does that alter in me? 
+
+Who assigns meaning to divinity? Why is mankind not able to reach consensus on what that is?
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
-<div style="break-after: page;"></div>
+<div style="break-after: page;"></div><br>
 ## Fragility
 ![[Fragility.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>
 
-The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose ones weakened self, into the divine, thereby projecting a permanence of the imagined state. 
+The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
-Notwithstanding, that lasting power comes from contributions made to the human condition through love, humility, patience and not from larger than life displays. 
+The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained within “the divinity of beings”. 
 
-The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## In God we Trust
+![[InGodWeTrust.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
+
+Science continues to encroach on territory originally titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a Purpose, given that we are sitting on a spec in a sea of stars?”
+
+Carl, with his characteristic curiosity, asks, “I do not want to duck any questions and I am not going to duck this one, but let me ask - what do you mean when you use the word ‘God’?”
+
+The question is clarified, “Given all these demotions, the notion of God seems to slip away, where does that leave us?”
+
+Carl replies, “On our own! This to my mind is much more responsible than hoping that someone will save us from ourselves, so we don’t have to make our best efforts to do it ourselves. If we are wrong, then that’s ok. We’ve hedged our bets. Its Pascal’’s bargain run backwards. 
+
+The word God covers an enormous range of different ideas, running from an outsized light skinned male, sitting on a throne in the sky, telling of the fall of every sparrow, for which there is no evidence, to the God that Einstein or Spinoza talks about, which is the sum total of laws of the universe. It cannot be denied that the universe follows laws and if that’s what you want to call God that then of course God exists. There are numerous nuances; for example, there is the ‘Diest God’ that many of the founding fathers of the USA believed in - a sort of do nothing king. A God who creates the universe and then retires.
+
+If I say a god exists, or if I say he doesn’t, you have learned absolutely nothing. So, why would we use a label so ambiguous,  that means so many different things to so many people; because, it is a generic enough label that you hope will give you the freedom to seem to agree with people with whom you fundamentally do not agree. It covers over differences. It makes for social lubrication. It is not an aid to truth. We need much sharper language and honesty to seek common understanding. ”
+
+As described by Carl, It could be that a Diest God created the universe, or as science hypothesizes the universe started off through a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me what I have and be born into this world. So, here I am.  Praying to God for what he did not give to me in the first instance, would be a nonsensical burden on him and utterly ineffective to me. 
+
+Begging forgiveness or offering repentance is much of the same, as my transgressions are not against him, but against fellow beings on this earth. It would be morally reprehensible for me to wrong one and then ask forgiveness from another. 
+
+At the time of making the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about some unknown, yet to come, incarnation, which was not His task at hand when he made me, makes even less sense. 
+
+I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all joy.  Also, some of the messes in my life are uniquely mine. 
+
+Of course, all this is negated if I believe God made me as a specific individual with all my accompanying attributes, and did the same for every other being that ever lived, in all time. 
+
+It is certainly a comforting thought, that God would go to all these lengths for me. I have to imagine that he created all the stages of my genetic evolution to make one of me. I wish he would tell me the purpose for my existence. It would take the guesswork out for me. 
+
+If we can be sure of one thing, it is that nature and life is governed by the laws of chance. This may be by divine design, so every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings have survived. Chance by definition, cannot be planned. It
+may seem that science has given us a temporary edge by tilting the field in our favor. But that will likely change in time. 
+
+As I get older, I am progressively less able to defend myself against chance occurrences. Virus and bacterial attacks, weakening organs, lower mental acuity, all signs of running out of my birth gifts. 
+
+I often find solace in the belief that I have an ally - GOD - and the faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the lights finally turn off. 
+
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
