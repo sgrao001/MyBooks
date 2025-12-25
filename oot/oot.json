@@ -9,7 +9,7 @@
     "COPY_ENABLE": true,
 
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 6.7,
+    "ARW_HOVER_WIDTH": 12,
     "ARW_VISIBLE_WIDTH": 5,
 
     "SLDR_DISPLAY": true,
@@ -22,10 +22,11 @@
     "BkPage0_Title": "Observation of Thoughts",
     "BkPage0_Description": "Sri Rao - Thoughts from reading, listening, walking and living in Chicago",
     "BkPage0_Tag": "Listen Read Walk and Live in Chicago",
-    "BkPage0_Keywords": "Sri Rao - Thoughts, books, reading, Chicago",
+    "Author_name": "Sri Rao",
+    "BkPage0_Keywords": "Sri Rao, Observation of Thoughts",
     "BkPage0_head3": "~***~",
     "BkFontSizeMobile390": "0.9em",
-    "BkListLink_show": true,
+    "BkListLink_show": false,
     "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
     "TitleFontClr": "#D4E6FF",
