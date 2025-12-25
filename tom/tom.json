@@ -9,7 +9,7 @@
     "COPY_ENABLE": true,
 
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 6.7,
+    "ARW_HOVER_WIDTH": 12,
     "ARW_VISIBLE_WIDTH": 5,
 
     "SLDR_DISPLAY": true,
@@ -19,13 +19,14 @@
     "BkPage0_FontColor": "#89C2FF",   
     "BkFontColor": "#ffffff",   
     "BkFontSize": "1em",
-    "BkPage0_Title": "Theater of the mind",
+    "BkPage0_Title": "Theater of the Mind",
     "BkPage0_Description": "My Journey",
     "BkPage0_Tag": "A Journey into the Self",
-    "BkPage0_Keywords": "Sri Rao",
+    "Author_name": "Sri Rao",
+    "BkPage0_Keywords": "Sri Rao, Theater of the mind",
     "BkPage0_head3": "~***~",  
     "BkFontSizeMobile390": "0.9em",   
-    "BkListLink_show": true,
+    "BkListLink_show": false,
     "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
     "TitleFontSize": "0.8em",
