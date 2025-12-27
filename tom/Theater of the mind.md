@@ -16,8 +16,9 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
 ![[ Logo.jpeg | logo | 300 | center]]
 
 <div style="break-after: page;"></div><br>
-## Introduction
-<p style="color: #f09e5a;"><span class="highlight-text">Introduction</span></p>
+## An introductory note
+A letter to my sons,
+
 It has been on a long journey, reading, listening, thinking, internalizing, and working to put my understanding into practice. It has been an exciting process, involving literally ‘miles and miles’ of walking. It has changed the way I look at myself and things around me.
 
 So many accomplished people with such diverse experiences have so much to say. Translating this to my context has enriched me immensely.
@@ -33,7 +34,7 @@ Enjoy!!!
 
 <div style="break-after: page;"></div><br>
 ![[000aIHasMuchToReveal.jpeg]]
-## Initial Thoughts
+## Initial thoughts
 <p style="color: #f09e5a;"><span class="highlight-text">Initial Thoughts</span></p>
 
 These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back,only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.
@@ -46,7 +47,7 @@ The journey into the self is a solo journey. Solitude is a pre-condition to mean
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ![[000bRules.jpeg]]
-## The Toolbox
+## The toolbox
 <p style="color: #f09e5a;"><span class="highlight-text">The Toolbox</span></p>
 Tools for the journey: 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;"><u>Conviction</u>: A resolve to be true to self, with all reflections, always. <br>
@@ -203,7 +204,7 @@ This is a vital health task of clearing and cleansing of the halo
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ![[000jBeTheEyeInTheSky.jpeg]]
-## Being Open
+## Being open
 <p style="color: #f09e5a;"><span class="highlight-text">Being Open</span></p>
 
 Openness requires observing energy flows and footprints within the halo, and the functioning of mind organs.
