@@ -19,9 +19,12 @@
             --arrow-visibility: hidden;
             --arrow-opacity: 0;
             --arrow-hover-opacity: 0;
-            --arrow-hover-width: 12%;
+            --arrow-hover-width: 15%;
             --page-width: 94vw;
             --page-height: 94vh;
+            --ARW_HOVER_HEIGHT: 87vh;
+            --ARW_HOVER_HEIGHT_415px: 73vh;
+            --ARW_HOVER_TOP: 10vh;
         }
 
         html {
@@ -222,7 +225,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: var(--page-height);
+            
             gap: 1rem;
             width: 100%;
             max-width: 800px;
@@ -233,11 +236,9 @@
         /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
         .arrow-container {
             position: fixed;
-            height: 85vh;
-            top: 50%;
-            transform: translateY(-50%);
-
-            width: 12%;
+            height: var(--ARW_HOVER_HEIGHT);
+            top: var(--ARW_HOVER_TOP);
+            width: 15%;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -254,7 +255,7 @@
 
         /* When arrows are visible (flex=True) */
         .arrow-container[data-visible="true"] {
-            width: 5% !important;
+            width: 15% !important;
         }
 
 
@@ -286,16 +287,14 @@
         /* Arrow Hover Areas - Always present but visibility controlled */
         .arrow-area {
             position: fixed;
-            height: 85vh;
-            top: 50%;
-            transform: translateY(-50%);
-            width: var(--arrow-hover-width);
+            height: var(--ARW_HOVER_HEIGHT);
+            top: var(--ARW_HOVER_TOP);
+            width: 15%;
             z-index: 9;
             display: flex;
             pointer-events: auto;
             -webkit-tap-highlight-color: transparent;
         }
-
 
         .arrow-area.right {
             right: 0;
@@ -883,6 +882,7 @@
 
 
         @media (max-width: 415px) {
+
             body {
                 margin-top: 0px !important;
                 height: 60% !important;
@@ -895,6 +895,12 @@
             }
             .content-text {
                 font-size: var(--mobile-font-size) !important;
+            }
+            .arrow-container {
+            height: var(--ARW_HOVER_HEIGHT_415px);
+            }
+            .arrow-area {
+            height: var(--ARW_HOVER_HEIGHT_415px);
             }
             
             /* Fix for iOS Safari */
@@ -1016,7 +1022,7 @@
             <h2>A Lasting Legacy</h2> 
             <h2>Sri Rao</h2> 
             <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                <br>Last updated: Sep 29, 2025
+                Last updated: Sep 29, 2025
             </p>
             <h3>~***~</h3>
         </div>
