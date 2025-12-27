@@ -9,8 +9,8 @@
     "COPY_ENABLE": true,
     
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 12,
-    "ARW_VISIBLE_WIDTH": 5,
+    "ARW_HOVER_WIDTH": 20,
+    "ARW_VISIBLE_WIDTH": 20,
     
     "SLDR_DISPLAY": true,
 
