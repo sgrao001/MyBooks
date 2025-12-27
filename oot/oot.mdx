@@ -459,7 +459,9 @@ They offer to clarify and enlighten me. They invite me to add my artifacts to th
 
 I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifact becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth.  I have made my truth subservient to theirs. I begin to doubt my truth. I am no longer interested in my truth. 
 
-Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. The best I can do now, is walk. Cut my losses and leave. I need the last draws of my courage to make my own path forward. I need support from people who offer it with love. 
+Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. 
+
+The best I can do now, is walk. Cut my losses and leave. I need the last draws of my courage to make my own path forward. I need support from people who offer it with love. 
 
 They have gained mastery in maneuvering artifacts around to attract people into their circle. People who will toil hard for their cause. They know they will eventually loose them, most will burn out, the rest will walk away.  They will have to keep cultivating conquests. There will never be enough. More will be needed soon. 
 
@@ -467,9 +469,12 @@ They express surprise and shock, as they see me leave. But their pain doesn’t 
 
 They get busy looking for their next conquest. 
 
-To add to Carl Sagan’s quote from The Demon-Haunted World: “Once you give a charlatan power over you, you almost never get it back.”; - “if you do get it back, it is corrupted enough, to where you will likely become a perpetrator of that which victimized you”.
+Carl Sagan’s quote from The Demon-Haunted World, reinforces the futility of the status quo,
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">“Once you give a charlatan power over you, you almost never get it back.”</p>
+I add my own words to Carl’s,
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">“if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.</p>
 
-I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
+So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
@@ -495,7 +500,7 @@ I never imagined that one flame could transform the world into a bright, sparkli
 
 Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration 
 
-We keep going around… 
+LIfe seems to be about following this loop over and over again… 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Just Asking
@@ -547,7 +552,7 @@ The attempt at grandiosity in itself, exposes the nonexistence of power within  
 ## In God we Trust
 ![[InGodWeTrust.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
 
-Science continues to encroach on territory originally titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a Purpose, given that we are sitting on a spec in a sea of stars?”
+Science continues to encroach on territory formerly titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a purpose, given that we are sitting on a spec in a sea of stars?”
 
 Carl, with his characteristic curiosity, asks, “I do not want to duck any questions and I am not going to duck this one, but let me ask - what do you mean when you use the word ‘God’?”
 
@@ -555,28 +560,38 @@ The question is clarified, “Given all these demotions, the notion of God seems
 
 Carl replies, “On our own! This to my mind is much more responsible than hoping that someone will save us from ourselves, so we don’t have to make our best efforts to do it ourselves. If we are wrong, then that’s ok. We’ve hedged our bets. Its Pascal’’s bargain run backwards. 
 
-The word God covers an enormous range of different ideas, running from an outsized light skinned male, sitting on a throne in the sky, telling of the fall of every sparrow, for which there is no evidence, to the God that Einstein or Spinoza talks about, which is the sum total of laws of the universe. It cannot be denied that the universe follows laws, and if that’s what you want to call God, then of course God exists. There are numerous nuances; for example, there is the ‘Diest God’ that many of the founding fathers of the USA believed in - a sort of do nothing king. A God who creates the universe and then retires.
+The word God covers an enormous range of different ideas, running from an outsized light skinned male, sitting on a throne in the sky, telling of the fall of every sparrow, for which there is no evidence, to the God that Einstein or Spinoza talks about, which is the sum total of laws of the universe. It cannot be denied that the universe follows laws, and if that’s what you want to call God, then of course God exists. There are numerous nuances; for example, there is the ‘Diest God’ that many of the founding fathers of our country believed in - a sort of do nothing king. A God who creates the universe and then retires.
 
-If I say a god exists, or if I say he doesn’t, you have learned absolutely nothing. So, why would we use a label so ambiguous,  that means so many different things to so many people; because, it is a generic enough label that you hope will give you the freedom to seem to agree with people with whom you fundamentally do not agree. It covers over differences. It makes for social lubrication. It is not an aid to truth. We need much sharper language and honesty to seek common understanding. ”
+If I say a god exists, or if I say he doesn’t, you have learned absolutely nothing. So, why we use a label so ambiguous, that means so many different things to so many people; because, it is a generic enough label, that you hope will give you the freedom to seem to agree with people with whom you fundamentally do not agree. It covers over differences. It makes for social lubrication. It is not an aid to truth. We need much sharper language and honesty to seek common understanding. ”
 
-As described by Carl, It could be that a Diest God created the universe, or as science hypothesizes the universe started off through a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me what I have and be born into this world. So, here I am.  Praying to God for what he did not give to me in the first instance, would be a nonsensical burden on him and utterly pointless to me. 
+As described by Carl, it could be that a diest God created the universe, or as science hypothesizes, the universe started off through a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me what I have and be born into this world. So, here I am.  
 
-Begging forgiveness or offering repentance is much of the same, as my transgressions are not against him, but against fellow beings on this earth. It would be morally reprehensible for me to wrong one and then ask forgiveness from another. 
+Praying to God for what he did not give to me in the first instance, would be a nonsensical burden on him and utterly pointless.
 
-At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about unknown, yet to come, incarnation, which was not His task at hand, when he made me, makes even less sense. 
+Begging forgiveness or offering repentance is worse as my transgressions are not against him, but against fellow beings on this earth. It would be morally reprehensible for me to wrong one and then ask forgiveness from another. 
 
-I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all of it’s joy.  Also, most of the messes in my life are uniquely mine. 
+At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. 
+
+I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all of its joy.  Also, most messes in my life are uniquely mine. 
 
 Of course, all this is negated if I believe that God made me as a specific individual with all my accompanying attributes, and did the same for every other being that ever lived, in all time. 
 
-It is certainly a comforting thought, that God would go to all these lengths for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I wish he would tell me the purpose for my existence. It would take the guesswork out for me. 
+It is certainly a comforting thought, that God would go to all this trouble for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I wish he would tell me the purpose for my existence. It would take the guesswork and chaos out for me. 
 
-If we can be sure of one thing, it is that nature and life is governed by the laws of chance. This may be by divine design, so every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings have survived. Chance by definition, cannot be planned. It
+If we can be sure of one thing, it is that nature and life is governed by the laws of chance. This may be by divine design, so that every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings have survived. Chance by definition, cannot be planned. It
 may seem that science has given us a temporary edge by tilting the field in our favor. But that will likely change in time. 
 
 As I get older, I am progressively less able to defend myself against chance occurrences. Virus and bacterial attacks, weakening organs, lower mental acuity, all signs of running out of my birth gifts. 
 
-I often find solace in the belief that I have an ally - GOD - and the faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the light finally turns off. 
+I often find solace in the belief that I have an ally - GOD - and the faith, that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the light finally turns off. 
+
+I may object to actions of the body and the mind, but, can never find blame with the “atman” or  the “soul”. 
+
+There is a rationalization that goes as such,
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. They are eternal and part of one whole. They remain connected to each other In life, and on release, they merge up with other souls into a vast reservoir called God. </p>
+This argument provides me with a sense of custodianship of life alongside other beings. It provides continuity, belonging and  it opens up a pathway to rise above the fray of my current states and find acceptance and inner peace within my reach. 
+
+I will need a lot of practice at this. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
-<div style="break-after: page;"></div><br>
+<div style="break-after: page;"></div>
