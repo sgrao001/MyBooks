@@ -22,6 +22,7 @@
             --arrow-hover-width: 15%;
             --page-width: 94vw;
             --page-height: 94vh;
+            --page-height-415px: 60vh;
             --ARW_HOVER_HEIGHT: 87vh;
             --ARW_HOVER_HEIGHT_415px: 73vh;
             --ARW_HOVER_TOP: 10vh;
@@ -891,7 +892,7 @@
 
             .page {
                 /* Adjust height calculation */
-                height: 60vh !important;
+                height: var(--page-height-415px) !important;
             }
             .content-text {
                 font-size: var(--mobile-font-size) !important;
