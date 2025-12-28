@@ -36,19 +36,43 @@ If you would like to read about my journey and my interpretations, please follow
 <p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
 _getMdate("oot/Observation of Thoughts.md")
-<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html">click here…</a></span></p>
+<p style="text-align: center; width: 100%; margin: 20px 0;">
+    <a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
+       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
+              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
+              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
+              justify-content: center; font-size: 1em !important;">
+        Observation of Thoughts
+    </a>
+</p>
 ## Theater of the Mind
 <p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p>
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
-_getMdate("tom/Theater of the mind.md")
-<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html">click here…</a></span></p>
+_getMdate("tom/Theater of the Mind.md")
+<p style="text-align: center; width: 100%; margin: 20px 0;">
+    <a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
+       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
+              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
+              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
+              justify-content: center; font-size: 1em !important;">
+        Theater of the Mind
+    </a>
+</p>
 ## Akka 
 <p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p>
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.<br>
 _getMdate("akka/akka.md")
-<span style="float:right;"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html">click here…</a></span></p>
+<p style="text-align: center; width: 100%; margin: 20px 0;">
+    <a href="https://sgrao001.github.io/MyBooks/akka/akka.html" 
+       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
+              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
+              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
+              justify-content: center; font-size: 1em !important;">
+        Akka
+    </a>
+</p>
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 
