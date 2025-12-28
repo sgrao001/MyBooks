@@ -585,11 +585,12 @@ As I get older, I am progressively less able to defend myself against chance occ
 
 I often find solace in the belief that I have an ally - GOD - and the faith, that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the light finally turns off. 
 
-I may object to actions of the body and the mind, but, can never find blame with the “atman” or  the “soul”. 
+I may object to actions of the body and the mind, but, am unable find blame with the 'soul'. 
 
 There is a rationalization that goes as such,
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. They are eternal and part of one whole. They remain connected to each other In life, and on release, they merge up with other souls into a vast reservoir called God. </p>
-This argument provides me with a sense of custodianship of life alongside other beings. It provides continuity, belonging and  it opens up a pathway to rise above the fray of my current states and find acceptance and inner peace within my reach. 
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other In life, and on release, they merge up with other souls into a welcoming infinite being. I can call this infinite being God. </p>
+
+This argument provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for continuity, belonging and it opens up a pathway to rise above the fray of my current states and find acceptance and inner peace, within my reach. 
 
 I will need a lot of practice at this. 
 
