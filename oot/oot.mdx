@@ -538,6 +538,10 @@ Does my ego require my life to have meaning? If I were to proclaim a meaning to 
 
 Who assigns meaning to divinity? Why is mankind not able to reach consensus on what that is?
 
+As Richard Feynman said, “I would rather have questions that can be answered, rather than answers that can’t be questioned. There’s no shame in not knowing everything, it’s in not wanting to.”
+
+I am pursuing my ignorance. 
+
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Fragility
