@@ -20,12 +20,12 @@ I live in Chicago. I decided to live, walk, think, listen, read and write in the
 
 As I began to look around, I discovered gems of wisdom that people had graciously left for me  —  in books, conversations, images and artwork   —  in the streets, in coffee-shops, buildings, libraries and museums  — Inspirational gifts, given freely, that which they had acquired through much thought and effort.  It was like having an infinitely large group of well-wishers who were willing to share their journeys for my reference and guide me through my own. I wasn’t going it alone. 
 
-I became fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon two formats that seemed like they would work well. 
+I became fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon three formats that seemed like they would work well. 
 
 <p style="margin: 0 7.5%; font-style: italic;"><br>
 Not long ago, people used to send postcards, from their travels, to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. I found this approach worked well for me.<br><br>
 The second format I selected is a short story — drawn from historical events or 
-experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p>
+experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. <br><br>Thirdly, How would I re-tell the story of someone else's life?  How would I blend my experiences and perspectives with theirs? Would that make for interesting writing? Would I learn something about myself? This I will try…</p>
 <br>
 I am deeply appreciative of life’s offerings that has brought me to this point.
 
