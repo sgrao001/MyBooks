@@ -5,7 +5,7 @@
 [[header |Main]] | [[_Idx-AA_Journal|_Idx-AA_Journal]]
 
 This does not show. for testing only
-| Header 1 | Header 2 |
+CB| Header 1 | Header 2 |
 |----------|----------|
 | Cell 1   | (https://yahoo.com)   |
 | Cell 3   | [here](https://www.google.com)   |
@@ -286,9 +286,9 @@ History tells us stories of ideology. Time will reveal the stories of reality.
 ## Time
 ![[DamielHeller-Time.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Time</span></p>
 
-Time is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous.  It creates no awareness of its presence. It has no enemies.
+Time as we understand it, is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous.  It creates no awareness of its presence. It has no enemies. We think of time like a meter running in the background. 
 
-The cognitive revolution in man started with an understanding of tense - past and future.  It gave man, memory and anticipation. 
+The cognitive revolution in man started with an understanding of tense - past and future.  It gave man, memory, anticipation and urgency. 
 
 Understanding came from evaluating outcomes that occurred in the past. Hope came from plans and actions, to direct outcomes in the future.  Happiness and sadness came from occurrences in the past. Excitement and fear stem from anticipations of the future. Illusions of confidence, came from plans and action’s perceived ability to control future outcomes. 
 
@@ -308,6 +308,24 @@ Humble men who were once secure in the knowledge that three hours of hunting and
 Humanity may pivot to re-claiming time for peace, harmony and well-being. We may choose to focus on the awareness of our being and that of others and make time our friend. We may re-orient understanding and hope and put it to work for our collective well-being. 
 
 Maybe, we will.
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Entropy
+![[Entropy.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Entropy</span></p>
+Suppose we alter the paradigm we use to understand time. 
+
+Suppose we think of time not as a background ticker against which all things in our universe must progress, but rather as a representer of change, in each item, we place inside our universe. We think of time as a ruler that measures the distance between event states that we choose to see. 
+
+If absolutely nothing in our universe changes, no atoms vibrate, no energy shifts, no events change, nothing happens, then time does not exist. Time cannot be defined without an event to mark it, without a pendulum oscillating or a vibrating quartz crystal. In other words, time is a property of the stuff we allow ourselves to sense in the universe we surround ourselves with. 
+
+Once we get to this definition, we can begin by eliminating things from our universe.  We start by concentrating on one thing, - our breathing. Breathing is the minimum essential event. Each breath keeps time. We begin to sense the stillness of the mind between breaths. In this state, we are singularly aware of our being. Time does not exist except for this one event. 
+
+In the space created between two breaths, we can select which changing events, from the universe flowing by, we wish to add to our consciousness. Time now gets a specific meaning within the context of the aaded event. Adding “A few events at a time” allows us to maintain control over our reactions, and guides us with accuracy and purpose. 
+ 
+Time is no longer a measure of the messiness in our universe, but rather a measure of the order we created for ourselves. We can order our universe toward events of peace, harmony and well-being, both within and without?
+
+The question then becomes how fast should time move in our self defined universe? I.e How many event changes should we assemble into our bucket? The best answer for me is - Am I able to recede into my singular event, breathing, at will? If yes then I am good. I am keeping pace with myself. 
+
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Gratitude
@@ -540,7 +558,7 @@ Who assigns meaning to divinity? Why is mankind not able to reach consensus on w
 
 As Richard Feynman said, “I would rather have questions that can be answered, rather than answers that can’t be questioned. There’s no shame in not knowing everything, it’s in not wanting to.”
 
-I am pursuing my ignorance. 
+My ignorance knows no bounds. I look forward to the pursuit of my ignorance for a long time. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
