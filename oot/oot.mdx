@@ -320,7 +320,7 @@ If absolutely nothing in our universe changes, no atoms vibrate, no energy shift
 
 Once we get to this definition, we can begin by eliminating things from our universe.  We start by concentrating on one thing, - our breathing. Breathing is the minimum essential event. Each breath keeps time. We begin to sense the stillness of the mind between breaths. In this state, we are singularly aware of our being. Time does not exist except for this one event. 
 
-In the space created between two breaths, we can select which changing events, from the universe flowing by, we wish to add to our consciousness. Time now gets a specific meaning within the context of the aaded event. Adding “A few events at a time” allows us to maintain control over our reactions, and guides us with accuracy and purpose. 
+In the space created between two breaths, we can select which changing events, from the universe flowing by, we wish to add to our consciousness. Time now gets a specific meaning within the context of the added event. Adding “A few events at a time” allows us to maintain control over our reactions, and guides us with accuracy and purpose. 
  
 Time is no longer a measure of the messiness in our universe, but rather a measure of the order we created for ourselves. We can order our universe toward events of peace, harmony and well-being, both within and without?
 
