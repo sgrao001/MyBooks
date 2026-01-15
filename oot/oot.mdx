@@ -233,6 +233,7 @@ Wars waged on, egged by the egos of lords, masquerading as ideology.
 No matter who wins, both are diminished. The lords will profit more if they collude to establish collective dominion over the serfs. But their egos goaded them to war. 
 
 The disproportional distribution of wealth, ensures that the winning serfs will get little or none of the spoils of war. The losing serfs and their families will suffer pain, dishonor, years of servitude and abject poverty. Serfs will risk their lives and a great many will loose it. 
+
 Blacksmith’s on both sides will profit, selling arrows, swords, spears and shields. Neighboring lords will smell blood in the water and join in, taking all they can. 
 
 Ego demands serf blood, and gets it. Ideology makes serfs act against their own self interest. Blows traded spawn never ending cycles of violence. War morphs from a choice made by the lords, to a necessity for the serfs. The lords nurse their bruised egos back to glory. 
@@ -310,21 +311,46 @@ Humanity may pivot to re-claiming time for peace, harmony and well-being. We may
 Maybe, we will.
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
-## Entropy
-![[Entropy.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Entropy</span></p>
-Suppose we alter the paradigm we use to understand time. 
+## Space, Time and Energy
+![[Space-Time-Energy.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Space, Time<br>and Energy</span></p>
+I alter the paradigm I use to define my relationship with time. 
 
-Suppose we think of time not as a background ticker against which all things in our universe must progress, but rather as a representer of change, in each item, we place inside our universe. We think of time as a ruler that measures the distance between event states that we choose to see. 
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket. </p>
 
-If absolutely nothing in our universe changes, no atoms vibrate, no energy shifts, no events change, nothing happens, then time does not exist. Time cannot be defined without an event to mark it, without a pendulum oscillating or a vibrating quartz crystal. In other words, time is a property of the stuff we allow ourselves to sense in the universe we surround ourselves with. 
+With this paradigm, time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order,  I add / remove items from my basket. 
 
-Once we get to this definition, we can begin by eliminating things from our universe.  We start by concentrating on one thing, - our breathing. Breathing is the minimum essential event. Each breath keeps time. We begin to sense the stillness of the mind between breaths. In this state, we are singularly aware of our being. Time does not exist except for this one event. 
+If absolutely nothing in my basket changes, no items vibrate, no energy shifts, no events change, nothing happens, then time does not exist. Time imposes no cost on me. Time cannot be defined unless an item in my basket marks a change. 
 
-In the space created between two breaths, we can select which changing events, from the universe flowing by, we wish to add to our consciousness. Time now gets a specific meaning within the context of the added event. Adding “A few events at a time” allows us to maintain control over our reactions, and guides us with accuracy and purpose. 
- 
-Time is no longer a measure of the messiness in our universe, but rather a measure of the order we created for ourselves. We can order our universe toward events of peace, harmony and well-being, both within and without?
+Time, space and energy emitted are intrinsic properties of the items I place in my basket. I can quantify the value of each item by these properties.  I cannot control how much space or time an item occupies, or the energy it releases, at any given moment. 
 
-The question then becomes how fast should time move in our self defined universe? I.e How many event changes should we assemble into our bucket? The best answer for me is - Am I able to recede into my singular event, breathing, at will? If yes then I am good. I am keeping pace with myself. 
+Items in my basket continually move from a steady state, I.e a state constrained by my choices, to one of instability, as dictated by each items inherent reaction to random probable events.  It is in each items nature to continually alter its properties of time, space and the energy it releases. 
+
+As this happens, I am left with one of two  choices. Do I toss the item from my basket, or not? and, Do I react to a change in its state, or not? I must cleanse my basket frequently. I can easily run out of space, time in my basket. I must remove items and residual debris they leave behind.
+
+I cleanse my basket by zooming into and panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. Once that happens, the item longer exists in my basket. 
+
+I continue this process of cleansing until I am left with one item, - my breath. Breathing is the minimum essential item that I must leave in my basket. I begin to sense the stillness of my mind between breaths. In this state of singularity, I become intensely aware of my being. Time does not exist except for this one item. In this state of singularity, I am clean, empty and open. 
+
+If I am able to revert to my singular state of being, at any given time, then I know I am tossing out unstable items from my basket, as they are created. I am keeping pace with myself. I have order and items of quality in my basket. 
+
+As I cleanse my basket, I selectively add items from the outside universe, into my basket. Time now begins to track the internal change of my breathing event, and the unique ever changing state of each added item. I choose items that promote passionate living and harmonious co-existence with the universe outside. These items take up the least amount of space and time in my basket and release the most energy to me. With this construct, I find meaning and energy in my life’s choices. 
+
+The order in which I insert items into my basket is dependent on energy they release for my use. I transition to a consistent,  sustainable and a self-directed state of self-value. 
+
+Time is no longer a measure of the messiness in the universe, but rather a measure of the order I have created for myself. 
+
+I think of my basket as a structure that is dynamic and made of “dimensional
+units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The size of my basket is the sum total of the energies received from the items, less the energies required to maintain and react to changes in it. This defines my capability. Passionate and harmonious living grows my capability. Growth becomes my choice. 
+
+This definition of time establishes my relationship with reality. I can now define my reality as a function of space, time and energy in my basket.  This insulates me above the inherent turbulence of the reality outside. 
+
+Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and helps me focus on the cause-effect relationships within my perceived reality. Time, like space, becomes a dimension, which creates a definable co-relation between it and my current state. Time is no longer a container of everything. Time itself is contained within my basket. I am therefore not limited by time. I am limited by the energy surplus in my basket. with frquent cleansing, I cannot be overwhelmed - I will never run out of time. Time, like space, is no longer a constant. It is constantly impacted by the items in my basket. It is a measure of the structure within my basket, as it is in the moment. Items outside my basket are outside my field of view. I focus on what is to be done now without the distraction of probabilities or possibilities imposed on me from outside my basket. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space interchangeable. They are just labels for the energy in my basket. 
+
+This does not changing anything that I am intuitively programmed to do. It is just illuminates why I do it and how I can make it more meaningful and sustainable. 
+
+I hope to practice reaching a singular state ,multiple times each day. It is my place of rest and validation.  
+
+** https://youtu.be/zUHtlXA1f-w?si=NO835wp_pjozKSWp
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
