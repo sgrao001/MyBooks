@@ -220,6 +220,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             --arrow-hover-width: {ARW_HOVER_WIDTH}%;
             --page-width: 94vw;
             --page-height: 94vh;
+            --page-height-415px: 60vh;
             --ARW_HOVER_HEIGHT: 87vh;
             --ARW_HOVER_HEIGHT_415px: 73vh;
             --ARW_HOVER_TOP: 10vh;
@@ -776,12 +777,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
 
         .toc-button-container {{
+            width: calc(100% - var(--arrow-hover-width));
+            margin-left: auto;
+            margin-right: auto;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 15px;
-            justify-content: flex-start !important; /* Add this to align items to the left */
-            width: 100%; /* Ensure full width */
         }}
 
         .compact-button {{
@@ -1089,7 +1090,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
             .page {{
                 /* Adjust height calculation */
-                height: 60vh !important;
+                height: var(--page-height-415px) !important;
             }}
             .content-text {{
                 font-size: var(--mobile-font-size) !important;
@@ -1725,6 +1726,9 @@ def clean_content(content):
     
     # 1. FONT TAG HANDLING (Original Logic)
     # First protect <br> tags inside font tags to prevent them from being modified
+    # Remove markdown headings (lines containing ##)
+    content = re.sub(r'^.*///.*$', '', content, flags=re.MULTILINE)
+    # Remove bold formatting (**text** or __text__)
     protected_content = re.sub(r'(<font[^>]*>.*?)<br>(.*?</font>)', 
                              r'\1<!--BR_TAG-->\2', 
                              content, 
