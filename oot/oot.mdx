@@ -279,6 +279,7 @@ We feel good. We don’t realize we are the “boiling frog.” We make freedom 
 Time tested structures in society, from the humble family unit, to corporations, to governments and religions, effectively use ideologies to favor the few and suppress the many. 
 
 Are we satisfied with descriptive adequacy or do we seek explanatory understanding? Do we rely on evidence gathered in due course of time, or do we draw conclusions based on reasoning? Do we understand how our biases define our acceptances? Do we have the freedom to dis-associate ideology from reality without fear of punishment?
+
 Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?
 
 History tells us stories of ideology. Time will reveal the stories of reality. 
@@ -317,41 +318,65 @@ I alter the paradigm I use to define my relationship with time.
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket. </p>
 
-With this paradigm, time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order,  I add / remove items from my basket. 
+Time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order,  I add / remove items from my basket. 
 
 If absolutely nothing in my basket changes, no items vibrate, no energy shifts, no events change, nothing happens, then time does not exist. Time imposes no cost on me. 
 
-Time, space and energy emitted, are intrinsic properties of the items I place in my basket. I can quantify the value of each item by these properties.  I cannot control how much space or time an item occupies, or the energy it releases, at any given moment. 
+Time, space and energy emitted, are intrinsic properties of items I place in my basket. I quantify the value of each item by these properties.  I cannot control how much space or time an item occupies, or how much energy it releases, at any given moment. 
 
-Items in my basket continually move from a steady state, I.e a state constrained by my choices, to one of instability, as dictated by each items inherent reaction to random probable events.  It is in each items nature to continually alter its properties of time, space and the energy it releases. I can only control what I allow into my basket.
+Items in my basket continually move from a steady state, I.e a state constrained by my choices, to one of instability, as dictated by each items inherent reaction to random probable events.  It is in each items nature to continually alter its properties. I can only control what I allow into my basket.
 
-Therefore, I am left with one of two  choices. Do I toss the item from my basket, or not? and, Do I react to a change in its state, or not? I must cleanse my basket frequently. I can easily run out of space or time. I must remove items and residual debris they leave behind.
+I am left with two choices. Toss the item from my basket, or not? and, React to a change in item’s state, or not? 
 
-I cleanse my basket by zooming into and panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. Once that happens, the item longer exists in my basket. 
+I must cleanse my basket frequently.I easily run out of space or time. I must remove items and residual debris they leave behind.
 
-I continue this process of cleansing until I am left with one item, - my breath. Breathing is the minimum essential item that I must leave in my basket. I begin to sense the stillness of my mind between breaths. In this state of singularity, I become intensely aware of my being. Time does not exist except for this one item. In this state of singularity, I am clean, empty and open. 
+I cleanse my basket by zooming into and panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. Only then is the item tossed in my basket. 
 
-If I am able to revert to my singular state of being, at any given time, then I know I am tossing out unstable items from my basket, as they are created. I am keeping pace with myself. I have order and items of quality in my basket. 
+I continue cleansing. I am eventually left with one item, - my breath. Breathing is the minimum essential item that I must keep. I now sense the stillness of my mind between breaths. In this state of singularity, I become intensely aware of my being. In this state of singularity, I am clean, empty and open. 
 
-As I cleanse my basket, I selectively add items from the outside universe, into my basket. Time now begins to track the  change of my breathing event, and the unique ever changing state of each added item. I choose items that promote passionate living and harmonious co-existence with the universe outside. These items take up the least amount of space and time in my basket and release the most energy to me. With this construct, I find meaning and energy in my life’s choices. 
+If I am able to revert to my singular state of being, then I know I am tossing out unstable items as they are created. I am keeping pace with myself. I have order and items of quality in my basket. 
+
+I selectively add items from the outside universe, into my basket. Time picks up its pace. I choose items that promote passionate living and harmonious co-existence with the universe outside. These take up the least amount of space and time in my basket and release the most energy to me. With this construct, I find meaning and energy in my life’s choices. 
 
 The order in which I insert items into my basket is dependent on energy they release for my use. I transition to a consistent,  sustainable and a self-directed state of self-value. 
 
 Time is no longer a measure of the messiness in the universe, but rather a measure of the order I have created for myself. 
 
-I think of my basket as a structure that is dynamic and made of “dimensional
-units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The size of my basket is the sum total of the energies received from the items, less the energies required to maintain and react to changes in it. This defines my capability. Passionate and harmonious living grows my capability. Growth becomes my choice. 
+My basket structure is dynamic and made of “dimensional units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The energy surplus in my basket, i.e my capability, is the sum total of the energies received from the items, less the energies required to maintain and react to changes in it. Passionate and harmonious living provides surplus energy to grow my capability. Growth becomes my choice. 
 
-This definition of time establishes my relationship with reality. I can now define my reality as a function of the items in my basket.  This insulates me from the inherent turbulence of the reality outside. 
+This definition of time establishes my relationship with reality. I define my reality as a function of the items in my basket.  This insulates me from the inherent turbulence of the reality outside. 
 
-Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and allows me to focus only on the cause-effect relationships within my perceived reality. Time, creates a definable co-relation between it and my current state. Time is no longer a container of everything. Time itself is contained within my basket. I am therefore not limited by time. I am limited by the energy surplus in my basket. With frequent cleansing, I cannot be overwhelmed - I will never run out of time. Time, is constantly impacted by the items in my basket. It is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I focus on what is to be done now, without the distraction of probabilities or possibilities imposed on me from the universe outside. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space are interchangeable and are just labels for the energy in my basket. 
+Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and allows me to focus only on the cause-effect relationships within my perceived reality. 
 
-This paradigm does not change anything that I am intuitively programmed to do. It just highlights why I ought to do something, and how it relates to the other things I am doing. I am able to explain what is meaningful and sustainable to me, and why.  
+Time is no longer a container of everything. Time itself is contained within my basket. I am no longer limited by time. I am limited by my capability. I grow and re-orient my capability with frequent cleansing. I remove my limitations. 
 
-I hope to practice reaching my singular state ,multiple times each day. It is my place of rest and validation.  
+Time, is constantly impacted by the items in my basket. It is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space are labels for the energy in my basket and are interchangeable. 
+
+This does not alter what I am intuitively programmed to do. It highlights why I ought to do something, and how it relates to the other things I am doing. I am able to explain what is meaningful to me, and why.  
+
+I must reach my singular state, often. It is my place of rest and validation.  
 
 /// https://youtu.be/zUHtlXA1f-w?si=NO835wp_pjozKSWp
 
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Passionate and Harmonious living 
+![[Passion&Harmony.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Passionate and<br>Harmonious living </span></p>
+Minimalism is a pre-requisite to passionate and harmonious living. 
+
+Through the ages, adventurers traveling to unknown lands, carried only a compass and a map. Food, shelter, clothing and companions were always found along the way. 
+
+And, so it is with traveller’s who walk along the uncertain paths of life, carrying only the necessities for passionate and harmonious living. For they know, that all else burdens, limits options and wastes energy. 
+
+Discovery of passion is a consequence of conscious journeys into the self. Passionate living is a consequence of repeated journeys from the knowledge core to the outer edges of cognitive capacity, along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength. 
+
+Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual debris are indicators of passionate choices. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is regenerative.
+
+Harmonious living is a result of effortless energy exchanges with the turbulent outside universe. 
+
+This smoothness of the energy exchange is a function of the available size in the basket into which this energy flows, the number of items already in it, the intensity of the energy required to sustain these items over time and the energy required to cleanse the debris they are likely to leave behind. Set the pace for the exchanges and set the pace for cleansing of the basket. 
+
+The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Gratitude
