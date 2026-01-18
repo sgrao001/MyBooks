@@ -328,31 +328,31 @@ Items in my basket continually move from a steady state, I.e a state constrained
 
 I am left with two choices. Toss the item from my basket, or not? and, React to a change in item’s state, or not? 
 
-I must cleanse my basket frequently.I easily run out of space or time. I must remove items and residual debris they leave behind.
+I must cleanse my basket frequently. I easily run out of space or time. I must remove items and residual debris they leave behind.
 
-I cleanse my basket by zooming into and panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. Only then is the item tossed in my basket. 
+I cleanse my basket by zooming in and out, while also panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. This irrelevance tosses the item from my basket. 
 
 I continue cleansing. I am eventually left with one item, - my breath. Breathing is the minimum essential item that I must keep. I now sense the stillness of my mind between breaths. In this state of singularity, I become intensely aware of my being. In this state of singularity, I am clean, empty and open. 
 
-If I am able to revert to my singular state of being, then I know I am tossing out unstable items as they are created. I am keeping pace with myself. I have order and items of quality in my basket. 
+If I am able to revert to my singular state of being, then I know, I am tossing out unstable items as fast as they are created. I am keeping pace with myself. I have order and items of quality in my basket. 
 
-I selectively add items from the outside universe, into my basket. Time picks up its pace. I choose items that promote passionate living and harmonious co-existence with the universe outside. These take up the least amount of space and time in my basket and release the most energy to me. With this construct, I find meaning and energy in my life’s choices. 
+I selectively add items from the outside universe, into my basket. Time picks up its pace. I choose items that promote passionate living and harmonious co-existence with the universe outside. These take up the least amount of space and time in my basket and releases the most energy for my use. With this construct, I find meaning and energy in my life’s choices. 
 
 The order in which I insert items into my basket is dependent on energy they release for my use. I transition to a consistent,  sustainable and a self-directed state of self-value. 
 
 Time is no longer a measure of the messiness in the universe, but rather a measure of the order I have created for myself. 
 
-My basket structure is dynamic and made of “dimensional units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The energy surplus in my basket, i.e my capability, is the sum total of the energies received from the items, less the energies required to maintain and react to changes in it. Passionate and harmonious living provides surplus energy to grow my capability. Growth becomes my choice. 
+My basket structure is dynamic and made of “dimensional units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The energy surplus in my basket, i.e my capability, is the sum total of the energies received from the items, less the energies required to maintain and react to changes associated with them. Passionate and harmonious living provides surplus energy to grow my capability. Growth becomes my choice. 
 
 This definition of time establishes my relationship with reality. I define my reality as a function of the items in my basket.  This insulates me from the inherent turbulence of the reality outside. 
 
-Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and allows me to focus only on the cause-effect relationships within my perceived reality. 
+Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and allows me to focus on the cause-effect relationships within my perceived reality. 
 
-Time is no longer a container of everything. Time itself is contained within my basket. I am no longer limited by time. I am limited by my capability. I grow and re-orient my capability with frequent cleansing. I remove my limitations. 
+Time is no longer a container of everything. Time itself is contained within my basket. I am no longer limited by time. I am limited by my capability. I grow and re-orient my capability with frequent cleansing. I am able to remove my limitations. 
 
-Time, is constantly impacted by the items in my basket. It is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space are labels for the energy in my basket and are interchangeable. 
+Time is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space are labels for the energy in my basket and are interchangeable. 
 
-This does not alter what I am intuitively programmed to do. It highlights why I ought to do something, and how it relates to the other things I am doing. I am able to explain what is meaningful to me, and why.  
+This does not alter what I am intuitively programmed to do. It highlights why I ought to do it. I am able to explain what is meaningful to me, and why.  
 
 I must reach my singular state, often. It is my place of rest and validation.  
 
@@ -364,7 +364,7 @@ I must reach my singular state, often. It is my place of rest and validation.
 ![[Passion&Harmony.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Passionate and<br>Harmonious living </span></p>
 Minimalism is a pre-requisite to passionate and harmonious living. 
 
-Through the ages, adventurers traveling to unknown lands, carried only a compass and a map. Food, shelter, clothing and companions were always found along the way. 
+Through the ages, adventurers, traveling to unknown lands, carried only a compass and a map. Food, shelter, clothing and companions were always found along the way. 
 
 And, so it is with traveller’s who walk along the uncertain paths of life, carrying only the necessities for passionate and harmonious living. For they know, that all else burdens, limits options and wastes energy. 
 
@@ -374,9 +374,11 @@ Nurture, what nature has given. Timely outcomes, larger rewards, and smaller res
 
 Harmonious living is a result of effortless energy exchanges with the turbulent outside universe. 
 
-This smoothness of the energy exchange is a function of the available size in the basket into which this energy flows, the number of items already in it, the intensity of the energy required to sustain these items over time and the energy required to cleanse the debris they are likely to leave behind. Set the pace for the exchanges and set the pace for cleansing of the basket. 
+This smoothness of the energy exchange is a function of the available size in the basket into which this energy flows, the number of items already in it, the intensity of the energy required to sustain these items over time and the energy required to cleanse the debris they are likely to leave behind. 
 
-The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.  
+I set the pace for the exchanges and set the pace for cleansing of the basket. 
+
+The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for my passionate living.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Gratitude
