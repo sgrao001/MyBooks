@@ -37,7 +37,7 @@ Enjoy!!!
 ## Initial thoughts
 <p style="color: #f09e5a;"><span class="highlight-text">Initial Thoughts</span></p>
 
-These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back,only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.
+These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back, only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.
 
 Truth might well be the realization that “I” refers to the awareness of the contents of an energy halo unique to all beings. This halo created at birth by biological encoding, is sustained by a continuum of observations, experiences, emotions and actions, and relationships to energy flows that are integral to that being. The evolving nature of this understanding makes the journey into the self a lifelong pursuit.
 
@@ -80,7 +80,7 @@ Harness the actors in the theater of the mind, to curate energy flows and residu
 ## Language of the mind
 <p style="color: #f09e5a;"><span class="highlight-text">Language of the mind</span></p>
 
-The faculty of language is the limiting factor in thought and understanding. Language, as a communication mode between mind organs, is analogous to the neurological signaling between the body organs. While most body functions are involuntary, the three wise men control the functions of the mind.
+The faculty of language is the limiting factor in thought and understanding. Language, as a communication mode between mind organs, is analogous to the neurological signaling between the body organs. While most body functions are involuntary, the three wise men must control the functions of the mind.
 
 The three wise men determine what energy is attracted into the halo, what flows through, what is consumed, and how residual footprints are released. This is done by instructing the “Will” to trigger lower mind organs to work on the energy content of the halo.
 
@@ -128,7 +128,7 @@ Associated interpretations (two very different types - (type I and type II) and 
 
 The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for “Will’ed” actions,
 
-<p style="text-align: center;margin-left: 30px; line-height: 1.4; font-style: italic;">They must aim for descriptive adequacy&nbsp;&nbsp;<u>NOT</u>&nbsp;&nbsp;explanatory adequacy in storing experiences.</p>
+<p style="text-align: center;margin-left: 30px; line-height: 1.4; font-style: italic;">The three wise men must aim for descriptive adequacy&nbsp;&nbsp;<u>NOT</u>&nbsp;&nbsp;explanatory adequacy in storing experiences.</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ![[000gPassionateLiving.jpeg]]
@@ -148,10 +148,10 @@ Genetic endowments create pre-dispositions in all beings.
 Passionate living is the spending of energy in the pursuit of actions aligned with these pre-dispositions. 
 </p>
 
-Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual footprints are an indicator of passionate choices. Often, this is a result of referencing type II interpretations. Energy obtained from outcomes becomes consistently greater than consumption. This pattern of passionate living is visible and regenerative. Energy obtained from outcomes becomes consistently greater than consumption. This pattern of passionate living is visible and regenerative.
+Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual footprints are indicators of passionate choices. Often, this is a result of referencing type II interpretations. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is visible and regenerative.
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Passionate living involves repeated journeys from the knowledge core to the outer edges of cognitive capacity along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance.
+Passionate living involves repeated journeys from the knowledge core to the outer edges of cognitive capacity along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength.
 </p>
 
 Passionate living expands the halo and smoothens energy flows in it. The desire for passionate living rests on a foundation of curiosity.
@@ -161,23 +161,20 @@ Passionate living expands the halo and smoothens energy flows in it. The desire 
 ## Harmonious living
 <p style="color: #f09e5a;"><span class="highlight-text">Harmonious living</span></p>
 
-Harmonious living is a result of effortless exchanges of energy, a consequence of smooth energy flows in and out of the halo. Smooth flow is a function of, 
+Harmonious living is a result of effortless exchanges of energy, a consequence of smooth energy flows in and out of the halo. Smooth energy flow is a function of, 
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
 The turbulence of outside energy, the size of the halo, the amount and intensity of the energy attracted into it, the number of residual footprints, and the effort to release them. </p>
 The value of smooth flow is to allow for timely energy spend on,
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Wide observation scans, selective consumption, focused action, receipt of timely feedback, a continuous need to release residual energy footprints and lessen the likelihood of dis-passionate, impromptu and inconsequential living.</p>
+Wide observation scans, selective consumption, focused action, receipt of timely feedback, a continuous effort to release residual energy footprints and lessen the likelihood of dis-passionate, impromptu and inconsequential living.</p>
 Everything and everyone in nature is transmitting energy back and forth. The three wise men must,
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
 Set the pace of engagement, set the pace of the release of footprints, retain focus on doing the “right” thing, in the “best” way, and with “compassion”. </p>
-
-The primary goal of harmonious living is
-
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Energy conservation, smooth flow in the halo, and lower the need for corrective action (release of footprints in the halo).</p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">The primary goal of harmonious living is energy conservation, smooth flow in the halo in the self, and lowering the need for corrective action (release of footprints in the halo).</p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ![[000iReleaseFootprints.jpeg]]
@@ -185,10 +182,10 @@ Energy conservation, smooth flow in the halo, and lower the need for corrective 
 <p style="color: #f09e5a;"><span class="highlight-text">Release residual footprints</span></p>
 
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Consumptions of energy from the halo, irrespective of outcomes, will leave footprints.
+The flow of energy into the halo, irrespective of outcomes, will leave residual footprints.
 </p>
 
-To allow for continuous and smooth energy flow through the halo, they must be released. The three wise men, as custodians of the halo, must take ownership of its contents and must continually “Will” action to release residual energy footprints within it.
+To allow for continuous and smooth energy flow through the halo, footprints must be released. The three wise men, as custodians of the halo, must take ownership of its contents and must continually “Will” action to release residual energy footprints within it.
 
 The three wise men must repeatedly walk around each residual footprint. This inspection changes their perspective. It allows for multiple points of view to assess impact in a micro sense.  They must also change their frames of reference by zooming in and out to assess relevance to the bigger picture, a macro sense. 
 
@@ -227,7 +224,7 @@ All beings, living and inanimate, contribute to the energy flow in the universe.
 
 The universe is a limitless and free energy resource.  Every human made object was built with human energy investments and continues to be maintained by it. Every other object in nature evolved with the application of forces over time and continues to be sustained by it. All beings are bundles of energy in motion. Energy exchanges occur at every instant in time, in massive doses. History has locked energy into objects, waiting to be released. Openness allows the halo to attract and be receptive to new energy flows. 
 
-Energy cannot be created or destroyed. It may only be stored for short periods and footprints must be released. Footprints stored for longer durations take up space, that the halo would have used for new exchanges.
+Energy cannot be created or destroyed. It may only be stored for short periods after which their footprints must be released. Footprints stored for longer durations take up space, that the halo would have used for new exchanges.
 
 Harmonious co-existence with the universe, (effortless energy exchanges), feeds the energy needs for passionate living. The meaning of life is a function of the energy connections the three wise men make in the halo’s neighborhood.
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
@@ -250,10 +247,10 @@ The descriptive captures describe three contexts</p>
 <p style="margin-left: 60px; line-height: 1.4; font-style: italic;">
 The context outside the halo<br>
 The context held within the mind organs<br>
-The context within which feelings make sense.<br>
+The context within which feelings make sense to the being.<br>
 </p>
 
-Consciousness is the experience of awareness without content (a probability space ) and have content arise as a consequence of it. Consciousness is that in which all experience appears, with which all experience is known and out of which all experience is made
+Consciousness is the experience of awareness without content and have content arise as a consequence of it. Consciousness is that in which all experience appears, with which all experience is known and out of which all experience is made
 
 Experience is all sensation (feelings of the body - sight, sound, touch, taste, smell) and the emotions (feelings of the mind) presented by the mind organs.
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
@@ -323,7 +320,7 @@ Use the three wise men to guide minimizing footprints in self. <br>
 <br>
 Assist others to support their needs, but only to the extent that understood and accepted amounts of energy are consumed from the halo. Use conscience to guide minimizing footprints in others. Always, compassion (to self, first and then, to others).
 <br>
-Compassion is about energy conservation.
+Compassion is about energy conservation in the whole ecosystem.
 </p>
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
@@ -336,7 +333,7 @@ Knowing what to do, and summoning the “Will” to do it, goes 2/3rd of the way
 
 The purpose of meditation is to practice being persistently open. This requires discipline.  Discipline exercises and strengthens the three wise men.
 
-Discipline is accomplished through frequent meditation, which reinforces desired behaviors to the three wise men.  It keeps “openness” front and center, making it a persistent theme. From that, comes the ability to do the “right” thing, in the “best” way, with “compassion” and with ease.
+Discipline is accomplished through frequent meditation, which reinforces desired behaviors to the three wise men.  It keeps “openness” front and center, making it a persistent theme. From that, comes the ability to do the “right” thing, in the “best” way, with “compassion” and with ease. It suspends all activity to provide the three wise men with rest and validation. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ![[000qdiest.jpeg]]
