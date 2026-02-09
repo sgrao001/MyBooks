@@ -328,7 +328,7 @@ Items in my basket continually move from a steady state, I.e a state constrained
 
 I am left with two choices. Toss the item from my basket, or not? and, React to a change in item’s state, or not? 
 
-I must cleanse my basket frequently. I easily run out of space or time. I must remove items and residual debris they leave behind.
+I must cleanse my basket frequently. I easily run out of space or time. I must remove items and the residual debris they leave behind.
 
 I cleanse my basket by zooming in and out, while also panning around each item, with the express intent of constructing a new context, within which, this item has no relevance. This irrelevance tosses the item from my basket. 
 
@@ -342,15 +342,15 @@ The order in which I insert items into my basket is dependent on energy they rel
 
 Time is no longer a measure of the messiness in the universe, but rather a measure of the order I have created for myself. 
 
-My basket structure is dynamic and made of “dimensional units” called space, time and energy. Space is analogous to the energy I consume to maintain each item in my basket. Time is analogous to the energy I consume to measure and react to changes in the item. The energy surplus in my basket, i.e my capability, is the sum total of the energies received from the items, less the energies required to maintain and react to changes associated with them. Passionate and harmonious living provides surplus energy to grow my capability. Growth becomes my choice. 
+My basket structure is dynamic and made of “dimensional units” called space, time and energy. Space in my basket is synonymous to the energy I consume to maintain each item in my basket. Time in my basket is analogous to the energy I consume to measure and react to changes in the item. The energy surplus in my basket, i.e my capability, is the sum total of the energies received from the items, less the energies required to maintain and react to changes associated with them. Passionate and harmonious living provides surplus energy to grow my capability. Growth becomes my choice. 
 
 This definition of time establishes my relationship with reality. I define my reality as a function of the items in my basket.  This insulates me from the inherent turbulence of the reality outside. 
 
 Time is no longer a measure of duration, it becomes a measure of change, and as such, it is far more useful to me. It removes my recency bias and allows me to focus on the cause-effect relationships within my perceived reality. 
 
-Time is no longer a container of everything. Time itself is contained within my basket. I am no longer limited by time. I am limited by my capability. I grow and re-orient my capability with frequent cleansing. I am able to remove my limitations. 
+Time is no longer a container of everything. Time itself is contained within my basket. I am limited by my capability and nothing else. I grow and re-orient my capability with frequent cleansing. 
 
-Time is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I understand simultaneity of change. I become the preserver of order in my basket. I realize that time and space are labels for the energy in my basket and are interchangeable. 
+Time is a measure of the structure within my basket, as it is in the moment. Items outside my basket, are outside my field of view. I understand the simultaneity of change. I become the preserver of order in my basket. I realize that time and space are labels for the energy in my basket and are interchangeable. 
 
 This does not alter what I am intuitively programmed to do. It highlights why I ought to do it. I am able to explain what is meaningful to me, and why.  
 
@@ -388,7 +388,7 @@ I have so much … so much, to be grateful for. I forget that sometimes. I get b
 
 Happiness is a gift that is short lived.  Efforts to reduce pain, without joy to fill the void, is an uphill battle. 
 
-If there ever was a switch that can turn  “on” happiness, I believe It is gratitude. 
+If there ever was a switch that can turn  “on” happiness, It is gratitude. 
 
 When gratitude is expressed, the grantor gets to recognize their effort as a success and be acknowledged for it. That opens the door to good feelings. 
 
@@ -400,9 +400,9 @@ The process of receiving a gift is the best motivator for paying it back to some
 
 Feeling grateful for a gift received, or being thankful to be able to give one, is an instant “on” for good feelings and positivity.
 
-People ask me what I plan to do when I retire. i am hard pressed to find a better use for my time. 
+People ask me what I plan to do when I have time. i am hard pressed to find a better use for my time. 
 
-There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities,  to pay and to receive as I go forward. 
+There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities, to pay and to receive as I go forward. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Energy
@@ -574,6 +574,17 @@ Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance
 LIfe seems to be about following this loop over and over again… 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
+
+## Pursuit of Ignorance
+![[AllegoryOfTheCave.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Pursuit of Ignorance</span></p>
+
+Reaching a stage of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
+
+Recognition of ignorance shows wisdom. The acceptance of ignorance shows humility. The pursuit of ignorance shows passion. How the acquired knowledge is used reveals the level of critical thought.  What is accomplished shows skill. Starting over, shows perseverance. 
+
+My ignorance tells me more about myself than my knowledge ever will.  
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
 ## Just Asking
 ![[JustAsking.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Just Asking</span></p>
 
@@ -601,7 +612,7 @@ Am I a perturbation in contributing variables, as evolution takes its minute ste
 
 Since meaning is an attribute of awareness and understanding, is the meaning of my life whatever I want it to be at any given moment in time? 
 
-Are descriptors like happiness, suffering, love, compassion, respect, awe,  expressions of the meaning I attribute to my life? 
+Are descriptors like happiness, suffering, love, compassion, respect, and awe  expressions of the meaning I attribute to my life? 
 
 Is the meaning I attribute to my life more important than the meaning others attribute to theirs? Is this distinction the source of pride, joy, greed, division, love and hate in me? 
 
@@ -609,7 +620,7 @@ Does my ego require my life to have meaning? If I were to proclaim a meaning to 
 
 Who assigns meaning to divinity? Why is mankind not able to reach consensus on what that is?
 
-As Richard Feynman said, “I would rather have questions that can be answered, rather than answers that can’t be questioned. There’s no shame in not knowing everything, it’s in not wanting to.”
+As Richard Feynman said, “I would rather have questions that can be answered, than answers that can’t be questioned. There’s no shame in not knowing everything, it’s in not wanting to.”
 
 My ignorance knows no bounds. I look forward to the pursuit of my ignorance for a long time. 
 
@@ -639,35 +650,50 @@ The word God covers an enormous range of different ideas, running from an outsiz
 
 If I say a god exists, or if I say he doesn’t, you have learned absolutely nothing. So, why we use a label so ambiguous, that means so many different things to so many people; because, it is a generic enough label, that you hope will give you the freedom to seem to agree with people with whom you fundamentally do not agree. It covers over differences. It makes for social lubrication. It is not an aid to truth. We need much sharper language and honesty to seek common understanding. ”
 
-As described by Carl, it could be that a diest God created the universe, or as science hypothesizes, the universe started off through a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me what I have and be born into this world. So, here I am.  
+As understood by our founding fathers, it could be that a Diest God created our universe and each of us. Or, as science hypothesizes, the universe started off through a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me, what I have, and be born into this world. Either way, here I am.  
 
-Praying to God for what he did not give to me in the first instance, would be a nonsensical burden on him and utterly pointless.
+Maybe my definition of God is synonymous with the scientific process of evolution which obeys the sum total of all the laws of the universe. 
 
-Begging forgiveness or offering repentance is worse as my transgressions are not against him, but against fellow beings on this earth. It would be morally reprehensible for me to wrong one and then ask forgiveness from another. 
+To keep asking God for what he chose to not give me in the first instance, would be a nonsensical burden on him and utterly pointless to me.
 
-At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. 
+Begging forgiveness or offering repentance is worse, as my transgressions are not against him, but against myself or my fellow beings on this earth. It would be morally reprehensible for me to wrong one and then beg forgiveness from another.  I would be asking for the suffering caused by me to be rendered inconsequential. I would be asking to be rewarded for my misdeeds. My misdeeds would teach me nothing. Turned around, this would motivate me to mark the genuineness of my ask to be proportional to the extent of the harm caused by my misdeeds. Claiming forgiveness, as a reward for my proclamations of love and obedience, or for chanting his praise or for bank rolling his faithful, would not make the sufferer whole. It would be a false cleansing of my conscience. 
 
-I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all of its joy.  Also, most messes in my life are uniquely mine. 
+There is a risk here; I would perish under the cumulative load of my misdeeds, should God choose to not grant me the forgiveness I seek. If I cannot live my life without harming anyone, it would be much more responsible of me to make whole, the people I have harmed, as I go along. 
+
+If my God is a synonym for evolution, then my transgressions against myself and others, and my attempts at making whole, are the necessary building blocks to ensure the  survival of next generations. 
+
+At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. In an afterlife, without this body and mind, my current experiences of people, places, relationships, memories and sensations, would have no contextual anchors. Without this continuity, my expectations of eternal joy or fears of eternal suffering would have no meaning.  
+
+Once again, if God is a synonym for evolution, then the after-life is by definition required to be unknown, as it is a random perturbation, along a new vector, in a new being, with a few learned lessons being transferred at birth. Making projections or estimations of its various states is merely an exercise of the imagination with no basis in reality. 
+
+It makes more sense that I inquire about my pre-life. It, likely has a greater bearing on my present existence. 
+
+I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all its joy.  Also, since most messes in my life are uniquely mine, I must take responsibility for its fixes. 
+
+Wealth is a man made construct. If wealth is thought of as value, then there is a limitless supply of it in nature. Value is sourced from nature and is not a zero sum game. The quantity of value at my disposal, is limited by my ability to access and use it. Asking for more achieves nothing. There is no need to hoard that which is freely available. In this context, the only way to secure value is to nurture nature in all its forms.  The limitless availability of value is a resource which I use to experiment with my life and present my successes and failures for evolution to consider for its subsequent constructs. 
 
 Of course, all this is negated if I believe that God made me as a specific individual with all my accompanying attributes, and did the same for every other being that ever lived, in all time. 
 
-It is certainly a comforting thought, that God would go to all this trouble for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I wish he would tell me the purpose for my existence. It would take the guesswork and chaos out for me. 
+It is certainly a comforting thought, that God would go to all this trouble for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I could ask that he tell me the purpose for my existence. It would take the guesswork and chaos out for me. 
 
-If we can be sure of one thing, it is that nature and life is governed by the laws of chance. This may be by divine design, so that every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings have survived. Chance by definition, cannot be planned. It
-may seem that science has given us a temporary edge by tilting the field in our favor. But that will likely change in time. 
+If we can be sure of one thing, it is that nature and life is governed by the laws of chance. This may be by divine design, so that every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings survive. Chance by definition, cannot be planned. It may seem that science has given us a temporary edge by tilting the field in our favor. But that will continuously changes with time. 
 
 As I get older, I am progressively less able to defend myself against chance occurrences. Virus and bacterial attacks, weakening organs, lower mental acuity, all signs of running out of my birth gifts. 
 
-I often find solace in the belief that I have an ally - GOD - and the faith, that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the light finally turns off. 
+The state of my health is a depreciating condition. These depreciations are required learnings for evolution. I am an outcome of millions of failed attempts by others in the past. Each event has culled the failed being to favor me. I too must accept a contributory role in future evolutions. This might be my only purpose. I must execute this purpose until my failure results in the stoppage of my life and makes way for the next. Asking for exemption from this evolutionary process will eventually guarantee the extinction of my race.  
 
-I may object to actions of the body and the mind, but, am unable find blame with the 'soul'. 
+However, I find solace in the belief that I have an ally - GOD - and faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will before the light finally turns off. 
+
+I may object to actions of the body and the mind, but am unable find blame with the 'soul'. 
 
 There is a rationalization that goes as such,
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other In life, and on release, they merge up with other souls into a welcoming infinite being. I can call this infinite being God. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other In life, and upon release, they merge up with other souls into a welcoming infinite being. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can think of prayer as a means to bring my life’s purpose and continuity into clear focus and eliminate all else. This makes space for my body and mind to be one with my being, in silence, in stillness and in peace. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, service to the others, care for the sick, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward  on its mission. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can give myself permission to understand God, as the unified whole of all souls, with a mission to ensure the survival of the universe. </p> 
 
-This argument provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for continuity, belonging and it opens up a pathway to rise above the fray of my current states and find acceptance and inner peace, within my reach. 
-
-I will need a lot of practice at this. 
+With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div>
