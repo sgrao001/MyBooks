@@ -578,9 +578,9 @@ LIfe seems to be about following this loop over and over again…
 ## Pursuit of Ignorance
 ![[AllegoryOfTheCave.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Pursuit of Ignorance</span></p>
 
-Reaching a stage of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
+Reaching a place of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
 
-Recognition of ignorance shows wisdom. The acceptance of ignorance shows humility. The pursuit of ignorance shows passion. How the acquired knowledge is used reveals the level of critical thought.  What is accomplished shows skill. Starting over, shows perseverance. 
+Recognition of ignorance shows wisdom. Acceptance of ignorance shows humility. Pursuit of ignorance shows courage. How the acquired knowledge is used, reveals critical thought.  Accomplishment shows strength. 
 
 My ignorance tells me more about myself than my knowledge ever will.  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
