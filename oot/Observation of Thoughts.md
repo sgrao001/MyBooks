@@ -652,27 +652,25 @@ If I say a god exists, or if I say he doesn’t, you have learned absolutely not
 
 As understood by our founding fathers, it could be that a Diest God created our universe and each of us. Or, as science hypothesizes, the universe started off with a series of morphogenic adaptations continuing to this day, originating from an accidental single cell life form, and evolving as a response to a series of chance stimuli’s, to give me, what I have, and be born into this world. Either way, here I am.  
 
-Maybe my definition of God is synonymous with the scientific process of evolution which obeys the sum total of all the laws of the evolving universe. 
-
 To keep asking God for what he chose to not give me in the first instance, would be a nonsensical burden on him and utterly pointless to me.
 
 Begging forgiveness or offering repentance is worse, as my transgressions are not against him, but against myself or my fellow beings on this earth. It would be morally reprehensible for me to wrong one and then beg forgiveness from another.  I would be asking for the suffering caused by me to be rendered inconsequential. I would be asking to be rewarded for my misdeeds. My misdeeds would teach me nothing. Turned around, this would motivate me to mark the genuineness of my ask to be proportional to the extent of the harm caused by my misdeeds. Claiming forgiveness, as a reward for my proclamations of love and obedience, or for chanting his praise or for bank rolling his faithful, would not make the sufferer whole. It would be a false cleansing of my conscience. 
 
 There is a risk here; I would perish under the cumulative burden of my misdeeds, should God choose to not grant me the forgiveness I seek. If I cannot live my life without harming anyone, it would be much more responsible of me to make whole, the people I have harmed, as I go along. 
 
-If my God is a synonym for evolution, then my transgressions against myself and others, and my attempts at making whole, are the necessary building blocks to ensure the  survival of next generations. 
+As per the rules of evolution, my transgressions against myself and others, and my attempts at making whole, are the necessary building blocks to ensure the  survival of next generations. 
 
 At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. In an afterlife, without this body and mind, my current experiences of people, places, relationships, memories and sensations, would have no contextual anchors. Without this continuity, my expectations of eternal joy or fears of eternal suffering would have no meaning.  
 
-Once again, if God is a synonym for evolution, then the after-life is by definition required to be unknown, as it is a random perturbation, along a new vector, in a new being, with a few learned lessons being transferred at birth. Making projections or estimations of its various states is merely an exercise of the imagination with no basis in reality. 
+The after-life is by definition required to be unknown, as it is a random perturbation, along a new vector, in a new being, with a few learned lessons being transferred at birth. Making projections or estimations of its various states is merely an exercise of the imagination with no basis in reality. 
 
 It makes more sense that I inquire about my pre-life. It, likely has a greater bearing on my present existence. 
 
-I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all its joy.  Also, since most messes in my life are uniquely mine, I must take responsibility for its fixes. 
+I also hope God has not planned my life to every minute detail, as that would absolve me of all responsibility and equally importantly of all joy.  Also, since most messes in my life are uniquely mine, I must take responsibility for its fixes. 
 
-Wealth is a man made construct. If wealth is thought of as value, then there is a limitless supply of it in nature. Value is sourced from nature and is not a zero sum game. The quantity of value at my disposal, is limited by my ability to access and use it. Asking for more achieves nothing. There is no need to hoard that which is freely available. In this context, the only way to secure value is to nurture nature in all its forms.  The limitless availability of value is a resource which I use to experiment with my life and present my successes and failures for evolution to consider for its subsequent constructs. 
+Wealth is a man made construct. If wealth is thought of as value, then there is a limitless supply of it in nature. Value is sourced from nature and is not a zero sum game. The quantity of value at my disposal, is limited by my ability to access and use it. Asking for more achieves nothing. There is no need to hoard that which is freely available. In this context, the only way to secure value is to nurture nature in all its forms.  The limitless availability of value is a resource which I use to experiment with my life and present my successes and failures to evolution for consideration in its future constructs. 
 
-Of course, all this is negated if I believe that God made me as a specific individual with all my accompanying attributes, and did the same for every other being that ever lived, in all time. 
+Of course, all this is negated, if I believe that God made me as a specific individual with all my accompanying attributes, and did the same for every other being that ever lived, in all time. 
 
 It is certainly a comforting thought, that God would go to all this trouble for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I could ask that he tell me the purpose for my existence. It would take the guesswork and chaos out for me. 
 
@@ -682,16 +680,16 @@ As I get older, I am progressively less able to defend myself against these chan
 
 The state of my health is a depreciating condition. These depreciations are required learnings for evolution. I am an outcome of millions of failed attempts by others in the past. Each event has culled the failed being to favor me. I too must accept a contributory role in future evolutions. This might be my only purpose. I must execute this purpose until my failure results in the stoppage of my life and makes way for the next. Asking for exemption from this evolutionary process will eventually guarantee the extinction of my race.
 
-However, I find solace in the belief that I have an ally - GOD - and faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will before the light finally turns off. 
+However, I find solace in the belief that I have an ally - GOD - and faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the lights finally turn off. 
 
 I may object to actions of the body and the mind, but am unable find blame with the 'soul'. 
 
 There is a rationalization that goes as such,
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other In life, and upon release, they merge up with other souls into a welcoming infinite being. </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. </p>
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can think of prayer as a means to bring my life’s purpose and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my being, in silence, in stillness and in peace. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, service to the others, care for the sick, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward  on its mission. </p>
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can give myself permission to understand God, as the unified whole of all souls, with a mission to ensure the survival of the universe. </p> 
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. </p> 
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
 
