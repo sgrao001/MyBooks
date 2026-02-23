@@ -21,13 +21,21 @@ The infinite can be transformed into less intimidating, even navigate-able explo
 Earth-fire-water; a necessity for life. Man-woman-child; the essential unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams. 
 
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.  
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://en.wikipedia.org/wiki/Three_Elements)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Awareness
 ![[Awareness.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Awareness</span></p>
-I lie on the floor, on my left side, my head on my arm. I drive a red matchbox Citroen with springy wheels and a removable roof canoe. I hum the engine noise to myself - I hear the engine - I shift gears - I drive with precision around imaginary curves and turns - I keep humming - I park with precision in my imaginary spot - My humming keeps my attention fixed on my driving my Citroen across the balcony floor. The outside world fades and time stands still. 
+I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe, that my Dad gave to me. I hum the engine noise to myself - I hear the engine - I shift gears - I drive with precision around imaginary curves and turns - I keep humming - I park my Citroen, with precision, in my imaginary spot - My humming keeps my attention focused on my driving Citroen across the balcony floor. The outside world fades and time stands still. 
 
-I become one with my being and my imagination. 
+I become one with my being. 
+
+To this day, I go inside of me and shut the door. I sit still, in silence. I sense the vast, dark emptiness. I feel nothing.  
+
+Then, I hear the engine. I see the car. 
+
+Later, I open the door and step outside. Everything is right in my world. 
+
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Unity
@@ -69,6 +77,7 @@ Advaita Vedānta tradition.
 My nature is ever free!  <br>
 I am Self, the supreme unconditioned Brahman.  <br>
 I am pure Awareness, always non-dual."</p>
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Words
@@ -107,8 +116,7 @@ The boy seeks love and acceptance, to understand that which childhood brings for
 
 The boy is luckier than the man. He is able to make time his friend. 
 
-<p style="margin-left: 30px; font-size: 0.4em;">Emilyfelcher.wixsite.com/portfolio
-@em.the.artistt </p>
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://emilyfelcher.wixsite.com/portfolio)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Wheels of Life
@@ -123,17 +131,18 @@ I look back to see my wheels moving along on their own. They are beckoning me to
 <div style="break-after: page;"></div><br>
 ## Be well my friend
 ![[FriendshipPicasso1908.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Be Well my Friend</span></p>
+People before us brought us together. They journeyed to great unknowns, to find us their best gifts, to make us who we are. They reached out, offering us strength and resolve, to bring us where are. 
 
-My life long best friend and protector needs my help. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
+My life long best friend and protector needs my help. He has become weak and tired. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
 
-I am there for him now, in deep gratitude. I align my mind and my soul, and share soothing conversations of rest, respect and love. We have so much to cherish.
-Together, we have been recipients of great treasures and blessings. 
+I am there for him now, in deep gratitude. I align my soul with him, and share soothing conversations of rest, respect and love. We have so much to cherish.Together, we have been recipients of great treasures and blessings. But, time is short. 
 
-People journeying to great unknowns, to find us their best gifts, so we may come to be. They reach out, offering us strength and resolve to take our journey to where it leads. 
+There is much promise on the other side,  the promise of unity and calm. There is also sadness, of parting ways. Like a rocket ship falling back to earth, he will see me off. I will feel great sadness as I look back fondly on times we had, things we made our own, and things we left behind. 
 
-There is much promise on the other side,  the promise of unity. There is also sadness, of parting ways one day. Like a rocket ship falling back to earth, he will see me off. I will feel great sadness as I look back fondly on times we had, things we made our own, and things we left behind. I will feel great joy as I realize that true treasure is that which we have gifted, some by design and some without. It has created a bond, an everlasting purpose. 
+I will feel great joy as I realize that true treasure is that which we have gifted to others, some by design and some without. It has created a bond, an everlasting purpose. 
 
-That is the promise of what we will leave behind. 
+That is the promise we kept. That is what we leave behind. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.wikiart.org/en/pablo-picasso/friendship-1908)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Footsteps
@@ -152,9 +161,7 @@ My obligation has been an outcome of mis-directed responsibility, the former kep
 Self interest is ubiquitous, self discipline is not. The irony about discipline is that once you have it, you don’t need it.  Being a non-conformist was natural. There was much to observe when alone. Sometimes there was more to be gained, but there was always more to be lost. I accept my losses. Discovery buried in the details gave me a sense of accomplishment. People who have hurt me come to mind so much easier than people who have helped me. I have not done well with gratitude. 
 
 Kids deserve a chance to shape their contributions. My attempts to keep them free from fears, illusions and  promises were partially successful. 
-
-<p style="margin-left: 30px; font-size: 0.4em;">Emilyfelcher.wixsite.com/portfolio
-@em.the.artistt </p>
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://emilyfelcher.wixsite.com/portfolio)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Nani
@@ -171,6 +178,7 @@ I venture to the edge, toward the light, in anticipation, in uncertainty, unsure
 I embrace the sense of achievement, for a past well-lived, gratitude for the treasures found, fondness for the memories left, hope for the work incomplete, promise for the desires unfulfilled, comfort for the beings in the woods, encouragement for the dreams carried, love for my fellow journeying souls,  respect for the togetherness offered, nostalgia for times spent. Peace for all. 
 
 We shall meet again. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## CityVerse
@@ -192,6 +200,7 @@ A place that has become an essential part of my being. A place that creates a wh
 There is a permanence to a city, a steadfast presence. There is continuity amidst change. There is strength in the diversity. There is promise in the uncertainty. There is peace in the chaos. 
 
 I find new offerings every day. I am grateful for it. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Duniya
@@ -204,13 +213,14 @@ Power, shrouds itself in righteousness, grasps at strength and demands obedience
 One destroys, the other creates. One hurts, the other heals. One gains fame, the other remains anonymous. One fears, the other suffers. 
 
 Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain  unread between the pages of time.  
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Lessons
 ![[Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Lessons</span></p>
 
 Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
-(Adapted from NY30Rock)
+<p style="font-size: 0.4em;">(Adapted from NY30Rock)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Stones, Wind and Water
@@ -248,7 +258,7 @@ The lords are always the winners. History remembers them. The serfs have no name
 
 Ideology is the primordial state of augmented reality serving to simplify it to willing listeners. Ideology insists, on the one hand, that its depiction of the underlying reality, albeit in its simplest form, is accurate, and on the other hand, its association with that reality is sacrosanct. 
 
-Ideology purports to enhance the value of reality by making it accessible, understandable and acceptable. It reduces the multitude of properties of reality, into a single dominant characteristic, to deliver a concrete shape that can be received  through simple abbreviations of thought. It reduces reality to a probability. It trains the mind to constrain reality, and claims this as necessary, for understanding to occur. 
+Ideology purports to enhance the value of reality by making it accessible, understandable and acceptable. It reduces the multitude of properties of reality, into a single dominant characteristic, to deliver a concrete shape that can be perceived through simple abbreviations of thought. It reduces reality to a probability. It trains the mind to constrain reality, and claims this as necessary, for understanding to occur. 
 
 This “subligation” from reality, becomes our natural state. It becomes the core of our progressive learning. It permits us to congratulate ourselves on our intelligence, our righteousness or any other attribute we wish to be identified with. We can now safely ignore what is “abrogated” from reality. 
 
@@ -266,7 +276,7 @@ Filtering attributes of reality to project it on an already accepted ideology, m
 
 In a contest with ideologies, reality loses the battle every time . It is the win of reason over knowledge. 
 
-Ideology explains that which we want to be true.  In its most harmful state,  ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization occurs after most of the damage is done. 
+Ideology explains that which we want to be true.  In its most harmful state,  ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization usually occurs after most of the damage is done. 
 
 We “buy organic sugar” because we believe that we engage in healthy pursuits. We “associate wealth with our self worth” because it is natural, not because it is a fetish. We “reward monopolies” because we believe they must be doing it better than everyone else.  We “consume” because we believe we deserve it. We “tolerate”, because we believe things could be far worse.  We “fight” because we believe we are on the side of the just. We “kill” because they “would do worse to us” or “in the name of what’s right” or as in it’s latest form, “to stop violence”, “to bring peace”. and on and on and on …
 
@@ -282,7 +292,7 @@ Are we satisfied with descriptive adequacy or do we seek explanatory understandi
 
 Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?
 
-History tells us stories of ideology. Time will reveal the stories of reality. 
+History tells us stories of ideology. Time reveals the stories of reality. Reality is the ghost in history. 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Time
@@ -310,6 +320,7 @@ Humble men who were once secure in the knowledge that three hours of hunting and
 Humanity may pivot to re-claiming time for peace, harmony and well-being. We may choose to focus on the awareness of our being and that of others and make time our friend. We may re-orient understanding and hope and put it to work for our collective well-being. 
 
 Maybe, we will.
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://artcloud.market/art/time-persistence-by-daniel-heller(<//p>)
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Space, Time and Energy
@@ -354,10 +365,8 @@ Time is a measure of the structure within my basket, as it is in the moment. Ite
 
 This does not alter what I am intuitively programmed to do. It highlights why I ought to do it. I am able to explain what is meaningful to me, and why.  
 
-I must reach my singular state, often. It is my place of rest and validation.  
-
-/// https://youtu.be/zUHtlXA1f-w?si=NO835wp_pjozKSWp
-
+I must reach my singular state, often. It is my place of rest and validation. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://starryai.com/app/user/joquist/creation/1023376959)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Passionate and Harmonious living 
@@ -403,6 +412,7 @@ Feeling grateful for a gift received, or being thankful to be able to give one, 
 People ask me what I plan to do when I have time. i am hard pressed to find a better use for my time. 
 
 There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities, to pay and to receive as I go forward. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://lutheranreformation.org/history/durers-praying-hands/)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Energy
@@ -437,9 +447,9 @@ Acceptance of a win incurs a responsibility and commitment that defines the fina
 Acceptance of a defeat has no relevance to the unfolding situation, nor is it of any consequence to the people impacted. The winner defines the relevance and consequence. It may however, give the vanquished a few additional choices on how he conditions his personal response to the defeat. 
 
 No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent. 
-
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I accept my wins. I accept my losses. <br><br>
 I accept my acceptances. </p>
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Choices
@@ -454,6 +464,7 @@ All actions are an act of choice.
 All will be judged based on the time and effort consumed to release residual energies in all participants. The final verdict becomes available only after all the healing and cleansing is done. 
 
 Until then, there are choices and there are opinions. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## The Good, The Bad
@@ -495,6 +506,7 @@ All may yet be well.
 It is accurate to say that the Mughals did exactly this to the good residents of Delhi a few generations ago. The good then was in such plentitude that it may have transformed the then bad. 
 
 Occasionally that seems to happens too. Could it be that Gaza is going through this ordeal now?
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">(Excerpts from William dalrymple)</p>
 
@@ -514,7 +526,7 @@ I would like to think that the readers of my words will get to explore their tho
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Let’s make a circle 
-![[Manipulate.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Let’s make a Circle</span></p>
+![[Galaxy-Spiral.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Let’s make a Circle</span></p>
 
 I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
@@ -546,7 +558,7 @@ I add my own words to Carl’s,
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">“if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.</p>
 
 So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
-
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Diwali  
@@ -572,6 +584,8 @@ I never imagined that one flame could transform the world into a bright, sparkli
 Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration 
 
 LIfe seems to be about following this loop over and over again… 
+
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 
@@ -580,9 +594,13 @@ LIfe seems to be about following this loop over and over again…
 
 Reaching a place of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
 
-Recognition of ignorance shows wisdom. Acceptance of ignorance shows humility. Pursuit of ignorance shows courage. How the acquired knowledge is used, reveals critical thought.  Accomplishment shows strength. 
+Recognition of ignorance shows awareness. Acceptance of ignorance shows humility. Pursuit of ignorance shows courage. How the acquired knowledge is used, reveals critical thought.  Accomplishment shows strength. 
 
 My ignorance tells me more about myself than my knowledge ever will.  
+
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](
+https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC)</p>
+
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Just Asking
@@ -623,16 +641,16 @@ Who assigns meaning to divinity? Why is mankind not able to reach consensus on w
 As Richard Feynman said, “I would rather have questions that can be answered, than answers that can’t be questioned. There’s no shame in not knowing everything, it’s in not wanting to.”
 
 My ignorance knows no bounds. I look forward to the pursuit of my ignorance for a long time. 
-
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://paintbynumbershome.com/products/cat-reading-newspaper)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Fragility
 ![[Fragility.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>
 
-The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erection of grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
+The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
-The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained within “the divinity of beings”. 
-
+The attempt at grandiosity in itself, exposes the nonexistence of power within  the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.instagram.com/reel/DPO99FICRuY/)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## In God we Trust
@@ -654,13 +672,13 @@ As understood by our founding fathers, it could be that a Diest God created our 
 
 To keep asking God for what he chose to not give me in the first instance, would be a nonsensical burden on him and utterly pointless to me.
 
-Begging forgiveness or offering repentance is worse, as my transgressions are not against him, but against myself or my fellow beings on this earth. It would be morally reprehensible for me to wrong one and then beg forgiveness from another.  I would be asking for the suffering caused by me to be rendered inconsequential. I would be asking to be rewarded for my misdeeds. My misdeeds would teach me nothing. Turned around, this would motivate me to mark the genuineness of my ask to be proportional to the extent of the harm caused by my misdeeds. Claiming forgiveness, as a reward for my proclamations of love and obedience, or for chanting his praise or for bank rolling his faithful, would not make the sufferer whole. It would be a false cleansing of my conscience. 
+Begging forgiveness or offering repentance is worse, as my transgressions are not against him, but against myself or my fellow beings on this earth. It would be morally reprehensible for me to wrong one and then beg forgiveness from another.  I would be asking for the suffering caused by me to be rendered inconsequential. I would be asking to be rewarded for my misdeeds. My misdeeds would teach me nothing. Turned around, this would motivate me to mark the genuineness of my ask to be proportional to the extent of the harm caused by my misdeeds. Claiming forgiveness, as a reward for my proclamations of love and obedience, or for chanting his praise or for bank rolling his faithful, would not make the sufferer whole. It would be a false cleansing of my conscience. I would be corrupting God by asking him to favor me, over someone I have wronged. 
 
 There is a risk here; I would perish under the cumulative burden of my misdeeds, should God choose to not grant me the forgiveness I seek. If I cannot live my life without harming anyone, it would be much more responsible of me to make whole, the people I have harmed, as I go along. 
 
 As per the rules of evolution, my transgressions against myself and others, and my attempts at making whole, are the necessary building blocks to ensure the  survival of next generations. 
 
-At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. In an afterlife, without this body and mind, my current experiences of people, places, relationships, memories and sensations, would have no contextual anchors. Without this continuity, my expectations of eternal joy or fears of eternal suffering would have no meaning.  
+At the time of making of the universe, no promises were likely made for my afterlife or the route I would have take to get there. I have this life to make the most of. Asking about an unknown, yet to come incarnation, which was not his task at hand, when he made me, makes even less sense. In an afterlife, without this body and mind, my current experiences of people, places, relationships, memories and sensations, would have no contextual anchors. Without this continuity and contextual reference, my expectations of eternal joy or fears of eternal suffering would have no meaning.  
 
 The after-life is by definition required to be unknown, as it is a random perturbation, along a new vector, in a new being, with a few learned lessons being transferred at birth. Making projections or estimations of its various states is merely an exercise of the imagination with no basis in reality. 
 
@@ -674,7 +692,7 @@ Of course, all this is negated, if I believe that God made me as a specific indi
 
 It is certainly a comforting thought, that God would go to all this trouble for me. I would have to imagine that he created all the stages of my genetic evolution to make one of me. I could ask that he tell me the purpose for my existence. It would take the guesswork and chaos out for me. 
 
-I can be sure of one thing - Evolution and  life is governed by the laws of chance. This ensures that every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings survive. Chance and continuous change tests beings for adaptability and suitability for survival. By definition, chance cannot be planned. 
+I can be sure of one thing - Evolution and  life is governed by the laws of chance. This ensures that every living being has a fair shot at living. It ensures that the game of living cannot be rigged to favor a few. Only the most adaptable beings survive. Chance and continuous change, tests beings, for adaptability and suitability for survival. By definition, chance cannot be planned. 
 
 As I get older, I am progressively less able to defend myself against these chance occurrences. Asking for good fortune requires a grant of selective and persistent biases in these chance occurrences, tilted in my favor. There is no reason to grant a request to compromise the universe’s survival in favor of my own.
 
@@ -682,16 +700,23 @@ The state of my health is a depreciating condition. These depreciations are requ
 
 However, I find solace in the belief that I have an ally - GOD - and faith that he has sent me off with the means to find acceptance and peace within myself, both as I stand now, and as I will, before the lights finally turn off. 
 
-I may object to actions of the body and the mind, but am unable find blame with the 'soul'. 
+I may object to actions of the mind, but am unable find blame with the 'soul'. 
 
 There is a rationalization that goes as such,
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other In life, and upon release, they merge up with other souls into a welcoming infinite being. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Souls impart life to the being. The soul never dies.  They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. </p>
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, service to the others, care for the sick, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward  on its mission. </p>
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward  on its mission. </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. </p> 
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
+
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## Elevating Understanding
+![[ElevatingUnderstanding.svg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Elevating Understanding</span></p>
+
+...
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div>
