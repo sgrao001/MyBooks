@@ -26,13 +26,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.89887065"
-     inkscape:cx="396.60879"
-     inkscape:cy="559.59108"
+     inkscape:zoom="1.66"
+     inkscape:cx="396.38554"
+     inkscape:cy="451.20482"
      inkscape:window-width="1872"
      inkscape:window-height="1187"
-     inkscape:window-x="896"
-     inkscape:window-y="603"
+     inkscape:window-x="1038"
+     inkscape:window-y="624"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showgrid="false" />
@@ -72,7 +72,7 @@
        d="m 138.09548,127.97239 c 0,5.46783 -1.10794,10.67683 -3.1115,15.41469 -2.00358,4.73785 -4.90278,9.00455 -8.48534,12.58778 -3.58257,3.58323 -7.8485,6.48298 -12.58546,8.48693 -4.737,2.00394 -9.94503,3.11207 -15.411842,3.11207 -5.4668,0 -10.67485,-1.10813 -15.41182,-3.11207 -4.73698,-2.00395 -9.0029,-4.9037 -12.585464,-8.48693 -3.582562,-3.58323 -6.481776,-7.84993 -8.485349,-12.58778 -2.003573,-4.73786 -3.111505,-9.94686 -3.111505,-15.41469 0,-5.46782 1.107932,-10.67682 3.111505,-15.41468 2.003573,-4.73785 4.902787,-9.00455 8.485349,-12.587778 3.582564,-3.58323 7.848484,-6.48298 12.585464,-8.48693 4.73697,-2.00394 9.94502,-3.11208 15.41182,-3.11208 5.466812,0 10.674842,1.10814 15.411842,3.11208 4.73696,2.00395 9.00289,4.9037 12.58546,8.48693 3.58256,3.583228 6.48176,7.849928 8.48534,12.587778 2.00356,4.73786 3.1115,9.94686 3.1115,15.41468 z"
        id="path4556" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#6a4570;stroke-width:0.264103;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#6a4570;stroke-width:0.264;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 58.9072,127.97239 c 0,0 2.941537,15.95424 28.333398,26.47384 25.391862,10.5196 39.258042,1.52864 39.258042,1.52864"
        id="path4544" />
     <path
@@ -120,7 +120,7 @@
        d="m 126.49864,99.937622 c 0,0 -13.35924,-9.20099 -38.751122,1.318618 C 62.35566,111.77584 58.9072,127.94008 58.9072,127.94008"
        id="path4544-5-8" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#cb9fae;stroke-width:0.264;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#6f4b6f;stroke-width:0.264;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 138.13448,128.25754 c 0,0 -2.94155,15.95423 -28.3334,26.47383 -25.391882,10.51959 -39.258037,1.52864 -39.258037,1.52864"
        id="path4544-57" />
     <path
@@ -208,19 +208,19 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Alegria</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="136.30795"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="134.71741"
          y="25.834883"
          id="text4783"><tspan
            id="tspan4781"
-           x="136.30795"
+           x="134.71741"
            y="25.834883"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Joy</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Joy</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1307"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
+       transform="matrix(0.33269586,0,0,0.33275746,50.43825,80.429675)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -241,12 +241,12 @@
            id="tspan4781-2"
            x="217.34776"
            y="61.634686"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Trust</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Trust</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1313"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
+       transform="matrix(0.33269586,0,0,0.33275746,50.43825,80.429675)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -267,12 +267,12 @@
            id="tspan4781-2-5"
            x="253.51549"
            y="145.78749"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Fear</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Fear</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1319"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
+       transform="matrix(0.33269586,0,0,0.33275746,50.43825,80.429675)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -293,7 +293,7 @@
            id="tspan4781-2-5-9"
            x="211.58067"
            y="229.17752"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Surprise</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Surprise</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -319,12 +319,12 @@
            id="tspan4781-2-5-9-4"
            x="127.67907"
            y="264.22726"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#ffffff;stroke-width:0.264583px">Sadness</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.264583px">Sadness</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1331"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
+       transform="matrix(0.33269586,0,0,0.33275746,50.43825,80.958842)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -345,12 +345,12 @@
            id="tspan4781-2-5-3"
            x="44.385094"
            y="229.15686"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Disgust</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Disgust</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1337"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
+       transform="matrix(0.33269586,0,0,0.33275746,50.43825,80.958842)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -371,12 +371,12 @@
            id="tspan4781-2-5-3-3"
            x="12.266724"
            y="144.84491"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#ffffff;stroke-width:0.264583px">Anger</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.264583px">Anger</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1343"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,79.900515)">
+       transform="matrix(0.33269586,0,0,0.33275746,49.379916,79.900515)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -397,7 +397,7 @@
            id="tspan4781-2-5-3-4"
            x="37.879375"
            y="60.80299"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Anticipation</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px">Anticipation</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -596,12 +596,12 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264583px">Submission</tspan></text>
     </switch>
     <switch
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264481;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="switch1391"
-       transform="matrix(0.33269586,0,0,0.33275746,50.967417,79.900508)">
+       transform="matrix(0.33269586,0,0,0.33275746,52.025751,81.488009)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264481;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
          x="173.90404"
          y="-151.57681"
          id="text4783-6-0-2-6-pt"
@@ -609,18 +609,18 @@
          systemLanguage="pt"><tspan
            x="173.90404"
            y="-151.57681"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#549673;fill-opacity:1;stroke-width:0.264583px"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#549673;fill-opacity:1;stroke-width:0.264481;stroke-dasharray:none"
            id="tspan5274-pt">Deleite</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#549673;fill-opacity:1;stroke:none;stroke-width:0.264481;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
          x="165.9494"
          y="-153.15018"
          id="text4783-6-0-2-6"
          transform="rotate(67.5)"><tspan
            x="165.9494"
            y="-153.15018"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#549673;fill-opacity:1;stroke-width:0.264583px"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#549673;fill-opacity:1;stroke-width:0.264481;stroke-dasharray:none"
            id="tspan5274">Delight</tspan></text>
     </switch>
     <switch
@@ -652,34 +652,6 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54236734px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';fill:#948029;fill-opacity:1;stroke-width:0.264583px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Dominance</tspan></text>
     </switch>
     <switch
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#6f4b6f;fill-opacity:1;stroke:#cb9fae;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="switch1403"
-       transform="matrix(0.33269586,0,0,0.33275746,50.43825,82.017176)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#6f4b6f;fill-opacity:1;stroke:#cb9fae;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="65.469833"
-         y="266.26724"
-         id="text4783-6-9-5-pt"
-         transform="rotate(-22.5)"
-         systemLanguage="pt"><tspan
-           id="tspan4781-6-4-8-pt"
-           x="65.469833"
-           y="266.26724"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#6f4b6f;fill-opacity:1;stroke:#cb9fae;stroke-width:0.264583px;stroke-opacity:1">Vergonha</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#6f4b6f;fill-opacity:1;stroke:#ead6dd;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="65.469833"
-         y="266.26724"
-         id="text4783-6-9-5"
-         transform="rotate(-22.5)"><tspan
-           id="tspan4781-6-4-8"
-           x="65.469833"
-           y="266.26724"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#6f4b6f;fill-opacity:1;stroke:#ead6dd;stroke-width:0.264583px;stroke-opacity:1">Shame</tspan></text>
-    </switch>
-    <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#808a00;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1409"
        transform="matrix(0.33269586,0,0,0.33275746,50.570542,80.826555)">
@@ -708,12 +680,12 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#808a00;fill-opacity:1;stroke-width:0.264583px">Anxiety</tspan></text>
     </switch>
     <switch
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc9fd3;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc9fd3;fill-opacity:1;stroke:#6a4570;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1413"
        transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc9fd3;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc9fd3;fill-opacity:1;stroke:#6a4570;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="172.30913"
          y="157.5658"
          id="text4783-6-0-27-1"
@@ -721,12 +693,12 @@
            id="tspan4781-6-81-9-1"
            x="172.30913"
            y="157.5658"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cc9fd3;fill-opacity:1;stroke-width:0.264583px">Outrage</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cc9fd3;fill-opacity:1;stroke-width:0.264583px;stroke:#6a4570;stroke-opacity:1">Outrage</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ef7499;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1417"
-       transform="matrix(0.33269586,0,0,0.33275746,49.909083,82.017176)">
+       transform="matrix(0.33269586,0,0,0.33275746,49.909083,81.488009)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#ef7499;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -737,7 +709,7 @@
            id="tspan4781-6-6-9-1"
            x="-100.10071"
            y="112.30568"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef7499;fill-opacity:1;stroke-width:0.264583px">Morbidness</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef7499;fill-opacity:1;stroke-width:0.264583px">Morbidness</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#29808e;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -753,7 +725,7 @@
            id="tspan4781-6-6-9-1-3"
            x="-109.62678"
            y="268.52255"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#29808e;fill-opacity:1;stroke-width:0.264583px">Sentimentality</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#29808e;fill-opacity:1;stroke-width:0.264583px">Sentimentality</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -774,7 +746,7 @@
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc93b4;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="switch1429"
-       transform="matrix(0.33269586,0,0,0.33275746,49.909083,79.371341)">
+       transform="matrix(0.33269586,0,0,0.33275746,49.909083,79.900508)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.264583px;word-spacing:0px;fill:#cc93b4;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -784,7 +756,7 @@
          transform="rotate(67.5)"><tspan
            x="168.01671"
            y="2.1631184"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cc93b4;fill-opacity:1;stroke-width:0.264583px"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cc93b4;fill-opacity:1;stroke-width:0.264583px"
            id="tspan5274-5">Pessimism</tspan></text>
     </switch>
     <switch
@@ -793,14 +765,14 @@
        transform="matrix(0.33269586,0,0,0.33275746,50.967417,79.371345)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#7f8b1f;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:bold;font-size:9.54237px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#7f8b1f;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Sans, Bold';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="132.34639"
          y="-15.218799"
          id="text4783-1"><tspan
            id="tspan4781-3"
            x="132.34639"
            y="-15.218799"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#7f8b1f;fill-opacity:1;stroke-width:0.264583px">Hope</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54236734px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';fill:#7f8b1f;fill-opacity:1;stroke-width:0.264583px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Hope</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#a18fd3;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -815,7 +787,7 @@
            id="tspan4781-3-9"
            x="126.54628"
            y="306.04236"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#a18fd3;fill-opacity:1;stroke-width:0.264583px">Disbelief</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#a18fd3;fill-opacity:1;stroke-width:0.264583px">Disbelief</tspan></text>
       <path
          style="fill:#a18fd3;stroke:#7da578;stroke-width:1.01361;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2050-1);fill-opacity:1"
          d="m 482.75062,488.92622 c 10.09011,-13.87138 1.83701,-27.32796 -0.61706,-34.61267"
@@ -831,7 +803,7 @@
        transform="matrix(0.33269586,0,0,0.33275746,50.967417,80.429675)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#61911f;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:bold;font-size:9.54237px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#61911f;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Sans, Bold';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="193.0489"
          y="-157.24226"
          id="text4783-1-9"
@@ -839,7 +811,7 @@
            id="tspan4781-3-4"
            x="193.0489"
            y="-157.24226"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#61911f;fill-opacity:1;stroke-width:0.264583px">Guilt</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54236734px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';fill:#61911f;fill-opacity:1;stroke-width:0.264583px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Guilt</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#6a0064;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -855,7 +827,7 @@
            id="tspan4781-3-4-5"
            x="192.56526"
            y="162.08621"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#6a0064;fill-opacity:1;stroke-width:0.264583px">Envy</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#6a0064;fill-opacity:1;stroke-width:0.264583px">Envy</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ea7429;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -863,7 +835,7 @@
        transform="matrix(0.33269586,0,0,0.33275746,49.909083,81.488015)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ea7429;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:bold;font-size:9.54237px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#ea7429;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Sans, Bold';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="-9.6680603"
          y="44.518898"
          id="text4783-1-2"
@@ -871,7 +843,7 @@
            id="tspan4781-3-6"
            x="-9.6680603"
            y="44.518898"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#ea7429;fill-opacity:1;stroke-width:0.264583px">Pride</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54236734px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';fill:#ea7429;fill-opacity:1;stroke-width:0.264583px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Pride</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#7ec0d6;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -887,7 +859,7 @@
            id="tspan4781-3-6-3"
            x="-14.221736"
            y="364.65765"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#7ec0d6;fill-opacity:1;stroke-width:0.264583px">Despair</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#7ec0d6;fill-opacity:1;stroke-width:0.264583px">Despair</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#1f9374;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -903,7 +875,7 @@
            id="tspan4781-2-7"
            x="126.11061"
            y="-300.806"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#1f9374;fill-opacity:1;stroke-width:0.264583px">Curiosity</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1f9374;fill-opacity:1;stroke-width:0.264583px">Curiosity</tspan></text>
     </switch>
     <switch
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:125%;font-family:Sans;letter-spacing:-0.264583px;word-spacing:0px;fill:#cfa5b0;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -919,7 +891,7 @@
            id="tspan4781-2-7-2"
            x="-159.46469"
            y="-15.056038"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;line-height:100%;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#cfa5b0;fill-opacity:1;stroke-width:0.264583px">Cynicism</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.54237px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#cfa5b0;fill-opacity:1;stroke-width:0.264583px">Cynicism</tspan></text>
     </switch>
     <path
        fill="#ffc48c"
@@ -2370,17 +2342,17 @@
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182;-inkscape-font-specification:'Tahoma, Normal';font-family:Tahoma;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Resources</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.175px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Normal';fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="162.6015"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182"
+       x="164.71814"
        y="67.412804"
        id="text4475-6"><tspan
-         x="162.6015"
+         x="164.71814"
          y="67.412804"
          id="tspan4477-73"
-         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182;-inkscape-font-specification:'Tahoma, Normal';font-family:Tahoma;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Mutual</tspan><tspan
-         x="162.6015"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182">Mutual</tspan><tspan
+         x="164.71814"
          y="70.985535"
-         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182;-inkscape-font-specification:'Tahoma, Normal';font-family:Tahoma;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#95a298;fill-opacity:0.998529;stroke-width:0.238182"
          id="tspan4537">Support</tspan></text>
     <text
        xml:space="preserve"
@@ -2557,5 +2529,18 @@
            id="trsvg24-8-5"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.76337729px;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">acceptance</tspan></text>
     </switch>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.34757px;line-height:125%;font-family:Sans;letter-spacing:-0.0880338px;word-spacing:0px;fill:#6f4b6f;fill-opacity:1;stroke:none;stroke-width:0.0880338px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="36.796642"
+       y="183.56985"
+       id="text4783-6-0-27-1-0"
+       transform="matrix(0.9249639,-0.37988272,0.38005355,0.92503526,0,0)"
+       inkscape:transform-center-x="-0.42255224"
+       inkscape:transform-center-y="0.5925211"><tspan
+         id="tspan4781-6-81-9-1-5"
+         x="36.796642"
+         y="183.56985"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#6f4b6f;fill-opacity:1;stroke-width:0.0880338px">Shame</tspan></text>
   </g>
 </svg>
