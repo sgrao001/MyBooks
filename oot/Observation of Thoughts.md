@@ -15,10 +15,9 @@ image-align-{alignment} mobile-align-center mobile-default-size
 <div style="break-after: page;"></div><br>
 ## An Enchanting Journey
 ![[ThreeElementsWassilyKandinsky1925.jpeg  ]]<p style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></p>
-There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. 
-The infinite can be transformed into less intimidating, even navigate-able explorations. 
+There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. The infinite can be transformed into less intimidating, even navigate-able explorations. 
 
-Earth-fire-water; a necessity for life. Man-woman-child; the essential unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams. 
+Earth-fire-water; a necessity for life. Man-woman-child; the unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams. 
 
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.  
 <p style="text-align: center; font-size: 0.4em;">[Image Src...](https://en.wikipedia.org/wiki/Three_Elements)</p>
@@ -26,15 +25,17 @@ In our attempt to appreciate the vastness of nature, its immeasurably awe inspir
 <div style="break-after: page;"></div><br>
 ## Awareness
 ![[Awareness.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Awareness</span></p>
-I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe, that my Dad gave to me. I hum the engine noise to myself - I hear the engine - I shift gears - I drive with precision around imaginary curves and turns - I keep humming - I park my Citroen, with precision, in my imaginary spot - My humming keeps my attention focused on my driving Citroen across the balcony floor. The outside world fades and time stands still. 
+I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe. My Dad gave that car to me. I hum the engine noise to myself - I hear the powerful engine - the car surges forward - I shift gears - I drive with precision around imaginary curves and  turns - my humming keeps my attention focused on driving the Citroen across the balcony floor - I keep humming - I park my Citroen with precision, in my imaginary parking spot. The outside world fades and time stands still. 
 
 I become one with my being. 
 
-To this day, I go inside of me and shut the door. I sit still, in silence. I sense the vast, dark emptiness. I feel nothing.  
+To this day, I go inside of me and shut the door. I sit still, in silence. I sense the vast, dark emptiness. Feelings begin to slip away.  
 
-Then, I hear the engine. I see the car. 
+Gradually, I begin to hear the little boy in the distance, humming the noise of the engine. I see the boy come toward me, I can see the car clearly now. 
 
-Later, I open the door and step outside. Everything is right in my world. 
+We watch each other patiently, in silence, in acknowledgment. Time passes.
+
+I open the door and step outside, everything is right in my world. 
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
@@ -509,7 +510,6 @@ Occasionally that seems to happens too. Could it be that Gaza is going through t
 <p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">(Excerpts from William dalrymple)</p>
-
 <div style="break-after: page;"></div><br>
 ## Writing
 ![[WritingGeorgeLin.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Writing</span></p>
@@ -645,7 +645,7 @@ My ignorance knows no bounds. I look forward to the pursuit of my ignorance for 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Fragility
-![[Fragility.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>
+![[Fragility.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Fragility</span></p>
 
 The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
@@ -654,7 +654,7 @@ The attempt at grandiosity in itself, exposes the nonexistence of power within  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## In God we Trust
-![[InGodWeTrust.jpeg]]<br><p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
+![[InGodWeTrust.jpeg]]]<p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
 
 Science continues to encroach on territory formerly titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a purpose, given that we are sitting on a spec in a sea of stars?”
 
@@ -711,6 +711,47 @@ There is a rationalization that goes as such,
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
 
+
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
+## O’ Mother of mine
+![[OMotherOfMine.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>
+
+Mother said she made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she could not withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience was a necessity. 
+
+She willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would always be perfect. She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a product to showcase. They both felt rewarded. They both felt lucky. 
+
+Pain is felt, when a thing of value is lost. There has never been pain, so nothing had ever been valued. 
+
+Nothing of value was ever lost, so nothing of value was ever learned.  
+
+Fear is the anticipation of loss. There was never any fear, so there had never been any understanding of consequences or accountability. 
+
+Past suffering should result in increase of empathy and compassion. It never did. 
+
+Quality cannot be imagined or willed into existence, but attempts to do so were labelled a success. 
+
+Garnering attention is not an indication of respect or validation of quality. But it was considered as such. 
+
+She thought that she had learnt how to do everything. She never understood, what it was that needed doing. 
+
+She understood that which was needed to support the image that mother projected. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+
+Mother marched her on… and… One day her mother left her.  
+
+Suddenly, pain was all around. Often, it was imagined. Its cause was redirected as blame, or an excuse was found. She explained loss through victimhood. Victimhood provided her with solace. She always found someone else to pay the price. Self-directed action was not an option. Pain was thus summarily delegated. This cycle occupied life. 
+
+The world was against her. The reasons were not known. What did they have to gain? What did she have to loose? She did not care. Doesn’t everyone need an enemy?
+
+Contribution of others was denied. Accomplishments were dismissed. These are just displays of vanity. Emotions could not be expressed. They had no meaning for her. Responsibility was avoided. Loneliness was her constant companion. Self-sufficiency was a lie laid bare, but she did not see it. There was no action because delay gave her hope. 
+
+And so she waited….unable to accept help. In anger, in pain. 
+
+The world walked by, with an occasional nod and a smile, understanding nothing. 
+
+She waits, because she has no choice. Unable to explain why… 
+
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## Elevating Understanding
