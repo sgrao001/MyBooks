@@ -717,43 +717,44 @@ With this rationalization I can grant myself the comfort of purpose and continui
 ## O’ Mother of mine
 ![[OMotherOfMine.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>
 
-Mother said she made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she could not withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience was a necessity. 
+Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she could not withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience was a necessity. 
 
-She willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would always be perfect. She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a product to showcase. They both felt rewarded. They both felt lucky. 
+She, as the child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would always be perfect. 
 
-Pain is felt, when a thing of value is lost. There has never been pain, so nothing had ever been valued. 
+She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a product to showcase. They both felt rewarded. They both felt lucky. 
+
+Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
 
 Nothing of value was ever lost, so nothing of value was ever learned.  
 
-Fear is the anticipation of loss. There was never any fear, so there had never been any understanding of consequences or accountability. 
+Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability. 
 
 Past suffering should result in increase of empathy and compassion. It never did. 
 
 Quality cannot be imagined or willed into existence, but attempts to do so were labelled a success. 
 
-Garnering attention is not an indication of respect or validation of quality. But it was considered as such. 
+Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
 
-She thought that she had learnt how to do everything. She never understood, what it was that needed doing. 
+She thought that she had learnt how to do everything. She never understood, what it was that needed doing.  
 
-She understood that which was needed to support the image that mother projected. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+She understood that which was needed to support the image that mother projected. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
 
-Mother marched her on… and… One day her mother left her.  
+Time passes on…. She enters middle age. 
 
-Suddenly, pain was all around. Often, it was imagined. Its cause was redirected as blame, or an excuse was found. She explained loss through victimhood. Victimhood provided her with solace. She always found someone else to pay the price. Self-directed action was not an option. Pain was thus summarily delegated. This cycle occupied life. 
+Mother comes to realize that the responsibility undertaken is overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. There were to be no winners. She found mother backing away, even blaming her, for not carrying her own burdens. Mother changed the rules in the middle of the game. She began to sense that obedience was no longer enough. For the first time, she felt fear. She was not prepared?
 
-The world was against her. The reasons were not known. What did they have to gain? What did she have to loose? She did not care. Doesn’t everyone need an enemy?
+Days marched on… and… one day, mother was no more. 
 
-Contribution of others was denied. Accomplishments were dismissed. These are just displays of vanity. Emotions could not be expressed. They had no meaning for her. Responsibility was avoided. Loneliness was her constant companion. Self-sufficiency was a lie laid bare, but she did not see it. There was no action because delay gave her hope. 
+Suddenly, pain is all around. Fear is overwhelming. Loneliness becomes her shadow. She redirects pain as blame until an excuse is found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
 
-And so she waited….unable to accept help. In anger, in pain. 
+The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Loneliness is her constant companion. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
 
-The world walked by, with an occasional nod and a smile, understanding nothing. 
+She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. There are no takers. And so she waits…. unable to accept help, suspicious of all. The world walks by, with an occasional nod and a smile, understanding nothing. In her eighth decade of life she waits, with pride in her convictions, unable to adapt. She stands alone and in pain. 
 
-She waits, because she has no choice. Unable to explain why… 
 
 <p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
-<div style="break-after: page;"></div><br>
+<div style="break-after: page;"></div>
 ## Elevating Understanding
 ![[ElevatingUnderstanding.svg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Elevating Understanding</span></p>
 
