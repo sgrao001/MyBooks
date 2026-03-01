@@ -717,7 +717,7 @@ With this rationalization I can grant myself the comfort of purpose and continui
 ## O’ Mother of mine
 ![[OMotherOfMine.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>
 
-Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she could not withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience was a necessity. 
+Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience will be a necessity. 
 
 The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect. 
 
