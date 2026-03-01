@@ -721,7 +721,7 @@ Mother made her perfect. The world would be jealous. Mother said she was innocen
 
 The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect. 
 
-She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
+She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
 
 Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
 
@@ -735,9 +735,9 @@ Quality cannot be imagined or willed into existence, but attempts to do so were 
 
 Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
 
-She thought that she had learnt how to do everything. She never learned, what it was that needed doing.  
+She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.  
 
-She understood that which was needed to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+She understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
 
 Time passes on…. she enters middle age. 
 
@@ -745,11 +745,17 @@ Mother comes to realize that the responsibility undertaken has become overwhelmi
 
 Days marched on… and… one day, mother is no more. 
 
-Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until an excuse is found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
+Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until an excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
 
 The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
 
-She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. But, there are no takers. And so she waits…. unable to accept help, suspicious of all. The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits, with diminishing worth, pride in her convictions, unable to adapt, and disdain for all. Time is running out. 
+She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. But, there are no takers. And so she waits…. unable to accept help, suspicious of all. 
+
+Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting and seeking the comfort of common bonds that mother had  nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. She needs no outside support. Like her mother, she knows best.  All support is rejected. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
+
+Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself convinced that she did her best. It was as it was meant to be. 
+
+The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits, consumed with guilt and diminishing worth, but proud of her convictions, unable to adapt, and with disdain for all. Her time is running out. 
 
 She is reminded of a Neil Reid verse from her past,
 
