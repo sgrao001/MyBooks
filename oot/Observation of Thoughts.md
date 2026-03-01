@@ -654,7 +654,7 @@ The attempt at grandiosity in itself, exposes the nonexistence of power within  
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
 ## In God we Trust
-![[InGodWeTrust.jpeg]]]<p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
+![[InGodWeTrust.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">In God we Trust</span></p>
 
 Science continues to encroach on territory formerly titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a purpose, given that we are sitting on a spec in a sea of stars?”
 
@@ -719,9 +719,9 @@ With this rationalization I can grant myself the comfort of purpose and continui
 
 Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she could not withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience was a necessity. 
 
-She, as the child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would always be perfect. 
+The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect. 
 
-She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a product to showcase. They both felt rewarded. They both felt lucky. 
+She never caught the impossibility of the task her mother had taken on. She never recognized that mother was fulfilling her own inadequacies. Love was blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
 
 Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
 
@@ -731,26 +731,32 @@ Fear is the anticipation of loss. Fear was never expressed, so there was never a
 
 Past suffering should result in increase of empathy and compassion. It never did. 
 
-Quality cannot be imagined or willed into existence, but attempts to do so were labelled a success. 
+Quality cannot be imagined or willed into existence, but attempts to do so were hailed a success. 
 
 Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
 
-She thought that she had learnt how to do everything. She never understood, what it was that needed doing.  
+She thought that she had learnt how to do everything. She never learned, what it was that needed doing.  
 
-She understood that which was needed to support the image that mother projected. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+She understood that which was needed to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
 
-Time passes on…. She enters middle age. 
+Time passes on…. she enters middle age. 
 
-Mother comes to realize that the responsibility undertaken is overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. There were to be no winners. She found mother backing away, even blaming her, for not carrying her own burdens. Mother changed the rules in the middle of the game. She began to sense that obedience was no longer enough. For the first time, she felt fear. She was not prepared?
+Mother comes to realize that the responsibility undertaken has become overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. Mother feels pain. There are to be no winners. She finds mother backing away, blaming her for not carrying her burdens. She sees that mother has changed the rules of the game. She senses that obedience is no longer enough. For the first time, she feels fear. She is not prepared.
 
-Days marched on… and… one day, mother was no more. 
+Days marched on… and… one day, mother is no more. 
 
-Suddenly, pain is all around. Fear is overwhelming. Loneliness becomes her shadow. She redirects pain as blame until an excuse is found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
+Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until an excuse is found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
 
-The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Loneliness is her constant companion. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
+The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
 
-She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. There are no takers. And so she waits…. unable to accept help, suspicious of all. The world walks by, with an occasional nod and a smile, understanding nothing. In her eighth decade of life she waits, with pride in her convictions, unable to adapt. She stands alone and in pain. 
+She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. But, there are no takers. And so she waits…. unable to accept help, suspicious of all. The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits, with diminishing worth, pride in her convictions, unable to adapt, and disdain for all. Time is running out. 
 
+She is reminded of a Neil Reid verse from her past,
+
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Mother of mine, when I was young<br>
+You showed me the right way, things ought to be done<br>
+Without your love where would I be<br>
+Mother,  O’ sweet mother of mine …. </p>
 
 <p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
