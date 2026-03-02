@@ -737,7 +737,7 @@ Garnering of attention is not an indication of respect or validation of quality.
 
 She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.  
 
-She understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
 
 Time passes on…. she enters middle age. 
 
@@ -749,13 +749,13 @@ Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, wi
 
 The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
 
-She feels a strong urge to become mother. She offers the same love that she got from mother. On the same terms. But, there are no takers. And so she waits…. unable to accept help, suspicious of all. 
+She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits…. 
 
-Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting and seeking the comfort of common bonds that mother had  nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. She needs no outside support. Like her mother, she knows best.  All support is rejected. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
+Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
 
 Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself convinced that she did her best. It was as it was meant to be. 
 
-The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits, consumed with guilt and diminishing worth, but proud of her convictions, unable to adapt, and with disdain for all. Her time is running out. 
+The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out. 
 
 She is reminded of a Neil Reid verse from her past,
 
