@@ -137,6 +137,130 @@
                 visibility: visible !important;
         }
 
+        /* tool Tips */
+
+        .tooltip-trigger {
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .right-justified {
+            display: block !important;
+            width: 8%;
+            text-align: right;
+            margin-left: auto;
+            margin-right: 8%;
+        }
+        .left-justified {
+            display: block !important;
+            width: 8%;              /* Keep consistent width if desired */
+            text-align: left;
+            margin-left: 8%;          /* 8% space from left edge */
+            margin-right: auto;        /* pushes remaining space to the right */
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .center-justified {
+            display: block !important;
+            width: 8%;
+            text-align: center;           /* Centers text inside the span */
+            margin-left: auto;            /* Centers the block horizontally */
+            margin-right: auto;           /* Centers the block horizontally */
+        }
+        .right-justified,
+        .left-justified,
+        .center-justified {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            text-align: left !important;
+        }
+        .right-justified { text-align: right !important; }
+        .left-justified { text-align: left !important; }
+        .center-justified { text-align: center !important; }
+        .tooltip-group {
+            display: inline-block;      /* or float: left; */
+            margin-left: 8%;            /* or margin-right: 8% for right alignment */
+            vertical-align: top;        /* align with text line */
+        }
+
+        .tooltip-group .tooltip-trigger {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            /* individual text-aligns already set by .left-justified etc. */
+        }
+        #tooltip {
+            position: fixed;
+
+            /* INITIAL STATE - HIDDEN */
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+                
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.95);
+            shape-outside: margin-box;
+
+            padding: 10px 10px 10px 10px ! important;
+            border: 1px solid rgba(255,255,255,0.2);
+
+            z-index: 9999;
+            max-width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: normal;
+
+            
+            /* SMOOTH APPEAR/DISAPPEAR - FADE + SCALE */
+            opacity: 0;
+            visibility: hidden;
+            
+            /* Scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+
+        #tooltip.center { transform: translate(-50%, -50%) translateY(20px) scale(0.9); }
+        #tooltip.center.show { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1) !important;  } /* Perfect centering + final scale */
+        #tooltip.show { opacity: 1; visibility: visible; }
+
+        #tooltip.fade { transform: translateY(15px) scale(0.95); }
+        #tooltip.fade.show { transform: translateY(0) scale(1); }
+
+        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
+        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+        #tooltip.slide { transform: translateY(60px); }
+        #tooltip.slide.show { transform: translateY(0); }
+
+        #tooltip.zoom { transform: scale(0.4); }
+        #tooltip.zoom.show { transform: scale(1); }
+
+        /* ✅ NEW - PERFECT CENTERING */
+        #tooltip.below-trigger { transform: translateY(10px) scale(0.9); }
+        #tooltip.below-trigger.show { transform: scale(1); }
+
+        #tooltip.left-text { text-align: left; }
+        #tooltip.right-text { text-align: right; }
+        #tooltip.center-text { text-align: center; }
+
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        #tooltip::-webkit-scrollbar { width: 6px; }
+        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+
+
         /* Center book title */
         .book-title {
             position: absolute;
@@ -690,7 +814,6 @@
             padding: 0px 10px 0px 10px ! important;
             box-sizing: border-box;
             text-align: center !important;
-            font-size: 0.8em;
             pointer-events: auto;
             Display: block !important;
 
@@ -1038,15 +1161,15 @@
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
-        <br><br><br>Hello,<br><br>On most days over the past four decades, I, like many others, offered my perspective and abilities, to create “things” of value — contributions that joined with the work of others, flowing onward like rain droplets in streams, converging into rivers and finally reaching the sea. For this, I have been sufficiently compensated.<br><br>As I entered the sixth decade of my life, I became keenly aware of how wasteful it would be to halt my journey there. Limiting myself to offering my set pieces of “preconceived value” to an external stack of “value widgets” was striping away any meaning I had found for myself in my work. The value I received from my efforts was becoming transient and short-lived.
+        <br><br><br>Hello,<br><br>On most days over the past four decades, I, like many others, offered my perspective and abilities, to create “things” of value — contributions that joined with that of others, flowing onward like rain droplets in streams, converging into rivers and finally reaching the sea. For this, I have been sufficiently compensated.<br><br>In the sixth decade of my life, I became keenly aware of how wasteful it would be to halt my journey there. Limiting myself to offering my set pieces of “preconceived value” to an external stack of “value widgets” was striping away meaning that I had found for myself in my work. The value I received from my efforts was becoming transient and short-lived.
 <br>
 <div class="image-container image-align-right mobile-align-center mobile-default-size"><img src="AboutMe.jpeg" alt="Image" style="width: 35%;"><div class="image-caption-popup" style="width: 35%; ">Sri Rao</div></div>
 <br>
-I allowed myself the time, to pause, reflect, and reorient — to rethink how I should define what I value and which paths I might explore and why. I wished to create new meaningful experiences for myself.<br><br>I live in Chicago. I decided to live, walk, think, listen, read and write in the place that I had come to love. I was truly astonished by the energy and the resources, the city gave to me, to inspire and motivate myself. I began the journey into my self, to explore and experience the passion and harmony that I knew was buried there.  I concluded that I would do better directing my outward actions from the inside.<br><br>As I began to look around, I discovered gems of wisdom that people had graciously left for me  —  in books, conversations, images and artwork   —  in the streets, in coffee-shops, buildings, libraries and museums  — Inspirational gifts, given freely, that which they had acquired through much thought and effort.  It was like having an infinitely large group of well-wishers who were willing to share their journeys for my reference and guide me through my own. I wasn’t going it alone.<br><br>I became fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon three formats that seemed like they would work well.<p style="margin: 0 7.5%; font-style: italic;"><br>
-Not long ago, people used to send postcards, from their travels, to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. I found this approach worked well for me.<br><br>
-The second format I selected is a short story — drawn from historical events or 
-experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. <br><br>Thirdly, How would I re-tell the story of someone else's life? Would that make for interesting writing? Would I learn something about myself? </p><br>
-I am deeply appreciative of life’s offerings that has brought me to this point.<br><br>If you would like to read about my journey and my interpretations, please follow the links on the next page.
+I made the time, to pause, reflect, and reorient — to rethink how I should define what I value and which paths I might explore and why. I wished to create new meaningful experiences for myself.<br><br>I live in Chicago. I decided to live, walk, think, listen, read and write in the place that I had come to love. I was truly astonished by the energy and the resources, the city gave to me, to inspire and motivate myself. I began the journey into my self, to explore and experience the passion and harmony that I knew was buried somewhere.  I concluded that I would do better directing my outward actions from the inside.<br><br>I discovered gems of wisdom that people had graciously left for me  —  in books, conversations, images and artwork   —  in the streets, in coffee-shops, buildings, libraries and museums  — Inspirational gifts, given freely, that which they had acquired through much thought and effort.  It was like having an infinitely large group of well-wishers who were willing to share their journeys for my reference and guide me through my own. I wasn’t going it alone.<br><br>I found myself fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon two formats that seemed like they would work well.<p style="margin: 0 7.5%; font-style: italic;"><br>
+Not long ago, people used to send postcards, from their travels, to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. As I relegate swaths of my past to distractions, I reclaim my time, writing postcards with words left unsaid, thoughts left unexplored and meanings not pursued to understanding. <br><br>
+The second format I selected is a short story — drawn from historical events and 
+experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p><br>
+I hope you find my writings worth your while. Thank you for taking a look.<br><br>(Click or touch the left side of your screen for the previous page. Click or touch the right side of the screen for the next page. )
     </div>
     
             </div>
@@ -1062,7 +1185,7 @@ I am deeply appreciative of life’s offerings that has brought me to this point
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
         <br><p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Jan 17, 2026</span>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Mar 13, 2026</span>
 <p style="text-align: center; width: 100%; margin: 20px 0;">
     <a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
        style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
@@ -1138,6 +1261,150 @@ I am deeply appreciative of life’s offerings that has brought me to this point
         const leftArrowContainer = document.getElementById('left-arrow-container');
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
+
+        // Generic listener for ALL triggers
+        document.addEventListener('click', function(e) {
+            const trigger = e.target.closest('.tooltip-trigger');
+            const tooltip = document.getElementById('tooltip');
+            
+            // Close if clicking outside
+            if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
+                toggleTooltip('', '', '', '', '', 'no');
+                return;
+            }
+            
+            if (!trigger) return;
+            
+            e.stopPropagation();
+            
+            let top = trigger.dataset.top || '50vh';
+            let left = trigger.dataset.left || '50vw';
+            
+            const rect = trigger.getBoundingClientRect();
+            
+            // Get body padding
+            const bodyStyles = window.getComputedStyle(document.body);
+            const bodyPaddingLeft = parseFloat(bodyStyles.paddingLeft);
+            const bodyPaddingRight = parseFloat(bodyStyles.paddingRight);
+            const bodyPaddingTop = parseFloat(bodyStyles.paddingTop);
+            const bodyPaddingBottom = parseFloat(bodyStyles.paddingBottom);
+            
+            // Dynamic padding (minimum 24px)
+            const padding = Math.max(24, window.innerWidth * 0.04);
+            
+            // Tooltip dimensions from data (as numbers, if numeric)
+            let tooltipWidth = parseFloat(trigger.dataset.width);
+            let tooltipHeight = parseFloat(trigger.dataset.height);
+            // Total dimensions including CSS padding+border (20px padding each side + 1px border each side = 42px extra)
+            const extra = 42; // 20+20+1+1
+            const totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
+            const totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+            
+            // Helper to add 'px' to plain numbers
+            const addPxIfNumber = (value) => {
+                if (!isNaN(value) && value !== '') {
+                    return value + 'px';
+                }
+                return value;
+            };
+            
+            top = addPxIfNumber(top);
+            left = addPxIfNumber(left);
+            
+            // Read positioning mode
+            const position = trigger.dataset.position || 'fixed';
+            
+            // --- Only apply viewport clamping for fixed positioning ---
+            if (position !== 'absolute') {
+                // Handle "center" individually for top and left
+                if (top === 'center') {
+                    if (totalTooltipHeight) {
+                        // Calculate top position to center vertically
+                        let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
+                        // Clamp to stay within viewport with padding
+                        centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        top = centerTop + 'px';
+                    } else {
+                        // Fallback: use 50% (not pixel‑perfect, but better than nothing)
+                        top = '50%';
+                    }
+                }
+                
+                if (left === 'center') {
+                    if (totalTooltipWidth) {
+                        // Calculate left position to center horizontally
+                        let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
+                        // Clamp
+                        centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        left = centerLeft + 'px';
+                    } else {
+                        left = '50%';
+                    }
+                }
+                
+                // Special case: data-top="100%" data-left="100%" (bottom‑right corner based on trigger)
+                if (trigger.dataset.top === '100%' && trigger.dataset.left === '100%') {
+                    let calcTop = rect.top + parseFloat(top);
+                    let calcLeft = rect.right + parseFloat(left);
+                    
+                    if (totalTooltipWidth) {
+                        if (calcLeft + totalTooltipWidth > window.innerWidth - padding) {
+                            calcLeft = window.innerWidth - totalTooltipWidth - padding;
+                        }
+                    }
+                    if (totalTooltipHeight) {
+                        if (calcTop + totalTooltipHeight > window.innerHeight - padding) {
+                            calcTop = window.innerHeight - totalTooltipHeight - padding;
+                        }
+                    }
+                    
+                    top = calcTop + 'px';
+                    left = calcLeft + 'px';
+                }
+                
+                // Below‑trigger positioning (@ mode)
+                else if (top === '@px' || top === '@') {
+                    let idealLeft = rect.left + (rect.width / 2) - (totalTooltipWidth / 2);
+                    let idealTop = rect.bottom + 12;
+                    
+                    const availableWidth = window.innerWidth - bodyPaddingLeft - bodyPaddingRight;
+                    const availableHeight = window.innerHeight - bodyPaddingTop - bodyPaddingBottom;
+                    
+                    if (idealLeft < padding) {
+                        idealLeft = padding;
+                    } else if (idealLeft + totalTooltipWidth > availableWidth - padding) {
+                        idealLeft = availableWidth - totalTooltipWidth - padding;
+                    }
+                    
+                    if (idealTop + totalTooltipHeight > availableHeight - padding) {
+                        idealTop = Math.max(padding, rect.top - totalTooltipHeight - 12);
+                    }
+                    
+                    top = idealTop + 'px';
+                    left = idealLeft + 'px';
+                }
+            }
+            // For absolute positioning, we skip all clamping – coordinates are used as given.
+            
+            // Prepare other parameters
+            const height = addPxIfNumber(trigger.dataset.height || 'auto');
+            const width = addPxIfNumber(trigger.dataset.width || 'auto');
+            const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+            const animation = trigger.dataset.animation || 'fade';
+            const textAlign = trigger.dataset.textalign || 'left';
+            const tiptext = htmlEncodeTooltipText(rawTiptext);
+            
+            // Check if same tooltip is already open
+            const isCurrentlyOpen = tooltip.classList.contains('show') && 
+                                    tooltip.innerHTML.includes(rawTiptext);
+            
+            if (isCurrentlyOpen) {
+                toggleTooltip('', '', '', '', '', 'no');
+            } else {
+                toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position);
+            }
+        });
+
 
         // FIXED: Image caption handling
         document.addEventListener('DOMContentLoaded', () => {
@@ -1232,6 +1499,83 @@ I am deeply appreciative of life’s offerings that has brought me to this point
             });
         });        
 
+        //
+        // ToolTIp Management
+        //
+        function htmlEncodeTooltipText(str) {
+            const div = document.createElement('div');
+            div.innerHTML = str;
+            return div.innerHTML;
+        }
+
+function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed') {
+    const tooltip = document.getElementById('tooltip');
+    
+    if (visible === 'yes') {
+        // Clear all classes
+        tooltip.classList.remove(
+            'fade', 'bounce', 'slide', 'zoom',
+            'center', 'below-trigger', 'show',
+            'left-text', 'right-text', 'center-text'
+        );
+
+        // Force positioning mode with !important
+        tooltip.style.setProperty('position', position, 'important');
+
+        // Text alignment
+        if (textAlign !== 'left') {
+            tooltip.classList.add(textAlign + '-text');
+        }
+
+        // Animation
+        if (animation !== 'fade') {
+            tooltip.classList.add(animation);
+        } else {
+            tooltip.classList.add('fade');
+        }
+
+        // Apply positioning and sizing
+        tooltip.style.top = top;
+        tooltip.style.left = left;
+        tooltip.style.height = height === 'auto' ? 'auto' : height;
+        tooltip.style.width = width === 'auto' ? 'auto' : width;
+        tooltip.innerHTML = tiptext;
+
+        // Trigger show
+        tooltip.offsetHeight;
+        setTimeout(() => {
+            tooltip.classList.add('show');
+        }, 20);
+
+    } else {
+        // Hide tooltip
+        tooltip.classList.remove(
+            'show', 'center', 'below-trigger',
+            'fade', 'bounce', 'slide', 'zoom',
+            'left-text', 'right-text', 'center-text'
+        );
+        // Reset inline styles (including the !important position)
+        tooltip.style.cssText = ''; // simpler than resetting each property
+        // Alternatively, you can keep the selective reset:
+        // tooltip.style.position = '';
+        // tooltip.style.top = '';
+        // tooltip.style.left = '';
+        // tooltip.style.height = '';
+        // tooltip.style.width = '';
+        // tooltip.innerHTML = '';
+        setTimeout(() => {
+            tooltip.innerHTML = '';
+            tooltip.style.top = '';
+            tooltip.style.left = '';
+            tooltip.style.height = '';
+            tooltip.style.width = '';
+        }, 400);
+    }
+}
+        
+
+
+        
         // Determine initial page based on configuration
         function getInitialPage() {
             const page0Skipped = true;
@@ -1610,5 +1954,7 @@ I am deeply appreciative of life’s offerings that has brought me to this point
         });
         
     </script>
+
+    <div id="tooltip"></div>
 </body>
 </html>
