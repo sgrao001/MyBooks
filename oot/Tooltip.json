@@ -1,8 +1,8 @@
 {
     "source_path": "oot/",
-    "source_md": "Observation of Thoughts.md",
-    "output_md": "oot.mdx",
-    "output_html": "oot.html",
+    "source_md": "Tooltip.md",
+    "output_md": "Tooltip.mdx",
+    "output_html": "Tooltip.html",
 
     "BkImage": "oot.jpeg",
 
@@ -14,16 +14,16 @@
 
     "SLDR_DISPLAY": true,
 
-    "Page0_skip": false,
+    "Page0_skip": true,
     
     "BkPage0_FontColor": "#89C2FF",
     "BkFontColor": "#abb8bb",
     "BkFontSize": "1em",   
-    "BkPage0_Title": "Observation of Thoughts",
-    "BkPage0_Description": "Sri Rao - Postcards to myself",
-    "BkPage0_Tag": "Listen Read Walk and Live in Chicago - Postcards to myself",
+    "BkPage0_Title": "Testing Tooltips",
+    "BkPage0_Description": "Sri Rao - Tooltips",
+    "BkPage0_Tag": "ToolTips samples",
     "Author_name": "Sri Rao",
-    "BkPage0_Keywords": "Sri Rao, Observation of Thoughts",
+    "BkPage0_Keywords": "Sri Rao, ToolTips",
     "BkPage0_head3": "~***~",
     "BkFontSizeMobile390": "0.9em",
     "BkListLink_show": false,

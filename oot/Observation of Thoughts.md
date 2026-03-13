@@ -561,6 +561,59 @@ So, I must leave. The air is clear and fresh. My path is my own. I resolve to st
 <p style="text-align: center; font-size: 0.4em;">[Image Src...](https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html)</p>
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div><br>
+## O’ Mother of mine
+![[OMotherOfMine.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>
+
+Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience would be a necessity. 
+
+The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect. 
+
+She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
+
+Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
+
+Nothing of value was ever lost, so nothing of value was ever learned.  
+
+Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability. 
+
+Past suffering should result in increase of empathy and compassion. It never did. 
+
+Quality cannot be imagined or willed into existence, but attempts to do so were hailed a success. 
+
+Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
+
+She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.  
+
+She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+
+Time passes on…. she enters middle age. 
+
+Mother comes to realize that the responsibility undertaken has become overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. Mother feels pain. There are to be no winners. She finds mother backing away, blaming her for not carrying her burdens. She sees that mother has changed the rules of the game. She senses that obedience is no longer enough. For the first time, she feels fear. She is not prepared.
+
+Days marched on… and… one day, mother is no more. 
+
+Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
+
+The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? Contributions of others are denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
+
+She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits…. 
+
+Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
+
+Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself, convinced that she did her best. It was as it was meant to be. 
+
+The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out. 
+
+She is reminded of a Neil Reid verse from her past,
+
+<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Mother of mine, when I was young<br>
+You showed me the right way, things ought to be done<br>
+Without your love where would I be<br>
+Mother,  O’ sweet mother of mine …. </p>
+
+<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas)</p>
+<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div style="break-after: page;"></div><br>
 ## Diwali  
 ![[Diwali.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>
 
@@ -710,67 +763,6 @@ There is a rationalization that goes as such,
 <p style="margin-left: 30px; line-height: 1.4; font-style: italic;">I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. </p> 
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
-
-
-<p style="text-align: center; font-style: bold;"> ~***~ </p>
-<div style="break-after: page;"></div><br>
-## O’ Mother of mine
-![[OMotherOfMine.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>
-
-Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience would be a necessity. 
-
-The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect. 
-
-She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
-
-Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
-
-Nothing of value was ever lost, so nothing of value was ever learned.  
-
-Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability. 
-
-Past suffering should result in increase of empathy and compassion. It never did. 
-
-Quality cannot be imagined or willed into existence, but attempts to do so were hailed a success. 
-
-Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
-
-She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.  
-
-She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
-
-Time passes on…. she enters middle age. 
-
-Mother comes to realize that the responsibility undertaken has become overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. Mother feels pain. There are to be no winners. She finds mother backing away, blaming her for not carrying her burdens. She sees that mother has changed the rules of the game. She senses that obedience is no longer enough. For the first time, she feels fear. She is not prepared.
-
-Days marched on… and… one day, mother is no more. 
-
-Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until an excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
-
-The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope. 
-
-She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits…. 
-
-Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
-
-Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself convinced that she did her best. It was as it was meant to be. 
-
-The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out. 
-
-She is reminded of a Neil Reid verse from her past,
-
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Mother of mine, when I was young<br>
-You showed me the right way, things ought to be done<br>
-Without your love where would I be<br>
-Mother,  O’ sweet mother of mine …. </p>
-
-<p style="text-align: center; font-size: 0.4em;">[Image Src...](https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas)</p>
-<p style="text-align: center; font-style: bold;"> ~***~ </p>
-<div style="break-after: page;"></div>
-## Elevating Understanding
-![[ElevatingUnderstanding.svg]]<br><p style="color: #f09e5a;"><span class="highlight-text">Elevating Understanding</span></p>
-
-...
 
 <p style="text-align: center; font-style: bold;"> ~***~ </p>
 <div style="break-after: page;"></div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Observation of Thoughts</title>
-    <meta name="description" content="Sri Rao - Thoughts from reading, listening, walking and living in Chicago">
+    <meta name="description" content="Sri Rao - Postcards to myself">
     <meta name="keywords" content="Sri Rao, Observation of Thoughts">
     <style>
         :root {
@@ -136,6 +136,130 @@
                 background: transparent !important;
                 visibility: visible !important;
         }
+
+        /* tool Tips */
+
+        .tooltip-trigger {
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .right-justified {
+            display: block !important;
+            width: 8%;
+            text-align: right;
+            margin-left: auto;
+            margin-right: 8%;
+        }
+        .left-justified {
+            display: block !important;
+            width: 8%;              /* Keep consistent width if desired */
+            text-align: left;
+            margin-left: 8%;          /* 8% space from left edge */
+            margin-right: auto;        /* pushes remaining space to the right */
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .center-justified {
+            display: block !important;
+            width: 8%;
+            text-align: center;           /* Centers text inside the span */
+            margin-left: auto;            /* Centers the block horizontally */
+            margin-right: auto;           /* Centers the block horizontally */
+        }
+        .right-justified,
+        .left-justified,
+        .center-justified {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            text-align: left !important;
+        }
+        .right-justified { text-align: right !important; }
+        .left-justified { text-align: left !important; }
+        .center-justified { text-align: center !important; }
+        .tooltip-group {
+            display: inline-block;      /* or float: left; */
+            margin-left: 8%;            /* or margin-right: 8% for right alignment */
+            vertical-align: top;        /* align with text line */
+        }
+
+        .tooltip-group .tooltip-trigger {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            /* individual text-aligns already set by .left-justified etc. */
+        }
+        #tooltip {
+            position: fixed;
+
+            /* INITIAL STATE - HIDDEN */
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+                
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.95);
+            shape-outside: margin-box;
+
+            padding: 10px 10px 10px 10px ! important;
+            border: 1px solid rgba(255,255,255,0.2);
+
+            z-index: 9999;
+            max-width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: normal;
+
+            
+            /* SMOOTH APPEAR/DISAPPEAR - FADE + SCALE */
+            opacity: 0;
+            visibility: hidden;
+            
+            /* Scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+
+        #tooltip.center { transform: translate(-50%, -50%) translateY(20px) scale(0.9); }
+        #tooltip.center.show { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1) !important;  } /* Perfect centering + final scale */
+        #tooltip.show { opacity: 1; visibility: visible; }
+
+        #tooltip.fade { transform: translateY(15px) scale(0.95); }
+        #tooltip.fade.show { transform: translateY(0) scale(1); }
+
+        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
+        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+        #tooltip.slide { transform: translateY(60px); }
+        #tooltip.slide.show { transform: translateY(0); }
+
+        #tooltip.zoom { transform: scale(0.4); }
+        #tooltip.zoom.show { transform: scale(1); }
+
+        /* ✅ NEW - PERFECT CENTERING */
+        #tooltip.below-trigger { transform: translateY(10px) scale(0.9); }
+        #tooltip.below-trigger.show { transform: scale(1); }
+
+        #tooltip.left-text { text-align: left; }
+        #tooltip.right-text { text-align: right; }
+        #tooltip.center-text { text-align: center; }
+
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        #tooltip::-webkit-scrollbar { width: 6px; }
+        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+
 
         /* Center book title */
         .book-title {
@@ -690,7 +814,6 @@
             padding: 0px 10px 0px 10px ! important;
             box-sizing: border-box;
             text-align: center !important;
-            font-size: 0.8em;
             pointer-events: auto;
             Display: block !important;
 
@@ -1020,10 +1143,10 @@
     <div class="page active" id="page-0">
         <div class="heading-container">
             <h1>Observation of Thoughts</h1> 
-            <h2>Listen Read Walk and Live in Chicago</h2> 
+            <h2>Listen Read Walk and Live in Chicago - Postcards to myself</h2> 
             <h2>Sri Rao</h2> 
             <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                Last updated: Mar 01, 2026
+                Last updated: Mar 13, 2026
             </p>
             <h3>~***~</h3>
         </div>
@@ -1036,7 +1159,7 @@
             <h2>Table of Contents</h2>
             
             <div class="toc-button-container">
-                <a href="#page-1" class="back-to-toc compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="back-to-toc compact-button toc-link">Awareness(2)</a><a href="#page-3" class="back-to-toc compact-button toc-link">Unity(3)</a><a href="#page-4" class="back-to-toc compact-button toc-link">Silence(4)</a><a href="#page-5" class="back-to-toc compact-button toc-link">Serenity(5)</a><a href="#page-6" class="back-to-toc compact-button toc-link">Who am I(6)</a><a href="#page-7" class="back-to-toc compact-button toc-link">Words(7)</a><a href="#page-8" class="back-to-toc compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="back-to-toc compact-button toc-link">Vastness(9)</a><a href="#page-10" class="back-to-toc compact-button toc-link">Man and boy(10)</a><a href="#page-11" class="back-to-toc compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="back-to-toc compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="back-to-toc compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="back-to-toc compact-button toc-link">Nani(14)</a><a href="#page-15" class="back-to-toc compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="back-to-toc compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="back-to-toc compact-button toc-link">Duniya(17)</a><a href="#page-18" class="back-to-toc compact-button toc-link">Lessons(18)</a><a href="#page-19" class="back-to-toc compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="back-to-toc compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="back-to-toc compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="back-to-toc compact-button toc-link">Time(22)</a><a href="#page-23" class="back-to-toc compact-button toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="back-to-toc compact-button toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="back-to-toc compact-button toc-link">Gratitude(25)</a><a href="#page-26" class="back-to-toc compact-button toc-link">Energy(26)</a><a href="#page-27" class="back-to-toc compact-button toc-link">Acceptance(27)</a><a href="#page-28" class="back-to-toc compact-button toc-link">Choices(28)</a><a href="#page-29" class="back-to-toc compact-button toc-link">The Good, The Bad(29)</a><a href="#page-30" class="back-to-toc compact-button toc-link">Writing(30)</a><a href="#page-31" class="back-to-toc compact-button toc-link">Let’s make a circle(31)</a><a href="#page-32" class="back-to-toc compact-button toc-link">Diwali(32)</a><a href="#page-33" class="back-to-toc compact-button toc-link">Pathways to being.(33)</a><a href="#page-34" class="back-to-toc compact-button toc-link">Pursuit of Ignorance(34)</a><a href="#page-35" class="back-to-toc compact-button toc-link">Just Asking(35)</a><a href="#page-36" class="back-to-toc compact-button toc-link">Fragility(36)</a><a href="#page-37" class="back-to-toc compact-button toc-link">In God we Trust(37)</a><a href="#page-38" class="back-to-toc compact-button toc-link">O’ Mother of mine(38)</a><a href="#page-39" class="back-to-toc compact-button toc-link">Elevating Understanding(39)</a>
+                <a href="#page-1" class="back-to-toc compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="back-to-toc compact-button toc-link">Awareness(2)</a><a href="#page-3" class="back-to-toc compact-button toc-link">Unity(3)</a><a href="#page-4" class="back-to-toc compact-button toc-link">Silence(4)</a><a href="#page-5" class="back-to-toc compact-button toc-link">Serenity(5)</a><a href="#page-6" class="back-to-toc compact-button toc-link">Who am I(6)</a><a href="#page-7" class="back-to-toc compact-button toc-link">Words(7)</a><a href="#page-8" class="back-to-toc compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="back-to-toc compact-button toc-link">Vastness(9)</a><a href="#page-10" class="back-to-toc compact-button toc-link">Man and boy(10)</a><a href="#page-11" class="back-to-toc compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="back-to-toc compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="back-to-toc compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="back-to-toc compact-button toc-link">Nani(14)</a><a href="#page-15" class="back-to-toc compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="back-to-toc compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="back-to-toc compact-button toc-link">Duniya(17)</a><a href="#page-18" class="back-to-toc compact-button toc-link">Lessons(18)</a><a href="#page-19" class="back-to-toc compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="back-to-toc compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="back-to-toc compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="back-to-toc compact-button toc-link">Time(22)</a><a href="#page-23" class="back-to-toc compact-button toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="back-to-toc compact-button toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="back-to-toc compact-button toc-link">Gratitude(25)</a><a href="#page-26" class="back-to-toc compact-button toc-link">Energy(26)</a><a href="#page-27" class="back-to-toc compact-button toc-link">Acceptance(27)</a><a href="#page-28" class="back-to-toc compact-button toc-link">Choices(28)</a><a href="#page-29" class="back-to-toc compact-button toc-link">The Good, The Bad(29)</a><a href="#page-30" class="back-to-toc compact-button toc-link">Writing(30)</a><a href="#page-31" class="back-to-toc compact-button toc-link">Let’s make a circle(31)</a><a href="#page-32" class="back-to-toc compact-button toc-link">O’ Mother of mine(32)</a><a href="#page-33" class="back-to-toc compact-button toc-link">Diwali(33)</a><a href="#page-34" class="back-to-toc compact-button toc-link">Pathways to being.(34)</a><a href="#page-35" class="back-to-toc compact-button toc-link">Pursuit of Ignorance(35)</a><a href="#page-36" class="back-to-toc compact-button toc-link">Just Asking(36)</a><a href="#page-37" class="back-to-toc compact-button toc-link">Fragility(37)</a><a href="#page-38" class="back-to-toc compact-button toc-link">In God we Trust(38)</a>
             </div>
         </div>
     </div>
@@ -1540,7 +1663,10 @@ All may yet be well.
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Diwali.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life.<br><br>The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward.<br><br>The light from my flame shows me other people moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me.<br><br>The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away.<br><br>I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself.<br><br>I never imagined that one flame could transform the world into a bright, sparkling festival of lights.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="OMotherOfMine.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience would be a necessity.<br><br>The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect.<br><br>She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love.<br><br>Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued.<br><br>Nothing of value was ever lost, so nothing of value was ever learned.<br><br>Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability.<br><br>Past suffering should result in increase of empathy and compassion. It never did.<br><br>Quality cannot be imagined or willed into existence, but attempts to do so were hailed a success.<br><br>Garnering of attention is not an indication of respect or validation of quality. But it was considered as such.<br><br>She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.<br><br>She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient.<br><br>Time passes on…. she enters middle age.<br><br>Mother comes to realize that the responsibility undertaken has become overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. Mother feels pain. There are to be no winners. She finds mother backing away, blaming her for not carrying her burdens. She sees that mother has changed the rules of the game. She senses that obedience is no longer enough. For the first time, she feels fear. She is not prepared.<br><br>Days marched on… and… one day, mother is no more.<br><br>Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life.<br><br>The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? Contributions of others are denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope.<br><br>She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits….<br><br>Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love.<br><br>Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself, convinced that she did her best. It was as it was meant to be.<br><br>The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out.<br><br>She is reminded of a Neil Reid verse from her past,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Mother of mine, when I was young<br>
+You showed me the right way, things ought to be done<br>
+Without your love where would I be<br>
+Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-size: 0.4em;"><a href="https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas" target="_blank" rel="noopener noreferrer">Image Src...</a></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1555,7 +1681,7 @@ All may yet be well.
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="PathToBe.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Pathways to being</span></p>Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration<br><br>LIfe seems to be about following this loop over and over again…<p style="text-align: center; font-size: 0.4em;"><a href="https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758" target="_blank" rel="noopener noreferrer">Image Src...</a></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="Diwali.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></p>My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life.<br><br>The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward.<br><br>The light from my flame shows me other people moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me.<br><br>The light from my flame has uncovered  a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away.<br><br>I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself.<br><br>I never imagined that one flame could transform the world into a bright, sparkling festival of lights.<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1563,6 +1689,21 @@ All may yet be well.
         
 
         <div class="page" id="page-34">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="PathToBe.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Pathways to being</span></p>Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration<br><br>LIfe seems to be about following this loop over and over again…<p style="text-align: center; font-size: 0.4em;"><a href="https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758" target="_blank" rel="noopener noreferrer">Image Src...</a></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-35">
             <div class="book-title">Observation of Thoughts</div>
             <div class="text-only-container">
                 
@@ -1578,7 +1719,7 @@ https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419
         </div>
         
 
-        <div class="page" id="page-35">
+        <div class="page" id="page-36">
             <div class="book-title">Observation of Thoughts</div>
             <div class="text-only-container">
                 
@@ -1593,7 +1734,7 @@ https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419
         </div>
         
 
-        <div class="page" id="page-36">
+        <div class="page" id="page-37">
             <div class="book-title">Observation of Thoughts</div>
             <div class="text-only-container">
                 
@@ -1608,7 +1749,7 @@ https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419
         </div>
         
 
-        <div class="page" id="page-37">
+        <div class="page" id="page-38">
             <div class="book-title">Observation of Thoughts</div>
             <div class="text-only-container">
                 
@@ -1623,40 +1764,7 @@ https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419
         </div>
         
 
-        <div class="page" id="page-38">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
-    <div class="content-text" 
-         style="font-size: 1em;
-                --mobile-font-size: 0.9em">
-        <br><br><br><div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="OMotherOfMine.jpeg" alt="Image" style="width: 50%;"></div><p style="color: #f09e5a;"><span class="highlight-text">O’ Mother of mine</span></p>Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life.  Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love.  But, absolute obedience would be a necessity.<br><br>The child, willingly handed her all to her mother. She did not realize that this was a choice. She would never feel pain, or fear. She would be the envy of the world. She would be perfect.<br><br>She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love.<br><br>Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued.<br><br>Nothing of value was ever lost, so nothing of value was ever learned.<br><br>Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability.<br><br>Past suffering should result in increase of empathy and compassion. It never did.<br><br>Quality cannot be imagined or willed into existence, but attempts to do so were hailed a success.<br><br>Garnering of attention is not an indication of respect or validation of quality. But it was considered as such.<br><br>She thought that she had learnt how to do everything. She had never learned, what it was that needed doing.<br><br>She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient.<br><br>Time passes on…. she enters middle age.<br><br>Mother comes to realize that the responsibility undertaken has become overwhelming. Mother begins to fall behind. Mother saw her sad, alone and helpless. Mother feels pain. There are to be no winners. She finds mother backing away, blaming her for not carrying her burdens. She sees that mother has changed the rules of the game. She senses that obedience is no longer enough. For the first time, she feels fear. She is not prepared.<br><br>Days marched on… and… one day, mother is no more.<br><br>Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until an excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life.<br><br>The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? The contribution of others is denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured.  There is no action because delay gives her hope.<br><br>She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits….<br><br>Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love.<br><br>Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself convinced that she did her best. It was as it was meant to be.<br><br>The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out.<br><br>She is reminded of a Neil Reid verse from her past,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Mother of mine, when I was young<br>
-You showed me the right way, things ought to be done<br>
-Without your love where would I be<br>
-Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-size: 0.4em;"><a href="https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas" target="_blank" rel="noopener noreferrer">Image Src...</a></p><p style="text-align: center; font-style: bold;"> ~***~ </p>
-    </div>
-    
-            </div>
-        </div>
-        
-
         <div class="page" id="page-39">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
-    <div class="content-text" 
-         style="font-size: 1em;
-                --mobile-font-size: 0.9em">
-        <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ElevatingUnderstanding.svg" alt="Image" style="width: 50%;"></div><br><p style="color: #f09e5a;"><span class="highlight-text">Elevating Understanding</span></p>...<p style="text-align: center; font-style: bold;"> ~***~ </p>
-    </div>
-    
-            </div>
-        </div>
-        
-
-        <div class="page" id="page-40">
             <div class="book-title">Observation of Thoughts</div>
             <div class="text-only-container">
                 
@@ -1689,16 +1797,16 @@ Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-s
     <div class="slider-container" id="slider-container" style="">
         <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
-            <input type="range" min="0" max="41" value="0" class="slider" id="page-slider">
+            <input type="range" min="0" max="40" value="0" class="slider" id="page-slider">
         </div>
         <div class="slider-info">
-            <span id="current-page">0</span>/<span id="total-pages">41</span>
+            <span id="current-page">0</span>/<span id="total-pages">40</span>
         </div>
     </div>
 
     <script>
         let currentPage = 0;
-        const totalPages = 41;
+        const totalPages = 40;
         const pages = document.querySelectorAll('.page');
 
         const page0Skipped = false;
@@ -1711,6 +1819,150 @@ Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-s
         const leftArrowContainer = document.getElementById('left-arrow-container');
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
+
+        // Generic listener for ALL triggers
+        document.addEventListener('click', function(e) {
+            const trigger = e.target.closest('.tooltip-trigger');
+            const tooltip = document.getElementById('tooltip');
+            
+            // Close if clicking outside
+            if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
+                toggleTooltip('', '', '', '', '', 'no');
+                return;
+            }
+            
+            if (!trigger) return;
+            
+            e.stopPropagation();
+            
+            let top = trigger.dataset.top || '50vh';
+            let left = trigger.dataset.left || '50vw';
+            
+            const rect = trigger.getBoundingClientRect();
+            
+            // Get body padding
+            const bodyStyles = window.getComputedStyle(document.body);
+            const bodyPaddingLeft = parseFloat(bodyStyles.paddingLeft);
+            const bodyPaddingRight = parseFloat(bodyStyles.paddingRight);
+            const bodyPaddingTop = parseFloat(bodyStyles.paddingTop);
+            const bodyPaddingBottom = parseFloat(bodyStyles.paddingBottom);
+            
+            // Dynamic padding (minimum 24px)
+            const padding = Math.max(24, window.innerWidth * 0.04);
+            
+            // Tooltip dimensions from data (as numbers, if numeric)
+            let tooltipWidth = parseFloat(trigger.dataset.width);
+            let tooltipHeight = parseFloat(trigger.dataset.height);
+            // Total dimensions including CSS padding+border (20px padding each side + 1px border each side = 42px extra)
+            const extra = 42; // 20+20+1+1
+            const totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
+            const totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+            
+            // Helper to add 'px' to plain numbers
+            const addPxIfNumber = (value) => {
+                if (!isNaN(value) && value !== '') {
+                    return value + 'px';
+                }
+                return value;
+            };
+            
+            top = addPxIfNumber(top);
+            left = addPxIfNumber(left);
+            
+            // Read positioning mode
+            const position = trigger.dataset.position || 'fixed';
+            
+            // --- Only apply viewport clamping for fixed positioning ---
+            if (position !== 'absolute') {
+                // Handle "center" individually for top and left
+                if (top === 'center') {
+                    if (totalTooltipHeight) {
+                        // Calculate top position to center vertically
+                        let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
+                        // Clamp to stay within viewport with padding
+                        centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        top = centerTop + 'px';
+                    } else {
+                        // Fallback: use 50% (not pixel‑perfect, but better than nothing)
+                        top = '50%';
+                    }
+                }
+                
+                if (left === 'center') {
+                    if (totalTooltipWidth) {
+                        // Calculate left position to center horizontally
+                        let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
+                        // Clamp
+                        centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        left = centerLeft + 'px';
+                    } else {
+                        left = '50%';
+                    }
+                }
+                
+                // Special case: data-top="100%" data-left="100%" (bottom‑right corner based on trigger)
+                if (trigger.dataset.top === '100%' && trigger.dataset.left === '100%') {
+                    let calcTop = rect.top + parseFloat(top);
+                    let calcLeft = rect.right + parseFloat(left);
+                    
+                    if (totalTooltipWidth) {
+                        if (calcLeft + totalTooltipWidth > window.innerWidth - padding) {
+                            calcLeft = window.innerWidth - totalTooltipWidth - padding;
+                        }
+                    }
+                    if (totalTooltipHeight) {
+                        if (calcTop + totalTooltipHeight > window.innerHeight - padding) {
+                            calcTop = window.innerHeight - totalTooltipHeight - padding;
+                        }
+                    }
+                    
+                    top = calcTop + 'px';
+                    left = calcLeft + 'px';
+                }
+                
+                // Below‑trigger positioning (@ mode)
+                else if (top === '@px' || top === '@') {
+                    let idealLeft = rect.left + (rect.width / 2) - (totalTooltipWidth / 2);
+                    let idealTop = rect.bottom + 12;
+                    
+                    const availableWidth = window.innerWidth - bodyPaddingLeft - bodyPaddingRight;
+                    const availableHeight = window.innerHeight - bodyPaddingTop - bodyPaddingBottom;
+                    
+                    if (idealLeft < padding) {
+                        idealLeft = padding;
+                    } else if (idealLeft + totalTooltipWidth > availableWidth - padding) {
+                        idealLeft = availableWidth - totalTooltipWidth - padding;
+                    }
+                    
+                    if (idealTop + totalTooltipHeight > availableHeight - padding) {
+                        idealTop = Math.max(padding, rect.top - totalTooltipHeight - 12);
+                    }
+                    
+                    top = idealTop + 'px';
+                    left = idealLeft + 'px';
+                }
+            }
+            // For absolute positioning, we skip all clamping – coordinates are used as given.
+            
+            // Prepare other parameters
+            const height = addPxIfNumber(trigger.dataset.height || 'auto');
+            const width = addPxIfNumber(trigger.dataset.width || 'auto');
+            const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+            const animation = trigger.dataset.animation || 'fade';
+            const textAlign = trigger.dataset.textalign || 'left';
+            const tiptext = htmlEncodeTooltipText(rawTiptext);
+            
+            // Check if same tooltip is already open
+            const isCurrentlyOpen = tooltip.classList.contains('show') && 
+                                    tooltip.innerHTML.includes(rawTiptext);
+            
+            if (isCurrentlyOpen) {
+                toggleTooltip('', '', '', '', '', 'no');
+            } else {
+                toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position);
+            }
+        });
+
 
         // FIXED: Image caption handling
         document.addEventListener('DOMContentLoaded', () => {
@@ -1805,6 +2057,83 @@ Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-s
             });
         });        
 
+        //
+        // ToolTIp Management
+        //
+        function htmlEncodeTooltipText(str) {
+            const div = document.createElement('div');
+            div.innerHTML = str;
+            return div.innerHTML;
+        }
+
+function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed') {
+    const tooltip = document.getElementById('tooltip');
+    
+    if (visible === 'yes') {
+        // Clear all classes
+        tooltip.classList.remove(
+            'fade', 'bounce', 'slide', 'zoom',
+            'center', 'below-trigger', 'show',
+            'left-text', 'right-text', 'center-text'
+        );
+
+        // Force positioning mode with !important
+        tooltip.style.setProperty('position', position, 'important');
+
+        // Text alignment
+        if (textAlign !== 'left') {
+            tooltip.classList.add(textAlign + '-text');
+        }
+
+        // Animation
+        if (animation !== 'fade') {
+            tooltip.classList.add(animation);
+        } else {
+            tooltip.classList.add('fade');
+        }
+
+        // Apply positioning and sizing
+        tooltip.style.top = top;
+        tooltip.style.left = left;
+        tooltip.style.height = height === 'auto' ? 'auto' : height;
+        tooltip.style.width = width === 'auto' ? 'auto' : width;
+        tooltip.innerHTML = tiptext;
+
+        // Trigger show
+        tooltip.offsetHeight;
+        setTimeout(() => {
+            tooltip.classList.add('show');
+        }, 20);
+
+    } else {
+        // Hide tooltip
+        tooltip.classList.remove(
+            'show', 'center', 'below-trigger',
+            'fade', 'bounce', 'slide', 'zoom',
+            'left-text', 'right-text', 'center-text'
+        );
+        // Reset inline styles (including the !important position)
+        tooltip.style.cssText = ''; // simpler than resetting each property
+        // Alternatively, you can keep the selective reset:
+        // tooltip.style.position = '';
+        // tooltip.style.top = '';
+        // tooltip.style.left = '';
+        // tooltip.style.height = '';
+        // tooltip.style.width = '';
+        // tooltip.innerHTML = '';
+        setTimeout(() => {
+            tooltip.innerHTML = '';
+            tooltip.style.top = '';
+            tooltip.style.left = '';
+            tooltip.style.height = '';
+            tooltip.style.width = '';
+        }, 400);
+    }
+}
+        
+
+
+        
         // Determine initial page based on configuration
         function getInitialPage() {
             const page0Skipped = false;
@@ -2183,5 +2512,7 @@ Mother,  O’ sweet mother of mine …. </p><p style="text-align: center; font-s
         });
         
     </script>
+
+    <div id="tooltip"></div>
 </body>
 </html>
