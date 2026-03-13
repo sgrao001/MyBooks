@@ -137,6 +137,130 @@
                 visibility: visible !important;
         }
 
+        /* tool Tips */
+
+        .tooltip-trigger {
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .right-justified {
+            display: block !important;
+            width: 8%;
+            text-align: right;
+            margin-left: auto;
+            margin-right: 8%;
+        }
+        .left-justified {
+            display: block !important;
+            width: 8%;              /* Keep consistent width if desired */
+            text-align: left;
+            margin-left: 8%;          /* 8% space from left edge */
+            margin-right: auto;        /* pushes remaining space to the right */
+        }
+        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
+        .center-justified {
+            display: block !important;
+            width: 8%;
+            text-align: center;           /* Centers text inside the span */
+            margin-left: auto;            /* Centers the block horizontally */
+            margin-right: auto;           /* Centers the block horizontally */
+        }
+        .right-justified,
+        .left-justified,
+        .center-justified {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            text-align: left !important;
+        }
+        .right-justified { text-align: right !important; }
+        .left-justified { text-align: left !important; }
+        .center-justified { text-align: center !important; }
+        .tooltip-group {
+            display: inline-block;      /* or float: left; */
+            margin-left: 8%;            /* or margin-right: 8% for right alignment */
+            vertical-align: top;        /* align with text line */
+        }
+
+        .tooltip-group .tooltip-trigger {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+            /* individual text-aligns already set by .left-justified etc. */
+        }
+        #tooltip {
+            position: fixed;
+
+            /* INITIAL STATE - HIDDEN */
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+                
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.95);
+            shape-outside: margin-box;
+
+            padding: 10px 10px 10px 10px ! important;
+            border: 1px solid rgba(255,255,255,0.2);
+
+            z-index: 9999;
+            max-width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: normal;
+
+            
+            /* SMOOTH APPEAR/DISAPPEAR - FADE + SCALE */
+            opacity: 0;
+            visibility: hidden;
+            
+            /* Scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+
+        #tooltip.center { transform: translate(-50%, -50%) translateY(20px) scale(0.9); }
+        #tooltip.center.show { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1) !important;  } /* Perfect centering + final scale */
+        #tooltip.show { opacity: 1; visibility: visible; }
+
+        #tooltip.fade { transform: translateY(15px) scale(0.95); }
+        #tooltip.fade.show { transform: translateY(0) scale(1); }
+
+        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
+        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+        #tooltip.slide { transform: translateY(60px); }
+        #tooltip.slide.show { transform: translateY(0); }
+
+        #tooltip.zoom { transform: scale(0.4); }
+        #tooltip.zoom.show { transform: scale(1); }
+
+        /* ✅ NEW - PERFECT CENTERING */
+        #tooltip.below-trigger { transform: translateY(10px) scale(0.9); }
+        #tooltip.below-trigger.show { transform: scale(1); }
+
+        #tooltip.left-text { text-align: left; }
+        #tooltip.right-text { text-align: right; }
+        #tooltip.center-text { text-align: center; }
+
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        #tooltip::-webkit-scrollbar { width: 6px; }
+        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+
+
         /* Center book title */
         .book-title {
             position: absolute;
@@ -690,7 +814,6 @@
             padding: 0px 10px 0px 10px ! important;
             box-sizing: border-box;
             text-align: center !important;
-            font-size: 0.8em;
             pointer-events: auto;
             Display: block !important;
 
@@ -1488,6 +1611,150 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
+        // Generic listener for ALL triggers
+        document.addEventListener('click', function(e) {
+            const trigger = e.target.closest('.tooltip-trigger');
+            const tooltip = document.getElementById('tooltip');
+            
+            // Close if clicking outside
+            if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
+                toggleTooltip('', '', '', '', '', 'no');
+                return;
+            }
+            
+            if (!trigger) return;
+            
+            e.stopPropagation();
+            
+            let top = trigger.dataset.top || '50vh';
+            let left = trigger.dataset.left || '50vw';
+            
+            const rect = trigger.getBoundingClientRect();
+            
+            // Get body padding
+            const bodyStyles = window.getComputedStyle(document.body);
+            const bodyPaddingLeft = parseFloat(bodyStyles.paddingLeft);
+            const bodyPaddingRight = parseFloat(bodyStyles.paddingRight);
+            const bodyPaddingTop = parseFloat(bodyStyles.paddingTop);
+            const bodyPaddingBottom = parseFloat(bodyStyles.paddingBottom);
+            
+            // Dynamic padding (minimum 24px)
+            const padding = Math.max(24, window.innerWidth * 0.04);
+            
+            // Tooltip dimensions from data (as numbers, if numeric)
+            let tooltipWidth = parseFloat(trigger.dataset.width);
+            let tooltipHeight = parseFloat(trigger.dataset.height);
+            // Total dimensions including CSS padding+border (20px padding each side + 1px border each side = 42px extra)
+            const extra = 42; // 20+20+1+1
+            const totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
+            const totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+            
+            // Helper to add 'px' to plain numbers
+            const addPxIfNumber = (value) => {
+                if (!isNaN(value) && value !== '') {
+                    return value + 'px';
+                }
+                return value;
+            };
+            
+            top = addPxIfNumber(top);
+            left = addPxIfNumber(left);
+            
+            // Read positioning mode
+            const position = trigger.dataset.position || 'fixed';
+            
+            // --- Only apply viewport clamping for fixed positioning ---
+            if (position !== 'absolute') {
+                // Handle "center" individually for top and left
+                if (top === 'center') {
+                    if (totalTooltipHeight) {
+                        // Calculate top position to center vertically
+                        let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
+                        // Clamp to stay within viewport with padding
+                        centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        top = centerTop + 'px';
+                    } else {
+                        // Fallback: use 50% (not pixel‑perfect, but better than nothing)
+                        top = '50%';
+                    }
+                }
+                
+                if (left === 'center') {
+                    if (totalTooltipWidth) {
+                        // Calculate left position to center horizontally
+                        let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
+                        // Clamp
+                        centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        left = centerLeft + 'px';
+                    } else {
+                        left = '50%';
+                    }
+                }
+                
+                // Special case: data-top="100%" data-left="100%" (bottom‑right corner based on trigger)
+                if (trigger.dataset.top === '100%' && trigger.dataset.left === '100%') {
+                    let calcTop = rect.top + parseFloat(top);
+                    let calcLeft = rect.right + parseFloat(left);
+                    
+                    if (totalTooltipWidth) {
+                        if (calcLeft + totalTooltipWidth > window.innerWidth - padding) {
+                            calcLeft = window.innerWidth - totalTooltipWidth - padding;
+                        }
+                    }
+                    if (totalTooltipHeight) {
+                        if (calcTop + totalTooltipHeight > window.innerHeight - padding) {
+                            calcTop = window.innerHeight - totalTooltipHeight - padding;
+                        }
+                    }
+                    
+                    top = calcTop + 'px';
+                    left = calcLeft + 'px';
+                }
+                
+                // Below‑trigger positioning (@ mode)
+                else if (top === '@px' || top === '@') {
+                    let idealLeft = rect.left + (rect.width / 2) - (totalTooltipWidth / 2);
+                    let idealTop = rect.bottom + 12;
+                    
+                    const availableWidth = window.innerWidth - bodyPaddingLeft - bodyPaddingRight;
+                    const availableHeight = window.innerHeight - bodyPaddingTop - bodyPaddingBottom;
+                    
+                    if (idealLeft < padding) {
+                        idealLeft = padding;
+                    } else if (idealLeft + totalTooltipWidth > availableWidth - padding) {
+                        idealLeft = availableWidth - totalTooltipWidth - padding;
+                    }
+                    
+                    if (idealTop + totalTooltipHeight > availableHeight - padding) {
+                        idealTop = Math.max(padding, rect.top - totalTooltipHeight - 12);
+                    }
+                    
+                    top = idealTop + 'px';
+                    left = idealLeft + 'px';
+                }
+            }
+            // For absolute positioning, we skip all clamping – coordinates are used as given.
+            
+            // Prepare other parameters
+            const height = addPxIfNumber(trigger.dataset.height || 'auto');
+            const width = addPxIfNumber(trigger.dataset.width || 'auto');
+            const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+            const animation = trigger.dataset.animation || 'fade';
+            const textAlign = trigger.dataset.textalign || 'left';
+            const tiptext = htmlEncodeTooltipText(rawTiptext);
+            
+            // Check if same tooltip is already open
+            const isCurrentlyOpen = tooltip.classList.contains('show') && 
+                                    tooltip.innerHTML.includes(rawTiptext);
+            
+            if (isCurrentlyOpen) {
+                toggleTooltip('', '', '', '', '', 'no');
+            } else {
+                toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position);
+            }
+        });
+
+
         // FIXED: Image caption handling
         document.addEventListener('DOMContentLoaded', () => {
             // Debug: Check if captions are being generated
@@ -1581,6 +1848,83 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             });
         });        
 
+        //
+        // ToolTIp Management
+        //
+        function htmlEncodeTooltipText(str) {
+            const div = document.createElement('div');
+            div.innerHTML = str;
+            return div.innerHTML;
+        }
+
+function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed') {
+    const tooltip = document.getElementById('tooltip');
+    
+    if (visible === 'yes') {
+        // Clear all classes
+        tooltip.classList.remove(
+            'fade', 'bounce', 'slide', 'zoom',
+            'center', 'below-trigger', 'show',
+            'left-text', 'right-text', 'center-text'
+        );
+
+        // Force positioning mode with !important
+        tooltip.style.setProperty('position', position, 'important');
+
+        // Text alignment
+        if (textAlign !== 'left') {
+            tooltip.classList.add(textAlign + '-text');
+        }
+
+        // Animation
+        if (animation !== 'fade') {
+            tooltip.classList.add(animation);
+        } else {
+            tooltip.classList.add('fade');
+        }
+
+        // Apply positioning and sizing
+        tooltip.style.top = top;
+        tooltip.style.left = left;
+        tooltip.style.height = height === 'auto' ? 'auto' : height;
+        tooltip.style.width = width === 'auto' ? 'auto' : width;
+        tooltip.innerHTML = tiptext;
+
+        // Trigger show
+        tooltip.offsetHeight;
+        setTimeout(() => {
+            tooltip.classList.add('show');
+        }, 20);
+
+    } else {
+        // Hide tooltip
+        tooltip.classList.remove(
+            'show', 'center', 'below-trigger',
+            'fade', 'bounce', 'slide', 'zoom',
+            'left-text', 'right-text', 'center-text'
+        );
+        // Reset inline styles (including the !important position)
+        tooltip.style.cssText = ''; // simpler than resetting each property
+        // Alternatively, you can keep the selective reset:
+        // tooltip.style.position = '';
+        // tooltip.style.top = '';
+        // tooltip.style.left = '';
+        // tooltip.style.height = '';
+        // tooltip.style.width = '';
+        // tooltip.innerHTML = '';
+        setTimeout(() => {
+            tooltip.innerHTML = '';
+            tooltip.style.top = '';
+            tooltip.style.left = '';
+            tooltip.style.height = '';
+            tooltip.style.width = '';
+        }, 400);
+    }
+}
+        
+
+
+        
         // Determine initial page based on configuration
         function getInitialPage() {
             const page0Skipped = false;
@@ -1959,5 +2303,7 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
         });
         
     </script>
+
+    <div id="tooltip"></div>
 </body>
 </html>
