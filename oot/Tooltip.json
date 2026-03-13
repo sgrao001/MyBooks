@@ -2,7 +2,7 @@
     "source_path": "oot/",
     "source_md": "Tooltip.md",
     "output_md": "Tooltip.mdx",
-    "output_html": "Tooltip.html",
+    "output_html": "tip.html",
 
     "BkImage": "oot.jpeg",
 

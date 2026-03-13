@@ -174,7 +174,7 @@ Kids deserve a chance to shape their contributions. My attempts to keep them fre
 ## In Crossing
 ![[GeorgeInness-TheLastGlow1885.jpeg]]<p style="color: #f09e5a;"><span class="highlight-text">In Crossing</span></p>
 
-I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure of intent. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light. 
+I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure in my desire. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light. 
 
 I embrace the sense of achievement, for a past well-lived, gratitude for the treasures found, fondness for the memories left, hope for the work incomplete, promise for the desires unfulfilled, comfort for the beings in the woods, encouragement for the dreams carried, love for my fellow journeying souls,  respect for the togetherness offered, nostalgia for times spent. Peace for all. 
 
@@ -209,7 +209,7 @@ I find new offerings every day. I am grateful for it.
 
 Love envelopes nature. It nurtures bonds of togetherness and extolls virtues of harmony. It builds communities of peace. 
 
-Power, shrouds itself in righteousness, grasps at strength and demands obedience to offer a pretense of peace.  
+Power, shrouds itself in righteousness, grasps at strength and demands obedience and offers a pretense of peace.  
 
 One destroys, the other creates. One hurts, the other heals. One gains fame, the other remains anonymous. One fears, the other suffers. 
 
@@ -378,7 +378,7 @@ Through the ages, adventurers, traveling to unknown lands, carried only a compas
 
 And, so it is with traveller’s who walk along the uncertain paths of life, carrying only the necessities for passionate and harmonious living. For they know, that all else burdens, limits options and wastes energy. 
 
-Discovery of passion is a consequence of conscious journeys into the self. Passionate living is a consequence of repeated journeys from the knowledge core to the outer edges of cognitive capacity, along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength. 
+Discovery of passion is a consequence of conscious journeys into the self. Passionate living is a consequence of repeated journeys from the knowledge core to the outer edges of cognitive capacity, along the radius of genetically endowments. It is the relentless pursuit of conditioned ignorance in the direction of strength. 
 
 Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual debris are indicators of passionate choices. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is regenerative.
 
