@@ -1,0 +1,46 @@
+{
+    "source_path": "oot/",
+    "source_md": "tooltip.md",
+    "output_md": "Tooltip.mdx",
+    "output_html": "tip.html",
+
+    "BkImage": "oot.jpeg",
+
+    "COPY_ENABLE": true,
+
+    "ARW_DISPLAY": false,
+    "ARW_HOVER_WIDTH": 15,
+    "ARW_VISIBLE_WIDTH": 15,
+
+    "SLDR_DISPLAY": true,
+
+    "Page0_skip": true,
+    
+    "BkPage0_FontColor": "#89C2FF",
+    "BkFontColor": "#abb8bb",
+    "BkFontSize": "1em",   
+    "BkPage0_Title": "Testing Tooltips",
+    "BkPage0_Description": "Sri Rao - Tooltips",
+    "BkPage0_Tag": "ToolTips samples",
+    "Author_name": "Sri Rao",
+    "BkPage0_Keywords": "Sri Rao, ToolTips",
+    "BkPage0_head3": "~***~",
+    "BkFontSizeMobile390": "0.9em",
+    "BkListLink_show": false,
+    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
+
+    "TitleFontClr": "#D4E6FF",
+    "TitleFontSize": "0.8em",
+
+    "Hide_page_number": false,
+
+    "ImageWidthDesktop": "50%",
+    "ImageWidthMobile": "90%",
+    "ResizeForMobile": true, 
+
+    "TOC_TITLE": "Table of Contents",
+    "TOC_POSITION": 0,
+    "TOC_FontColor": "#4fc3f7",
+    "TOC_ENABLE": true,
+    "TOCasList": false
+}
