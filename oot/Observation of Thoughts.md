@@ -145,7 +145,7 @@ I look back to see my wheels moving along on their own. They are beckoning me to
 <CHAPTER="Be well my friend">
 <IMAGE="FriendshipPicasso1908.jpeg">
 <TITLE="Be Well my Friend">
-People before us brought us together. They journeyed to great unknowns, to find us their best gifts, to make us who we are. They reached out, offering us strength and resolve, to bring us where are. 
+People before us brought us together. They journeyed to great unknowns, to find us their best gifts, to make us who we are. They reached out, offering us strength and resolve, to bring us where we are. 
 
 My life long best friend and protector needs my help. He has become weak and tired. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
 
