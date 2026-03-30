@@ -3,9 +3,9 @@
 [[header |Main]] | [[_Idx-AA_Journal|_Idx-AA_Journal]]
 Bkgrnd = ??.jpeg
 
-<div style="break-after: page;"></div><br>
+<NEWPAGE>
 
-## About me… 
+<CHAPTER="About me… ">
 Hello, 
 
 On most days over the past four decades, I, like many others, offered my perspective and abilities, to create “things” of value — contributions that joined with that of others, flowing onward like rain droplets in streams, converging into rivers and finally reaching the sea. For this, I have been sufficiently compensated. 
@@ -30,49 +30,53 @@ experiences of individuals — to highlight patterns and trends in how life’s 
 I hope you find my writings worth your while. Thank you for taking a look. 
 
 (Click or touch the left side of your screen for the previous page. Click or touch the right side of the screen for the next page. )
-<div style="break-after: page;"></div><br>
+<NEWPAGE>
 
-## Observation of Thoughts
-<p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p>
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
-_getMdate("oot/Observation of Thoughts.md")
-<p style="text-align: center; width: 100%; margin: 20px 0;">
+<CHAPTER="Observation of Thoughts">
+<TITLE="Observation of Thoughts">
+
+<DPosition=':[left| | italic]A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
+_getMdate("oot/Observation of Thoughts.md")'>
+<DPosition=':[left  ,  |italic ]
     <a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
        style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
               border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
               white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important;">
+              justify-content: center; font-size: 1em !important; margin-left: 8%">
         Observation of Thoughts
-    </a>
-</p>
-## Theater of the Mind
-<p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p>
+    </a>'>
 
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
-_getMdate("tom/Theater of the Mind.md")
-<p style="text-align: center; width: 100%; margin: 20px 0;">
+
+<CHAPTER="Theater of the Mind">
+<TITLE="Theater of the Mind">
+
+
+<DPosition=':[left  |  |italic ]A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
+_getMdate("tom/Theater of the Mind.md")'>
+<DPosition=':[left  |  |italic ]
     <a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
        style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
               border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
               white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important;">
+              justify-content: center; font-size: 1em !important; margin-left: 8%">
         Theater of the Mind
-    </a>
-</p>
-## Akka 
-<p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p>
+    </a>'>
 
-<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">This is a short story of a woman who defied her time, so that we could define ours — three generations down.<br>
-_getMdate("akka/akka.md")
-<p style="text-align: center; width: 100%; margin: 20px 0;">
+<CHAPTER="Akka ">
+<TITLE="Akka">
+
+
+<DPosition=':[left  |  |italic ]A short story of a woman who defied her time, so that we could define ours — three generations down.<br>
+_getMdate("akka/akka.md")'>
+<DPosition=':[left  |  |italic ]
     <a href="https://sgrao001.github.io/MyBooks/akka/akka.html" 
        style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
               border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
               white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important;">
+              justify-content: center; font-size: 1em !important; margin-left: 8%">
         Akka
-    </a>
-</p>
+    </a>'>
 
-<p style="text-align: center; font-style: bold;"> ~***~ </p>
+
+<PAGE END MARKER="~***~">
 
