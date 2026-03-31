@@ -149,7 +149,7 @@ People before us brought us together. They journeyed to great unknowns, to find 
 
 My life long best friend and protector needs my help. He has become weak and tired. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
 
-I am there for him now, in deep gratitude. I align my soul with him, and share soothing conversations of rest, respect and love. We have so much to cherish.Together, we have been recipients of great treasures and blessings. But, time is short. 
+I am there for him now, in deep gratitude. I align my soul with him, and share soothing conversations of rest, respect and love. We have so much to cherish. Together, we have been recipients of great treasures and blessings. But, time is short. 
 
 There is much promise on the other side, the promise of unity and calm. There is also sadness, of parting ways. Like a rocket ship falling back to earth, he will see me off. I will feel great sadness as I look back fondly on times we had, things we made our own, and things we left behind. 
 
@@ -848,5 +848,47 @@ I seek my own solace. I will find my own acceptance. I will accept my acceptance
 
 Forgiveness may come as a needed step to aid in my journey to healing. 
 *//
+<PAGE END MARKER="~***~">
+<NEWPAGE>
+<CHAPTER="The emperor has no clothes">
+<IMAGE="noclothes_1.jpeg">
+<TITLE="The emperor has<br>no clothes - Part I">
+
+The man perches himself on a pedestal, projecting power, professing virtue and proclaiming wisdom. He stands, ready and eager to be honored, for defending the good and the holy. 
+
+He claims worth, with a made up yardstick he calls money. He kills for money. 
+
+He claims ownership of lands, that have existed before him and will continue to exist long after he is gone. He kills for this land. 
+
+He claims allegiance to a nation, a made up assortment of land parcels. He kills for his nation. 
+
+He claims virtue by association with ideology, a filtered and deliberately mis-interpreted fragment of reality. He kills for his ideology. 
+
+He claims obedience to an unseen god, in anticipation of rewards in the unknown afterlife. He kills for his god. 
+
+He claims all of natures bounty as his need. He kills for his greed.
+
+He claims his beliefs will bring him love, admiration and respect. He kills for his beliefs. 
+
+He claims nature and the divine value all beings equally. He kills to maintain his distinction. 
+
+He claims he is secure in his abilities while being constantly fearful of every perceived adversity. He kills to protect against imagined threats. 
+
+He claims to honor beings. He kills in the name of honor and righteousness.
+
+He claims the next kill will guarantee forever peace. He kills to prevent further killing. 
+
+He kills because he is told to do so. 
+
+In his willingness to kill, he is goaded on by the many justifications he has embraced. 
+
+He feels the good. He feels the power. He is the emperor of all that he beholds. His townspeople count on him. He has to do what it takes. No one else will. They do not have his vision, nor his understanding. They are weak. So, he dresses up in self righteous indignation and painted on grandeur. He congratulates himself on his resolve and his skill. He grants himself the authority and the right to kill. 
+
+As his first mission, he silences the child that points to him and says, “The emperor he has no clothes.” Truth becomes the first casualty. The false becomes a self-reinforcing truth. He hears no one. 
+
+This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?
+
+
+<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his">'>
 <PAGE END MARKER="~***~">
 <NEWPAGE>
