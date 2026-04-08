@@ -898,17 +898,17 @@ This man lives inside each of us. Do we notice? Do we give him a voice? Do we gi
 
 The child reaches inside of her to find reassuring innocence and eager playfulness. She wraps her innocence around her like a warm blanket made of dreams, love and joy. She embraces playfulness to lead herself to creativity, exploration and understanding. She gives her young life all the meaning she needs. 
 
-At 10:30 that day, just after the schools breakfast recess, the first missile comes thundering in. She is thrown violently to the floor, covered in shards of broken glass.  She feels sharp pain in her ears and nothing else.  She grabs her best friend’s hand and instinctively crawls under her desk. Just then, the second bomb hit. The desk saved her life that day. Time stands still, observing in silence. 
+At 10:30 that day, just after the schools breakfast recess, the first missile comes thundering in. She is thrown violently to the floor, covered in shards of broken glass.  She feels sharp pain in her ears and nothing else.  She grabs her best friend’s hand and instinctively crawls under her desk. Just then, the second bomb hits. Time stands still, observing in silence. 
 
-After what seems like an eternity they pull themselves up off the floor and stumble through the hole where the class wall once stood. They make their way to the familiar tree at the far end of the soccer field. Nobody pays them any attention. They sit there holding each other close. 
+After what seems like an eternity, she pulls herself off the floor and stumbles through the hole where the class wall once stood. She makes their way to the familiar tree at the far end of the soccer field. Nobody pays her any attention. She and her best friend sit there, holding each other. No one says a word. 
 
-Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs had left behind. Playfulness left, to make way for helplessness. Trust, shattered like the window glass of her class. Faith in humanity, was destroyed by the force of the blast. Fear, became a constant companion. Sorrow, was a persistent shadow she couldn’t lose. Hope, lost relevance. Dreams, blurred. Memories, flashed before her eyes like a dagger in the night. Loneliness and guilt, were her new playmates. She doesn’t understand any of this. She feels it. 
+Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs had left behind. Playfulness left, to make way for helplessness. Trust shattered, like the window glass in her class. Faith in humanity, was destroyed by the force of the blast. Fear, became a constant companion. Sorrow, was a persistent shadow she couldn’t shake off. Hope, lost relevance. Dreams blurred. Memories, flashed before her eyes like a dagger in the night. Loneliness and guilt, were her new playmates. She didn’t understand any of this. She felt it. 
 
-Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remained were frequent bursts of emotions, each opening fresh wounds. The cheerful dancing lights in her eyes inviting all to play, are now distant empty stares that say nothing. She cannot hear the din of justifications or the cries of victory. As we betrayed her trust, the future of humankind lost its best champion. 
+Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remained were frequent bursts of emotions, each opening fresh wounds. The cheerful dancing lights in her eyes, inviting all to play, were now distant empty stares that say nothing. She cannot hear the din of justifications or the cries of victory. As we betrayed her trust, the future of humankind lost its best champion. 
 
-This child lives inside each of us. Do we notice? Do we hear her voice? Do we treasure the gifts she gives so willingly? Do we let the man silence the child? 
+This child lives inside each of us. Do we notice? Do we hear her voice? Do we treasure the gifts she gave so willingly? Do we let the man silence the child? 
 
-The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We give up the child to gain the man. 
+The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We gave up the child to gain the man. 
 
 <DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/Afghan_Girl">'>
 <PAGE END MARKER="~***~">
