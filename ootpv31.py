@@ -53,7 +53,7 @@ def resolve_relative_path(path, base_dir=None):
 def validate_config():
     """Validate the configuration dictionary"""
     required_keys = ['source_path', 'source_md', 'output_md', 'output_html', 'COPY_ENABLE', 'BkImage',
-                    'ARW_DISPLAY', 'ARW_HOVER_WIDTH', 'ARW_VISIBLE_WIDTH', 'SLDR_DISPLAY', 
+                    'ARW_DISPLAY', 'ARW_HOVER_WIDTH', 'ARW_SAFE_MARGIN', 'ARW_VISIBLE_WIDTH', 'SLDR_DISPLAY', 
                     'Hide_page_number',
                     'BkFontColor', 'BkFontSize', 'BkFontSizeMobile390', 'TitleFontSize', 'BkPage0_FontColor', 
                     'BkPage0_Title', 'BkPage0_Description', 'BkPage0_Tag','Author_name','BkPage0_Keywords', 'BkPage0_head3',
@@ -84,6 +84,8 @@ def validate_config():
     # validate width percentages
     if not 0 <= CONFIG['ARW_HOVER_WIDTH'] <= 100:
         raise ValueError("ARW_HOVER_WIDTH must be between 0 and 100")
+    if not 0 <= CONFIG['ARW_SAFE_MARGIN'] <= 100:
+        raise ValueError("ARW_SAFE_MARGIN must be between 0 and 100")
     if not 0 <= CONFIG['ARW_VISIBLE_WIDTH'] <= 100:
         raise ValueError("ARW_VISIBLE_WIDTH must be between 0 and 100")
     
@@ -352,7 +354,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .tooltip-trigger {{ cursor: pointer; color: #b0e0ff; text-decoration: underline; margin: 0 10px; }}
 
-        .tooltip-group {{ display: inline-block; margin-left: 8%; vertical-align: top; }}
+        .tooltip-group {{ display: inline-block; margin-left: {ARW_SAFE_MARGIN}%; vertical-align: top; }}
      
         .tooltip-full {{ height: var(--tt-max-height); width: var(--tt-max-width); }} 
 
@@ -846,8 +848,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         /* List-style TOC */
         .toc-list .toc-button-container {{
-            margin-left: 8%;
-            margin-reight: 8%;
+            margin-left: {ARW_SAFE_MARGIN}%;
+            margin-right: {ARW_SAFE_MARGIN}%;
             display: block;
         }}
 
@@ -873,6 +875,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
         .content-text {{
             font-size: inherit; /* Inherits from parent */
+            text-align: left;
         }}
 
         /*********************************************/
@@ -1716,7 +1719,7 @@ FOOTER_TEMPLATE = """
                                     // Compute gap from bottom (in pixels)
                                     let gapPx = 0;
                                     if (bottomGap) {
-                                        const gapMatch = bottomGap.match(/^([\d.]+)(vh|px)$/);
+                                        const gapMatch = bottomGap.match(/^([\\d.]+)(vh|px)$/);
                                         if (gapMatch) {
                                             const num = parseFloat(gapMatch[1]);
                                             const unit = gapMatch[2];
@@ -2272,14 +2275,14 @@ def pre_clean(content):
     # replace <PAGE END MARKER="xxx"> with <p style="text-align: center; font-style: bold;"> xxx</p> ignore space and also support 'xxx'
     content = re.sub(r'<\s*PAGE\s+END\s+MARKER\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="text-align: center; font-style: bold;"> \2</p>', content, flags=re.IGNORECASE)
 
-    # replace <PILeft="xxx"> with Paragragh right indent - <p style="margin-left:8%; font-style: italic;">.xxx</p>
-    #content = re.sub( r'<\s*PILeft\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="margin-left: 8%; text-align: left; font-style: italic;">\2</p>', content, flags=re.IGNORECASE | re.DOTALL )
-    # replace <Piright="xxx"> with  <p style="margin-right: 8%; text-align: right; font-style: italic;">xxx</p> PIRIGHT case insensitive also support 'xxx'
-    #content = re.sub( r'<\s*PIRIGHT\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="margin-right: 8%; text-align: right; font-style: italic;">\2</p>', content, flags=re.IGNORECASE )
+    # replace <PILeft="xxx"> with Paragragh right indent - <p style="margin-left:{CONFIG['ARW_SAFE_MARGIN']}%; font-style: italic;">.xxx</p>
+    #content = re.sub( r'<\s*PILeft\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="margin-left: {CONFIG['ARW_SAFE_MARGIN']}%; text-align: left; font-style: italic;">\2</p>', content, flags=re.IGNORECASE | re.DOTALL )
+    # replace <Piright="xxx"> with  <p style="margin-right: {CONFIG['ARW_SAFE_MARGIN']}%; text-align: right; font-style: italic;">xxx</p> PIRIGHT case insensitive also support 'xxx'
+    #content = re.sub( r'<\s*PIRIGHT\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="margin-right: {CONFIG['ARW_SAFE_MARGIN']}%; text-align: right; font-style: italic;">\2</p>', content, flags=re.IGNORECASE )
     #replace <Picenter="xxx"> with  <p style="text-align: center; text-align:center; font-style: italic;">xxx</p> PIRIGHT case insensitive also support 'xxx'
     #content = re.sub( r'<\s*PICENTER\s*=\s*(["\'])(.*?)\1\s*>', r'<p style="text-align: center; text-align:center; font-style: italic;">\2</p>', content, flags=re.IGNORECASE )
 
-    # DPosition="walign", "talign", "fstyle", "xxx">  walign can take values of "left", "right" and "center"  left -> margin-left 8%, right -> margin-right 8%,  center -> margin-left auto, margin-right auto
+    # DPosition="walign", "talign", "fstyle", "xxx">  walign can take values of "left", "right" and "center"  left -> margin-left {CONFIG['ARW_SAFE_MARGIN']}%, right -> margin-right {CONFIG['ARW_SAFE_MARGIN']}%,  center -> margin-left auto, margin-right auto
     # talign can take values of "left", "right" and "center"  left -> text-align left, right -> text-align right, center -> text-algn center  fstyle can take values of italic and normal font-style: italic;, font-style: normal;
     # DEFAULT <DPostion="", "", "", "xxx"> to be <DPostion= skip margin, "left", "normal", "xxx">.
     def replace_dposition(match):
@@ -2297,11 +2300,11 @@ def pre_clean(content):
 
         # Margin style
         if w_raw == 'both':
-            margin = 'margin-left: 8% !important; margin-right: 8% !important; '
+            margin = f'margin-left: {CONFIG['ARW_SAFE_MARGIN']}% !important; margin-right: {CONFIG['ARW_SAFE_MARGIN']}% !important; '
         elif w_raw == 'left':
-            margin = 'margin-left: 8% !important; '
+            margin = f'margin-left: {CONFIG['ARW_SAFE_MARGIN']}% !important; '
         elif w_raw == 'right':
-            margin = 'margin-right: 8% !important; '
+            margin = f'margin-right: {CONFIG['ARW_SAFE_MARGIN']}% !important; '
         elif w_raw == 'center':
             margin = 'margin-left: auto !important; margin-right: auto !important; '
         else:
@@ -2326,8 +2329,8 @@ def pre_clean(content):
     # ttt-LEXTIP - FullWidth BOTTOM, flex height - ttt-LEXTIP
     # replace <ttt-LEXTIP=":[floatright]word", ":[H | W | MH| MW | "LOC" | "tloc"]tip"> 
     #content = re.sub( r'<\s*ttt-LEXTIP\s*=\s*(["\'])(.*?)\1\s*,\s*(["\'])(.*?)\3\s*>', r'__TBLEX__\2__TBLEX__\4__TBLEX__', content, flags=re.IGNORECASE )
-    #content = re.sub( r'__TBLEX__\s*:\s*\[floatright\]\s*(.*?)\s*__TBLEX__(.*?)__TBLEX__', rf'<span style="margin-right: 8%;" class="tooltip-trigger tooltip-full tooltip-flex tooltip-floatright" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
-    #content = re.sub( r'__TBLEX__\s*:\s*\[floatleft\]\s*(.*?)\s*__TBLEX__(.*?)__TBLEX__', rf'<span style="margin-left: 8%;" class="tooltip-trigger tooltip-full tooltip-flex tooltip-floatleft" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
+    #content = re.sub( r'__TBLEX__\s*:\s*\[floatright\]\s*(.*?)\s*__TBLEX__(.*?)__TBLEX__', rf'<span style="margin-right: {CONFIG['ARW_SAFE_MARGIN']}%;" class="tooltip-trigger tooltip-full tooltip-flex tooltip-floatright" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
+    #content = re.sub( r'__TBLEX__\s*:\s*\[floatleft\]\s*(.*?)\s*__TBLEX__(.*?)__TBLEX__', rf'<span style="margin-left: {CONFIG['ARW_SAFE_MARGIN']}%;" class="tooltip-trigger tooltip-full tooltip-flex tooltip-floatleft" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
     #content = re.sub( r'__TBLEX__\s*:\s*\[floatcenter\]\s*(.*?)\s*__TBLEX__(.*?)__TBLEX__', rf'<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" class="tooltip-trigger tooltip-full tooltip-flex" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
     #content = re.sub( r'__TBLEX__([^:].*?)__TBLEX__(.*?)__TBLEX__', rf'<span class="tooltip-trigger tooltip-full tooltip-flex" data-left="{DL}vw" data-position="bottom-page" data-bottom-gap="{BOTTOM_GAP}vh" data-tiptext="\2">\1</span>', content, flags=re.IGNORECASE | re.DOTALL )
 
@@ -2379,13 +2382,13 @@ def pre_clean(content):
         params, tip_text = parse_tooltip_params(tip_part, defaults)
 
         if float_dir == 'right':
-            style = 'float: right; margin-left: 8%; margin-right: 8%;'
+            style = f'float: right; margin-left: {CONFIG['ARW_SAFE_MARGIN']}%; margin-right: {CONFIG['ARW_SAFE_MARGIN']}%;'
         elif float_dir == 'left':
-            style = 'float: left; margin-left: 8%; margin-right: 8%;'
+            style = f'float: left; margin-left: {CONFIG['ARW_SAFE_MARGIN']}%; margin-right: {CONFIG['ARW_SAFE_MARGIN']}%;'
         elif float_dir == 'center':
             style = 'display: block; margin-left: auto; margin-right: auto; text-align: center;'
         else:
-            style = 'float: left; margin-left: 8%; margin-right: 8%;'
+            style = f'float: left; margin-left: {CONFIG['ARW_SAFE_MARGIN']}%; margin-right: {CONFIG['ARW_SAFE_MARGIN']}%;'
 
 
         # Build attribute string
@@ -3001,6 +3004,7 @@ def build_final_html(pages):
         'BkFontSize': CONFIG['BkFontSize'],
         'BkFontSizeMobile390': CONFIG['BkFontSizeMobile390'],
         'ARW_HOVER_WIDTH': CONFIG['ARW_HOVER_WIDTH'],
+        'ARW_SAFE_MARGIN': CONFIG['ARW_SAFE_MARGIN'],
         'ARW_VISIBLE_WIDTH': CONFIG['ARW_VISIBLE_WIDTH'],
         'ImageWidthDesktop': CONFIG['ImageWidthDesktop'],
         'ImageWidthMobile': CONFIG['ImageWidthMobile'],
@@ -3025,6 +3029,7 @@ def build_final_html(pages):
         .replace('SLIDER_DISPLAY', '' if CONFIG['SLDR_DISPLAY'] else 'display: none !important;')\
         .replace('{BkPage0_Title}', escape(CONFIG['BkPage0_Title']))\
         .replace('{ARW_HOVER_WIDTH}', str(CONFIG['ARW_HOVER_WIDTH']))\
+        .replace('{ARW_SAFE_MARGIN}', str(CONFIG['ARW_SAFE_MARGIN']))\
         .replace('{ARW_DISPLAY}', 'true' if CONFIG['ARW_DISPLAY'] else 'false')\
         .replace('{Page0_skip}', 'true' if CONFIG['Page0_skip'] else 'false')\
         .replace('{BkLinkURL}', escape(CONFIG['BkLinkURL']))
@@ -3053,6 +3058,12 @@ def main():
     # Load configuration
     global CONFIG
     CONFIG = load_config(args.config_file)
+
+    # protect clickable content from being hidden behind arrow window
+    arrow_width = CONFIG['ARW_HOVER_WIDTH']
+    safe_margin = arrow_width + 2
+    safe_margin = min(safe_margin, 25)
+    CONFIG['ARW_SAFE_MARGIN'] = safe_margin
 
     validate_config()
     
