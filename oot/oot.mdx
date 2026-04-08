@@ -850,7 +850,7 @@ Forgiveness may come as a needed step to aid in my journey to healing.
 *//
 <PAGE END MARKER="~***~">
 <NEWPAGE>
-<CHAPTER="The emperor has no clothes">
+<CHAPTER="The emperor has no clothes I & II">
 <IMAGE="noclothes_1.jpeg">
 <TITLE="The emperor has<br>no clothes - Part I">
 
@@ -862,7 +862,7 @@ He claims ownership of lands, that have existed before him and will continue to 
 
 He claims allegiance to a nation, a made up assortment of land parcels. He kills for his nation. 
 
-He claims virtue by association with ideology, a filtered and deliberately mis-interpreted fragment of reality. He kills for his ideology. 
+He claims virtue by association with ideology, a filtered, mis-interpreted fragment of reality. He kills for his ideology. 
 
 He claims obedience to an unseen god, in anticipation of rewards in the unknown afterlife. He kills for his god. 
 
@@ -870,7 +870,7 @@ He claims all of natures bounty as his need. He kills for his greed.
 
 He claims his beliefs will bring him love, admiration and respect. He kills for his beliefs. 
 
-He claims nature and the divine value all beings equally. He kills to maintain his distinction. 
+He claims nature and the divine, value all being as equals. He kills to maintain his distinction. 
 
 He claims he is secure in his abilities while being constantly fearful of every perceived adversity. He kills to protect against imagined threats. 
 
@@ -878,17 +878,38 @@ He claims to honor beings. He kills in the name of honor and righteousness.
 
 He claims the next kill will guarantee forever peace. He kills to prevent further killing. 
 
-He kills because he is told to do so. 
+He kills, because he is told to do so. 
 
-In his willingness to kill, he is goaded on by the many justifications he has embraced. 
+In his willingness to kill, he is goaded on by the many rationalizations he has embraced. 
 
-He feels the good. He feels the power. He is the emperor of all that he beholds. His townspeople count on him. He has to do what it takes. No one else will. They do not have his vision, nor his understanding. They are weak. So, he dresses up in self righteous indignation and painted on grandeur. He congratulates himself on his resolve and his skill. He grants himself the authority and the right to kill. 
+He feels the good. He feels the power. He is the emperor of all that he beholds. His townspeople count on him. He has to do what needs doing. No one else will. They do not have his vision, nor his understanding. They are weak. So, he dresses up in self righteous indignation and painted on grandeur. He congratulates himself on his resolve and his skill. He grants himself the authority and the right to kill. 
 
-As his first mission, he silences the child that points to him and says, “The emperor he has no clothes.” Truth becomes the first casualty. The false becomes a self-reinforcing truth. He hears no one. 
+As his first mission, he silences the child who points to him and says, “The emperor he has no clothes.” Innocents are easy prey. Truth becomes the first casualty. The false becomes a self-reinforcing truth. He hears no one. 
 
 This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?
 
 
 <DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his">'>
+
+<NEWPAGE>
+<br><br>
+<IMAGE="noclothes_2.jpeg">
+<TITLE="The emperor has<br>no clothes - Part II">
+
+The child reaches inside of her to find reassuring innocence and eager playfulness. She wraps her innocence around her like a warm blanket made of dreams, love and joy. She embraces playfulness to lead herself to creativity, exploration and understanding. She gives her young life all the meaning she needs. 
+
+At 10:30 that day, just after the schools breakfast recess, the first missile comes thundering in. She is thrown violently to the floor, covered in shards of broken glass.  She feels sharp pain in her ears and nothing else.  She grabs her best friend’s hand and instinctively crawls under her desk. Just then, the second bomb hit. The desk saved her life that day. Time stands still, observing in silence. 
+
+After what seems like an eternity they pull themselves up off the floor and stumble through the hole where the class wall once stood. They make their way to the familiar tree at the far end of the soccer field. Nobody pays them any attention. They sit there holding each other close. 
+
+Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs had left behind. Playfulness left, to make way for helplessness. Trust, shattered like the window glass of her class. Faith in humanity, was destroyed by the force of the blast. Fear, became a constant companion. Sorrow, was a persistent shadow she couldn’t lose. Hope, lost relevance. Dreams, blurred. Memories, flashed before her eyes like a dagger in the night. Loneliness and guilt, were her new playmates. She doesn’t understand any of this. She feels it. 
+
+Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remained were frequent bursts of emotions, each opening fresh wounds. The cheerful dancing lights in her eyes inviting all to play, are now distant empty stares that say nothing. She cannot hear the din of justifications or the cries of victory. As we betrayed her trust, the future of humankind lost its best champion. 
+
+This child lives inside each of us. Do we notice? Do we hear her voice? Do we treasure the gifts she gives so willingly? Do we let the man silence the child? 
+
+The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We give up the child to gain the man. 
+
+<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/Afghan_Girl">'>
 <PAGE END MARKER="~***~">
 <NEWPAGE>

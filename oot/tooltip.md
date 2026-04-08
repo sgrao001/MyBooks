@@ -40,7 +40,7 @@ No float marker (trigger stays inline) <ttt-LEXTIP="Info", ":[|||300px||| |botto
 Custom positionioned tooltip <ttt-LEXTIP=":[floatright]Info", ":[10vh|20vw|2vh|200px|400px|||center-width|center]Custom positioned tooltip">
 <ttt-LEXTIP="Word", ":[]Tip All Defaults">
 
-have a word that we want to stick to the right margin. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est srinivas <ttt-LEXTIP=":[floatright]t-FH-34W-TL", ":[  |  |  | 90% | 75% | 94% | 90% | center-width | left ]FullPage with tip text left justified - t-FH-34W-TL">
+have a word that we want to stick to the right margin. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est srinivas <ttt-LEXTIP=":[floatright]t-FH-34W-TL", ":[  |  |  | 90% | 75% | 94% | 90% | center-width | left ]FullPage with tip text left justified - t-FH-34W-TL"><br>
 
 <ttt-LEXTIP="test-this", ":[5.5vh|9vw| ||| | |center-width|left]tt-FP-TL<br>Full page centered, text left">
 <ttt-LEXTIP="tt-FP-TL", ":[5.5vh|9vw| |90%|60%| | |center-width|left]tt-FP-TL<br>Full page, 60% wide, centered, text left"> <ttt-LEXTIP=":[floatright]tt-FP-TC", ":[5.5vh|9vw| | 90%|60%| | |center-width|center]tt-FP-TC<br>Full page, 60% wide, centered, text left"><br>
@@ -62,97 +62,23 @@ FLEX BOTTOM CENTER if the scrollbar is present. If the scrollbar is present but 
 
 in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. abcd
 
-NewLLine<ttt-LEXTIP=":[floatleft]Click word", ":[@| | | | | | | | left]Your tooltip text here"><br>
-NewCLine<ttt-LEXTIP=":[floatcenter]Click word", ":[@| | | | | | | | left]Your tooltip text here"><br>
-NewRLine<ttt-LEXTIP=":[floatright]Click word", ":[@| | | | | | | | left]Your tooltip text here"><br>
+<ttt-LEXTIP=":[floatleft]CW L", ":[ @| | | | | | | | left]Your tooltip text here"><br>
+<ttt-LEXTIP=":[floatcenter]CW M", ":[ @| | | | | | | | left]Your tooltip text here"><br>
+<ttt-LEXTIP=":[floatright]CW R", ":[ @| | | | | | | | left]Your tooltip text here"><br>
+
+///<ttt-LEXTIP=":[floatxxxt]word", ":[ Top | left | Bottom-gap | Height | Width | MaxHeight| Maxwidth | LOC | TLOC ]tip"> 
+<ttt-LEXTIP=":[floatleft]TL", ":[ 5.5vh | 0px | 0 | 160px | 150px | | | absolute | center ]📌 Top Left Corner"><br>
+<ttt-LEXTIP=":[floatcenter]TC", ":[ 0px | calc(50% - 75px) | 0 | 160px | 150px | | | absolute | center ]📌  Top center">
+<ttt-LEXTIP=":[floatcenter]TC", ":[0px | center | 0 | 160px | 150px | | | fixed | center]📌 Top center">
+<ttt-LEXTIP=":[floatcenter]LC", ":[center | 0 | 0 | 160px | 150px | | | fixed | center]📌 left center">
+<ttt-LEXTIP=":[floatcenter]CC", ":[center | center | 0 | 160px | 150px | | | fixed | center]📌 Middle of page with top=center left=center">
+<ttt-LEXTIP=":[floatcenter]CC", ":[ | | 0 | 160px | 150px | | | center-both | center]📌 Middle of Page with position= center-both">
+<ttt-LEXTIP=":[floatcenter]TR", ":[ 0px | calc(100% - 150px - 42px) | 0 | 160px | 150px | | | absolute | center ]📌 Top right Corner">
+<ttt-LEXTIP=":[floatcenter]RC", ":[ center| calc(100% - 150px - 42px) | 0 | 160px | 150px | | | fixed | center ]📌 Right center">
+<ttt-LEXTIP=":[floatright]BL", ":[ |  | 0 | 160px | 150px | | | bottom-left | center ]📌 btoom left"><br>
+<ttt-LEXTIP=":[floatright]BC", ":[ |  | 0 | 160px | 150px | | | bottom-center | center ]📌 btoom left"><br>
+<ttt-LEXTIP=":[floatright]BR", ":[ |  | 0 | 160px | 150px | | | bottom-right | center ]📌 btoom left">
 </div>
-<p style="margin-left:8%; text-align: left; font-style: italic;">
-  <span class="tooltip-trigger" 
-    data-top="@"            data-left="@"   data-height="200px"     data-width="150px"
-    data-tiptext="centered below word - left limited!">
-    |-- </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-  <span class="tooltip-trigger" 
-    data-top="@"            data-left="@"   ata-height="200px"     data-width="150px"
-    data-tiptext="centered below word!">
-    -|- </span>
-</p>
-
-<p style="margin-right:8%; text-align: right; font-style: italic;">
-  <span class="tooltip-trigger" 
-    data-top="@"        data-left="@"       ata-height="200px"     data-width="150px"
-    data-tiptext="centered below word - right limited!">
-    --| </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-  <span class="tooltip-trigger" 
-    data-top="@"            data-left="@"   ata-height="200px"     data-width="400px"
-    data-tiptext="centered below this word - bottom limited!">
-    -||- </span>
-</p>
-
-
-
-
-<!-- FIXED POSITION  GOOD -->
-<p style="margin-left:8%; text-align: left; font-style: italic;">
-<span class="tooltip-trigger" 
-    data-top="5.5vh"          data-left="0px"     data-height="160px"     data-width="60%"
-    data-animation="ZOOM"   data-tiptext="📌 Top Left Corner">
-    TL - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger" 
-    data-top="0px"          data-left="calc(50% - 170px)"   data-height="160px"     data-width="300px"
-    data-animation="ZOOM"   data-tiptext="📌  bottom center limited">
-    TC  - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger" 
-    data-top="0px"          data-left="center"  data-height="160px"     data-width="300px"  data-animation="ZOOM"
-    data-tiptext="📌  bottom center limited">
-    TC "center" - ZOOM </span>
-</p>
-
-<p style="margin-right:8%; text-align: right; font-style: italic;">
-<span class="tooltip-trigger" 
-    data-top="0px"          data-left="calc(100% - 300px - 42px)"       data-height="160px"     data-width="300px"
-    data-animation="ZOOM"   data-tiptext="📌 Top right Corner">
-    TR  - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger " 
-    data-top="center"       data-left="50px"    data-height="160px"     data-width="300px"  data-animation="ZOOM"
-    data-tiptext="📌  bottom center limiteed">
-    VC@10px - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger" 
-    data-top="65px"         data-left="center"  data-height="160px"     data-width="300px"  data-animation="ZOOM"
-    data-tiptext="📌  bottom center limiteed">
-    HC@65px Fixed - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger"  
-    data-top="calc(100% - 180px - 50px)"        data-left="calc(100% - 342px)"  data-height="160px"     data-width="300px"
-    data-animation="ZOOM"   data-tiptext="📌 bottom right Corner">
-    BR - ZOOM </span>
-</p>
-
-<p style="text-align: center; font-style: italic;">
-<span class="tooltip-trigger"  
-    data-top="calc(100% - 180px - 50px)"        data-left="0px"     data-height="160px"     data-width="300px"  data-animation="ZOOM"
-    data-tiptext="📌 bottom left Corner">
-    BL - ZOOM </span>
-</p>
 
 
 
