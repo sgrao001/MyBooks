@@ -14,18 +14,31 @@
             --glass-bg: rgba(0, 0, 0, 0.2);
             --glass-border: rgba(255, 255, 255, 0.1);
             --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
             --text-color: #ffffff;
+
             --arrow-block-display: flex;
             --arrow-visibility: hidden;
             --arrow-opacity: 0;
             --arrow-hover-opacity: 0;
             --arrow-hover-width: 15%;
-            --page-width: 94vw;
-            --page-height: 94vh;
-            --page-height-415px: 60vh;
             --ARW_HOVER_HEIGHT: 87vh;
             --ARW_HOVER_HEIGHT_415px: 73vh;
             --ARW_HOVER_TOP: 10vh;
+
+
+            --page-width: 94vw;
+            --page-height: 94vh;
+            --page-height-415px: 60vh;
+
+            --tt-1024-height: 91vh;
+            --tt-1024-width: 90vw;
+            --tt-768-height: 83vh;
+            --tt-768-width: 88vw;
+            --tt-415-height: 77vh;
+            --tt-415-width: 84vw;
+            --tt-max-height: var(--tt-1024-height);
+            --tt-max-width: var(--tt-1024-width);
         }
 
         html {
@@ -137,97 +150,57 @@
                 visibility: visible !important;
         }
 
-        /* tool Tips */
+        /******************************* tool Tips **************************************************************/
 
-        .tooltip-trigger {
-            cursor: pointer;
-            text-decoration: underline;
-            margin: 0 10px;
-        }
-        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
-        .right-justified {
-            display: block !important;
-            width: 8%;
-            text-align: right;
-            margin-left: auto;
-            margin-right: 8%;
-        }
-        .left-justified {
-            display: block !important;
-            width: 8%;              /* Keep consistent width if desired */
-            text-align: left;
-            margin-left: 8%;          /* 8% space from left edge */
-            margin-right: auto;        /* pushes remaining space to the right */
-        }
-        /* ✅ NEW: RIGHT JUSTIFIED CLASS */
-        .center-justified {
-            display: block !important;
-            width: 8%;
-            text-align: center;           /* Centers text inside the span */
-            margin-left: auto;            /* Centers the block horizontally */
-            margin-right: auto;           /* Centers the block horizontally */
-        }
-        .right-justified,
-        .left-justified,
-        .center-justified {
-            display: inline-block !important;
-            width: auto !important;
-            margin: 0 4px !important;
-            text-align: left !important;
-        }
-        .right-justified { text-align: right !important; }
-        .left-justified { text-align: left !important; }
-        .center-justified { text-align: center !important; }
-        .tooltip-group {
-            display: inline-block;      /* or float: left; */
-            margin-left: 8%;            /* or margin-right: 8% for right alignment */
-            vertical-align: top;        /* align with text line */
-        }
+        .tooltip-trigger { cursor: pointer; color: #b0e0ff; text-decoration: underline; margin: 0 10px; }
 
-        .tooltip-group .tooltip-trigger {
-            display: inline-block !important;
-            width: auto !important;
-            margin: 0 4px !important;
-            /* individual text-aligns already set by .left-justified etc. */
-        }
+        .tooltip-group { display: inline-block; margin-left: 17%; vertical-align: top; }
+     
+        .tooltip-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
+
+        .tooltip-group .tooltip-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
+        .tooltip-trigger.tooltip-full { height: auto; width: auto; }
+
         #tooltip {
             position: fixed;
+            color: #b0e0ff;
+            font-family: Arial, sans-serif;
 
             /* INITIAL STATE - HIDDEN */
             transform: translateY(-20px) scale(0.95) !important;
             transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
 
-            /* GLASS MORPHISM EFFECT */
-            background: rgba(0, 0, 0, 0.95) !important;
+            /* GLASS MORPHISM EFFECT (matches .image-caption-popup) */
+            background: rgba(0, 0, 0, 0.45) !important;
             backdrop-filter: blur(15px) !important;
             -webkit-backdrop-filter: blur(15px) !important;
-                
+
+            /* Border & Shadow (same as caption) */
             border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.95);
-            shape-outside: margin-box;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
 
-            padding: 10px 10px 10px 10px ! important;
-            border: 1px solid rgba(255,255,255,0.2);
+            /* Padding (keep tooltip’s original for comfortable reading) */
+            padding: 10px !important;
 
+            /* Font styling (match caption) */
+            font-size: 0.8em;
+
+            /* Other essential styles */
             z-index: 9999;
-            max-width: 100%;
-            max-height: 100%;
             overflow-y: auto;
             overflow-x: hidden;
             white-space: normal;
 
-            
-            /* SMOOTH APPEAR/DISAPPEAR - FADE + SCALE */
+            /* Fade + scale transition */
             opacity: 0;
             visibility: hidden;
-            
+
             /* Scrollbar */
             scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+            scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
         }
 
-        #tooltip.center { transform: translate(-50%, -50%) translateY(20px) scale(0.9); }
-        #tooltip.center.show { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1) !important;  } /* Perfect centering + final scale */
         #tooltip.show { opacity: 1; visibility: visible; }
 
         #tooltip.fade { transform: translateY(15px) scale(0.95); }
@@ -241,10 +214,6 @@
 
         #tooltip.zoom { transform: scale(0.4); }
         #tooltip.zoom.show { transform: scale(1); }
-
-        /* ✅ NEW - PERFECT CENTERING */
-        #tooltip.below-trigger { transform: translateY(10px) scale(0.9); }
-        #tooltip.below-trigger.show { transform: scale(1); }
 
         #tooltip.left-text { text-align: left; }
         #tooltip.right-text { text-align: right; }
@@ -260,6 +229,7 @@
         #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
         #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
 
+        /******************************* tool Tips **************************************************************/
 
         /* Center book title */
         .book-title {
@@ -441,20 +411,30 @@
             transform: translateX(-50%);
             width: var(--page-width);
             height: 40px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            /* New glass-morphism styles (matching #tooltip) */
+            background: rgba(0, 0, 0, 0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
+            /* Keep existing layout */
             z-index: 20;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
             opacity: 0;
             pointer-events: none;
         }
+        /* Page number text inside slider */
+        .slider-info {
+            color: #b0e0ff;            /* matches tooltip text color */
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
 
         .slider-area {
             position: fixed;
@@ -489,14 +469,7 @@
         }
 
         .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 8px;
-            height: 20px;
-            background: #000;
-            cursor: pointer;
-            border-radius: 0;
-            box-shadow: none;
-            transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+            background: #b0e0ff;       /* light blue thumb */
         }
 
         .slider-track {
@@ -511,11 +484,7 @@
         }
 
         /* Content Styles */
-        .image-container {
-            width: 100%;
-            position: relative;
-            overflow: visible; /* Changed from hidden to visible for captions */
-        }
+        .image-container { width: 100%; position: relative; overflow: visible; /* Changed from hidden to visible for captions */ }
 
         .image-container img {
             position: relative;
@@ -532,69 +501,18 @@
         }
 
         /* Add alignment-specific float rules */
-        .image-align-left img {
-            float: left;
-            margin-left: 0px;
-            margin-right: 20px;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
+        .image-align-left img { float: left; margin-left: 0px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }
+        .image-align-right img { float: right; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }
+        .image-align-center img { float: none; display: block; margin-top: 20px; margin-bottom: 40px; left: 50%; transform: translateX(-50%) !important; }
+        .image-container img:hover { opacity: 1; transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.9); filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8)); }
 
-        .image-align-right img {
-            float: right;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
+        .text-only-container { width: 90%; margin: 0px auto; padding: 0; }
 
-        .image-align-center img {
-            float: none;
-            display: block;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) !important;
-        }
-
-        .image-container img:hover {
-            opacity: 1;
-            transform: scale(1);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
-        }
-
-        .text-only-container {
-            width: 90%;
-            margin: 0px auto;
-            padding: 0;
-        }
-
-        .toc-container {
-            width: 90%;
-            margin: 0px auto;
-            padding: 0;
-        }
-        .toc-entry {
-            margin: 8px 0;
-            padding: 5px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .toc-entry a {
-            color: #D4E6FF !important;  /* Use configurable color */
-            text-decoration: none;
-            display: block;
-        }
-
-        .toc-entry:hover {
-            border-bottom-color: var(--primary-color);
-        }
-
-        .toc-entry:hover a {
-            color: var(--primary-color);
-        }
+        .toc-container { width: 90%; margin: 0px auto; padding: 0; }
+        .toc-entry { margin: 8px 0; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .toc-entry a { color: #D4E6FF !important; text-decoration: none; display: block; }
+        .toc-entry:hover { border-bottom-color: var(--primary-color); }
+        .toc-entry:hover a { color: var(--primary-color); }
 
         /* Table Styles */
         table {
@@ -730,6 +648,8 @@
 
         /* List-style TOC */
         .toc-list .toc-button-container {
+            margin-left: 17%;
+            margin-right: 17%;
             display: block;
         }
 
@@ -755,6 +675,7 @@
         }
         .content-text {
             font-size: inherit; /* Inherits from parent */
+            text-align: left;
         }
 
         /*********************************************/
@@ -887,7 +808,14 @@
        /* Tablets and such */
 
         @media (max-width: 768px) {
-
+            :root {
+                --tt-max-height: var(--tt-768-height) !important;
+                --tt-max-width: var(--tt-768-width) !important;
+            }
+            .tooltip-full {
+                height: var(--tt-max-height);
+                width: var(--tt-max-width);
+            }
             body {
                 margin-top: 0px !important;
                 height: 75% !important;
@@ -902,40 +830,17 @@
                 }
             }        
 
-                /* Book title - below back button */
-            .book-title {
-                font-size: 0.75em; /* Slightly smaller */
-                margin-bottom: 15px !important;
-            } 
-
-            .back-to-List {
-                padding: 6px 12px;
-                font-size: 0.85em;
-            } 
-
-            /* Page number - top right */
-        
-
-            a {
-                color: #00b0ff !important; /* Even brighter for mobile */
-            }
-
-            a:focus {
-                outline: 2px solid #ffeb3b;
-                outline-offset: 2px;
-            }
-
-            .text-only-container {
-                width: 100% !important;
-                padding: 0 10px !important;
-                margin: 15px auto !important;
-            }
+            .book-title {font-size: 0.75em; margin-bottom: 15px !important; } 
+            .back-to-List { padding: 6px 12px; font-size: 0.85em; } 
+            a { color: #00b0ff !important; }
+            a:focus { outline: 2px solid #ffeb3b; outline-offset: 2px; }
+            .text-only-container {width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }
 
             /* Improved spacing for mobile text */
-            p, h1, h2, h3 {
-                margin-bottom: 1.2em !important;
-                line-height: 1.6 !important;
-            }
+            p, h1, h2, h3 { margin-bottom: 1.2em !important; line-height: 1.6 !important; }
+
+            .toc-container { width: 95%; padding: 15px 5px; }
+            .toc-entry { margin: 6px 0; }
 
             /* Adjust heading sizes for mobile */
             h1 { font-size: 2.2em !important; }
@@ -952,9 +857,7 @@
                 background: rgba(15, 15, 15, 0.3) !important;
                 font-size: 0.9em !important;
             }
-            table * {
-            box-sizing: border-box !important; /* Include padding in width */
-            }
+            table * { box-sizing: border-box !important; }
             
             table a {
                 padding: 3px 8px; /* Larger tap targets */
@@ -991,15 +894,6 @@
             white-space: normal !important;
             display: inline-block !important;
             }
-
-            .toc-container {
-                width: 95%;
-                padding: 15px 5px;
-            }
-            
-            .toc-entry {
-                margin: 6px 0;
-            }
         }
 
        /* phones and such */ 
@@ -1007,25 +901,24 @@
 
         @media (max-width: 415px) {
 
+            :root {
+                --tt-max-height: var(--tt-415-height) !important;
+                --tt-max-width: var(--tt-415-width) !important;
+            }
+            .tooltip-full {
+                height: var(--tt-max-height);
+                width: var(--tt-max-width);
+            }
             body {
                 margin-top: 0px !important;
                 height: 60% !important;
                 overflow: hidden;
             }
 
-            .page {
-                /* Adjust height calculation */
-                height: var(--page-height-415px) !important;
-            }
-            .content-text {
-                font-size: var(--mobile-font-size) !important;
-            }
-            .arrow-container {
-            height: var(--ARW_HOVER_HEIGHT_415px);
-            }
-            .arrow-area {
-            height: var(--ARW_HOVER_HEIGHT_415px);
-            }
+            .page { height: var(--page-height-415px) !important; }
+            .content-text { font-size: var(--mobile-font-size) !important; }
+            .arrow-container { height: var(--ARW_HOVER_HEIGHT_415px); }
+            .arrow-area { height: var(--ARW_HOVER_HEIGHT_415px); }
             
             /* Fix for iOS Safari */
             @supports (-webkit-touch-callout: none) {
@@ -1035,22 +928,12 @@
                 }
             }
 
-            .back-to-list {
-                font-size: 0.6em;
-            }
+            .back-to-list { font-size: 0.6em; }
         
-            .toc-container {
-                margin-top: 50px;
-                width: 95%;
-            }
-              /* Reduce gap after heading */
-            .toc-container h2 {
-                margin-bottom: 8px !important; /* Reduce space below title */
-            }
-            .compact-button {
-            padding: 3px 8px !important;
-            font-size: 0.65em !important;
-            }
+            .toc-container { margin-top: 50px; width: 95%; }
+            /* Reduce gap after heading */
+            .toc-container h2 { margin-bottom: 8px !important; /* Reduce space below title */ }
+            .compact-button { padding: 3px 8px !important; font-size: 0.65em !important; }
 
 
             /* FORCE SIZE FORCE TO ImageWidthMobile */
@@ -1083,14 +966,9 @@
             padding: 0px 10px 0px 10px ! important;
         }
                   
-
             
             /* Make captions always visible on mobile when active */
-            .image-caption-popup.mobile-visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
+            .image-caption-popup.mobile-visible { opacity: 1; transform: translateY(0); }
 
             /* ===== TABLE STYLES ===== */
             .table-container {
@@ -1127,7 +1005,6 @@
                 background: rgba(255,255,255,0.3);
                 border-radius: 5px;
             }
- 
         }
 
         
@@ -1223,11 +1100,11 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000bRules.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">The Toolbox</span></p>Tools for the journey:<p style="margin-left: 30px; line-height: 1.4; font-style: italic;"><u>Conviction</u>: A resolve to be true to self, with all reflections, always. <br>
-<u>Commitment</u>: A complete ownership of all contents of the halo, as it was, as it is, and as it will be.<br>
-<u>Acceptance</u>:  An acceptance that all is as it should be, no matter what!!. <br>
-<u>The three wise men of mind organs</u>: Consciousness, Intuition, and Conscience. <br>
-<u>Will to Act</u>: The use of energy to direct action and to release residual footprints left in the halo.
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000bRules.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">The Toolbox</span></p>Tools for the journey:<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Conviction: A resolve to be true to self, with all reflections, always. <br>
+Commitment: A complete ownership of all contents of the halo, as it was, as it is, and as it will be.<br>
+Acceptance:  An acceptance that all is as it should be, no matter what!!. <br>
+The three wise men of mind organs: Consciousness, Intuition, and Conscience. <br>
+Will to Act: The use of energy to direct action and to release residual footprints left in the halo.
 </p>Energy is not to be stored in the halo, only consumed, or discarded. This frees up space for continued and effortless new energy exchanges.<br><br>Whilst these tools exist in sufficient measure in all beings, they are to be applied with deliberateness. These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.<p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
@@ -1296,10 +1173,10 @@ Feelings are used to direct the “Will” to action. </p>The three wise men mus
                 --mobile-font-size: 0.9em">
         <br>
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000fInterpretations.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Interpretations in the mind</span></p>The stories of past energy consumptions from the halo, are stored as experiences in the memory banks of the three wise men.<br><br>Associated interpretations (two very different types - (type I and type II) and actions, are stored alongside.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-<u>Type I</u> interpretations are automatic, intuitive, fast, reasoned by association, loosely pattern matched, emotional conclusions and necessary for survival. They have applicability in high noise / high bias scenarios. They seem coherent and suppress ambiguity.
+Type I interpretations are automatic, intuitive, fast, reasoned by association, loosely pattern matched, emotional conclusions and necessary for survival. They have applicability in high noise / high bias scenarios. They seem coherent and suppress ambiguity.
 <br><br>
-<u>Type II</u> interpretations are deliberate, effortful, logical, and verifiable analysis, necessary for knowledge and purposeful living. They require the problem and constraints to be well defined with a timely feedback loop. They find use in rule based deterministic environments.
-</p>The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for “Will’ed” actions,<p style="text-align: center;margin-left: 30px; line-height: 1.4; font-style: italic;">The three wise men must aim for descriptive adequacy&nbsp;&nbsp;<u>NOT</u>&nbsp;&nbsp;explanatory adequacy in storing experiences.</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+Type II interpretations are deliberate, effortful, logical, and verifiable analysis, necessary for knowledge and purposeful living. They require the problem and constraints to be well defined with a timely feedback loop. They find use in rule based deterministic environments.
+</p>The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for “Will’ed” actions,<p style="text-align: center;margin-left: 30px; line-height: 1.4; font-style: italic;">The three wise men must aim for descriptive adequacy&nbsp;&nbsp;NOT&nbsp;&nbsp;explanatory adequacy in storing experiences.</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
     </div>
     
             </div>
@@ -1611,149 +1488,190 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
-        // Generic listener for ALL triggers
+        // Generic listener for ALL trigger
+        // ==================== TOOLTIP LISTENER start ==================
         document.addEventListener('click', function(e) {
-            const trigger = e.target.closest('.tooltip-trigger');
-            const tooltip = document.getElementById('tooltip');
-            
-            // Close if clicking outside
-            if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
-                toggleTooltip('', '', '', '', '', 'no');
-                return;
-            }
-            
-            if (!trigger) return;
-            
-            e.stopPropagation();
-            
-            let top = trigger.dataset.top || '50vh';
-            let left = trigger.dataset.left || '50vw';
-            
-            const rect = trigger.getBoundingClientRect();
-            
-            // Get body padding
-            const bodyStyles = window.getComputedStyle(document.body);
-            const bodyPaddingLeft = parseFloat(bodyStyles.paddingLeft);
-            const bodyPaddingRight = parseFloat(bodyStyles.paddingRight);
-            const bodyPaddingTop = parseFloat(bodyStyles.paddingTop);
-            const bodyPaddingBottom = parseFloat(bodyStyles.paddingBottom);
-            
-            // Dynamic padding (minimum 24px)
-            const padding = Math.max(24, window.innerWidth * 0.04);
-            
-            // Tooltip dimensions from data (as numbers, if numeric)
-            let tooltipWidth = parseFloat(trigger.dataset.width);
-            let tooltipHeight = parseFloat(trigger.dataset.height);
-            // Total dimensions including CSS padding+border (20px padding each side + 1px border each side = 42px extra)
-            const extra = 42; // 20+20+1+1
-            const totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
-            const totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
-            
-            // Helper to add 'px' to plain numbers
-            const addPxIfNumber = (value) => {
-                if (!isNaN(value) && value !== '') {
-                    return value + 'px';
+            try {
+
+                const trigger = e.target.closest('.tooltip-trigger');
+                const tooltip = document.getElementById('tooltip');
+
+                // If tooltip is open and clicking outside, close it
+                if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
+                    toggleTooltip('', '', '', '', '', 'no');
+                    return;
                 }
-                return value;
-            };
-            
-            top = addPxIfNumber(top);
-            left = addPxIfNumber(left);
-            
-            // Read positioning mode
-            const position = trigger.dataset.position || 'fixed';
-            
-            // --- Only apply viewport clamping for fixed positioning ---
-            if (position !== 'absolute') {
-                // Handle "center" individually for top and left
-                if (top === 'center') {
-                    if (totalTooltipHeight) {
-                        // Calculate top position to center vertically
-                        let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
-                        // Clamp to stay within viewport with padding
-                        centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
-                        top = centerTop + 'px';
-                    } else {
-                        // Fallback: use 50% (not pixel‑perfect, but better than nothing)
-                        top = '50%';
+
+                if (!trigger) return;
+
+                e.stopPropagation();
+
+                // --- Collect extra classes (exclude alignment classes) ---
+                let extraClasses = [];
+                trigger.classList.forEach(cls => {
+                    if (cls !== 'tooltip-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                        extraClasses.push(cls);
                     }
-                }
-                
-                if (left === 'center') {
-                    if (totalTooltipWidth) {
-                        // Calculate left position to center horizontally
-                        let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
-                        // Clamp
-                        centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
-                        left = centerLeft + 'px';
-                    } else {
-                        left = '50%';
-                    }
-                }
-                
-                // Special case: data-top="100%" data-left="100%" (bottom‑right corner based on trigger)
-                if (trigger.dataset.top === '100%' && trigger.dataset.left === '100%') {
-                    let calcTop = rect.top + parseFloat(top);
-                    let calcLeft = rect.right + parseFloat(left);
-                    
-                    if (totalTooltipWidth) {
-                        if (calcLeft + totalTooltipWidth > window.innerWidth - padding) {
-                            calcLeft = window.innerWidth - totalTooltipWidth - padding;
+                });
+
+                // --- Read data attributes (trim strings) ---
+                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
+                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
+                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
+                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
+                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
+                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
+                const rawHeight = trigger.dataset.height || 'auto';
+                const rawWidth = trigger.dataset.width || 'auto';
+
+                const rect = trigger.getBoundingClientRect();
+                const bodyStyles = window.getComputedStyle(document.body);
+                const padding = Math.max(24, window.innerWidth * 0.04);
+                const extra = 22;
+
+                const addPxIfNumber = (value) => {
+                    if (!isNaN(value) && value !== '') return value + 'px';
+                    return value;
+                };
+
+                if (top !== undefined) top = addPxIfNumber(top);
+                if (left !== undefined) left = addPxIfNumber(left);
+                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
+                if (right !== undefined) right = addPxIfNumber(right);
+
+                let height = addPxIfNumber(rawHeight);
+                let width = addPxIfNumber(rawWidth);
+
+                // --- Special positioning handling (center, @, 100% 100%) ---
+                if (position !== 'absolute') {
+                    let tooltipWidth = parseFloat(trigger.dataset.width);
+                    let tooltipHeight = parseFloat(trigger.dataset.height);
+                    let totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
+                    let totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+
+                    if (top === 'center') {
+                        if (totalTooltipHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                            top = centerTop + 'px';
+                        } else {
+                            top = '50%';
                         }
                     }
-                    if (totalTooltipHeight) {
-                        if (calcTop + totalTooltipHeight > window.innerHeight - padding) {
-                            calcTop = window.innerHeight - totalTooltipHeight - padding;
+                    if (left === 'center') {
+                        if (totalTooltipWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                            left = centerLeft + 'px';
+                        } else {
+                            left = '50%';
                         }
                     }
-                    
-                    top = calcTop + 'px';
-                    left = calcLeft + 'px';
                 }
-                
-                // Below‑trigger positioning (@ mode)
-                else if (top === '@px' || top === '@') {
-                    let idealLeft = rect.left + (rect.width / 2) - (totalTooltipWidth / 2);
-                    let idealTop = rect.bottom + 12;
-                    
-                    const availableWidth = window.innerWidth - bodyPaddingLeft - bodyPaddingRight;
-                    const availableHeight = window.innerHeight - bodyPaddingTop - bodyPaddingBottom;
-                    
-                    if (idealLeft < padding) {
-                        idealLeft = padding;
-                    } else if (idealLeft + totalTooltipWidth > availableWidth - padding) {
-                        idealLeft = availableWidth - totalTooltipWidth - padding;
+
+                // --- Clamping for normal positioning ---
+                let maxHeight = null;
+                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
+                if (!measurementModes.includes(position.toLowerCase())) {
+                    const pageElement = trigger.closest('.page');
+
+                    if (pageElement) {
+                        const pageRect = pageElement.getBoundingClientRect();
+                        const innerPadding = 10;
+
+                        let topPx = toPixels(top, 'height');
+                        let leftPx = toPixels(left, 'width');
+                        let widthPx = toPixels(width, 'width');
+                        let heightPx = toPixels(height, 'height');
+
+                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
+                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
+
+                        // clamp top/left
+                        if (!isNaN(topPx) && totalH !== null) {
+                            let newTop = topPx;
+                            const minTop = pageRect.top + innerPadding;
+                            const maxTop = pageRect.bottom - totalH - innerPadding;
+                            if (newTop < minTop) newTop = minTop;
+                            if (newTop > maxTop) newTop = maxTop;
+                            if (newTop !== topPx) {
+                                top = newTop + 'px';
+                                topPx = newTop;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            let newLeft = leftPx;
+                            const minLeft = pageRect.left + innerPadding;
+                            const maxLeft = pageRect.right - totalW - innerPadding;
+                            if (newLeft < minLeft) newLeft = minLeft;
+                            if (newLeft > maxLeft) newLeft = maxLeft;
+                            if (newLeft !== leftPx) {
+                                left = newLeft + 'px';
+                                leftPx = newLeft;
+                            }
+                        }
+                        // overflow handling
+                        if (!isNaN(topPx) && totalH !== null) {
+                            const availableHeight = pageRect.bottom - topPx - innerPadding;
+                            if (totalH > availableHeight) {
+                                maxHeight = availableHeight - extra;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            const availableWidth = pageRect.right - leftPx - innerPadding;
+                            if (totalW > availableWidth) {
+                                const newContentWidth = Math.max(0, availableWidth - extra);
+                                width = newContentWidth + 'px';
+                            }
+                        }
                     }
-                    
-                    if (idealTop + totalTooltipHeight > availableHeight - padding) {
-                        idealTop = Math.max(padding, rect.top - totalTooltipHeight - 12);
-                    }
-                    
-                    top = idealTop + 'px';
-                    left = idealLeft + 'px';
                 }
-            }
-            // For absolute positioning, we skip all clamping – coordinates are used as given.
-            
-            // Prepare other parameters
-            const height = addPxIfNumber(trigger.dataset.height || 'auto');
-            const width = addPxIfNumber(trigger.dataset.width || 'auto');
-            const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
-            const animation = trigger.dataset.animation || 'fade';
-            const textAlign = trigger.dataset.textalign || 'left';
-            const tiptext = htmlEncodeTooltipText(rawTiptext);
-            
-            // Check if same tooltip is already open
-            const isCurrentlyOpen = tooltip.classList.contains('show') && 
-                                    tooltip.innerHTML.includes(rawTiptext);
-            
-            if (isCurrentlyOpen) {
-                toggleTooltip('', '', '', '', '', 'no');
-            } else {
-                toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position);
+
+                // --- Prepare remaining parameters ---
+                const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+                const animation = trigger.dataset.animation || 'fade';
+                const textAlign = trigger.dataset.textalign || 'left';
+                const tiptext = htmlEncodeTooltipText(rawTiptext);
+
+                const isCurrentlyOpen = tooltip.classList.contains('show') && tooltip.innerHTML.includes(rawTiptext);
+
+                if (isCurrentlyOpen) {
+                    toggleTooltip('', '', '', '', '', 'no');
+                } else {
+                    const showTooltip = () => {
+                        toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the tooltip is visible
+                        requestAnimationFrame(() => {
+                            const t = document.getElementById('tooltip');
+                            if (t && t.classList.contains('show')) t.scrollTop;
+                        });
+                    };
+                    if (document.fonts) {
+                        document.fonts.ready.then(showTooltip);
+                    } else {
+                        showTooltip();
+                    }
+                }
+
+            } catch (err) {
+                console.error('Error in click listener:', err);
             }
         });
 
+
+        // ==================== TOOLTIP LISTENER end ====================
+
+
+        document.addEventListener('click', function(e) {
+            const tooltip = document.getElementById('tooltip');
+            if (tooltip.contains(e.target)) {
+                e.stopPropagation(); // prevent interfering with other listeners
+                toggleTooltip('', '', '', '', '', 'no');
+            }
+        });
+      // ==================== TOOLTIP inside click close end ====================
+
+        // ==================== MAIN CLICK LISTENER (TRIGGERS & OUTSIDE CLOSE) ====================
 
         // FIXED: Image caption handling
         document.addEventListener('DOMContentLoaded', () => {
@@ -1848,82 +1766,325 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             });
         });        
 
-        //
+        // ==================== TOOLTIP FUNCTION start ====================
         // ToolTIp Management
+        // Convert a CSS length string to pixels (returns NaN if not possible)
+        // Convert a CSS length string to pixels (returns NaN if not possible)
         //
+        function toPixels(value, dimension) {
+            if (typeof value !== 'string') return NaN;
+            value = value.trim();
+            if (value.endsWith('px')) return parseFloat(value);
+            if (value.endsWith('%')) {
+                const percent = parseFloat(value) / 100;
+                return dimension === 'width' ? window.innerWidth * percent : window.innerHeight * percent;
+            }
+            if (value.endsWith('vh')) return (parseFloat(value) / 100) * window.innerHeight;
+            if (value.endsWith('vw')) return (parseFloat(value) / 100) * window.innerWidth;
+            if (!isNaN(parseFloat(value))) return parseFloat(value);
+            return NaN; // calc() or other complex expressions
+        }
+
+        // htmlEncodeTooltipText (keep your existing version)
         function htmlEncodeTooltipText(str) {
             const div = document.createElement('div');
             div.innerHTML = str;
             return div.innerHTML;
         }
+        function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
+            const tooltip = document.getElementById('tooltip');
 
-function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed') {
-    const tooltip = document.getElementById('tooltip');
-    
-    if (visible === 'yes') {
-        // Clear all classes
-        tooltip.classList.remove(
-            'fade', 'bounce', 'slide', 'zoom',
-            'center', 'below-trigger', 'show',
-            'left-text', 'right-text', 'center-text'
-        );
+            if (visible === 'yes') {
+                // --- Prepare tooltip for display ---
+                tooltip.className = '';
+                extraClasses.forEach(cls => tooltip.classList.add(cls));
+                tooltip.style.setProperty('position', position, 'important');
+                if (textAlign !== 'left') tooltip.classList.add(textAlign + '-text');
+                if (animation !== 'fade') tooltip.classList.add(animation);
+                else tooltip.classList.add('fade');
 
-        // Force positioning mode with !important
-        tooltip.style.setProperty('position', position, 'important');
+                // Read custom max‑width / max‑height from the trigger (if provided)
+                const datasetMaxWidth = trigger?.dataset?.maxwidth;
+                const datasetMaxHeight = trigger?.dataset?.maxheight;
 
-        // Text alignment
-        if (textAlign !== 'left') {
-            tooltip.classList.add(textAlign + '-text');
+                tooltip.innerHTML = tiptext;
+
+                // Apply width / height (will be overridden in smart mode if needed)
+                if (width !== 'auto') tooltip.style.width = width;
+                else tooltip.style.width = '';
+                if (height !== 'auto') tooltip.style.height = height;
+                else tooltip.style.height = '';
+
+                // Apply max‑width / max‑height (dataset overrides computed maxHeight)
+                if (datasetMaxWidth) tooltip.style.maxWidth = datasetMaxWidth;
+                else tooltip.style.maxWidth = '';
+                if (datasetMaxHeight) tooltip.style.maxHeight = datasetMaxHeight;
+                else if (maxHeight !== null) tooltip.style.maxHeight = maxHeight + 'px';
+                else tooltip.style.maxHeight = '';
+
+                const pos = position.toLowerCase();
+                const bottomModes = ['bottom-left', 'bottom-center', 'bottom-right', 'bottom-page'];
+                const usesAt = top === '@' || left === '@' || bottom === '@' || right === '@';
+                const needsLayout = ['center-height', 'center-width', 'center-both', ...bottomModes].includes(pos) || usesAt;
+
+                if (needsLayout) {
+                    // Make tooltip occupy space but invisible while we position it
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '0';
+                    // Do NOT add 'show' class yet – we'll add it after positioning
+
+                    // Double RAF to allow layout to settle (we still need dimensions)
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            const pageElement = trigger ? trigger.closest('.page') : null;
+                            let finalTop = null;
+                            let finalLeft = null;
+                            let finalBottom = null;
+                            let finalRight = null;
+                            let positioned = false;
+
+                            // ========== SMART @ MODE (triggered by data-top="@") ==========
+                            if (top === '@' && trigger) {
+                                console.log('===== SMART @ MODE ACTIVATED =====');
+                                // Completely reset inline styles and force the desired dimensions
+                                tooltip.removeAttribute('style');  // clear all inline styles
+                                tooltip.style.cssText = '';
+                                // Set our styles
+                                tooltip.style.setProperty('width', '50vw', 'important');
+                                tooltip.style.setProperty('max-width', '50vw', 'important');
+                                tooltip.style.setProperty('max-height', '3em', 'important');
+                                tooltip.style.setProperty('overflow-y', 'auto', 'important');
+                                tooltip.style.setProperty('height', 'auto', 'important');
+                                tooltip.style.setProperty('box-sizing', 'border-box', 'important');
+                                tooltip.style.setProperty('position', 'fixed', 'important');
+                                tooltip.style.setProperty('visibility', 'visible');
+                                tooltip.style.setProperty('opacity', '0');
+                                tooltip.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
+                                tooltip.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
+                                tooltip.style.setProperty('backdrop-filter', 'blur(15px)');
+                                tooltip.style.setProperty('border-radius', '8px');
+                                tooltip.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
+                                tooltip.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
+                                tooltip.style.setProperty('padding', '10px');
+                                tooltip.style.setProperty('font-size', '0.8em');
+                                tooltip.style.setProperty('color', '#b0e0ff');
+                                tooltip.style.setProperty('font-family', 'Arial, sans-serif');
+                                tooltip.style.setProperty('z-index', '9999');
+                                tooltip.style.setProperty('white-space', 'normal');
+                                tooltip.style.setProperty('word-wrap', 'break-word');
+
+                                // Force layout to get accurate dimensions after width change
+                                const tooltipHeightNow = tooltip.offsetHeight;
+                                const tooltipWidthNow = tooltip.offsetWidth;
+                                console.log('Computed width after setProperty:', tooltipWidthNow);
+                                console.log('Computed height after setProperty:', tooltipHeightNow);
+
+                                const triggerRect = trigger.getBoundingClientRect();
+                                const viewportWidth = window.innerWidth;
+                                const viewportHeight = window.innerHeight;
+
+                                // Top: 10px below the trigger's bottom
+                                let topPos = triggerRect.bottom + 18;
+                                let bot_gap = 48;
+
+                                // Horizontal decision based on trigger's CENTER
+                                const triggerCenterX = triggerRect.left + triggerRect.width / 2;
+                                const threshold25 = viewportWidth * 0.25;
+                                const threshold75 = viewportWidth * 0.75;
+                                let leftPos;
+
+                                if (triggerCenterX < threshold25) {
+                                    const leftMargin = viewportWidth * 0.05;
+                                    leftPos = leftMargin;                     // 5vw from left edge
+                                    console.log('Case: left (trigger center < 25vw)');
+                                } else if (triggerCenterX > threshold75) {
+                                    const rightMargin = viewportWidth * 0.05;
+                                    leftPos = viewportWidth - tooltipWidthNow - rightMargin;   // 5vw from right edge
+                                    console.log('Case: right (trigger center > 75vw)');
+                                } else {
+                                    leftPos = (viewportWidth / 2) - (tooltipWidthNow / 2);     // centered
+                                    console.log('Case: center');
+                                }
+
+                                // Ensure tooltip stays within viewport vertically
+                                if (topPos + tooltipHeightNow > viewportHeight) {
+                                    topPos = viewportHeight - tooltipHeightNow - bot_gap;
+                                    console.log('Adjusted topPos (near bottom):', topPos);
+                                }
+                                topPos = Math.max(10, topPos);
+
+                                // Clamp horizontal position to viewport edges (with a small margin)
+                                leftPos = Math.max(10, Math.min(leftPos, viewportWidth - tooltipWidthNow - 10));
+
+                                finalTop = topPos;
+                                finalLeft = leftPos;
+                                positioned = true;
+                                console.log('Final top:', finalTop, 'left:', finalLeft);
+                            }
+                            // ========== END SMART @ MODE ==========
+
+                            // --- Other positioning modes (center, bottom, etc.) only if not already positioned ---
+                            if (!positioned) {
+                                // --- Special positioning: center within page content area ---
+                                if (pos === 'center-height' || pos === 'center-both') {
+                                    const tooltipHeight = tooltip.getBoundingClientRect().height;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        const cs = getComputedStyle(pageElement);
+                                        const paddingTop = parseFloat(cs.paddingTop);
+                                        const paddingBottom = parseFloat(cs.paddingBottom);
+                                        const contentHeight = pageRect.height - paddingTop - paddingBottom;
+                                        const contentTop = pageRect.top + paddingTop;
+                                        finalTop = contentTop + (contentHeight / 2) - (tooltipHeight / 2);
+                                    } else {
+                                        finalTop = (window.innerHeight / 2) - (tooltipHeight / 2);
+                                    }
+                                }
+
+                                // Horizontal centering (center-width or center-both)
+                                if (pos === 'center-width' || pos === 'center-both') {
+                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        const cs = getComputedStyle(pageElement);
+                                        const paddingLeft = parseFloat(cs.paddingLeft);
+                                        const paddingRight = parseFloat(cs.paddingRight);
+                                        const contentWidth = pageRect.width - paddingLeft - paddingRight;
+                                        const contentLeft = pageRect.left + paddingLeft;
+                                        finalLeft = contentLeft + (contentWidth / 2) - (tooltipWidthNow / 2);
+                                    } else {
+                                        finalLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                    }
+                                    // For center-width only, keep any existing top/bottom
+                                    if (pos === 'center-width') {
+                                        if (bottom !== undefined) tooltip.style.bottom = bottom;
+                                        else if (top !== undefined && top !== '@') tooltip.style.top = top;
+                                    }
+                                }
+
+                                // For center-both, ensure width/height are auto (remove inline) ONLY if they were not explicitly set
+                                if (pos === 'center-both') {
+                                    if (width === 'auto') tooltip.style.width = '';
+                                    if (height === 'auto') tooltip.style.height = '';
+                                }
+                                // --- Bottom positioning modes ---
+                                else if (bottomModes.includes(pos)) {
+                                    // Compute gap from bottom (in pixels)
+                                    let gapPx = 0;
+                                    if (bottomGap) {
+                                        const gapMatch = bottomGap.match(/^([\d.]+)(vh|px)$/);
+                                        if (gapMatch) {
+                                            const num = parseFloat(gapMatch[1]);
+                                            const unit = gapMatch[2];
+                                            if (unit === 'vh') gapPx = (num / 100) * window.innerHeight;
+                                            else gapPx = num;
+                                        }
+                                    }
+
+                                    const tooltipHeight = tooltip.offsetHeight;
+                                    let newTop;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        newTop = pageRect.bottom - tooltipHeight - gapPx;
+                                        newTop = Math.max(pageRect.top + 10, newTop);
+                                    } else {
+                                        newTop = window.innerHeight - tooltipHeight - gapPx;
+                                        newTop = Math.max(10, newTop);
+                                    }
+                                    finalTop = newTop;
+
+                                    // Horizontal positioning based on mode
+                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const innerPadding = 10;
+                                    let newLeft = null;
+
+                                    if (pos === 'bottom-left') {
+                                        if (pageElement) {
+                                            const pageRect = pageElement.getBoundingClientRect();
+                                            newLeft = pageRect.left + innerPadding;
+                                        } else {
+                                            newLeft = innerPadding;
+                                        }
+                                    } else if (pos === 'bottom-right') {
+                                        if (pageElement) {
+                                            const pageRect = pageElement.getBoundingClientRect();
+                                            newLeft = pageRect.right - tooltipWidthNow - innerPadding;
+                                        } else {
+                                            newLeft = window.innerWidth - tooltipWidthNow - innerPadding;
+                                        }
+                                    } else if (pos === 'bottom-center') {
+                                        if (pageElement) {
+                                            const pageRect = pageElement.getBoundingClientRect();
+                                            newLeft = (pageRect.left + pageRect.right) / 2 - tooltipWidthNow / 2;
+                                        } else {
+                                            newLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                        }
+                                        // Clamp to page/viewport edges
+                                        if (pageElement) {
+                                            const pageRect = pageElement.getBoundingClientRect();
+                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - tooltipWidthNow - innerPadding));
+                                        } else {
+                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - tooltipWidthNow - innerPadding));
+                                        }
+                                    } else if (pos === 'bottom-page') {
+                                        // Original behavior: use `left` if provided (and not '@'), else leave undefined (auto)
+                                        if (left !== undefined && left !== '@') {
+                                            newLeft = left;
+                                        }
+                                    }
+                                    if (newLeft !== null) finalLeft = newLeft;
+                                }
+                            }
+
+                            // Apply final positions
+                            if (finalTop !== null) tooltip.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
+                            if (finalBottom !== null) tooltip.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
+                            if (finalLeft !== null) tooltip.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
+                            if (finalRight !== null) tooltip.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+
+                            if (finalBottom !== null && finalTop === null) tooltip.style.top = 'auto';
+                            if (finalRight !== null && finalLeft === null) tooltip.style.left = 'auto';
+
+                            // Now that the tooltip is positioned correctly, make it visible
+                            tooltip.classList.add('show');
+                            tooltip.style.opacity = '';
+                        });
+                    });
+                } else {
+                    // Normal positioning (no special modes, no @)
+                    if (bottom !== undefined) {
+                        tooltip.style.bottom = bottom;
+                        tooltip.style.top = 'auto';
+                    } else if (top !== undefined) {
+                        tooltip.style.top = top;
+                        tooltip.style.bottom = 'auto';
+                    }
+                    if (right !== undefined) {
+                        tooltip.style.right = right;
+                        tooltip.style.left = 'auto';
+                    } else if (left !== undefined) {
+                        tooltip.style.left = left;
+                        tooltip.style.right = 'auto';
+                    }
+                    tooltip.classList.add('show');
+                }
+            } else {
+                // --- Hide tooltip: fade out without repositioning ---
+                tooltip.classList.remove('show');
+
+                const onTransitionEnd = () => {
+                    tooltip.className = '';
+                    tooltip.style.cssText = '';
+                    tooltip.innerHTML = '';
+                    tooltip.removeEventListener('transitionend', onTransitionEnd);
+                };
+                tooltip.addEventListener('transitionend', onTransitionEnd);
+                setTimeout(onTransitionEnd, 500); // fallback
+            }
         }
 
-        // Animation
-        if (animation !== 'fade') {
-            tooltip.classList.add(animation);
-        } else {
-            tooltip.classList.add('fade');
-        }
 
-        // Apply positioning and sizing
-        tooltip.style.top = top;
-        tooltip.style.left = left;
-        tooltip.style.height = height === 'auto' ? 'auto' : height;
-        tooltip.style.width = width === 'auto' ? 'auto' : width;
-        tooltip.innerHTML = tiptext;
-
-        // Trigger show
-        tooltip.offsetHeight;
-        setTimeout(() => {
-            tooltip.classList.add('show');
-        }, 20);
-
-    } else {
-        // Hide tooltip
-        tooltip.classList.remove(
-            'show', 'center', 'below-trigger',
-            'fade', 'bounce', 'slide', 'zoom',
-            'left-text', 'right-text', 'center-text'
-        );
-        // Reset inline styles (including the !important position)
-        tooltip.style.cssText = ''; // simpler than resetting each property
-        // Alternatively, you can keep the selective reset:
-        // tooltip.style.position = '';
-        // tooltip.style.top = '';
-        // tooltip.style.left = '';
-        // tooltip.style.height = '';
-        // tooltip.style.width = '';
-        // tooltip.innerHTML = '';
-        setTimeout(() => {
-            tooltip.innerHTML = '';
-            tooltip.style.top = '';
-            tooltip.style.left = '';
-            tooltip.style.height = '';
-            tooltip.style.width = '';
-        }, 400);
-    }
-}
-        
-
-
+       // ==================== TOOLTIP FUNCTION end ====================
         
         // Determine initial page based on configuration
         function getInitialPage() {
