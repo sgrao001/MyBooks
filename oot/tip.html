@@ -73,9 +73,9 @@
         }
         /* Underline effect on hover */
         a:hover {
-            color: #82e9ff !important;
+            background: rgba(0,0,0,0.6);
             text-decoration: underline;
-            text-decoration-thickness: 2px;
+            color: var(--text-color);
         }
         a:focus {
             outline: 2px solid #ffeb3b;
@@ -150,21 +150,27 @@
                 visibility: visible !important;
         }
 
+   
+
         /******************************* tool Tips **************************************************************/
 
-        .tooltip-trigger { cursor: pointer; color: #b0e0ff; text-decoration: underline; margin: 0 10px; }
+        .BubbleText-trigger  { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal;
+                        margin: 0 10px; } 
 
-        .tooltip-group { display: inline-block; margin-left: 17%; vertical-align: top; }
+        .BubbleText-group { display: inline-block; margin-left: 15.25%; vertical-align: top; }
      
-        .tooltip-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
+        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
 
-        .tooltip-group .tooltip-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
-        .tooltip-trigger.tooltip-full { height: auto; width: auto; }
+        .BubbleText-group .BubbleText-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
+        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
 
-        #tooltip {
+        #BubbleText {
             position: fixed;
+            
             color: #b0e0ff;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
+            font-weight: normal;
 
             /* INITIAL STATE - HIDDEN */
             transform: translateY(-20px) scale(0.95) !important;
@@ -180,11 +186,11 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.2);
 
-            /* Padding (keep tooltip’s original for comfortable reading) */
+            /* Padding (keep BubbleText’s original for comfortable reading) */
             padding: 10px !important;
 
             /* Font styling (match caption) */
-            font-size: 0.8em;
+            font-size: 0.8em ;
 
             /* Other essential styles */
             z-index: 9999;
@@ -201,23 +207,23 @@
             scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
         }
 
-        #tooltip.show { opacity: 1; visibility: visible; }
+        #BubbleText.show { opacity: 1; visibility: visible; }
 
-        #tooltip.fade { transform: translateY(15px) scale(0.95); }
-        #tooltip.fade.show { transform: translateY(0) scale(1); }
+        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
+        #BubbleText.fade.show { transform: translateY(0) scale(1); }
 
-        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
-        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
+        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
-        #tooltip.slide { transform: translateY(60px); }
-        #tooltip.slide.show { transform: translateY(0); }
+        #BubbleText.slide { transform: translateY(60px); }
+        #BubbleText.slide.show { transform: translateY(0); }
 
-        #tooltip.zoom { transform: scale(0.4); }
-        #tooltip.zoom.show { transform: scale(1); }
+        #BubbleText.zoom { transform: scale(0.4); }
+        #BubbleText.zoom.show { transform: scale(1); }
 
-        #tooltip.left-text { text-align: left; }
-        #tooltip.right-text { text-align: right; }
-        #tooltip.center-text { text-align: center; }
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
 
         @keyframes bounceIn {
             0% { transform: translateY(40px) scale(0.6); }
@@ -225,9 +231,9 @@
             100% { transform: translateY(0) scale(1); }
         }
 
-        #tooltip::-webkit-scrollbar { width: 6px; }
-        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar { width: 6px; }
+        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
 
         /******************************* tool Tips **************************************************************/
 
@@ -238,49 +244,39 @@
             transform: translateX(-50%);
         }
 
-        .back-to-toc {
+        /* next and previous page Navigation icons */
+        .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
             font-size: 0.8em;
+            font-family: Arial;
+            
             padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             transition: all 0.3s ease;
             order: 2;
             margin-right: auto;
-            posiiton: relative;
+            position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
 
-        .back-to-list {
+        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .slider-container:hover, .glassbtn:hover{
+            background: rgba(0,0,0,0.6);
+            text-decoration: underline;
+            text-decoration-thickness: 3px !important;
             color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.8em;
-            padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            order: 2;
-            border-radius: 12px;
-            margin-right: auto;
-            bottom: 60px;
-        }
+        }     
 
-        .back-to-toc:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
-        .back-to-list:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
+        .glassbtnlbl { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal;}   
+        .paraindentleft { font-style: italic; text-align: left; }
+        .paraindentright { font-style: italic; text-align: right; }
+        .paraindentcenter { font-style: italic; text-align: center; } 
 
         /* Fixed Custom Scrollbar */
         .page::-webkit-scrollbar {
@@ -353,7 +349,6 @@
             width: 15% !important;
         }
 
-
         .arrow-container.right {
             right: 0px;
         }
@@ -411,14 +406,6 @@
             transform: translateX(-50%);
             width: var(--page-width);
             height: 40px;
-            /* New glass-morphism styles (matching #tooltip) */
-            background: rgba(0, 0, 0, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
-            /* Keep existing layout */
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -430,7 +417,7 @@
         }
         /* Page number text inside slider */
         .slider-info {
-            color: #b0e0ff;            /* matches tooltip text color */
+            color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -574,12 +561,11 @@
 
         .highlight-text {
             color: var(--primary-color);
-            font-weight: 300;
-            font-size: 1.1em;
-            margin-bottom: 0.3em;
+            font-size: 1em;
             display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
+            text-decoration: underline solid var(--primary-color);
             padding-bottom: 3px;
+            color: #f09e5a;
         }
 
         p {
@@ -646,12 +632,13 @@
             color: var(--primary-color) !important;
         }
 
-        /* List-style TOC */
         .toc-list .toc-button-container {
-            margin-left: 17%;
-            margin-right: 17%;
+            width: calc(100% - var(--arrow-hover-width));
+            margin-left: auto;
+            margin-right: auto;
             display: block;
         }
+
 
         .toc-list .toc-entry {
             margin: 8px 0;
@@ -812,7 +799,7 @@
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -905,7 +892,7 @@
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -1049,33 +1036,36 @@ Position    Parameter	  Purpose	                                Example values<b
 7           MW →        data-maxwidth<br>
 8           loc →       data-position (default: "bottom-page")<br>
 9            tloc →      data-textalign (default: "left")<br>
-[ Top | Left | Bot_GAP | Height | Width | Maxheight | MaxWidth | LOC | TLOC ]<br><br><br>same as  <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="Some information here" class="tooltip-trigger tooltip-full tooltip-flex">default</span>,<br><br><br>Only tip text (no parameters) <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Some information here" class="tooltip-trigger tooltip-full tooltip-flex">Info</span><br>
-Set height and width <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Click to view" class="tooltip-trigger tooltip-full tooltip-flex">Image</span><br>
-Set max‑height and max‑width only <span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="center" data-tiptext="Perfectly centered tooltip" class="tooltip-trigger tooltip-full tooltip-flex">Centered</span><br>
-Combine multiple parameters <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="200px" data-width="60vw" data-maxheight="250px" data-maxwidth="80vw" data-position="center-width" data-textalign="right" data-tiptext="Dynamic tooltip" class="tooltip-trigger tooltip-full tooltip-flex">Flex</span><br>
-No float marker (trigger stays inline) <span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="300px" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="center" data-tiptext="Tooltip info" class="tooltip-trigger tooltip-full tooltip-flex">Info</span><br><br>Custom positionioned tooltip <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="10vh" data-left="20vw" data-bottom-gap="2vh" data-height="200px" data-width="400px" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="center" data-tiptext="Custom positioned tooltip" class="tooltip-trigger tooltip-full tooltip-flex">Info</span>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Tip All Defaults" class="tooltip-trigger tooltip-full tooltip-flex">Word</span><br><br>have a word that we want to stick to the right margin. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est srinivas <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="94%" data-maxwidth="90%" data-position="center-width" data-textalign="left" data-tiptext="FullPage with tip text left justified - t-FH-34W-TL" class="tooltip-trigger tooltip-full tooltip-flex">t-FH-34W-TL</span><br><br><br><span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-FP-TL<br>Full page centered, text left" class="tooltip-trigger tooltip-full tooltip-flex">test-this</span>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="60%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-FP-TL<br>Full page, 60% wide, centered, text left" class="tooltip-trigger tooltip-full tooltip-flex">tt-FP-TL</span> <span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="60%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="center" data-tiptext="tt-FP-TC<br>Full page, 60% wide, centered, text left" class="tooltip-trigger tooltip-full tooltip-flex">tt-FP-TC</span><br>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-FP-TL<br>Full page, 3/4 wide, centered, text left" class="tooltip-trigger tooltip-full tooltip-flex">tt-FH-34W-TL</span><span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="var(--tt-max-height)" data-maxwidth="75%" data-position="center-width" data-textalign="left" data-tiptext="tt-FP-TL<br>3/4 page, 60% wide, centered, text left" class="tooltip-trigger tooltip-full tooltip-flex">tt-34H-34W-TL</span><br>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-14H-FW-TL<br>FullWidth Top, 1/4 height - tt-14H-FW-TL-TOP" class="tooltip-trigger tooltip-full tooltip-flex">tt-1/4H-FW-TL</span><span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="tt-14H-34W-TL<br>"FullWidth Bottom, 1/4 height - tt-14H-FW-TL-BOT" class="tooltip-trigger tooltip-full tooltip-flex">tt-14H-34W-TL</span><br>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-FP-TL-TOP<br>FullWidth Top, 1/3 height - tt-14H-FW-TL-TOP" class="tooltip-trigger tooltip-full tooltip-flex">tt-13H-FW-TL-TOP</span><span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="ttt-13H-FW-TL-BOT<br>"FullWidth Bottom, 1/3 height - tt-14H-FW-TL-BOT" class="tooltip-trigger tooltip-full tooltip-flex">tt-13H-FW-TL-BOT</span><br>
-<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-12H-FW-TL-TOP<br>FullWidth Top, 1/2 height - ttt-12H-FW-TL-TOP" class="tooltip-trigger tooltip-full tooltip-flex">tt-12H-FW-TL-TOP</span><span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="left" data-tiptext="ttt-14H-FW-TL-CTR<br>"FullWidth Center, 1/2 height - tt-12H-FW-TL-CTR" class="tooltip-trigger tooltip-full tooltip-flex">tt-12H-FW-TL-CTR1</span><span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="ttt-14H-FW-TL-BOT<br>"FullWidth Bottom, 1/2 height - tt-12H-FW-TL-BOT" class="tooltip-trigger tooltip-full tooltip-flex">tt-12H-FW-TL-BOT</span><br><br><br>FLEX TOP The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set <span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-tiptext="tt-14H-FW-TL FullWidth Top, 1/4 height - tt-14H-FW-TL-TOP - iInspect the popup – Right‑click on the tooltip when it appears, choose “Inspect”, and look Check its computed height, max-height, and overflow-y. Ensure that the inline height is present and that overflow-y is auto. Also check if the scrollbar is visible. If the scrollbar is present but you can’t scroll to the bottom, it might be because the content is actually not taller than the container. Verify the content length. If it is taller, try adding overflow-y: scroll (instead of auto) to force a scrollbar. You can do this by modifying the script to set overflow-y from a data-overflow attribute, or simply rely on the CSS class which already has auto. If the scrollbar is not showing, maybe the content height is less than the container.The CSS max-height from the class is still limiting the actual height – even though you set height: 22.5%, if <br> the class’s max-height is smaller, it will override the height. In your CSS, has 22.75vh. Since 22.5% of viewport height is about 22.5vh (slightly smaller), the max-height from the class is actually larger, so it doesn’t restrict. So that’s not the problem. The overflow-y: auto may be missing or overridden – The popup gets the class  which sets overflow-y: auto. Inline styles do not set overflow, so it should be present. Check in the browser that the popup’s computed overflow-y is auto. The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow. Ensure the max-height from the CSS class isn't smaller than 22.5vh. Also, verify that the popup's bottom is not set to something that prevents scrolling. If you still can't scroll, add overflow-y: auto !important to the inline style via data-maxheight or modify the script to set overflow-y as well. But the simpler solution is to set the height to auto (remove the height parameter) and use max-height to limit, which is the typical approach." class="tooltip-trigger tooltip-full tooltip-flex">tt-1/4H-FW-TL</span> <br><br><br>FLEX CENTER from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set <span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="left" data-tiptext="tt-14H-FW-TL FullWidth Top, 1/4 height - tt-14H-FW-TL-CTR- - iInspect the popup – Right‑click on the tooltip when it appears, choose “Inspect”, and look Check its computed height, max-height, and overflow-y. Ensure that the inline height is present and that overflow-y is auto. Also check if the scrollbar is visible. If the scrollbar is present but you can’t scroll to the bottom, it might be because the content is actually not taller than the container. Verify the content length. If it is taller, try adding overflow-y: scroll (instead of auto) to force a scrollbar. You can do this by modifying the script to set overflow-y from a data-overflow attribute, or simply rely on the CSS class which already has auto. If the scrollbar is not showing, maybe the content height is less than the container.The CSS max-height from the class is still limiting the actual height – even though you set height: 22.5%, if <br> the class’s max-height is smaller, it will override the height. In your CSS, has 22.75vh. Since 22.5% of viewport height is about 22.5vh (slightly smaller), the max-height from the class is actually larger, so it doesn’t restrict. So that’s not the problem. The overflow-y: auto may be missing or overridden – The popup gets the class  which sets overflow-y: auto. Inline styles do not set overflow, so it should be present. Check in the browser that the popup’s computed overflow-y is auto. The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow. Ensure the max-height from the CSS class isn't smaller than 22.5vh. Also, verify that the popup's bottom is not set to something that prevents scrolling. If you still can't scroll, add overflow-y: auto !important to the inline style via data-maxheight or modify the script to set overflow-y as well. But the simpler solution is to set the height to auto (remove the height parameter) and use max-height to limit, which is the typical approach." class="tooltip-trigger tooltip-full tooltip-flex">tt-1/4H-FW-TL-CTR</span><br><br>FLEX BOTTOM CENTER if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow.<span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="bottom-center" data-textalign="left" data-tiptext="tt-14H-FW-TL-BOTCTR FullWidth Top, 1/4 height - tt-14H-FW-TL-BOTCTR - in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="tooltip-trigger tooltip-full tooltip-flex">tt-1/4H-FW-TL-BOT</span><br><br>in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. abcd<br><br><span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Your tooltip text here" class="tooltip-trigger tooltip-full tooltip-flex">CW L</span><br>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Your tooltip text here" class="tooltip-trigger tooltip-full tooltip-flex">CW M</span><br>
-<span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-tiptext="Your tooltip text here" class="tooltip-trigger tooltip-full tooltip-flex">CW R</span><br><br><br><span style="float: left; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="0px" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-tiptext="📌 Top Left Corner" class="tooltip-trigger tooltip-full tooltip-flex">TL</span><br>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="calc(50% - 75px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-tiptext="📌  Top center" class="tooltip-trigger tooltip-full tooltip-flex">TC</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="center" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-tiptext="📌 Top center" class="tooltip-trigger tooltip-full tooltip-flex">TC</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="0" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-tiptext="📌 left center" class="tooltip-trigger tooltip-full tooltip-flex">LC</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="center" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-tiptext="📌 Middle of page with top=center left=center" class="tooltip-trigger tooltip-full tooltip-flex">CC</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="center" data-tiptext="📌 Middle of Page with position= center-both" class="tooltip-trigger tooltip-full tooltip-flex">CC</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="calc(100% - 150px - 42px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-tiptext="📌 Top right Corner" class="tooltip-trigger tooltip-full tooltip-flex">TR</span>
-<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="calc(100% - 150px - 42px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-tiptext="📌 Right center" class="tooltip-trigger tooltip-full tooltip-flex">RC</span>
-<span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-left" data-textalign="center" data-tiptext="📌 Bottom left" class="tooltip-trigger tooltip-full tooltip-flex">BL</span><br>
-<span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-center" data-textalign="center" data-tiptext="📌 Bottom center" class="tooltip-trigger tooltip-full tooltip-flex">BC</span><br>
-<span style="float: right; margin-left: 17%; margin-right: 17%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-right" data-textalign="center" data-tiptext="👆 Bottom right" class="tooltip-trigger tooltip-full tooltip-flex">BR👆</span>
+[ Top | Left | Bot_GAP | Height | Width | Maxheight | MaxWidth | LOC | TLOC ]<br><br><br>same as  <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="Some information here" class="BubbleText-trigger BubbleText-full BubbleText-flex">default</span><br><br><br>Only tip text (no parameters) <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Some information here" class="BubbleText-trigger BubbleText-full BubbleText-flex">Info</span><br>
+Set height and width <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Click to view" class="BubbleText-trigger BubbleText-full BubbleText-flex">Image</span><br>
+Set max‑height and max‑width only <span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="center" data-bbbltext="Perfectly centered tooltip" class="BubbleText-trigger BubbleText-full BubbleText-flex">Centered</span><br>
+Combine multiple parameters <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="200px" data-width="60vw" data-maxheight="250px" data-maxwidth="80vw" data-position="center-width" data-textalign="right" data-bbbltext="Dynamic tooltip" class="BubbleText-trigger BubbleText-full BubbleText-flex">Flex</span><br>
+No float marker (trigger stays inline) <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="300px" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="center" data-bbbltext="BubbleText info" class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br><br>Custom positionioned vvvvv tooltip <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Tip All Defaults" class="BubbleText-trigger BubbleText-full BubbleText-flex">Check me out <span class='glassbtn' style='font-size: 1em;'>👆</span></span><br><br><div style="margin-left: 17%; margin-right: 17%;" class="glassbtnlbl">
+    <span>XXXXX </span>
+    <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="150px" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="center" data-bbbltext="BubbleText info" class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
+</div>
+<div style="margin-left: 15.25% !important; margin-right: 15.25% !important; " class="glassbtnlbl">Abc</div><br><br>have a word that we want to stick to the right margin. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est srinivas <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="94%" data-maxwidth="90%" data-position="center-width" data-textalign="left" data-bbbltext="FullPage with tip text left justified - t-FH-34W-TL" class="BubbleText-trigger BubbleText-full BubbleText-flex">t-FH-34W-TL</span><br><br><br><span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-FP-TL<br>Full page centered, text left" class="BubbleText-trigger BubbleText-full BubbleText-flex">test-this</span>
+<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="60%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-FP-TL<br>Full page, 60% wide, centered, text left" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-FP-TL</span> <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="60%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="center" data-bbbltext="BBLTxt-FP-TC<br>Full page, 60% wide, centered, text left" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-FP-TC</span><br>
+<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-FP-TL<br>Full page, 3/4 wide, centered, text left" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-FH-34W-TL</span><span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="90%" data-width="75%" data-maxheight="var(--tt-max-height)" data-maxwidth="75%" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-FP-TL<br>3/4 page, 60% wide, centered, text left" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-34H-34W-TL</span><br>
+<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL<br>FullWidth Top, 1/4 height - BBLTxt-14H-FW-TL-TOP" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-1/4H-FW-TL</span><span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="BBLTxt-14H-34W-TL<br>"FullWidth Bottom, 1/4 height - BBLTxt-14H-FW-TL-BOT" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-14H-34W-TL</span><br>
+<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-FP-TL-TOP<br>FullWidth Top, 1/3 height - BBLTxt-14H-FW-TL-TOP" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-13H-FW-TL-TOP</span><span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="BBLTxt-13H-FW-TL-BOT<br>"FullWidth Bottom, 1/3 height - BBLTxt-14H-FW-TL-BOT" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-13H-FW-TL-BOT</span><br>
+<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-12H-FW-TL-TOP<br>FullWidth Top, 1/2 height - BBLTxt-12H-FW-TL-TOP" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-12H-FW-TL-TOP</span><span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL-CTR<br>"FullWidth Center, 1/2 height - BBLTxt-12H-FW-TL-CTR" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-12H-FW-TL-CTR1</span><span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="45%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL-BOT<br>"FullWidth Bottom, 1/2 height - BBLTxt-12H-FW-TL-BOT" class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-12H-FW-TL-BOT</span><br><br><br>FLEX TOP The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL FullWidth Top, 1/4 height - BBLTxt-14H-FW-TL-TOP - iInspect the popup – Right‑click on the tooltip when it appears, choose “Inspect”, and look Check its computed height, max-height, and overflow-y. Ensure that the inline height is present and that overflow-y is auto. Also check if the scrollbar is visible. If the scrollbar is present but you can’t scroll to the bottom, it might be because the content is actually not taller than the container. Verify the content length. If it is taller, try adding overflow-y: scroll (instead of auto) to force a scrollbar. You can do this by modifying the script to set overflow-y from a data-overflow attribute, or simply rely on the CSS class which already has auto. If the scrollbar is not showing, maybe the content height is less than the container.The CSS max-height from the class is still limiting the actual height – even though you set height: 22.5%, if <br> the class’s max-height is smaller, it will override the height. In your CSS, has 22.75vh. Since 22.5% of viewport height is about 22.5vh (slightly smaller), the max-height from the class is actually larger, so it doesn’t restrict. So that’s not the problem. The overflow-y: auto may be missing or overridden – The popup gets the class  which sets overflow-y: auto. Inline styles do not set overflow, so it should be present. Check in the browser that the popup’s computed overflow-y is auto. The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow. Ensure the max-height from the CSS class isn't smaller than 22.5vh. Also, verify that the popup's bottom is not set to something that prevents scrolling. If you still can't scroll, add overflow-y: auto !important to the inline style via data-maxheight or modify the script to set overflow-y as well. But the simpler solution is to set the height to auto (remove the height parameter) and use max-height to limit, which is the typical approach." class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-1/4H-FW-TL</span> <br><br><br>FLEX CENTER from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL FullWidth Top, 1/4 height - BBLTxt-14H-FW-TL-CTR- - iInspect the popup – Right‑click on the tooltip when it appears, choose “Inspect”, and look Check its computed height, max-height, and overflow-y. Ensure that the inline height is present and that overflow-y is auto. Also check if the scrollbar is visible. If the scrollbar is present but you can’t scroll to the bottom, it might be because the content is actually not taller than the container. Verify the content length. If it is taller, try adding overflow-y: scroll (instead of auto) to force a scrollbar. You can do this by modifying the script to set overflow-y from a data-overflow attribute, or simply rely on the CSS class which already has auto. If the scrollbar is not showing, maybe the content height is less than the container.The CSS max-height from the class is still limiting the actual height – even though you set height: 22.5%, if <br> the class’s max-height is smaller, it will override the height. In your CSS, has 22.75vh. Since 22.5% of viewport height is about 22.5vh (slightly smaller), the max-height from the class is actually larger, so it doesn’t restrict. So that’s not the problem. The overflow-y: auto may be missing or overridden – The popup gets the class  which sets overflow-y: auto. Inline styles do not set overflow, so it should be present. Check in the browser that the popup’s computed overflow-y is auto. The popup’s content may be scrollable but the bottom of the scrollable area is not reachable because of the way the popup is positioned – For example, if the popup is positioned very low on the page, the bottom part might be outside the viewport. But with top: 5.5vh and height: 22.5vh, its bottom is at 28vh, well inside the viewport. So that shouldn’t happen.A max-height from a parent or from the #tooltip rule with !important could interfere – In your CSS, #tooltip also has overflow-y: auto and no max-height, so it’s fine.<br> Another thing: the #tooltip also has overflow-y: auto, but that might be overridden by the inline style from the trigger? No, the inline style sets only height and max-height, not overflow.I'd suggest the user inspects the popup element in the browser's Elements panel after clicking, and look at the computed styles for height, overflow-y, and see if there is any other rule interfering. Also, check if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow. Ensure the max-height from the CSS class isn't smaller than 22.5vh. Also, verify that the popup's bottom is not set to something that prevents scrolling. If you still can't scroll, add overflow-y: auto !important to the inline style via data-maxheight or modify the script to set overflow-y as well. But the simpler solution is to set the height to auto (remove the height parameter) and use max-height to limit, which is the typical approach." class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-1/4H-FW-TL-CTR</span><br><br>FLEX BOTTOM CENTER if the scrollbar is present. If the scrollbar is present but dragging doesn't scroll to the bottom, perhaps the scroll position is limited because the content's bottom is being cut off by something like a bottom property? The tooltip has a fixed position; if top is set and the height is fixed, the content should be scrollable.Given the time, I'll provide a concise answer: The tooltip height is set to 22.5% of the viewport, but if the content is longer, you should be able to scroll. If scrolling doesn't reach the bottom, inspect the popup's computed height and overflow.<span style="display: inline; margin: 0;" data-top="5.5vh" data-left="9vw" data-bottom-gap="0vh" data-height="22.5vh" data-width="50vw" data-maxheight="var(--tt-max-height)" data-position="bottom-center" data-textalign="left" data-bbbltext="BBLTxt-14H-FW-TL-BOTCTR FullWidth Top, 1/4 height - BBLTxt-14H-FW-TL-BOTCTR - in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="BubbleText-trigger BubbleText-full BubbleText-flex">BBLTxt-1/4H-FW-TL-BOT</span><br><br>in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. abcd<br><br><span style="float: left; margin-left: 15.25%; " data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Your tooltip text here" class="BubbleText-trigger BubbleText-full BubbleText-flex">CW L</span><br>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Your tooltip text here" class="BubbleText-trigger BubbleText-full BubbleText-flex">CW M</span><br>
+<span style="float: right; margin-right: 15.25%;" data-top="@" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Your tooltip text here" class="BubbleText-trigger BubbleText-full BubbleText-flex">CW R</span><br><br><br><span style="float: left; margin-left: 15.25%; " data-top="5.5vh" data-left="0px" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-bbbltext="📌 Top Left Corner" class="BubbleText-trigger BubbleText-full BubbleText-flex">TL</span><br>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="calc(50% - 75px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-bbbltext="📌  Top center" class="BubbleText-trigger BubbleText-full BubbleText-flex">TC</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="center" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-bbbltext="📌 Top center" class="BubbleText-trigger BubbleText-full BubbleText-flex">TC</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="0" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-bbbltext="📌 left center" class="BubbleText-trigger BubbleText-full BubbleText-flex">LC</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="center" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-bbbltext="📌 Middle of page with top=center left=center" class="BubbleText-trigger BubbleText-full BubbleText-flex">CC</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="center" data-bbbltext="📌 Middle of Page with position= center-both" class="BubbleText-trigger BubbleText-full BubbleText-flex">CC</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="0px" data-left="calc(100% - 150px - 42px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="absolute" data-textalign="center" data-bbbltext="📌 Top right Corner" class="BubbleText-trigger BubbleText-full BubbleText-flex">TR</span>
+<span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="center" data-left="calc(100% - 150px - 42px)" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="fixed" data-textalign="center" data-bbbltext="📌 Right center" class="BubbleText-trigger BubbleText-full BubbleText-flex">RC</span>
+<span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-left" data-textalign="center" data-bbbltext="📌 Bottom left" class="BubbleText-trigger BubbleText-full BubbleText-flex">BL</span><br>
+<span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-center" data-textalign="center" data-bbbltext="📌 Bottom center" class="BubbleText-trigger BubbleText-full BubbleText-flex">BC</span><br>
+<<span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0" data-height="160px" data-width="150px" data-maxheight="var(--tt-max-height)" data-position="bottom-right" data-textalign="center" data-bbbltext="<span class='glassbtn' style='font-size: 1em;'>👆</span> Bottom right" class="BubbleText-trigger BubbleText-full BubbleText-flex">BR<span class='glassbtn' style='font-size: 1em;'>👆</span></span>>
 </div><p style="margin-right:8%; text-align: right; font-style: italic;">
 <span class="tooltip-trigger right-justified" 
   data-top="center"  data-left="center"     data-height="90%"   data-width="95%" 
-  data-textalign="center"             data-tiptext="📱 Fullscreen Tooltip">
+  data-textalign="center"             data-tiptext="📱 Fullscreen BubbleText">
   Fullscreen </span>
 </p><p style="text-align: center; font-style: italic;">
   <span class="tooltip-trigger"
@@ -1183,16 +1173,16 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
         const sliderContainer = document.getElementById('slider-container');
 
         // Generic listener for ALL trigger
-        // ==================== TOOLTIP LISTENER start ==================
+        // ==================== BubbleText LISTENER start ==================
         document.addEventListener('click', function(e) {
             try {
 
-                const trigger = e.target.closest('.tooltip-trigger');
-                const tooltip = document.getElementById('tooltip');
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
 
-                // If tooltip is open and clicking outside, close it
-                if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
                     return;
                 }
 
@@ -1203,7 +1193,7 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                 // --- Collect extra classes (exclude alignment classes) ---
                 let extraClasses = [];
                 trigger.classList.forEach(cls => {
-                    if (cls !== 'tooltip-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
                         extraClasses.push(cls);
                     }
                 });
@@ -1238,24 +1228,24 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
 
                 // --- Special positioning handling (center, @, 100% 100%) ---
                 if (position !== 'absolute') {
-                    let tooltipWidth = parseFloat(trigger.dataset.width);
-                    let tooltipHeight = parseFloat(trigger.dataset.height);
-                    let totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
-                    let totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
 
                     if (top === 'center') {
-                        if (totalTooltipHeight) {
-                            let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
-                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
                             top = centerTop + 'px';
                         } else {
                             top = '50%';
                         }
                     }
                     if (left === 'center') {
-                        if (totalTooltipWidth) {
-                            let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
-                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
                             left = centerLeft + 'px';
                         } else {
                             left = '50%';
@@ -1322,28 +1312,28 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                 }
 
                 // --- Prepare remaining parameters ---
-                const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
                 const animation = trigger.dataset.animation || 'fade';
                 const textAlign = trigger.dataset.textalign || 'left';
-                const tiptext = htmlEncodeTooltipText(rawTiptext);
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
 
-                const isCurrentlyOpen = tooltip.classList.contains('show') && tooltip.innerHTML.includes(rawTiptext);
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
 
                 if (isCurrentlyOpen) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                    toggleBubbleText('', '', '', '', '', 'no');
                 } else {
-                    const showTooltip = () => {
-                        toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
-                        // Force layout recalculation after the tooltip is visible
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
                         requestAnimationFrame(() => {
-                            const t = document.getElementById('tooltip');
+                            const t = document.getElementById('BubbleText');
                             if (t && t.classList.contains('show')) t.scrollTop;
                         });
                     };
                     if (document.fonts) {
-                        document.fonts.ready.then(showTooltip);
+                        document.fonts.ready.then(showBubbleText);
                     } else {
-                        showTooltip();
+                        showBubbleText();
                     }
                 }
 
@@ -1353,17 +1343,17 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
         });
 
 
-        // ==================== TOOLTIP LISTENER end ====================
+        // ==================== BubbleText LISTENER end ====================
 
 
         document.addEventListener('click', function(e) {
-            const tooltip = document.getElementById('tooltip');
-            if (tooltip.contains(e.target)) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
                 e.stopPropagation(); // prevent interfering with other listeners
-                toggleTooltip('', '', '', '', '', 'no');
+                toggleBubbleText('', '', '', '', '', 'no');
             }
         });
-      // ==================== TOOLTIP inside click close end ====================
+      // ==================== BubbleText inside click close end ====================
 
         // ==================== MAIN CLICK LISTENER (TRIGGERS & OUTSIDE CLOSE) ====================
 
@@ -1391,6 +1381,20 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                         caption.style.transform = 'translateY(0)';
                         caption.classList.add('mobile-visible');
                     }
+                });
+            });
+
+            // Page Navigation icons anywhere in content
+            document.querySelectorAll('.next-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextPage();
+                });
+            });
+            document.querySelectorAll('.prev-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevPage();
                 });
             });
             
@@ -1460,8 +1464,8 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
             });
         });        
 
-        // ==================== TOOLTIP FUNCTION start ====================
-        // ToolTIp Management
+        // ==================== BubbleText FUNCTION start ====================
+        // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
         // Convert a CSS length string to pixels (returns NaN if not possible)
         //
@@ -1479,42 +1483,42 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
             return NaN; // calc() or other complex expressions
         }
 
-        // htmlEncodeTooltipText (keep your existing version)
-        function htmlEncodeTooltipText(str) {
+        // htmlEncodeBubbleTextText (keep your existing version)
+        function htmlEncodeBubbleTextText(str) {
             const div = document.createElement('div');
             div.innerHTML = str;
             return div.innerHTML;
         }
-        function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
-            const tooltip = document.getElementById('tooltip');
+        function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
+            const BubbleText = document.getElementById('BubbleText');
 
             if (visible === 'yes') {
-                // --- Prepare tooltip for display ---
-                tooltip.className = '';
-                extraClasses.forEach(cls => tooltip.classList.add(cls));
-                tooltip.style.setProperty('position', position, 'important');
-                if (textAlign !== 'left') tooltip.classList.add(textAlign + '-text');
-                if (animation !== 'fade') tooltip.classList.add(animation);
-                else tooltip.classList.add('fade');
+                // --- Prepare BubbleText for display ---
+                BubbleText.className = '';
+                extraClasses.forEach(cls => BubbleText.classList.add(cls));
+                BubbleText.style.setProperty('position', position, 'important');
+                if (textAlign !== 'left') BubbleText.classList.add(textAlign + '-text');
+                if (animation !== 'fade') BubbleText.classList.add(animation);
+                else BubbleText.classList.add('fade');
 
                 // Read custom max‑width / max‑height from the trigger (if provided)
                 const datasetMaxWidth = trigger?.dataset?.maxwidth;
                 const datasetMaxHeight = trigger?.dataset?.maxheight;
 
-                tooltip.innerHTML = tiptext;
+                BubbleText.innerHTML = bbbltext;
 
                 // Apply width / height (will be overridden in smart mode if needed)
-                if (width !== 'auto') tooltip.style.width = width;
-                else tooltip.style.width = '';
-                if (height !== 'auto') tooltip.style.height = height;
-                else tooltip.style.height = '';
+                if (width !== 'auto') BubbleText.style.width = width;
+                else BubbleText.style.width = '';
+                if (height !== 'auto') BubbleText.style.height = height;
+                else BubbleText.style.height = '';
 
                 // Apply max‑width / max‑height (dataset overrides computed maxHeight)
-                if (datasetMaxWidth) tooltip.style.maxWidth = datasetMaxWidth;
-                else tooltip.style.maxWidth = '';
-                if (datasetMaxHeight) tooltip.style.maxHeight = datasetMaxHeight;
-                else if (maxHeight !== null) tooltip.style.maxHeight = maxHeight + 'px';
-                else tooltip.style.maxHeight = '';
+                if (datasetMaxWidth) BubbleText.style.maxWidth = datasetMaxWidth;
+                else BubbleText.style.maxWidth = '';
+                if (datasetMaxHeight) BubbleText.style.maxHeight = datasetMaxHeight;
+                else if (maxHeight !== null) BubbleText.style.maxHeight = maxHeight + 'px';
+                else BubbleText.style.maxHeight = '';
 
                 const pos = position.toLowerCase();
                 const bottomModes = ['bottom-left', 'bottom-center', 'bottom-right', 'bottom-page'];
@@ -1522,9 +1526,9 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                 const needsLayout = ['center-height', 'center-width', 'center-both', ...bottomModes].includes(pos) || usesAt;
 
                 if (needsLayout) {
-                    // Make tooltip occupy space but invisible while we position it
-                    tooltip.style.visibility = 'visible';
-                    tooltip.style.opacity = '0';
+                    // Make BubbleText occupy space but invisible while we position it
+                    BubbleText.style.visibility = 'visible';
+                    BubbleText.style.opacity = '0';
                     // Do NOT add 'show' class yet – we'll add it after positioning
 
                     // Double RAF to allow layout to settle (we still need dimensions)
@@ -1541,37 +1545,37 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                             if (top === '@' && trigger) {
                                 console.log('===== SMART @ MODE ACTIVATED =====');
                                 // Completely reset inline styles and force the desired dimensions
-                                tooltip.removeAttribute('style');  // clear all inline styles
-                                tooltip.style.cssText = '';
+                                BubbleText.removeAttribute('style');  // clear all inline styles
+                                BubbleText.style.cssText = '';
                                 // Set our styles
-                                tooltip.style.setProperty('width', '50vw', 'important');
-                                tooltip.style.setProperty('max-width', '50vw', 'important');
-                                tooltip.style.setProperty('max-height', '3em', 'important');
-                                tooltip.style.setProperty('overflow-y', 'auto', 'important');
-                                tooltip.style.setProperty('height', 'auto', 'important');
-                                tooltip.style.setProperty('box-sizing', 'border-box', 'important');
-                                tooltip.style.setProperty('position', 'fixed', 'important');
-                                tooltip.style.setProperty('visibility', 'visible');
-                                tooltip.style.setProperty('opacity', '0');
-                                tooltip.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
-                                tooltip.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
-                                tooltip.style.setProperty('backdrop-filter', 'blur(15px)');
-                                tooltip.style.setProperty('border-radius', '8px');
-                                tooltip.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
-                                tooltip.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
-                                tooltip.style.setProperty('padding', '10px');
-                                tooltip.style.setProperty('font-size', '0.8em');
-                                tooltip.style.setProperty('color', '#b0e0ff');
-                                tooltip.style.setProperty('font-family', 'Arial, sans-serif');
-                                tooltip.style.setProperty('z-index', '9999');
-                                tooltip.style.setProperty('white-space', 'normal');
-                                tooltip.style.setProperty('word-wrap', 'break-word');
+                                BubbleText.style.setProperty('width', '50vw', 'important');
+                                BubbleText.style.setProperty('max-width', '50vw', 'important');
+                                BubbleText.style.setProperty('max-height', '3em', 'important');
+                                BubbleText.style.setProperty('overflow-y', 'auto', 'important');
+                                BubbleText.style.setProperty('height', 'auto', 'important');
+                                BubbleText.style.setProperty('box-sizing', 'border-box', 'important');
+                                BubbleText.style.setProperty('position', 'fixed', 'important');
+                                BubbleText.style.setProperty('visibility', 'visible');
+                                BubbleText.style.setProperty('opacity', '0');
+                                BubbleText.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
+                                BubbleText.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
+                                BubbleText.style.setProperty('backdrop-filter', 'blur(15px)');
+                                BubbleText.style.setProperty('border-radius', '8px');
+                                BubbleText.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
+                                BubbleText.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
+                                BubbleText.style.setProperty('padding', '10px');
+                                BubbleText.style.setProperty('font-size', '0.8em');
+                                BubbleText.style.setProperty('color', '#b0e0ff');
+                                BubbleText.style.setProperty('font-family', 'Arial, sans-serif');
+                                BubbleText.style.setProperty('z-index', '9999');
+                                BubbleText.style.setProperty('white-space', 'normal');
+                                BubbleText.style.setProperty('word-wrap', 'break-word');
 
                                 // Force layout to get accurate dimensions after width change
-                                const tooltipHeightNow = tooltip.offsetHeight;
-                                const tooltipWidthNow = tooltip.offsetWidth;
-                                console.log('Computed width after setProperty:', tooltipWidthNow);
-                                console.log('Computed height after setProperty:', tooltipHeightNow);
+                                const BubbleTextHeightNow = BubbleText.offsetHeight;
+                                const BubbleTextWidthNow = BubbleText.offsetWidth;
+                                console.log('Computed width after setProperty:', BubbleTextWidthNow);
+                                console.log('Computed height after setProperty:', BubbleTextHeightNow);
 
                                 const triggerRect = trigger.getBoundingClientRect();
                                 const viewportWidth = window.innerWidth;
@@ -1593,22 +1597,22 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                                     console.log('Case: left (trigger center < 25vw)');
                                 } else if (triggerCenterX > threshold75) {
                                     const rightMargin = viewportWidth * 0.05;
-                                    leftPos = viewportWidth - tooltipWidthNow - rightMargin;   // 5vw from right edge
+                                    leftPos = viewportWidth - BubbleTextWidthNow - rightMargin;   // 5vw from right edge
                                     console.log('Case: right (trigger center > 75vw)');
                                 } else {
-                                    leftPos = (viewportWidth / 2) - (tooltipWidthNow / 2);     // centered
+                                    leftPos = (viewportWidth / 2) - (BubbleTextWidthNow / 2);     // centered
                                     console.log('Case: center');
                                 }
 
-                                // Ensure tooltip stays within viewport vertically
-                                if (topPos + tooltipHeightNow > viewportHeight) {
-                                    topPos = viewportHeight - tooltipHeightNow - bot_gap;
+                                // Ensure BubbleText stays within viewport vertically
+                                if (topPos + BubbleTextHeightNow > viewportHeight) {
+                                    topPos = viewportHeight - BubbleTextHeightNow - bot_gap;
                                     console.log('Adjusted topPos (near bottom):', topPos);
                                 }
                                 topPos = Math.max(10, topPos);
 
                                 // Clamp horizontal position to viewport edges (with a small margin)
-                                leftPos = Math.max(10, Math.min(leftPos, viewportWidth - tooltipWidthNow - 10));
+                                leftPos = Math.max(10, Math.min(leftPos, viewportWidth - BubbleTextWidthNow - 10));
 
                                 finalTop = topPos;
                                 finalLeft = leftPos;
@@ -1621,7 +1625,7 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                             if (!positioned) {
                                 // --- Special positioning: center within page content area ---
                                 if (pos === 'center-height' || pos === 'center-both') {
-                                    const tooltipHeight = tooltip.getBoundingClientRect().height;
+                                    const BubbleTextHeight = BubbleText.getBoundingClientRect().height;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1629,15 +1633,15 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                                         const paddingBottom = parseFloat(cs.paddingBottom);
                                         const contentHeight = pageRect.height - paddingTop - paddingBottom;
                                         const contentTop = pageRect.top + paddingTop;
-                                        finalTop = contentTop + (contentHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = contentTop + (contentHeight / 2) - (BubbleTextHeight / 2);
                                     } else {
-                                        finalTop = (window.innerHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = (window.innerHeight / 2) - (BubbleTextHeight / 2);
                                     }
                                 }
 
                                 // Horizontal centering (center-width or center-both)
                                 if (pos === 'center-width' || pos === 'center-both') {
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1645,21 +1649,21 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                                         const paddingRight = parseFloat(cs.paddingRight);
                                         const contentWidth = pageRect.width - paddingLeft - paddingRight;
                                         const contentLeft = pageRect.left + paddingLeft;
-                                        finalLeft = contentLeft + (contentWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = contentLeft + (contentWidth / 2) - (BubbleTextWidthNow / 2);
                                     } else {
-                                        finalLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
                                     }
                                     // For center-width only, keep any existing top/bottom
                                     if (pos === 'center-width') {
-                                        if (bottom !== undefined) tooltip.style.bottom = bottom;
-                                        else if (top !== undefined && top !== '@') tooltip.style.top = top;
+                                        if (bottom !== undefined) BubbleText.style.bottom = bottom;
+                                        else if (top !== undefined && top !== '@') BubbleText.style.top = top;
                                     }
                                 }
 
                                 // For center-both, ensure width/height are auto (remove inline) ONLY if they were not explicitly set
                                 if (pos === 'center-both') {
-                                    if (width === 'auto') tooltip.style.width = '';
-                                    if (height === 'auto') tooltip.style.height = '';
+                                    if (width === 'auto') BubbleText.style.width = '';
+                                    if (height === 'auto') BubbleText.style.height = '';
                                 }
                                 // --- Bottom positioning modes ---
                                 else if (bottomModes.includes(pos)) {
@@ -1675,20 +1679,20 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                                         }
                                     }
 
-                                    const tooltipHeight = tooltip.offsetHeight;
+                                    const BubbleTextHeight = BubbleText.offsetHeight;
                                     let newTop;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
-                                        newTop = pageRect.bottom - tooltipHeight - gapPx;
+                                        newTop = pageRect.bottom - BubbleTextHeight - gapPx;
                                         newTop = Math.max(pageRect.top + 10, newTop);
                                     } else {
-                                        newTop = window.innerHeight - tooltipHeight - gapPx;
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
                                         newTop = Math.max(10, newTop);
                                     }
                                     finalTop = newTop;
 
                                     // Horizontal positioning based on mode
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     const innerPadding = 10;
                                     let newLeft = null;
 
@@ -1702,23 +1706,23 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                                     } else if (pos === 'bottom-right') {
                                         if (pageElement) {
                                             const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = pageRect.right - tooltipWidthNow - innerPadding;
+                                            newLeft = pageRect.right - BubbleTextWidthNow - innerPadding;
                                         } else {
-                                            newLeft = window.innerWidth - tooltipWidthNow - innerPadding;
+                                            newLeft = window.innerWidth - BubbleTextWidthNow - innerPadding;
                                         }
                                     } else if (pos === 'bottom-center') {
                                         if (pageElement) {
                                             const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = (pageRect.left + pageRect.right) / 2 - tooltipWidthNow / 2;
+                                            newLeft = (pageRect.left + pageRect.right) / 2 - BubbleTextWidthNow / 2;
                                         } else {
-                                            newLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                            newLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
                                         }
                                         // Clamp to page/viewport edges
                                         if (pageElement) {
                                             const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - tooltipWidthNow - innerPadding));
+                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - BubbleTextWidthNow - innerPadding));
                                         } else {
-                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - tooltipWidthNow - innerPadding));
+                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - BubbleTextWidthNow - innerPadding));
                                         }
                                     } else if (pos === 'bottom-page') {
                                         // Original behavior: use `left` if provided (and not '@'), else leave undefined (auto)
@@ -1731,54 +1735,54 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
                             }
 
                             // Apply final positions
-                            if (finalTop !== null) tooltip.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
-                            if (finalBottom !== null) tooltip.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
-                            if (finalLeft !== null) tooltip.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
-                            if (finalRight !== null) tooltip.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalTop !== null) BubbleText.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
+                            if (finalBottom !== null) BubbleText.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
+                            if (finalLeft !== null) BubbleText.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
+                            if (finalRight !== null) BubbleText.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
 
-                            if (finalBottom !== null && finalTop === null) tooltip.style.top = 'auto';
-                            if (finalRight !== null && finalLeft === null) tooltip.style.left = 'auto';
+                            if (finalBottom !== null && finalTop === null) BubbleText.style.top = 'auto';
+                            if (finalRight !== null && finalLeft === null) BubbleText.style.left = 'auto';
 
-                            // Now that the tooltip is positioned correctly, make it visible
-                            tooltip.classList.add('show');
-                            tooltip.style.opacity = '';
+                            // Now that the BubbleText is positioned correctly, make it visible
+                            BubbleText.classList.add('show');
+                            BubbleText.style.opacity = '';
                         });
                     });
                 } else {
                     // Normal positioning (no special modes, no @)
                     if (bottom !== undefined) {
-                        tooltip.style.bottom = bottom;
-                        tooltip.style.top = 'auto';
+                        BubbleText.style.bottom = bottom;
+                        BubbleText.style.top = 'auto';
                     } else if (top !== undefined) {
-                        tooltip.style.top = top;
-                        tooltip.style.bottom = 'auto';
+                        BubbleText.style.top = top;
+                        BubbleText.style.bottom = 'auto';
                     }
                     if (right !== undefined) {
-                        tooltip.style.right = right;
-                        tooltip.style.left = 'auto';
+                        BubbleText.style.right = right;
+                        BubbleText.style.left = 'auto';
                     } else if (left !== undefined) {
-                        tooltip.style.left = left;
-                        tooltip.style.right = 'auto';
+                        BubbleText.style.left = left;
+                        BubbleText.style.right = 'auto';
                     }
-                    tooltip.classList.add('show');
+                    BubbleText.classList.add('show');
                 }
             } else {
-                // --- Hide tooltip: fade out without repositioning ---
-                tooltip.classList.remove('show');
+                // --- Hide BubbleText: fade out without repositioning ---
+                BubbleText.classList.remove('show');
 
                 const onTransitionEnd = () => {
-                    tooltip.className = '';
-                    tooltip.style.cssText = '';
-                    tooltip.innerHTML = '';
-                    tooltip.removeEventListener('transitionend', onTransitionEnd);
+                    BubbleText.className = '';
+                    BubbleText.style.cssText = '';
+                    BubbleText.innerHTML = '';
+                    BubbleText.removeEventListener('transitionend', onTransitionEnd);
                 };
-                tooltip.addEventListener('transitionend', onTransitionEnd);
+                BubbleText.addEventListener('transitionend', onTransitionEnd);
                 setTimeout(onTransitionEnd, 500); // fallback
             }
         }
 
 
-       // ==================== TOOLTIP FUNCTION end ====================
+       // ==================== BubbleText FUNCTION end ====================
         
         // Determine initial page based on configuration
         function getInitialPage() {
@@ -2159,6 +2163,6 @@ No float marker (trigger stays inline) <span style="float: left; margin-left: 17
         
     </script>
 
-    <div id="tooltip"></div>
+    <div id="BubbleText"></div>
 </body>
 </html>

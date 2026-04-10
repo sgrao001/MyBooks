@@ -13,21 +13,23 @@ CB| Header 1 | Header 2 |
 image-align-{alignment} mobile-align-center mobile-default-size
 
 <NEWPAGE>
-<CHAPTER="An Enchanting Journey">
-<IMAGE="ThreeElementsWassilyKandinsky1925.jpeg | ThreeElements Wassily Kandinsky 1925">
-<TITLE="An Enchanting Journey">
+<CHAPTER=An Enchanting Journey>
+<IMAGE=ThreeElementsWassilyKandinsky1925.jpeg | ThreeElements Wassily Kandinsky 1925>
+<TITLE=An Enchanting Journey>
+
 There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. The infinite can be transformed into less intimidating, even navigate-able explorations. 
 
 Earth-fire-water; a necessity for life. Man-woman-child; the unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams. 
 
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/Three_Elements">'>
-<PAGE END MARKER="~***~">
+<Source=Picture Source | https://en.wikipedia.org/wiki/Three_Elements >
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Awareness">
-<IMAGE="Awareness.jpeg">
-<TITLE="Awareness">
+<CHAPTER=Awareness>
+<IMAGE=Awareness.jpeg>
+<TITLE=Awareness>
+
 I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe. My Dad gave that car to me. I hum the engine noise to myself - I hear the powerful engine - the car surges forward - I shift gears - I drive with precision around imaginary curves and turns - my humming keeps my attention focused on driving the Citroen across the balcony floor - I keep humming - I park my Citroen with precision, in my imaginary parking spot. The outside world fades and time stands still. 
 
 I become one with my being. 
@@ -39,18 +41,19 @@ Gradually, I begin to hear the little boy in the distance, humming the noise of 
 We watch each other patiently, in silence, in acknowledgment, with mutual respect, as time waits.
 
 I open the door and step outside, everything is right in my world. 
+<PAGE END MARKER=~***~>
+<NEWPAGE>
+<CHAPTER=Unity>
+<IMAGE=Wall.jpeg>
+<TITLE=Unity>
 
-<PAGE END MARKER="~***~">
-<NEWPAGE>
-<CHAPTER="Unity">
-<IMAGE="Wall.jpeg">
-<TITLE="Unity">
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Silence">
-<IMAGE="Rope.jpeg">
-<TITLE="Silence">
+<CHAPTER=Silence>
+<IMAGE=Rope.jpeg>
+<TITLE=Silence>
+
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look closely at the metal accordion gate. I notice the skipping rope hanging on the latch. I push the grip and watch the rope swing. I watch the swing reduce - and reduce - then slowly, begin to move in ever so small circles - now, I can now barely see it move - I watch the still, silent, unmoving rope - I feel the silence and the quiet within myself. 
 
 Silence filters the noise around me. I hear my thoughts. My thoughts are the voice of my soul. I dialog with my thoughts. We both listen. 
@@ -66,38 +69,39 @@ My treasure is buried deep. It is the silence and a solo journey that will take 
 Silence respects time and grants me personal growth. 
 
 Silence between the question and the answer is where “I” might be found. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Serenity">
-<IMAGE="Serenity.jpeg">
-<TITLE="Serenity">
+<CHAPTER=Serenity>
+<IMAGE=Serenity.jpeg>
+<TITLE=Serenity>
 
 I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Who am I">
-<IMAGE="AdiShankara-WhoAmI-800BCe.jpeg">
-<TITLE="Who am I">
+<CHAPTER=Who am I>
+<IMAGE=AdiShankara-WhoAmI-800BCe.jpeg>
+<TITLE=Who am I>
 
 Advaita Vedānta tradition. 
 
-<DPosition=':[left  |  |italic ]I am other than name, form and action. <br>
+<DPosition=':[left  |  paraindentleft ]I am other than name, form and action. <br>
 My nature is ever free! <br>
 I am Self, the supreme unconditioned Brahman. <br>
 I am pure Awareness, always non-dual.<br><br>'>
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Words">
-<IMAGE="Words.jpeg">
-<TITLE="Words">
+<CHAPTER=Words>
+<IMAGE=Words.jpeg>
+<TITLE=Words>
 
 At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine. Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “ 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Acknowledgment">
-<IMAGE="Acknowledgement.jpeg">
-<TITLE="Acknowledgment">
+<CHAPTER=Acknowledgment>
+<IMAGE=Acknowledgement.jpeg>
+<TITLE=Acknowledgment>
+
 I saw him cross in front of me. 
 
 He stopped. He sat still. He was barely visible. He was one with nature. I watched him closely. His eyes moved. He observed me. 
@@ -109,18 +113,18 @@ We both stood motionless. In peace.
 I captured this moment of silent mutual awareness. He was being generous with his presence. Does he know me from somewhere? I feel a closeness. 
 
 We moved on, to our different ways. I wonder where he will sleep tonight. Be well and thank you, Mr. Rabbit. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Vastness">
-<IMAGE="Vastness.jpeg">
-<TITLE="Vastness">
+<CHAPTER=Vastness>
+<IMAGE=Vastness.jpeg>
+<TITLE=Vastness>
 
 They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Man and boy">
-<IMAGE="Man&boy-EmilyFelcher2025.jpeg">
-<TITLE="Man and Boy">
+<CHAPTER=Man and boy>
+<IMAGE=Man&boy-EmilyFelcher2025.jpeg>
+<TITLE=Man and Boy>
 
 The man busies himself, burying his fears and polishing his victories. Recognition is his just reward and adulation is his honor due. 
 
@@ -128,23 +132,24 @@ The boy seeks love and acceptance, to understand that which childhood brings for
 
 The boy is luckier than the man. He is able to make time his friend. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://emilyfelcher.wixsite.com/portfolio">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://emilyfelcher.wixsite.com/portfolio>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Wheels of Life">
-<IMAGE="WheelOfLife.jpeg">
-<TITLE="Wheels of Life">
+<CHAPTER=Wheels of Life>
+<IMAGE=WheelOfLife.jpeg>
+<TITLE=Wheels of Life>
 
 It took a while for life to come into focus. I see me, rolling my wheels along many roads and alongside many travelers.
 
 I push the wheels with sticks that I find by the wayside. I am proud of the sticks I find. Especially, the ones that are straight, strong and light. I spend time sorting through sticks, Some are heavy and bent and some brake easily. I notice people pushing wheels with all kinds of twigs and pieces of bark. I continue looking for sticks. 
 
 I look back to see my wheels moving along on their own. They are beckoning me to join. I don’t need sticks after all. I get behind my wheels. My wheels and I, we move along in harmony. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Be well my friend">
-<IMAGE="FriendshipPicasso1908.jpeg">
-<TITLE="Be Well my Friend">
+<CHAPTER=Be well my friend>
+<IMAGE=FriendshipPicasso1908.jpeg>
+<TITLE=Be Well my Friend>
+
 People before us brought us together. They journeyed to great unknowns, to find us their best gifts, to make us who we are. They reached out, offering us strength and resolve, to bring us where we are. 
 
 My life long best friend and protector needs my help. He has become weak and tired. He has asked little for his steadfast dedication. I have not been a good ally. I have been distracted. 
@@ -157,12 +162,12 @@ I will feel great joy as I realize that true treasure is that which we have gift
 
 That is the promise we kept. That is what we leave behind.
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.wikiart.org/en/pablo-picasso/friendship-1908">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.wikiart.org/en/pablo-picasso/friendship-1908>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Footsteps">
-<IMAGE="LookingBack-EmilyFelcher2025.jpeg">
-<TITLE="Footsteps">
+<CHAPTER=Footsteps>
+<IMAGE=LookingBack-EmilyFelcher2025.jpeg>
+<TITLE=Footsteps>
 
 Truth was often late coming to me, she got delayed crossing the bridge of believability. 
 
@@ -178,19 +183,19 @@ Self interest is ubiquitous, self discipline is not. The irony about discipline 
 
 Kids deserve a chance to shape their contributions. My attempts to keep them free from fears, illusions and promises were partially successful. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://emilyfelcher.wixsite.com/portfolio">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://emilyfelcher.wixsite.com/portfolio>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Nani">
-<IMAGE="Nani.jpeg">
-<TITLE="Nani">
+<CHAPTER=Nani>
+<IMAGE=Nani.jpeg>
+<TITLE=Nani>
 
 “I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="In Crossing">
-<IMAGE="GeorgeInness-TheLastGlow1885.jpeg">
-<TITLE="In Crossing">
+<CHAPTER=In Crossing>
+<IMAGE=GeorgeInness-TheLastGlow1885.jpeg>
+<TITLE=In Crossing>
 
 I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure in my desire. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light. 
 
@@ -198,12 +203,12 @@ I embrace the sense of achievement, for a past well-lived, gratitude for the tre
 
 We shall meet again. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="CityVerse">
-<IMAGE="ClydeSinger-RushHour1937.jpeg">
-<TITLE="CityVerse">
+<CHAPTER=CityVerse>
+<IMAGE=ClydeSinger-RushHour1937.jpeg>
+<TITLE=CityVerse>
 
 A place that binds people and experiences together - to co-exist, to support and to flourish. A place of majestic structures, roads, and dreams. A place where communities share discoveries, joys and sorrows. A place of inspiration to create new stories and share old ones.
 
@@ -222,12 +227,12 @@ There is a permanence to a city, a steadfast presence. There is continuity amids
 
 I find new offerings every day. I am grateful for it. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Duniya">
-<IMAGE="EdwardMunch-Vampire1895.jpeg">
-<TITLE="Duniya">
+<CHAPTER=Duniya>
+<IMAGE=EdwardMunch-Vampire1895.jpeg>
+<TITLE=Duniya>
 
 Love envelopes nature. It nurtures bonds of togetherness and extolls virtues of harmony. It builds communities of peace. 
 
@@ -237,21 +242,21 @@ One destroys, the other creates. One hurts, the other heals. One gains fame, the
 
 Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain unread between the pages of time. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Lessons">
-<IMAGE="Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg">
-<TITLE="Lessons">
+<CHAPTER=Lessons>
+<IMAGE=Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg>
+<TITLE=Lessons>
 
 Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
 
-<DPOSITION=':[both |  | ]<footer="(Adapted from NY30Rock)">'>
-<PAGE END MARKER="~***~">
+<footer=(Adapted from NY30Rock)>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Stones, Wind and Water">
-<IMAGE="Stones.jpeg">
-<TITLE="Stones, Wind and Water">
+<CHAPTER=Stones, Wind and Water>
+<IMAGE=Stones.jpeg>
+<TITLE=Stones, Wind and Water>
 
 Oh! How the mighty mountains have been ravaged by wind, water and time into pieces of stone scattered on the ground. 
 
@@ -260,11 +265,11 @@ As time passed, the stones transformed themselves into pyramids, minarets and st
 Why did the stones on top forget that the higher they go, the harder they fall? Why did the stones on top forget, that growing bigger only makes the wind push harder? Why did the stones at the bottom not recognize the increased burden? Why did the stones at the bottom not see their purpose diminished?
 
 Why did they not seize the opportunity to be stable on the ground, to be next to each other, to be away from the wind, to be able to gather around and hold water for plants, and flowers and birds? Why did they not see themselves as stepping stones, leading a path in support of the glories in nature? Why did they not realize that this was their destiny?
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Manufacturing Conflict">
-<IMAGE="Wars.jpeg">
-<TITLE="Manufacturing Conflict">
+<CHAPTER=Manufacturing Conflict>
+<IMAGE=Wars.jpeg>
+<TITLE=Manufacturing Conflict>
 
 Wars waged on, egged by the egos of lords, masquerading as ideology. 
 
@@ -277,11 +282,11 @@ Blacksmith’s on both sides will profit, selling arrows, swords, spears and shi
 Ego demands serf blood, and gets it. Ideology makes serfs act against their own self interest. Blows traded spawn never ending cycles of violence. War morphs from a choice made by the lords, to a necessity for the serfs. The lords nurse their bruised egos back to glory. 
 
 The lords are always the winners. History remembers them. The serfs have no names. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Ideologies & Realities">
-<IMAGE="Ideology-NaziProps.jpeg">
-<TITLE="Ideologies & Realities">
+<CHAPTER=Ideologies & Realities>
+<IMAGE=Ideology-NaziProps.jpeg>
+<TITLE=Ideologies & Realities>
 
 “A heroic leader on a white horse rallies the troops, while the wounded valiantly struggle to get on their feet to resume the fight.” , “ with illusions of honor”, “knowingly welcoming death. ”
 
@@ -322,11 +327,11 @@ Are we satisfied with descriptive adequacy or do we seek explanatory understandi
 Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?
 
 History tells us stories of ideology. Time reveals the stories of reality. Reality is the ghost in history. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Time">
-<IMAGE="DamielHeller-Time.jpeg">
-<TITLE="Time">
+<CHAPTER=Time>
+<IMAGE=DamielHeller-Time.jpeg>
+<TITLE=Time>
 
 Time as we understand it, is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous. It creates no awareness of its presence. It has no enemies. We think of time like a meter running in the background. 
 
@@ -351,15 +356,16 @@ Humanity may pivot to re-claiming time for peace, harmony and well-being. We may
 
 Maybe, we will.
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://artcloud.market/art/time-persistence-by-daniel-heller">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://artcloud.market/art/time-persistence-by-daniel-heller>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Space, Time and Energy">
-<IMAGE="Space-Time-Energy.jpeg">
-<TITLE="Space, Time<br>and Energy">
+<CHAPTER=Space, Time and Energy>
+<IMAGE=Space-Time-Energy.jpeg>
+<TITLE=Space, Time<br>and Energy>
+
 I alter the paradigm I use to define my relationship with time. 
 
-<DPosition=':[left |  |italic ]I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.'>
+<DPosition=':[left |  paraindentleft ]I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.'>
 
 Time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order, I add / remove items from my basket. 
 
@@ -399,12 +405,13 @@ This does not alter what I am intuitively programmed to do. It highlights why I 
 
 I must reach my singular state, often. It is my place of rest and validation. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://starryai.com/app/user/joquist/creation/1023376959">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://starryai.com/app/user/joquist/creation/1023376959>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Passionate and Harmonious living ">
-<IMAGE="Passion&Harmony.jpeg">
-<TITLE="Passionate and<br>Harmonious living ">
+<CHAPTER=Passionate and Harmonious living >
+<IMAGE=Passion&Harmony.jpeg>
+<TITLE=Passionate and<br>Harmonious living >
+
 Minimalism is a pre-requisite to passionate and harmonious living. 
 
 Through the ages, adventurers, traveling to unknown lands, carried only a compass and a map. Food, shelter, clothing and companions were always found along the way. 
@@ -422,11 +429,11 @@ This smoothness of the energy exchange is a function of the available size in th
 I set the pace for the exchanges and set the pace for cleansing of the basket. 
 
 The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for my passionate living. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Gratitude">
-<IMAGE="AlbrechtDurer-PrayingHands1507.jpeg">
-<TITLE="Gratitude">
+<CHAPTER=Gratitude>
+<IMAGE=AlbrechtDurer-PrayingHands1507.jpeg>
+<TITLE=Gratitude>
 
 I have so much … so much, to be grateful for. I forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received. 
 
@@ -448,12 +455,12 @@ People ask me what I plan to do when I have time. i am hard pressed to find a be
 
 There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities, to pay and to receive as I go forward. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://lutheranreformation.org/history/durers-praying-hands/">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://lutheranreformation.org/history/durers-praying-hands/>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Energy">
-<IMAGE="Energy.jpeg">
-<TITLE="Energy - Food for the Soul">
+<CHAPTER=Energy>
+<IMAGE=Energy.jpeg>
+<TITLE=Energy - Food for the Soul>
 
 I sense that all things radiate energy. 
 
@@ -472,11 +479,11 @@ We all start out as unconscious consumers of energy, and employ it without much 
 Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that that we have the responsibility to use it for the benefit of all. 
 
 Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Acceptance">
-<IMAGE="ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg">
-<TITLE="Acceptance">
+<CHAPTER=Acceptance>
+<IMAGE=ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg>
+<TITLE=Acceptance>
 
 Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK at the time. 
 
@@ -486,14 +493,14 @@ Acceptance of a defeat has no relevance to the unfolding situation, nor is it of
 
 No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent. 
 
-<DPosition=':[left |  |italic ]I accept my wins. I accept my losses. <br><br>
+<DPosition=':[left |  paraindentleft ]I accept my wins. I accept my losses. <br><br>
 I accept my acceptances. '><br>
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Choices">
-<IMAGE="TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg">
-<TITLE="Choices">
+<CHAPTER=Choices>
+<IMAGE=TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg>
+<TITLE=Choices>
 
 I have choices. I hear opinions. 
 
@@ -505,12 +512,12 @@ All will be judged based on the time and effort consumed to release residual ene
 
 Until then, there are choices and there are opinions. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="The Good, The Bad">
-<IMAGE="RepraisalsFromUprisingOf1857.jpeg">
-<TITLE="The Good, <br>The Bad">
+<CHAPTER=The Good, The Bad>
+<IMAGE=RepraisalsFromUprisingOf1857.jpeg>
+<TITLE=The Good, <br>The Bad>
 
 We seek good. Good welcomes. It opens its doors. Some come to be part of the good, and some come to profit from it. Good shares its fortunes, the bad eagerly takes it. 
 
@@ -528,7 +535,7 @@ THE BAD - In 1857, the British rode in to observe their win, "The orders went ou
 
 THE GOOD - Along a dark, dingy back passage of the fort, Russell was led to the cell of a frail 83-year-old man who was accused by the British of being one of the masterminds of the Great Rising, or Mutiny, of 1857, the most serious armed act of resistance to Western imperialism ever to be mounted anywhere in the world. "He was a dim, wandering-eyed, dreamy old man with a feeble hanging nether lip and toothless gums," wrote a surprised Russell. "Not a word came from his lips; in silence he sat day and night with his eyes cast on the ground, and as though utterly oblivious of the conditions in which he was placed.... His eyes had the dull, filmy look of very old age.... Some heard him quoting verses of his own composition, writing poetry on a wall with a burned stick." For all the tragedy of his life, he was able to see that the world continued to turn, and that however much the dogs might bark, the great caravan of life continues to move on. He wrote in a poem, shortly after his imprisonment, and as Mughal Delhi lay in ruins around him:
 
-<DPosition=':[left  |  |italic ]
+<DPosition=':[left  |  paraindentleft ]
 Delhi was once a paradise, <br>
 Where Love held sway and reigned; <br>
 But its charm lies ravished now <br>
@@ -549,12 +556,12 @@ It is accurate to say that the Mughals did exactly this to the good residents of
 
 Occasionally that seems to happens too. Could it be that Gaza is going through this ordeal now?
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"></br><footer="(Excerpts from William dalrymple)">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"><footer=(Excerpts from William dalrymple)>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Writing">
-<IMAGE="WritingGeorgeLin.jpeg">
-<TITLE="Writing">
+<CHAPTER=Writing>
+<IMAGE=WritingGeorgeLin.jpeg>
+<TITLE=Writing>
 
 Creativity thrives along the path from the knowledge core, to the edges of cognitive capacity. It is guided by pre-dispositions inherent to me. 
 
@@ -565,11 +572,11 @@ When I read my own words, I get to bring my thoughts, experiences and my emotion
 I think of writing as an expanded form of painting. It allows me to add the nuances of thought. In my mind, a thoughts start with an image. Words allow me to explore my thoughts. 
 
 I would like to think that the readers of my words will get to explore their thoughts in a different light. 
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Let’s make a circle ">
-<IMAGE="Galaxy-Spiral.jpeg">
-<TITLE="Let’s make a Circle">
+<CHAPTER=Let’s make a circle >
+<IMAGE=Galaxy-Spiral.jpeg>
+<TITLE=Let’s make a Circle>
 
 I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
@@ -597,20 +604,20 @@ They get busy looking for their next conquest.
 
 Carl Sagan’s quote from The Demon-Haunted World, reinforces the futility of the status quo,
 
-<DPosition=':[left  |  |italic ]"Once you give a charlatan power over you, you almost never get it back."'>
+<DPosition=':[left  |  paraindentleft ]"Once you give a charlatan power over you, you almost never get it back."'>
 
 I add my own words to Carl’s,
 
-<DPosition=':[left  |  |italic ]"if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.'>
+<DPosition=':[left  |  paraindentleft ]"if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.'>
 
 So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="O’ Mother of mine">
-<IMAGE="OMotherOfMine.jpeg">
-<TITLE="O’ Mother of mine">
+<CHAPTER=O’ Mother of mine>
+<IMAGE=OMotherOfMine.jpeg>
+<TITLE=O’ Mother of mine>
 
 Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life. Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love. Absolute obedience would be a necessity. 
 
@@ -656,16 +663,16 @@ The world walks by, with an occasional nod and a smile, understanding nothing. I
 
 She is reminded of a Neil Reid verse from her past,
 
-<DPosition=':[left |  |italic ]"Mother of mine, when I was young<br>
+<DPosition=':[left |  paraindentleft ]"Mother of mine, when I was young<br>
 You showed me the right way, things ought to be done<br>
 Without your love where would I be<br>
 Mother, O’ sweet mother of mine ..."'>
-<DPOSITION=':[both |  | ]<br><SOURCE="Image Src...","https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas">'>
-<PAGE END MARKER="~***~">
+<br><SOURCE=Picture Source | https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Diwali ">
-<IMAGE="Diwali.jpeg">
-<TITLE="Diwali - A Festival of lights">
+<CHAPTER=Diwali >
+<IMAGE=Diwali.jpeg>
+<TITLE=Diwali - A Festival of lights>
 
 My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life. 
 
@@ -678,24 +685,23 @@ The light from my flame has uncovered a camaraderie between people that I have n
 I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself. 
 
 I never imagined that one flame could transform the world into a bright, sparkling festival of lights. 
-
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Pathways to being. ">
-<IMAGE="PathToBe.jpeg">
-<TITLE="Pathways to being">
+<CHAPTER=Pathways to being. >
+<IMAGE=PathToBe.jpeg>
+<TITLE=Pathways to being>
 
 Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration 
 
 LIfe seems to be about following this loop over and over again… 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
 
-<CHAPTER="Pursuit of Ignorance">
-<IMAGE="AllegoryOfTheCave.jpeg">
-<TITLE="Pursuit of Ignorance">
+<CHAPTER=Pursuit of Ignorance>
+<IMAGE=AllegoryOfTheCave.jpeg>
+<TITLE=Pursuit of Ignorance>
 
 Reaching a place of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
 
@@ -703,14 +709,13 @@ Recognition of ignorance shows awareness. Acceptance of ignorance shows humility
 
 My ignorance tells me more about myself than my knowledge ever will. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","
-https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC">'>
-
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | 
+https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Just Asking">
-<IMAGE="JustAsking.jpeg">
-<TITLE="Just Asking">
+<CHAPTER=Just Asking>
+<IMAGE=JustAsking.jpeg>
+<TITLE=Just Asking>
 
 Was a dollop of passion dropped on me and am I now purposed with the pursuit of knowledge and excellence in the exercise of that passion?
 
@@ -748,23 +753,23 @@ As Richard Feynman said, “I would rather have questions that can be answered, 
 
 My ignorance knows no bounds. I look forward to the pursuit of my ignorance. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://paintbynumbershome.com/products/cat-reading-newspaper">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://paintbynumbershome.com/products/cat-reading-newspaper>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Fragility">
-<IMAGE="Fragility.jpeg">
-<TITLE="Fragility">
+<CHAPTER=Fragility>
+<IMAGE=Fragility.jpeg>
+<TITLE=Fragility>
 
 The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
 The attempt at grandiosity in itself, exposes the nonexistence of power within the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://www.instagram.com/reel/DPO99FICRuY/">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://www.instagram.com/reel/DPO99FICRuY/>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="In God we Trust">
-<IMAGE="InGodWeTrust.jpeg">
-<TITLE="In God we Trust">
+<CHAPTER=In God we Trust>
+<IMAGE=InGodWeTrust.jpeg>
+<TITLE=In God we Trust>
 
 Science continues to encroach on territory formerly titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a purpose, given that we are sitting on a spec in a sea of stars?”
 
@@ -814,19 +819,18 @@ I may object to actions of the mind, but am unable find blame with the 'soul'.
 
 There is a rationalization that goes as such,
 
-<DPosition=':[left |  |italic ]Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. '>
-<DPosition=':[left |  |italic ]<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. '>
-<DPosition=':[left |  |italic ]<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. '>
-<DPosition=':[left |  |italic ]<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. '>
-<DPosition=':[left |  |italic ]<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. '>
+<DPosition=':[left |  paraindentleft ]Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. '>
+<DPosition=':[left |  paraindentleft ]<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. '>
+<DPosition=':[left |  paraindentleft ]<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. '>
+<DPosition=':[left |  paraindentleft ]<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. '>
+<DPosition=':[left |  paraindentleft ]<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. '>
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
-
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="Failure">
-<IMAGE="Failure.jpeg">
-<TITLE="Failure">
+<CHAPTER=Failure>
+<IMAGE=Failure.jpeg>
+<TITLE=Failure>
 
 Work in Progress ...
 
@@ -848,11 +852,11 @@ I seek my own solace. I will find my own acceptance. I will accept my acceptance
 
 Forgiveness may come as a needed step to aid in my journey to healing. 
 *//
-<PAGE END MARKER="~***~">
+<PAGE END MARKER=~***~>
 <NEWPAGE>
-<CHAPTER="The emperor has no clothes I & II">
-<IMAGE="noclothes_1.jpeg">
-<TITLE="The emperor has<br>no clothes - Part I">
+<CHAPTER=The emperor has no clothes I & II>
+<IMAGE=noclothes_1.jpeg>
+<TITLE=The emperor has<br>no clothes - Part I>
 
 The man perches himself on a high pedestal, projecting power, professing virtue and proclaiming wisdom. He stands, ready and eager to be honored, for defending the good and the holy. 
 
@@ -889,12 +893,13 @@ As his first mission, he silences the child who points to him and says, “The e
 This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?
 
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his">'>
+<SOURCE=Picture Source | https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his>
+<DPosition=':[ both | | | bold] PART II <NextPage_Icon>'> 
 
 <NEWPAGE>
 <br><br>
-<IMAGE="noclothes_2.jpeg">
-<TITLE="The emperor has<br>no clothes - Part II">
+<IMAGE=noclothes_2.jpeg>
+<TITLE=The emperor has<br>no clothes - Part II>
 
 The child reaches inside of her to find reassuring innocence and eager playfulness. She wraps her innocence around her, like a warm blanket, made of delightful dreams, pure love and simple joy. She embraces playfulness to pursue creativity, exploration and learning. She gives her young life all the meaning she needs. 
 
@@ -904,14 +909,15 @@ After what seems like an eternity, she pulls herself off the floor and stumbles 
 
 Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs left behind. Playfulness left, to make way for helplessness. Trust shattered, like the window glass in her class. Faith in humanity, was destroyed by the force of the blast. Fear, became a constant companion. Sorrow now follows her, like a dark shadow that she can’t shake off. Hope has lost relevance. Dreams have blurred. Memories now flash before her eyes like daggers in the night. Loneliness and guilt, are her new playmates. She doesn’t understand any of this. She feels it, deep in her soul. 
 
-Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remains are frequent bursts of emotions, each opening fresh wounds. The cheerful light dancing in her eyes, inviting all to play, are now distant empty stares that say nothing. She cannot hear the din of justifications or the cries of victory. With her trust betrayed, the future of humankind loses its best champion. 
+Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remains are frequent bursts of emotions, each opening fresh wounds. The cheerful light dancing in her eyes, inviting all to play, are now distant empty stares that say nothing. She watches the images of the day play in her mind on a loop. She cannot hear the din of justifications or the cries of victory. With her trust betrayed, the future of humankind loses its best champion. 
 
 This child lives inside each of us. Do we notice? Do we hear her voice? Do we let the man silence the child? 
 
 The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We give up the child, to receive the man. 
 
-The emperor walks with no clothes, his head held high. She looks at him. She does not point him out.
+The emperor walks with no clothes, his head held high. She looks at him. She says nothing. She is  silent.
 
-<DPOSITION=':[both |  | ]<SOURCE="Image Src...","https://en.wikipedia.org/wiki/Afghan_Girl">'>
-<PAGE END MARKER="~***~">
+<SOURCE=Picture Source | https://en.wikipedia.org/wiki/Afghan_Girl>
+<DPosition=':[ both | | | bold] <PrevPage_Icon>PART I'>
+<PAGE END MARKER=~***~>
 <NEWPAGE>
