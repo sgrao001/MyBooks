@@ -905,17 +905,17 @@ The child reaches inside of her to find reassuring innocence and eager playfulne
 
 At 10:46 that day, just after the schools morning recess, the first missile comes thundering in. She is thrown violently to the floor, covered in shards of broken glass.  She feels sharp pain in her ears. All else feels numb.  She grabs her best friend’s hand and instinctively crawls under her desk. Just then, the second bomb hits. Time stands still, observing in silence. 
 
-After what seems like an eternity, she pulls herself off the floor and stumbles through the hole where the class wall once stood. She makes her way to the familiar tree, at the far end of the soccer field. Nobody pays her any attention. She stays there, holding her best friend close. Neither of them say a word. 
+After what seems like an eternity, she pulls herself off the floor and stumbles through the hole where the classroom wall once stood. She makes her way to the familiar tree, at the far end of the soccer field. Neither of them say a word. 
 
-Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs left behind. Playfulness left, to make way for helplessness. Trust shattered, like the window glass in her class. Faith in humanity, was destroyed by the force of the blast. Fear, became a constant companion. Sorrow now follows her, like a dark shadow that she can’t shake off. Hope has lost relevance. Dreams have blurred. Memories now flash before her eyes like daggers in the night. Loneliness and guilt, are her new playmates. She doesn’t understand any of this. She feels it, deep in her soul. 
+Everything changed that day. Innocence, was brushed away along with the dust and debris the bombs left behind. Faith in humanity, was destroyed by the force of the blast. Playfulness left, to make way for helplessness. Fear and sorrow follow her like a dark shadow. Hope lost its relevance. Dreams blurr. Memories flash like daggers in the night. She doesn’t understand any of this. She feels it, deep in her soul. 
 
-Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remains are frequent bursts of emotions, each opening fresh wounds. The cheerful light dancing in her eyes, inviting all to play, are now distant empty stares that say nothing. She watches the images of the day play in her mind on a loop. She cannot hear the din of justifications or the cries of victory. With her trust betrayed, the future of humankind loses its best champion. 
+Much was lost that day. A hundred and fifty three of her schoolmates lost their lives. Survivors lost their childhood. What remains are frequent bursts of emotions, each opening fresh wounds. The cheerful light dancing in her eyes, inviting all to play, are now distant empty stares that say nothing. She cannot hear the din of justifications or the cries of victory. With her trust shattered, humankind loses its best champion. 
 
 This child lives inside each of us. Do we notice? Do we hear her voice? Do we let the man silence the child? 
 
-The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We give up the child, to receive the man. 
+The treasure slips away, every day and forever, sometimes violently and suddenly, but often a little at a time. We barely notice. We gave up the child, to receive the man. 
 
-The emperor walks with no clothes, his head held high. She looks at him. She says nothing. She is  silent.
+The emperor walks with no clothes, his head held high. She looks at him. She says nothing. She is silent.
 
 <SOURCE=Picture Source | https://en.wikipedia.org/wiki/Afghan_Girl>
 <DPosition=':[ both | | | bold] <PrevPage_Icon>PART I'>
