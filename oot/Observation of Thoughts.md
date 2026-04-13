@@ -23,8 +23,8 @@ Earth-fire-water; a necessity for life. Man-woman-child; the unit of family. Yes
 
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world. 
 
+<PAGEDIVIDER>
 <Source=Picture Source | https://en.wikipedia.org/wiki/Three_Elements >
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Awareness>
 <IMAGE=Awareness.jpeg>
@@ -40,15 +40,17 @@ Gradually, I begin to hear the little boy in the distance, humming the noise of 
 
 We watch each other patiently, in silence, in acknowledgment, with mutual respect, as time waits.
 
-I open the door and step outside, everything is right in my world. 
-<PAGE END MARKER=~***~>
+I open the door and step outside, everything is right in my world.
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Unity>
 <IMAGE=Wall.jpeg>
 <TITLE=Unity>
 
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Silence>
 <IMAGE=Rope.jpeg>
@@ -69,14 +71,16 @@ My treasure is buried deep. It is the silence and a solo journey that will take 
 Silence respects time and grants me personal growth. 
 
 Silence between the question and the answer is where “I” might be found. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Serenity>
 <IMAGE=Serenity.jpeg>
 <TITLE=Serenity>
 
 I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Who am I>
 <IMAGE=AdiShankara-WhoAmI-800BCe.jpeg>
@@ -84,19 +88,21 @@ I walk up and sit a few paces away. My energy rings wafted his way. I see him te
 
 Advaita Vedānta tradition. 
 
-<DPosition=':[left  |  paraindentleft ]I am other than name, form and action. <br>
+<ParaitalicL='I am other than name, form and action. <br>
 My nature is ever free! <br>
 I am Self, the supreme unconditioned Brahman. <br>
-I am pure Awareness, always non-dual.<br><br>'>
+I am pure Awareness, always non-dual.'>
+
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Words>
 <IMAGE=Words.jpeg>
 <TITLE=Words>
 
 At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine. Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “ 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Acknowledgment>
 <IMAGE=Acknowledgement.jpeg>
@@ -113,14 +119,16 @@ We both stood motionless. In peace.
 I captured this moment of silent mutual awareness. He was being generous with his presence. Does he know me from somewhere? I feel a closeness. 
 
 We moved on, to our different ways. I wonder where he will sleep tonight. Be well and thank you, Mr. Rabbit. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Vastness>
 <IMAGE=Vastness.jpeg>
 <TITLE=Vastness>
 
 They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Man and boy>
 <IMAGE=Man&boy-EmilyFelcher2025.jpeg>
@@ -132,8 +140,8 @@ The boy seeks love and acceptance, to understand that which childhood brings for
 
 The boy is luckier than the man. He is able to make time his friend. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://emilyfelcher.wixsite.com/portfolio>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Wheels of Life>
 <IMAGE=WheelOfLife.jpeg>
@@ -144,7 +152,8 @@ It took a while for life to come into focus. I see me, rolling my wheels along m
 I push the wheels with sticks that I find by the wayside. I am proud of the sticks I find. Especially, the ones that are straight, strong and light. I spend time sorting through sticks, Some are heavy and bent and some brake easily. I notice people pushing wheels with all kinds of twigs and pieces of bark. I continue looking for sticks. 
 
 I look back to see my wheels moving along on their own. They are beckoning me to join. I don’t need sticks after all. I get behind my wheels. My wheels and I, we move along in harmony. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Be well my friend>
 <IMAGE=FriendshipPicasso1908.jpeg>
@@ -162,8 +171,8 @@ I will feel great joy as I realize that true treasure is that which we have gift
 
 That is the promise we kept. That is what we leave behind.
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.wikiart.org/en/pablo-picasso/friendship-1908>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Footsteps>
 <IMAGE=LookingBack-EmilyFelcher2025.jpeg>
@@ -183,15 +192,16 @@ Self interest is ubiquitous, self discipline is not. The irony about discipline 
 
 Kids deserve a chance to shape their contributions. My attempts to keep them free from fears, illusions and promises were partially successful. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://emilyfelcher.wixsite.com/portfolio>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Nani>
 <IMAGE=Nani.jpeg>
 <TITLE=Nani>
 
 “I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=In Crossing>
 <IMAGE=GeorgeInness-TheLastGlow1885.jpeg>
@@ -203,8 +213,8 @@ I embrace the sense of achievement, for a past well-lived, gratitude for the tre
 
 We shall meet again. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=CityVerse>
 <IMAGE=ClydeSinger-RushHour1937.jpeg>
@@ -227,8 +237,8 @@ There is a permanence to a city, a steadfast presence. There is continuity amids
 
 I find new offerings every day. I am grateful for it. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Duniya>
 <IMAGE=EdwardMunch-Vampire1895.jpeg>
@@ -242,8 +252,8 @@ One destroys, the other creates. One hurts, the other heals. One gains fame, the
 
 Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain unread between the pages of time. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Lessons>
 <IMAGE=Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg>
@@ -251,8 +261,8 @@ Cycles of suffering and pain continue amidst love and hope. Cycles of fame and f
 
 Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
 
+<PAGEDIVIDER>
 <footer=(Adapted from NY30Rock)>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Stones, Wind and Water>
 <IMAGE=Stones.jpeg>
@@ -265,7 +275,8 @@ As time passed, the stones transformed themselves into pyramids, minarets and st
 Why did the stones on top forget that the higher they go, the harder they fall? Why did the stones on top forget, that growing bigger only makes the wind push harder? Why did the stones at the bottom not recognize the increased burden? Why did the stones at the bottom not see their purpose diminished?
 
 Why did they not seize the opportunity to be stable on the ground, to be next to each other, to be away from the wind, to be able to gather around and hold water for plants, and flowers and birds? Why did they not see themselves as stepping stones, leading a path in support of the glories in nature? Why did they not realize that this was their destiny?
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Manufacturing Conflict>
 <IMAGE=Wars.jpeg>
@@ -282,7 +293,8 @@ Blacksmith’s on both sides will profit, selling arrows, swords, spears and shi
 Ego demands serf blood, and gets it. Ideology makes serfs act against their own self interest. Blows traded spawn never ending cycles of violence. War morphs from a choice made by the lords, to a necessity for the serfs. The lords nurse their bruised egos back to glory. 
 
 The lords are always the winners. History remembers them. The serfs have no names. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Ideologies & Realities>
 <IMAGE=Ideology-NaziProps.jpeg>
@@ -327,7 +339,8 @@ Are we satisfied with descriptive adequacy or do we seek explanatory understandi
 Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?
 
 History tells us stories of ideology. Time reveals the stories of reality. Reality is the ghost in history. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Time>
 <IMAGE=DamielHeller-Time.jpeg>
@@ -356,8 +369,8 @@ Humanity may pivot to re-claiming time for peace, harmony and well-being. We may
 
 Maybe, we will.
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://artcloud.market/art/time-persistence-by-daniel-heller>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Space, Time and Energy>
 <IMAGE=Space-Time-Energy.jpeg>
@@ -365,7 +378,7 @@ Maybe, we will.
 
 I alter the paradigm I use to define my relationship with time. 
 
-<DPosition=':[left |  paraindentleft ]I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.'>
+<ParaitalicL='I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.'>
 
 Time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order, I add / remove items from my basket. 
 
@@ -405,8 +418,8 @@ This does not alter what I am intuitively programmed to do. It highlights why I 
 
 I must reach my singular state, often. It is my place of rest and validation. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://starryai.com/app/user/joquist/creation/1023376959>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Passionate and Harmonious living >
 <IMAGE=Passion&Harmony.jpeg>
@@ -429,7 +442,8 @@ This smoothness of the energy exchange is a function of the available size in th
 I set the pace for the exchanges and set the pace for cleansing of the basket. 
 
 The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for my passionate living. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Gratitude>
 <IMAGE=AlbrechtDurer-PrayingHands1507.jpeg>
@@ -455,8 +469,8 @@ People ask me what I plan to do when I have time. i am hard pressed to find a be
 
 There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities, to pay and to receive as I go forward. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://lutheranreformation.org/history/durers-praying-hands/>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Energy>
 <IMAGE=Energy.jpeg>
@@ -479,7 +493,8 @@ We all start out as unconscious consumers of energy, and employ it without much 
 Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that that we have the responsibility to use it for the benefit of all. 
 
 Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Acceptance>
 <IMAGE=ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg>
@@ -493,10 +508,11 @@ Acceptance of a defeat has no relevance to the unfolding situation, nor is it of
 
 No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent. 
 
-<DPosition=':[left |  paraindentleft ]I accept my wins. I accept my losses. <br><br>
-I accept my acceptances. '><br>
+<ParaitalicL='I accept my wins. I accept my losses. <br><br>
+I accept my acceptances. '>
+
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Choices>
 <IMAGE=TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg>
@@ -512,8 +528,8 @@ All will be judged based on the time and effort consumed to release residual ene
 
 Until then, there are choices and there are opinions. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=The Good, The Bad>
 <IMAGE=RepraisalsFromUprisingOf1857.jpeg>
@@ -535,7 +551,7 @@ THE BAD - In 1857, the British rode in to observe their win, "The orders went ou
 
 THE GOOD - Along a dark, dingy back passage of the fort, Russell was led to the cell of a frail 83-year-old man who was accused by the British of being one of the masterminds of the Great Rising, or Mutiny, of 1857, the most serious armed act of resistance to Western imperialism ever to be mounted anywhere in the world. "He was a dim, wandering-eyed, dreamy old man with a feeble hanging nether lip and toothless gums," wrote a surprised Russell. "Not a word came from his lips; in silence he sat day and night with his eyes cast on the ground, and as though utterly oblivious of the conditions in which he was placed.... His eyes had the dull, filmy look of very old age.... Some heard him quoting verses of his own composition, writing poetry on a wall with a burned stick." For all the tragedy of his life, he was able to see that the world continued to turn, and that however much the dogs might bark, the great caravan of life continues to move on. He wrote in a poem, shortly after his imprisonment, and as Mughal Delhi lay in ruins around him:
 
-<DPosition=':[left  |  paraindentleft ]
+<ParaitalicL="
 Delhi was once a paradise, <br>
 Where Love held sway and reigned; <br>
 But its charm lies ravished now <br>
@@ -550,14 +566,14 @@ But things cannot remain, O Zafar, <br>
 Thus, for who can tell? <br>
 Through God's great mercy and the Prophet <br>
 All may yet be well.
-'>
+">
 
 It is accurate to say that the Mughals did exactly this to the good residents of Delhi a few generations ago. The good then was in such plentitude that it may have transformed the then bad. 
 
 Occasionally that seems to happens too. Could it be that Gaza is going through this ordeal now?
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"><footer=(Excerpts from William dalrymple)>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Writing>
 <IMAGE=WritingGeorgeLin.jpeg>
@@ -572,7 +588,8 @@ When I read my own words, I get to bring my thoughts, experiences and my emotion
 I think of writing as an expanded form of painting. It allows me to add the nuances of thought. In my mind, a thoughts start with an image. Words allow me to explore my thoughts. 
 
 I would like to think that the readers of my words will get to explore their thoughts in a different light. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Let’s make a circle >
 <IMAGE=Galaxy-Spiral.jpeg>
@@ -604,16 +621,16 @@ They get busy looking for their next conquest.
 
 Carl Sagan’s quote from The Demon-Haunted World, reinforces the futility of the status quo,
 
-<DPosition=':[left  |  paraindentleft ]"Once you give a charlatan power over you, you almost never get it back."'>
+<ParaitalicL='"Once you give a charlatan power over you, you almost never get it back."'>
 
 I add my own words to Carl’s,
 
-<DPosition=':[left  |  paraindentleft ]"if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.'>
+<ParaitalicL='"if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you”.'>
 
 So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=O’ Mother of mine>
 <IMAGE=OMotherOfMine.jpeg>
@@ -663,12 +680,13 @@ The world walks by, with an occasional nod and a smile, understanding nothing. I
 
 She is reminded of a Neil Reid verse from her past,
 
-<DPosition=':[left |  paraindentleft ]"Mother of mine, when I was young<br>
+<ParaitalicL='"Mother of mine, when I was young<br>
 You showed me the right way, things ought to be done<br>
 Without your love where would I be<br>
 Mother, O’ sweet mother of mine ..."'>
+
+<PAGEDIVIDER>
 <br><SOURCE=Picture Source | https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Diwali >
 <IMAGE=Diwali.jpeg>
@@ -685,7 +703,8 @@ The light from my flame has uncovered a camaraderie between people that I have n
 I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself. 
 
 I never imagined that one flame could transform the world into a bright, sparkling festival of lights. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Pathways to being. >
 <IMAGE=PathToBe.jpeg>
@@ -695,10 +714,9 @@ Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance
 
 LIfe seems to be about following this loop over and over again… 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
-
 <CHAPTER=Pursuit of Ignorance>
 <IMAGE=AllegoryOfTheCave.jpeg>
 <TITLE=Pursuit of Ignorance>
@@ -709,9 +727,9 @@ Recognition of ignorance shows awareness. Acceptance of ignorance shows humility
 
 My ignorance tells me more about myself than my knowledge ever will. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | 
 https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Just Asking>
 <IMAGE=JustAsking.jpeg>
@@ -753,8 +771,8 @@ As Richard Feynman said, “I would rather have questions that can be answered, 
 
 My ignorance knows no bounds. I look forward to the pursuit of my ignorance. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://paintbynumbershome.com/products/cat-reading-newspaper>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=Fragility>
 <IMAGE=Fragility.jpeg>
@@ -764,8 +782,8 @@ The ultimate greed for power mandates the need to mask the fragility of the huma
 
 The attempt at grandiosity in itself, exposes the nonexistence of power within the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://www.instagram.com/reel/DPO99FICRuY/>
-<PAGE END MARKER=~***~>
 <NEWPAGE>
 <CHAPTER=In God we Trust>
 <IMAGE=InGodWeTrust.jpeg>
@@ -819,14 +837,15 @@ I may object to actions of the mind, but am unable find blame with the 'soul'.
 
 There is a rationalization that goes as such,
 
-<DPosition=':[left |  paraindentleft ]Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. '>
-<DPosition=':[left |  paraindentleft ]<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. '>
-<DPosition=':[left |  paraindentleft ]<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. '>
-<DPosition=':[left |  paraindentleft ]<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. '>
-<DPosition=':[left |  paraindentleft ]<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. '>
+<ParaitalicL='Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. '>
+<ParaitalicL='<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. '>
+<ParaitalicL='<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. '>
+<ParaitalicL='<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. '>
+<ParaitalicL='<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. '>
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Failure>
 <IMAGE=Failure.jpeg>
@@ -852,7 +871,8 @@ I seek my own solace. I will find my own acceptance. I will accept my acceptance
 
 Forgiveness may come as a needed step to aid in my journey to healing. 
 *//
-<PAGE END MARKER=~***~>
+
+<PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=The emperor has no clothes I & II>
 <IMAGE=noclothes_1.jpeg>
@@ -892,9 +912,9 @@ As his first mission, he silences the child who points to him and says, “The e
 
 This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?
 
-
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his>
-<DPosition=':[ both | | | bold] PART II <NextPage_Icon>'> 
+<Paraitalicl="PART II <NextPage_Icon>"> 
 
 <NEWPAGE>
 <br><br>
@@ -917,7 +937,7 @@ The treasure slips away, every day and forever, sometimes violently and suddenly
 
 The emperor walks with no clothes, his head held high. She looks at him. She says nothing. She is silent.
 
+<PAGEDIVIDER>
 <SOURCE=Picture Source | https://en.wikipedia.org/wiki/Afghan_Girl>
-<DPosition=':[ both | | | bold] <PrevPage_Icon>PART I'>
-<PAGE END MARKER=~***~>
+<ParaitalicL="<PrevPage_Icon>PART I">
 <NEWPAGE>

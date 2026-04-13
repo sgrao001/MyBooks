@@ -274,9 +274,9 @@
 
         .glassbtnlbl { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
                         text-decoration: none; font-style: normal;}   
-        .paraindentleft { font-style: italic; text-align: left; }
-        .paraindentright { font-style: italic; text-align: right; }
-        .paraindentcenter { font-style: italic; text-align: center; } 
+        .paraitalicleft { font-style: italic; text-align: left; }
+        .paraitalicright { font-style: italic; text-align: right; }
+        .paraitaliccenter { font-style: italic; text-align: center; } 
 
         /* Fixed Custom Scrollbar */
         .page::-webkit-scrollbar {
@@ -1037,7 +1037,7 @@ Position    Parameter	  Purpose	                                Example values<b
 8           loc →       data-position (default: "bottom-page")<br>
 9            tloc →      data-textalign (default: "left")<br>
 [ Top | Left | Bot_GAP | Height | Width | Maxheight | MaxWidth | LOC | TLOC ]<br><br><br>same as  <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-width" data-textalign="left" data-bbbltext="Some information here" class="BubbleText-trigger BubbleText-full BubbleText-flex">default</span><br><br><br>Only tip text (no parameters) <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Some information here" class="BubbleText-trigger BubbleText-full BubbleText-flex">Info</span><br>
-Set height and width <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Click to view" class="BubbleText-trigger BubbleText-full BubbleText-flex">Image</span><br>
+Set height and width <span style="display: inline-block; margin-left: 15.25%; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="30%" data-width="84%" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Click to view" class="BubbleText-trigger BubbleText-full BubbleText-flex">Image<span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
 Set max‑height and max‑width only <span style="display: block; margin-left: auto; margin-right: auto; text-align: center;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="center-both" data-textalign="center" data-bbbltext="Perfectly centered tooltip" class="BubbleText-trigger BubbleText-full BubbleText-flex">Centered</span><br>
 Combine multiple parameters <span style="float: right; margin-right: 15.25%;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="200px" data-width="60vw" data-maxheight="250px" data-maxwidth="80vw" data-position="center-width" data-textalign="right" data-bbbltext="Dynamic tooltip" class="BubbleText-trigger BubbleText-full BubbleText-flex">Flex</span><br>
 No float marker (trigger stays inline) <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-height="300px" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="center" data-bbbltext="BubbleText info" class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br><br>Custom positionioned vvvvv tooltip <span style="display: inline; margin: 0;" data-top="5.5vh" data-left="6.5vw" data-bottom-gap="0vh" data-width="var(--tt-max-width)" data-maxheight="var(--tt-max-height)" data-position="bottom-page" data-textalign="left" data-bbbltext="Tip All Defaults" class="BubbleText-trigger BubbleText-full BubbleText-flex">Check me out <span class='glassbtn' style='font-size: 1em;'>👆</span></span><br><br><div style="margin-left: 17%; margin-right: 17%;" class="glassbtnlbl">

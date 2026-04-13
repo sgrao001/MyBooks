@@ -32,7 +32,7 @@ Position    Parameter	  Purpose	                                Example values<b
 same as  <BBL-Txt=":[floatright]default", ":[  |  |  | |  | | | center-width | left ]Some information here"><br>
 
 Only tip text (no parameters) <BBL-Txt=":[floatright]Info", ":[ ]Some information here"><br>
-Set height and width <BBL-Txt=":[floatright]Image", ":[ | | |30%| 84% ]Click to view"><br>
+Set height and width <BBL-Txt=":[floatboth]Image<ClickMe_icon>", ":[ | | |30%| 84% ]Click to view"><br>
 Set max‑height and max‑width only <BBL-Txt=":[floatcenter]Centered", ":[|||||| |center-both|center]Perfectly centered tooltip"><br>
 Combine multiple parameters <BBL-Txt=":[floatright]Flex", ":[|||200px|60vw|250px|80vw|center-width|right]Dynamic tooltip"><br>
 No float marker (trigger stays inline) <BBL-Txt="<ClickMe_icon>", ":[|||300px||| |bottom-page|center]BubbleText info">
