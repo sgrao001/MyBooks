@@ -9,15 +9,15 @@
     "COPY_ENABLE": true,
     
     "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 20,
-    "ARW_VISIBLE_WIDTH": 20,
+    "ARW_HOVER_WIDTH": 15,
+    "ARW_VISIBLE_WIDTH": 15,
     
     "SLDR_DISPLAY": true,
 
     "Page0_skip": true,
-
-    "BkPage0_FontColor": "#89C2FF",
-    "BkFontColor": "#abb8bb",
+    
+    "BkPage0_FontColor": "#89C2FF",   
+    "BkFontColor": "#abb8bb",   
     "BkFontSize": "1em",
     "BkPage0_Title": "About Me",
     "BkPage0_Description": "AboutMe",
@@ -29,18 +29,18 @@
     "BkListLink_show": false,
     "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
-    "TitleFontClr": "#D4E6FF",
     "TitleFontSize": "0.8em",
+    "TitleFontClr": "#abb8bb",
 
     "Hide_page_number": false,
-
-    "ImageWidthDesktop": "50%",
+     
+    "ImageWidthDesktop": "100%",
     "ImageWidthMobile": "95%",
     "ResizeForMobile": true,
 
-    "TOC_TITLE": "About Me and My Journey",
+    "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,
-    "TOC_FontColor": "#4682B4",
+    "TOC_FontColor": "#abb8bb",
     "TOC_ENABLE": true,
     "TOCasList": true
 }

@@ -21,7 +21,7 @@
             --arrow-visibility: hidden;
             --arrow-opacity: 0;
             --arrow-hover-opacity: 0;
-            --arrow-hover-width: 20%;
+            --arrow-hover-width: 15%;
             --ARW_HOVER_HEIGHT: 87vh;
             --ARW_HOVER_HEIGHT_415px: 73vh;
             --ARW_HOVER_TOP: 10vh;
@@ -39,6 +39,11 @@
             --tt-415-width: 84vw;
             --tt-max-height: var(--tt-1024-height);
             --tt-max-width: var(--tt-1024-width);
+
+            --Lmargin-safe-factor: 0.50;
+            --Rmargin-safe-factor: 0.50;
+            --Lsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Lmargin-safe-factor));
+            --Rsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Rmargin-safe-factor));
         }
 
         html {
@@ -73,9 +78,9 @@
         }
         /* Underline effect on hover */
         a:hover {
-            color: #82e9ff !important;
+            background: rgba(0,0,0,0.6);
             text-decoration: underline;
-            text-decoration-thickness: 2px;
+            color: var(--text-color);
         }
         a:focus {
             outline: 2px solid #ffeb3b;
@@ -131,6 +136,15 @@
         #page-0 h3 {
             color: #89C2FF !important;
         }
+        /* Make Page0 - Title page transparent */
+        #page-0 {
+            background: none !important;           /* Removes the semi-transparent background */
+            backdrop-filter: none !important;      /* Removes the blur effect */
+            -webkit-backdrop-filter: none !important;
+            border: none !important;               /* Optional: removes the glass border */
+            box-shadow: none !important;           /* Optional: removes the shadow */
+        }
+
 
         /* Fixed header elements (page number, book title, back button) */
         .page-header {
@@ -150,74 +164,103 @@
                 visibility: visible !important;
         }
 
+   
+
         /******************************* tool Tips **************************************************************/
 
-        .tooltip-trigger { cursor: pointer; color: #b0e0ff; text-decoration: underline; margin: 0 10px; }
+        .BubbleText-trigger  { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal; /* border: 1px solid currentColor; */
+                        margin: 0 10px; } 
 
-        .tooltip-group { display: inline-block; margin-left: 22%; vertical-align: top; }
+        .BubbleText-group { display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }
      
-        .tooltip-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
+        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
 
-        .tooltip-group .tooltip-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
-        .tooltip-trigger.tooltip-full { height: auto; width: auto; }
+        .BubbleText-group .BubbleText-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
+        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
 
-        #tooltip {
+        #BubbleText {
+
+            /* POSITION & LAYOUT */
             position: fixed;
+            display: inline-block; 
+            
+            /* TYPOGRAPHY */
             color: #b0e0ff;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
 
             /* INITIAL STATE - HIDDEN */
             transform: translateY(-20px) scale(0.95) !important;
             transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
 
-            /* GLASS MORPHISM EFFECT (matches .image-caption-popup) */
-            background: rgba(0, 0, 0, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+            0 0 0 1px rgba(255,255,255,0.2) inset;
 
-            /* Border & Shadow (same as caption) */
-            border-radius: 8px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 
-            /* Padding (keep tooltip’s original for comfortable reading) */
+            /* BORDER & SHADOW */
+
+
+            /* PADDING & BOX SIZING */
             padding: 10px !important;
+            box-sizing: border-box;
 
-            /* Font styling (match caption) */
-            font-size: 0.8em;
-
-            /* Other essential styles */
-            z-index: 9999;
-            overflow-y: auto;
+            /* GROWING BOX PROPERTIES (ADDED) */
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);   /* can be overridden by data-maxwidth */
+            max-height: var(--tt-max-height); /* can be overridden by data-maxheight */
             overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+            /* OTHER ESSENTIAL STYLES */
+            z-index: 9999;
             white-space: normal;
 
-            /* Fade + scale transition */
+            /* FADE + SCALE TRANSITION (VISIBILITY) */
             opacity: 0;
             visibility: hidden;
 
-            /* Scrollbar */
+            /* CUSTOM SCROLLBAR */
             scrollbar-width: thin;
             scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
+
         }
 
-        #tooltip.show { opacity: 1; visibility: visible; }
 
-        #tooltip.fade { transform: translateY(15px) scale(0.95); }
-        #tooltip.fade.show { transform: translateY(0) scale(1); }
+        #BubbleText.show { opacity: 1; visibility: visible; }
 
-        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
-        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
+        #BubbleText.fade.show { transform: translateY(0) scale(1); }
 
-        #tooltip.slide { transform: translateY(60px); }
-        #tooltip.slide.show { transform: translateY(0); }
+        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
+        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
-        #tooltip.zoom { transform: scale(0.4); }
-        #tooltip.zoom.show { transform: scale(1); }
+        #BubbleText.slide { transform: translateY(60px); }
+        #BubbleText.slide.show { transform: translateY(0); }
 
-        #tooltip.left-text { text-align: left; }
-        #tooltip.right-text { text-align: right; }
-        #tooltip.center-text { text-align: center; }
+        #BubbleText.zoom { transform: scale(0.4); }
+        #BubbleText.zoom.show { transform: scale(1); }
+
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
 
         @keyframes bounceIn {
             0% { transform: translateY(40px) scale(0.6); }
@@ -225,9 +268,9 @@
             100% { transform: translateY(0) scale(1); }
         }
 
-        #tooltip::-webkit-scrollbar { width: 6px; }
-        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar { width: 6px; }
+        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
 
         /******************************* tool Tips **************************************************************/
 
@@ -236,51 +279,64 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            max-width: 50vw;
+            word-wrap: break-word;
+            text-align: center;
         }
 
-        .back-to-toc {
+        /* next and previous page Navigation icons */
+        .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.8em;
+            font-size: 1em;
+            font-family: Arial;
+            
             padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+
+            background: rgba(0, 0, 0, 0.075) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 2px 7px rgba(0,0,0,0.5),
+            0 0 0 1px rgba(255,255,255,0.2) inset;            
+
             border-radius: 20px;
             transition: all 0.3s ease;
             order: 2;
             margin-right: auto;
-            posiiton: relative;
+            position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
 
-        .back-to-list {
-            color: var(--text-color);
+        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{
+            background: rgba(0, 0, 0, 0.25) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.7),
+            0 0 0 2px rgba(255,255,255,0.2) inset;   
+            border-left: 1px rgba(255, 255, 255, 0.6);
+            border-right: 1px rgba(255, 255, 255, 0.6); 
+            text-decoration: underline;
+        }    
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }
+
+        /* Also target the anchor to ensure it doesn't add extra background/shadow */
+        a:has(.glassbtn) {
             text-decoration: none;
-            font-size: 0.8em;
-            padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            order: 2;
-            border-radius: 12px;
-            margin-right: auto;
-            bottom: 60px;
+            background: transparent;
         }
 
-        .back-to-toc:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
-        .back-to-list:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
+        .glassbtnlbl { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal;}   
+        .paraitalicleft { font-style: italic; text-align: left; }
+        .paraitalicright { font-style: italic; text-align: right; }
+        .paraitaliccenter { font-style: italic; text-align: center; } 
 
         /* Fixed Custom Scrollbar */
         .page::-webkit-scrollbar {
@@ -333,7 +389,7 @@
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
             top: var(--ARW_HOVER_TOP);
-            width: 20%;
+            width: 15%;
             background: rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -350,9 +406,8 @@
 
         /* When arrows are visible (flex=True) */
         .arrow-container[data-visible="true"] {
-            width: 20% !important;
+            width: 15% !important;
         }
-
 
         .arrow-container.right {
             right: 0px;
@@ -384,7 +439,7 @@
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
             top: var(--ARW_HOVER_TOP);
-            width: 20%;
+            width: 15%;
             z-index: 9;
             display: flex;
             pointer-events: auto;
@@ -411,14 +466,6 @@
             transform: translateX(-50%);
             width: var(--page-width);
             height: 40px;
-            /* New glass-morphism styles (matching #tooltip) */
-            background: rgba(0, 0, 0, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
-            /* Keep existing layout */
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -430,7 +477,7 @@
         }
         /* Page number text inside slider */
         .slider-info {
-            color: #b0e0ff;            /* matches tooltip text color */
+            color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -489,7 +536,7 @@
         .image-container img {
             position: relative;
             display: block;
-            max-width: 50%;
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
@@ -510,7 +557,7 @@
 
         .toc-container { width: 90%; margin: 0px auto; padding: 0; }
         .toc-entry { margin: 8px 0; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
-        .toc-entry a { color: #4682B4 !important; text-decoration: none; display: block; }
+        .toc-entry a { color: #abb8bb !important; text-decoration: none; display: block; }
         .toc-entry:hover { border-bottom-color: var(--primary-color); }
         .toc-entry:hover a { color: var(--primary-color); }
 
@@ -573,12 +620,11 @@
         }
 
         .highlight-text {
-            color: var(--primary-color);
-            font-weight: 300;
-            font-size: 1.1em;
-            margin-bottom: 0.3em;
+            color: #abb8bb;
+            font-size: 1.2em;
             display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
+            text-decoration: underline;
+            text-decoration-color: #abb8bb;
             padding-bottom: 3px;
         }
 
@@ -646,12 +692,13 @@
             color: var(--primary-color) !important;
         }
 
-        /* List-style TOC */
         .toc-list .toc-button-container {
-            margin-left: 22%;
-            margin-right: 22%;
+            width: calc(100% - var(--arrow-hover-width));
+            margin-left: auto;
+            margin-right: auto;
             display: block;
         }
+
 
         .toc-list .toc-entry {
             margin: 8px 0;
@@ -811,8 +858,11 @@
             :root {
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
+
+            --Lmargin-safe-factor: 0.70;
+            --Rmargin-safe-factor: 0.85;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -832,7 +882,7 @@
 
             .book-title {font-size: 0.75em; margin-bottom: 15px !important; } 
             .back-to-List { padding: 6px 12px; font-size: 0.85em; } 
-            a { color: #00b0ff !important; }
+             a { color: #00b0ff !important; } 
             a:focus { outline: 2px solid #ffeb3b; outline-offset: 2px; }
             .text-only-container {width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }
 
@@ -904,8 +954,11 @@
             :root {
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
+
+                --Lmargin-safe-factor: 0.40;
+                --Rmargin-safe-factor: 0.80;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -1021,12 +1074,33 @@
     <div class="page" id="page-toc">
         <div class="book-title">About Me</div>
         <div class="toc-container toc-list">
-            <h2>About Me and My Journey</h2>
+            <h2>Table of Contents</h2>
             
             <div class="toc-button-container">
                 <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>About me…</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Observation of Thoughts</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the Mind</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Akka</span><span>2</span></a></div>
             </div>
         </div>
+         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <ul>
+        <li>For Previous page, click on left margin.</li>
+        <li>For Next Page, click on right margin.</li>
+        <li>Margins are 15% for your browser width.</li>
+        <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
+            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn'> 👆</span> any where you see it, to either </li>
+        </span>
+            <ul>
+            <li>Opens a webpage with additional information</li>
+            <li>Opens a popup box with additional information.</li>
+            </ul>
+        </li>
+        <li>Click on the Popup to make it go away.</li>
+        </ul>
+    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
+    <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
+
     </div>
     
 
@@ -1046,7 +1120,27 @@ I made the time, to pause, reflect, and reorient — to rethink how I should def
 Not long ago, people would send postcards from their travels to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. As I relegate swaths of my past to distractions, I reclaim my time, writing postcards using words left unsaid, thoughts left unexplored and meanings not pursued to understanding. <br><br>
 The second format I selected is a short story — drawn from historical events and 
 experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p><br>
-I hope you find my writings worth your while. Thank you for taking a look.<br><br>(Click or touch the left side of your screen for the previous page. Click or touch the right side of the screen for the next page. )
+I hope you find my writings worth your while. Thank you for taking a look.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+ <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <ul>
+        <li>For Previous page, click on left margin.</li>
+        <li>For Next Page, click on right margin.</li>
+        <li>Margins are 15% for your browser width.</li>
+        <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
+            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn'> 👆</span> any where you see it, to either </li>
+        </span>
+            <ul>
+            <li>Opens a webpage with additional information</li>
+            <li>Opens a popup box with additional information.</li>
+            </ul>
+        </li>
+        <li>Click on the Popup to make it go away.</li>
+        </ul>
+    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
+    <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
     </div>
     
             </div>
@@ -1061,31 +1155,48 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
-        <br><p style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></p><div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 08, 2026</span></div>
-<div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
-       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
-              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
-              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important; margin-left: 8%">
+        <br><br><br><div style="color: #f09e5a;"><span class="highlight-text">Observation of Thoughts</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraindientleft">A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 17, 2026</span></div><br>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraindientleft"><a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
+       style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
+              white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
+              justify-content: center; margin-left: 8%"
+        class="glassbtn">
         Observation of Thoughts
-    </a></div><p style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></p><div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Jan 17, 2026</span></div>
-<div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
-       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
-              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
-              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important; margin-left: 8%">
+    </a></div><br><div style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></div>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 16, 2026</span></div><br>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraindientleft"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
+       style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
+              white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
+              justify-content: center; margin-left: 8%"
+        class="glassbtn">
         Theater of the Mind
-    </a></div><p style="color: #f09e5a;"><span class="highlight-text">Akka</span></p><div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;">A short story of a woman who defied her time, so that we could define ours — three generations down.<br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Mar 17, 2026</span></div>
-<div style="margin-left: 22% !important; text-align: left !important; font-style: italic !important;"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html" 
-       style="display: inline-block;  width: 40%; background: radial-gradient(circle, rgba(220, 220, 220, 0.2) 0%, rgba(169, 169, 169, 0.7) 100%); 
-              border: 2px solid #4682b4; color: #000050 !important; text-decoration: none !important; border-radius: 25px; text-align: center; 
-              white-space: normal; word-wrap: break-word; font-weight: bold; box-sizing: border-box; display: inline-flex; align-items: center;
-              justify-content: center; font-size: 1em !important; margin-left: 8%">
+    </a></div><br><div style="color: #f09e5a;"><span class="highlight-text">Akka</span></div>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">A short story of a woman who defied her time, so that we could define ours — three generations down. <br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 15, 2026</span></div><br>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraindientleft"><a href="https://sgrao001.github.io/MyBooks/akka/akka.html" 
+       style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
+              white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
+              justify-content: center; margin-left: 8%"
+        class="glassbtn">
         Akka
-    </a></div><p style="text-align: center; font-style: bold;"> ~***~</p>
+    </a></div><br><div style="margin-left: auto !important; margin-right: auto !important; " class="glassbtnlbl"><div style="text-align: center;">~***~</div></div>
+    </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="page" id="page-3">
+            <div class="book-title">About Me</div>
+            <div class="text-only-container">
+                
+                
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.8em">
+        <br>
     </div>
     
             </div>
@@ -1110,16 +1221,16 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
     <div class="slider-container" id="slider-container" style="">
         <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
-            <input type="range" min="0" max="3" value="0" class="slider" id="page-slider">
+            <input type="range" min="0" max="4" value="0" class="slider" id="page-slider">
         </div>
         <div class="slider-info">
-            <span id="current-page">0</span>/<span id="total-pages">3</span>
+            <span id="current-page">0</span>/<span id="total-pages">4</span>
         </div>
     </div>
 
     <script>
         let currentPage = 0;
-        const totalPages = 3;
+        const totalPages = 4;
         const pages = document.querySelectorAll('.page');
 
         const page0Skipped = true;
@@ -1134,16 +1245,33 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
         const sliderContainer = document.getElementById('slider-container');
 
         // Generic listener for ALL trigger
-        // ==================== TOOLTIP LISTENER start ==================
+
+        // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
+        document.addEventListener('keydown', function(event) {
+            // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
+            if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
+                // Optionally, avoid interfering with normal copy if text is selected
+                const selection = window.getSelection().toString();
+                if (selection.length === 0) {
+                    // No text selected – call your custom copy function
+                    copyCurrentPageUrl(event);
+                    // Prevent default browser copy (optional, but you might want to keep it)
+                    // event.preventDefault();
+                }
+                // If text is selected, let the default copy happen
+            }
+        });
+        
+        // ==================== BubbleText LISTENER start ==================
         document.addEventListener('click', function(e) {
             try {
 
-                const trigger = e.target.closest('.tooltip-trigger');
-                const tooltip = document.getElementById('tooltip');
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
 
-                // If tooltip is open and clicking outside, close it
-                if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
                     return;
                 }
 
@@ -1154,7 +1282,7 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                 // --- Collect extra classes (exclude alignment classes) ---
                 let extraClasses = [];
                 trigger.classList.forEach(cls => {
-                    if (cls !== 'tooltip-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
                         extraClasses.push(cls);
                     }
                 });
@@ -1189,24 +1317,24 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
 
                 // --- Special positioning handling (center, @, 100% 100%) ---
                 if (position !== 'absolute') {
-                    let tooltipWidth = parseFloat(trigger.dataset.width);
-                    let tooltipHeight = parseFloat(trigger.dataset.height);
-                    let totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
-                    let totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
 
                     if (top === 'center') {
-                        if (totalTooltipHeight) {
-                            let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
-                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
                             top = centerTop + 'px';
                         } else {
                             top = '50%';
                         }
                     }
                     if (left === 'center') {
-                        if (totalTooltipWidth) {
-                            let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
-                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
                             left = centerLeft + 'px';
                         } else {
                             left = '50%';
@@ -1273,28 +1401,28 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                 }
 
                 // --- Prepare remaining parameters ---
-                const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
                 const animation = trigger.dataset.animation || 'fade';
                 const textAlign = trigger.dataset.textalign || 'left';
-                const tiptext = htmlEncodeTooltipText(rawTiptext);
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
 
-                const isCurrentlyOpen = tooltip.classList.contains('show') && tooltip.innerHTML.includes(rawTiptext);
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
 
                 if (isCurrentlyOpen) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                    toggleBubbleText('', '', '', '', '', 'no');
                 } else {
-                    const showTooltip = () => {
-                        toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
-                        // Force layout recalculation after the tooltip is visible
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
                         requestAnimationFrame(() => {
-                            const t = document.getElementById('tooltip');
+                            const t = document.getElementById('BubbleText');
                             if (t && t.classList.contains('show')) t.scrollTop;
                         });
                     };
                     if (document.fonts) {
-                        document.fonts.ready.then(showTooltip);
+                        document.fonts.ready.then(showBubbleText);
                     } else {
-                        showTooltip();
+                        showBubbleText();
                     }
                 }
 
@@ -1304,17 +1432,17 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
         });
 
 
-        // ==================== TOOLTIP LISTENER end ====================
+        // ==================== BubbleText LISTENER end ====================
 
 
         document.addEventListener('click', function(e) {
-            const tooltip = document.getElementById('tooltip');
-            if (tooltip.contains(e.target)) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
                 e.stopPropagation(); // prevent interfering with other listeners
-                toggleTooltip('', '', '', '', '', 'no');
+                toggleBubbleText('', '', '', '', '', 'no');
             }
         });
-      // ==================== TOOLTIP inside click close end ====================
+      // ==================== BubbleText inside click close end ====================
 
         // ==================== MAIN CLICK LISTENER (TRIGGERS & OUTSIDE CLOSE) ====================
 
@@ -1342,6 +1470,20 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                         caption.style.transform = 'translateY(0)';
                         caption.classList.add('mobile-visible');
                     }
+                });
+            });
+
+            // Page Navigation icons anywhere in content
+            document.querySelectorAll('.next-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextPage();
+                });
+            });
+            document.querySelectorAll('.prev-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevPage();
                 });
             });
             
@@ -1411,8 +1553,58 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
             });
         });        
 
-        // ==================== TOOLTIP FUNCTION start ====================
-        // ToolTIp Management
+        // ==================== Function COpy URL===========================
+        function showPopup(msg) {
+            // Use your existing toggleBubbleText to display a centered popup
+            toggleBubbleText('', '', 'auto', 'auto', msg, 'yes', 'fade', 'center', 'center-both', [], undefined, null, null, null, undefined);
+            // Auto-close after 3 seconds (optional)
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 5000);
+        }
+
+        function copyCurrentPageUrl(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) {
+                console.error('No active page found');
+                showPopup('Error: No active page');   // ← changed
+                return;
+            }
+
+            const pageId = activePage.id;
+            const baseUrl = window.location.href.split('#')[0];
+            const fullUrl = baseUrl + '#' + pageId;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullUrl).then(() => {
+                    showPopup('URL copied to clipboard<br>' + fullUrl);   // ← changed
+                }).catch(err => {
+                    console.error('Clipboard write failed:', err);
+                    showPopup('Copy failed. Use Ctrl+C');   // ← changed
+                });
+            } else {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = fullUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showPopup('URL copied to Clipboard<br>' + fullUrl);   // ← changed
+            }
+        }
+        // ==================== End COpy URL================================      
+
+        // ==================== BubbleText FUNCTION start ====================
+        // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
         // Convert a CSS length string to pixels (returns NaN if not possible)
         //
@@ -1430,42 +1622,69 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
             return NaN; // calc() or other complex expressions
         }
 
-        // htmlEncodeTooltipText (keep your existing version)
-        function htmlEncodeTooltipText(str) {
+        // htmlEncodeBubbleTextText (keep your existing version)
+        function htmlEncodeBubbleTextText(str) {
             const div = document.createElement('div');
             div.innerHTML = str;
             return div.innerHTML;
         }
-        function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
-            const tooltip = document.getElementById('tooltip');
+
+        function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
+            const BubbleText = document.getElementById('BubbleText');
+
+            // If width or height is '@', activate @ mode and clear the respective dimension
+            if (width === '@') { top = '@'; width = ''; }
+            if (height === '@') { top = '@';height = ''; }
 
             if (visible === 'yes') {
-                // --- Prepare tooltip for display ---
-                tooltip.className = '';
-                extraClasses.forEach(cls => tooltip.classList.add(cls));
-                tooltip.style.setProperty('position', position, 'important');
-                if (textAlign !== 'left') tooltip.classList.add(textAlign + '-text');
-                if (animation !== 'fade') tooltip.classList.add(animation);
-                else tooltip.classList.add('fade');
+                // --- Prepare BubbleText for display ---
+                BubbleText.className = '';
+                extraClasses.forEach(cls => BubbleText.classList.add(cls));
+                BubbleText.style.setProperty('position', position, 'important');
+                
+                // Determine if explicit width/height are provided (non-empty, not 'auto')
+                const hasExplicitWidth = (width && width !== 'auto');
+                const hasExplicitHeight = (height && height !== 'auto');
+                
+                if (hasExplicitWidth || hasExplicitHeight) {
+                    // Explicit sizing: use block display and set inline width/height
+                    BubbleText.style.display = 'block';
+                    if (hasExplicitWidth) {
+                        BubbleText.style.width = width;
+                    } else {
+                        BubbleText.style.width = '';
+                    }
+                    if (hasExplicitHeight) {
+                        BubbleText.style.height = height;
+                    } else {
+                        BubbleText.style.height = '';
+                    }
+                } else {
+                    // Growing box mode: shrink-to-fit, respect CSS min/max
+                    BubbleText.style.display = 'inline-block';
+                    BubbleText.style.width = '';
+                    BubbleText.style.height = '';
+                }
+                
+                // Text alignment
+                if (textAlign !== 'left') BubbleText.classList.add(textAlign + '-text');
+                
+                // Animation
+                if (animation !== 'fade') BubbleText.classList.add(animation);
+                else BubbleText.classList.add('fade');
 
-                // Read custom max‑width / max‑height from the trigger (if provided)
+                // Read max-width / max-height from trigger (6th and 7th slots)
                 const datasetMaxWidth = trigger?.dataset?.maxwidth;
                 const datasetMaxHeight = trigger?.dataset?.maxheight;
 
-                tooltip.innerHTML = tiptext;
+                BubbleText.innerHTML = bbbltext;
 
-                // Apply width / height (will be overridden in smart mode if needed)
-                if (width !== 'auto') tooltip.style.width = width;
-                else tooltip.style.width = '';
-                if (height !== 'auto') tooltip.style.height = height;
-                else tooltip.style.height = '';
-
-                // Apply max‑width / max‑height (dataset overrides computed maxHeight)
-                if (datasetMaxWidth) tooltip.style.maxWidth = datasetMaxWidth;
-                else tooltip.style.maxWidth = '';
-                if (datasetMaxHeight) tooltip.style.maxHeight = datasetMaxHeight;
-                else if (maxHeight !== null) tooltip.style.maxHeight = maxHeight + 'px';
-                else tooltip.style.maxHeight = '';
+                // Apply max-width / max-height (always limits)
+                if (datasetMaxWidth) BubbleText.style.maxWidth = datasetMaxWidth;
+                else BubbleText.style.maxWidth = '';
+                if (datasetMaxHeight) BubbleText.style.maxHeight = datasetMaxHeight;
+                else if (maxHeight !== null) BubbleText.style.maxHeight = maxHeight + 'px';
+                else BubbleText.style.maxHeight = '';
 
                 const pos = position.toLowerCase();
                 const bottomModes = ['bottom-left', 'bottom-center', 'bottom-right', 'bottom-page'];
@@ -1473,12 +1692,9 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                 const needsLayout = ['center-height', 'center-width', 'center-both', ...bottomModes].includes(pos) || usesAt;
 
                 if (needsLayout) {
-                    // Make tooltip occupy space but invisible while we position it
-                    tooltip.style.visibility = 'visible';
-                    tooltip.style.opacity = '0';
-                    // Do NOT add 'show' class yet – we'll add it after positioning
+                    BubbleText.style.visibility = 'visible';
+                    BubbleText.style.opacity = '0';
 
-                    // Double RAF to allow layout to settle (we still need dimensions)
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
                             const pageElement = trigger ? trigger.closest('.page') : null;
@@ -1489,90 +1705,119 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                             let positioned = false;
 
                             // ========== SMART @ MODE (triggered by data-top="@") ==========
+
                             if (top === '@' && trigger) {
                                 console.log('===== SMART @ MODE ACTIVATED =====');
-                                // Completely reset inline styles and force the desired dimensions
-                                tooltip.removeAttribute('style');  // clear all inline styles
-                                tooltip.style.cssText = '';
-                                // Set our styles
-                                tooltip.style.setProperty('width', '50vw', 'important');
-                                tooltip.style.setProperty('max-width', '50vw', 'important');
-                                tooltip.style.setProperty('max-height', '3em', 'important');
-                                tooltip.style.setProperty('overflow-y', 'auto', 'important');
-                                tooltip.style.setProperty('height', 'auto', 'important');
-                                tooltip.style.setProperty('box-sizing', 'border-box', 'important');
-                                tooltip.style.setProperty('position', 'fixed', 'important');
-                                tooltip.style.setProperty('visibility', 'visible');
-                                tooltip.style.setProperty('opacity', '0');
-                                tooltip.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
-                                tooltip.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
-                                tooltip.style.setProperty('backdrop-filter', 'blur(15px)');
-                                tooltip.style.setProperty('border-radius', '8px');
-                                tooltip.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
-                                tooltip.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
-                                tooltip.style.setProperty('padding', '10px');
-                                tooltip.style.setProperty('font-size', '0.8em');
-                                tooltip.style.setProperty('color', '#b0e0ff');
-                                tooltip.style.setProperty('font-family', 'Arial, sans-serif');
-                                tooltip.style.setProperty('z-index', '9999');
-                                tooltip.style.setProperty('white-space', 'normal');
-                                tooltip.style.setProperty('word-wrap', 'break-word');
-
-                                // Force layout to get accurate dimensions after width change
-                                const tooltipHeightNow = tooltip.offsetHeight;
-                                const tooltipWidthNow = tooltip.offsetWidth;
-                                console.log('Computed width after setProperty:', tooltipWidthNow);
-                                console.log('Computed height after setProperty:', tooltipHeightNow);
-
+                                // Completely reset inline styles
+                                BubbleText.removeAttribute('style');
+                                BubbleText.style.cssText = '';
+                                
+                                // Set base styles (no inline max-height yet; we'll set it dynamically)
+                                BubbleText.style.setProperty('width', 'fit-content', 'important');
+                                BubbleText.style.setProperty('height', 'fit-content', 'important');
+                                BubbleText.style.setProperty('max-width', 'var(--tt-max-width)');
+                                // Do NOT set max-height here – will be set later based on available space
+                                BubbleText.style.setProperty('overflow-x', 'hidden');
+                                BubbleText.style.setProperty('overflow-y', 'auto');
+                                BubbleText.style.setProperty('word-wrap', 'break-word');
+                                BubbleText.style.setProperty('overflow-wrap', 'break-word');
+                                BubbleText.style.setProperty('box-sizing', 'border-box', 'important');
+                                BubbleText.style.setProperty('position', 'fixed', 'important');
+                                BubbleText.style.setProperty('visibility', 'visible');
+                                BubbleText.style.setProperty('opacity', '0');
+                                BubbleText.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
+                                BubbleText.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
+                                BubbleText.style.setProperty('backdrop-filter', 'blur(15px)');
+                                BubbleText.style.setProperty('border-radius', '8px');
+                                BubbleText.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
+                                BubbleText.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
+                                BubbleText.style.setProperty('padding', '10px');
+                                BubbleText.style.setProperty('font-size', '0.8em');
+                                BubbleText.style.setProperty('color', '#b0e0ff');
+                                BubbleText.style.setProperty('font-family', 'Arial, sans-serif');
+                                BubbleText.style.setProperty('z-index', '9999');
+                                BubbleText.style.setProperty('white-space', 'normal');
+                                
+                                // Force layout to get accurate dimensions
+                                const BubbleTextHeightNow = BubbleText.offsetHeight;
+                                const BubbleTextWidthNow = BubbleText.offsetWidth;
+                                console.log('Computed width:', BubbleTextWidthNow);
+                                console.log('Computed height:', BubbleTextHeightNow);
+                                
                                 const triggerRect = trigger.getBoundingClientRect();
                                 const viewportWidth = window.innerWidth;
                                 const viewportHeight = window.innerHeight;
-
-                                // Top: 10px below the trigger's bottom
-                                let topPos = triggerRect.bottom + 18;
-                                let bot_gap = 48;
-
-                                // Horizontal decision based on trigger's CENTER
-                                const triggerCenterX = triggerRect.left + triggerRect.width / 2;
-                                const threshold25 = viewportWidth * 0.25;
-                                const threshold75 = viewportWidth * 0.75;
-                                let leftPos;
-
-                                if (triggerCenterX < threshold25) {
-                                    const leftMargin = viewportWidth * 0.05;
-                                    leftPos = leftMargin;                     // 5vw from left edge
-                                    console.log('Case: left (trigger center < 25vw)');
-                                } else if (triggerCenterX > threshold75) {
-                                    const rightMargin = viewportWidth * 0.05;
-                                    leftPos = viewportWidth - tooltipWidthNow - rightMargin;   // 5vw from right edge
-                                    console.log('Case: right (trigger center > 75vw)');
-                                } else {
-                                    leftPos = (viewportWidth / 2) - (tooltipWidthNow / 2);     // centered
-                                    console.log('Case: center');
+                                
+                                // ----- Horizontal positioning (align with trigger's left edge, prevent overflow) -----
+                                const sideMargin = viewportWidth * 0.05;   // 5vw from edges
+                                let leftPos = triggerRect.left;            // start at trigger's left edge
+                                if (leftPos + BubbleTextWidthNow + sideMargin > viewportWidth) {
+                                    leftPos = viewportWidth - BubbleTextWidthNow - sideMargin;
                                 }
+                                leftPos = Math.max(sideMargin, leftPos);    // ensure left margin
+                                
+                                // ----- Vertical positioning (smart flip: below if enough space, else above) -----
+                                // Full content fits below → place below with natural height.
+                                // Full content doesn’t fit below, but a 3‑line (4.5em) version does → place below with max-height: 4.5em.
+                                // Full content fits above → place above with natural height (popup bottom aligned to trigger top – gap).
+                                // Else → place above with max-height clamped to available space, and popup’s top aligned to vertMargin (or bottom fixed).
 
-                                // Ensure tooltip stays within viewport vertically
-                                if (topPos + tooltipHeightNow > viewportHeight) {
-                                    topPos = viewportHeight - tooltipHeightNow - bot_gap;
-                                    console.log('Adjusted topPos (near bottom):', topPos);
+                                // ----- Vertical positioning with multi‑case logic (using top positioning only) -----
+                                const gap = 20;
+                                const vertMargin = viewportHeight * 0.05;   // 5% of viewport height
+                                const threeLineHeight = parseFloat(getComputedStyle(BubbleText).fontSize) * 1.5 * 3; // ≈4.5em in px
+
+                                // Case 1: natural popup fits below
+                                const naturalFitsBelow = (triggerRect.bottom + gap + BubbleTextHeightNow + vertMargin) <= viewportHeight;
+
+                                // Case 2: shrunk to 3 lines fits below
+                                const shrunkFitsBelow = (triggerRect.bottom + gap + threeLineHeight + vertMargin) <= viewportHeight;
+
+                                // Case 3: natural popup fits above
+                                const naturalTop = triggerRect.top - gap - BubbleTextHeightNow;
+                                const naturalFitsAbove = (naturalTop - vertMargin) >= 0;
+
+                                if (naturalFitsBelow) {
+                                    // Place below with natural height (no max-height limit)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    console.log('Case 1: natural below, finalTop =', finalTop);
+                                } 
+                                else if (shrunkFitsBelow) {
+                                    // Place below, but cap max-height to available space below (prevent overflow)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    const availableBelow = viewportHeight - (triggerRect.bottom + gap + vertMargin);
+                                    BubbleText.style.maxHeight = Math.max(0, availableBelow) + 'px';
+                                    BubbleText.style.minHeight = '4.5em';   // force at least 3 lines (optional)
+                                    console.log('Case 2: shrunk below (maxHeight = available space), finalTop =', finalTop);
                                 }
-                                topPos = Math.max(10, topPos);
-
-                                // Clamp horizontal position to viewport edges (with a small margin)
-                                leftPos = Math.max(10, Math.min(leftPos, viewportWidth - tooltipWidthNow - 10));
-
-                                finalTop = topPos;
+                                else if (naturalFitsAbove) {
+                                    // Place above with natural height
+                                    finalTop = triggerRect.top - BubbleTextHeightNow + gap;
+                                    finalBottom = null;
+                                    console.log('Case 3: natural above, finalTop =', finalTop);
+                                } 
+                                else {
+                                    // Place above and clamp height to available space
+                                    finalTop = vertMargin + gap;
+                                    finalBottom = null;
+                                    const maxHeightAbove = triggerRect.top  - vertMargin;
+                                    BubbleText.style.maxHeight = Math.max(0, maxHeightAbove) + 'px';
+                                    console.log('Case 4: clamped above, finalTop =', finalTop, 'maxHeight =', BubbleText.style.maxHeight);
+                                }
+                                
                                 finalLeft = leftPos;
                                 positioned = true;
-                                console.log('Final top:', finalTop, 'left:', finalLeft);
+                                console.log('Final top:', finalTop, 'final bottom:', finalBottom, 'left:', finalLeft);
                             }
+                                                        
                             // ========== END SMART @ MODE ==========
 
-                            // --- Other positioning modes (center, bottom, etc.) only if not already positioned ---
                             if (!positioned) {
-                                // --- Special positioning: center within page content area ---
+                                // Vertical centering (center-height or center-both)
                                 if (pos === 'center-height' || pos === 'center-both') {
-                                    const tooltipHeight = tooltip.getBoundingClientRect().height;
+                                    const BubbleTextHeight = BubbleText.getBoundingClientRect().height;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1580,15 +1825,15 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                                         const paddingBottom = parseFloat(cs.paddingBottom);
                                         const contentHeight = pageRect.height - paddingTop - paddingBottom;
                                         const contentTop = pageRect.top + paddingTop;
-                                        finalTop = contentTop + (contentHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = contentTop + (contentHeight / 2) - (BubbleTextHeight / 2);
                                     } else {
-                                        finalTop = (window.innerHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = (window.innerHeight / 2) - (BubbleTextHeight / 2);
                                     }
                                 }
 
                                 // Horizontal centering (center-width or center-both)
                                 if (pos === 'center-width' || pos === 'center-both') {
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1596,25 +1841,18 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                                         const paddingRight = parseFloat(cs.paddingRight);
                                         const contentWidth = pageRect.width - paddingLeft - paddingRight;
                                         const contentLeft = pageRect.left + paddingLeft;
-                                        finalLeft = contentLeft + (contentWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = contentLeft + (contentWidth / 2) - (BubbleTextWidthNow / 2);
                                     } else {
-                                        finalLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
                                     }
-                                    // For center-width only, keep any existing top/bottom
                                     if (pos === 'center-width') {
-                                        if (bottom !== undefined) tooltip.style.bottom = bottom;
-                                        else if (top !== undefined && top !== '@') tooltip.style.top = top;
+                                        if (bottom !== undefined) BubbleText.style.bottom = bottom;
+                                        else if (top !== undefined && top !== '@') BubbleText.style.top = top;
                                     }
                                 }
 
-                                // For center-both, ensure width/height are auto (remove inline) ONLY if they were not explicitly set
-                                if (pos === 'center-both') {
-                                    if (width === 'auto') tooltip.style.width = '';
-                                    if (height === 'auto') tooltip.style.height = '';
-                                }
-                                // --- Bottom positioning modes ---
-                                else if (bottomModes.includes(pos)) {
-                                    // Compute gap from bottom (in pixels)
+                                // Bottom positioning modes
+                                if (bottomModes.includes(pos)) {
                                     let gapPx = 0;
                                     if (bottomGap) {
                                         const gapMatch = bottomGap.match(/^([\d.]+)(vh|px)$/);
@@ -1625,112 +1863,90 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                                             else gapPx = num;
                                         }
                                     }
-
-                                    const tooltipHeight = tooltip.offsetHeight;
+                                    const BubbleTextHeight = BubbleText.offsetHeight;
                                     let newTop;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
-                                        newTop = pageRect.bottom - tooltipHeight - gapPx;
+                                        newTop = pageRect.bottom - BubbleTextHeight - gapPx;
                                         newTop = Math.max(pageRect.top + 10, newTop);
                                     } else {
-                                        newTop = window.innerHeight - tooltipHeight - gapPx;
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
                                         newTop = Math.max(10, newTop);
                                     }
                                     finalTop = newTop;
 
-                                    // Horizontal positioning based on mode
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     const innerPadding = 10;
                                     let newLeft = null;
 
                                     if (pos === 'bottom-left') {
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = pageRect.left + innerPadding;
-                                        } else {
-                                            newLeft = innerPadding;
-                                        }
+                                        if (pageElement) newLeft = pageRect.left + innerPadding;
+                                        else newLeft = innerPadding;
                                     } else if (pos === 'bottom-right') {
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = pageRect.right - tooltipWidthNow - innerPadding;
-                                        } else {
-                                            newLeft = window.innerWidth - tooltipWidthNow - innerPadding;
-                                        }
+                                        if (pageElement) newLeft = pageRect.right - BubbleTextWidthNow - innerPadding;
+                                        else newLeft = window.innerWidth - BubbleTextWidthNow - innerPadding;
                                     } else if (pos === 'bottom-center') {
                                         if (pageElement) {
                                             const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = (pageRect.left + pageRect.right) / 2 - tooltipWidthNow / 2;
+                                            newLeft = (pageRect.left + pageRect.right) / 2 - BubbleTextWidthNow / 2;
+                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - BubbleTextWidthNow - innerPadding));
                                         } else {
-                                            newLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
-                                        }
-                                        // Clamp to page/viewport edges
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - tooltipWidthNow - innerPadding));
-                                        } else {
-                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - tooltipWidthNow - innerPadding));
+                                            newLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
+                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - BubbleTextWidthNow - innerPadding));
                                         }
                                     } else if (pos === 'bottom-page') {
-                                        // Original behavior: use `left` if provided (and not '@'), else leave undefined (auto)
-                                        if (left !== undefined && left !== '@') {
-                                            newLeft = left;
-                                        }
+                                        if (left !== undefined && left !== '@') newLeft = left;
                                     }
                                     if (newLeft !== null) finalLeft = newLeft;
                                 }
                             }
 
                             // Apply final positions
-                            if (finalTop !== null) tooltip.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
-                            if (finalBottom !== null) tooltip.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
-                            if (finalLeft !== null) tooltip.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
-                            if (finalRight !== null) tooltip.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalTop !== null) BubbleText.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
+                            if (finalBottom !== null) BubbleText.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
+                            if (finalLeft !== null) BubbleText.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
+                            if (finalRight !== null) BubbleText.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalBottom !== null && finalTop === null) BubbleText.style.top = 'auto';
+                            if (finalRight !== null && finalLeft === null) BubbleText.style.left = 'auto';
 
-                            if (finalBottom !== null && finalTop === null) tooltip.style.top = 'auto';
-                            if (finalRight !== null && finalLeft === null) tooltip.style.left = 'auto';
-
-                            // Now that the tooltip is positioned correctly, make it visible
-                            tooltip.classList.add('show');
-                            tooltip.style.opacity = '';
+                            BubbleText.classList.add('show');
+                            BubbleText.style.opacity = '';
                         });
                     });
                 } else {
                     // Normal positioning (no special modes, no @)
                     if (bottom !== undefined) {
-                        tooltip.style.bottom = bottom;
-                        tooltip.style.top = 'auto';
+                        BubbleText.style.bottom = bottom;
+                        BubbleText.style.top = 'auto';
                     } else if (top !== undefined) {
-                        tooltip.style.top = top;
-                        tooltip.style.bottom = 'auto';
+                        BubbleText.style.top = top;
+                        BubbleText.style.bottom = 'auto';
                     }
                     if (right !== undefined) {
-                        tooltip.style.right = right;
-                        tooltip.style.left = 'auto';
+                        BubbleText.style.right = right;
+                        BubbleText.style.left = 'auto';
                     } else if (left !== undefined) {
-                        tooltip.style.left = left;
-                        tooltip.style.right = 'auto';
+                        BubbleText.style.left = left;
+                        BubbleText.style.right = 'auto';
                     }
-                    tooltip.classList.add('show');
+                    BubbleText.classList.add('show');
                 }
             } else {
-                // --- Hide tooltip: fade out without repositioning ---
-                tooltip.classList.remove('show');
-
+                // Hide BubbleText
+                BubbleText.classList.remove('show');
                 const onTransitionEnd = () => {
-                    tooltip.className = '';
-                    tooltip.style.cssText = '';
-                    tooltip.innerHTML = '';
-                    tooltip.removeEventListener('transitionend', onTransitionEnd);
+                    BubbleText.className = '';
+                    BubbleText.style.cssText = '';
+                    BubbleText.innerHTML = '';
+                    BubbleText.removeEventListener('transitionend', onTransitionEnd);
                 };
-                tooltip.addEventListener('transitionend', onTransitionEnd);
-                setTimeout(onTransitionEnd, 500); // fallback
+                BubbleText.addEventListener('transitionend', onTransitionEnd);
+                setTimeout(onTransitionEnd, 500);
             }
         }
 
+       // ==================== BubbleText FUNCTION end ====================
 
-       // ==================== TOOLTIP FUNCTION end ====================
-        
         // Determine initial page based on configuration
         function getInitialPage() {
             const page0Skipped = true;
@@ -1762,6 +1978,28 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                 pages[currentPage].classList.add('active');
             }
 
+            // After setting the initial active page, check URL hash
+            function activatePageFromHash() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const targetPage = document.querySelector(hash);
+                    if (targetPage && targetPage.classList.contains('page')) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = -1;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === hash.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        if (pageNum !== -1 && pageNum !== currentPage) {
+                            goToPage(pageNum);
+                        }
+                    }
+                }
+            }
+            activatePageFromHash();
+            
             const booklistBtn = document.querySelector('.back-to-list');
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
@@ -1782,10 +2020,8 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
             const startPage = true ? 0 : 1;
 
             for (let i = startPage; i < pages.length; i++) {
-
-                // Skip TOC page
-                if (pages[i].id === 'page-toc') continue;            
-
+                if (pages[i].id === 'page-toc') continue;   
+                         
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
@@ -1794,14 +2030,18 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
-                    backButton.textContent = 'Contents';
+                    backButton.textContent = '🗂️'; 
+                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                
+                              
                 // Page number (right side)
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
-                pageNumber.textContent = calculatePageNumber(i);
+                // to remove 🔖 <ClickbookMark> uncomment this
+                // pageNumber.textContent = calculatePageNumber(i);
+                // and comment this
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
                 pages[i].insertBefore(header, pages[i].firstChild);
@@ -1938,6 +2178,7 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
 
         function goToPage(pageNum) {
             if (pageNum < 0 || pageNum > totalPages) return;
+            if (pageNum === currentPage) return;   // Avoid unnecessary transition
             
             const currentActive = document.querySelector('.page.active');
             if (currentActive) {
@@ -1953,6 +2194,9 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
                 pages[currentPage].classList.add('active');
                 updateSlider();
                 updateProgress();
+                
+                // Remove any #page-... from the URL bar (keep only base path)
+                history.pushState(null, '', window.location.pathname);
             }, 300);
         }
 
@@ -2106,10 +2350,32 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
             };
             document.getElementById('currentDate').textContent = 
                 new Date().toLocaleDateString('en-US', options);
-        });
-        
+        });        
+                
     </script>
 
-    <div id="tooltip"></div>
+    <div id="BubbleText"></div>
+    <script>
+    (function() {
+        const root = document.documentElement;
+        const pageElem = document.querySelector('.page');
+        const styles = getComputedStyle(root);
+        const pageStyles = pageElem ? getComputedStyle(pageElem) : null;
+
+        console.log('=== Debug Info (media 1024) ===');
+        console.log('--page-width (declared):', styles.getPropertyValue('--page-width'));
+        console.log('--arrow-hover-width:', styles.getPropertyValue('--arrow-hover-width'));
+        console.log('--Lmargin-safe-factor:', styles.getPropertyValue('--Lmargin-safe-factor'));
+        console.log('--Rmargin-safe-factor:', styles.getPropertyValue('--Rmargin-safe-factor'));
+                console.log('--Lsafe-margin (computed):', styles.getPropertyValue('--Lsafe-margin'));
+        console.log('--Rsafe-margin (computed):', styles.getPropertyValue('--Rsafe-margin'));
+                if (pageElem) {
+        console.log('.page actual width (px):', pageElem.offsetWidth);
+        console.log('.page computed width:', pageStyles.width);
+        }
+        console.log('viewport width (px):', window.innerWidth);
+    })();
+    </script>
+        
 </body>
 </html>
