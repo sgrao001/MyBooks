@@ -39,6 +39,11 @@
             --tt-415-width: 84vw;
             --tt-max-height: var(--tt-1024-height);
             --tt-max-width: var(--tt-1024-width);
+
+            --Lmargin-safe-factor: 0.50;
+            --Rmargin-safe-factor: 0.50;
+            --Lsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Lmargin-safe-factor));
+            --Rsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Rmargin-safe-factor));
         }
 
         html {
@@ -73,9 +78,9 @@
         }
         /* Underline effect on hover */
         a:hover {
-            color: #82e9ff !important;
+            background: rgba(0,0,0,0.6);
             text-decoration: underline;
-            text-decoration-thickness: 2px;
+            color: var(--text-color);
         }
         a:focus {
             outline: 2px solid #ffeb3b;
@@ -129,8 +134,17 @@
         #page-0 h1,
         #page-0 h2,
         #page-0 h3 {
-            color: #89C2FF !important;
+            color: #E6F0FF !important;
         }
+        /* Make Page0 - Title page transparent */
+        #page-0 {
+            background: none !important;           /* Removes the semi-transparent background */
+            backdrop-filter: none !important;      /* Removes the blur effect */
+            -webkit-backdrop-filter: none !important;
+            border: none !important;               /* Optional: removes the glass border */
+            box-shadow: none !important;           /* Optional: removes the shadow */
+        }
+
 
         /* Fixed header elements (page number, book title, back button) */
         .page-header {
@@ -150,74 +164,103 @@
                 visibility: visible !important;
         }
 
+   
+
         /******************************* tool Tips **************************************************************/
 
-        .tooltip-trigger { cursor: pointer; color: #b0e0ff; text-decoration: underline; margin: 0 10px; }
+        .BubbleText-trigger  { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal; /* border: 1px solid currentColor; */
+                        margin: 0 10px; } 
 
-        .tooltip-group { display: inline-block; margin-left: 17%; vertical-align: top; }
+        .BubbleText-group { display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }
      
-        .tooltip-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
+        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
 
-        .tooltip-group .tooltip-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
-        .tooltip-trigger.tooltip-full { height: auto; width: auto; }
+        .BubbleText-group .BubbleText-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
+        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
 
-        #tooltip {
+        #BubbleText {
+
+            /* POSITION & LAYOUT */
             position: fixed;
+            display: inline-block; 
+            
+            /* TYPOGRAPHY */
             color: #b0e0ff;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
 
             /* INITIAL STATE - HIDDEN */
             transform: translateY(-20px) scale(0.95) !important;
             transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
 
-            /* GLASS MORPHISM EFFECT (matches .image-caption-popup) */
-            background: rgba(0, 0, 0, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
+            /* GLASS MORPHISM EFFECT */
+            background: rgba(0, 0, 0, 0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+            0 0 0 1px rgba(255,255,255,0.2) inset;
 
-            /* Border & Shadow (same as caption) */
-            border-radius: 8px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 
-            /* Padding (keep tooltip’s original for comfortable reading) */
+            /* BORDER & SHADOW */
+
+
+            /* PADDING & BOX SIZING */
             padding: 10px !important;
+            box-sizing: border-box;
 
-            /* Font styling (match caption) */
-            font-size: 0.8em;
-
-            /* Other essential styles */
-            z-index: 9999;
-            overflow-y: auto;
+            /* GROWING BOX PROPERTIES (ADDED) */
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);   /* can be overridden by data-maxwidth */
+            max-height: var(--tt-max-height); /* can be overridden by data-maxheight */
             overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+            /* OTHER ESSENTIAL STYLES */
+            z-index: 9999;
             white-space: normal;
 
-            /* Fade + scale transition */
+            /* FADE + SCALE TRANSITION (VISIBILITY) */
             opacity: 0;
             visibility: hidden;
 
-            /* Scrollbar */
+            /* CUSTOM SCROLLBAR */
             scrollbar-width: thin;
             scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
+
         }
 
-        #tooltip.show { opacity: 1; visibility: visible; }
 
-        #tooltip.fade { transform: translateY(15px) scale(0.95); }
-        #tooltip.fade.show { transform: translateY(0) scale(1); }
+        #BubbleText.show { opacity: 1; visibility: visible; }
 
-        #tooltip.bounce { transform: translateY(40px) scale(0.6); }
-        #tooltip.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
+        #BubbleText.fade.show { transform: translateY(0) scale(1); }
 
-        #tooltip.slide { transform: translateY(60px); }
-        #tooltip.slide.show { transform: translateY(0); }
+        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
+        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
-        #tooltip.zoom { transform: scale(0.4); }
-        #tooltip.zoom.show { transform: scale(1); }
+        #BubbleText.slide { transform: translateY(60px); }
+        #BubbleText.slide.show { transform: translateY(0); }
 
-        #tooltip.left-text { text-align: left; }
-        #tooltip.right-text { text-align: right; }
-        #tooltip.center-text { text-align: center; }
+        #BubbleText.zoom { transform: scale(0.4); }
+        #BubbleText.zoom.show { transform: scale(1); }
+
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
 
         @keyframes bounceIn {
             0% { transform: translateY(40px) scale(0.6); }
@@ -225,9 +268,9 @@
             100% { transform: translateY(0) scale(1); }
         }
 
-        #tooltip::-webkit-scrollbar { width: 6px; }
-        #tooltip::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        #tooltip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar { width: 6px; }
+        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
 
         /******************************* tool Tips **************************************************************/
 
@@ -236,51 +279,64 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            max-width: 50vw;
+            word-wrap: break-word;
+            text-align: center;
         }
 
-        .back-to-toc {
+        /* next and previous page Navigation icons */
+        .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.8em;
+            font-size: 1em;
+            font-family: Arial;
+            
             padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+
+            background: rgba(0, 0, 0, 0.075) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 2px 7px rgba(0,0,0,0.5),
+            0 0 0 1px rgba(255,255,255,0.2) inset;            
+
             border-radius: 20px;
             transition: all 0.3s ease;
             order: 2;
             margin-right: auto;
-            posiiton: relative;
+            position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
 
-        .back-to-list {
-            color: var(--text-color);
+        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{
+            background: rgba(0, 0, 0, 0.25) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.7),
+            0 0 0 2px rgba(255,255,255,0.2) inset;   
+            border-left: 1px rgba(255, 255, 255, 0.6);
+            border-right: 1px rgba(255, 255, 255, 0.6); 
+            text-decoration: underline;
+        }    
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }
+
+        /* Also target the anchor to ensure it doesn't add extra background/shadow */
+        a:has(.glassbtn) {
             text-decoration: none;
-            font-size: 0.8em;
-            padding: 5px 15px;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            order: 2;
-            border-radius: 12px;
-            margin-right: auto;
-            bottom: 60px;
+            background: transparent;
         }
 
-        .back-to-toc:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
-        .back-to-list:hover {
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color);
-        }
+        .glassbtnlbl { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
+                        text-decoration: none; font-style: normal;}   
+        .paraitalicleft { font-style: italic; text-align: left; }
+        .paraitalicright { font-style: italic; text-align: right; }
+        .paraitaliccenter { font-style: italic; text-align: center; } 
 
         /* Fixed Custom Scrollbar */
         .page::-webkit-scrollbar {
@@ -353,7 +409,6 @@
             width: 15% !important;
         }
 
-
         .arrow-container.right {
             right: 0px;
         }
@@ -411,14 +466,6 @@
             transform: translateX(-50%);
             width: var(--page-width);
             height: 40px;
-            /* New glass-morphism styles (matching #tooltip) */
-            background: rgba(0, 0, 0, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
-            /* Keep existing layout */
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -430,7 +477,7 @@
         }
         /* Page number text inside slider */
         .slider-info {
-            color: #b0e0ff;            /* matches tooltip text color */
+            color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -573,12 +620,11 @@
         }
 
         .highlight-text {
-            color: var(--primary-color);
-            font-weight: 300;
-            font-size: 1.1em;
-            margin-bottom: 0.3em;
+            color: #D4E6FF;
+            font-size: 1.2em;
             display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
+            text-decoration: underline;
+            text-decoration-color: #D4E6FF;
             padding-bottom: 3px;
         }
 
@@ -646,12 +692,13 @@
             color: var(--primary-color) !important;
         }
 
-        /* List-style TOC */
         .toc-list .toc-button-container {
-            margin-left: 17%;
-            margin-right: 17%;
+            width: calc(100% - var(--arrow-hover-width));
+            margin-left: auto;
+            margin-right: auto;
             display: block;
         }
+
 
         .toc-list .toc-entry {
             margin: 8px 0;
@@ -811,8 +858,11 @@
             :root {
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
+
+            --Lmargin-safe-factor: 0.70;
+            --Rmargin-safe-factor: 0.85;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -832,7 +882,7 @@
 
             .book-title {font-size: 0.75em; margin-bottom: 15px !important; } 
             .back-to-List { padding: 6px 12px; font-size: 0.85em; } 
-            a { color: #00b0ff !important; }
+             a { color: #00b0ff !important; } 
             a:focus { outline: 2px solid #ffeb3b; outline-offset: 2px; }
             .text-only-container {width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }
 
@@ -904,8 +954,11 @@
             :root {
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
+
+                --Lmargin-safe-factor: 0.40;
+                --Rmargin-safe-factor: 0.80;
             }
-            .tooltip-full {
+            .BubbleText-full {
                 height: var(--tt-max-height);
                 width: var(--tt-max-width);
             }
@@ -1023,10 +1076,31 @@
             <h2>A Journey into the Self</h2> 
             <h2>Sri Rao</h2> 
             <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                Last updated: Jan 17, 2026
+                Last updated: Apr 16, 2026
             </p>
             <h3>~***~</h3>
         </div>
+         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <ul>
+        <li>For Previous page, click on left margin.</li>
+        <li>For Next Page, click on right margin.</li>
+        <li>Margins are 15% for your browser width.</li>
+        <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
+            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn'> 👆</span> any where you see it, to either </li>
+        </span>
+            <ul>
+            <li>Opens a webpage with additional information</li>
+            <li>Opens a popup box with additional information.</li>
+            </ul>
+        </li>
+        <li>Click on the Popup to make it go away.</li>
+        </ul>
+    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
+    <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
+
     </div>
         
 
@@ -1039,6 +1113,27 @@
                 <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>Preface</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>An introductory note</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>Initial thoughts</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-4" class="toc-link" style="display: flex; justify-content: space-between;"><span>The toolbox</span><span>4</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-5" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the mind</span><span>5</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>Language of the mind</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-7" class="toc-link" style="display: flex; justify-content: space-between;"><span>Feelings in the mind</span><span>7</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-8" class="toc-link" style="display: flex; justify-content: space-between;"><span>Interpretations in the mind</span><span>8</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-9" class="toc-link" style="display: flex; justify-content: space-between;"><span>Passionate living</span><span>9</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-10" class="toc-link" style="display: flex; justify-content: space-between;"><span>Harmonious living</span><span>10</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-11" class="toc-link" style="display: flex; justify-content: space-between;"><span>Release residual footprints</span><span>11</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-12" class="toc-link" style="display: flex; justify-content: space-between;"><span>Being open</span><span>12</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-13" class="toc-link" style="display: flex; justify-content: space-between;"><span>Connect with the universe</span><span>13</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-14" class="toc-link" style="display: flex; justify-content: space-between;"><span>Consciousness</span><span>14</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-15" class="toc-link" style="display: flex; justify-content: space-between;"><span>Intuition</span><span>15</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-16" class="toc-link" style="display: flex; justify-content: space-between;"><span>Conscience</span><span>16</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-17" class="toc-link" style="display: flex; justify-content: space-between;"><span>What must be done</span><span>17</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-18" class="toc-link" style="display: flex; justify-content: space-between;"><span>Practice with meditation</span><span>18</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-19" class="toc-link" style="display: flex; justify-content: space-between;"><span>Rewards of the universe</span><span>19</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-20" class="toc-link" style="display: flex; justify-content: space-between;"><span>Majlis in the mind</span><span>20</span></a></div>
             </div>
         </div>
+         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <ul>
+        <li>For Previous page, click on left margin.</li>
+        <li>For Next Page, click on right margin.</li>
+        <li>Margins are 15% for your browser width.</li>
+        <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
+            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn'> 👆</span> any where you see it, to either </li>
+        </span>
+            <ul>
+            <li>Opens a webpage with additional information</li>
+            <li>Opens a popup box with additional information.</li>
+            </ul>
+        </li>
+        <li>Click on the Popup to make it go away.</li>
+        </ul>
+    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
+    <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
+
     </div>
     
 
@@ -1050,10 +1145,8 @@
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><p style="color: #f09e5a;"><span class="highlight-text">Preface</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">“I am the awareness of the sum total of the contents of my energy halo, including, the way it is organized, the way it is maintained, and the way it conducts energy exchanges with nature in all its forms.<br><br>
-
-I intend to harvest the energy of my city-verse, to use it for meaning, and then hand it back.”
-</p><p style="text-align: center; font-style: bold; font-style: italic;"> Sri Rao </p><div class="image-container image-align-center mobile-align-center mobile-default-size"><img src="Logo.jpeg" alt="Image" style="width: 300px;"><div class="image-caption-popup" style="width: 300px;">logo</div></div>
+        <br><br><br><div style="color: #f09e5a;"><span class="highlight-text">Preface</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">I am the awareness of the sum total of the contents of my energy halo, including, the way it is organized, the way it is maintained, and the way it conducts energy exchanges with nature in all its forms.<br><br>I intend to harvest the energy of my city-verse, to use it for meaning, and then hand it back.</div><br><div class="image-container image-align-center mobile-align-center mobile-default-size"><img src="Logo.jpeg" alt="Image" style="width: 300px;"><div class="image-caption-popup" style="width: 300px;">logo</div></div>
+<div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">Sri Rao</div>
     </div>
     
             </div>
@@ -1068,7 +1161,7 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <br><br><br>A letter to my sons,<br><br>It has been on a long journey, reading, listening, thinking, internalizing, and working to put my understanding into practice. It has been an exciting process, involving literally ‘miles and miles’ of walking. It has changed the way I look at myself and things around me.<br><br>So many accomplished people with such diverse experiences have so much to say. Translating this to my context has enriched me immensely.<br><br>Along the way, I developed an awareness of things that impact my well-being, things that I am good at, things that energize me, and things that will continue to build meaning for me, over time.<br><br>In the following pages, I have written down my learnings, so I can refer to and refine, as new experiences occur.<br><br>As you read this, you might extract parts that are meaningful in your own journeys and experiences. I would love to see this being useful to you in some way.<br><br>Enjoy!!!<p style="font-style: bold; font-style: italic;"> Sri Rao </p>
+        <br><br><br>A letter to my sons,<br><br>It has been on a long journey, reading, listening, thinking, internalizing, and working to put my understanding into practice. It has been an exciting process, involving literally ‘miles and miles’ of walking. It has changed the way I look at myself and things around me.<br><br>So many accomplished people with such diverse experiences have so much to say. Translating this to my context has enriched me immensely.<br><br>Along the way, I developed an awareness of things that impact my well-being, things that I am good at, things that energize me, and things that will continue to build meaning for me, over time.<br><br>In the following pages, I have written down my learnings, so I can refer to and refine, as new experiences occur.<br><br>As you read this, you might extract parts that are meaningful in your own journeys and experiences. I would love to see this being useful to you in some way.<br><br>Enjoy!!!<br><br>Sri Rao
     </div>
     
             </div>
@@ -1084,7 +1177,7 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000aIHasMuchToReveal.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Initial Thoughts</span></p>These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back, only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.<br><br>Truth might well be the realization that “I” refers to the awareness of the contents of an energy halo unique to all beings. This halo created at birth by biological encoding, is sustained by a continuum of observations, experiences, emotions and actions, and relationships to energy flows that are integral to that being. The evolving nature of this understanding makes the journey into the self a lifelong pursuit.<br><br>The reward, also perpetual, is continuous passionate living and harmonious coexistence. Passionate living is continuing forays into the outer edges of cognitive capacity. Harmonious co-existence is effortless energy exchanges, with fellow beings and nature in all its forms.<br><br>The journey into the self is a solo journey. Solitude is a pre-condition to meaningful experiences.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000aIHasMuchToReveal.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Initial Thoughts</span></div><br>These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back, only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.<br><br>Truth might well be the realization that "I” refers to the awareness of the contents of an energy halo unique to all beings. This halo created at birth by biological encoding, is sustained by a continuum of observations, experiences, emotions and actions, and relationships to energy flows that are integral to that being. The evolving nature of this understanding makes the journey into the self a lifelong pursuit.<br><br>The reward, also perpetual, is continuous passionate living and harmonious coexistence. Passionate living is continuing forays into the outer edges of cognitive capacity. Harmonious co-existence is effortless energy exchanges, with fellow beings and nature in all its forms.<br><br>The journey into the self is a solo journey. Solitude is a pre-condition to meaningful experiences.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1100,12 +1193,15 @@ I intend to harvest the energy of my city-verse, to use it for meaning, and then
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000bRules.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">The Toolbox</span></p>Tools for the journey:<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Conviction: A resolve to be true to self, with all reflections, always. <br>
-Commitment: A complete ownership of all contents of the halo, as it was, as it is, and as it will be.<br>
-Acceptance:  An acceptance that all is as it should be, no matter what!!. <br>
-The three wise men of mind organs: Consciousness, Intuition, and Conscience. <br>
-Will to Act: The use of energy to direct action and to release residual footprints left in the halo.
-</p>Energy is not to be stored in the halo, only consumed, or discarded. This frees up space for continued and effortless new energy exchanges.<br><br>Whilst these tools exist in sufficient measure in all beings, they are to be applied with deliberateness. These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000bRules.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">The Toolbox</span></div><br>Tools for the journey: 
+<br><br>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft"><u>Conviction</u>: A resolve to be true to self, with all reflections, always. <br>
+<u>Commitment</u>: A complete ownership of all contents of the halo, as it was, as it is, and as it will be.<br>
+<u>Acceptance</u>:  An acceptance that all is as it should be, no matter what!!. <br>
+<u>The three wise men of mind organs</u>: Consciousness, Intuition, and Conscience. <br>
+<u>Will to Act</u>: The use of energy to direct action and to release residual footprints left in the halo.</div>
+<br>
+Energy is not to be stored in the halo, only consumed, or discarded. This frees up space for continued and effortless new energy exchanges.<br><br>Whilst these tools exist in sufficient measure in all beings, they are to be applied with deliberateness. These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1121,7 +1217,7 @@ Will to Act: The use of energy to direct action and to release residual footprin
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000cTheaterOfMind.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Theater of the mind</span></p>About 70,000 years ago, the cognitive revolution began in man, with the evolution of the organs of the mind.<br><br>In addition to the three wise men , mind organs such as, an imaginer of the unknown, an interpreter of reality, an understander of time, a creator of thoughts, a builder of patterns, an observer of images, a speaker of languages, a processor of energy into emotions, a believer of myths, a storer of memories, a counter of things, and a “Will’er” of timely actions, and more, came into being.<br><br>Unlike the physical organs of the body, mind organs possess capabilities that are unique to each being. This makes them difficult to label and understand.<br><br>Without direction, these organs constantly raise alarms (to protect), simultaneously engaging into every external energy spike and then seek refuge of one sort or another, exhausting energy reserves in the halo, and leaving behind considerable footprints.<br><br>Harness the actors in the theater of the mind, to curate energy flows and residual footprints in the halo, in support of the journey into the self. Focus them inward. When they are alarmed, say,” Thank you, but I am ok! The three wise men have this in control.”<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000cTheaterOfMind.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Theater of the mind</span></div><br>About 70,000 years ago, the cognitive revolution began in man, with the evolution of the organs of the mind.<br><br>In addition to the three wise men , mind organs such as, an imaginer of the unknown, an interpreter of reality, an understander of time, a creator of thoughts, a builder of patterns, an observer of images, a speaker of languages, a processor of energy into emotions, a believer of myths, a storer of memories, a counter of things, and a "Will’er” of timely actions, and more, came into being.<br><br>Unlike the physical organs of the body, mind organs possess capabilities that are unique to each being. This makes them difficult to label and understand.<br><br>Without direction, these organs constantly raise alarms (to protect), simultaneously engaging into every external energy spike and then seek refuge of one sort or another, exhausting energy reserves in the halo, and leaving behind considerable footprints.<br><br>Harness the actors in the theater of the mind, to curate energy flows and residual footprints in the halo, in support of the journey into the self. Focus them inward. When they are alarmed, say,” Thank you, but I am ok! The three wise men have this in control.”<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1137,7 +1233,7 @@ Will to Act: The use of energy to direct action and to release residual footprin
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000dLanguage.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Language of the mind</span></p>The faculty of language is the limiting factor in thought and understanding. Language, as a communication mode between mind organs, is analogous to the neurological signaling between the body organs. While most body functions are involuntary, the three wise men must control the functions of the mind.<br><br>The three wise men determine what energy is attracted into the halo, what flows through, what is consumed, and how residual footprints are released. This is done by instructing the “Will” to trigger lower mind organs to work on the energy content of the halo.<br><br>The three wise men also receive messages from the mind organs, which they interpret and “Will” action, to ensure focus is maintained on doing the “right” thing, in the “best” way, and with “compassion”. They also “will”, actions through a neurological interface to create “physical body language” to broadcast visible energies to the outside world.<br><br>The three wise men use language to keep all the mind organs aligned.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">What is said to the self has consequences. Self-love and soothing language lubricate the mind organs for frictionless functioning.</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000dLanguage.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Language of the mind</span></div><br>The faculty of language is the limiting factor in thought and understanding. Language, as a communication mode between mind organs, is analogous to the neurological signaling between the body organs. While most body functions are involuntary, the three wise men must control the functions of the mind.<br><br>The three wise men determine what energy is attracted into the halo, what flows through, what is consumed, and how residual footprints are released. This is done by instructing the "Will” to trigger lower mind organs to work on the energy content of the halo.<br><br>The three wise men also receive messages from the mind organs, which they interpret and "Will” action, to ensure focus is maintained on doing the "right” thing, in the "best” way, and with "compassion”. They also "will”, actions through a neurological interface to create "physical body language” to broadcast visible energies to the outside world.<br><br>The three wise men use language to keep all the mind organs aligned.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">What is said to the self has consequences. Self-love and soothing language lubricate the mind organs for frictionless functioning.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1153,10 +1249,9 @@ Will to Act: The use of energy to direct action and to release residual footprin
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000eFeelings.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Feelings in the mind</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-The three wise men choose which energy flows through the halo, what to harness, and what is “Will’ed” to be provisioned to the mind organs. </p>Mind organs transform this energy into emotions. Emotions are seemingly coherent, but often inaccurate interpretations of reality.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000eFeelings.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Feelings in the mind</span></div><br><ParaitalicL="The three wise men choose which energy flows through the halo, what to harness, and what is "Will’ed” to be provisioned to the mind organs."><br><br>Mind organs transform this energy into emotions. Emotions are seemingly coherent, but often inaccurate interpretations of reality.<br><br><ParaitalicL="
 The three wise men interpret, validate and assemble emotions into feelings. 
-Feelings are used to direct the “Will” to action. </p>The three wise men must continually ensure that feelings and actions support open,  passionate and harmonious living.<br><br>Energy harnessed during energy spikes and feelings inappropriately actioned, or ignored, result in wasteful energy consumption and higher residual footprints. Footprints must be released.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Residual footprints are considered released when their associated feelings are rendered irrelevant.</p>Feelings represent universality and equality in all beings. Feelings make actions purposeful and consciousness meaningful.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+Feelings are used to direct the "Will” to action."><br><br>The three wise men must continually ensure that feelings and actions support open,  passionate and harmonious living.<br><br>Energy harnessed during energy spikes and feelings inappropriately actioned, or ignored, result in wasteful energy consumption and higher residual footprints. Footprints must be released.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Residual footprints are considered released when their associated feelings are rendered irrelevant.</div><br>Feelings represent universality and equality in all beings. Feelings make actions purposeful and consciousness meaningful.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1172,11 +1267,9 @@ Feelings are used to direct the “Will” to action. </p>The three wise men mus
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000fInterpretations.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Interpretations in the mind</span></p>The stories of past energy consumptions from the halo, are stored as experiences in the memory banks of the three wise men.<br><br>Associated interpretations (two very different types - (type I and type II) and actions, are stored alongside.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Type I interpretations are automatic, intuitive, fast, reasoned by association, loosely pattern matched, emotional conclusions and necessary for survival. They have applicability in high noise / high bias scenarios. They seem coherent and suppress ambiguity.
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000fInterpretations.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Interpretations in the mind</span></div><br>The stories of past energy consumptions from the halo, are stored as experiences in the memory banks of the three wise men.<br><br>Associated interpretations (two very different types - (type I and type II) and actions, are stored alongside.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft"><u>Type I</u> interpretations are automatic, intuitive, fast, reasoned by association, loosely pattern matched, emotional conclusions and necessary for survival. They have applicability in high noise / high bias scenarios. They seem coherent and suppress ambiguity.
 <br><br>
-Type II interpretations are deliberate, effortful, logical, and verifiable analysis, necessary for knowledge and purposeful living. They require the problem and constraints to be well defined with a timely feedback loop. They find use in rule based deterministic environments.
-</p>The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for “Will’ed” actions,<p style="text-align: center;margin-left: 30px; line-height: 1.4; font-style: italic;">The three wise men must aim for descriptive adequacy&nbsp;&nbsp;NOT&nbsp;&nbsp;explanatory adequacy in storing experiences.</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+<u>Type II</u> interpretations are deliberate, effortful, logical, and verifiable analysis, necessary for knowledge and purposeful living. They require the problem and constraints to be well defined with a timely feedback loop. They find use in rule based deterministic environments.</div><br>The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for "Will’ed” actions,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The three wise men must aim for descriptive adequacy <u>NOT</u> explanatory adequacy in storing experiences.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1192,12 +1285,7 @@ Type II interpretations are deliberate, effortful, logical, and verifiable analy
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000gPassionateLiving.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Passionate living</span></p>Passionate living is an outcome of repetitive choices, made by the three wise men,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-The three wise men choose, what outside energy is attracted into the halo, what is allowed to pass through, what is consumed and what is the desired outcome from that consumption. </p>It is the consequence of a conscious journey into the self.<br><br>Genetic endowments create pre-dispositions in all beings.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Passionate living is the spending of energy in the pursuit of actions aligned with these pre-dispositions. 
-</p>Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual footprints are indicators of passionate choices. Often, this is a result of referencing type II interpretations. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is visible and regenerative.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Passionate living involves repeated journeys from the knowledge core to the outer edges of cognitive capacity along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength.
-</p>Passionate living expands the halo and smoothens energy flows in it. The desire for passionate living rests on a foundation of curiosity.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000gPassionateLiving.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Passionate living</span></div><br>Passionate living is an outcome of repetitive choices, made by the three wise men,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The three wise men choose, what outside energy is attracted into the halo, what is allowed to pass through, what is consumed and what is the desired outcome from that consumption.</div><br>It is the consequence of a conscious journey into the self.<br><br>Genetic endowments create pre-dispositions in all beings.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Passionate living is the spending of energy in the pursuit of actions aligned with these pre-dispositions.</div><br>Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual footprints are indicators of passionate choices. Often, this is a result of referencing type II interpretations. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is visible and regenerative.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Passionate living involves repeated journeys from the knowledge core to the outer edges of cognitive capacity along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength.</div><br>Passionate living expands the halo and smoothens energy flows in it. The desire for passionate living rests on a foundation of curiosity.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1213,10 +1301,10 @@ Passionate living involves repeated journeys from the knowledge core to the oute
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000hHarmoniousLiving.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Harmonious living</span></p>Harmonious living is a result of effortless exchanges of energy, a consequence of smooth energy flows in and out of the halo. Smooth energy flow is a function of,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-The turbulence of outside energy, the size of the halo, the amount and intensity of the energy attracted into it, the number of residual footprints, and the effort to release them. </p>The value of smooth flow is to allow for timely energy spend on,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Wide observation scans, selective consumption, focused action, receipt of timely feedback, a continuous effort to release residual energy footprints and lessen the likelihood of dis-passionate, impromptu and inconsequential living.</p>Everything and everyone in nature is transmitting energy back and forth. The three wise men must,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Set the pace of engagement, set the pace of the release of footprints, retain focus on doing the “right” thing, in the “best” way, and with “compassion”. </p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">The primary goal of harmonious living is energy conservation, smooth flow in the halo in the self, and lowering the need for corrective action (release of footprints in the halo).</p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000hHarmoniousLiving.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Harmonious living</span></div><br>Harmonious living is a result of effortless exchanges of energy, a consequence of smooth energy flows in and out of the halo. Smooth energy flow is a function of,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The turbulence of outside energy, the size of the halo, the amount and intensity of the energy attracted into it, the number of residual footprints, and the effort to release them.</div><br>The value of smooth flow is to allow for timely energy spend on,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Wide observation scans, selective consumption, focused action, receipt of timely feedback, a continuous effort to release residual energy footprints and lessen the likelihood of dis-passionate, impromptu and inconsequential living.
+Everything and everyone in nature is transmitting energy back and forth. The three wise men must,</div><br><ParaitalicL="Set the pace of engagement, set the pace of the release of footprints, retain focus on doing the "right” thing, in the "best” way, and with "compassion”. ">
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The primary goal of harmonious living is energy conservation, smooth flow in the halo in the self, and lowering the need for corrective action (release of footprints in the halo).</div>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1232,11 +1320,7 @@ Set the pace of engagement, set the pace of the release of footprints, retain fo
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000iReleaseFootprints.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Release residual footprints</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-The flow of energy into the halo, irrespective of outcomes, will leave residual footprints.
-</p>To allow for continuous and smooth energy flow through the halo, footprints must be released. The three wise men, as custodians of the halo, must take ownership of its contents and must continually “Will” action to release residual energy footprints within it.<br><br>The three wise men must repeatedly walk around each residual footprint. This inspection changes their perspective. It allows for multiple points of view to assess impact in a micro sense.  They must also change their frames of reference by zooming in and out to assess relevance to the bigger picture, a macro sense.<br><br>The outcome of these zoom & pan journey’s must be<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-A “Will’ed” re-orientation of emotions, feelings, and re-setting of mind organs, so that emotions and feelings lose their relevance in any current or future context, thereby considering them to be released. 
-</p>A quantified understanding of effort to release footprints must be stored in memory banks for future reference.<br><br>This is a vital health task of clearing and cleansing of the halo<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000iReleaseFootprints.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Release residual footprints</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The flow of energy into the halo, irrespective of outcomes, will leave residual footprints.</div><br>To allow for continuous and smooth energy flow through the halo, footprints must be released. The three wise men, as custodians of the halo, must take ownership of its contents and must continually "Will” action to release residual energy footprints within it.<br><br>The three wise men must repeatedly walk around each residual footprint. This inspection changes their perspective. It allows for multiple points of view to assess impact in a micro sense.  They must also change their frames of reference by zooming in and out to assess relevance to the bigger picture, a macro sense.<br><br>The outcome of these zoom & pan journey’s must be<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">A 'Will’ed re-orientation of emotions, feelings, and re-setting of mind organs, so that emotions and feelings lose their relevance in any current or future context, thereby considering them to be released.</div><br>A quantified understanding of effort to release footprints must be stored in memory banks for future reference.<br><br>This is a vital health task of clearing and cleansing of the halo<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1252,7 +1336,7 @@ A “Will’ed” re-orientation of emotions, feelings, and re-setting of mind o
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000jBeTheEyeInTheSky.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Being Open</span></p>Openness requires observing energy flows and footprints within the halo, and the functioning of mind organs.<br><br>Being open is a key responsibility of the 3 wise men.<br><br>Dominion over the halo is liberation. Dominion over the halo and the outside energy flows, and their interactions, is enlightenment. Maintaining continuous enlightenment is being open.<br><br>Openness is oversight over a continuum of mind functions. From the inside to the outside, they are thoughts – emotions – feelings – interpretations and reality.<br><br>When open, observations occur without purpose, without anticipation and without judgment. Open implies that there is awareness of passionate and harmonious living. Open reaffirms the role of “I” as the guest of honor in the theater of the mind. Open reaffirms the ability to focus the actors inward. Open is an outcome of consciousness. Open allows the three wise men to curate quality into their memory banks and the halo. Open manages energy deficits, where spend is maintained below received. Open ensures smoothness of flow as its highest priority.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000jBeTheEyeInTheSky.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Being Open</span></div><br>Openness requires observing energy flows and footprints within the halo, and the functioning of mind organs.<br><br>Being open is a key responsibility of the 3 wise men.<br><br>Dominion over the halo is liberation. Dominion over the halo and the outside energy flows, and their interactions, is enlightenment. Maintaining continuous enlightenment is being open.<br><br>Openness is oversight over a continuum of mind functions. From the inside to the outside, they are thoughts – emotions – feelings – interpretations and reality.<br><br>When open, observations occur without purpose, without anticipation and without judgment. Open implies that there is awareness of passionate and harmonious living. Open reaffirms the role of "I” as the guest of honor in the theater of the mind. Open reaffirms the ability to focus the actors inward. Open is an outcome of consciousness. Open allows the three wise men to curate quality into their memory banks and the halo. Open manages energy deficits, where spend is maintained below received. Open ensures smoothness of flow as its highest priority.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1268,7 +1352,7 @@ A “Will’ed” re-orientation of emotions, feelings, and re-setting of mind o
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000kEnergyOftheUniverse.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Connect with the universe</span></p>All beings, living and inanimate, contribute to the energy flow in the universe. All beings must harness this energy to steer into passionate and harmonious living.<br><br>The universe is a limitless and free energy resource.  Every human made object was built with human energy investments and continues to be maintained by it. Every other object in nature evolved with the application of forces over time and continues to be sustained by it. All beings are bundles of energy in motion. Energy exchanges occur at every instant in time, in massive doses. History has locked energy into objects, waiting to be released. Openness allows the halo to attract and be receptive to new energy flows.<br><br>Energy cannot be created or destroyed. It may only be stored for short periods after which their footprints must be released. Footprints stored for longer durations take up space, that the halo would have used for new exchanges.<br><br>Harmonious co-existence with the universe, (effortless energy exchanges), feeds the energy needs for passionate living. The meaning of life is a function of the energy connections the three wise men make in the halo’s neighborhood.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000kEnergyOftheUniverse.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Connect with the universe</span></div><br>All beings, living and inanimate, contribute to the energy flow in the universe. All beings must harness this energy to steer into passionate and harmonious living.<br><br>The universe is a limitless and free energy resource.  Every human made object was built with human energy investments and continues to be maintained by it. Every other object in nature evolved with the application of forces over time and continues to be sustained by it. All beings are bundles of energy in motion. Energy exchanges occur at every instant in time, in massive doses. History has locked energy into objects, waiting to be released. Openness allows the halo to attract and be receptive to new energy flows.<br><br>Energy cannot be created or destroyed. It may only be stored for short periods after which their footprints must be released. Footprints stored for longer durations take up space, that the halo would have used for new exchanges.<br><br>Harmonious co-existence with the universe, (effortless energy exchanges), feeds the energy needs for passionate living. The meaning of life is a function of the energy connections the three wise men make in the halo’s neighborhood.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1284,19 +1368,13 @@ A “Will’ed” re-orientation of emotions, feelings, and re-setting of mind o
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000lPillarConscious.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Consciousness</span></p>*Consciousness is the first of the three wise men. Consciousness has awareness of the halo and outside energy flows.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Consciousness directs the “Will” to ensure functioning of mind organs and timely release of residual footprints. Consciousness of the outside flow attracts external energy which supports passionate and harmonious living.<br>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000lPillarConscious.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Consciousness</span></div><br>Consciousness is the first of the three wise men. Consciousness has awareness of the halo and outside energy flows.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Consciousness directs the 'Will' to ensure functioning of mind organs and timely release of residual footprints. Consciousness of the outside flow attracts external energy which supports passionate and harmonious living.<br>
 <br>
 Consciousness requires suspension of all interpretations until descriptive captures from multiple perspectives are stored in the memory banks as experiences. <br>
 <br>
-Consciousness appends the present context - descriptive captures to the memory bank for future reference.<br>
-<br>
-
-The descriptive captures describe three contexts</p><p style="margin-left: 60px; line-height: 1.4; font-style: italic;">
-The context outside the halo<br>
+Consciousness appends the present context - descriptive captures to the memory bank for future reference.<br></div><br>The descriptive captures describe three contexts<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The context outside the halo<br>
 The context held within the mind organs<br>
-The context within which feelings make sense to the being.<br>
-</p>Consciousness is the experience of awareness without content and have content arise as a consequence of it. Consciousness is that in which all experience appears, with which all experience is known and out of which all experience is made<br><br>Experience is all sensation (feelings of the body - sight, sound, touch, taste, smell) and the emotions (feelings of the mind) presented by the mind organs.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+The context within which feelings make sense to the being.<br></div><br>Consciousness is the experience of awareness without content and have content arise as a consequence of it. Consciousness is that in which all experience appears, with which all experience is known and out of which all experience is made<br><br>Experience is all sensation (feelings of the body - sight, sound, touch, taste, smell) and the emotions (feelings of the mind) presented by the mind organs.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1312,15 +1390,11 @@ The context within which feelings make sense to the being.<br>
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000mPillarIntuition.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Intuition</span></p>Intuition is the second of the three wise men.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Intuition appends an interpretation of reality, and the prediction of a likely outcome, to the descriptive content that consciousness stores in the memory banks. <br>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000mPillarIntuition.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Intuition</span></div><br>Intuition is the second of the three wise men.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Intuition appends an interpretation of reality, and the prediction of a likely outcome, to the descriptive content that consciousness stores in the memory banks. <br>
 <br>
-Intuition makes judgments as to which type of interpretations are applicable in the present context and employs it to assemble emotions into feelings which direct action.
-</p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Type I interpretations, matches patterns and generates fast approximations as confident guidance. While useful as a survival mechanism in noisy, non-deterministic, and threatening environments (external energy spikes), it is best to wait till the spikes subside before exploring applicability of “Will’ed” actions. <br>
+Intuition makes judgments as to which type of interpretations are applicable in the present context and employs it to assemble emotions into feelings which direct action.</div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Type I interpretations, matches patterns and generates fast approximations as confident guidance. While useful as a survival mechanism in noisy, non-deterministic, and threatening environments (external energy spikes), it is best to wait till the spikes subside before exploring applicability of 'Will’ed' actions. <br>
 <br>
-TypeII interpretations result from previously validated cause-effect relationships in deterministic environments. They result in lower footprints than those “Will’ed” by type I.
-</p>Subsequently, intuition updates the memory banks with the energy consumed to release footprints left behind in the halo by these actions.<br><br>We don’t see the world as it is, we see it in a way to survive it. Evolution did not require mind organs to confirm the truth in reality. The seeking of truth would create a probability space of actions so large, that it would cause analysis paralysis, raising the likelihood of death. Even though the threat to survival is removed the mind organs still function in this interpretive fog v/s the establishment of the truth in reality. This activates the need for ideologies which function as a surrogate for truth.<br><br>This use of ideologies opens the door to actions undertaken against our own self interest. Ideologies can kill. They often do.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+TypeII interpretations result from previously validated cause-effect relationships in deterministic environments. They result in lower footprints than those 'Will’ed” by type I.</div><br>Subsequently, intuition updates the memory banks with the energy consumed to release footprints left behind in the halo by these actions.<br><br>We don’t see the world as it is, we see it in a way to survive it. Evolution did not require mind organs to confirm the truth in reality. The seeking of truth would create a probability space of actions so large, that it would cause analysis paralysis, raising the likelihood of death. Even though the threat to survival is removed the mind organs still function in this interpretive fog v/s the establishment of the truth in reality. This activates the need for ideologies which function as a surrogate for truth.<br><br>This use of ideologies opens the door to actions undertaken against our own self interest. Ideologies can kill. They often do.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1336,7 +1410,7 @@ TypeII interpretations result from previously validated cause-effect relationshi
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000nPillarConscience.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Conscience</span></p>Conscience is the third of the three wise men.<br><br>Conscience appends to the memory bank, a “judgement” of residual footprints that a particular “Will’ed” action would leave in others. This judgement is aided by consciousness and intuition’s prediction of their reaction. This judgement applies to all things in nature, living or inanimate.<br><br>Conscience supports harmonious living by promoting “Will’ed” actions that would minimize residual footprints in others.<br><br>Considerations of conscience must only apply, after energy residuals in self are minimized. Priority to self must be enforced. Ignoring residuals in self is sacrifice and is unsustainable in time.<br><br>Consciousness forms the basis for doing the right thing.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000nPillarConscience.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Conscience</span></div><br>Conscience is the third of the three wise men.<br><br>Conscience appends to the memory bank, a "judgement” of residual footprints that a particular "Will’ed” action would leave in others. This judgement is aided by consciousness and intuition’s prediction of their reaction. This judgement applies to all things in nature, living or inanimate.<br><br>Conscience supports harmonious living by promoting "Will’ed” actions that would minimize residual footprints in others.<br><br>Considerations of conscience must only apply, after energy residuals in self are minimized. Priority to self must be enforced. Ignoring residuals in self is sacrifice and is unsustainable in time.<br><br>Consciousness forms the basis for doing the right thing.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1352,19 +1426,13 @@ TypeII interpretations result from previously validated cause-effect relationshi
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000oThreeWiseMen.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">What must be done</span></p>DO THE RIGHT THING.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-The three wise men must “Will” action to regulate the half-life of the manic highs and depressing lows. Under regulation will result in wild peak-trough swings and consequential dysfunction. Over regulation will flat-line into monotonic meaninglessness. <br>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000oThreeWiseMen.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">What must be done</span></div><br>DO THE RIGHT THING.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The three wise men must 'Will' action to regulate the half-life of the manic highs and depressing lows. Under regulation will result in wild peak-trough swings and consequential dysfunction. Over regulation will flat-line into monotonic meaninglessness. <br>
 <br>
-It is about the energy trade-offs, to pre-regulate, as opposed to the release of residual energy footprints after the fact.
-</p>DO THE BEST THAT CAN BE DONE.  Use the three wise men to,<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Oversee the regulating mechanism by being open. Maintain equilibrium in the inherent bi-polar bookends present in all beings.
-</p>DO IT WITH COMPASSION.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Use the three wise men to guide minimizing footprints in self. <br>
+It is about the energy trade-offs, to pre-regulate, as opposed to the release of residual energy footprints after the fact.</div><br>DO THE BEST THAT CAN BE DONE.  Use the three wise men to,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Oversee the regulating mechanism by being open. Maintain equilibrium in the inherent bi-polar bookends present in all beings.</div><br>DO IT WITH COMPASSION.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Use the three wise men to guide minimizing footprints in self. <br>
 <br>
 Assist others to support their needs, but only to the extent that understood and accepted amounts of energy are consumed from the halo. Use conscience to guide minimizing footprints in others. Always, compassion (to self, first and then, to others).
 <br>
-Compassion is about energy conservation in the whole ecosystem.
-</p><p style="text-align: center; font-style: bold;"> ~***~ </p>
+Compassion is about energy conservation in the whole ecosystem.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1380,7 +1448,7 @@ Compassion is about energy conservation in the whole ecosystem.
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000pProtectYourself.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Practice with meditation</span></p>Knowing what to do, and summoning the “Will” to do it, goes 2/3rd of the way. Doing it - is the final third.<br><br>The purpose of meditation is to practice being persistently open. This requires discipline.  Discipline exercises and strengthens the three wise men.<br><br>Discipline is accomplished through frequent meditation, which reinforces desired behaviors to the three wise men.  It keeps “openness” front and center, making it a persistent theme. From that, comes the ability to do the “right” thing, in the “best” way, with “compassion” and with ease. It suspends all activity to provide the three wise men with rest and validation.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000pProtectYourself.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Practice with meditation</span></div><br>Knowing what to do, and summoning the "Will” to do it, goes 2/3rd of the way. Doing it - is the final third.<br><br>The purpose of meditation is to practice being persistently open. This requires discipline.  Discipline exercises and strengthens the three wise men.<br><br>Discipline is accomplished through frequent meditation, which reinforces desired behaviors to the three wise men.  It keeps "openness” front and center, making it a persistent theme. From that, comes the ability to do the "right” thing, in the "best” way, with "compassion” and with ease. It suspends all activity to provide the three wise men with rest and validation.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1396,11 +1464,7 @@ Compassion is about energy conservation in the whole ecosystem.
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000qdiest.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Rewards of the universe</span></p><p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-When one’s actions leave behind footprints, energy which would otherwise be available to all, is spent on its release. 
-</p>This is wasteful. This lowers the overall availability of usable energy flows in the universe. This weakens the self and the universe around it.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Conversely, compassionate living increases the availability of free usable energy. This ensures sustenance and increases growth in nature in all its forms, creating a regenerative energy cycle in the universe.
-</p>Compassion ensures the supply of energy for harmonious living that funds the perpetual rewards of receiving energy in a measure greater than its expense.<p style="text-align: center; font-style: bold;"> ~***~ </p>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000qdiest.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Rewards of the universe</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">When one’s actions leave behind footprints, energy which would otherwise be available to all, is spent on its release.</div><br>This is wasteful. This lowers the overall availability of usable energy flows in the universe. This weakens the self and the universe around it.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Conversely, compassionate living increases the availability of free usable energy. This ensures sustenance and increases growth in nature in all its forms, creating a regenerative energy cycle in the universe.</div><br>Compassion ensures the supply of energy for harmonious living that funds the perpetual rewards of receiving energy in a measure greater than its expense.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1416,8 +1480,7 @@ Conversely, compassionate living increases the availability of free usable energ
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
-<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000rMeetingOfTheMinds.jpeg" alt="Image" style="width: 100%;"></div><p style="color: #f09e5a;"><span class="highlight-text">Majlis in the mind</span></p>As an integral part of meditation, the three wise men, regularly deliberate on the feelings and associated actions stored in their memory banks.<p style="margin-left: 30px; line-height: 1.4; font-style: italic;">
-Did they support passionate and harmonious living?<br>
+<div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000rMeetingOfTheMinds.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Majlis in the mind</span></div><br>As an integral part of meditation, the three wise men, regularly deliberate on the feelings and associated actions stored in their memory banks.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Did they support passionate and harmonious living?<br>
 Is the descriptive and interpretive content of the memory banks aligned with reality as experienced after the fact?<br>
 Are the lower mind organs focused on the self? <br>
 Are the emotions they surface appropriate?<br>
@@ -1425,7 +1488,7 @@ Are the feelings and the actions they motivate aligned to being open?<br>
 Are footprints released in time? <br>
 Is the smoothness of flow maintained in the halo? <br>
 Do energy tradeoffs limit the half-life of peak-trough swings? <br>
-Is being compassionate a high enough priority?</p>The majlis is a sitting room in the house of meditation, where the three wise men reflect on “I”, the separate self, express self-love and gratitude, make choices, re-affirm their roles and give meaning to the words: Liberation, Enlightenment and being Open,<p style="text-align: center; font-style: bold;"> I must remember, I am the guest of honor in the majlis. </p><br><br><p style="text-align: center; font-style: bold;"> ~***~ </p>
+Is being compassionate a high enough priority?</div><br>The majlis is a sitting room in the house of meditation, where the three wise men reflect on "I”, the separate self, express self-love and gratitude, make choices, re-affirm their roles and give meaning to the words: Liberation, Enlightenment and being Open,<br><br><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">I must remember, I am the guest of honor in the majlis.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
             </div>
@@ -1489,16 +1552,33 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
         const sliderContainer = document.getElementById('slider-container');
 
         // Generic listener for ALL trigger
-        // ==================== TOOLTIP LISTENER start ==================
+
+        // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
+        document.addEventListener('keydown', function(event) {
+            // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
+            if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
+                // Optionally, avoid interfering with normal copy if text is selected
+                const selection = window.getSelection().toString();
+                if (selection.length === 0) {
+                    // No text selected – call your custom copy function
+                    copyCurrentPageUrl(event);
+                    // Prevent default browser copy (optional, but you might want to keep it)
+                    // event.preventDefault();
+                }
+                // If text is selected, let the default copy happen
+            }
+        });
+        
+        // ==================== BubbleText LISTENER start ==================
         document.addEventListener('click', function(e) {
             try {
 
-                const trigger = e.target.closest('.tooltip-trigger');
-                const tooltip = document.getElementById('tooltip');
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
 
-                // If tooltip is open and clicking outside, close it
-                if (tooltip.classList.contains('show') && !trigger && !tooltip.contains(e.target)) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
                     return;
                 }
 
@@ -1509,7 +1589,7 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                 // --- Collect extra classes (exclude alignment classes) ---
                 let extraClasses = [];
                 trigger.classList.forEach(cls => {
-                    if (cls !== 'tooltip-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
                         extraClasses.push(cls);
                     }
                 });
@@ -1544,24 +1624,24 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
 
                 // --- Special positioning handling (center, @, 100% 100%) ---
                 if (position !== 'absolute') {
-                    let tooltipWidth = parseFloat(trigger.dataset.width);
-                    let tooltipHeight = parseFloat(trigger.dataset.height);
-                    let totalTooltipWidth = tooltipWidth ? tooltipWidth + extra : null;
-                    let totalTooltipHeight = tooltipHeight ? tooltipHeight + extra : null;
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
 
                     if (top === 'center') {
-                        if (totalTooltipHeight) {
-                            let centerTop = (window.innerHeight / 2) - (totalTooltipHeight / 2);
-                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalTooltipHeight - padding));
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
                             top = centerTop + 'px';
                         } else {
                             top = '50%';
                         }
                     }
                     if (left === 'center') {
-                        if (totalTooltipWidth) {
-                            let centerLeft = (window.innerWidth / 2) - (totalTooltipWidth / 2);
-                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalTooltipWidth - padding));
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
                             left = centerLeft + 'px';
                         } else {
                             left = '50%';
@@ -1628,28 +1708,28 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                 }
 
                 // --- Prepare remaining parameters ---
-                const rawTiptext = trigger.dataset.tiptext || 'Default tooltip';
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
                 const animation = trigger.dataset.animation || 'fade';
                 const textAlign = trigger.dataset.textalign || 'left';
-                const tiptext = htmlEncodeTooltipText(rawTiptext);
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
 
-                const isCurrentlyOpen = tooltip.classList.contains('show') && tooltip.innerHTML.includes(rawTiptext);
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
 
                 if (isCurrentlyOpen) {
-                    toggleTooltip('', '', '', '', '', 'no');
+                    toggleBubbleText('', '', '', '', '', 'no');
                 } else {
-                    const showTooltip = () => {
-                        toggleTooltip(top, left, height, width, tiptext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
-                        // Force layout recalculation after the tooltip is visible
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
                         requestAnimationFrame(() => {
-                            const t = document.getElementById('tooltip');
+                            const t = document.getElementById('BubbleText');
                             if (t && t.classList.contains('show')) t.scrollTop;
                         });
                     };
                     if (document.fonts) {
-                        document.fonts.ready.then(showTooltip);
+                        document.fonts.ready.then(showBubbleText);
                     } else {
-                        showTooltip();
+                        showBubbleText();
                     }
                 }
 
@@ -1659,17 +1739,17 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
         });
 
 
-        // ==================== TOOLTIP LISTENER end ====================
+        // ==================== BubbleText LISTENER end ====================
 
 
         document.addEventListener('click', function(e) {
-            const tooltip = document.getElementById('tooltip');
-            if (tooltip.contains(e.target)) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
                 e.stopPropagation(); // prevent interfering with other listeners
-                toggleTooltip('', '', '', '', '', 'no');
+                toggleBubbleText('', '', '', '', '', 'no');
             }
         });
-      // ==================== TOOLTIP inside click close end ====================
+      // ==================== BubbleText inside click close end ====================
 
         // ==================== MAIN CLICK LISTENER (TRIGGERS & OUTSIDE CLOSE) ====================
 
@@ -1697,6 +1777,20 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                         caption.style.transform = 'translateY(0)';
                         caption.classList.add('mobile-visible');
                     }
+                });
+            });
+
+            // Page Navigation icons anywhere in content
+            document.querySelectorAll('.next-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextPage();
+                });
+            });
+            document.querySelectorAll('.prev-page').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevPage();
                 });
             });
             
@@ -1766,8 +1860,58 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             });
         });        
 
-        // ==================== TOOLTIP FUNCTION start ====================
-        // ToolTIp Management
+        // ==================== Function COpy URL===========================
+        function showPopup(msg) {
+            // Use your existing toggleBubbleText to display a centered popup
+            toggleBubbleText('', '', 'auto', 'auto', msg, 'yes', 'fade', 'center', 'center-both', [], undefined, null, null, null, undefined);
+            // Auto-close after 3 seconds (optional)
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 5000);
+        }
+
+        function copyCurrentPageUrl(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) {
+                console.error('No active page found');
+                showPopup('Error: No active page');   // ← changed
+                return;
+            }
+
+            const pageId = activePage.id;
+            const baseUrl = window.location.href.split('#')[0];
+            const fullUrl = baseUrl + '#' + pageId;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullUrl).then(() => {
+                    showPopup('URL copied to clipboard<br>' + fullUrl);   // ← changed
+                }).catch(err => {
+                    console.error('Clipboard write failed:', err);
+                    showPopup('Copy failed. Use Ctrl+C');   // ← changed
+                });
+            } else {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = fullUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showPopup('URL copied to Clipboard<br>' + fullUrl);   // ← changed
+            }
+        }
+        // ==================== End COpy URL================================      
+
+        // ==================== BubbleText FUNCTION start ====================
+        // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
         // Convert a CSS length string to pixels (returns NaN if not possible)
         //
@@ -1785,42 +1929,69 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             return NaN; // calc() or other complex expressions
         }
 
-        // htmlEncodeTooltipText (keep your existing version)
-        function htmlEncodeTooltipText(str) {
+        // htmlEncodeBubbleTextText (keep your existing version)
+        function htmlEncodeBubbleTextText(str) {
             const div = document.createElement('div');
             div.innerHTML = str;
             return div.innerHTML;
         }
-        function toggleTooltip(top, left, height, width, tiptext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
-            const tooltip = document.getElementById('tooltip');
+
+        function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
+            const BubbleText = document.getElementById('BubbleText');
+
+            // If width or height is '@', activate @ mode and clear the respective dimension
+            if (width === '@') { top = '@'; width = ''; }
+            if (height === '@') { top = '@';height = ''; }
 
             if (visible === 'yes') {
-                // --- Prepare tooltip for display ---
-                tooltip.className = '';
-                extraClasses.forEach(cls => tooltip.classList.add(cls));
-                tooltip.style.setProperty('position', position, 'important');
-                if (textAlign !== 'left') tooltip.classList.add(textAlign + '-text');
-                if (animation !== 'fade') tooltip.classList.add(animation);
-                else tooltip.classList.add('fade');
+                // --- Prepare BubbleText for display ---
+                BubbleText.className = '';
+                extraClasses.forEach(cls => BubbleText.classList.add(cls));
+                BubbleText.style.setProperty('position', position, 'important');
+                
+                // Determine if explicit width/height are provided (non-empty, not 'auto')
+                const hasExplicitWidth = (width && width !== 'auto');
+                const hasExplicitHeight = (height && height !== 'auto');
+                
+                if (hasExplicitWidth || hasExplicitHeight) {
+                    // Explicit sizing: use block display and set inline width/height
+                    BubbleText.style.display = 'block';
+                    if (hasExplicitWidth) {
+                        BubbleText.style.width = width;
+                    } else {
+                        BubbleText.style.width = '';
+                    }
+                    if (hasExplicitHeight) {
+                        BubbleText.style.height = height;
+                    } else {
+                        BubbleText.style.height = '';
+                    }
+                } else {
+                    // Growing box mode: shrink-to-fit, respect CSS min/max
+                    BubbleText.style.display = 'inline-block';
+                    BubbleText.style.width = '';
+                    BubbleText.style.height = '';
+                }
+                
+                // Text alignment
+                if (textAlign !== 'left') BubbleText.classList.add(textAlign + '-text');
+                
+                // Animation
+                if (animation !== 'fade') BubbleText.classList.add(animation);
+                else BubbleText.classList.add('fade');
 
-                // Read custom max‑width / max‑height from the trigger (if provided)
+                // Read max-width / max-height from trigger (6th and 7th slots)
                 const datasetMaxWidth = trigger?.dataset?.maxwidth;
                 const datasetMaxHeight = trigger?.dataset?.maxheight;
 
-                tooltip.innerHTML = tiptext;
+                BubbleText.innerHTML = bbbltext;
 
-                // Apply width / height (will be overridden in smart mode if needed)
-                if (width !== 'auto') tooltip.style.width = width;
-                else tooltip.style.width = '';
-                if (height !== 'auto') tooltip.style.height = height;
-                else tooltip.style.height = '';
-
-                // Apply max‑width / max‑height (dataset overrides computed maxHeight)
-                if (datasetMaxWidth) tooltip.style.maxWidth = datasetMaxWidth;
-                else tooltip.style.maxWidth = '';
-                if (datasetMaxHeight) tooltip.style.maxHeight = datasetMaxHeight;
-                else if (maxHeight !== null) tooltip.style.maxHeight = maxHeight + 'px';
-                else tooltip.style.maxHeight = '';
+                // Apply max-width / max-height (always limits)
+                if (datasetMaxWidth) BubbleText.style.maxWidth = datasetMaxWidth;
+                else BubbleText.style.maxWidth = '';
+                if (datasetMaxHeight) BubbleText.style.maxHeight = datasetMaxHeight;
+                else if (maxHeight !== null) BubbleText.style.maxHeight = maxHeight + 'px';
+                else BubbleText.style.maxHeight = '';
 
                 const pos = position.toLowerCase();
                 const bottomModes = ['bottom-left', 'bottom-center', 'bottom-right', 'bottom-page'];
@@ -1828,12 +1999,9 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                 const needsLayout = ['center-height', 'center-width', 'center-both', ...bottomModes].includes(pos) || usesAt;
 
                 if (needsLayout) {
-                    // Make tooltip occupy space but invisible while we position it
-                    tooltip.style.visibility = 'visible';
-                    tooltip.style.opacity = '0';
-                    // Do NOT add 'show' class yet – we'll add it after positioning
+                    BubbleText.style.visibility = 'visible';
+                    BubbleText.style.opacity = '0';
 
-                    // Double RAF to allow layout to settle (we still need dimensions)
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
                             const pageElement = trigger ? trigger.closest('.page') : null;
@@ -1844,90 +2012,119 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                             let positioned = false;
 
                             // ========== SMART @ MODE (triggered by data-top="@") ==========
+
                             if (top === '@' && trigger) {
                                 console.log('===== SMART @ MODE ACTIVATED =====');
-                                // Completely reset inline styles and force the desired dimensions
-                                tooltip.removeAttribute('style');  // clear all inline styles
-                                tooltip.style.cssText = '';
-                                // Set our styles
-                                tooltip.style.setProperty('width', '50vw', 'important');
-                                tooltip.style.setProperty('max-width', '50vw', 'important');
-                                tooltip.style.setProperty('max-height', '3em', 'important');
-                                tooltip.style.setProperty('overflow-y', 'auto', 'important');
-                                tooltip.style.setProperty('height', 'auto', 'important');
-                                tooltip.style.setProperty('box-sizing', 'border-box', 'important');
-                                tooltip.style.setProperty('position', 'fixed', 'important');
-                                tooltip.style.setProperty('visibility', 'visible');
-                                tooltip.style.setProperty('opacity', '0');
-                                tooltip.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
-                                tooltip.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
-                                tooltip.style.setProperty('backdrop-filter', 'blur(15px)');
-                                tooltip.style.setProperty('border-radius', '8px');
-                                tooltip.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
-                                tooltip.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
-                                tooltip.style.setProperty('padding', '10px');
-                                tooltip.style.setProperty('font-size', '0.8em');
-                                tooltip.style.setProperty('color', '#b0e0ff');
-                                tooltip.style.setProperty('font-family', 'Arial, sans-serif');
-                                tooltip.style.setProperty('z-index', '9999');
-                                tooltip.style.setProperty('white-space', 'normal');
-                                tooltip.style.setProperty('word-wrap', 'break-word');
-
-                                // Force layout to get accurate dimensions after width change
-                                const tooltipHeightNow = tooltip.offsetHeight;
-                                const tooltipWidthNow = tooltip.offsetWidth;
-                                console.log('Computed width after setProperty:', tooltipWidthNow);
-                                console.log('Computed height after setProperty:', tooltipHeightNow);
-
+                                // Completely reset inline styles
+                                BubbleText.removeAttribute('style');
+                                BubbleText.style.cssText = '';
+                                
+                                // Set base styles (no inline max-height yet; we'll set it dynamically)
+                                BubbleText.style.setProperty('width', 'fit-content', 'important');
+                                BubbleText.style.setProperty('height', 'fit-content', 'important');
+                                BubbleText.style.setProperty('max-width', 'var(--tt-max-width)');
+                                // Do NOT set max-height here – will be set later based on available space
+                                BubbleText.style.setProperty('overflow-x', 'hidden');
+                                BubbleText.style.setProperty('overflow-y', 'auto');
+                                BubbleText.style.setProperty('word-wrap', 'break-word');
+                                BubbleText.style.setProperty('overflow-wrap', 'break-word');
+                                BubbleText.style.setProperty('box-sizing', 'border-box', 'important');
+                                BubbleText.style.setProperty('position', 'fixed', 'important');
+                                BubbleText.style.setProperty('visibility', 'visible');
+                                BubbleText.style.setProperty('opacity', '0');
+                                BubbleText.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
+                                BubbleText.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
+                                BubbleText.style.setProperty('backdrop-filter', 'blur(15px)');
+                                BubbleText.style.setProperty('border-radius', '8px');
+                                BubbleText.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
+                                BubbleText.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
+                                BubbleText.style.setProperty('padding', '10px');
+                                BubbleText.style.setProperty('font-size', '0.8em');
+                                BubbleText.style.setProperty('color', '#b0e0ff');
+                                BubbleText.style.setProperty('font-family', 'Arial, sans-serif');
+                                BubbleText.style.setProperty('z-index', '9999');
+                                BubbleText.style.setProperty('white-space', 'normal');
+                                
+                                // Force layout to get accurate dimensions
+                                const BubbleTextHeightNow = BubbleText.offsetHeight;
+                                const BubbleTextWidthNow = BubbleText.offsetWidth;
+                                console.log('Computed width:', BubbleTextWidthNow);
+                                console.log('Computed height:', BubbleTextHeightNow);
+                                
                                 const triggerRect = trigger.getBoundingClientRect();
                                 const viewportWidth = window.innerWidth;
                                 const viewportHeight = window.innerHeight;
-
-                                // Top: 10px below the trigger's bottom
-                                let topPos = triggerRect.bottom + 18;
-                                let bot_gap = 48;
-
-                                // Horizontal decision based on trigger's CENTER
-                                const triggerCenterX = triggerRect.left + triggerRect.width / 2;
-                                const threshold25 = viewportWidth * 0.25;
-                                const threshold75 = viewportWidth * 0.75;
-                                let leftPos;
-
-                                if (triggerCenterX < threshold25) {
-                                    const leftMargin = viewportWidth * 0.05;
-                                    leftPos = leftMargin;                     // 5vw from left edge
-                                    console.log('Case: left (trigger center < 25vw)');
-                                } else if (triggerCenterX > threshold75) {
-                                    const rightMargin = viewportWidth * 0.05;
-                                    leftPos = viewportWidth - tooltipWidthNow - rightMargin;   // 5vw from right edge
-                                    console.log('Case: right (trigger center > 75vw)');
-                                } else {
-                                    leftPos = (viewportWidth / 2) - (tooltipWidthNow / 2);     // centered
-                                    console.log('Case: center');
+                                
+                                // ----- Horizontal positioning (align with trigger's left edge, prevent overflow) -----
+                                const sideMargin = viewportWidth * 0.05;   // 5vw from edges
+                                let leftPos = triggerRect.left;            // start at trigger's left edge
+                                if (leftPos + BubbleTextWidthNow + sideMargin > viewportWidth) {
+                                    leftPos = viewportWidth - BubbleTextWidthNow - sideMargin;
                                 }
+                                leftPos = Math.max(sideMargin, leftPos);    // ensure left margin
+                                
+                                // ----- Vertical positioning (smart flip: below if enough space, else above) -----
+                                // Full content fits below → place below with natural height.
+                                // Full content doesn’t fit below, but a 3‑line (4.5em) version does → place below with max-height: 4.5em.
+                                // Full content fits above → place above with natural height (popup bottom aligned to trigger top – gap).
+                                // Else → place above with max-height clamped to available space, and popup’s top aligned to vertMargin (or bottom fixed).
 
-                                // Ensure tooltip stays within viewport vertically
-                                if (topPos + tooltipHeightNow > viewportHeight) {
-                                    topPos = viewportHeight - tooltipHeightNow - bot_gap;
-                                    console.log('Adjusted topPos (near bottom):', topPos);
+                                // ----- Vertical positioning with multi‑case logic (using top positioning only) -----
+                                const gap = 20;
+                                const vertMargin = viewportHeight * 0.05;   // 5% of viewport height
+                                const threeLineHeight = parseFloat(getComputedStyle(BubbleText).fontSize) * 1.5 * 3; // ≈4.5em in px
+
+                                // Case 1: natural popup fits below
+                                const naturalFitsBelow = (triggerRect.bottom + gap + BubbleTextHeightNow + vertMargin) <= viewportHeight;
+
+                                // Case 2: shrunk to 3 lines fits below
+                                const shrunkFitsBelow = (triggerRect.bottom + gap + threeLineHeight + vertMargin) <= viewportHeight;
+
+                                // Case 3: natural popup fits above
+                                const naturalTop = triggerRect.top - gap - BubbleTextHeightNow;
+                                const naturalFitsAbove = (naturalTop - vertMargin) >= 0;
+
+                                if (naturalFitsBelow) {
+                                    // Place below with natural height (no max-height limit)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    console.log('Case 1: natural below, finalTop =', finalTop);
+                                } 
+                                else if (shrunkFitsBelow) {
+                                    // Place below, but cap max-height to available space below (prevent overflow)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    const availableBelow = viewportHeight - (triggerRect.bottom + gap + vertMargin);
+                                    BubbleText.style.maxHeight = Math.max(0, availableBelow) + 'px';
+                                    BubbleText.style.minHeight = '4.5em';   // force at least 3 lines (optional)
+                                    console.log('Case 2: shrunk below (maxHeight = available space), finalTop =', finalTop);
                                 }
-                                topPos = Math.max(10, topPos);
-
-                                // Clamp horizontal position to viewport edges (with a small margin)
-                                leftPos = Math.max(10, Math.min(leftPos, viewportWidth - tooltipWidthNow - 10));
-
-                                finalTop = topPos;
+                                else if (naturalFitsAbove) {
+                                    // Place above with natural height
+                                    finalTop = triggerRect.top - BubbleTextHeightNow + gap;
+                                    finalBottom = null;
+                                    console.log('Case 3: natural above, finalTop =', finalTop);
+                                } 
+                                else {
+                                    // Place above and clamp height to available space
+                                    finalTop = vertMargin + gap;
+                                    finalBottom = null;
+                                    const maxHeightAbove = triggerRect.top  - vertMargin;
+                                    BubbleText.style.maxHeight = Math.max(0, maxHeightAbove) + 'px';
+                                    console.log('Case 4: clamped above, finalTop =', finalTop, 'maxHeight =', BubbleText.style.maxHeight);
+                                }
+                                
                                 finalLeft = leftPos;
                                 positioned = true;
-                                console.log('Final top:', finalTop, 'left:', finalLeft);
+                                console.log('Final top:', finalTop, 'final bottom:', finalBottom, 'left:', finalLeft);
                             }
+                                                        
                             // ========== END SMART @ MODE ==========
 
-                            // --- Other positioning modes (center, bottom, etc.) only if not already positioned ---
                             if (!positioned) {
-                                // --- Special positioning: center within page content area ---
+                                // Vertical centering (center-height or center-both)
                                 if (pos === 'center-height' || pos === 'center-both') {
-                                    const tooltipHeight = tooltip.getBoundingClientRect().height;
+                                    const BubbleTextHeight = BubbleText.getBoundingClientRect().height;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1935,15 +2132,15 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                                         const paddingBottom = parseFloat(cs.paddingBottom);
                                         const contentHeight = pageRect.height - paddingTop - paddingBottom;
                                         const contentTop = pageRect.top + paddingTop;
-                                        finalTop = contentTop + (contentHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = contentTop + (contentHeight / 2) - (BubbleTextHeight / 2);
                                     } else {
-                                        finalTop = (window.innerHeight / 2) - (tooltipHeight / 2);
+                                        finalTop = (window.innerHeight / 2) - (BubbleTextHeight / 2);
                                     }
                                 }
 
                                 // Horizontal centering (center-width or center-both)
                                 if (pos === 'center-width' || pos === 'center-both') {
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
                                         const cs = getComputedStyle(pageElement);
@@ -1951,25 +2148,18 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                                         const paddingRight = parseFloat(cs.paddingRight);
                                         const contentWidth = pageRect.width - paddingLeft - paddingRight;
                                         const contentLeft = pageRect.left + paddingLeft;
-                                        finalLeft = contentLeft + (contentWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = contentLeft + (contentWidth / 2) - (BubbleTextWidthNow / 2);
                                     } else {
-                                        finalLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
+                                        finalLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
                                     }
-                                    // For center-width only, keep any existing top/bottom
                                     if (pos === 'center-width') {
-                                        if (bottom !== undefined) tooltip.style.bottom = bottom;
-                                        else if (top !== undefined && top !== '@') tooltip.style.top = top;
+                                        if (bottom !== undefined) BubbleText.style.bottom = bottom;
+                                        else if (top !== undefined && top !== '@') BubbleText.style.top = top;
                                     }
                                 }
 
-                                // For center-both, ensure width/height are auto (remove inline) ONLY if they were not explicitly set
-                                if (pos === 'center-both') {
-                                    if (width === 'auto') tooltip.style.width = '';
-                                    if (height === 'auto') tooltip.style.height = '';
-                                }
-                                // --- Bottom positioning modes ---
-                                else if (bottomModes.includes(pos)) {
-                                    // Compute gap from bottom (in pixels)
+                                // Bottom positioning modes
+                                if (bottomModes.includes(pos)) {
                                     let gapPx = 0;
                                     if (bottomGap) {
                                         const gapMatch = bottomGap.match(/^([\d.]+)(vh|px)$/);
@@ -1980,112 +2170,90 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                                             else gapPx = num;
                                         }
                                     }
-
-                                    const tooltipHeight = tooltip.offsetHeight;
+                                    const BubbleTextHeight = BubbleText.offsetHeight;
                                     let newTop;
                                     if (pageElement) {
                                         const pageRect = pageElement.getBoundingClientRect();
-                                        newTop = pageRect.bottom - tooltipHeight - gapPx;
+                                        newTop = pageRect.bottom - BubbleTextHeight - gapPx;
                                         newTop = Math.max(pageRect.top + 10, newTop);
                                     } else {
-                                        newTop = window.innerHeight - tooltipHeight - gapPx;
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
                                         newTop = Math.max(10, newTop);
                                     }
                                     finalTop = newTop;
 
-                                    // Horizontal positioning based on mode
-                                    const tooltipWidthNow = tooltip.getBoundingClientRect().width;
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
                                     const innerPadding = 10;
                                     let newLeft = null;
 
                                     if (pos === 'bottom-left') {
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = pageRect.left + innerPadding;
-                                        } else {
-                                            newLeft = innerPadding;
-                                        }
+                                        if (pageElement) newLeft = pageRect.left + innerPadding;
+                                        else newLeft = innerPadding;
                                     } else if (pos === 'bottom-right') {
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = pageRect.right - tooltipWidthNow - innerPadding;
-                                        } else {
-                                            newLeft = window.innerWidth - tooltipWidthNow - innerPadding;
-                                        }
+                                        if (pageElement) newLeft = pageRect.right - BubbleTextWidthNow - innerPadding;
+                                        else newLeft = window.innerWidth - BubbleTextWidthNow - innerPadding;
                                     } else if (pos === 'bottom-center') {
                                         if (pageElement) {
                                             const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = (pageRect.left + pageRect.right) / 2 - tooltipWidthNow / 2;
+                                            newLeft = (pageRect.left + pageRect.right) / 2 - BubbleTextWidthNow / 2;
+                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - BubbleTextWidthNow - innerPadding));
                                         } else {
-                                            newLeft = (window.innerWidth / 2) - (tooltipWidthNow / 2);
-                                        }
-                                        // Clamp to page/viewport edges
-                                        if (pageElement) {
-                                            const pageRect = pageElement.getBoundingClientRect();
-                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - tooltipWidthNow - innerPadding));
-                                        } else {
-                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - tooltipWidthNow - innerPadding));
+                                            newLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
+                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - BubbleTextWidthNow - innerPadding));
                                         }
                                     } else if (pos === 'bottom-page') {
-                                        // Original behavior: use `left` if provided (and not '@'), else leave undefined (auto)
-                                        if (left !== undefined && left !== '@') {
-                                            newLeft = left;
-                                        }
+                                        if (left !== undefined && left !== '@') newLeft = left;
                                     }
                                     if (newLeft !== null) finalLeft = newLeft;
                                 }
                             }
 
                             // Apply final positions
-                            if (finalTop !== null) tooltip.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
-                            if (finalBottom !== null) tooltip.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
-                            if (finalLeft !== null) tooltip.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
-                            if (finalRight !== null) tooltip.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalTop !== null) BubbleText.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
+                            if (finalBottom !== null) BubbleText.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
+                            if (finalLeft !== null) BubbleText.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
+                            if (finalRight !== null) BubbleText.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalBottom !== null && finalTop === null) BubbleText.style.top = 'auto';
+                            if (finalRight !== null && finalLeft === null) BubbleText.style.left = 'auto';
 
-                            if (finalBottom !== null && finalTop === null) tooltip.style.top = 'auto';
-                            if (finalRight !== null && finalLeft === null) tooltip.style.left = 'auto';
-
-                            // Now that the tooltip is positioned correctly, make it visible
-                            tooltip.classList.add('show');
-                            tooltip.style.opacity = '';
+                            BubbleText.classList.add('show');
+                            BubbleText.style.opacity = '';
                         });
                     });
                 } else {
                     // Normal positioning (no special modes, no @)
                     if (bottom !== undefined) {
-                        tooltip.style.bottom = bottom;
-                        tooltip.style.top = 'auto';
+                        BubbleText.style.bottom = bottom;
+                        BubbleText.style.top = 'auto';
                     } else if (top !== undefined) {
-                        tooltip.style.top = top;
-                        tooltip.style.bottom = 'auto';
+                        BubbleText.style.top = top;
+                        BubbleText.style.bottom = 'auto';
                     }
                     if (right !== undefined) {
-                        tooltip.style.right = right;
-                        tooltip.style.left = 'auto';
+                        BubbleText.style.right = right;
+                        BubbleText.style.left = 'auto';
                     } else if (left !== undefined) {
-                        tooltip.style.left = left;
-                        tooltip.style.right = 'auto';
+                        BubbleText.style.left = left;
+                        BubbleText.style.right = 'auto';
                     }
-                    tooltip.classList.add('show');
+                    BubbleText.classList.add('show');
                 }
             } else {
-                // --- Hide tooltip: fade out without repositioning ---
-                tooltip.classList.remove('show');
-
+                // Hide BubbleText
+                BubbleText.classList.remove('show');
                 const onTransitionEnd = () => {
-                    tooltip.className = '';
-                    tooltip.style.cssText = '';
-                    tooltip.innerHTML = '';
-                    tooltip.removeEventListener('transitionend', onTransitionEnd);
+                    BubbleText.className = '';
+                    BubbleText.style.cssText = '';
+                    BubbleText.innerHTML = '';
+                    BubbleText.removeEventListener('transitionend', onTransitionEnd);
                 };
-                tooltip.addEventListener('transitionend', onTransitionEnd);
-                setTimeout(onTransitionEnd, 500); // fallback
+                BubbleText.addEventListener('transitionend', onTransitionEnd);
+                setTimeout(onTransitionEnd, 500);
             }
         }
 
+       // ==================== BubbleText FUNCTION end ====================
 
-       // ==================== TOOLTIP FUNCTION end ====================
-        
         // Determine initial page based on configuration
         function getInitialPage() {
             const page0Skipped = false;
@@ -2117,6 +2285,28 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                 pages[currentPage].classList.add('active');
             }
 
+            // After setting the initial active page, check URL hash
+            function activatePageFromHash() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const targetPage = document.querySelector(hash);
+                    if (targetPage && targetPage.classList.contains('page')) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = -1;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === hash.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        if (pageNum !== -1 && pageNum !== currentPage) {
+                            goToPage(pageNum);
+                        }
+                    }
+                }
+            }
+            activatePageFromHash();
+            
             const booklistBtn = document.querySelector('.back-to-list');
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
@@ -2137,10 +2327,8 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             const startPage = false ? 0 : 1;
 
             for (let i = startPage; i < pages.length; i++) {
-
-                // Skip TOC page
-                if (pages[i].id === 'page-toc') continue;            
-
+                if (pages[i].id === 'page-toc') continue;   
+                         
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
@@ -2149,14 +2337,18 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
-                    backButton.textContent = 'Contents';
+                    backButton.textContent = '🗂️'; 
+                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                
+                              
                 // Page number (right side)
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
-                pageNumber.textContent = calculatePageNumber(i);
+                // to remove 🔖 <ClickbookMark> uncomment this
+                // pageNumber.textContent = calculatePageNumber(i);
+                // and comment this
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
                 pages[i].insertBefore(header, pages[i].firstChild);
@@ -2293,6 +2485,7 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
 
         function goToPage(pageNum) {
             if (pageNum < 0 || pageNum > totalPages) return;
+            if (pageNum === currentPage) return;   // Avoid unnecessary transition
             
             const currentActive = document.querySelector('.page.active');
             if (currentActive) {
@@ -2308,6 +2501,9 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
                 pages[currentPage].classList.add('active');
                 updateSlider();
                 updateProgress();
+                
+                // Remove any #page-... from the URL bar (keep only base path)
+                history.pushState(null, '', window.location.pathname);
             }, 300);
         }
 
@@ -2461,10 +2657,32 @@ Is being compassionate a high enough priority?</p>The majlis is a sitting room i
             };
             document.getElementById('currentDate').textContent = 
                 new Date().toLocaleDateString('en-US', options);
-        });
-        
+        });        
+                
     </script>
 
-    <div id="tooltip"></div>
+    <div id="BubbleText"></div>
+    <script>
+    (function() {
+        const root = document.documentElement;
+        const pageElem = document.querySelector('.page');
+        const styles = getComputedStyle(root);
+        const pageStyles = pageElem ? getComputedStyle(pageElem) : null;
+
+        console.log('=== Debug Info (media 1024) ===');
+        console.log('--page-width (declared):', styles.getPropertyValue('--page-width'));
+        console.log('--arrow-hover-width:', styles.getPropertyValue('--arrow-hover-width'));
+        console.log('--Lmargin-safe-factor:', styles.getPropertyValue('--Lmargin-safe-factor'));
+        console.log('--Rmargin-safe-factor:', styles.getPropertyValue('--Rmargin-safe-factor'));
+                console.log('--Lsafe-margin (computed):', styles.getPropertyValue('--Lsafe-margin'));
+        console.log('--Rsafe-margin (computed):', styles.getPropertyValue('--Rsafe-margin'));
+                if (pageElem) {
+        console.log('.page actual width (px):', pageElem.offsetWidth);
+        console.log('.page computed width:', pageStyles.width);
+        }
+        console.log('viewport width (px):', window.innerWidth);
+    })();
+    </script>
+        
 </body>
 </html>
