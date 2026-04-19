@@ -320,7 +320,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             opacity: 0;
             color: {BkFontColor};
             overflow-y: hidden;
-            padding: 0px;
+
+            padding: 20px !important; /* Padding is important otherwise you have adjust scaling or page-height based on media */
+            
             box-sizing: border-box;
             border: 1px solid rgba(96,96,96,0.3);
             border-right: 1.5px solid rgba(2211, 211, 211,0.3);
@@ -336,8 +338,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             z-index: 1;
             display: none;
 
+            /* HIDE SCROLLBAR */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
         }}
-        .page::before {{
+        .page::after {{
             content: '';
             position: absolute;
             top: 0;
@@ -346,24 +351,25 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             height: 100%;
             pointer-events: none;
             background: 
-                linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 15%),
-                linear-gradient(to top, rgba(255,255,255,0.04), transparent 15%),
-                linear-gradient(to right, rgba(255,255,255,0.04), transparent 15%),
-                linear-gradient(to left, rgba(255,255,255,0.04), transparent 15%);
+                linear-gradient(to bottom, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
             /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
-            z-index: -1;
+            z-index: 2;
         }}
         .page-content {{
             height: 100%;
+            width: 100% ;
             overflow-y: auto;
-            padding: 20px;             /* move the padding here */
+           /* move the padding here */
             box-sizing: border-box;
             /* HIDE SCROLLBAR */
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;     /* Firefox */
         }}
-        #page-0::before {{ display: none; }}
-        .page::-webkit-scrollbar {{ display: none; /* Chrome, Safari, Opera */}}
+        .page-content::-webkit-scrollbar {{ display: none; /* Chrome, Safari, Opera */}}
+        #page-0::after {{ display: none; }}
 
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
@@ -380,16 +386,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             box-shadow: none !important;           /* Optional: removes the shadow */
         }}
 
-
         /* Fixed header elements (page number, book title, back button) */
         .page-header {{
-            position: relative;       /* or simply remove position */
-            width: 100%;
+            position: relative;
+            width: calc(var(--page-width) - 60px);
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;      /* optional spacing */
-            /* remove top, left, right, etc. */
+            align-items: center;          /* ← add this */
+            z-index: 3;
         }}
         /* Keep page number on right */
         .page-number {{
@@ -512,12 +516,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         /* Center book title */
         .book-title {{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 50vw;
-            word-wrap: break-word;
             text-align: center;
+            max-width: 50vw;
+            margin: 0 auto 20px auto;  /* auto margins for horizontal centering */
+            word-wrap: break-word;
+            font-size: 1.2em;          /* adjust as needed */
         }}
 
         /* next and previous page Navigation icons */
@@ -2126,29 +2129,36 @@ FOOTER_TEMPLATE = """
 
             for (let i = startPage; i < pages.length; i++) {
                 if (pages[i].id === 'page-toc') continue;   
-                        
+                         
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
+                // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
+                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                                    
+                              
+                // Page number (right side)
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
+                // to remove 🔖 <ClickbookMark> uncomment this
+                // pageNumber.textContent = calculatePageNumber(i);
+                // and comment this
                 pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
-                // MODIFICATION: Insert into .page-content instead of .page
+                // Insert header into .page-content (instead of .page)
                 const pageContent = pages[i].querySelector('.page-content');
                 if (pageContent) {
                     pageContent.insertBefore(header, pageContent.firstChild);
                 } else {
-                    pages[i].insertBefore(header, pages[i].firstChild); // fallback
+                    // Fallback (should not happen)
+                    pages[i].insertBefore(header, pages[i].firstChild);
                 }
             }
             
@@ -2506,8 +2516,8 @@ tip_string = """ <clickwordC=  |  |
         </li>
         <li>Click on the Popup to make it go away.</li>
         </ul>
-    ">
-    <paraitalicC=\'( click here for navigation tips )\'>
+    "><br>
+    <span style="font-size: .8em;"><paraitalicC=\'( click here for navigation tips )\'></span>
 """
 
 def rep_mdate(content):
@@ -3003,10 +3013,14 @@ def generate_toc(content):
             continue
             
         indent = (len(level) - 2) * 20
+
+        # page_num = page_num_toc(content, '![[', '## '+title)
         page_num = page_num_toc(content, 'dummy_string', '## '+title)
         href = f'#page-{page_num}'
 
+
         if CONFIG['TOCasList']:
+            # List style TOC
             toc_entries.append(
                 f'<div class="toc-entry" style="margin-left: {indent}px;">'
                 f'<a href="{href}" class="toc-link" style="display: flex; justify-content: space-between;">'
@@ -3016,6 +3030,7 @@ def generate_toc(content):
                 f'</div>'
             )
         else:
+            # Button style TOC - Horizontal layout with CSS gap
             toc_entries.append(
                 f'<a href="{href}" class="glassbtn compact-button toc-link">'
                 f'{title.strip() + "(" + f"{page_num}" + ")"}'
@@ -3031,6 +3046,8 @@ def generate_toc(content):
         url = CONFIG['BkLinkURL']
         if not url.startswith(('http://', 'https://')):
             url = f'https://{url}'
+            
+        # ORIGINAL <button onclick="window.open('{url}', '_blank')" class="back-to-list">
         booklist_button = f"""
         <button onclick="window.open('{url}', '_self')" class="back-to-list">
             AboutMe
@@ -3039,8 +3056,11 @@ def generate_toc(content):
     
     # Add book title to TOC page
     book_title = f'<div class="book-title">{CONFIG["BkPage0_Title"]}</div>'
+    
+    # Determine container class based on TOC style
     container_class = "toc-list" if CONFIG['TOCasList'] else "toc-buttons"
 
+    
     return f"""
     <div class="page" id="page-toc">
         <div class="page-content">
@@ -3052,6 +3072,9 @@ def generate_toc(content):
                     {"".join(toc_entries)}
                 </div>
             </div>
+            <br>
+            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+            <br>
             {tip_string}
         </div>
     </div>
@@ -3079,7 +3102,13 @@ def build_page_html(counter, image_filename, description, title, content):
     caption_popup = ''
     
     if image_filename:
+        # BubbleText (title attribute)
+        # to get BubbleText uncomment these lines
+        #title_attr = f' title="{escape(description)}"' if description else ""
+        #image_html = f'<img src="{escape(image_filename)}" alt="Image {counter}"{title_attr}>'
         image_html = f'<img src="{escape(image_filename)}" alt="Image {counter}">'
+
+        # Pop-up caption box (only if description exists)
         if description:
             caption_popup = f'''
             <div class="image-caption-popup">
@@ -3362,7 +3391,6 @@ def build_final_html(pages):
             </div>
         </div>
         """
-    # ... rest of the function unchanged (template formatting, footer, etc.)
 
    # Prepare mobile CSS based on flag (default to False if not specified)
     force_mobile = CONFIG.get('ResizeForMobile', False)
