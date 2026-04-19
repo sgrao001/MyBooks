@@ -116,8 +116,8 @@
             transform: translate(-50%, -50%) scale(0.95);
             opacity: 0;
             color: #abb8bb;
-            overflow-y: auto;
-            padding: 20px;
+            overflow-y: hidden;
+            padding: 0px;
             box-sizing: border-box;
             border: 1px solid rgba(96,96,96,0.3);
             border-right: 1.5px solid rgba(2211, 211, 211,0.3);
@@ -133,11 +133,7 @@
             z-index: 1;
             display: none;
 
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
         }
-        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
         .page::before {
             content: '';
             position: absolute;
@@ -154,7 +150,17 @@
             /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
             z-index: -1;
         }
+        .page-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;             /* move the padding here */
+            box-sizing: border-box;
+            /* HIDE SCROLLBAR */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
         #page-0::before { display: none; }
+        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
 
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
@@ -174,13 +180,13 @@
 
         /* Fixed header elements (page number, book title, back button) */
         .page-header {
-            position: fixed;
-            top: 20px;
-            width: calc(var(--page-width) - 60px);
+            position: relative;       /* or simply remove position */
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;          /* ← add this */
-            z-index: 3;
+            align-items: center;
+            margin-bottom: 20px;      /* optional spacing */
+            /* remove top, left, right, etc. */
         }
         /* Keep page number on right */
         .page-number {
@@ -1122,17 +1128,18 @@
     </div>
 
     
-    <div class="page active" id="page-0">
-        <div class="heading-container">
-            <h1>Observation of Thoughts</h1> 
-            <h2>Listen Read Walk and Live in Chicago - Postcards to myself</h2> 
-            <h2>Sri Rao</h2> 
-            <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                Last updated: Apr 17, 2026
-            </p>
-            <h3>~***~</h3>
-        </div>
-         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <div class="page active" id="page-0">
+            <div class="page-content">
+                <div class="heading-container">
+                    <h1>Observation of Thoughts</h1> 
+                    <h2>Listen Read Walk and Live in Chicago - Postcards to myself</h2> 
+                    <h2>Sri Rao</h2> 
+                    <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
+                        Last updated: Apr 17, 2026
+                    </p>
+                    <h3>~***~</h3>
+                </div>
+                 <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -1153,19 +1160,21 @@
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
 
-    </div>
+            </div>
+        </div>
         
 
     <div class="page" id="page-toc">
-        <div class="book-title">Observation of Thoughts</div>
-        <div class="toc-container toc-buttons">
-            <h2>Table of Contents</h2>
-            
-            <div class="toc-button-container">
-                <a href="#page-1" class="glassbtn compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="glassbtn compact-button toc-link">Awareness(2)</a><a href="#page-3" class="glassbtn compact-button toc-link">Unity(3)</a><a href="#page-4" class="glassbtn compact-button toc-link">Silence(4)</a><a href="#page-5" class="glassbtn compact-button toc-link">Serenity(5)</a><a href="#page-6" class="glassbtn compact-button toc-link">Who am I(6)</a><a href="#page-7" class="glassbtn compact-button toc-link">Words(7)</a><a href="#page-8" class="glassbtn compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="glassbtn compact-button toc-link">Vastness(9)</a><a href="#page-10" class="glassbtn compact-button toc-link">Man and boy(10)</a><a href="#page-11" class="glassbtn compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="glassbtn compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="glassbtn compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="glassbtn compact-button toc-link">Nani(14)</a><a href="#page-15" class="glassbtn compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="glassbtn compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="glassbtn compact-button toc-link">Duniya(17)</a><a href="#page-18" class="glassbtn compact-button toc-link">Lessons(18)</a><a href="#page-19" class="glassbtn compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="glassbtn compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="glassbtn compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="glassbtn compact-button toc-link">Time(22)</a><a href="#page-23" class="glassbtn compact-button toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="glassbtn compact-button toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="glassbtn compact-button toc-link">Gratitude(25)</a><a href="#page-26" class="glassbtn compact-button toc-link">Energy(26)</a><a href="#page-27" class="glassbtn compact-button toc-link">Acceptance(27)</a><a href="#page-28" class="glassbtn compact-button toc-link">Choices(28)</a><a href="#page-29" class="glassbtn compact-button toc-link">The Good, The Bad(29)</a><a href="#page-30" class="glassbtn compact-button toc-link">Writing(30)</a><a href="#page-31" class="glassbtn compact-button toc-link">Let’s make a circle(31)</a><a href="#page-32" class="glassbtn compact-button toc-link">O’ Mother of mine(32)</a><a href="#page-33" class="glassbtn compact-button toc-link">Diwali(33)</a><a href="#page-34" class="glassbtn compact-button toc-link">Pathways to being.(34)</a><a href="#page-35" class="glassbtn compact-button toc-link">Pursuit of Ignorance(35)</a><a href="#page-36" class="glassbtn compact-button toc-link">Just Asking(36)</a><a href="#page-37" class="glassbtn compact-button toc-link">Fragility(37)</a><a href="#page-38" class="glassbtn compact-button toc-link">In God we Trust(38)</a><a href="#page-39" class="glassbtn compact-button toc-link">Failure(39)</a><a href="#page-40" class="glassbtn compact-button toc-link">The emperor has no clothes I & II(40)</a>
+        <div class="page-content">
+            <div class="book-title">Observation of Thoughts</div>
+            <div class="toc-container toc-buttons">
+                <h2>Table of Contents</h2>
+                
+                <div class="toc-button-container">
+                    <a href="#page-1" class="glassbtn compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="glassbtn compact-button toc-link">Awareness(2)</a><a href="#page-3" class="glassbtn compact-button toc-link">Unity(3)</a><a href="#page-4" class="glassbtn compact-button toc-link">Silence(4)</a><a href="#page-5" class="glassbtn compact-button toc-link">Serenity(5)</a><a href="#page-6" class="glassbtn compact-button toc-link">Who am I(6)</a><a href="#page-7" class="glassbtn compact-button toc-link">Words(7)</a><a href="#page-8" class="glassbtn compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="glassbtn compact-button toc-link">Vastness(9)</a><a href="#page-10" class="glassbtn compact-button toc-link">Man and boy(10)</a><a href="#page-11" class="glassbtn compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="glassbtn compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="glassbtn compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="glassbtn compact-button toc-link">Nani(14)</a><a href="#page-15" class="glassbtn compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="glassbtn compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="glassbtn compact-button toc-link">Duniya(17)</a><a href="#page-18" class="glassbtn compact-button toc-link">Lessons(18)</a><a href="#page-19" class="glassbtn compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="glassbtn compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="glassbtn compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="glassbtn compact-button toc-link">Time(22)</a><a href="#page-23" class="glassbtn compact-button toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="glassbtn compact-button toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="glassbtn compact-button toc-link">Gratitude(25)</a><a href="#page-26" class="glassbtn compact-button toc-link">Energy(26)</a><a href="#page-27" class="glassbtn compact-button toc-link">Acceptance(27)</a><a href="#page-28" class="glassbtn compact-button toc-link">Choices(28)</a><a href="#page-29" class="glassbtn compact-button toc-link">The Good, The Bad(29)</a><a href="#page-30" class="glassbtn compact-button toc-link">Writing(30)</a><a href="#page-31" class="glassbtn compact-button toc-link">Let’s make a circle(31)</a><a href="#page-32" class="glassbtn compact-button toc-link">O’ Mother of mine(32)</a><a href="#page-33" class="glassbtn compact-button toc-link">Diwali(33)</a><a href="#page-34" class="glassbtn compact-button toc-link">Pathways to being.(34)</a><a href="#page-35" class="glassbtn compact-button toc-link">Pursuit of Ignorance(35)</a><a href="#page-36" class="glassbtn compact-button toc-link">Just Asking(36)</a><a href="#page-37" class="glassbtn compact-button toc-link">Fragility(37)</a><a href="#page-38" class="glassbtn compact-button toc-link">In God we Trust(38)</a><a href="#page-39" class="glassbtn compact-button toc-link">Failure(39)</a><a href="#page-40" class="glassbtn compact-button toc-link">The emperor has no clothes I & II(40)</a>
+                </div>
             </div>
-        </div>
-         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -1186,14 +1195,16 @@
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
 
+        </div>
     </div>
     
 
         <div class="page" id="page-1">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1202,15 +1213,17 @@
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://en.wikipedia.org/wiki/Three_Elements" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution</span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-2">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1218,15 +1231,17 @@
 <div style="color: #f09e5a;"><span class="highlight-text">Awareness</span></div><br>I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe. My Dad gave that car to me. I hum the engine noise to myself - I hear the powerful engine - the car surges forward - I shift gears - I drive with precision around imaginary curves and turns - my humming keeps my attention focused on driving the Citroen across the balcony floor - I keep humming - I park my Citroen with precision, in my imaginary parking spot. The outside world fades and time stands still.<br><br>I become one with my being.<br><br>To this day, I go inside of me and shut the door. I sit still, in silence. I sense the vast, dark emptiness. Feelings begin to slip away.<br><br>Gradually, I begin to hear the little boy in the distance, humming the noise of the engine. I see the boy come toward me, I can see the car clearly now.<br><br>We watch each other patiently, in silence, in acknowledgment, with mutual respect, as time waits.<br><br>I open the door and step outside, everything is right in my world.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-3">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1234,15 +1249,17 @@
 <div style="color: #f09e5a;"><span class="highlight-text">Unity</span></div><br>I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-4">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1250,15 +1267,17 @@
 <div style="color: #f09e5a;"><span class="highlight-text">Silence</span></div><br>I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look closely at the metal accordion gate. I notice the skipping rope hanging on the latch. I push the grip and watch the rope swing. I watch the swing reduce - and reduce - then slowly, begin to move in ever so small circles - now, I can now barely see it move - I watch the still, silent, unmoving rope - I feel the silence and the quiet within myself.<br><br>Silence filters the noise around me. I hear my thoughts. My thoughts are the voice of my soul. I dialog with my thoughts. We both listen.<br><br>Silence preserves my energy. I open up to new patterns, to new motivations. I recognize emotions for what they are. I become an observer, not an actor on my own stage.<br><br>Silence allows me to be with myself. I don’t have to accept. I don’t have to simplify or explain. I don’t have to partition myself. I don’t have to project. I am in agreement. I can remain close to my awareness of being. I can explore.<br><br>Silence grants me distance, it gives me clarity. I can develop a frame of reference that works for me. It gives me freedom to be authentic, fearless and purposeful.<br><br>My treasure is buried deep. It is the silence and a solo journey that will take me there.<br><br>Silence respects time and grants me personal growth.<br><br>Silence between the question and the answer is where “I” might be found.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-5">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1266,15 +1285,17 @@
 <div style="color: #f09e5a;"><span class="highlight-text">Serenity</span></div><br>I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-6">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1286,15 +1307,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-7">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1302,15 +1325,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Words</span></div><br>At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine. Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-8">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1318,15 +1343,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Acknowledgment</span></div><br>I saw him cross in front of me.<br><br>He stopped. He sat still. He was barely visible. He was one with nature. I watched him closely. His eyes moved. He observed me.<br><br>He appeared relaxed, trusting, comfortable, confident. I belong to a different species. Likely, he wanted nothing from me. Likely, he was just acknowledging of me, as I was of him.<br><br>We both stood motionless. In peace.<br><br>I captured this moment of silent mutual awareness. He was being generous with his presence. Does he know me from somewhere? I feel a closeness.<br><br>We moved on, to our different ways. I wonder where he will sleep tonight. Be well and thank you, Mr. Rabbit.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-9">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1334,15 +1361,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Vastness</span></div><br>They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-10">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1351,15 +1380,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://emilyfelcher.wixsite.com/portfolio" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-11">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1367,15 +1398,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Wheels of Life</span></div><br>It took a while for life to come into focus. I see me, rolling my wheels along many roads and alongside many travelers.<br><br>I push the wheels with sticks that I find by the wayside. I am proud of the sticks I find. Especially, the ones that are straight, strong and light. I spend time sorting through sticks, Some are heavy and bent and some brake easily. I notice people pushing wheels with all kinds of twigs and pieces of bark. I continue looking for sticks.<br><br>I look back to see my wheels moving along on their own. They are beckoning me to join. I don’t need sticks after all. I get behind my wheels. My wheels and I, we move along in harmony.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-12">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1384,15 +1417,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.wikiart.org/en/pablo-picasso/friendship-1908" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-13">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1401,15 +1436,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://emilyfelcher.wixsite.com/portfolio" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-14">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1417,15 +1454,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Nani</span></div><br>“I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-15">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1434,15 +1473,17 @@ I am pure Awareness, always non-dual.</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-16">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1452,15 +1493,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-17">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1469,15 +1512,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-18">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1486,15 +1531,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " class="glassbtnlbl">(Adapted from NY30Rock)</div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-19">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1502,15 +1549,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="color: #f09e5a;"><span class="highlight-text">Stones, Wind and Water</span></div><br>Oh! How the mighty mountains have been ravaged by wind, water and time into pieces of stone scattered on the ground.<br><br>As time passed, the stones transformed themselves into pyramids, minarets and stupas, attempting to recapture the majesty, the power and the purpose of the mountains they came from.<br><br>Why did the stones on top forget that the higher they go, the harder they fall? Why did the stones on top forget, that growing bigger only makes the wind push harder? Why did the stones at the bottom not recognize the increased burden? Why did the stones at the bottom not see their purpose diminished?<br><br>Why did they not seize the opportunity to be stable on the ground, to be next to each other, to be away from the wind, to be able to gather around and hold water for plants, and flowers and birds? Why did they not see themselves as stepping stones, leading a path in support of the glories in nature? Why did they not realize that this was their destiny?<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-20">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1518,15 +1567,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="color: #f09e5a;"><span class="highlight-text">Manufacturing Conflict</span></div><br>Wars waged on, egged by the egos of lords, masquerading as ideology.<br><br>No matter who wins, both are diminished. The lords will profit more if they collude to establish collective dominion over the serfs. But their egos goaded them to war.<br><br>The disproportional distribution of wealth, ensures that the winning serfs will get little or none of the spoils of war. The losing serfs and their families will suffer pain, dishonor, years of servitude and abject poverty. Serfs will risk their lives and a great many will loose it.<br><br>Blacksmith’s on both sides will profit, selling arrows, swords, spears and shields. Neighboring lords will smell blood in the water and join in, taking all they can.<br><br>Ego demands serf blood, and gets it. Ideology makes serfs act against their own self interest. Blows traded spawn never ending cycles of violence. War morphs from a choice made by the lords, to a necessity for the serfs. The lords nurse their bruised egos back to glory.<br><br>The lords are always the winners. History remembers them. The serfs have no names.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-21">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1534,15 +1585,17 @@ A place that reveals the strength, in the struggles and successes, of times gone
 <div style="color: #f09e5a;"><span class="highlight-text">Ideologies & Realities</span></div><br>“A heroic leader on a white horse rallies the troops, while the wounded valiantly struggle to get on their feet to resume the fight.” , “ with illusions of honor”, “knowingly welcoming death. ”<br><br>Ideology is the primordial state of augmented reality serving to simplify it to willing listeners. Ideology insists, on the one hand, that its depiction of the underlying reality, albeit in its simplest form, is accurate, and on the other hand, its association with that reality is sacrosanct.<br><br>Ideology purports to enhance the value of reality by making it accessible, understandable and acceptable. It reduces the multitude of properties of reality, into a single dominant characteristic, to deliver a concrete shape that can be perceived through simple abbreviations of thought. It reduces reality to a probability. It trains the mind to constrain reality, and claims this as necessary, for understanding to occur.<br><br>This “subligation” from reality, becomes our natural state. It becomes the core of our progressive learning. It permits us to congratulate ourselves on our intelligence, our righteousness or any other attribute we wish to be identified with. We can now safely ignore what is “abrogated” from reality.<br><br>This partition of the “subligated” and “abrogated” is not absolute. It does not need to be. Participation can occur as an observer of reality, not an explainer of it.<br><br>The whole picture emerges, when I seek “descriptive adequacy”, not “explanatory clarity”. Ideology takes my freedom away.<br><br>Ideology positions itself to be more important than reality. Illusion becomes reality and reality is relegated to the realm of an “imagined” state. But, without reality there is no ideology.<br><br>Ideologies grouped together become rituals. Ideology grants an implied meaning to rituals indicating that somehow rituals have an impact on reality.<br><br>Winning an argument becomes a certainty if is preceded by a pivot from reality to ideology. Since reality has many detractors, it is the easiest pivot.<br><br>Filtering attributes of reality to project it on an already accepted ideology, masks the underlying harsh, impoliteness of truth.<br><br>In a contest with ideologies, reality loses the battle every time . It is the win of reason over knowledge.<br><br>Ideology explains that which we want to be true. In its most harmful state, ideology rationalizes our desire to act against our own interests. The truth reveals itself only when the tinted glasses of ideology are removed. This realization usually occurs after most of the damage is done.<br><br>We “buy organic sugar” because we believe that we engage in healthy pursuits. We “associate wealth with our self worth” because it is natural, not because it is a fetish. We “reward monopolies” because we believe they must be doing it better than everyone else. We “consume” because we believe we deserve it. We “tolerate”, because we believe things could be far worse. We “fight” because we believe we are on the side of the just. We “kill” because they “would do worse to us” or “in the name of what’s right” or as in it’s latest form, “to stop violence”, “to bring peace”. and on and on and on …<br><br>We are pre-disposed to adopting ideologies as explanations to uncomfortable truths. A gentle nudge completes the journey. Once an association is established between any reality and any accepted ideology, the reality, no matter how grotesque it is, inherits the qualities that the ideology purports to project.<br><br>Ideology gently cleanses our view of the undesirable state until truth is no longer necessary. It makes irrelevant all that is unsaid. It blurs the lies. It deflects responsibility. It negates our role in reality. It enables the death of hope. It constrains us inside acceptable frames of reference.<br><br>We feel good. We don’t realize we are the “boiling frog.” We make freedom and self-expression the causality. We accept that this as the best that is possible. We believe, “It really can’t be that bad”, “it will only get better”, “we, must therefore make the best of it”, “what better choice do we have”.<br><br>Time tested structures in society, from the humble family unit, to corporations, to governments and religions, effectively use ideologies to favor the few and suppress the many.<br><br>Are we satisfied with descriptive adequacy or do we seek explanatory understanding? Do we rely on evidence gathered in due course of time, or do we draw conclusions based on reasoning? Do we understand how our biases define our acceptances? Do we have the freedom to dis-associate ideology from reality without fear of punishment?<br><br>Should we accept simplicity and universality of love, harmony and well-being as the only ideology worth fighting for?<br><br>History tells us stories of ideology. Time reveals the stories of reality. Reality is the ghost in history.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-22">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1552,15 +1605,17 @@ The “hoarders of value” learnt to collaborate to grow. They learnt to deceiv
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://artcloud.market/art/time-persistence-by-daniel-heller" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-23">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1569,15 +1624,17 @@ The “hoarders of value” learnt to collaborate to grow. They learnt to deceiv
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://starryai.com/app/user/joquist/creation/1023376959" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-24">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1585,15 +1642,17 @@ The “hoarders of value” learnt to collaborate to grow. They learnt to deceiv
 <div style="color: #f09e5a;"><span class="highlight-text">Passionate and<br>Harmonious living</span></div><br>Minimalism is a pre-requisite to passionate and harmonious living.<br><br>Through the ages, adventurers, traveling to unknown lands, carried only a compass and a map. Food, shelter, clothing and companions were always found along the way.<br><br>And, so it is with traveller’s who walk along the uncertain paths of life, carrying only the necessities for passionate and harmonious living. For they know, that all else burdens, limits options and wastes energy.<br><br>Discovery of passion is a consequence of conscious journeys into the self. Passionate living is a consequence of repeated journeys from the knowledge core to the outer edges of cognitive capacity, along the radius of genetically endowments. It is the relentless pursuit of conditioned ignorance in the direction of strength.<br><br>Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual debris are indicators of passionate choices. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is regenerative.<br><br>Harmonious living is a result of effortless energy exchanges with the turbulent outside universe.<br><br>This smoothness of the energy exchange is a function of the available size in the basket into which this energy flows, the number of items already in it, the intensity of the energy required to sustain these items over time and the energy required to cleanse the debris they are likely to leave behind.<br><br>I set the pace for the exchanges and set the pace for cleansing of the basket.<br><br>The primary goal of harmonious living is energy conservation within the entire eco-system. Harmonious co-existence with the universe increases the candidate pool of choices for my passionate living.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-25">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1602,15 +1661,17 @@ The “hoarders of value” learnt to collaborate to grow. They learnt to deceiv
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://lutheranreformation.org/history/durers-praying-hands/" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-26">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1618,15 +1679,17 @@ The “hoarders of value” learnt to collaborate to grow. They learnt to deceiv
 <div style="color: #f09e5a;"><span class="highlight-text">Energy - Food for the Soul</span></div><br>I sense that all things radiate energy.<br><br>The non-living do so in quantities that are largely fixed in intensity and form - a stone might offer its energy as a result of where it is found, or it might present a particular color. It is largely static. It changes form only when acted upon by an external source of energy.<br><br>Mountainsides and caves are formed by flowing water - or - are made into beautiful sculptures by the skilled hands of man - or - chunks of carbon provide heat when burned - or - are pressed into diamonds over time.<br><br>Unlike stones, living beings continuously make decisions on what energy they absorb, how they interpret it, how they transform it, how much they radiate out, in what form and to whom. They find purpose in employing this energy to make things of “matter”, to the benefit of all.<br><br>Humans, as compared to other living creatures, have evolved to the pinnacle of this capability.<br><br>The energy sources that we can tap into is limitless. What we do with it, however is limited by our awareness of its presence and its power to transform our imagination.<br><br>We all start out as unconscious consumers of energy, and employ it without much thought or purpose. We rely on our primordial instinct to direct its use.<br><br>Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that that we have the responsibility to use it for the benefit of all.<br><br>Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-27">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1636,15 +1699,17 @@ I accept my acceptances.</div><br><hr style="height: 1.2px; background-color: va
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-28">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1653,15 +1718,17 @@ I accept my acceptances.</div><br><hr style="height: 1.2px; background-color: va
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-29">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1683,15 +1750,17 @@ All may yet be well.</div><br>It is accurate to say that the Mughals did exactly
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div><div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " class="glassbtnlbl">(Excerpts from William dalrymple)</div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-30">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1699,15 +1768,17 @@ All may yet be well.</div><br>It is accurate to say that the Mughals did exactly
 <div style="color: #f09e5a;"><span class="highlight-text">Writing</span></div><br>Creativity thrives along the path from the knowledge core, to the edges of cognitive capacity. It is guided by pre-dispositions inherent to me.<br><br>As I write my words, I receive the learning that the writing process offers to me. I learn to give meaning to my innermost thoughts, to polish them to a bright shine and to lay them out for all to see. Most of all, I experience an awareness of who I am.<br><br>When I read my own words, I get to bring my thoughts, experiences and my emotions back to life. I re-live the sights, the sounds, the smells to find new meaning in them. I get to understand where the words came from. I get to re-visit why I put them there.<br><br>I think of writing as an expanded form of painting. It allows me to add the nuances of thought. In my mind, a thoughts start with an image. Words allow me to explore my thoughts.<br><br>I would like to think that the readers of my words will get to explore their thoughts in a different light.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-31">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1718,15 +1789,17 @@ All may yet be well.</div><br>It is accurate to say that the Mughals did exactly
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-32">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1738,15 +1811,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <br><div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-33">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1754,15 +1829,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Diwali - A Festival of lights</span></div><br>My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life.<br><br>The light from my flame, guides me around pitfalls and sharp curves in the road, exposing meaningfulness and creativity around each corner. I motivate myself to push forward.<br><br>The light from my flame shows me other people moving along the path. My light joins up with theirs. Soon things begin to appear brighter and clearer. The colors seem crisper and shapes are better formed. Destinations, yet undiscovered, begin to appear on horizons. I no longer feel the need to reach beyond my grasp. There appears to be a big world up close and all around me.<br><br>The light from my flame has uncovered a camaraderie between people that I have never known. We begin to share our finds. Together we learn. I realize the healing that comes from the bonds of common purpose. The tiredness melts away.<br><br>I find that the journey provides more than the destination ever could. I realize, that it matters not where you go, but, who you go there with. Meaning shared, is no longer a pursuit. It is the matter of being. The journey is and always was the destination. This find, I could not have found, were I alone and by myself.<br><br>I never imagined that one flame could transform the world into a bright, sparkling festival of lights.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-34">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1771,15 +1848,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-35">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1788,15 +1867,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-36">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1805,15 +1886,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://paintbynumbershome.com/products/cat-reading-newspaper" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-37">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1822,15 +1905,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://www.instagram.com/reel/DPO99FICRuY/" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution </span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-38">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1842,15 +1927,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft"><br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe.</div><br>With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-39">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1858,15 +1945,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="color: #f09e5a;"><span class="highlight-text">Failure</span></div><br>Work in Progress ...<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-40">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1876,15 +1965,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">PART II <span class='next-page'>👉</span></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-41">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1895,21 +1986,24 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft"><span class='prev-page'>👈</span>PART I</div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-42">
-            <div class="book-title">Observation of Thoughts</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Observation of Thoughts</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
     </div>
     
+                </div>
             </div>
         </div>
         
@@ -2732,30 +2826,30 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 
             for (let i = startPage; i < pages.length; i++) {
                 if (pages[i].id === 'page-toc') continue;   
-                         
+                        
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
-                // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
-                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                              
-                // Page number (right side)
+                                    
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
-                // to remove 🔖 <ClickbookMark> uncomment this
-                // pageNumber.textContent = calculatePageNumber(i);
-                // and comment this
                 pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
-                pages[i].insertBefore(header, pages[i].firstChild);
+                // MODIFICATION: Insert into .page-content instead of .page
+                const pageContent = pages[i].querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.insertBefore(header, pageContent.firstChild);
+                } else {
+                    pages[i].insertBefore(header, pages[i].firstChild); // fallback
+                }
             }
             
             // Touch events for swipe
