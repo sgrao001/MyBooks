@@ -116,8 +116,8 @@
             transform: translate(-50%, -50%) scale(0.95);
             opacity: 0;
             color: #ffffff;
-            overflow-y: auto;
-            padding: 20px;
+            overflow-y: hidden;
+            padding: 0px;
             box-sizing: border-box;
             border: 1px solid rgba(96,96,96,0.3);
             border-right: 1.5px solid rgba(2211, 211, 211,0.3);
@@ -133,11 +133,7 @@
             z-index: 1;
             display: none;
 
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
         }
-        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
         .page::before {
             content: '';
             position: absolute;
@@ -154,7 +150,17 @@
             /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
             z-index: -1;
         }
+        .page-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;             /* move the padding here */
+            box-sizing: border-box;
+            /* HIDE SCROLLBAR */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
         #page-0::before { display: none; }
+        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
 
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
@@ -174,13 +180,13 @@
 
         /* Fixed header elements (page number, book title, back button) */
         .page-header {
-            position: fixed;
-            top: 20px;
-            width: calc(var(--page-width) - 60px);
+            position: relative;       /* or simply remove position */
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;          /* ← add this */
-            z-index: 3;
+            align-items: center;
+            margin-bottom: 20px;      /* optional spacing */
+            /* remove top, left, right, etc. */
         }
         /* Keep page number on right */
         .page-number {
@@ -1122,17 +1128,18 @@
     </div>
 
     
-    <div class="page active" id="page-0">
-        <div class="heading-container">
-            <h1>Theater of the Mind</h1> 
-            <h2>A Journey into the Self</h2> 
-            <h2>Sri Rao</h2> 
-            <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                Last updated: Apr 16, 2026
-            </p>
-            <h3>~***~</h3>
-        </div>
-         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+        <div class="page active" id="page-0">
+            <div class="page-content">
+                <div class="heading-container">
+                    <h1>Theater of the Mind</h1> 
+                    <h2>A Journey into the Self</h2> 
+                    <h2>Sri Rao</h2> 
+                    <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
+                        Last updated: Apr 16, 2026
+                    </p>
+                    <h3>~***~</h3>
+                </div>
+                 <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -1153,19 +1160,21 @@
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
 
-    </div>
+            </div>
+        </div>
         
 
     <div class="page" id="page-toc">
-        <div class="book-title">Theater of the Mind</div>
-        <div class="toc-container toc-list">
-            <h2>Table of Contents</h2>
-            
-            <div class="toc-button-container">
-                <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>Preface</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>An introductory note</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>Initial thoughts</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-4" class="toc-link" style="display: flex; justify-content: space-between;"><span>The toolbox</span><span>4</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-5" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the mind</span><span>5</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>Language of the mind</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-7" class="toc-link" style="display: flex; justify-content: space-between;"><span>Feelings in the mind</span><span>7</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-8" class="toc-link" style="display: flex; justify-content: space-between;"><span>Interpretations in the mind</span><span>8</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-9" class="toc-link" style="display: flex; justify-content: space-between;"><span>Passionate living</span><span>9</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-10" class="toc-link" style="display: flex; justify-content: space-between;"><span>Harmonious living</span><span>10</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-11" class="toc-link" style="display: flex; justify-content: space-between;"><span>Release residual footprints</span><span>11</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-12" class="toc-link" style="display: flex; justify-content: space-between;"><span>Being open</span><span>12</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-13" class="toc-link" style="display: flex; justify-content: space-between;"><span>Connect with the universe</span><span>13</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-14" class="toc-link" style="display: flex; justify-content: space-between;"><span>Consciousness</span><span>14</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-15" class="toc-link" style="display: flex; justify-content: space-between;"><span>Intuition</span><span>15</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-16" class="toc-link" style="display: flex; justify-content: space-between;"><span>Conscience</span><span>16</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-17" class="toc-link" style="display: flex; justify-content: space-between;"><span>What must be done</span><span>17</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-18" class="toc-link" style="display: flex; justify-content: space-between;"><span>Practice with meditation</span><span>18</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-19" class="toc-link" style="display: flex; justify-content: space-between;"><span>Rewards of the universe</span><span>19</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-20" class="toc-link" style="display: flex; justify-content: space-between;"><span>Majlis in the mind</span><span>20</span></a></div>
+        <div class="page-content">
+            <div class="book-title">Theater of the Mind</div>
+            <div class="toc-container toc-list">
+                <h2>Table of Contents</h2>
+                
+                <div class="toc-button-container">
+                    <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>Preface</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>An introductory note</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>Initial thoughts</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-4" class="toc-link" style="display: flex; justify-content: space-between;"><span>The toolbox</span><span>4</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-5" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the mind</span><span>5</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>Language of the mind</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-7" class="toc-link" style="display: flex; justify-content: space-between;"><span>Feelings in the mind</span><span>7</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-8" class="toc-link" style="display: flex; justify-content: space-between;"><span>Interpretations in the mind</span><span>8</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-9" class="toc-link" style="display: flex; justify-content: space-between;"><span>Passionate living</span><span>9</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-10" class="toc-link" style="display: flex; justify-content: space-between;"><span>Harmonious living</span><span>10</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-11" class="toc-link" style="display: flex; justify-content: space-between;"><span>Release residual footprints</span><span>11</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-12" class="toc-link" style="display: flex; justify-content: space-between;"><span>Being open</span><span>12</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-13" class="toc-link" style="display: flex; justify-content: space-between;"><span>Connect with the universe</span><span>13</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-14" class="toc-link" style="display: flex; justify-content: space-between;"><span>Consciousness</span><span>14</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-15" class="toc-link" style="display: flex; justify-content: space-between;"><span>Intuition</span><span>15</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-16" class="toc-link" style="display: flex; justify-content: space-between;"><span>Conscience</span><span>16</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-17" class="toc-link" style="display: flex; justify-content: space-between;"><span>What must be done</span><span>17</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-18" class="toc-link" style="display: flex; justify-content: space-between;"><span>Practice with meditation</span><span>18</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-19" class="toc-link" style="display: flex; justify-content: space-between;"><span>Rewards of the universe</span><span>19</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-20" class="toc-link" style="display: flex; justify-content: space-between;"><span>Majlis in the mind</span><span>20</span></a></div>
+                </div>
             </div>
-        </div>
-         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -1186,14 +1195,16 @@
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
 
+        </div>
     </div>
     
 
         <div class="page" id="page-1">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1201,30 +1212,34 @@
 <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">Sri Rao</div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-2">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br><br><br>A letter to my sons,<br><br>It has been on a long journey, reading, listening, thinking, internalizing, and working to put my understanding into practice. It has been an exciting process, involving literally ‘miles and miles’ of walking. It has changed the way I look at myself and things around me.<br><br>So many accomplished people with such diverse experiences have so much to say. Translating this to my context has enriched me immensely.<br><br>Along the way, I developed an awareness of things that impact my well-being, things that I am good at, things that energize me, and things that will continue to build meaning for me, over time.<br><br>In the following pages, I have written down my learnings, so I can refer to and refine, as new experiences occur.<br><br>As you read this, you might extract parts that are meaningful in your own journeys and experiences. I would love to see this being useful to you in some way.<br><br>Enjoy!!!<br><br>Sri Rao
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-3">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1232,15 +1247,17 @@
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000aIHasMuchToReveal.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Initial Thoughts</span></div><br>These notes make no claim as to truth or knowledge. They are to be thought of as steppingstones, each one to be picked up, inspected, chiseled, polished, and placed back, only to be re-done, as new understandings come to light. Their sole purpose is to spur curiosity, and in that role, they are intended to be provocative and incomplete.<br><br>Truth might well be the realization that "I” refers to the awareness of the contents of an energy halo unique to all beings. This halo created at birth by biological encoding, is sustained by a continuum of observations, experiences, emotions and actions, and relationships to energy flows that are integral to that being. The evolving nature of this understanding makes the journey into the self a lifelong pursuit.<br><br>The reward, also perpetual, is continuous passionate living and harmonious coexistence. Passionate living is continuing forays into the outer edges of cognitive capacity. Harmonious co-existence is effortless energy exchanges, with fellow beings and nature in all its forms.<br><br>The journey into the self is a solo journey. Solitude is a pre-condition to meaningful experiences.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-4">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1256,15 +1273,17 @@
 Energy is not to be stored in the halo, only consumed, or discarded. This frees up space for continued and effortless new energy exchanges.<br><br>Whilst these tools exist in sufficient measure in all beings, they are to be applied with deliberateness. These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-5">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1272,15 +1291,17 @@ Energy is not to be stored in the halo, only consumed, or discarded. This frees 
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000cTheaterOfMind.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Theater of the mind</span></div><br>About 70,000 years ago, the cognitive revolution began in man, with the evolution of the organs of the mind.<br><br>In addition to the three wise men , mind organs such as, an imaginer of the unknown, an interpreter of reality, an understander of time, a creator of thoughts, a builder of patterns, an observer of images, a speaker of languages, a processor of energy into emotions, a believer of myths, a storer of memories, a counter of things, and a "Will’er” of timely actions, and more, came into being.<br><br>Unlike the physical organs of the body, mind organs possess capabilities that are unique to each being. This makes them difficult to label and understand.<br><br>Without direction, these organs constantly raise alarms (to protect), simultaneously engaging into every external energy spike and then seek refuge of one sort or another, exhausting energy reserves in the halo, and leaving behind considerable footprints.<br><br>Harness the actors in the theater of the mind, to curate energy flows and residual footprints in the halo, in support of the journey into the self. Focus them inward. When they are alarmed, say,” Thank you, but I am ok! The three wise men have this in control.”<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-6">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1288,15 +1309,17 @@ Energy is not to be stored in the halo, only consumed, or discarded. This frees 
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000dLanguage.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Language of the mind</span></div><br>The faculty of language is the limiting factor in thought and understanding. Language, as a communication mode between mind organs, is analogous to the neurological signaling between the body organs. While most body functions are involuntary, the three wise men must control the functions of the mind.<br><br>The three wise men determine what energy is attracted into the halo, what flows through, what is consumed, and how residual footprints are released. This is done by instructing the "Will” to trigger lower mind organs to work on the energy content of the halo.<br><br>The three wise men also receive messages from the mind organs, which they interpret and "Will” action, to ensure focus is maintained on doing the "right” thing, in the "best” way, and with "compassion”. They also "will”, actions through a neurological interface to create "physical body language” to broadcast visible energies to the outside world.<br><br>The three wise men use language to keep all the mind organs aligned.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">What is said to the self has consequences. Self-love and soothing language lubricate the mind organs for frictionless functioning.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-7">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1306,15 +1329,17 @@ The three wise men interpret, validate and assemble emotions into feelings.
 Feelings are used to direct the "Will” to action."><br><br>The three wise men must continually ensure that feelings and actions support open,  passionate and harmonious living.<br><br>Energy harnessed during energy spikes and feelings inappropriately actioned, or ignored, result in wasteful energy consumption and higher residual footprints. Footprints must be released.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Residual footprints are considered released when their associated feelings are rendered irrelevant.</div><br>Feelings represent universality and equality in all beings. Feelings make actions purposeful and consciousness meaningful.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-8">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1324,15 +1349,17 @@ Feelings are used to direct the "Will” to action."><br><br>The three wise men 
 <u>Type II</u> interpretations are deliberate, effortful, logical, and verifiable analysis, necessary for knowledge and purposeful living. They require the problem and constraints to be well defined with a timely feedback loop. They find use in rule based deterministic environments.</div><br>The three wise men reference experiences in their memory banks to guide in assembling emotions into feelings and developing directives for "Will’ed” actions,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The three wise men must aim for descriptive adequacy <u>NOT</u> explanatory adequacy in storing experiences.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-9">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1340,15 +1367,17 @@ Feelings are used to direct the "Will” to action."><br><br>The three wise men 
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000gPassionateLiving.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Passionate living</span></div><br>Passionate living is an outcome of repetitive choices, made by the three wise men,<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The three wise men choose, what outside energy is attracted into the halo, what is allowed to pass through, what is consumed and what is the desired outcome from that consumption.</div><br>It is the consequence of a conscious journey into the self.<br><br>Genetic endowments create pre-dispositions in all beings.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Passionate living is the spending of energy in the pursuit of actions aligned with these pre-dispositions.</div><br>Nurture, what nature has given. Timely outcomes, larger rewards, and smaller residual footprints are indicators of passionate choices. Often, this is a result of referencing type II interpretations. Energy obtained from outcomes is consistently greater than consumption, creating a pattern of living that is visible and regenerative.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Passionate living involves repeated journeys from the knowledge core to the outer edges of cognitive capacity along the radius of genetically endowed pre-dispositions. It is the relentless pursuit of conditioned ignorance in the direction of strength.</div><br>Passionate living expands the halo and smoothens energy flows in it. The desire for passionate living rests on a foundation of curiosity.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-10">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1359,15 +1388,17 @@ Everything and everyone in nature is transmitting energy back and forth. The thr
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Harmonious co-existence with the universe increases the candidate pool of choices for passionate living.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-11">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1375,15 +1406,17 @@ Everything and everyone in nature is transmitting energy back and forth. The thr
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000iReleaseFootprints.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Release residual footprints</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">The flow of energy into the halo, irrespective of outcomes, will leave residual footprints.</div><br>To allow for continuous and smooth energy flow through the halo, footprints must be released. The three wise men, as custodians of the halo, must take ownership of its contents and must continually "Will” action to release residual energy footprints within it.<br><br>The three wise men must repeatedly walk around each residual footprint. This inspection changes their perspective. It allows for multiple points of view to assess impact in a micro sense.  They must also change their frames of reference by zooming in and out to assess relevance to the bigger picture, a macro sense.<br><br>The outcome of these zoom & pan journey’s must be<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">A 'Will’ed re-orientation of emotions, feelings, and re-setting of mind organs, so that emotions and feelings lose their relevance in any current or future context, thereby considering them to be released.</div><br>A quantified understanding of effort to release footprints must be stored in memory banks for future reference.<br><br>This is a vital health task of clearing and cleansing of the halo<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-12">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1391,15 +1424,17 @@ Everything and everyone in nature is transmitting energy back and forth. The thr
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000jBeTheEyeInTheSky.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Being Open</span></div><br>Openness requires observing energy flows and footprints within the halo, and the functioning of mind organs.<br><br>Being open is a key responsibility of the 3 wise men.<br><br>Dominion over the halo is liberation. Dominion over the halo and the outside energy flows, and their interactions, is enlightenment. Maintaining continuous enlightenment is being open.<br><br>Openness is oversight over a continuum of mind functions. From the inside to the outside, they are thoughts – emotions – feelings – interpretations and reality.<br><br>When open, observations occur without purpose, without anticipation and without judgment. Open implies that there is awareness of passionate and harmonious living. Open reaffirms the role of "I” as the guest of honor in the theater of the mind. Open reaffirms the ability to focus the actors inward. Open is an outcome of consciousness. Open allows the three wise men to curate quality into their memory banks and the halo. Open manages energy deficits, where spend is maintained below received. Open ensures smoothness of flow as its highest priority.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-13">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1407,15 +1442,17 @@ Everything and everyone in nature is transmitting energy back and forth. The thr
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000kEnergyOftheUniverse.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Connect with the universe</span></div><br>All beings, living and inanimate, contribute to the energy flow in the universe. All beings must harness this energy to steer into passionate and harmonious living.<br><br>The universe is a limitless and free energy resource.  Every human made object was built with human energy investments and continues to be maintained by it. Every other object in nature evolved with the application of forces over time and continues to be sustained by it. All beings are bundles of energy in motion. Energy exchanges occur at every instant in time, in massive doses. History has locked energy into objects, waiting to be released. Openness allows the halo to attract and be receptive to new energy flows.<br><br>Energy cannot be created or destroyed. It may only be stored for short periods after which their footprints must be released. Footprints stored for longer durations take up space, that the halo would have used for new exchanges.<br><br>Harmonious co-existence with the universe, (effortless energy exchanges), feeds the energy needs for passionate living. The meaning of life is a function of the energy connections the three wise men make in the halo’s neighborhood.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-14">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1429,15 +1466,17 @@ The context held within the mind organs<br>
 The context within which feelings make sense to the being.<br></div><br>Consciousness is the experience of awareness without content and have content arise as a consequence of it. Consciousness is that in which all experience appears, with which all experience is known and out of which all experience is made<br><br>Experience is all sensation (feelings of the body - sight, sound, touch, taste, smell) and the emotions (feelings of the mind) presented by the mind organs.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-15">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1449,15 +1488,17 @@ Intuition makes judgments as to which type of interpretations are applicable in 
 TypeII interpretations result from previously validated cause-effect relationships in deterministic environments. They result in lower footprints than those 'Will’ed” by type I.</div><br>Subsequently, intuition updates the memory banks with the energy consumed to release footprints left behind in the halo by these actions.<br><br>We don’t see the world as it is, we see it in a way to survive it. Evolution did not require mind organs to confirm the truth in reality. The seeking of truth would create a probability space of actions so large, that it would cause analysis paralysis, raising the likelihood of death. Even though the threat to survival is removed the mind organs still function in this interpretive fog v/s the establishment of the truth in reality. This activates the need for ideologies which function as a surrogate for truth.<br><br>This use of ideologies opens the door to actions undertaken against our own self interest. Ideologies can kill. They often do.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-16">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1465,15 +1506,17 @@ TypeII interpretations result from previously validated cause-effect relationshi
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000nPillarConscience.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Conscience</span></div><br>Conscience is the third of the three wise men.<br><br>Conscience appends to the memory bank, a "judgement” of residual footprints that a particular "Will’ed” action would leave in others. This judgement is aided by consciousness and intuition’s prediction of their reaction. This judgement applies to all things in nature, living or inanimate.<br><br>Conscience supports harmonious living by promoting "Will’ed” actions that would minimize residual footprints in others.<br><br>Considerations of conscience must only apply, after energy residuals in self are minimized. Priority to self must be enforced. Ignoring residuals in self is sacrifice and is unsustainable in time.<br><br>Consciousness forms the basis for doing the right thing.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-17">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1487,15 +1530,17 @@ Assist others to support their needs, but only to the extent that understood and
 Compassion is about energy conservation in the whole ecosystem.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-18">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1503,15 +1548,17 @@ Compassion is about energy conservation in the whole ecosystem.</div><br><hr sty
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000pProtectYourself.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Practice with meditation</span></div><br>Knowing what to do, and summoning the "Will” to do it, goes 2/3rd of the way. Doing it - is the final third.<br><br>The purpose of meditation is to practice being persistently open. This requires discipline.  Discipline exercises and strengthens the three wise men.<br><br>Discipline is accomplished through frequent meditation, which reinforces desired behaviors to the three wise men.  It keeps "openness” front and center, making it a persistent theme. From that, comes the ability to do the "right” thing, in the "best” way, with "compassion” and with ease. It suspends all activity to provide the three wise men with rest and validation.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-19">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1519,15 +1566,17 @@ Compassion is about energy conservation in the whole ecosystem.</div><br><hr sty
 <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="000qdiest.jpeg" alt="Image" style="width: 100%;"></div><br><div style="color: #f09e5a;"><span class="highlight-text">Rewards of the universe</span></div><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">When one’s actions leave behind footprints, energy which would otherwise be available to all, is spent on its release.</div><br>This is wasteful. This lowers the overall availability of usable energy flows in the universe. This weakens the self and the universe around it.<br><br><div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">Conversely, compassionate living increases the availability of free usable energy. This ensures sustenance and increases growth in nature in all its forms, creating a regenerative energy cycle in the universe.</div><br>Compassion ensures the supply of energy for harmonious living that funds the perpetual rewards of receiving energy in a measure greater than its expense.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-20">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
@@ -1543,21 +1592,24 @@ Do energy tradeoffs limit the half-life of peak-trough swings? <br>
 Is being compassionate a high enough priority?</div><br>The majlis is a sitting room in the house of meditation, where the three wise men reflect on "I”, the separate self, express self-love and gratitude, make choices, re-affirm their roles and give meaning to the words: Liberation, Enlightenment and being Open,<br><br><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">I must remember, I am the guest of honor in the majlis.</div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-21">
-            <div class="book-title">Theater of the Mind</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">Theater of the Mind</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
         <br>
     </div>
     
+                </div>
             </div>
         </div>
         
@@ -2380,30 +2432,30 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
 
             for (let i = startPage; i < pages.length; i++) {
                 if (pages[i].id === 'page-toc') continue;   
-                         
+                        
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
-                // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
-                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                              
-                // Page number (right side)
+                                    
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
-                // to remove 🔖 <ClickbookMark> uncomment this
-                // pageNumber.textContent = calculatePageNumber(i);
-                // and comment this
                 pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
-                pages[i].insertBefore(header, pages[i].firstChild);
+                // MODIFICATION: Insert into .page-content instead of .page
+                const pageContent = pages[i].querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.insertBefore(header, pageContent.firstChild);
+                } else {
+                    pages[i].insertBefore(header, pages[i].firstChild); // fallback
+                }
             }
             
             // Touch events for swipe
