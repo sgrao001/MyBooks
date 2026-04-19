@@ -229,6 +229,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             --ARW_HOVER_HEIGHT_415px: 73vh;
             --ARW_HOVER_TOP: 10vh;
 
+            --content-container-max-width: 95%;
 
             --page-width: 94vw;
             --page-height: 94vh;
@@ -356,6 +357,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             width: calc(var(--page-width) - 60px);
             display: flex;
             justify-content: space-between;
+            align-items: center;          /* ← add this */
             z-index: 3;
         }}
         /* Keep page number on right */
@@ -489,6 +491,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         /* next and previous page Navigation icons */
         .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {{
+
             color: var(--text-color);
             text-decoration: none;
             font-size: 1em;
@@ -502,12 +505,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             -webkit-backdrop-filter: blur(5px);
             -webkit-overflow-scrolling: touch;
             border-radius: 20px;
-            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-bottom 1px rgba(255, 255, 255, 0.4);
             border-right: 1px rgba(255, 255, 255, 0.4);
             border-top: none;
-            border-bottom: none;
-            box-shadow: 0 2px 7px rgba(0,0,0,0.5),
-            0 0 0 1px rgba(255,255,255,0.2) inset;            
+            border-left: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
+                        0 2px 4px rgba(0, 0, 0, 0.3),
+                        0 0 0 1.5px rgba(255, 255, 255, 0.4) inset;           
 
             border-radius: 20px;
             transition: all 0.3s ease;
@@ -518,25 +522,37 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             pointer-events: auto !important;
             cursor: pointer !important;
         }}
+        .back-to-toc,
+        .page-number,
+        .page-number a,
+        .glassbtn {{
+            vertical-align: middle;
+            line-height: 1.2;            /* or match your font size */
+        }}
 
         .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{{
-            background: rgba(0, 0, 0, 0.25) !important;
+            background: rgba(0, 0, 0, 0.55) !important;
             box-shadow: 0 2px 10px rgba(0,0,0,0.7),
             0 0 0 2px rgba(255,255,255,0.2) inset;   
-            border-left: 1px rgba(255, 255, 255, 0.6);
-            border-right: 1px rgba(255, 255, 255, 0.6); 
+            border-radius: 20px;
+            border-top 1px rgba(255, 255, 255, 0.4);
+            border-left: 1px rgba(255, 255, 255, 0.4);
+            border-bottom: none;
+            border-right: none;
             text-decoration: underline;
         }}    
         .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }}
 
-        /* Also target the anchor to ensure it doesn't add extra background/shadow */
-        a:has(.glassbtn) {{
-            text-decoration: none;
-            background: transparent;
-        }}
+        /* scale this 🗂️ down */
+        .back-to-toc {{ display: inline-block; transform: scale( 1.15, 0.9);  /* adjust factor */ }}
 
+
+        /* Also target the anchor to ensure it doesn't add extra background/shadow */
+        a:has(.glassbtn) {{ text-decoration: none; background: transparent; }}
         .glassbtnlbl {{ color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
-                        text-decoration: none; font-style: normal;}}   
+                        text-decoration: none; font-style: normal;}}  
+
+
         .paraitalicleft {{ font-style: italic; text-align: left; }}
         .paraitalicright {{ font-style: italic; text-align: right; }}
         .paraitaliccenter {{ font-style: italic; text-align: center; }} 
@@ -734,7 +750,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
 
         /* Content Styles */
-        .image-container {{ width: 100%; position: relative; overflow: visible; /* Changed from hidden to visible for captions */ }}
+        .image-container {{ width: var(--content-container-max-width); position: relative; overflow: visible; /* Changed from hidden to visible for captions */ }}
 
         .image-container img {{
             position: relative;
@@ -763,6 +779,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .toc-entry a {{ color: {TOC_FontColor} !important; text-decoration: none; display: block; }}
         .toc-entry:hover {{ border-bottom-color: var(--primary-color); }}
         .toc-entry:hover a {{ color: var(--primary-color); }}
+
+        .image-container,
+        .text-only-container {{
+            width: 100%;
+            max-width: var(--content-container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }}
+
+        /* Keep the position and overflow for .image-container separately if needed */
+        .image-container {{
+            position: relative;
+            overflow: visible;
+        }}
 
         /* Table Styles */
         table {{
@@ -875,24 +906,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             margin-right: auto;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            column-gap: 10px;   /* horizontal spacing */
+            row-gap: 12px;      /* vertical spacing */
         }}
 
         .compact-button {{
-            border: 2px solid #4fc3f7 !important; /* Blue border */
-            padding: 6px 12px;
-            background: rgba(0,0,0,0.2);
+            color: {TOC_FontColor} !important;
             border-radius: 12px;
             transition: all 0.3s ease;
             white-space: nowrap;
-            margin: 2px 0;
-            color: {BkFontColor} !important; /* Use your config color */
-        }}
-
-        .compact-button:hover {{
-            border-color: #82e9ff !important; /* Lighter blue on hover */
-            background: rgba(0,0,0,0.4);
-            color: var(--primary-color) !important;
+            margin: 0 !important;
         }}
 
         .toc-list .toc-button-container {{
@@ -1062,8 +1085,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
 
-            --Lmargin-safe-factor: 0.70;
-            --Rmargin-safe-factor: 0.85;
+                --content-container-max-width: 93%;
+
+                --Lmargin-safe-factor: 0.70;
+                --Rmargin-safe-factor: 0.85;
             }}
             .BubbleText-full {{
                 height: var(--tt-max-height);
@@ -1157,6 +1182,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             :root {{
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
+
+                --content-container-max-width: 96%;
 
                 --Lmargin-safe-factor: 0.40;
                 --Rmargin-safe-factor: 0.80;
@@ -1610,7 +1637,7 @@ FOOTER_TEMPLATE = """
                 if (bt && bt.classList.contains('show')) {
                     toggleBubbleText('', '', '', '', '', 'no');
                 }
-            }, 5000);
+            }, 3000);
         }
 
         function copyCurrentPageUrl(event) {
@@ -2964,7 +2991,7 @@ def generate_toc(content):
         else:
             # Button style TOC - Horizontal layout with CSS gap
             toc_entries.append(
-                f'<a href="{href}" class="back-to-toc compact-button toc-link">'
+                f'<a href="{href}" class="glassbtn compact-button toc-link">'
                 f'{title.strip() + "(" + f"{page_num}" + ")"}'
                 f'</a>'
             )
@@ -3349,10 +3376,10 @@ def build_final_html(pages):
     else:
         force_mobile_css = f"""
         .image-container img {{
-            max-width: var(--page--width) !important;
+            max-width: var(--page-width) !important;
         }}
         .image-caption-popup {{
-            max-width: var(--page--width) !important;
+            max-width: var(--page-width) !important;
         }}
         """
 
