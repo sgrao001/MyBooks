@@ -116,8 +116,8 @@
             transform: translate(-50%, -50%) scale(0.95);
             opacity: 0;
             color: #abb8bb;
-            overflow-y: auto;
-            padding: 20px;
+            overflow-y: hidden;
+            padding: 0px;
             box-sizing: border-box;
             border: 1px solid rgba(96,96,96,0.3);
             border-right: 1.5px solid rgba(2211, 211, 211,0.3);
@@ -133,11 +133,7 @@
             z-index: 1;
             display: none;
 
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
         }
-        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
         .page::before {
             content: '';
             position: absolute;
@@ -154,7 +150,17 @@
             /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
             z-index: -1;
         }
+        .page-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;             /* move the padding here */
+            box-sizing: border-box;
+            /* HIDE SCROLLBAR */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
         #page-0::before { display: none; }
+        .page::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
 
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
@@ -174,13 +180,13 @@
 
         /* Fixed header elements (page number, book title, back button) */
         .page-header {
-            position: fixed;
-            top: 20px;
-            width: calc(var(--page-width) - 60px);
+            position: relative;       /* or simply remove position */
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;          /* ← add this */
-            z-index: 3;
+            align-items: center;
+            margin-bottom: 20px;      /* optional spacing */
+            /* remove top, left, right, etc. */
         }
         /* Keep page number on right */
         .page-number {
@@ -1124,15 +1130,16 @@
     
 
     <div class="page" id="page-toc">
-        <div class="book-title">About Me</div>
-        <div class="toc-container toc-list">
-            <h2>Table of Contents</h2>
-            
-            <div class="toc-button-container">
-                <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>About me…</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Observation of Thoughts</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the Mind</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Akka</span><span>2</span></a></div>
+        <div class="page-content">
+            <div class="book-title">About Me</div>
+            <div class="toc-container toc-list">
+                <h2>Table of Contents</h2>
+                
+                <div class="toc-button-container">
+                    <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>About me…</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Observation of Thoughts</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the Mind</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Akka</span><span>2</span></a></div>
+                </div>
             </div>
-        </div>
-         <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
+             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -1153,14 +1160,16 @@
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span>
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
 
+        </div>
     </div>
     
 
         <div class="page" id="page-1">
-            <div class="book-title">About Me</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">About Me</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
@@ -1195,15 +1204,17 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
     <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-2">
-            <div class="book-title">About Me</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">About Me</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
@@ -1236,21 +1247,24 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
     </a></div><br><div style="margin-left: auto !important; margin-right: auto !important; " class="glassbtnlbl"><div style="text-align: center;">~***~</div></div>
     </div>
     
+                </div>
             </div>
         </div>
         
 
         <div class="page" id="page-3">
-            <div class="book-title">About Me</div>
-            <div class="text-only-container">
-                
-                
+            <div class="page-content">
+                <div class="book-title">About Me</div>
+                <div class="text-only-container">
+                    
+                    
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.8em">
         <br>
     </div>
     
+                </div>
             </div>
         </div>
         
@@ -2073,30 +2087,30 @@ I hope you find my writings worth your while. Thank you for taking a look.<br><b
 
             for (let i = startPage; i < pages.length; i++) {
                 if (pages[i].id === 'page-toc') continue;   
-                         
+                        
                 const header = document.createElement('div');
                 header.className = 'page-header';
                 
-                // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
                     backButton.className = 'back-to-toc';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
-                    // 'Contents';
                     header.appendChild(backButton);
                 }
-                              
-                // Page number (right side)
+                                    
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
-                // to remove 🔖 <ClickbookMark> uncomment this
-                // pageNumber.textContent = calculatePageNumber(i);
-                // and comment this
                 pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
-                pages[i].insertBefore(header, pages[i].firstChild);
+                // MODIFICATION: Insert into .page-content instead of .page
+                const pageContent = pages[i].querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.insertBefore(header, pageContent.firstChild);
+                } else {
+                    pages[i].insertBefore(header, pages[i].firstChild); // fallback
+                }
             }
             
             // Touch events for swipe
