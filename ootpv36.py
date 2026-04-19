@@ -215,8 +215,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         :root {{
             --primary-color: #f09e5a;
             --glass-bg: rgba(0, 0, 0, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 
             --text-color: {BkFontColor};
 
@@ -322,17 +322,42 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             overflow-y: auto;
             padding: 20px;
             box-sizing: border-box;
+            border: 1px solid rgba(96,96,96,0.3);
+            border-right: 1.5px solid rgba(2211, 211, 211,0.3);
+            border-bottom: 1.55px solid rgba(211, 211, 211,0.3);
+
+            box-shadow: var(--glass-shadow);
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             -webkit-overflow-scrolling: touch;
             border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
             z-index: 1;
             display: none;
+
+            /* HIDE SCROLLBAR */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
         }}
+        .page::-webkit-scrollbar {{ display: none; /* Chrome, Safari, Opera */}}
+        .page::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: 
+                linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 15%),
+                linear-gradient(to top, rgba(255,255,255,0.04), transparent 15%),
+                linear-gradient(to right, rgba(255,255,255,0.04), transparent 15%),
+                linear-gradient(to left, rgba(255,255,255,0.04), transparent 15%);
+            /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
+            z-index: -1;
+        }}
+        #page-0::before {{ display: none; }}
 
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
@@ -1183,7 +1208,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
 
-                --content-container-max-width: 96%;
+                --content-container-max-width: 97%;
 
                 --Lmargin-safe-factor: 0.40;
                 --Rmargin-safe-factor: 0.80;
