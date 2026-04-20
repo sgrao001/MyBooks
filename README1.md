@@ -1,4 +1,7 @@
+# README1
 README1
+
+                                
 
 _HTML STYLING_____________________________________________________________________________________________________________________________
 
@@ -135,29 +138,6 @@ text pop-up when hover or click
 All parameters are optional except the filename! Use empty | placeholders to skip parameters.
 
 _REPLACEMENTS_____________________________________________________________________________________________________________________________
-  NEWPLAGE 
-  <div style="break-after: page;"></div><br>                                                          <NEWPAGE> 
-  
-  TITLE
-  <p style="color: #f09e5a;"><span class="highlight-text">xxx</span></p>xxx</span></p>              <TITLE="xxx">
-    FIND: <\s*p\s+style\s*=\s*["']color:\s*[^"']*["']\s*>\s*<\s*span\s+class\s*=\s*["'][^"']*["']\s*>\s*(.*?)\s*<\s*\/span\s*>\s*<\s*\/p\s*>.*  
-    REPLACE: <TITLE="$1">
-  
-  SOURCE
-  <p style="text-align: center; font-size: 0.4em;">[Image Src...](xxx)</p>                            <SOURCE="xxx">
-    FIND: <\s*p\s+style\s*=\s*["'][^"']*text-align\s*:\s*[^"';]*;?\s*[^"']*font-size\s*:\s*[^"';]*;?\s*[^"']*["']\s*>\s*\[\s*Image\s+Src\s*\.\.\.\s*\]\s*\((.*?)\)\s*<\s*\/p\s*>
-    REPLACE: <SOURCE="$1">    
-
-  CHAPTER
-  ## xxx xxx                                                                                          <CHAPTER="xxx xxx">
-    FIND: ^\s*##\s+(.*)$
-    REPLACE: <CHAPTER="$1">
-
-  PAGE END MARKER
-  <p style="text-align: center; font-style: bold;"> xxx</p>                                           <PAGE END MARKER="xxx">
-    FIND:<\s*p\s+style\s*=\s*["'][^"']*text-align\s*:\s*center\s*;?[^"']*font-style\s*:\s*bold\s*;?[^"']*["']\s*>\s*(.*?)\s*<\s*\/p\s*>
-    REPLACE: <PAGE END MARKER="$1">
-
   ///                         Comment line - Delete to the end of the line
   From //* to *//             comment parapgh - Delete Between 
   **text** or __text__        Remove BOLD
@@ -165,15 +145,6 @@ _REPLACEMENTS___________________________________________________________________
   *text* or _text_            Remove Itlalics
   <u>text</u>                 Remove bullets
   <em>text</em>               Remove Emphasis
-  [text] (URL)                <a href="url>test</a>                                 (HTML LINK)
-  <NEWPAGE>                   <div style="break-after: page;"></div><br>
-  <TITLE="xxx">               <p style="color: #f09e5a;"><span class="highlight-text">xxx</span></p>xxx</span></p>
-  <SOURCE="xxx">              <p style="text-align: center; font-size: 0.4em;">[Image Src...](xxx)</p>. also allow 
-  <CHAPTER="xxx">             ## xxx also support 'xxx' there will be a space between ## and xxx
-  <IMAGE="xxx">               ![[xxx]] and also support 'xxx'
-  <PAGE END MARKER="xxx">     <p style="text-align: center; font-style: bold;"> xxx</p> ignore space and also support 
-  <FOOTER="xxx">              <p style="font-size: 0.4em;">xxx</p>                                          (Paragraph Tiny footer)
-
 
 _PAGE HANDLING_____________________________________________________________________________________________________________________________
 
@@ -185,103 +156,139 @@ _PAGE HANDLING__________________________________________________________________
 
     Paragraphs............
 
-  <DPosition=":[ walign |talign | fstyle] xxx">
   <PAGE END MARKER="xxx"> 
   <ENDPAGE> / <NEWPAGE>
 
 _General Items_____________________________________________________________________________________________________________________________
-Item                                                Description
+Item                                                Description - Label and URL canbe single, double quoted or none. COmmas and pipes work
 ___________________________________________________________________________________________________________________________________________
-<footer="xxx">                                      A <span> element with no positioning. Can be wrapped by a <DPosition>                             
-<source="Label", "URL">                             A <span> Element with no positioning can be wrapped by a <DPosition>  
-<PAGE END MARKER="~***~">                           A <p> element centered to parent
-<FIRSTPAGE><NEWPAGE><LASTPAGE>                      <div style="break-after: page;"></div><br>
-<CHAPTER="Chapt_name">                              Converts to ## Chapt_name and then processed with styling and TOC insertion.
-<IMAGE="xxx">                                       Converts ![[xxx]] (xxx is a tring with | separated image attributes - see below)
-<TITLE="xxx">                                       A <p> element with no positioning, but has color and styling
+[text] (URL)                <a href="url>test</a>                                 (HTML LINK)
+<STARTPAGE>, <NEWPAGE>      <div style="break-after: page;"></div><br>
+<ENDPAGE>                   <div style="break-after: page;"></div><br>
+<PAGEDIVIDER>               <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+
+<IMAGE=filename>             Converts ![[filename]] (xxx is a tring with | separated image attributes - see below)
+<TITLE="xxx">               <p style="color: #f09e5a;"><span class="highlight-text">xxx</span></p>xxx</span></p>
+<ClipBookMark>              <DPosition=':[ both | ] <a href="..." onclick="..."><span class="glassbtn">🔖</span></a> '>
+<clipBookMark="xxx">        <DPosition=':[ both | ] <a href="..." onclick="..."><span class="glassbtn">🔖</span></a> <span class="glassbtnlbl">Copy link</span>'>
+<IMAGEATR="xxx">              <p style="text-align: center; font-size: 0.4em;">[Image Src...](xxx)</p>. also allow 
+<CHAPTER="xxx">             ## xxx also support 'xxx' there will be a space between ## and xxx
+<IMAGE="xxx">               ![[xxx]] and also support 'xxx'
+<PAGE END MARKER="xxx">     <p style="text-align: center; font-style: bold;"> xxx</p> ignore space and also support 
+<FOOTER="xxx">              <p style="font-size: 0.4em;">xxx</p>                                          (Paragraph Tiny footer)
+
+<NEXTPAGE_ICON>                                     <span class="next-page">👉</span>
+<PREVPAGE_ICON>                                     <span class="prev-page">👈</span>
+<ClickMe_icon>                                      <span class='glassbtn'>👆</span>
+
+_DOUBLE QUOTES required_ _Anywhere there is are HTML tages in strings use Double quotes_
+<TITLE="Label">                                     <span style="color: #f09e5a;"><span class="highlight-text">Label</span>
+
+_DSome Styling Options_
+<color="xxx">                                         <span style="color: xxx">{m.group(4)}</span>. Only works inside a SPAN, DIV or P tags
+<Superscript="xxx">                                   <sup>"xxx"</sup>
+<Subscript="xxx">                                     <sub>"xxx"</sub>
+<bold="xxx">                                          <b>"xxx"</b>
+<underline="xxx">                                     <u>"xxx"</u>
+<italics="xxx">                                       <i>"xxx"</i>
+<LineHeight="", "yyy">                                <span style='line-height: xxxem;'>yyy</span>
+
+_Leave paraitalic* blank is itelas not desired_
+<ParaitalicL="xxx">                                 <DPosition=':[left  |  paraitalicleft ] xxx'>
+<ParaitalicC="xxx">                                 <DPosition=":[center | paraitaliccenter ] xxx">
+<ParaitalicB="xxx">                                 <DPosition=":[both | paraitalicleft ] xxx">
+<ParaitalicR="xxx">                                 <DPosition=":[right | paraitalicleft ] xxx">
+
+_CLICKWORDS GIVE YOU A POPUP TEXT BOX_
+_in the clickwords below put @ in either a or b, if thats what you want_
+_Leave a and b blank if you want autogrowing and center-both_
+_inserting a or b will remove auto growth for that parameter_
+_xxx must be in double quotes_
+_5 required after a and b otherwise px is assumed_
+<clickwordL= a% | b% | "xxx">                         <BBL-Txt=":[floatleft]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
+<clickwordC= a% | b% | "xxx">                         <BBL-Txt=":[floatcenter]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
+<clickwordR= a% | b% | "xxx">                         <BBL-Txt=":[floatright]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
+<clickword0= a% | b% | "xxx">                         <BBL-Txt="<ClickMe_icon>", "[ | | |{a}%| {b}% | | |center-both|left]xxx">
+
+_Inline CLICKWORDS_
+<ClickwordInline='Something.... <clickword0= 30 | 80 | "Tiptext1"> and something else I<clickword0= 30 | 80 | "Tiptext2"> and now I am done '>
+
 ___________________________________________________________________________________________________________________________________________
 
 _DPosition - Indenting_____________________________________________________________________________________________________________________
-<DPosition=":[ walign |talign | fstyle] xxx"> OR <DPostion=":[ | | ] xxx"> Supports both pipe and comma
+_DPOSITION ALLOW INDENTING OF PARAGRAPHS_ 
+_SINGLE QUOTES required_ 
+_Leave glasslbl blank if italics not desired_ 
+<DPosition=':LRCB[ walign | glassbtnlbl ] xxx'>  Supports both pipe and comma. 
+
 Parameter	  Purpose	                  Allowed Values	                      Default (if empty)	    CSS Generated
 ___________________________________________________________________________________________________________________________________________
-walign	    Sets horizontal margin    "left", "right", "center", "both"     No margin rule          margin-left: 8%; margin-right: 8%;
+walign	    Sets horizontal margin    left, right, center, both             No margin rule          margin-left: ARW_SAFE_MARGIN; margin-right: ARW_SAFE_MARGIN;
             (indentation/centering)	  or empty                                                      margin-left: auto; margin-right: auto;
-                                                                                                    margin-left: 8%; margin-right: 8%;
+                                                                                                    margin-left: ARW_SAFE_MARGIN; margin-right: ARW_SAFE_MARGIN;
                                                                                                     (empty → no rule)		
-
-talign	    Aligns text inside the    "left", "right", "center", or empty	  "left"                  text-align: left; text-align: 
-            element	                                                                                right; text-align: center;
-
-fstyle	    Font style(italic/normal)	"italic", "normal", or empty	        "normal"	              font-style: italic; font-style: normal;
-
-content	    The inner text or HTML	  any string (may contain HTML tags)    (required)	            Placed as the content of the <div>
+lblclass    sets visual parameters                                                   .glassbtnlbl {{ color: #4fc3f7; font-size: 0.8em; font-family: sans-serif; 
+                                                                                                font-weight: normal; text-decoration: none; font-style: normal;
+                                                                                                text-align: left;}}   
+                                                          
+                                                                                    .paraindientleft {{ font-style: italic; text-align: left; }}
+                                                                                    .paraindientright {{ font-style: italic; text-align: right; }}
+                                                                                    .paraindientcenter {{ font-style: italic; text-align: center; }} 
 ___________________________________________________________________________________________________________________________________________ 
-Important notes:
-Examples of usage:
 
-<DPosition=":[left|center|italic]Some text">
-→ <div style="margin-left: 8% !important; text-align: center !important; font-style: italic !important;">Some text</div>
-<DPosition=":[both|right|normal]Another text">
-→ <div style="margin-left: 8% !important; margin-right: 8% !important; text-align: right !important; font-style: normal !important;">Another text</div>
-<DPosition=":[center||]Centered only">
-→ <div style="margin-left: auto !important; margin-right: auto !important; text-align: left !important; font-style: normal !important;">Centered only</div>
-<DPosition=":[| | ]Plain text">
-→ <div style="text-align: left !important; font-style: normal !important;">Plain text</div>
-
-_Tool-Tips_________________________________________________________________________________________________________________________________
-:[floatright]     – trigger floats right, with a right margin of 8%.
-:[floatleft]      – trigger floats left, with a left margin of 8%.
+_BUBBLETEXT_______________________________________________________________________________________________________________________________
+:[floatright]     – trigger floats right, with a right margin of ARW_SAFE_MARGIN.
+:[floatleft]      – trigger floats left, with a left margin of ARW_SAFE_MARGIN.
 :[floatcenter]    – trigger is centered (block with auto margins).
-inline            - not present
-
-_Tooltip & tiptext position___________________________________________________________________________________________________
+:[floatboth]      - inline 
+_BubbleText & tiptext position_____________________________________________________________________________________________________________
 Position    Parameter	  Purpose	                                        Default                   
-______________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________
 floatmarker
 1           T →         data-top                                        5.5vh
 2           L →         data-left                                       6.5vw
 3           BG →        data-bottom-gap                                 0vh
-4           H →         data-height                                     var(--tt-max-height) (91vh desktop)
-5           W →         data-width                                      var(--tt-max-height) (91vh desktop)
-6           MH →        data-maxheight                                  var(--tt-max-height) (91vh desktop)
-7           MW →        data-maxwidth                                   var(--tt-max-height) (91vh desktop)
-10          loc →       data-position                                   "bottom-left"
+4           H →         data-height                                     var(--BBLTxt-max-height) (91vh desktop)
+5           W →         data-width                                      var(--BBLTxt-max-height) (91vh desktop)
+6           MH →        data-maxheight                                  var(--BBLTxt-max-height) (91vh desktop)
+7           MW →        data-maxwidth                                   var(--BBLTxt-max-height) (91vh desktop)
+10          loc →       data-position                                  "bottom-left"
 11          tloc →      data-textalign                                  "left"
-_USAGE_____________________________________________________________
-<ttt-LEXTIP=":[floatxxxt]word", ":[ Top | left | Bottom-gap | Height | Width | MaxHeight| Maxwidth | LOC | TLOC ]tip"> 
-<ttt-LEXTIP=":[floatleft]Click word", ":[ @| | | | | | | | left]Your tooltip text here"><br> (fullheight and full width)
+_USAGE_____________________________________________________________________________________________________________________________________
+_DOUBLE QUOTES required_ for WORD and TIPTEXT
+<BBL-Txt=":[floatxxx]word", ":[ data-top | data-left | Bottom-gap | data-height | data-width | data-maxheight| data-maxwidth | data-position | data-textalign  ]tiptext"> 
+<BBL-Txt=":[floatleft]Click word", ":[ @| | | | | | | | left]Your BubbleText text here"><br> (fullheight and full width)
 Supports both Pipe and commna
 ___________________________________________________________________________________________________________________________________________
 Attribute	          Purpose	                          Example Values (all labels are case censitive)
 ___________________________________________________________________________________________________________________________________________
-data-position	      Defines how the tooltip           center-height   – centers tooltip vertically (viewport then clamped to page)
-                    is positioned relative            center-width    – centers horizontally
-                    to the trigger and the            center-both     – centers both axes
-                    viewport/page.                    bottom-page     – places tooltip at the bottom left of the page with a gap but uses
+data-position	      Defines how the BubbleText        center-height    – centers BubbleText vertically (viewport then clamped to page)
+                    is positioned relative            center-width     – centers horizontally
+                    to the trigger and the            center-both      – centers both axes
+                    viewport/page.                    bottom-page      – places BubbleText at the bottom left of the page with a gap but uses
                                                                          Data.Left to position horizontally
-                                                      bottom-left     – places tooltip at the bottom left of the page with a gap
-                                                      bottom-center   – CENTERS the  tooltip at the bottom left of the page with a gap
-                                                      bottom-right    – places tooltip at the bottom left of the page with a gap
-                                                      fixed (default) – uses explicit top/left/bottom/right values relative to viewport
+                                                      bottom-left      – places BubbleText at the bottom left of the page with a gap
+                                                      bottom-center    – CENTERS the  BubbleText at the bottom left of the page with a gap
+                                                      bottom-right     – places BubbleText at the bottom left of the page with a gap
+                                                      fixed (default)  – uses explicit top/left/bottom/right values relative to viewport
                                                                         TOP center -> data-left = center & data-position = fixed 
                                                                         Center-Center -> data-left= center, data-top=center, data-position=fixed
-                                                      absolute        - The tooltip is positioned using the top/bottom and left/right 
+                                                      absolute         - The BubbleText is positioned using the top/bottom and left/right 
                                                                           values you provide (or defaults). No special layout adjustments 
                                                                           are made   
                                                                                       
 _________________________________________________________________________________________________________________________________________
 data-top          @             Width is forced to 50 vw (half the viewport width). Max‑height is forced to 3 em (content scrolls 
-                                if longer).These dimensions are applied with !important to override any CSS classes.The tooltip’s height 
-                                is set to auto so it only grows as needed, up to the max‑height. Left if trigger center < 25 vw → tooltip’s 
-                                left edge is 5 vw from the left viewport edge. Center if trigger center between 25 vw and 75 vw → tooltip 
-                                is horizontally centered in the viewport. Right if trigger center > 75 vw → tooltip’s right edge is 5vw 
+                                if longer).These dimensions are applied with !important to override any CSS classes.The BubbleText’s height 
+                                is set to auto so it only grows as needed, up to the max‑height. Left if trigger center < 25 vw → BubbleText’s 
+                                left edge is 5 vw from the left viewport edge. Center if trigger center between 25 vw and 75 vw → BubbleText 
+                                is horizontally centered in the viewport. Right if trigger center > 75 vw → BubbleText’s right edge is 5vw 
                                 from the right viewport edge.
 _________________________________________________________________________________________________________________________________________
-	                Sets the tooltip’s position       
+	                Sets the BubbleText’s position       
 data-top          relative to the viewport or 
 data-bottom       page. Can be CSS lengths 
-data-left         (e.g., 10vh, 20px, 50%) or          "10vh", "20px", "50%", "@"
+data-left         (e.g., 10vh, 20px, 50%) or          10vh, 20px, 50%, @
 data-right        the special value "@" which 
                   snaps the corresponding edge 
                   to the same edge of the 
@@ -290,48 +297,48 @@ data-right        the special value "@" which
 ___________________________________________________________________________________________________________________________________________
 data-bottom-gap	  Only used with data-position
                   ="bottom-page". Adds a gap 
-                  between the tooltip’s bottom        "2vh", "10px"
+                  between the BubbleText’s bottom        2vh, 10px
                   edge and the bottom of the 
                   page (or viewport).	
 ___________________________________________________________________________________________________________________________________________
-data-animation	  Chooses the tooltip’s               "fade" (default), "bounce", "slide", "zoom"
+data-animation	  Chooses the BubbleText’s               fade (default), bounce, slide, zoom
                   entrance/exit animation.	
 ___________________________________________________________________________________________________________________________________________
-data-textalign	  Aligns the tooltip text             "left" (default), "center", "right"
-                  inside the tooltip box.	
+data-textalign	  Aligns the BubbleText text             left (default), center, right
+                  inside the BubbleText box.	
 ___________________________________________________________________________________________________________________________________________
-data-tiptext	    The actual tooltip 
-                  content (HTML allowed,              any string (e.g., "This is a tooltip")
+data-tiptext	    The actual BubbleText 
+                  content (HTML allowed,              any string (e.g., "This is a BubbleText")
                   escaped by JavaScript).	                  
 ___________________________________________________________________________________________________________________________________________ 
 Attribute	        Purpose	Example Values	Notes
-data-width	      Explicit width of tooltip          "300px", "50vw", "auto" (default)	      Overrides any CSS class that sets width.
-data-height	      Explicit height of  tooltip        "200px", "30vh", "auto"	                Overrides any CSS class that sets height.
-data-maxwidth	    Maximum width of tooltip           "400px", "80vw"	                        Restricts width when content would exceed it. 
-                    	                                                                        Works alongside data-width.
-data-maxheight	  Maximum height of tooltip         "300px", "50vh"	                          Restricts height; if content overflows, 
-                                                                                              scrollbars appear.
-_Supports_ pixels: "300px", Percentages: "50%" (relative to the containing block), Viewport units: "50vw", "30vh", Other CSS units: "20em",
- "10rem", "auto", etc. Important: _Do not use a bare number_ without a unit (e.g., "300"), as that would be invalid CSS
+data-width	      Explicit width of BubbleText          300px, 50vw, auto (default)	      Overrides any CSS class that sets width.
+data-height	      Explicit height of  BubbleText        200px, 30vh, auto	                Overrides any CSS class that sets height.
+data-maxwidth	    Maximum width of BubbleText           400px, 80vw                       Restricts width when content would exceed it. 
+                    	                                                                      Works alongside data-width.
+data-maxheight	  Maximum height of BubbleText          300px, 50vh	                      Restricts height; if content overflows, 
+                                                                                             scrollbars appear.
+_Supports_ pixels: 300px, Percentages: 50% (relative to the containing block), Viewport units: 50vw, 30vh, Other CSS units: 20em,
+    10rem, auto, etc. Important: _Do not use a bare number_ without a unit (e.g., "300"), as that would be invalid CSS
 ___________________________________________________________________________________________________________________________________________ 
 Important notes:
 
--   center-height – The tooltip is vertically centered within the page content area (or viewport if no .page is found). Any data-top value is ignored.
--   center-width – The tooltip is horizontally centered within the page content area (or viewport). Any data-left value is ignored.
+-   center-height – The BubbleText is vertically centered within the page content area (or viewport if no .page is found). Any data-top value is ignored.
+-   center-width – The BubbleText is horizontally centered within the page content area (or viewport). Any data-left value is ignored.
 -   center-both – Both vertical and horizontal centering are applied; data-top and data-left are ignored.
--   The "@" value for edges only works when the tooltip’s data-position is not one of the special modes (center-*, bottom-page). In those 
+-   The "@" value for edges only works when the BubbleText’s data-position is not one of the special modes (center-*, bottom-page). In those 
     modes, "@" is ignored for that axis because the mode overrides it.
--   The bottom-page mode uses data-bottom-gap to separate the tooltip from the bottom of the page. The gap value can be in vh or px.
--   The centering modes (center-*) first try to place the tooltip at the viewport center, then clamp it to keep it inside the page 
-    (with a 10 px margin). This ensures the tooltip never goes off‑screen.
+-   The bottom-page mode uses data-bottom-gap to separate the BubbleText from the bottom of the page. The gap value can be in vh or px.
+-   The centering modes (center-*) first try to place the BubbleText at the viewport center, then clamp it to keep it inside the page 
+    (with a 10 px margin). This ensures the BubbleText never goes off‑screen.
 -   The center-* modes can be combined with data-top/data-left/data-bottom/data-right to provide fallback vertical/horizontal positions 
-    if clamping moves the tooltip. For example, center-width uses the given top value (or bottom) for vertical placement, while the 
+    if clamping moves the BubbleText. For example, center-width uses the given top value (or bottom) for vertical placement, while the 
     horizontal position is centered.
 
-_Standard ToolTip Inventory_________________________________________________________________________________________________________________
-<span class="tooltip-trigger" 
+_Standard BubbleText Inventory_________________________________________________________________________________________________________________
+<span class="BubbleText-trigger" 
   data-top="5.5vh"   data-left="6.5vw"    data-height="20vh"   data-width="60vw"  data-animation="ZOOM"   
-  data-tiptext="📌 ToolTip placed at Top and Bottom with Heightand Width, fading in "
+  data-tiptext="📌 BubbleText placed at Top and Bottom with Heightand Width, fading in "
   data-position="fixed">A Clickable word
 </span>
 
@@ -340,16 +347,16 @@ Triming logic
 --------------------------------------------------------------------------------------------------
   1. Get the page’s bounding rectangle relative to the viewport (pageRect).
 
-  2. Define an inner padding (innerPadding = 10px) to keep the tooltip away from the page edges.
+  2. Define an inner padding (innerPadding = 10px) to keep the BubbleText away from the page edges.
 
   3. Convert the final top, left, height, width strings to pixel numbers (using toPixels).
         - If a value cannot be converted (e.g., calc()), that axis is skipped.
 
-  4. Compute total dimensions including the tooltip’s fixed padding/border (extra = 22px = 10px top/bottom padding + 1px top/bottom border × 2).
+  4. Compute total dimensions including the BubbleText’s fixed padding/border (extra = 22px = 10px top/bottom padding + 1px top/bottom border × 2).
         - totalWidth = widthPx + extra (if widthPx is valid)
         - totalHeight = heightPx + extra (if heightPx is valid)
 
-  5. Clamp top and left so the tooltip’s outer box stays inside the page:
+  5. Clamp top and left so the BubbleText’s outer box stays inside the page:
         - minTop = pageRect.top + innerPadding
         - maxTop = pageRect.bottom - totalHeight - innerPadding
         - If newTop < minTop, set to minTop; if newTop > maxTop, set to maxTop.
@@ -359,7 +366,7 @@ Triming logic
         - Right edge overflow: availableWidth = pageRect.right - leftPx - innerPadding. If totalWidth > availableWidth, reduce content width:
           newContentWidth = max(0, availableWidth - extra) → update width (as a pixel string).
         - Bottom edge overflow: availableHeight = pageRect.bottom - topPx - innerPadding. If totalHeight > availableHeight, reduce content height similarly.
-          Updated top, left, height, width strings (with px units) are then passed to toggleTooltip.
+          Updated top, left, height, width strings (with px units) are then passed to toggleBubbleText.
 
 Summary:
       ✅  data-top="@" data-left="@"  → Below clickable word, perfectly centered and Boundary Safe
