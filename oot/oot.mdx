@@ -24,7 +24,7 @@ Earth-fire-water; a necessity for life. Man-woman-child; the unit of family. Yes
 In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world. 
 
 <PAGEDIVIDER>
-<Source= "Image attribution" | https://en.wikipedia.org/wiki/Three_Elements >
+<IMAGEATR=Image attribution | https://en.wikipedia.org/wiki/Three_Elements >
 <NEWPAGE>
 <CHAPTER=Awareness>
 <IMAGE=Awareness.jpeg>
@@ -95,7 +95,7 @@ I am Self, the supreme unconditioned Brahman. <br>
 I am pure Awareness, always non-dual.">
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg>
+<IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg>
 <NEWPAGE>
 <CHAPTER=Words>
 <IMAGE=Words.jpeg>
@@ -142,7 +142,7 @@ The boy seeks love and acceptance, to understand that which childhood brings for
 The boy is luckier than the man. He is able to make time his friend. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
+<IMAGEATR= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
 <NEWPAGE>
 <CHAPTER=Wheels of Life>
 <IMAGE=WheelOfLife.jpeg>
@@ -173,7 +173,7 @@ I will feel great joy as I realize that true treasure is that which we have gift
 That is the promise we kept. That is what we leave behind.
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.wikiart.org/en/pablo-picasso/friendship-1908>
+<IMAGEATR= Image attribution | https://www.wikiart.org/en/pablo-picasso/friendship-1908>
 <NEWPAGE>
 <CHAPTER=Footsteps>
 <IMAGE=LookingBack-EmilyFelcher2025.jpeg>
@@ -189,12 +189,12 @@ Shame has been the root of my pain. Guilt lives in the house of prolonged blame.
 
 My obligation has been an outcome of mis-directed responsibility, the former kept me trapped while the latter set me free. The real measure of my happiness has been the reduction of suffering in myself. My inheritance from people who survived over a few million years should have been sufficient for me to thrive for a few decades. My survival was never at stake, the freedom to reach my own realizations has always been. Silence has been my safe place. Silence has been my treasure.
 
-Self interest is ubiquitous, self discipline is not. The irony about discipline is that once you have it, you don’t need it. Being a non-conformist was natural. There was much to observe when alone. Sometimes there was more to be gained, but there was always more to be lost. I accept my losses. Discovery buried in the details gave me a sense of accomplishment. People who have hurt me come to mind so much easier than people who have helped me. I have not done well with gratitude. 
+Self interest is ubiquitous, self discipline is not. The irony about discipline is that once I got it, I didn’t  need it. Being a non-conformist was natural. There was much to observe when alone. Sometimes there was more to be gained, but there was always more to be lost. I accept my losses. Discovery buried in the details gave me a sense of accomplishment. People who have hurt me, come to mind so much easier than people who have helped me. I have not done well with gratitude. 
 
 Kids deserve a chance to shape their contributions. My attempts to keep them free from fears, illusions and promises were partially successful. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
+<IMAGEATR= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
 <NEWPAGE>
 <CHAPTER=Nani>
 <IMAGE=Nani.jpeg>
@@ -215,7 +215,7 @@ I embrace the sense of achievement, for a past well-lived, gratitude for the tre
 We shall meet again. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr>
+<IMAGEATR= Image attribution | https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr>
 <NEWPAGE>
 <CHAPTER=CityVerse>
 <IMAGE=ClydeSinger-RushHour1937.jpeg>
@@ -239,7 +239,7 @@ There is a permanence to a city, a steadfast presence. There is continuity amids
 I find new offerings every day. I am grateful for it. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/>
+<IMAGEATR= Image attribution | https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/>
 <NEWPAGE>
 <CHAPTER=Duniya>
 <IMAGE=EdwardMunch-Vampire1895.jpeg>
@@ -254,7 +254,7 @@ One destroys, the other creates. One hurts, the other heals. One gains fame, the
 Cycles of suffering and pain continue amidst love and hope. Cycles of fame and fortune continue amidst deceit and downfall. History’s lessons remain unread between the pages of time. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29>
+<IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29>
 <NEWPAGE>
 <CHAPTER=Lessons>
 <IMAGE=Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg>
@@ -371,7 +371,7 @@ Humanity may pivot to re-claiming time for peace, harmony and well-being. We may
 Maybe, we will.
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://artcloud.market/art/time-persistence-by-daniel-heller>
+<IMAGEATR= Image attribution | https://artcloud.market/art/time-persistence-by-daniel-heller>
 <NEWPAGE>
 <CHAPTER=Space, Time and Energy>
 <IMAGE=Space-Time-Energy.jpeg>
@@ -420,7 +420,7 @@ This does not alter what I am intuitively programmed to do. It highlights why I 
 I must reach my singular state, often. It is my place of rest and validation. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://starryai.com/app/user/joquist/creation/1023376959>
+<IMAGEATR= Image attribution | https://starryai.com/app/user/joquist/creation/1023376959>
 <NEWPAGE>
 <CHAPTER=Passionate and Harmonious living >
 <IMAGE=Passion&Harmony.jpeg>
@@ -466,12 +466,12 @@ The process of receiving a gift is the best motivator for paying it back to some
 
 Feeling grateful for a gift received, or being thankful to be able to give one, is an instant “on” for good feelings and positivity.
 
-People ask me what I plan to do when I have time. i am hard pressed to find a better use for my time. 
+People ask me what I plan to do when I have time. I am hard pressed to find a better use for my time. 
 
 There are people and things I am grateful for. Some of them are far away in my past. I will keep looking for opportunities, to pay and to receive as I go forward. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://lutheranreformation.org/history/durers-praying-hands/>
+<IMAGEATR= Image attribution | https://lutheranreformation.org/history/durers-praying-hands/>
 <NEWPAGE>
 <CHAPTER=Energy>
 <IMAGE=Energy.jpeg>
@@ -491,7 +491,7 @@ The energy sources that we can tap into is limitless. What we do with it, howeve
 
 We all start out as unconscious consumers of energy, and employ it without much thought or purpose. We rely on our primordial instinct to direct its use. 
 
-Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that that we have the responsibility to use it for the benefit of all. 
+Over time we come to realize the nature and value of this gift. We realize that it gives us the means to transform our very existence to one of ease, grace and meaning. We realize that we have a responsibility to use it for the benefit of all. 
 
 Our respect for this offering shapes the essence of our life’s journey. The entire universe becomes a gift, a reservoir of beauty and promise, to be nurtured, adopted and eventually handed back. 
 
@@ -505,7 +505,7 @@ Robert Clive of The British East India Company, a public corporation, accepted t
 
 Acceptance of a win incurs a responsibility and commitment that defines the final outcome from the win. 
 
-Acceptance of a defeat has no relevance to the unfolding situation, nor is it of any consequence to the people impacted. The winner defines the relevance and consequence. It may however, give the vanquished a few additional choices on how he conditions his personal response to the defeat. 
+Acceptance of a defeat has no relevance to the unfolding situation, nor is it of any consequence to the people impacted. The winner defines the relevance and consequence. It may however, give the vanquished a few additional choices on how he conditions his personal response to his defeat. 
 
 No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent. 
 
@@ -513,7 +513,7 @@ No win or loss is lasting. Like shifting sands, moving across, no acceptance is 
 I accept my acceptances. ">
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg>
+<IMAGEATR= Image attribution | https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg>
 <NEWPAGE>
 <CHAPTER=Choices>
 <IMAGE=TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg>
@@ -530,7 +530,7 @@ All will be judged based on the time and effort consumed to release residual ene
 Until then, there are choices and there are opinions. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764>
+<IMAGEATR= Image attribution | https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764>
 <NEWPAGE>
 <CHAPTER=The Good, The Bad>
 <IMAGE=RepraisalsFromUprisingOf1857.jpeg>
@@ -554,7 +554,7 @@ THE GOOD - Along a dark, dingy back passage of the fort, Russell was led to the 
 
 <ParaitalicL="
 Delhi was once a paradise, <br>
-Where Love held sway and reigned; <br>
+Where love held sway and reigned; <br>
 But its charm lies ravished now <br>
 And only ruins remain.<br>
 <br>
@@ -574,7 +574,7 @@ It is accurate to say that the Mughals did exactly this to the good residents of
 Occasionally that seems to happens too. Could it be that Gaza is going through this ordeal now?
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"><footer=(Excerpts from William dalrymple)>
+<IMAGEATR= Image attribution | https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"><footer=(Excerpts from William dalrymple)>
 <NEWPAGE>
 <CHAPTER=Writing>
 <IMAGE=WritingGeorgeLin.jpeg>
@@ -584,7 +584,7 @@ Creativity thrives along the path from the knowledge core, to the edges of cogni
 
 As I write my words, I receive the learning that the writing process offers to me. I learn to give meaning to my innermost thoughts, to polish them to a bright shine and to lay them out for all to see. Most of all, I experience an awareness of who I am. 
 
-When I read my own words, I get to bring my thoughts, experiences and my emotions back to life. I re-live the sights, the sounds, the smells to find new meaning in them. I get to understand where the words came from. I get to re-visit why I put them there. 
+When I read my own words, I bring my thoughts, experiences and my emotions back to life. I re-live the sights, the sounds, the smells to find new meaning in them. I get to understand where the words came from. I get to re-visit why I put them there. 
 
 I think of writing as an expanded form of painting. It allows me to add the nuances of thought. In my mind, a thoughts start with an image. Words allow me to explore my thoughts. 
 
@@ -631,7 +631,7 @@ I add my own words to Carl’s,
 So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html>
+<IMAGEATR= Image attribution | https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html>
 <NEWPAGE>
 <CHAPTER=O’ Mother of mine>
 <IMAGE=OMotherOfMine.jpeg>
@@ -687,7 +687,7 @@ Without your love where would I be<br>
 Mother, O’ sweet mother of mine ...">
 
 <PAGEDIVIDER>
-<br><SOURCE= Image attribution | https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas>
+<br><IMAGEATR= Image attribution | https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas>
 <NEWPAGE>
 <CHAPTER=Diwali >
 <IMAGE=Diwali.jpeg>
@@ -716,7 +716,7 @@ Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance
 LIfe seems to be about following this loop over and over again… 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758>
+<IMAGEATR= Image attribution | https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758>
 <NEWPAGE>
 <CHAPTER=Pursuit of Ignorance>
 <IMAGE=AllegoryOfTheCave.jpeg>
@@ -729,7 +729,7 @@ Recognition of ignorance shows awareness. Acceptance of ignorance shows humility
 My ignorance tells me more about myself than my knowledge ever will. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | 
+<IMAGEATR= Image attribution | 
 https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC>
 <NEWPAGE>
 <CHAPTER=Just Asking>
@@ -773,18 +773,18 @@ As Richard Feynman said, “I would rather have questions that can be answered, 
 My ignorance knows no bounds. I look forward to the pursuit of my ignorance. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://paintbynumbershome.com/products/cat-reading-newspaper>
+<IMAGEATR= Image attribution | https://paintbynumbershome.com/products/cat-reading-newspaper>
 <NEWPAGE>
 <CHAPTER=Fragility>
 <IMAGE=Fragility.jpeg>
 <TITLE=Fragility>
 
-The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, thereby projecting a permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
+The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, to project permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
 The attempt at grandiosity in itself, exposes the nonexistence of power within the imagined self and lays bare the illusion contained in the phrase “the divinity of kings”. 
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://www.instagram.com/reel/DPO99FICRuY/>
+<IMAGEATR= Image attribution | https://www.instagram.com/reel/DPO99FICRuY/>
 <NEWPAGE>
 <CHAPTER=In God we Trust>
 <IMAGE=InGodWeTrust.jpeg>
@@ -914,7 +914,7 @@ As his first mission, he silences the child who points to him and says, “The e
 This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his>
+<IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his>
 <Paraitalicl="PART II <NextPage_Icon>"> 
 <NEWPAGE>
 <IMAGE=noclothes_2.jpeg>
@@ -937,6 +937,6 @@ The treasure slips away, every day and forever, sometimes violently and suddenly
 The emperor walks with no clothes, his head held high. She looks at him. She says nothing. She is silent.
 
 <PAGEDIVIDER>
-<SOURCE= Image attribution | https://en.wikipedia.org/wiki/Afghan_Girl>
-<ParaitalicL="<PrevPage_Icon>PART I">
+<IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/Afghan_Girl>
+<ParaitalicL="PART I <PrevPage_Icon>"> 
 <NEWPAGE>
