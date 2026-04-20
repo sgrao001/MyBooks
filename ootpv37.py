@@ -374,9 +374,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         /* Title Page (Page 0) Specific Styles */
         #page-0 h1,
         #page-0 h2,
-        #page-0 h3 {{
-            color: {BkPage0_FontColor} !important;
-        }}
+        #page-0 h3 {{ color: {BkPage0_FontColor} !important; }}
+        .page-content > :first-child {{ margin-top: 0; }}
+        .page-content h2:first-of-type {{ margin-top: 5px;   /* adjust to your liking – 0, 0.2em, etc. */ }}
+        .image-container:first-child,
+        .text-only-container:first-child {{ margin-top: 0; }}
+
         /* Make Page0 - Title page transparent */
         #page-0 {{
             background: none !important;           /* Removes the semi-transparent background */
@@ -389,19 +392,22 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         /* Fixed header elements (page number, book title, back button) */
         .page-header {{
             position: relative;
-            width: calc(var(--page-width) - 60px);
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;          /* ← add this */
             z-index: 3;
+            margin-bottom: 20px;
         }}
         /* Keep page number on right */
         .page-number {{
-                order: 2; /* Moves to far right */
-                right: 0px;
-                font-size: 0.85em;
-                background: transparent !important;
-                visibility: {pageNumberStyle} !important;
+            flex: 0 0 auto;
+            order: 3;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent !important;
+            visibility: {pageNumberStyle} !important;
         }}
 
    
@@ -516,11 +522,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         /* Center book title */
         .book-title {{
+            flex: 1;                  /* takes all available space between left and right items */
             text-align: center;
             max-width: 50vw;
-            margin: 0 auto 20px auto;  /* auto margins for horizontal centering */
+            margin: 0 auto;
             word-wrap: break-word;
-            font-size: 1.2em;          /* adjust as needed */
+            font-size: 0.8em;
+            order: 2;
+            position: static;
+            transform: none;
         }}
 
         /* next and previous page Navigation icons */
@@ -532,6 +542,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             font-family: Arial;
             
             padding: 5px 15px;
+            margin: 5px;
 
             background: rgba(0, 0, 0, 0.075) !important;
             box-sizing: border-box;
@@ -543,14 +554,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             border-right: 1px rgba(255, 255, 255, 0.4);
             border-top: none;
             border-left: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5),
                         0 2px 4px rgba(0, 0, 0, 0.3),
                         0 0 0 1.5px rgba(255, 255, 255, 0.4) inset;           
 
             border-radius: 20px;
             transition: all 0.3s ease;
             order: 2;
-            margin-right: auto;
+
             position: relative;
             z-index: 9999;
             pointer-events: auto !important;
@@ -566,8 +577,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{{
             background: rgba(0, 0, 0, 0.55) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.7),
-            0 0 0 2px rgba(255,255,255,0.2) inset;   
+
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7),
+                0 2px 4px rgba(0, 0, 0, 0.6),
+                0 0 0 1.5px rgba(255, 255, 255, 0.6) inset;  
+                0 0 0 2px rgba(255,255,255,0.4) inset;   
             border-radius: 20px;
             border-top 1px rgba(255, 255, 255, 0.4);
             border-left: 1px rgba(255, 255, 255, 0.4);
@@ -578,7 +592,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }}
 
         /* scale this 🗂️ down */
-        .back-to-toc {{ display: inline-block; transform: scale( 1.15, 0.9);  /* adjust factor */ }}
+        .back-to-toc {{ order: 1; transform: scale( 1.15, 0.9);  /* adjust factor */ }}
 
 
         /* Also target the anchor to ensure it doesn't add extra background/shadow */
@@ -808,7 +822,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .text-only-container {{ width: 90%; margin: 0px auto; padding: 0; }}
 
-        .toc-container {{ width: 90%; margin: 0px auto; padding: 0; }}
+        .toc-container {{ width: 90%; padding: 20px; }}
         .toc-entry {{ margin: 8px 0; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }}
         .toc-entry a {{ color: {TOC_FontColor} !important; text-decoration: none; display: block; }}
         .toc-entry:hover {{ border-bottom-color: var(--primary-color); }}
@@ -928,11 +942,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
 
         /* ================== */
-        /* TOC Container */
-        .toc-container {{
-            width: 90%;
-            padding: 20px;
-        }}
+
 
         .toc-button-container {{
             width: calc(100% - var(--arrow-hover-width));
@@ -940,8 +950,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             margin-right: auto;
             display: flex;
             flex-wrap: wrap;
-            column-gap: 10px;   /* horizontal spacing */
-            row-gap: 12px;      /* vertical spacing */
+            column-gap: 10px;
+            row-gap: 12px;
+        }}
+        .toc-list .toc-button-container {{
+            display: block;   /* only override what changes */
         }}
 
         .compact-button {{
@@ -951,14 +964,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             white-space: nowrap;
             margin: 0 !important;
         }}
-
-        .toc-list .toc-button-container {{
-            width: calc(100% - var(--arrow-hover-width));
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }}
-
 
         .toc-list .toc-entry {{
             margin: 8px 0;
@@ -1142,8 +1147,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 }}
             }}        
 
-            .book-title {{font-size: 0.75em; margin-bottom: 15px !important; }} 
-            .back-to-List {{ padding: 6px 12px; font-size: 0.85em; }} 
              a {{ color: #00b0ff !important; }} 
             a:focus {{ outline: 2px solid #ffeb3b; outline-offset: 2px; }}
             .text-only-container {{width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }}
@@ -1151,7 +1154,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             /* Improved spacing for mobile text */
             p, h1, h2, h3 {{ margin-bottom: 1.2em !important; line-height: 1.6 !important; }}
 
-            .toc-container {{ width: 95%; padding: 15px 5px; }}
             .toc-entry {{ margin: 6px 0; }}
 
             /* Adjust heading sizes for mobile */
@@ -1247,9 +1249,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
             .back-to-list {{ font-size: 0.6em; }}
         
-            .toc-container {{ margin-top: 50px; width: 95%; }}
             /* Reduce gap after heading */
-            .toc-container h2 {{ margin-bottom: 8px !important; /* Reduce space below title */ }}
             .compact-button {{ padding: 3px 8px !important; font-size: 0.65em !important; }}
 
 
@@ -2142,7 +2142,15 @@ FOOTER_TEMPLATE = """
                     // 'Contents';
                     header.appendChild(backButton);
                 }
-                              
+
+
+                // Book title (center) – create new element
+                const titleSpan = document.createElement('div');
+                titleSpan.className = 'book-title';
+                titleSpan.textContent = '{BkPage0_Title}';   // placeholder – will be replaced by Python
+                header.appendChild(titleSpan);
+                                        
+                   
                 // Page number (right side)
                 const pageNumber = document.createElement('div');
                 pageNumber.className = 'page-number';
@@ -2564,7 +2572,7 @@ def pre_clean(content):
     content = re.sub(r'\[([^\]]+)\]\s*\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', content, flags=re.MULTILINE | re.DOTALL)
 
     # Replace <STARTPAGE>, <NEWPAGE>< <ENDPAGE> with <div style="break-after: page;"></div><br>
-    content = re.sub( r'<\s*(?:firstpage|newpage|lastpage)\s*>', '<div style="break-after: page;"></div><br>', content, flags=re.IGNORECASE | re.MULTILINE  | re.DOTALL)
+    content = re.sub( r'<\s*(?:firstpage|newpage|lastpage)\s*>', '<div style="break-after: page;"></div>', content, flags=re.IGNORECASE | re.MULTILINE  | re.DOTALL)
 
     # replace <CHAPTER="xxx"> with ## xxx also support 'xxx' there must be a space between ## and xxx
     content = re.sub(r'<\s*chapter\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^>]+?))\s*>', r'## \1\2\3', content, flags=re.IGNORECASE | re.DOTALL)
@@ -3054,7 +3062,6 @@ def generate_toc(content):
         </button>
         """
     
-    # Add book title to TOC page
     book_title = f'<div class="book-title">{CONFIG["BkPage0_Title"]}</div>'
     
     # Determine container class based on TOC style
@@ -3087,10 +3094,8 @@ def build_page_html(counter, image_filename, description, title, content):
     
     # Book title for non-cover pages
     book_title = ''
-    if counter != 0:
-        book_title = f'<div class="book-title">{CONFIG["BkPage0_Title"]}</div>'
     
-    # Title styling
+    # Title styling - # always empty – title now lives in .page-header
     if title and title.strip():
         styled_title = f'<span style="font-size: {CONFIG["TitleFontSize"]}">{title}</span>'
         title_part = f'<p><span class="highlight-text">{styled_title}</span></p>'
