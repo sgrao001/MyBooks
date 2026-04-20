@@ -23,11 +23,11 @@ I discovered gems of wisdom that people had graciously left for me  —  in book
 I found myself fascinated by transitions I found between thoughts, words and images. I began to make word pictures to visualize what I was beginning to uncover.  For the purposes of capturing my learnings, I stumbled upon two formats that seemed like they would work well. 
 
 <p style="margin: 0 7.5%; font-style: italic;"><br>
-Not long ago, people would send postcards from their travels to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. As I relegate swaths of my past to distractions, I reclaim my time, writing postcards using words left unsaid, thoughts left unexplored and meanings not pursued to understanding. <br><br>
+Not long ago, people would send postcards from their travels to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. As I relegate swaths of my past to distractions, I reclaim my time, writing postcards using words left unsaid, thoughts left unexplored and meanings not pursued to understanding. I send these postcards as I progress in my journey. <br><br>
 The second format I selected is a short story — drawn from historical events and 
 experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p>
 <br>
-I hope you find my writings worth your while. Thank you for taking a look.
+I hope you find my writings worth your while. I thank you for taking a look.
 
 <PageDivider>
 <tiptext>
@@ -74,7 +74,7 @@ _getMdate("akka/akka.md")'><br>
     </a>'>
 
 
-<PAGE END MARKER=~***~>
+<PAGEDIVIDER>
 <NEWPAGE>
 
 
