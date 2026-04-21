@@ -688,4 +688,3 @@ Most of all I admire her courage to persevere through life's hurdles with courag
 I owe her an eternal measure of gratitude, for making it possible for me to know and learn, and from which my life has, and will continue to be, significantly enriched.
 
 <PAGEDIVIDER>
-<div style="break-after: page;"></div>
