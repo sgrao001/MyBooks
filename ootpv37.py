@@ -402,6 +402,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         /* Keep page number on right */
         .page-number {{
             flex: 0 0 auto;
+            margin-top: 5px;
             order: 3;
             display: flex;
             align-items: center;
@@ -456,9 +457,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             0 0 0 1px rgba(255,255,255,0.2) inset;
 
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-
-            /* BORDER & SHADOW */
-
 
             /* PADDING & BOX SIZING */
             padding: 10px !important;
@@ -589,10 +587,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             border-right: none;
             text-decoration: underline;
         }}    
-        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }}
+        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: none; }}
 
         /* scale this 🗂️ down */
-        .back-to-toc {{ order: 1; transform: scale( 1.15, 0.9);  /* adjust factor */ }}
+        .back-to-toc {{ order: 1; transform: scale( 1.15, .95);  /* adjust factor */ }}
 
 
         /* Also target the anchor to ensure it doesn't add extra background/shadow */
@@ -732,7 +730,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             left: 50%;
             transform: translateX(-50%);
             width: var(--page-width);
-            height: 40px;
+            height: 50px;
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -747,8 +745,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
         }}
 
+        .slider-info #current-page {{
+            color: #b0e0ff;            /* matches BubbleText text color */
+            font-style: italic; /* or any style */
+        }}
 
         .slider-area {{
             position: fixed;
@@ -773,23 +776,38 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .slider {{
             width: 100%;
-            margin: 10px auto;
+            margin-bottom: 5px;
             -webkit-appearance: none;
-            height: 6px;
-            background: rgba(255,255,255,0.2);
+            height: 3px;
+            background: rgba(96, 96, 96, 0); 
             border-radius: 10px;
             outline: none;
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;  
         }}
 
-        .slider::-webkit-slider-thumb {{
-            background: #b0e0ff;       /* light blue thumb */
+        .slider::-webkit-slider-thumb {{ /* CHROME AND SAFAR */
+            -webkit-appearance: none;       /* required for custom styling */
+            width: 24px;
+            height: 16px;            
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            order: border: 1px solid darkgray !important;     
+            border-radius: 50%;
+            cursor: pointer;
+        }}
+        .slider::-moz-range-thumb {{ /* FIREFOX */
+            width: 24px;
+            height: 16px;
+            background: rrgba(176, 224, 255, 1) !important;
+            border: border: 1px solid darkgray !important;        /* remove default border in Firefox */
+            border-radius: 50%;
+            cursor: pointer;
         }}
 
         .slider-track {{
             position: absolute;
-            height: 6px;
-            background: #000;
+            height: 4px;
             border-radius: 10px;
             top: 50%;
             transform: translateY(-50%);
@@ -1329,7 +1347,7 @@ FOOTER_TEMPLATE = """
     <div class="slider-container" id="slider-container" style="SLIDER_DISPLAY">
         <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
-            <input type="range" min="0" max="TOTALPAGES" value="INITIAL_PAGE" class="slider" id="page-slider">
+            <input type="range" min="0" max="SLIDER_MAX" value="INITIAL_PAGE" class="slider" id="page-slider">
         </div>
         <div class="slider-info">
             <span id="current-page">INITIAL_PAGE</span>/<span id="total-pages">TOTALPAGES</span>
@@ -1339,6 +1357,12 @@ FOOTER_TEMPLATE = """
     <script>
         let currentPage = INITIAL_PAGE;
         const totalPages = TOTALPAGES;
+        //================================================================================================
+        // DO THIS ONLY IF YOU WANT THE Total PAGES TO COUNT ONLY  CONTENT PAGES - NOT TITLE AND TOC PAGES
+        const totalContentPages = getTotalDisplay(); // compute
+        document.getElementById('total-pages').textContent = totalContentPages;
+        //================================================================================================
+
         const pages = document.querySelectorAll('.page');
 
         const page0Skipped = {Page0_skip};
@@ -1352,8 +1376,35 @@ FOOTER_TEMPLATE = """
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
-        // Generic listener for ALL trigger
+        // Map page index to slider display number (-1, 0, 1, 2, ...)
+        function getSliderDisplay(index) {
+            const page0Skipped = {Page0_skip};
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // Title page
+            if (!page0Skipped && index === 0) return "Title";
+            // TOC page
+            if (hasTOC && index === (page0Skipped ? 0 : 1)) return "TOC";
+            // Content pages
+            let contentOffset = 0;
+            if (!page0Skipped) contentOffset += 1;
+            if (hasTOC) contentOffset += 1;
+            return index - contentOffset + 1;  // returns number 1,2,3,...
+        }
 
+        // Get the total number of content pages for the denominator (optional, but consistent)
+        function getTotalDisplay() {
+            const page0Skipped = {Page0_skip};
+            const hasTOC = document.getElementById('page-toc') !== null;
+            let contentPages = totalPages;
+            if (!page0Skipped) contentPages -= 1;
+            if (hasTOC) contentPages -= 1;
+            return contentPages;
+        }        
+
+
+        // Generic listener for ALL trigger
+        // ==================== BookMark ===================================
         // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
         document.addEventListener('keydown', function(event) {
             // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
@@ -2157,7 +2208,7 @@ FOOTER_TEMPLATE = """
                 // to remove 🔖 <ClickbookMark> uncomment this
                 // pageNumber.textContent = calculatePageNumber(i);
                 // and comment this
-                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
                 // Insert header into .page-content (instead of .page)
@@ -2300,6 +2351,7 @@ FOOTER_TEMPLATE = """
         }
 
         function goToPage(pageNum) {
+            console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
             if (pageNum === currentPage) return;   // Avoid unnecessary transition
             
@@ -2324,8 +2376,12 @@ FOOTER_TEMPLATE = """
         }
 
         function nextPage() {
+            console.log('nextPage called, currentPage =', currentPage, 'totalPages =', totalPages);
             if (currentPage < totalPages - 1) {
+                console.log('Going to page', currentPage + 1);
                 goToPage(currentPage + 1);
+            } else {
+                console.log('Already at last page');
             }
         }
 
@@ -2355,7 +2411,8 @@ FOOTER_TEMPLATE = """
         }
         function updateSlider() {
             slider.value = currentPage;
-            currentPageDisplay.textContent = currentPage;
+            const displayNum = getSliderDisplay(currentPage);
+            currentPageDisplay.textContent = displayNum;
             updateSliderTrack();
         }
 
@@ -2475,6 +2532,23 @@ FOOTER_TEMPLATE = """
                 new Date().toLocaleDateString('en-US', options);
         });        
                 
+        // Force reflow for all right-floated image containers
+        function fixFloatRight() {
+            document.querySelectorAll('.image-align-right').forEach(container => {
+                // Trigger a reflow by reading a layout property
+                container.offsetHeight; 
+                // Optionally, add/remove a class to force repaint
+                container.style.display = 'none';
+                container.offsetHeight; // force reflow
+                container.style.display = '';
+            });
+        }
+
+        // Run after all images are loaded
+        window.addEventListener('load', fixFloatRight);
+        // Also run after a short delay (fallback)
+        setTimeout(fixFloatRight, 100);
+        
     </script>
 
     <div id="BubbleText"></div>
@@ -2515,7 +2589,7 @@ tip_string = """ <clickwordC=  |  |
             <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
             <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
             <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
-            <li>Click <span class='glassbtn'> 👆</span> any where you see it, to either </li>
+            <li>Click <span class='glassbtn'> 👆</span> any where you see it, </li>
         </span>
             <ul>
             <li>Opens a webpage with additional information</li>
@@ -2701,10 +2775,16 @@ def pre_clean(content):
             + f'\'>'
         ), content, flags=re.IGNORECASE )
 
-    # convert <SOURCE="label","URL"> 
-    RS = chr(30); US = chr(31)
-    content = re.sub(r'<\s*source\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^,|>]+))\s*[,|]\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+))\s*>', RS + r'\1\2\3' + US + r'\4\5\6' + RS, content, flags=re.IGNORECASE | re.DOTALL)
-    content = re.sub(RS + r'(.*?)' + US + r'(.*?)' + RS, '<DPosition=\':[ both | ] <a href="\\2" rel="noopener noreferrer"><span class="glassbtn">👆</span></a>&nbsp;<span class="glassbtnlbl";>\\1</span>\'>', content)
+    # convert <IMAGEATR="label","URL"> 
+    content = re.sub(
+        r'<\s*imageatr\s*=\s*(.*?)\s*[,|]\s*(.*?)\s*>',
+        lambda m: '<DPosition=\':[ both | ] <a href="{}" rel="noopener noreferrer"><span class="glassbtn">📸</span></a>&nbsp;<span class="glassbtnlbl";>{}</span>\'>'.format(
+            m.group(2).strip(' "\''),
+            m.group(1).strip(' "\'')
+        ),
+        content,
+        flags=re.IGNORECASE | re.DOTALL
+    )
     
     # replace <FOOTER=xxx>
     content = re.sub(r'<\s*FOOTER\s*=\s*(["\']?)([^>\'"]*)\1\s*>', "<DPosition=':[ both | glassbtnlbl ] \\2'>", content, flags=re.IGNORECASE | re.DOTALL)
@@ -3374,9 +3454,11 @@ def get_mdate(fname):
 
     return last_modified
 
+
+
 def build_final_html(pages):
     """Assemble the final HTML document with responsive font scaling"""
-    total_pages = len(pages)
+    total_pages = len(pages) + (0 if CONFIG['Page0_skip'] else 1)
 
     title_page_html = ''
     if not CONFIG['Page0_skip']:
@@ -3395,7 +3477,8 @@ def build_final_html(pages):
                 {tip_string}
             </div>
         </div>
-        """
+    """
+
 
    # Prepare mobile CSS based on flag (default to False if not specified)
     force_mobile = CONFIG.get('ResizeForMobile', False)
@@ -3469,6 +3552,7 @@ def build_final_html(pages):
 
     # Prepare footer with dynamic values
     footer = FOOTER_TEMPLATE\
+        .replace('SLIDER_MAX', str(total_pages - 1))\
         .replace('TOTALPAGES', str(total_pages))\
         .replace('INITIAL_PAGE', '0')\
         .replace('SLIDER_DISPLAY', '' if CONFIG['SLDR_DISPLAY'] else 'display: none !important;')\
@@ -3529,7 +3613,7 @@ def main():
         
         # Process content
         content = source_md.read_text(encoding='utf-8')
-        pages = process_markdown(content)
+        pages = process_markdown(content)   
         
         # Generate HTML
         final_html = build_final_html(pages)
