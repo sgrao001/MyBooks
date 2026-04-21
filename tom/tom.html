@@ -199,6 +199,7 @@
         /* Keep page number on right */
         .page-number {
             flex: 0 0 auto;
+            margin-top: 5px;
             order: 3;
             display: flex;
             align-items: center;
@@ -253,9 +254,6 @@
             0 0 0 1px rgba(255,255,255,0.2) inset;
 
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-
-            /* BORDER & SHADOW */
-
 
             /* PADDING & BOX SIZING */
             padding: 10px !important;
@@ -386,7 +384,7 @@
             border-right: none;
             text-decoration: underline;
         }    
-        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none; }
 
         /* scale this 🗂️ down */
         .back-to-toc { order: 1; transform: scale( 1.15, .95);  /* adjust factor */ }
@@ -529,7 +527,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: var(--page-width);
-            height: 40px;
+            height: 50px;
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -544,8 +542,13 @@
             color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
         }
 
+        .slider-info #current-page {
+            color: #b0e0ff;            /* matches BubbleText text color */
+            font-style: italic; /* or any style */
+        }
 
         .slider-area {
             position: fixed;
@@ -570,23 +573,38 @@
 
         .slider {
             width: 100%;
-            margin: 10px auto;
+            margin-bottom: 5px;
             -webkit-appearance: none;
-            height: 6px;
-            background: rgba(255,255,255,0.2);
+            height: 3px;
+            background: rgba(96, 96, 96, 0); 
             border-radius: 10px;
             outline: none;
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;  
         }
 
-        .slider::-webkit-slider-thumb {
-            background: #b0e0ff;       /* light blue thumb */
+        .slider::-webkit-slider-thumb { /* CHROME AND SAFAR */
+            -webkit-appearance: none;       /* required for custom styling */
+            width: 24px;
+            height: 16px;            
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            order: border: 1px solid darkgray !important;     
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb { /* FIREFOX */
+            width: 24px;
+            height: 16px;
+            background: rrgba(176, 224, 255, 1) !important;
+            border: border: 1px solid darkgray !important;        /* remove default border in Firefox */
+            border-radius: 50%;
+            cursor: pointer;
         }
 
         .slider-track {
             position: absolute;
-            height: 6px;
-            background: #000;
+            height: 4px;
             border-radius: 10px;
             top: 50%;
             transform: translateY(-50%);
@@ -1138,7 +1156,7 @@
                     <h2>A Journey into the Self</h2> 
                     <h2>Sri Rao</h2> 
                     <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                        Last updated: Apr 19, 2026
+                        Last updated: Apr 20, 2026
                     </p>
                     <h3>~***~</h3>
                 </div>
@@ -1165,7 +1183,7 @@
 
             </div>
         </div>
-        
+    
 
     <div class="page" id="page-toc">
         <div class="page-content">
@@ -1583,23 +1601,6 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
             </div>
         </div>
         
-
-        <div class="page" id="page-21">
-            <div class="page-content">
-                
-                <div class="text-only-container">
-                    
-                    
-    <div class="content-text" 
-         style="font-size: 1em;
-                --mobile-font-size: 0.9em">
-        
-    </div>
-    
-                </div>
-            </div>
-        </div>
-        
     <!-- Arrow Hover Areas - Always present -->
     <div class="arrow-area left"></div>
     <div class="arrow-area right"></div>
@@ -1619,7 +1620,7 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
     <div class="slider-container" id="slider-container" style="">
         <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
-            <input type="range" min="0" max="22" value="0" class="slider" id="page-slider">
+            <input type="range" min="0" max="21" value="0" class="slider" id="page-slider">
         </div>
         <div class="slider-info">
             <span id="current-page">0</span>/<span id="total-pages">22</span>
@@ -1629,6 +1630,12 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
     <script>
         let currentPage = 0;
         const totalPages = 22;
+        //================================================================================================
+        // DO THIS ONLY IF YOU WANT THE Total PAGES TO COUNT ONLY  CONTENT PAGES - NOT TITLE AND TOC PAGES
+        const totalContentPages = getTotalDisplay(); // compute
+        document.getElementById('total-pages').textContent = totalContentPages;
+        //================================================================================================
+
         const pages = document.querySelectorAll('.page');
 
         const page0Skipped = false;
@@ -1642,8 +1649,35 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
-        // Generic listener for ALL trigger
+        // Map page index to slider display number (-1, 0, 1, 2, ...)
+        function getSliderDisplay(index) {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // Title page
+            if (!page0Skipped && index === 0) return "Title";
+            // TOC page
+            if (hasTOC && index === (page0Skipped ? 0 : 1)) return "TOC";
+            // Content pages
+            let contentOffset = 0;
+            if (!page0Skipped) contentOffset += 1;
+            if (hasTOC) contentOffset += 1;
+            return index - contentOffset + 1;  // returns number 1,2,3,...
+        }
 
+        // Get the total number of content pages for the denominator (optional, but consistent)
+        function getTotalDisplay() {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            let contentPages = totalPages;
+            if (!page0Skipped) contentPages -= 1;
+            if (hasTOC) contentPages -= 1;
+            return contentPages;
+        }        
+
+
+        // Generic listener for ALL trigger
+        // ==================== BookMark ===================================
         // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
         document.addEventListener('keydown', function(event) {
             // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
@@ -2447,7 +2481,7 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
                 // to remove 🔖 <ClickbookMark> uncomment this
                 // pageNumber.textContent = calculatePageNumber(i);
                 // and comment this
-                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
                 // Insert header into .page-content (instead of .page)
@@ -2590,6 +2624,7 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
         }
 
         function goToPage(pageNum) {
+            console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
             if (pageNum === currentPage) return;   // Avoid unnecessary transition
             
@@ -2614,8 +2649,12 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
         }
 
         function nextPage() {
+            console.log('nextPage called, currentPage =', currentPage, 'totalPages =', totalPages);
             if (currentPage < totalPages - 1) {
+                console.log('Going to page', currentPage + 1);
                 goToPage(currentPage + 1);
+            } else {
+                console.log('Already at last page');
             }
         }
 
@@ -2645,7 +2684,8 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
         }
         function updateSlider() {
             slider.value = currentPage;
-            currentPageDisplay.textContent = currentPage;
+            const displayNum = getSliderDisplay(currentPage);
+            currentPageDisplay.textContent = displayNum;
             updateSliderTrack();
         }
 
@@ -2765,6 +2805,23 @@ Is being compassionate a high enough priority?</div><br>The majlis is a sitting 
                 new Date().toLocaleDateString('en-US', options);
         });        
                 
+        // Force reflow for all right-floated image containers
+        function fixFloatRight() {
+            document.querySelectorAll('.image-align-right').forEach(container => {
+                // Trigger a reflow by reading a layout property
+                container.offsetHeight; 
+                // Optionally, add/remove a class to force repaint
+                container.style.display = 'none';
+                container.offsetHeight; // force reflow
+                container.style.display = '';
+            });
+        }
+
+        // Run after all images are loaded
+        window.addEventListener('load', fixFloatRight);
+        // Also run after a short delay (fallback)
+        setTimeout(fixFloatRight, 100);
+        
     </script>
 
     <div id="BubbleText"></div>

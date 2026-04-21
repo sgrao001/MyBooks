@@ -103,13 +103,13 @@ The three wise men use language to keep all the mind organs aligned.
 <CHAPTER=Feelings in the mind>
 <TITLE=Feelings in the mind>
 
-<ParaitalicL="The three wise men choose which energy flows through the halo, what to harness, and what is "Will’ed” to be provisioned to the mind organs.">
+<ParaitalicL="The three wise men choose which energy flows through the halo, what to harness, and what is 'Will’ed' to be provisioned to the mind organs.">
 
 Mind organs transform this energy into emotions. Emotions are seemingly coherent, but often inaccurate interpretations of reality.
 
 <ParaitalicL="
 The three wise men interpret, validate and assemble emotions into feelings. 
-Feelings are used to direct the "Will” to action.">
+Feelings are used to direct the 'Will' to action.">
 
 The three wise men must continually ensure that feelings and actions support open,  passionate and harmonious living.
 
@@ -367,5 +367,4 @@ The majlis is a sitting room in the house of meditation, where the three wise me
 
 <ParaitalicC="I must remember, I am the guest of honor in the majlis. ">
 
-<PAGEDIVIDER>
-<NEWPAGE>
+<PAGEDIVIDER> 
