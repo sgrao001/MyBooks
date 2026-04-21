@@ -199,6 +199,7 @@
         /* Keep page number on right */
         .page-number {
             flex: 0 0 auto;
+            margin-top: 5px;
             order: 3;
             display: flex;
             align-items: center;
@@ -253,9 +254,6 @@
             0 0 0 1px rgba(255,255,255,0.2) inset;
 
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-
-            /* BORDER & SHADOW */
-
 
             /* PADDING & BOX SIZING */
             padding: 10px !important;
@@ -386,7 +384,7 @@
             border-right: none;
             text-decoration: underline;
         }    
-        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: underline; }
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none; }
 
         /* scale this 🗂️ down */
         .back-to-toc { order: 1; transform: scale( 1.15, .95);  /* adjust factor */ }
@@ -529,7 +527,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: var(--page-width);
-            height: 40px;
+            height: 50px;
             z-index: 20;
             display: flex;
             flex-direction: column;
@@ -544,8 +542,13 @@
             color: #b0e0ff;            /* matches BubbleText text color */
             font-size: 0.8em;
             font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
         }
 
+        .slider-info #current-page {
+            color: #b0e0ff;            /* matches BubbleText text color */
+            font-style: italic; /* or any style */
+        }
 
         .slider-area {
             position: fixed;
@@ -570,23 +573,38 @@
 
         .slider {
             width: 100%;
-            margin: 10px auto;
+            margin-bottom: 5px;
             -webkit-appearance: none;
-            height: 6px;
-            background: rgba(255,255,255,0.2);
+            height: 3px;
+            background: rgba(96, 96, 96, 0); 
             border-radius: 10px;
             outline: none;
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;  
         }
 
-        .slider::-webkit-slider-thumb {
-            background: #b0e0ff;       /* light blue thumb */
+        .slider::-webkit-slider-thumb { /* CHROME AND SAFAR */
+            -webkit-appearance: none;       /* required for custom styling */
+            width: 24px;
+            height: 16px;            
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            order: border: 1px solid darkgray !important;     
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb { /* FIREFOX */
+            width: 24px;
+            height: 16px;
+            background: rrgba(176, 224, 255, 1) !important;
+            border: border: 1px solid darkgray !important;        /* remove default border in Firefox */
+            border-radius: 50%;
+            cursor: pointer;
         }
 
         .slider-track {
             position: absolute;
-            height: 6px;
-            background: #000;
+            height: 4px;
             border-radius: 10px;
             top: 50%;
             transform: translateY(-50%);
@@ -1132,44 +1150,6 @@
 
     
 
-    <div class="page" id="page-toc">
-        <div class="page-content">
-            <div class="book-title">About Me</div>
-            <div class="toc-container toc-list">
-                <h2>Table of Contents</h2>
-                
-                <div class="toc-button-container">
-                    <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>About me…</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Observation of Thoughts</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Theater of the Mind</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>Akka</span><span>2</span></a></div>
-                </div>
-            </div>
-            <br>
-            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
-            <br>
-             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
-        <ul>
-        <li>For Previous page, click on left margin.</li>
-        <li>For Next Page, click on right margin.</li>
-        <li>Margins are 15% for your browser width.</li>
-        <span style='line-height: 2.4em'>
-            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
-            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
-            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
-            <li>Click <span class='glassbtn'> 👆</span> any where you see it, </li>
-        </span>
-            <ul>
-            <li>Opens a webpage with additional information</li>
-            <li>Opens a popup box with additional information.</li>
-            </ul>
-        </li>
-        <li>Click on the Popup to make it go away.</li>
-        </ul>
-    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
-    <span style="font-size: .8em;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
-
-        </div>
-    </div>
-    
-
         <div class="page" id="page-1">
             <div class="page-content">
                 
@@ -1187,7 +1167,7 @@ I made the time, to pause, reflect, and reorient — to rethink how I should def
 Not long ago, people would send postcards from their travels to friends and family. A postcard paired an image with a few carefully chosen words, their brevity allowing space for reflection. As I relegate swaths of my past to distractions, I reclaim my time, writing postcards using words left unsaid, thoughts left unexplored and meanings not pursued to understanding. I send these postcards as I progress in my journey. <br><br>
 The second format I selected is a short story — drawn from historical events and 
 experiences of individuals — to highlight patterns and trends in how life’s movements and interactions influenced people of the time. </p><br>
-I hope you find my writings worth your while. I thank you for taking a look.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+I hope you find my writings worth your while. I thank you for taking a look.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
  <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
@@ -1234,7 +1214,7 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         Observation of Thoughts
     </a></div><br><div style="color: #f09e5a;"><span class="highlight-text">Theater of the Mind</span></div>
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
-<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 19, 2026</span></div><br>
+<span style="font-size: 0.8em; color: #abb8bb; opacity: 0.65;">Apr 20, 2026</span></div><br>
 <div style="margin-left: var(--Lsafe-margin) !important; " class="paraindientleft"><a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
        style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
               white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
@@ -1251,23 +1231,6 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         class="glassbtn">
         Akka
     </a></div><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
-    </div>
-    
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="page" id="page-3">
-            <div class="page-content">
-                
-                <div class="text-only-container">
-                    
-                    
-    <div class="content-text" 
-         style="font-size: 1em;
-                --mobile-font-size: 0.8em">
-        
     </div>
     
                 </div>
@@ -1293,16 +1256,22 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
     <div class="slider-container" id="slider-container" style="">
         <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
-            <input type="range" min="0" max="4" value="0" class="slider" id="page-slider">
+            <input type="range" min="0" max="1" value="0" class="slider" id="page-slider">
         </div>
         <div class="slider-info">
-            <span id="current-page">0</span>/<span id="total-pages">4</span>
+            <span id="current-page">0</span>/<span id="total-pages">2</span>
         </div>
     </div>
 
     <script>
         let currentPage = 0;
-        const totalPages = 4;
+        const totalPages = 2;
+        //================================================================================================
+        // DO THIS ONLY IF YOU WANT THE Total PAGES TO COUNT ONLY  CONTENT PAGES - NOT TITLE AND TOC PAGES
+        const totalContentPages = getTotalDisplay(); // compute
+        document.getElementById('total-pages').textContent = totalContentPages;
+        //================================================================================================
+
         const pages = document.querySelectorAll('.page');
 
         const page0Skipped = true;
@@ -1316,8 +1285,35 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
-        // Generic listener for ALL trigger
+        // Map page index to slider display number (-1, 0, 1, 2, ...)
+        function getSliderDisplay(index) {
+            const page0Skipped = true;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // Title page
+            if (!page0Skipped && index === 0) return "Title";
+            // TOC page
+            if (hasTOC && index === (page0Skipped ? 0 : 1)) return "TOC";
+            // Content pages
+            let contentOffset = 0;
+            if (!page0Skipped) contentOffset += 1;
+            if (hasTOC) contentOffset += 1;
+            return index - contentOffset + 1;  // returns number 1,2,3,...
+        }
 
+        // Get the total number of content pages for the denominator (optional, but consistent)
+        function getTotalDisplay() {
+            const page0Skipped = true;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            let contentPages = totalPages;
+            if (!page0Skipped) contentPages -= 1;
+            if (hasTOC) contentPages -= 1;
+            return contentPages;
+        }        
+
+
+        // Generic listener for ALL trigger
+        // ==================== BookMark ===================================
         // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
         document.addEventListener('keydown', function(event) {
             // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
@@ -2121,7 +2117,7 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
                 // to remove 🔖 <ClickbookMark> uncomment this
                 // pageNumber.textContent = calculatePageNumber(i);
                 // and comment this
-                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>&nbsp;' + calculatePageNumber(i);
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
                 header.appendChild(pageNumber);
                 
                 // Insert header into .page-content (instead of .page)
@@ -2264,6 +2260,7 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         }
 
         function goToPage(pageNum) {
+            console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
             if (pageNum === currentPage) return;   // Avoid unnecessary transition
             
@@ -2288,8 +2285,12 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         }
 
         function nextPage() {
+            console.log('nextPage called, currentPage =', currentPage, 'totalPages =', totalPages);
             if (currentPage < totalPages - 1) {
+                console.log('Going to page', currentPage + 1);
                 goToPage(currentPage + 1);
+            } else {
+                console.log('Already at last page');
             }
         }
 
@@ -2319,7 +2320,8 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
         }
         function updateSlider() {
             slider.value = currentPage;
-            currentPageDisplay.textContent = currentPage;
+            const displayNum = getSliderDisplay(currentPage);
+            currentPageDisplay.textContent = displayNum;
             updateSliderTrack();
         }
 
@@ -2439,6 +2441,23 @@ I hope you find my writings worth your while. I thank you for taking a look.<br>
                 new Date().toLocaleDateString('en-US', options);
         });        
                 
+        // Force reflow for all right-floated image containers
+        function fixFloatRight() {
+            document.querySelectorAll('.image-align-right').forEach(container => {
+                // Trigger a reflow by reading a layout property
+                container.offsetHeight; 
+                // Optionally, add/remove a class to force repaint
+                container.style.display = 'none';
+                container.offsetHeight; // force reflow
+                container.style.display = '';
+            });
+        }
+
+        // Run after all images are loaded
+        window.addEventListener('load', fixFloatRight);
+        // Also run after a short delay (fallback)
+        setTimeout(fixFloatRight, 100);
+        
     </script>
 
     <div id="BubbleText"></div>

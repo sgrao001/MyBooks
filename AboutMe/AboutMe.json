@@ -29,7 +29,7 @@
     "BkListLink_show": false,
     "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
 
-    "TitleFontSize": "0.8em",
+    "TitleFontSize": "1em",
     "TitleFontClr": "#abb8bb",
 
     "Hide_page_number": false,
@@ -41,7 +41,7 @@
     "TOC_TITLE": "Table of Contents",
     "TOC_POSITION": 0,
     "TOC_FontColor": "#abb8bb",
-    "TOC_ENABLE": true,
+    "TOC_ENABLE": false,
     "TOCasList": true
 }
 

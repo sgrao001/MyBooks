@@ -29,9 +29,8 @@ experiences of individuals — to highlight patterns and trends in how life’s 
 <br>
 I hope you find my writings worth your while. I thank you for taking a look.
 
-<PageDivider>
+<PageDivider><br>
 <tiptext>
-
 <NEWPAGE>
 <CHAPTER=Observation of Thoughts>
 <TITLE=Observation of Thoughts>
@@ -75,6 +74,6 @@ _getMdate("akka/akka.md")'><br>
 
 
 <PAGEDIVIDER>
-<NEWPAGE>
+
 
 
