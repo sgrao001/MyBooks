@@ -939,4 +939,3 @@ The emperor walks with no clothes, his head held high. She looks at him. She say
 <PAGEDIVIDER>
 <IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/Afghan_Girl>
 <ParaitalicL="PART I <PrevPage_Icon>"> 
-<NEWPAGE>
