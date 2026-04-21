@@ -121,9 +121,9 @@
             padding: 20px !important; /* Padding is important otherwise you have adjust scaling or page-height based on media */
             
             box-sizing: border-box;
-            border: 1px solid rgba(96,96,96,0.3);
-            border-right: 1.5px solid rgba(255, 255, 255,0.3);
-            border-bottom: 1.55px solid rgba(255, 255, 255,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-right: 1.5px solid rgba(255, 255, 255,0.4);
+            border-bottom: 1.5px solid rgba(255, 255, 255,0.4);
 
             box-shadow: var(--glass-shadow);
             background: var(--glass-bg);
@@ -2061,12 +2061,11 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         const totalPages = 44;
         //================================================================================================
         // DO THIS ONLY IF YOU WANT THE Total PAGES TO COUNT ONLY  CONTENT PAGES - NOT TITLE AND TOC PAGES
-        const totalContentPages = getTotalDisplay(); // compute
+        const totalContentPages = getTotalContentPages(); // compute
         document.getElementById('total-pages').textContent = totalContentPages;
         //================================================================================================
 
         const pages = document.querySelectorAll('.page');
-
         const page0Skipped = false;
 
         const slider = document.getElementById('page-slider');
@@ -2078,15 +2077,70 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         const rightArrowContainer = document.getElementById('right-arrow-container');
         const sliderContainer = document.getElementById('slider-container');
 
+        // PRPOGRESS BAR FUNCTIONS START =========================================================================
+        // The getContentPageNumber(index) function maps a page index (0‑based, including title and TOC) to a content page number (1‑based), returning 0 for non‑content pages (title or TOC). It works as follows:
+        // - If the title page exists (!page0Skipped) and index === 0, it returns 0 (title page, no content number).
+        // - If a TOC page exists (hasTOC) and the index matches the TOC’s position (which is 0 if title is skipped, else 1), it returns 0 (TOC page, no content number).
+        // - Otherwise, it calculates the offset: offset = (title exists ? 1 : 0) + (TOC exists ? 1 : 0).
+        // - The content page number is then index - offset + 1 (1‑based).
+        //This function is useful for progress calculations (e.g., showing “Page 3 of 20”) where you want to ignore title and TOC pages.
+
+        function getContentPageNumber(index) {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // If this is the title page or TOC page, return 0 (no progress)
+            if (!page0Skipped && index === 0) return 0;      // title page
+            if (hasTOC && index === (page0Skipped ? 0 : 1)) return 0; // TOC page
+            
+            // Calculate offset: number of non‑content pages before content starts
+            let offset = 0;
+            if (!page0Skipped) offset++;   // title page exists
+            if (hasTOC) offset++;          // TOC page exists
+            const contentPage = index - offset + 1;  // 1‑based content page number
+            return contentPage;
+        }
+
+        // used to update both SLider and progress bar calculations
+        function getTotalContentPages() {
+            const page0Skipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            let contentPages = totalPages;
+            if (!page0Skipped) contentPages -= 1;
+            if (hasTOC) contentPages -= 1;
+            return contentPages;
+        }
+
+        // Updates the prpogress bar on top.
+        function updateProgress() {
+            const displayNum = getSliderDisplay(currentPage);
+            let contentPage = 0;
+            if (typeof displayNum === 'number') {
+                contentPage = displayNum;
+            }
+            const totalContent = getTotalContentPages();
+            let progress = 0;
+            if (totalContent > 0 && contentPage > 0) {
+                progress = (contentPage / totalContent) * 100;
+            }
+            progressBar.style.width = `${progress}%`;
+        }
+        // PROGRESS BAR FUNCTIOND END ===========================================================================
+
+        // SLIDER FUNCTIONS START =========================================================================
         // Map page index to slider display number (-1, 0, 1, 2, ...)
+        // Uses getTotalContentPages() from slider bar for count updates
+
         function getSliderDisplay(index) {
             const page0Skipped = false;
             const hasTOC = document.getElementById('page-toc') !== null;
             
             // Title page
             if (!page0Skipped && index === 0) return "Title";
+
             // TOC page
             if (hasTOC && index === (page0Skipped ? 0 : 1)) return "TOC";
+
             // Content pages
             let contentOffset = 0;
             if (!page0Skipped) contentOffset += 1;
@@ -2094,19 +2148,78 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             return index - contentOffset + 1;  // returns number 1,2,3,...
         }
 
-        // Get the total number of content pages for the denominator (optional, but consistent)
-        function getTotalDisplay() {
-            const page0Skipped = false;
-            const hasTOC = document.getElementById('page-toc') !== null;
-            let contentPages = totalPages;
-            if (!page0Skipped) contentPages -= 1;
-            if (hasTOC) contentPages -= 1;
-            return contentPages;
-        }        
+        function updateSlider() {
+            slider.value = currentPage;
+            const displayNum = getSliderDisplay(currentPage);
+            currentPageDisplay.textContent = displayNum;
+            updateSliderTrack();
+        }
+       // SLIDER FUNCTIONS END =========================================================================
+ 
 
+        // BOOKMARK - COPY URL FUNCTIONS START =========================================================
+        // This function copies the URL of the current page (including the fragment identifier #page-...) 
+            // to the clipboard. It:
+        // - Prevents the default event behavior.
+        // - Finds the active page (.page.active) and gets its id.
+        // - Builds the full URL: baseUrl + '#' + pageId.
+        // - Uses the modern Clipboard API (navigator.clipboard.writeText) to copy the URL.
+        // - If the Clipboard API fails or is unavailable, falls back to creating a hidden <textarea>, 
+            // selecting its content, and using document.execCommand('copy').
+        // - Shows a popup message (via showPopup) indicating success (with the copied URL) or an error.
+        // - If no active page is found, it shows an error popup.
+        // In short, it lets users copy a direct link to the current page (bookmark) to share or revisit later.
 
-        // Generic listener for ALL trigger
-        // ==================== BookMark ===================================
+        function copyCurrentPageUrl(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) {
+                console.error('No active page found');
+                showPopup('Error: No active page');   // ← changed
+                return;
+            }
+
+            const pageId = activePage.id;
+            const baseUrl = window.location.href.split('#')[0];
+            const fullUrl = baseUrl + '#' + pageId;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullUrl).then(() => {
+                    showPopup('URL copied to clipboard<br>' + fullUrl);   // ← changed
+                }).catch(err => {
+                    console.error('Clipboard write failed:', err);
+                    showPopup('Copy failed. Use Ctrl+C');   // ← changed
+                });
+            } else {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = fullUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showPopup('URL copied to Clipboard<br>' + fullUrl);   // ← changed
+            }
+        }  
+        
+         function showPopup(msg) {
+            // Use your existing toggleBubbleText to display a centered popup
+            toggleBubbleText('', '', 'auto', 'auto', msg, 'yes', 'fade', 'center', 'center-both', [], undefined, null, null, null, undefined);
+            // Auto-close after 3 seconds (optional)
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 3000);
+        }  
+        // BOOKMARK COPY-URL FUNCTION======= END ============================================================
+
+        // BOOKMARK COPY-URL LISTENER END ============================================================
         // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
         document.addEventListener('keydown', function(event) {
             // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
@@ -2122,8 +2235,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 // If text is selected, let the default copy happen
             }
         });
+        // BOOKMARK COPY-URL LISTENER END ============================================================
+
+        // BUBBLETEXT LISTENER START ==================== ============================================
+        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
+        // - Closes any open popup if clicking outside the popup or on a different trigger.
+        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
+        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or above the trigger depending on available space (and can limit height to avoid overflow).
+        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
+        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
+        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
         
-        // ==================== BubbleText LISTENER start ==================
         document.addEventListener('click', function(e) {
             try {
 
@@ -2292,10 +2414,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             }
         });
 
-
-        // ==================== BubbleText LISTENER end ====================
-
-
+        // ==================== BubbleText INSIDE CLICK close START ====================================
         document.addEventListener('click', function(e) {
             const BubbleText = document.getElementById('BubbleText');
             if (BubbleText.contains(e.target)) {
@@ -2303,172 +2422,14 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 toggleBubbleText('', '', '', '', '', 'no');
             }
         });
-      // ==================== BubbleText inside click close end ====================
+        // ==================== BubbleText INSIDE CLICK close END ====================================
 
-        // ==================== MAIN CLICK LISTENER (TRIGGERS & OUTSIDE CLOSE) ====================
+        // BUBBLETEXT LISTENER END ===================================================================
 
-        // FIXED: Image caption handling
-        document.addEventListener('DOMContentLoaded', () => {
-            // Debug: Check if captions are being generated
-            console.log('Image captions found:', document.querySelectorAll('.image-caption-popup').length);
-            document.querySelectorAll('.image-caption-popup').forEach((caption, i) => {
-                console.log(`Caption ${i}:`, caption.textContent);
-            });
-
-            // Make captions click-to-toggle on mobile
-            document.querySelectorAll('.image-caption-popup').forEach(caption => {
-                caption.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    
-                    // Toggle visibility
-                    if (caption.style.opacity === '1' || 
-                        getComputedStyle(caption).opacity === '1') {
-                        caption.style.opacity = '0';
-                        caption.style.transform = 'translateY(-10px)';
-                        caption.classList.remove('mobile-visible');
-                    } else {
-                        caption.style.opacity = '1';
-                        caption.style.transform = 'translateY(0)';
-                        caption.classList.add('mobile-visible');
-                    }
-                });
-            });
-
-            // Page Navigation icons anywhere in content
-            document.querySelectorAll('.next-page').forEach(el => {
-                el.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    nextPage();
-                });
-            });
-            document.querySelectorAll('.prev-page').forEach(el => {
-                el.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    prevPage();
-                });
-            });
-            
-            // Close all captions when clicking elsewhere (only on mobile)
-            document.addEventListener('click', (e) => {
-                // Only close if not clicking on a caption
-                if (!e.target.closest('.image-caption-popup')) {
-                    document.querySelectorAll('.image-caption-popup').forEach(caption => {
-                        caption.style.opacity = '0';
-                        caption.style.transform = 'translateY(-10px)';
-                        caption.classList.remove('mobile-visible');
-                    });
-                }
-            });
-
-
-            // Manual pop-up toggle for testing
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log('=== MANUAL POPUP TEST ===');
-                
-                let allPopupsVisible = false;
-                
-                // Add toggle button for testing
-                const testButton = document.createElement('button');
-                testButton.textContent = 'Toggle All Popups';
-                testButton.style.position = 'fixed';
-                testButton.style.top = '10px';
-                testButton.style.right = '10px';
-                testButton.style.zIndex = '9999';
-                testButton.style.padding = '10px';
-                testButton.style.background = 'red';
-                testButton.style.color = 'white';
-                testButton.style.border = 'none';
-                testButton.style.borderRadius = '5px';
-                testButton.style.cursor = 'pointer';
-                
-                testButton.addEventListener('click', () => {
-                    allPopupsVisible = !allPopupsVisible;
-                    const popups = document.querySelectorAll('.image-caption-popup');
-                    
-                    popups.forEach(popup => {
-                        if (allPopupsVisible) {
-                            popup.style.opacity = '1';
-                            popup.style.transform = 'translateY(0) scale(1)';
-                            popup.style.background = 'rgba(255,0,0,0.9)';
-                        } else {
-                            popup.style.opacity = '';
-                            popup.style.transform = '';
-                            popup.style.background = '';
-                        }
-                    });
-                    
-                    console.log('All popups', allPopupsVisible ? 'VISIBLE' : 'HIDDEN');
-                });
-                
-                document.body.appendChild(testButton);
-            });            
-            
-            // Add touch events for mobile
-            document.querySelectorAll('.image-container').forEach(container => {
-                container.addEventListener('touchstart', (e) => {
-                    // Prevent default to avoid scrolling issues
-                    if (e.target.closest('.image-caption-popup')) {
-                        e.preventDefault();
-                    }
-                }, { passive: false });
-            });
-        });        
-
-        // ==================== Function COpy URL===========================
-        function showPopup(msg) {
-            // Use your existing toggleBubbleText to display a centered popup
-            toggleBubbleText('', '', 'auto', 'auto', msg, 'yes', 'fade', 'center', 'center-both', [], undefined, null, null, null, undefined);
-            // Auto-close after 3 seconds (optional)
-            setTimeout(() => {
-                const bt = document.getElementById('BubbleText');
-                if (bt && bt.classList.contains('show')) {
-                    toggleBubbleText('', '', '', '', '', 'no');
-                }
-            }, 3000);
-        }
-
-        function copyCurrentPageUrl(event) {
-            if (event) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-
-            const activePage = document.querySelector('.page.active');
-            if (!activePage) {
-                console.error('No active page found');
-                showPopup('Error: No active page');   // ← changed
-                return;
-            }
-
-            const pageId = activePage.id;
-            const baseUrl = window.location.href.split('#')[0];
-            const fullUrl = baseUrl + '#' + pageId;
-
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(fullUrl).then(() => {
-                    showPopup('URL copied to clipboard<br>' + fullUrl);   // ← changed
-                }).catch(err => {
-                    console.error('Clipboard write failed:', err);
-                    showPopup('Copy failed. Use Ctrl+C');   // ← changed
-                });
-            } else {
-                // Fallback for older browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = fullUrl;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showPopup('URL copied to Clipboard<br>' + fullUrl);   // ← changed
-            }
-        }
-        // ==================== End COpy URL================================      
-
-        // ==================== BubbleText FUNCTION start ====================
+        // ==================== BubbleText FUNCTION Start ============================================
         // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
-        // Convert a CSS length string to pixels (returns NaN if not possible)
-        //
+
         function toPixels(value, dimension) {
             if (typeof value !== 'string') return NaN;
             value = value.trim();
@@ -2490,6 +2451,17 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             return div.innerHTML;
         }
 
+        // The toggleBubbleText function manages a custom popup element (with id BubbleText) that appears when the user clicks on certain triggers (.BubbleText-trigger). It supports:
+        // - Showing/hiding the popup based on the visible parameter.
+        // - Flexible positioning – can place the popup relative to a trigger element, at specific coordinates, centered, or at the bottom of the page.
+        // - Smart positioning (“@” mode) – automatically places the popup below the trigger if enough space, otherwise above; can also cap the height to fit the viewport.
+        // - Sizing modes – explicit width/height (using block display) or growing box (inline-block with fit-content).
+        // - Animations – fade, bounce, slide, zoom.
+        // - Text alignment – left, right, center.
+        // - Constraints – max‑width/‑height via CSS variables or trigger data attributes, clamping to viewport edges.
+        // - Cleanup – on hiding, it removes content and resets styles.
+        // - In essence, it is a highly configurable tooltip / modal‑like popup that adapts its position and size to avoid overflow and provide a smooth user experience.
+        
         function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
             const BubbleText = document.getElementById('BubbleText');
 
@@ -2806,224 +2778,162 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             }
         }
 
-       // ==================== BubbleText FUNCTION end ====================
+       // ==================== BubbleText FUNCTION end ============================================
 
-        // Determine initial page based on configuration
-        function getInitialPage() {
-            const page0Skipped = false;
-            const hasTOC = document.getElementById('page-toc') !== null;
-            
-            if (page0Skipped && hasTOC) {
-                return 0; // Start at TOC (page 0)
-            } else if (!page0Skipped && hasTOC) {
-                return 0; // Start at title page (page 0)
-            } else if (page0Skipped && !hasTOC) {
-                return 0; // Start at first content page (page 0)
-            } else {
-                return 0; // Start at title page (page 0)
+        // ==================== IMAGE CAPTION LISTENER ===============================================================
+        // This code enables mobile‑friendly behavior for image captions:
+        // - Captions can be shown/hidden by tapping on them.
+        // - Tapping outside any caption closes all open captions.
+        // - Touching a caption does not cause the page to scroll (improves usability).
+
+        // FIXED: Image caption handling
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Adds a click listener to each caption popup.
+            // When tapped, it toggles the popup’s visibility:
+            // If visible → hides it (opacity 0, move up, remove class).
+            // If hidden → shows it (opacity 1, reset position, add class).
+            // e.stopPropagation() prevents the click from bubbling up to the global click handler (which would close it immediately).
+
+            document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                caption.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Toggle visibility
+                    if (caption.style.opacity === '1' || 
+                        getComputedStyle(caption).opacity === '1') {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    } else {
+                        caption.style.opacity = '1';
+                        caption.style.transform = 'translateY(0)';
+                        caption.classList.add('mobile-visible');
+                    }
+                });
+            });
+
+            // Close all captions when clicking elsewhere (only on mobile)
+            // Listens for clicks anywhere on the page.
+            // If the click target is not inside any caption popup (.closest('.image-caption-popup') returns null), it hides all open captions.
+            // This ensures that tapping outside a popup closes it.
+
+            document.addEventListener('click', (e) => {
+                // Only close if not clicking on a caption
+                if (!e.target.closest('.image-caption-popup')) {
+                    document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    });
+                }
+            });
+
+            // For each image container, listens for touchstart events.
+            // If the touch starts on a caption popup, it calls e.preventDefault() to prevent the browser from scrolling while the user interacts with the popup (e.g., toggling visibility).
+            // { passive: false } allows preventDefault() to work.
+            // Add touch events for mobile
+
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.addEventListener('touchstart', (e) => {
+                    // Prevent default to avoid scrolling issues
+                    if (e.target.closest('.image-caption-popup')) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+            });
+        });  
+
+        // Force reflow for all right-floated image containers
+        // The fixFloatRight function forces a browser reflow (layout recalculation) for all elements with class image-align-right. It does this by:
+        // - Reading a layout property (container.offsetHeight) – this forces the browser to compute the current layout.
+        // - Temporarily setting display: none and reading offsetHeight again to force another reflow.
+        // - Restoring display to its original value (empty string).
+        //This sequence forces the browser to recalculate the positions and dimensions of those containers, which can fix rendering bugs where 
+            //right‑floated images are not properly wrapped by text (especially after images load asynchronously).
+        // The function is triggered:
+        // - On the window load event (after all images and resources have loaded).
+        // - After a 100ms delay (fallback in case the load event already fired before the listener was attached).
+        // - This ensures that right‑floated images display correctly (text wraps around them) even if the initial layout was incorrect due to image loading timing.
+
+        function fixFloatRight() {
+            document.querySelectorAll('.image-align-right').forEach(container => {
+                // Trigger a reflow by reading a layout property
+                container.offsetHeight; 
+                // Optionally, add/remove a class to force repaint
+                container.style.display = 'none';
+                container.offsetHeight; // force reflow
+                container.style.display = '';
+            });
+        }
+
+        // Run after all images are loaded
+        window.addEventListener('load', fixFloatRight);
+        // Also run after a short delay (fallback)
+        setTimeout(fixFloatRight, 100);
+
+        // ==================== IMAGE CAPTION LISTENER END ===========================================================
+
+        // ==================== Navigation LISTENER Begin ==============================================
+        // Page Navigation icons anywhere in content
+        document.querySelectorAll('.next-page').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextPage();
+            });
+        });
+        document.querySelectorAll('.prev-page').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevPage();
+            });
+        });
+        // ==================== Navigation LISTENER End ================================================  
+
+        // ==================== Page Build Function Start ================================================ 
+
+        // This function activatePageFromHash is used to restore the last viewed page when the page is loaded with a URL fragment (e.g., #page-3). It:
+        // Reads the URL’s hash (the part after #).
+        // Tries to find a .page element whose id matches the hash (e.g., page-3).
+        // If found, it determines the index of that page in the list of all pages.
+        // If the page exists and is not already active, it calls goToPage(pageNum) to navigate there.
+        // This enables deep linking – sharing a link that opens the book directly at a specific page, not just the first page. It is called during initial page load after the default active page is set, allowing the hash to override the default.
+        
+        function activatePageFromHash() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetPage = document.querySelector(hash);
+                if (targetPage && targetPage.classList.contains('page')) {
+                    const allPages = document.querySelectorAll('.page');
+                    let pageNum = -1;
+                    for (let i = 0; i < allPages.length; i++) {
+                        if (allPages[i].id === hash.substring(1)) {
+                            pageNum = i;
+                            break;
+                        }
+                    }
+                    if (pageNum !== -1 && pageNum !== currentPage) {
+                        goToPage(pageNum);
+                    }
+                }
             }
         }
 
-        // Initialize with correct active page
-        document.addEventListener('DOMContentLoaded', () => {
-            // First deactivate all pages
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // If title page exists and isn't skipped, start there
-            if (!page0Skipped && document.getElementById('page-0')) {
-                currentPage = 0;
-                document.getElementById('page-0').classList.add('active');
-            } else {
-                // Otherwise start at TOC or first content page
-                currentPage = 0;
-                pages[currentPage].classList.add('active');
-            }
-
-            // After setting the initial active page, check URL hash
-            function activatePageFromHash() {
-                const hash = window.location.hash;
-                if (hash) {
-                    const targetPage = document.querySelector(hash);
-                    if (targetPage && targetPage.classList.contains('page')) {
-                        const allPages = document.querySelectorAll('.page');
-                        let pageNum = -1;
-                        for (let i = 0; i < allPages.length; i++) {
-                            if (allPages[i].id === hash.substring(1)) {
-                                pageNum = i;
-                                break;
-                            }
-                        }
-                        if (pageNum !== -1 && pageNum !== currentPage) {
-                            goToPage(pageNum);
-                        }
-                    }
-                }
-            }
-            activatePageFromHash();
-            
-            const booklistBtn = document.querySelector('.back-to-list');
-            if (booklistBtn) {
-                booklistBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html';
-                    if (!url.startsWith('http')) {
-                        url = 'https://' + url;
-                    }
-                    // window.open(url, '_blank');
-                    window.open(url, '_self');
-                });
-            }
-
-            updateSlider();
-            updateProgress();
-            
-            // Add header elements to all pages except the title page (if shown)
-            const startPage = false ? 0 : 1;
-
-            for (let i = startPage; i < pages.length; i++) {
-                if (pages[i].id === 'page-toc') continue;   
-                         
-                const header = document.createElement('div');
-                header.className = 'page-header';
-                
-                // Back to TOC button (left side)
-                if (document.getElementById('page-toc')) {
-                    const backButton = document.createElement('a');
-                    backButton.className = 'back-to-toc';
-                    backButton.href = '#page-toc';
-                    backButton.textContent = '🗂️'; 
-                    // 'Contents';
-                    header.appendChild(backButton);
-                }
-
-
-                // Book title (center) – create new element
-                const titleSpan = document.createElement('div');
-                titleSpan.className = 'book-title';
-                titleSpan.textContent = 'Observation of Thoughts';   // placeholder – will be replaced by Python
-                header.appendChild(titleSpan);
-                                        
-                   
-                // Page number (right side)
-                const pageNumber = document.createElement('div');
-                pageNumber.className = 'page-number';
-                // to remove 🔖 <ClickbookMark> uncomment this
-                // pageNumber.textContent = calculatePageNumber(i);
-                // and comment this
-                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
-                header.appendChild(pageNumber);
-                
-                // Insert header into .page-content (instead of .page)
-                const pageContent = pages[i].querySelector('.page-content');
-                if (pageContent) {
-                    pageContent.insertBefore(header, pageContent.firstChild);
-                } else {
-                    // Fallback (should not happen)
-                    pages[i].insertBefore(header, pages[i].firstChild);
-                }
-            }
-            
-            // Touch events for swipe
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            document.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
-
-            document.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].clientX;
-                handleSwipe();
-            }, { passive: true });            
-            
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                switch(e.key) {
-                    case 'ArrowRight':
-                    case 'ArrowDown':
-                    case 'PageDown':
-                        nextPage();
-                        break;
-                    case 'ArrowLeft':
-                    case 'ArrowUp':
-                    case 'PageUp':
-                        prevPage();
-                        break;
-                }
-            });
-
-            // Update slider track fill
-            slider.addEventListener('input', updateSliderTrack);
-            updateSliderTrack();
-            
-            // Connect slider to page navigation
-            slider.addEventListener('change', function() {
-                goToPage(parseInt(this.value));
-            });
-            
-            document.querySelectorAll('.toc-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetPage = document.querySelector(targetId);
-                    
-                    if (targetPage) {
-                        const allPages = document.querySelectorAll('.page');
-                        let pageNum = 0;
-                        for (let i = 0; i < allPages.length; i++) {
-                            if (allPages[i].id === targetId.substring(1)) {
-                                pageNum = i;
-                                break;
-                            }
-                        }
-                        goToPage(pageNum);
-                        
-                        // Smooth scroll to top of page
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
-                });            
-            });  
-
-            // Arrow click events
-            leftArrowContainer.addEventListener('click', prevPage);
-            rightArrowContainer.addEventListener('click', nextPage);
-
-            // TOC Navigation (handles both list and button styles)
-            document.querySelectorAll('.back-to-toc').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetPage = targetId.startsWith('#') 
-                        ? document.querySelector(targetId)
-                        : document.getElementById(targetId);
-                    
-                    if (targetPage) {
-                        const allPages = document.querySelectorAll('.page');
-                        let pageNum = 0;
-                        for (let i = 0; i < allPages.length; i++) {
-                            if (allPages[i].id === targetId.replace('#', '')) {
-                                pageNum = i;
-                                break;
-                            }
-                        }
-                        goToPage(pageNum);
-                        
-                        // Smooth scroll to top
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-                        
-
-        });
-
         // Calculate proper page number based on Page0_skip and TOC
+        // The calculatePageNumber(index) function determines what text to display as the page number in the 
+        // page header (e.g., “Title”, an empty string, or a numeric page number). It uses the configuration 
+        // flags Page0_skip and whether a TOC page exists to decide the mapping from the page index (0‑based) to the displayed label.
+        // - If title page is skipped and TOC exists:
+        //      Index 0 → "" (TOC page shows no number), Index 1 → 1, Index 2 → 2, etc.
+        // - If title page exists and TOC exists:
+        //      Index 0 → "Title", Index 1 → "" (TOC), Index 2 → 1, Index 3 → 2, etc.
+        // - If title page is skipped and no TOC:
+        //      Index 0 → 1, Index 1 → 2, etc. (direct numbering)
+        // - If title page exists and no TOC:
+        //      Index 0 → "Title", Index 1 → 1, Index 2 → 2, etc.
+        // This function is used when generating the page number in the header (via pageNumber.innerHTML). 
+        //      It ensures that the displayed page number matches the expected labeling (e.g., the first content page is “1”, not “2”).
+
         function calculatePageNumber(index) {
             const page0Skipped = false;
             const hasTOC = document.getElementById('page-toc') !== null;
@@ -3043,7 +2953,6 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 return index === 0 ? "Title" : index;
             }
         }
-        
 
         function updateSliderTrack() {
             const value = slider.value;
@@ -3087,7 +2996,6 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             }
         }
 
-
         function prevPage() {
             if (currentPage > 0) {
                 // If we're on the first content page and page0 is skipped, don't go back
@@ -3097,7 +3005,6 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 goToPage(currentPage - 1);
             }
         }
-
 
         function handleSwipe() {
             const threshold = window.innerWidth * (CONFIG.ARW_HOVER_WIDTH / 100);
@@ -3110,20 +3017,243 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             } else {
                 prevPage();
             }
-        }
-        function updateSlider() {
-            slider.value = currentPage;
-            const displayNum = getSliderDisplay(currentPage);
-            currentPageDisplay.textContent = displayNum;
+        } 
+
+        // ==================== Page Build Function end ================================================
+
+        // ==================== Page Build Listener Start ========================================================
+
+        // Initialize with correct active page
+        // Deactivates all pages by removing the active class from every .page element.
+        // Sets the active page based on configuration:
+            // - If the title page exists and is not skipped (!page0Skipped), it activates the title page (index 0).
+            // - Otherwise, it activates the page at 0 (usually 0, which could be the TOC or first content page).
+        // Checks the URL hash (e.g., #page-3) and navigates to that page using activatePageFromHash() (overriding 
+            //the initial active page if a hash is present).
+        // Adds a click listener to a .back-to-list button (if present) that opens a configured URL (https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html) 
+        // add listener for keyboard
+        // adds listener for left right arrow
+        // adds listener for Back-to-list
+        // Enabbles back-to-TOC to work correctly
+        // update SLIDER
+        // UPDATE PROGRESSBAR
+        // Append children to page-header
+        // Insert Header to Page-content (Page content is only child of .page creater for .apge::after - whitewash glass effect)
+        // in the same tab (_self).
+        // In essence, it handles the initial page activation and supports deep linking via URL fragments.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // First deactivate all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // If title page exists and isn't skipped, start there
+            if (!page0Skipped && document.getElementById('page-0')) {
+                currentPage = 0;
+                document.getElementById('page-0').classList.add('active');
+            } else {
+                // Otherwise start at TOC or first content page
+                currentPage = 0;
+                pages[currentPage].classList.add('active');
+            }
+
+            // After setting the initial active page, check URL hash
+            activatePageFromHash();
+            
+            const booklistBtn = document.querySelector('.back-to-list');
+            if (booklistBtn) {
+                booklistBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html';
+                    if (!url.startsWith('http')) {
+                        url = 'https://' + url;
+                    }
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
+                });
+            }
+
+            updateSlider();
+            updateProgress();
+            
+            // Add header elements to all pages except the title page (if shown)
+            // Determines the starting index (startPage) based on whether the title page is skipped (Page0_skip). If the title page exists (
+                // Page0_skip = false), it starts at index 1 (skipping the title page at index 0). If the title page is skipped, 
+                // it starts at index 0 (first content page).
+            // Loops through all .page elements from startPage to the end, but skips the TOC page if its id is "page-toc".
+            // For each content page, it creates a <div class="page-header"> and populates it with three elements:
+            // Left side: a back‑to‑TOC button (<a class="back-to-toc">) if a TOC page exists. The button contains the emoji 🗂️.
+            // Center: the book title (<div class="book-title">) with text from Observation of Thoughts (later replaced by Python).
+            // Right side: the page number (<div class="page-number">) which includes a clickable bookmark emoji (🔖) 
+                // that calls copyCurrentPageUrl(event) when clicked.
+            // Inserts the header as the first child of the page’s .page-content container (so it appears at the top of the scrollable area). 
+                // If .page-content is not found, it falls back to inserting directly into the .page element.
+            // In summary, this code adds a consistent navigation header (with TOC button, book title, and copy‑link + page number) to every 
+                //content page, making the user interface functional and uniform across all pages.
+            
+            const startPage = false ? 0 : 1;
+            for (let i = startPage; i < pages.length; i++) {
+                if (pages[i].id === 'page-toc') continue;   
+                         
+                const header = document.createElement('div');
+                header.className = 'page-header';
+                
+                // Back to TOC button (left side)
+                if (document.getElementById('page-toc')) {
+                    const backButton = document.createElement('a');
+                    backButton.className = 'back-to-toc';
+                    backButton.href = '#page-toc';
+                    backButton.textContent = '🗂️'; 
+                    // 'Contents';
+                    header.appendChild(backButton);
+                }
+
+                // Book title (center) – create new element
+                const titleSpan = document.createElement('div');
+                titleSpan.className = 'book-title';
+                titleSpan.textContent = 'Observation of Thoughts';   // placeholder – will be replaced by Python
+                header.appendChild(titleSpan);
+                                        
+                // Page number (right side)
+                const pageNumber = document.createElement('div');
+                pageNumber.className = 'page-number';
+                // to remove 🔖 <ClickbookMark> uncomment this
+                // pageNumber.textContent = calculatePageNumber(i);
+                // and comment this
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
+                header.appendChild(pageNumber);
+                
+                // Insert header into .page-content (instead of .page)
+                const pageContent = pages[i].querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.insertBefore(header, pageContent.firstChild);
+                } else {
+                    // Fallback (should not happen)
+                    pages[i].insertBefore(header, pages[i].firstChild);
+                }
+            }
+            
+            // Touch events for swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            //TouchScreen Swipe. TO be tested Later
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });            
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                    case 'PageDown':
+                        nextPage();
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                    case 'PageUp':
+                        prevPage();
+                        break;
+                }
+            });
+
+            // Update slider track fill
+            slider.addEventListener('input', updateSliderTrack);
             updateSliderTrack();
-        }
+            
+            // Connect slider to page navigation
+            slider.addEventListener('change', function() {
+                goToPage(parseInt(this.value));
+            });
+            
+            //This code listens for clicks on any element with the class toc-link (typically Table of Contents links). When clicked, it:
+            //Prevents the default link behavior (so the URL doesn’t change with a #).
+            //Extracts the target ID from the link’s href attribute (e.g., #page-3).
+            //Finds the corresponding .page element by matching its id.
+            //Determines the page index by iterating over all .page elements.
+            //Calls goToPage(pageNum) to navigate to that page.
+            //Smoothly scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
 
-        function updateProgress() {
-            const progress = (currentPage / totalPages) * 100;
-            progressBar.style.width = `${progress}%`;
-        }
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = document.querySelector(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top of page
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });            
+            });  
 
-        
+            // Arrow click events for next and previous page 
+            leftArrowContainer.addEventListener('click', prevPage);
+            rightArrowContainer.addEventListener('click', nextPage);
+
+            // TOC Navigation (handles both list and button styles)
+            // This code adds click handlers to all elements with the class .back-to-toc (typically a button or link that returns to the Table of Contents). When clicked, it:
+            // - Prevents the default link behavior (so the URL doesn’t change with a #).
+            // - Extracts the target ID from the href attribute (e.g., #page-toc).
+            // - Finds the corresponding .page element.
+            // - Determines the index of that page by iterating over all .page elements.
+            // - Calls goToPage(pageNum) to navigate to that page.
+            // - Smooth‑scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
+            // In short, it enables the “back to TOC” button to work correctly and ensures the TOC page appears at the top after navigation.
+
+            document.querySelectorAll('.back-to-toc').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = targetId.startsWith('#') 
+                        ? document.querySelector(targetId)
+                        : document.getElementById(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.replace('#', '')) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                        
+                        // Smooth scroll to top
+                        document.querySelector('.page.active').scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+                        
+
+        });
+
+        // ==================== Page Build Listener END ========================================================
+                
+       // ====================ENCRYPTION FUNCTION  Start ========================================================
+
         // The next set of functions are for code handling and encryption
 
         // Generate a random IV for AES-GCM
@@ -3220,61 +3350,19 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 alert("An error occurred during encryption/decryption");
             }
         }        
-
-        // Current date display
-        document.addEventListener('DOMContentLoaded', function() {
-            const options = { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric',
-                // hour: '2-digit',
-                // minute: '2-digit'
-            };
-            document.getElementById('currentDate').textContent = 
-                new Date().toLocaleDateString('en-US', options);
-        });        
-                
-        // Force reflow for all right-floated image containers
-        function fixFloatRight() {
-            document.querySelectorAll('.image-align-right').forEach(container => {
-                // Trigger a reflow by reading a layout property
-                container.offsetHeight; 
-                // Optionally, add/remove a class to force repaint
-                container.style.display = 'none';
-                container.offsetHeight; // force reflow
-                container.style.display = '';
-            });
-        }
-
-        // Run after all images are loaded
-        window.addEventListener('load', fixFloatRight);
-        // Also run after a short delay (fallback)
-        setTimeout(fixFloatRight, 100);
+       // ====================ENCRYPTION FUNCTION  END ==========================================================
         
     </script>
 
-    <div id="BubbleText"></div>
-    <script>
-    (function() {
-        const root = document.documentElement;
-        const pageElem = document.querySelector('.page');
-        const styles = getComputedStyle(root);
-        const pageStyles = pageElem ? getComputedStyle(pageElem) : null;
+    <!--
+    # The <div id="BubbleText"></div> is the container element for the custom popup (tooltip) system. All the 
+    # JavaScript functions that manage popups (toggleBubbleText, the click listeners, etc.) use this div to display 
+    # the popup content. Without this element, the popup would have nowhere to appear, and the code would throw 
+    # errors (e.g., document.getElementById('BubbleText') would return null). It is required for the popup 
+    # functionality to work.
+    -->
 
-        console.log('=== Debug Info (media 1024) ===');
-        console.log('--page-width (declared):', styles.getPropertyValue('--page-width'));
-        console.log('--arrow-hover-width:', styles.getPropertyValue('--arrow-hover-width'));
-        console.log('--Lmargin-safe-factor:', styles.getPropertyValue('--Lmargin-safe-factor'));
-        console.log('--Rmargin-safe-factor:', styles.getPropertyValue('--Rmargin-safe-factor'));
-                console.log('--Lsafe-margin (computed):', styles.getPropertyValue('--Lsafe-margin'));
-        console.log('--Rsafe-margin (computed):', styles.getPropertyValue('--Rsafe-margin'));
-                if (pageElem) {
-        console.log('.page actual width (px):', pageElem.offsetWidth);
-        console.log('.page computed width:', pageStyles.width);
-        }
-        console.log('viewport width (px):', window.innerWidth);
-    })();
-    </script>
+    <div id="BubbleText"></div>
         
 </body>
 </html>
