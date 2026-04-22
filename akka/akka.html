@@ -12,12 +12,9 @@
         :root {
             --primary-color: #f09e5a;
             --glass-bg: rgba(0, 0, 0, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.2);
             --glass-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-
             --text-color: #abb8bb;
 
-            --arrow-block-display: flex;
             --arrow-visibility: hidden;
             --arrow-opacity: 0;
             --arrow-hover-opacity: 0;
@@ -41,8 +38,8 @@
             --tt-max-height: var(--tt-1024-height);
             --tt-max-width: var(--tt-1024-width);
 
-            --Lmargin-safe-factor: 0.50;
-            --Rmargin-safe-factor: 0.50;
+            --Lmargin-safe-factor: 0.650;
+            --Rmargin-safe-factor: 0.650;
             --Lsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Lmargin-safe-factor));
             --Rsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Rmargin-safe-factor));
         }
@@ -72,12 +69,11 @@
         }
 
         a {
-            color: #4fc3f7 !important; /* Bright blue - adjust hue as needed */
+            color: #4fc3f7 !important;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
         }
-        /* Underline effect on hover */
         a:hover {
             background: rgba(0,0,0,0.6);
             text-decoration: underline;
@@ -87,8 +83,7 @@
             outline: 2px solid #ffeb3b;
             outline-offset: 2px;
         }
-        
-        /* Progress Bar */
+
         .progress-container {
             position: fixed;
             top: 0;
@@ -98,7 +93,6 @@
             background: rgba(0,0,0,0.1);
             z-index: 100;
         }
-
         .progress-bar {
             height: 100%;
             background: #000;
@@ -106,7 +100,6 @@
             transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
         }
 
-        /* change page width and height below to create varyong borders */
         .page {
             width: var(--page-width);
             height: var(--page-height);
@@ -117,14 +110,11 @@
             opacity: 0;
             color: #abb8bb;
             overflow-y: hidden;
-
-            padding: 20px !important; /* Padding is important otherwise you have adjust scaling or page-height based on media */
-            
+            padding: 20px !important;
             box-sizing: border-box;
             border: 1px solid rgba(255,255,255,0.3);
-            border-right: 1.5px solid rgba(255, 255, 255,0.4);
-            border-bottom: 1.5px solid rgba(255, 255, 255,0.4);
-
+            border-right: 1.5px solid rgba(255,255,255,0.4);
+            border-bottom: 1.5px solid rgba(255,255,255,0.4);
             box-shadow: var(--glass-shadow);
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -134,10 +124,8 @@
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
             z-index: 1;
             display: none;
-
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .page::after {
             content: '';
@@ -152,51 +140,80 @@
                 linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
-            /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
             z-index: 2;
         }
         .page-content {
             height: 100%;
-            width: 100% ;
+            width: 100%;
             overflow-y: auto;
-           /* move the padding here */
             box-sizing: border-box;
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .page-content::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
-        #page-0::after { display: none; }
+        .page-content::-webkit-scrollbar {
+            display: none;
+        }
+        #page-0::after {
+            display: none;
+        }
 
-        /* Title Page (Page 0) Specific Styles */
-        #page-0 h1,
-        #page-0 h2,
-        #page-0 h3 { color: #89C2FF !important; }
-        .page-content > :first-child { margin-top: 0; }
-        .page-content h2:first-of-type { margin-top: 5px;   /* adjust to your liking – 0, 0.2em, etc. */ }
-        .image-container:first-child,
-        .text-only-container:first-child { margin-top: 0; }
-
-        /* Make Page0 - Title page transparent */
         #page-0 {
-            background: none !important;           /* Removes the semi-transparent background */
-            backdrop-filter: none !important;      /* Removes the blur effect */
+            background: none !important;
+            backdrop-filter: none !important;
             -webkit-backdrop-filter: none !important;
-            border: none !important;               /* Optional: removes the glass border */
-            box-shadow: none !important;           /* Optional: removes the shadow */
+            border: none !important;
+            box-shadow: none !important;
+        }
+        #page-0 h1, #page-0 h2, #page-0 h3 {
+            color: #89C2FF !important;
+        }
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        /* Fixed header elements (page number, book title, back button) */
+        .page-content > :first-child {
+            margin-top: 0;
+        }
+        .page-content h2:first-of-type {
+            margin-top: 5px;
+        }
+        .image-container:first-child,
+        .text-only-container:first-child {
+            margin-top: 0;
+        }
+
         .page-header {
             position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;          /* ← add this */
+            align-items: center;
             z-index: 3;
             margin-bottom: 20px;
         }
-        /* Keep page number on right */
+        .book-title {
+            flex: 1;
+            text-align: center;
+            max-width: 50vw;
+            margin: 0 auto;
+            word-wrap: break-word;
+            font-size: 0.8em;
+            order: 2;
+            position: static;
+            transform: none;
+        }
+        .back-to-toc {
+            order: 1;
+            transform: scale(1.15, 0.95);
+        }
         .page-number {
             flex: 0 0 auto;
             margin-top: 5px;
@@ -208,245 +225,57 @@
             visibility: visible !important;
         }
 
-   
-
-        /******************************* tool Tips **************************************************************/
-
-        .BubbleText-trigger  { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
-                        text-decoration: none; font-style: normal; /* border: 1px solid currentColor; */
-                        margin: 0 10px; } 
-
-        .BubbleText-group { display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }
-     
-        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); } 
-
-        .BubbleText-group .BubbleText-trigger { display: inline-block !important; width: auto !important; margin: 0 4px !important; }
-        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
-
-        #BubbleText {
-
-            /* POSITION & LAYOUT */
-            position: fixed;
-            display: inline-block; 
-            
-            /* TYPOGRAPHY */
-            color: #b0e0ff;
-            font-family: Arial;
-            font-weight: normal;
-            font-size: 0.8em;
-
-            /* INITIAL STATE - HIDDEN */
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-
-            /* GLASS MORPHISM EFFECT */
-            background: rgba(0, 0, 0, 0.42) !important;
-            box-sizing: border-box;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(5px);
-            -webkit-overflow-scrolling: touch;
-            border-radius: 20px;
-            border-left: 1px rgba(255, 255, 255, 0.4);
-            border-right: 1px rgba(255, 255, 255, 0.4);
-            border-top: none;
-            border-bottom: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
-            0 0 0 1px rgba(255,255,255,0.2) inset;
-
-            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-
-            /* PADDING & BOX SIZING */
-            padding: 10px !important;
-            box-sizing: border-box;
-
-            /* GROWING BOX PROPERTIES (ADDED) */
-            width: fit-content;
-            height: fit-content;
-            min-height: 1.5em;
-            max-width: var(--tt-max-width);   /* can be overridden by data-maxwidth */
-            max-height: var(--tt-max-height); /* can be overridden by data-maxheight */
-            overflow-x: hidden;
-            overflow-y: auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-
-            /* OTHER ESSENTIAL STYLES */
-            z-index: 9999;
-            white-space: normal;
-
-            /* FADE + SCALE TRANSITION (VISIBILITY) */
-            opacity: 0;
-            visibility: hidden;
-
-            /* CUSTOM SCROLLBAR */
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
-
-        }
-
-
-        #BubbleText.show { opacity: 1; visibility: visible; }
-
-        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
-        #BubbleText.fade.show { transform: translateY(0) scale(1); }
-
-        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
-        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-
-        #BubbleText.slide { transform: translateY(60px); }
-        #BubbleText.slide.show { transform: translateY(0); }
-
-        #BubbleText.zoom { transform: scale(0.4); }
-        #BubbleText.zoom.show { transform: scale(1); }
-
-        #BubbleText.left-text { text-align: left; }
-        #BubbleText.right-text { text-align: right; }
-        #BubbleText.center-text { text-align: center; }
-
-        @keyframes bounceIn {
-            0% { transform: translateY(40px) scale(0.6); }
-            60% { transform: translateY(-15px) scale(1.15); }
-            100% { transform: translateY(0) scale(1); }
-        }
-
-        #BubbleText::-webkit-scrollbar { width: 6px; }
-        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
-
-        /******************************* tool Tips **************************************************************/
-
-        /* Center book title */
-        .book-title {
-            flex: 1;                  /* takes all available space between left and right items */
-            text-align: center;
-            max-width: 50vw;
-            margin: 0 auto;
-            word-wrap: break-word;
-            font-size: 0.8em;
-            order: 2;
-            position: static;
-            transform: none;
-        }
-
-        /* next and previous page Navigation icons */
         .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {
-
             color: var(--text-color);
             text-decoration: none;
             font-size: 1em;
             font-family: Arial;
-            
             padding: 5px 15px;
             margin: 5px;
-
             background: rgba(0, 0, 0, 0.075) !important;
             box-sizing: border-box;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(5px);
             -webkit-overflow-scrolling: touch;
             border-radius: 20px;
-            border-bottom 1px rgba(255, 255, 255, 0.4);
-            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
             border-top: none;
             border-left: none;
-            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5),
-                        0 2px 4px rgba(0, 0, 0, 0.3),
-                        0 0 0 1.5px rgba(255, 255, 255, 0.4) inset;           
-
-            border-radius: 20px;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.5),
+                        0 2px 4px rgba(0,0,0,0.3),
+                        0 0 0 1.5px rgba(255,255,255,0.4) inset;
             transition: all 0.3s ease;
-            order: 2;
-
             position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
-        .back-to-toc,
-        .page-number,
-        .page-number a,
-        .glassbtn {
+        .back-to-toc, .page-number, .page-number a, .glassbtn {
             vertical-align: middle;
-            line-height: 1.2;            /* or match your font size */
+            line-height: 1.2;
         }
-
-        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{
+        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover {
             background: rgba(0, 0, 0, 0.55) !important;
-
-            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7),
-                0 2px 4px rgba(0, 0, 0, 0.6),
-                0 0 0 1.5px rgba(255, 255, 255, 0.6) inset;  
-                0 0 0 2px rgba(255,255,255,0.4) inset;   
-            border-radius: 20px;
-            border-top 1px rgba(255, 255, 255, 0.4);
-            border-left: 1px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 14px rgba(0,0,0,0.7),
+                        0 2px 4px rgba(0,0,0,0.6),
+                        0 0 0 1.5px rgba(255,255,255,0.6) inset,
+                        0 0 0 2px rgba(255,255,255,0.4) inset;
+            border-top: 1px solid rgba(255,255,255,0.4);
+            border-left: 1px solid rgba(255,255,255,0.4);
             border-bottom: none;
             border-right: none;
             text-decoration: underline;
-        }    
-        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none; }
-
-        /* scale this 🗂️ down */
-        .back-to-toc { order: 1; transform: scale( 1.15, .95);  /* adjust factor */ }
-
-
-        /* Also target the anchor to ensure it doesn't add extra background/shadow */
-        a:has(.glassbtn) { text-decoration: none; background: transparent; }
-        .glassbtnlbl { color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
-                        text-decoration: none; font-style: normal;}  
-
-
-        .paraitalicleft { font-style: italic; text-align: left; }
-        .paraitalicright { font-style: italic; text-align: right; }
-        .paraitaliccenter { font-style: italic; text-align: center; } 
-
-        /* Fixed Custom Scrollbar */
-        .page::-webkit-scrollbar {
-            width: 10px;
         }
-
-        .page::-webkit-scrollbar-track {
+        .slider-container:hover {
+            background: rgba(0, 0, 0, 0.3) !important;
+            text-decoration: none;
+        }
+        a:has(.glassbtn) {
+            text-decoration: none;
             background: transparent;
         }
 
-        .page::-webkit-scrollbar-thumb {
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            border: 2px solid transparent;
-            background-clip: content-box;
-        }
-
-        .page::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(0,0,0,0.3);
-        }
-
-        .page.active {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            z-index: 2;
-            display: block;
-        }
-
-        .page.exit {
-            transform: translate(-50%, -50%) scale(0.98);
-            opacity: 0;
-            display: none;
-        }
-
-        .heading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            
-            gap: 1rem;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
         .arrow-container {
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -465,20 +294,15 @@
             transition: all 0.3s ease;
             pointer-events: auto;
         }
-
-        /* When arrows are visible (flex=True) */
         .arrow-container[data-visible="true"] {
             width: 15% !important;
         }
-
         .arrow-container.right {
             right: 0px;
         }
-
         .arrow-container:hover {
             opacity: var(--arrow-hover-opacity);
         }
-
         .nav-arrow {
             width: 15px;
             height: 15px;
@@ -487,16 +311,12 @@
             display: inline-block;
             visibility: var(--arrow-visibility);
         }
-
         .nav-arrow.left {
             transform: rotate(135deg);
         }
-
         .nav-arrow.right {
             transform: rotate(-45deg);
         }
-
-        /* Arrow Hover Areas - Always present but visibility controlled */
         .arrow-area {
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -507,20 +327,14 @@
             pointer-events: auto;
             -webkit-tap-highlight-color: transparent;
         }
-
         .arrow-area.right {
             right: 0;
         }
-
-        .arrow-area.left:hover ~ .arrow-container.left {
-            opacity: var(--arrow-hover-opacity);
-        }
-
+        .arrow-area.left:hover ~ .arrow-container.left,
         .arrow-area.right:hover ~ .arrow-container.right {
             opacity: var(--arrow-hover-opacity);
         }
 
-        /* Slider Container */
         .slider-container {
             position: fixed;
             bottom: 10px;
@@ -537,19 +351,6 @@
             opacity: 0;
             pointer-events: none;
         }
-        /* Page number text inside slider */
-        .slider-info {
-            color: #b0e0ff;            /* matches BubbleText text color */
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }
-
-        .slider-info #current-page {
-            color: #b0e0ff;            /* matches BubbleText text color */
-            font-style: italic; /* or any style */
-        }
-
         .slider-area {
             position: fixed;
             bottom: 0;
@@ -558,50 +359,45 @@
             height: 60px;
             z-index: 19;
         }
-
         .slider-area:hover ~ .slider-container,
         .slider-container:hover {
             opacity: 1;
             pointer-events: auto;
         }
-
         .slider-wrapper {
             width: 80%;
             position: relative;
             margin: 0 auto;
         }
-
         .slider {
             width: 100%;
             margin-bottom: 5px;
             -webkit-appearance: none;
             height: 3px;
-            background: rgba(96, 96, 96, 0); 
+            background: rgba(96, 96, 96, 0);
             border-radius: 10px;
             outline: none;
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;  
+            border: 1px solid darkgray;
         }
-
-        .slider::-webkit-slider-thumb { /* CHROME AND SAFAR */
-            -webkit-appearance: none;       /* required for custom styling */
-            width: 24px;
-            height: 16px;            
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            order: border: 1px solid darkgray !important;     
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .slider::-moz-range-thumb { /* FIREFOX */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
             width: 24px;
             height: 16px;
-            background: rrgba(176, 224, 255, 1) !important;
-            border: border: 1px solid darkgray !important;        /* remove default border in Firefox */
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
             border-radius: 50%;
             cursor: pointer;
         }
-
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 16px;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+        }
         .slider-track {
             position: absolute;
             height: 4px;
@@ -611,10 +407,28 @@
             left: 0;
             pointer-events: none;
         }
+        .slider-info {
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }
+        .slider-info #current-page {
+            color: #b0e0ff;
+            font-style: italic;
+        }
 
-        /* Content Styles */
-        .image-container { width: var(--content-container-max-width); position: relative; overflow: visible; /* Changed from hidden to visible for captions */ }
-
+        .image-container, .text-only-container {
+            width: 100%;
+            max-width: var(--content-container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        .image-container {
+            position: relative;
+            overflow: visible;
+        }
         .image-container img {
             position: relative;
             display: block;
@@ -628,94 +442,46 @@
             transform: scale(0.98);
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
         }
-
-        /* Add alignment-specific float rules */
-        .image-align-left img { float: left; margin-left: 0px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }
-        .image-align-right img { float: right; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }
-        .image-align-center img { float: none; display: block; margin-top: 20px; margin-bottom: 40px; left: 50%; transform: translateX(-50%) !important; }
-        .image-container img:hover { opacity: 1; transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.9); filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8)); }
-
-        .text-only-container { width: 90%; margin: 0px auto; padding: 0; }
-
-        .toc-container { width: 90%; padding: 20px; }
-        .toc-entry { margin: 8px 0; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
-        .toc-entry a { color: #4682B4 !important; text-decoration: none; display: block; }
-        .toc-entry:hover { border-bottom-color: var(--primary-color); }
-        .toc-entry:hover a { color: var(--primary-color); }
-
-        .image-container,
+        .image-align-left img {
+            float: left;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .image-align-right img {
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .image-align-center img {
+            float: none;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
+        }
+        .image-container img:hover {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
+        }
         .text-only-container {
-            width: 100%;
-            max-width: var(--content-container-max-width);
-            margin-left: auto;
-            margin-right: auto;
-            box-sizing: border-box;
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
         }
-
-        /* Keep the position and overflow for .image-container separately if needed */
-        .image-container {
-            position: relative;
-            overflow: visible;
+        .image-container + .image-container {
+            margin-top: 10px;
         }
-
-        /* Table Styles */
-        table {
-            width: auto;
-            max-width: 100%; /* Never exceed content block width */
-            table-layout: auto; /* Auto-size columns based on content */
-            word-wrap: break-word; /* Allow text wrapping */
-            border-collapse: collapse;
-            font-size: 0.9em;
-            min-width: 400px;
-            border-radius: 5px ;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            background: rgba(15, 15, 15, 0.25) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .content-text {
+            font-size: inherit;
+            text-align: left;
         }
-        /* Special styling for links in tables */
-        table a {
-            background: rgba(0, 0, 0, 0.15);
-            padding: 2px 6px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        table a:hover {
-            background: rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-        }
-
-        table thead tr {
-            background: transparent !important;
-            position: relative; /* Needed for pseudo-element */
-            overflow: hidden; /* Contain the blur effect */
-        }
-
-            /* Set minimum column width (adjust 15% as needed) */
-        table th,
-        table td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            min-width: 15%; /* Minimum column width as % of table */
-            max-width: 100%; /* Prevent columns from overflowing */
-            word-break: break-word; /* Break long words if needed */
-            background: transparent !important;
-        }
-
-        table tbody tr {
-            transition: all 0.2s ease;
-            background: rgba(255, 255, 255, 0.05) !important;
-        }
-
-        table tbody tr:last-of-type {
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        table tbody tr:hover {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
         .highlight-text {
             color: #D4E6FF;
             font-size: 1.2em;
@@ -724,54 +490,33 @@
             text-decoration-color: #D4E6FF;
             padding-bottom: 3px;
         }
-
         p {
             margin-bottom: 1.8em;
             text-align: left;
             line-height: 1.7;
             font-size: 1.05em;
         }
-        /* Make the paragraph inline */
-        p.inline {
-        display: inline;
-        }
-    
-        /* Hide the paragraph */
-        p.none {
-        display: none;
-        }
-        h1 {
-            font-size: 2.8em;
-            color: #fff;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 1.4em;
-            font-weight: 400;
-            color: rgba(255,255,255,0.8);
-        }
-        h3 {
-            font-size: 1.3em;
-            font-weight: 300;
-            color: rgba(255,255,255,0.7);
-        }
+        p.inline { display: inline; }
+        p.none { display: none; }
+        h1 { font-size: 2.8em; color: #fff; font-weight: 700; }
+        h2 { font-size: 1.4em; font-weight: 400; color: rgba(255,255,255,0.8); }
+        h3 { font-size: 1.3em; font-weight: 300; color: rgba(255,255,255,0.7); }
 
-        /* ================== */
-
-
+        .toc-container {
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 20px;
+        }
         .toc-button-container {
-            width: calc(100% - var(--arrow-hover-width));
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             column-gap: 10px;
             row-gap: 12px;
         }
         .toc-list .toc-button-container {
-            display: block;   /* only override what changes */
+            display: block;
         }
-
         .compact-button {
             color: #4682B4 !important;
             border-radius: 12px;
@@ -779,108 +524,97 @@
             white-space: nowrap;
             margin: 0 !important;
         }
-
         .toc-list .toc-entry {
             margin: 8px 0;
             padding: 5px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }
-
         .toc-list .toc-entry a {
             color: var(--text-color);
             text-decoration: none;
             display: block;
         }
-
         .toc-list .toc-entry:hover {
             border-bottom-color: var(--primary-color);
         }
-
         .toc-list .toc-entry:hover a {
             color: var(--primary-color);
         }
-        .content-text {
-            font-size: inherit; /* Inherits from parent */
-            text-align: left;
-        }
 
-        /*********************************************/
-        /* Multiple in-place images per page.                 */
-        /*********************************************/
-        .text-content-container {
-            width: 90%;
-            padding: 0;
-        }
-
-        /* Style for multiple image containers */
-        .image-container + .image-container {
-            margin-top: 10px;
-        }
-
-        /* Ensure images don't get too large when multiple are present */
-        .image-container img {
+        table {
+            width: auto;
             max-width: 100%;
-            height: auto;
-        }
-
-        /* Inline image styling */
-        .inline-image-wrapper {
-            display: block;
-            text-align: center;
-        }
-
-        .inline-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .inline-image-caption {
-            font-style: italic;
+            table-layout: auto;
+            word-wrap: break-word;
+            border-collapse: collapse;
             font-size: 0.9em;
-            margin-top: 10px;
-            color: rgba(255,255,255,0.7);
-            text-align: center;
+            min-width: 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            background: rgba(15,15,15,0.25) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        table a {
+            background: rgba(0,0,0,0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        table a:hover {
+            background: rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+        table thead tr {
+            background: transparent !important;
+            position: relative;
+            overflow: hidden;
+        }
+        table th, table td {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            min-width: 15%;
+            max-width: 100%;
+            word-break: break-word;
+            background: transparent !important;
+        }
+        table tbody tr {
+            transition: all 0.2s ease;
+            background: rgba(255,255,255,0.05) !important;
+        }
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        table tbody tr:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
         }
 
-        /*********************************************/
-        /* Caption Pop-up Box - Begin */
-        /*********************************************/
-        
         .image-caption-popup {
             position: absolute;
-            
-            /* REMOVE: left: 0; */
-            /* Position relative to the image container */
             top: 0;
             max-width: 100%;
-            /* Width handling - auto for text, but constrained */
-
             font-size: .8em;
-            padding: 0px 10px 0px 10px ! important;
+            padding: 0px 10px;
             box-sizing: border-box;
             text-align: center !important;
             pointer-events: auto;
-            Display: block !important;
-
-            /* INITIAL STATE - HIDDEN */
+            display: block !important;
             opacity: 0 !important;
             transform: translateY(-20px) scale(0.95) !important;
             transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
             pointer-events: none;
-
-            /* GLASS MORPHISM EFFECT */
-            background: rgba(0, 0, 0, 0.45) !important;
+            background: rgba(0,0,0,0.45) !important;
             backdrop-filter: blur(15px) !important;
             -webkit-backdrop-filter: blur(15px) !important;
-            
             border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
+            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
             z-index: 1000;
         }
-        /* Position captions based on alignment */
         .image-align-left .image-caption-popup {
             top: 40px;
             right: auto;
@@ -893,55 +627,153 @@
         .image-align-center .image-caption-popup {
             top: 20px;
             left: 50% !important;
-            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
-            padding: 0px 10px 0px 10px ! important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px;
             box-sizing: border-box !important;
         }
-        /* Hover state for centered captions */
-        .image-align-center .image-caption-popup:hover,
-        .image-align-center img:hover ~ .image-caption-popup {
-            transform: translateX(-50%) t!important;
-        }
-        /*  keeep this together.  */        
-
-        /* SHOW / HIDE POP-UP when hovering over image OR pop-up itself */
         .image-container img:hover ~ .image-caption-popup,
         .image-caption-popup:hover {
             opacity: 1 !important;
             pointer-events: auto !important;
         }
-
-
-        /* Ensure z-index stacking */
         body .page .image-container .image-caption-popup {
             z-index: 1000 !important;
         }
         body .page .image-container img {
             z-index: 2 !important;
         }
-                
-        /* PERMANENTLY SHOW POPUP: Force all popups to be always visible 
-        .image-caption-popup {
-            top: 30px;
-            opacity: 1 !important;
-            transform: none; !important;
-            pointer-events: auto !important;
-            transition: none !important;
-        }
-        /*********************************************/
-        /* Caption Pop-up Box - End */
-        /*********************************************/
 
-       /* Tablets and such */
+        .BubbleText-trigger {
+            color: #4fc3f7;
+            font-size: 0.8em;
+            font-family: Arial;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            margin: 0 10px;
+        }
+        .BubbleText-group {
+            display: inline-block;
+            margin-left: var(--Lsafe-margin);
+            vertical-align: top;
+        }
+        .BubbleText-full {
+            height: var(--tt-max-height);
+            width: var(--tt-max-width);
+        }
+        .BubbleText-group .BubbleText-trigger {
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+        }
+        .BubbleText-trigger.BubbleText-full {
+            height: auto;
+            width: auto;
+        }
+        #BubbleText {
+            position: fixed;
+            display: inline-block;
+            color: #b0e0ff;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            background: rgba(0,0,0,0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 10px !important;
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);
+            max-height: var(--tt-max-height);
+            overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            z-index: 9999;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+        #BubbleText.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #BubbleText.fade {
+            transform: translateY(15px) scale(0.95);
+        }
+        #BubbleText.fade.show {
+            transform: translateY(0) scale(1);
+        }
+        #BubbleText.bounce {
+            transform: translateY(40px) scale(0.6);
+        }
+        #BubbleText.bounce.show {
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        #BubbleText.slide {
+            transform: translateY(60px);
+        }
+        #BubbleText.slide.show {
+            transform: translateY(0);
+        }
+        #BubbleText.zoom {
+            transform: scale(0.4);
+        }
+        #BubbleText.zoom.show {
+            transform: scale(1);
+        }
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        #BubbleText::-webkit-scrollbar {
+            width: 6px;
+        }
+        #BubbleText::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+        #BubbleText::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.4);
+            border-radius: 3px;
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            display: block;
+        }
+        .page.exit {
+            transform: translate(-50%, -50%) scale(0.98);
+            opacity: 0;
+            display: none;
+        }
 
         @media (max-width: 768px) {
             :root {
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
-
                 --content-container-max-width: 93%;
-
-                --Lmargin-safe-factor: 0.70;
+                --Lmargin-safe-factor: 0.65;
                 --Rmargin-safe-factor: 0.85;
             }
             .BubbleText-full {
@@ -953,89 +785,77 @@
                 height: 75% !important;
                 overflow: hidden;
             }
-
-            /* Fix for iOS Safari */
             @supports (-webkit-touch-callout: none) {
                 .page {
                     height: -webkit-fill-available !important;
                     margin-top: 0 !important;
                 }
-            }        
-
-             a { color: #00b0ff !important; } 
+            }
+            a { color: #00b0ff !important; }
             a:focus { outline: 2px solid #ffeb3b; outline-offset: 2px; }
-            .text-only-container {width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }
-
-            /* Improved spacing for mobile text */
-            p, h1, h2, h3 { margin-bottom: 1.2em !important; line-height: 1.6 !important; }
-
+            .text-only-container {
+                width: 100% !important;
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }
+            p, h1, h2, h3 {
+                margin-bottom: 1.2em !important;
+                line-height: 1.6 !important;
+            }
             .toc-entry { margin: 6px 0; }
+            .toc-header-left { text-align: left; }
+            .toc-header-row { display: flex; align-items: center; justify-content: space-between;}
+            .toc-header-row .book-title { flex: 1; text-align: center; margin: 0;}
 
-            /* Adjust heading sizes for mobile */
             h1 { font-size: 2.2em !important; }
             h2 { font-size: 1.3em !important; }
             h3 { font-size: 1.1em !important; }
-
-            /* Mobile table styles */
             table {
-                min-width: 0 !important /* ALlow Shrinking */
-                width: 100%; !important /* Full width on mobile */
-                overflow-x: visible !important; /* Disable scrolling */
+                min-width: 0 !important;
+                width: 100% !important;
+                overflow-x: visible !important;
                 backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                background: rgba(15, 15, 15, 0.3) !important;
+                background: rgba(15,15,15,0.3) !important;
                 font-size: 0.9em !important;
             }
             table * { box-sizing: border-box !important; }
-            
             table a {
-                padding: 3px 8px; /* Larger tap targets */
-                background: rgba(0, 0, 0, 0.2); /* More contrast */
+                padding: 3px 8px;
+                background: rgba(0,0,0,0.2);
                 margin: 0 auto !important;
             }
             .table-container {
                 width: calc(100% - 10px) !important;
-                overflow-x: visible !important; /* Disable scrolling */
+                overflow-x: visible !important;
             }
-            table th,
-            table td {
-                min-width: 0% !important ; /* Larger minimum on small screens */
-                white-space: normal !important; /* Ensure wrapping on mobile */
-                width: auto !important; /* Reset widths */
-                max-width: 100% !important;      
+            table th, table td {
+                min-width: 0% !important;
+                white-space: normal !important;
+                width: auto !important;
+                max-width: 100% !important;
             }
-                /* Slightly stronger contrast on mobile for readability */
-            table thead tr {
-                background: rgba(0, 0, 0, 0.4) !important;
-            }
+            table thead tr { background: rgba(0,0,0,0.4) !important; }
             table td.important-column {
                 width: 60% !important;
-                word-break: break-word !important; /* Break long words */
-                overflow-wrap: anywhere !important; /* Emergency break */
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
             }
             table td {
                 hyphens: auto !important;
-                word-break: break-word !important; /* Break long words */
-                overflow-wrap: anywhere !important; /* Emergency break */
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
             }
-            /* Force links/buttons to wrap */
             table a, table button {
-            white-space: normal !important;
-            display: inline-block !important;
+                white-space: normal !important;
+                display: inline-block !important;
             }
         }
 
-       /* phones and such */ 
-
-
         @media (max-width: 415px) {
-
             :root {
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
-
                 --content-container-max-width: 97%;
-
                 --Lmargin-safe-factor: 0.40;
                 --Rmargin-safe-factor: 0.80;
             }
@@ -1048,28 +868,20 @@
                 height: 60% !important;
                 overflow: hidden;
             }
-
             .page { height: var(--page-height-415px) !important; }
             .content-text { font-size: var(--mobile-font-size) !important; }
-            .arrow-container { height: var(--ARW_HOVER_HEIGHT_415px); }
-            .arrow-area { height: var(--ARW_HOVER_HEIGHT_415px); }
-            
-            /* Fix for iOS Safari */
+            .arrow-container, .arrow-area { height: var(--ARW_HOVER_HEIGHT_415px); }
             @supports (-webkit-touch-callout: none) {
                 .page {
                     height: -webkit-fill-available !important;
                     margin-top: 0 !important;
                 }
             }
-
-            .back-to-list { font-size: 0.6em; }
-        
-            /* Reduce gap after heading */
-            .compact-button { padding: 3px 8px !important; font-size: 0.65em !important; }
-
-
-            /* FORCE SIZE FORCE TO ImageWidthMobile */
-            /* MOBILE_FORCE_PLACEHOLDER - This will be replaced with conditional CSS */
+            .compact-button {
+                padding: 3px 8px !important;
+                font-size: 0.65em !important;
+                display: inline-block
+            }
             
         /* FORCE SIZE FORCE TO ImageWidthMobile */
         .mobile-default-size img {
@@ -1097,47 +909,41 @@
             transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
             padding: 0px 10px 0px 10px ! important;
         }
-                  
-            
-            /* Make captions always visible on mobile when active */
-            .image-caption-popup.mobile-visible { opacity: 1; transform: translateY(0); }
-
-            /* ===== TABLE STYLES ===== */
+        
+            .image-caption-popup.mobile-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
             .table-container {
                 width: 100% !important;
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch !important;
                 display: block;
                 margin: 15px 0;
-                background: rgba(0,0,0,0.1); /* Visual cue for scrollable area */
+                background: rgba(0,0,0,0.1);
                 border-radius: 8px;
                 padding: 8px 0;
             }
-
             table {
-                display: table !important; /* Revert to table layout but allow scrolling */
+                display: table !important;
                 width: auto !important;
-                min-width: 100% !important; /* Ensure it fills container */
+                min-width: 100% !important;
                 white-space: nowrap;
-                font-size: 0.85em; /* Slightly smaller text for tables */
+                font-size: 0.85em;
             }
-
-            table th,
-            table td {
+            table th, table td {
                 white-space: nowrap !important;
-                min-width: 100px !important; /* Reasonable minimum column width */
+                min-width: 100px !important;
             }
-
-            /* Optional scroll indicator */
             .table-container::-webkit-scrollbar {
                 height: 5px;
             }
-
             .table-container::-webkit-scrollbar-thumb {
                 background: rgba(255,255,255,0.3);
                 border-radius: 5px;
             }
         }
+
 
         
     </style>
@@ -1156,7 +962,7 @@
                     <h2>A Lasting Legacy</h2> 
                     <h2>Sri Rao</h2> 
                     <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                        Last updated: Apr 21, 2026
+                        Writing Period: Aug 11, 2025 - Apr 21, 2026
                     </p>
                     <h3>~***~</h3>
                 </div>
@@ -1166,6 +972,7 @@
         <li>For Next Page, click on right margin.</li>
         <li>Margins are 15% for your browser width.</li>
         <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 📚 </span> at top left fof the Table of contents page only. Link to list of books</li>
             <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
             <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
             <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
@@ -1179,7 +986,7 @@
         <li>Click on the Popup to make it go away.</li>
         </ul>
     " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
-    <span style="font-size: .8em;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
+    <span style="font-size: .8em; text-align: center;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
 
             </div>
         </div>
@@ -1187,38 +994,23 @@
 
     <div class="page" id="page-toc">
         <div class="page-content">
-            <div class="book-title">Akka</div>
-            <div class="toc-container toc-list">
-                <h2>Table of Contents</h2>
+            <div class="toc-header-row">
                 
+        <div class="toc-header-left">
+            <a href="https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2" target="_self" class="glassbtn compact-button">
+                📚
+            </a>
+        </div>
+        
+                <div class="book-title">Akka</div>
+            </div>
+            <div class="toc-container toc-list" style="margin-top: 20px;">
+                <h2>Table of Contents</h2>
                 <div class="toc-button-container">
                     <div class="toc-entry" style="margin-left: 0px;"><a href="#page-1" class="toc-link" style="display: flex; justify-content: space-between;"><span>‘Akka’ - A quiet hero</span><span>1</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>Legacy of an ancient town</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>A fate ordained</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-12" class="toc-link" style="display: flex; justify-content: space-between;"><span>The dawn of a family</span><span>12</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-16" class="toc-link" style="display: flex; justify-content: space-between;"><span>A widow's silence</span><span>16</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-19" class="toc-link" style="display: flex; justify-content: space-between;"><span>A tousle of fate and faith</span><span>19</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-25" class="toc-link" style="display: flex; justify-content: space-between;"><span>Finding a foothold</span><span>25</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-29" class="toc-link" style="display: flex; justify-content: space-between;"><span>Far away world's</span><span>29</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-33" class="toc-link" style="display: flex; justify-content: space-between;"><span>The City of dreams</span><span>33</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-36" class="toc-link" style="display: flex; justify-content: space-between;"><span>An unwelcome guest</span><span>36</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-42" class="toc-link" style="display: flex; justify-content: space-between;"><span>A home on Ratnavilas road</span><span>42</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-47" class="toc-link" style="display: flex; justify-content: space-between;"><span>A stranger in the house</span><span>47</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-50" class="toc-link" style="display: flex; justify-content: space-between;"><span>A Quiet Departure</span><span>50</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-54" class="toc-link" style="display: flex; justify-content: space-between;"><span>Honoring the lessons</span><span>54</span></a></div>
                 </div>
             </div>
-            <br>
-            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
-            <br>
-             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips...</b></u><br>
-        <ul>
-        <li>For Previous page, click on left margin.</li>
-        <li>For Next Page, click on right margin.</li>
-        <li>Margins are 15% for your browser width.</li>
-        <span style='line-height: 2.4em'>
-            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
-            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
-            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
-            <li>Click <span class='glassbtn'> 👆</span> any where you see it, </li>
-        </span>
-            <ul>
-            <li>Opens a webpage with additional information</li>
-            <li>Opens a popup box with additional information.</li>
-            </ul>
-        </li>
-        <li>Click on the Popup to make it go away.</li>
-        </ul>
-    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
-    <span style="font-size: .8em;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
-
+            ...
         </div>
     </div>
     
@@ -2390,196 +2182,8 @@ Akka made plans to start over in Bangalore. She did not have a choice. The bigge
         });
         // BOOKMARK COPY-URL LISTENER END ============================================================
 
-        // BUBBLETEXT LISTENER START ==================== ============================================
-        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
-        // - Closes any open popup if clicking outside the popup or on a different trigger.
-        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
-        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or above the trigger depending on available space (and can limit height to avoid overflow).
-        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
-        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
-        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
-        
-        document.addEventListener('click', function(e) {
-            try {
 
-                const trigger = e.target.closest('.BubbleText-trigger');
-                const BubbleText = document.getElementById('BubbleText');
-
-                // If BubbleText is open and clicking outside, close it
-                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
-                    toggleBubbleText('', '', '', '', '', 'no');
-                    return;
-                }
-
-                if (!trigger) return;
-
-                e.stopPropagation();
-
-                // --- Collect extra classes (exclude alignment classes) ---
-                let extraClasses = [];
-                trigger.classList.forEach(cls => {
-                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
-                        extraClasses.push(cls);
-                    }
-                });
-
-                // --- Read data attributes (trim strings) ---
-                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
-                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
-                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
-                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
-                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
-                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
-                const rawHeight = trigger.dataset.height || 'auto';
-                const rawWidth = trigger.dataset.width || 'auto';
-
-                const rect = trigger.getBoundingClientRect();
-                const bodyStyles = window.getComputedStyle(document.body);
-                const padding = Math.max(24, window.innerWidth * 0.04);
-                const extra = 22;
-
-                const addPxIfNumber = (value) => {
-                    if (!isNaN(value) && value !== '') return value + 'px';
-                    return value;
-                };
-
-                if (top !== undefined) top = addPxIfNumber(top);
-                if (left !== undefined) left = addPxIfNumber(left);
-                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
-                if (right !== undefined) right = addPxIfNumber(right);
-
-                let height = addPxIfNumber(rawHeight);
-                let width = addPxIfNumber(rawWidth);
-
-                // --- Special positioning handling (center, @, 100% 100%) ---
-                if (position !== 'absolute') {
-                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
-                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
-                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
-                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
-
-                    if (top === 'center') {
-                        if (totalBubbleTextHeight) {
-                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
-                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
-                            top = centerTop + 'px';
-                        } else {
-                            top = '50%';
-                        }
-                    }
-                    if (left === 'center') {
-                        if (totalBubbleTextWidth) {
-                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
-                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
-                            left = centerLeft + 'px';
-                        } else {
-                            left = '50%';
-                        }
-                    }
-                }
-
-                // --- Clamping for normal positioning ---
-                let maxHeight = null;
-                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
-                if (!measurementModes.includes(position.toLowerCase())) {
-                    const pageElement = trigger.closest('.page');
-
-                    if (pageElement) {
-                        const pageRect = pageElement.getBoundingClientRect();
-                        const innerPadding = 10;
-
-                        let topPx = toPixels(top, 'height');
-                        let leftPx = toPixels(left, 'width');
-                        let widthPx = toPixels(width, 'width');
-                        let heightPx = toPixels(height, 'height');
-
-                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
-                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
-
-                        // clamp top/left
-                        if (!isNaN(topPx) && totalH !== null) {
-                            let newTop = topPx;
-                            const minTop = pageRect.top + innerPadding;
-                            const maxTop = pageRect.bottom - totalH - innerPadding;
-                            if (newTop < minTop) newTop = minTop;
-                            if (newTop > maxTop) newTop = maxTop;
-                            if (newTop !== topPx) {
-                                top = newTop + 'px';
-                                topPx = newTop;
-                            }
-                        }
-                        if (!isNaN(leftPx) && totalW !== null) {
-                            let newLeft = leftPx;
-                            const minLeft = pageRect.left + innerPadding;
-                            const maxLeft = pageRect.right - totalW - innerPadding;
-                            if (newLeft < minLeft) newLeft = minLeft;
-                            if (newLeft > maxLeft) newLeft = maxLeft;
-                            if (newLeft !== leftPx) {
-                                left = newLeft + 'px';
-                                leftPx = newLeft;
-                            }
-                        }
-                        // overflow handling
-                        if (!isNaN(topPx) && totalH !== null) {
-                            const availableHeight = pageRect.bottom - topPx - innerPadding;
-                            if (totalH > availableHeight) {
-                                maxHeight = availableHeight - extra;
-                            }
-                        }
-                        if (!isNaN(leftPx) && totalW !== null) {
-                            const availableWidth = pageRect.right - leftPx - innerPadding;
-                            if (totalW > availableWidth) {
-                                const newContentWidth = Math.max(0, availableWidth - extra);
-                                width = newContentWidth + 'px';
-                            }
-                        }
-                    }
-                }
-
-                // --- Prepare remaining parameters ---
-                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
-                const animation = trigger.dataset.animation || 'fade';
-                const textAlign = trigger.dataset.textalign || 'left';
-                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
-
-                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
-
-                if (isCurrentlyOpen) {
-                    toggleBubbleText('', '', '', '', '', 'no');
-                } else {
-                    const showBubbleText = () => {
-                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
-                        // Force layout recalculation after the BubbleText is visible
-                        requestAnimationFrame(() => {
-                            const t = document.getElementById('BubbleText');
-                            if (t && t.classList.contains('show')) t.scrollTop;
-                        });
-                    };
-                    if (document.fonts) {
-                        document.fonts.ready.then(showBubbleText);
-                    } else {
-                        showBubbleText();
-                    }
-                }
-
-            } catch (err) {
-                console.error('Error in click listener:', err);
-            }
-        });
-
-        // ==================== BubbleText INSIDE CLICK close START ====================================
-        document.addEventListener('click', function(e) {
-            const BubbleText = document.getElementById('BubbleText');
-            if (BubbleText.contains(e.target)) {
-                e.stopPropagation(); // prevent interfering with other listeners
-                toggleBubbleText('', '', '', '', '', 'no');
-            }
-        });
-        // ==================== BubbleText INSIDE CLICK close END ====================================
-
-        // BUBBLETEXT LISTENER END ===================================================================
-
-        // ==================== BubbleText FUNCTION Start ============================================
+                // ==================== BubbleText FUNCTION Start ============================================
         // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
 
@@ -2933,6 +2537,198 @@ Akka made plans to start over in Bangalore. She did not have a choice. The bigge
 
        // ==================== BubbleText FUNCTION end ============================================
 
+
+        // BUBBLETEXT LISTENER START ==================== ============================================
+        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
+        // - Closes any open popup if clicking outside the popup or on a different trigger.
+        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
+        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or 
+        //      above the trigger depending on available space (and can limit height to avoid overflow).
+        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
+        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
+        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
+        
+        document.addEventListener('click', function(e) {
+            try {
+
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
+
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                    return;
+                }
+
+                if (!trigger) return;
+
+                e.stopPropagation();
+
+                // --- Collect extra classes (exclude alignment classes) ---
+                let extraClasses = [];
+                trigger.classList.forEach(cls => {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                        extraClasses.push(cls);
+                    }
+                });
+
+                // --- Read data attributes (trim strings) ---
+                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
+                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
+                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
+                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
+                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
+                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
+                const rawHeight = trigger.dataset.height || 'auto';
+                const rawWidth = trigger.dataset.width || 'auto';
+
+                const rect = trigger.getBoundingClientRect();
+                const bodyStyles = window.getComputedStyle(document.body);
+                const padding = Math.max(24, window.innerWidth * 0.04);
+                const extra = 22;
+
+                const addPxIfNumber = (value) => {
+                    if (!isNaN(value) && value !== '') return value + 'px';
+                    return value;
+                };
+
+                if (top !== undefined) top = addPxIfNumber(top);
+                if (left !== undefined) left = addPxIfNumber(left);
+                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
+                if (right !== undefined) right = addPxIfNumber(right);
+
+                let height = addPxIfNumber(rawHeight);
+                let width = addPxIfNumber(rawWidth);
+
+                // --- Special positioning handling (center, @, 100% 100%) ---
+                if (position !== 'absolute') {
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
+
+                    if (top === 'center') {
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
+                            top = centerTop + 'px';
+                        } else {
+                            top = '50%';
+                        }
+                    }
+                    if (left === 'center') {
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
+                            left = centerLeft + 'px';
+                        } else {
+                            left = '50%';
+                        }
+                    }
+                }
+
+                // --- Clamping for normal positioning ---
+                let maxHeight = null;
+                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
+                if (!measurementModes.includes(position.toLowerCase())) {
+                    const pageElement = trigger.closest('.page');
+
+                    if (pageElement) {
+                        const pageRect = pageElement.getBoundingClientRect();
+                        const innerPadding = 10;
+
+                        let topPx = toPixels(top, 'height');
+                        let leftPx = toPixels(left, 'width');
+                        let widthPx = toPixels(width, 'width');
+                        let heightPx = toPixels(height, 'height');
+
+                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
+                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
+
+                        // clamp top/left
+                        if (!isNaN(topPx) && totalH !== null) {
+                            let newTop = topPx;
+                            const minTop = pageRect.top + innerPadding;
+                            const maxTop = pageRect.bottom - totalH - innerPadding;
+                            if (newTop < minTop) newTop = minTop;
+                            if (newTop > maxTop) newTop = maxTop;
+                            if (newTop !== topPx) {
+                                top = newTop + 'px';
+                                topPx = newTop;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            let newLeft = leftPx;
+                            const minLeft = pageRect.left + innerPadding;
+                            const maxLeft = pageRect.right - totalW - innerPadding;
+                            if (newLeft < minLeft) newLeft = minLeft;
+                            if (newLeft > maxLeft) newLeft = maxLeft;
+                            if (newLeft !== leftPx) {
+                                left = newLeft + 'px';
+                                leftPx = newLeft;
+                            }
+                        }
+                        // overflow handling
+                        if (!isNaN(topPx) && totalH !== null) {
+                            const availableHeight = pageRect.bottom - topPx - innerPadding;
+                            if (totalH > availableHeight) {
+                                maxHeight = availableHeight - extra;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            const availableWidth = pageRect.right - leftPx - innerPadding;
+                            if (totalW > availableWidth) {
+                                const newContentWidth = Math.max(0, availableWidth - extra);
+                                width = newContentWidth + 'px';
+                            }
+                        }
+                    }
+                }
+
+                // --- Prepare remaining parameters ---
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
+                const animation = trigger.dataset.animation || 'fade';
+                const textAlign = trigger.dataset.textalign || 'left';
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
+
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
+
+                if (isCurrentlyOpen) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                } else {
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
+                        requestAnimationFrame(() => {
+                            const t = document.getElementById('BubbleText');
+                            if (t && t.classList.contains('show')) t.scrollTop;
+                        });
+                    };
+                    if (document.fonts) {
+                        document.fonts.ready.then(showBubbleText);
+                    } else {
+                        showBubbleText();
+                    }
+                }
+
+            } catch (err) {
+                console.error('Error in click listener:', err);
+            }
+        });
+
+        // ==================== BubbleText INSIDE CLICK close START ====================================
+        document.addEventListener('click', function(e) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
+                e.stopPropagation(); // prevent interfering with other listeners
+                toggleBubbleText('', '', '', '', '', 'no');
+            }
+        });
+        // ==================== BubbleText INSIDE CLICK close END ====================================
+
+        // BUBBLETEXT LISTENER END ===================================================================
+
+
         // ==================== IMAGE CAPTION LISTENER ===============================================================
         // This code enables mobile‑friendly behavior for image captions:
         // - Captions can be shown/hidden by tapping on them.
@@ -3183,7 +2979,7 @@ Akka made plans to start over in Bangalore. She did not have a choice. The bigge
             // - Otherwise, it activates the page at 0 (usually 0, which could be the TOC or first content page).
         // Checks the URL hash (e.g., #page-3) and navigates to that page using activatePageFromHash() (overriding 
             //the initial active page if a hash is present).
-        // Adds a click listener to a .back-to-list button (if present) that opens a configured URL (https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html) 
+        // Adds a click listener to a .back-to-list button (if present) that opens a configured URL (https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2) 
         // add listener for keyboard
         // adds listener for left right arrow
         // adds listener for Back-to-list
@@ -3216,7 +3012,7 @@ Akka made plans to start over in Bangalore. She did not have a choice. The bigge
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html';
+                    let url = 'https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2';
                     if (!url.startsWith('http')) {
                         url = 'https://' + url;
                     }
