@@ -208,7 +208,7 @@ _5 required after a and b otherwise px is assumed_
 <clickwordL= a% | b% | "xxx">                         <BBL-Txt=":[floatleft]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
 <clickwordC= a% | b% | "xxx">                         <BBL-Txt=":[floatcenter]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
 <clickwordR= a% | b% | "xxx">                         <BBL-Txt=":[floatright]<ClickMe_icon>", ":[ | | |a%| b% | | |center-both|left]xxx">
-<clickword0= a% | b% | "xxx">                         <BBL-Txt="<ClickMe_icon>", "[ | | |{a}%| {b}% | | |center-both|left]xxx">
+<clickword0= a% | b% | "xxx">                         <BBL-Txt="<ClickMe_icon>", ":[ | | |{a}%| {b}% | | |center-both|left]xxx">
 
 _Inline CLICKWORDS_
 <ClickwordInline='Something.... <clickword0= 30 | 80 | "Tiptext1"> and something else I<clickword0= 30 | 80 | "Tiptext2"> and now I am done '>
