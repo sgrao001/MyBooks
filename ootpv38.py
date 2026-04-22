@@ -200,7 +200,59 @@ def copy_file(src, dst):
         logging.error(f"Error copying file: {str(e)}")
         return False
 
-# HTML Template with all requested changes
+# Notes:
+# .page is absolutely positioned and centered; only the active page has display: block.
+#   - .page-content is the only child of .page that scrolls (overflow-y: auto).
+#   - The .page-header is inserted by JavaScript into .page-content as the first child.
+#   - The .book-title inside the header is always present; the .book-title on the TOC page is separate.
+#   - ::after on .page creates a fixed vignette overlay (glass edge effect).
+#   - The slider, arrows, and hover areas are fixed to the viewport.
+# This hierarchy reflects the final rendered HTML structure and CSS dependencies.
+#body
+#├── .progress-container
+#│   └── .progress-bar
+#├── .page (active page, others hidden)
+#│   ├── .page::after (vignette overlay)
+#│   ├── .page-content (scrollable container)
+#│   │   ├── .page-header (only on content pages)
+#│   │   │   ├── .back-to-toc (if TOC exists)
+#│   │   │   ├── .book-title (centered)
+#│   │   │   └── .page-number
+#│   │   │       └── a (🔖 copy link)
+#│   │   │           └── .glassbtn (🔖)
+#│   │   ├── .book-title (only on TOC page; separate from header)
+#│   │   ├── .image-container (if image present)
+#│   │   │   ├── img
+#│   │   │   ├── .image-caption-popup (hover popup)
+#│   │   │   └── .highlight-text (title part, optional)
+#│   │   ├── .text-only-container (if no image)
+#│   │   │   └── .highlight-text (title part, optional)
+#│   │   ├── .content-text (main text)
+#│   │   ├── .toc-container (only on TOC page)
+#│   │   │   ├── h2 (TOC title)
+#│   │   │   ├── .back-to-list (AboutMe button, optional)
+#│   │   │   ├── .toc-button-container
+#│   │   │   │   ├── .toc-entry (if TOCasList true)
+#│   │   │   │   │   └── a.toc-link
+#│   │   │   │   └── a.glassbtn.compact-button.toc-link (if TOCasList false)
+#│   │   │   └── hr + tip_string (navigation tips)
+#│   │   └── .heading-container (only on title page)
+#│   │       ├── h1, h2, h3, p (writing period)
+#│   │       └── tip_string (navigation tips)
+#│   └── (other .page elements for each content page)
+#├── .arrow-area.left / .arrow-area.right (fixed hover zones)
+#├── .arrow-container.left / .arrow-container.right (fixed arrows)
+#│   └── .nav-arrow
+#├── .slider-area (hover zone)
+#├── .slider-container (fixed at bottom)
+#│   ├── .slider-wrapper
+#│   │   ├── .slider-track (filled portion)
+#│   │   └── input.slider (range input)
+#│   └── .slider-info
+#│       ├── #current-page (display text)
+#│       └── #total-pages
+#└── #BubbleText (fixed popup container)
+
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,12 +267,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         :root {{
             --primary-color: #f09e5a;
             --glass-bg: rgba(0, 0, 0, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.2);
             --glass-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-
             --text-color: {BkFontColor};
 
-            --arrow-block-display: ARW_DISPLAY;
             --arrow-visibility: ARW_VISIBILITY;
             --arrow-opacity: ARW_OPACITY;
             --arrow-hover-opacity: ARW_HOVER_OPACITY;
@@ -244,8 +293,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             --tt-max-height: var(--tt-1024-height);
             --tt-max-width: var(--tt-1024-width);
 
-            --Lmargin-safe-factor: 0.50;
-            --Rmargin-safe-factor: 0.50;
+            --Lmargin-safe-factor: 0.650;
+            --Rmargin-safe-factor: 0.650;
             --Lsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Lmargin-safe-factor));
             --Rsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Rmargin-safe-factor));
         }}
@@ -275,12 +324,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
 
         a {{
-            color: #4fc3f7 !important; /* Bright blue - adjust hue as needed */
+            color: #4fc3f7 !important;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
         }}
-        /* Underline effect on hover */
         a:hover {{
             background: rgba(0,0,0,0.6);
             text-decoration: underline;
@@ -290,8 +338,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             outline: 2px solid #ffeb3b;
             outline-offset: 2px;
         }}
-        
-        /* Progress Bar */
+
         .progress-container {{
             position: fixed;
             top: 0;
@@ -301,7 +348,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             background: rgba(0,0,0,0.1);
             z-index: 100;
         }}
-
         .progress-bar {{
             height: 100%;
             background: #000;
@@ -309,7 +355,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
         }}
 
-        /* change page width and height below to create varyong borders */
         .page {{
             width: var(--page-width);
             height: var(--page-height);
@@ -320,14 +365,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             opacity: 0;
             color: {BkFontColor};
             overflow-y: hidden;
-
-            padding: 20px !important; /* Padding is important otherwise you have adjust scaling or page-height based on media */
-            
+            padding: 20px !important;
             box-sizing: border-box;
             border: 1px solid rgba(255,255,255,0.3);
-            border-right: 1.5px solid rgba(255, 255, 255,0.4);
-            border-bottom: 1.5px solid rgba(255, 255, 255,0.4);
-
+            border-right: 1.5px solid rgba(255,255,255,0.4);
+            border-bottom: 1.5px solid rgba(255,255,255,0.4);
             box-shadow: var(--glass-shadow);
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -337,10 +379,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
             z-index: 1;
             display: none;
-
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }}
         .page::after {{
             content: '';
@@ -355,51 +395,80 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
-            /* 5% means the gradient fades from 100% opacity at the edge to 0% at 5% inward */
             z-index: 2;
         }}
         .page-content {{
             height: 100%;
-            width: 100% ;
+            width: 100%;
             overflow-y: auto;
-           /* move the padding here */
             box-sizing: border-box;
-            /* HIDE SCROLLBAR */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;     /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }}
-        .page-content::-webkit-scrollbar {{ display: none; /* Chrome, Safari, Opera */}}
-        #page-0::after {{ display: none; }}
+        .page-content::-webkit-scrollbar {{
+            display: none;
+        }}
+        #page-0::after {{
+            display: none;
+        }}
 
-        /* Title Page (Page 0) Specific Styles */
-        #page-0 h1,
-        #page-0 h2,
-        #page-0 h3 {{ color: {BkPage0_FontColor} !important; }}
-        .page-content > :first-child {{ margin-top: 0; }}
-        .page-content h2:first-of-type {{ margin-top: 5px;   /* adjust to your liking – 0, 0.2em, etc. */ }}
-        .image-container:first-child,
-        .text-only-container:first-child {{ margin-top: 0; }}
-
-        /* Make Page0 - Title page transparent */
         #page-0 {{
-            background: none !important;           /* Removes the semi-transparent background */
-            backdrop-filter: none !important;      /* Removes the blur effect */
+            background: none !important;
+            backdrop-filter: none !important;
             -webkit-backdrop-filter: none !important;
-            border: none !important;               /* Optional: removes the glass border */
-            box-shadow: none !important;           /* Optional: removes the shadow */
+            border: none !important;
+            box-shadow: none !important;
+        }}
+        #page-0 h1, #page-0 h2, #page-0 h3 {{
+            color: {BkPage0_FontColor} !important;
+        }}
+        .heading-container {{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }}
 
-        /* Fixed header elements (page number, book title, back button) */
+        .page-content > :first-child {{
+            margin-top: 0;
+        }}
+        .page-content h2:first-of-type {{
+            margin-top: 5px;
+        }}
+        .image-container:first-child,
+        .text-only-container:first-child {{
+            margin-top: 0;
+        }}
+
         .page-header {{
             position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;          /* ← add this */
+            align-items: center;
             z-index: 3;
             margin-bottom: 20px;
         }}
-        /* Keep page number on right */
+        .book-title {{
+            flex: 1;
+            text-align: center;
+            max-width: 50vw;
+            margin: 0 auto;
+            word-wrap: break-word;
+            font-size: 0.8em;
+            order: 2;
+            position: static;
+            transform: none;
+        }}
+        .back-to-toc {{
+            order: 1;
+            transform: scale(1.15, 0.95);
+        }}
         .page-number {{
             flex: 0 0 auto;
             margin-top: 5px;
@@ -411,245 +480,57 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             visibility: {pageNumberStyle} !important;
         }}
 
-   
-
-        /******************************* tool Tips **************************************************************/
-
-        .BubbleText-trigger  {{ color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
-                        text-decoration: none; font-style: normal; /* border: 1px solid currentColor; */
-                        margin: 0 10px; }} 
-
-        .BubbleText-group {{ display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }}
-     
-        .BubbleText-full {{ height: var(--tt-max-height); width: var(--tt-max-width); }} 
-
-        .BubbleText-group .BubbleText-trigger {{ display: inline-block !important; width: auto !important; margin: 0 4px !important; }}
-        .BubbleText-trigger.BubbleText-full {{ height: auto; width: auto; }}
-
-        #BubbleText {{
-
-            /* POSITION & LAYOUT */
-            position: fixed;
-            display: inline-block; 
-            
-            /* TYPOGRAPHY */
-            color: #b0e0ff;
-            font-family: Arial;
-            font-weight: normal;
-            font-size: 0.8em;
-
-            /* INITIAL STATE - HIDDEN */
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-
-            /* GLASS MORPHISM EFFECT */
-            background: rgba(0, 0, 0, 0.42) !important;
-            box-sizing: border-box;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(5px);
-            -webkit-overflow-scrolling: touch;
-            border-radius: 20px;
-            border-left: 1px rgba(255, 255, 255, 0.4);
-            border-right: 1px rgba(255, 255, 255, 0.4);
-            border-top: none;
-            border-bottom: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
-            0 0 0 1px rgba(255,255,255,0.2) inset;
-
-            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-
-            /* PADDING & BOX SIZING */
-            padding: 10px !important;
-            box-sizing: border-box;
-
-            /* GROWING BOX PROPERTIES (ADDED) */
-            width: fit-content;
-            height: fit-content;
-            min-height: 1.5em;
-            max-width: var(--tt-max-width);   /* can be overridden by data-maxwidth */
-            max-height: var(--tt-max-height); /* can be overridden by data-maxheight */
-            overflow-x: hidden;
-            overflow-y: auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-
-            /* OTHER ESSENTIAL STYLES */
-            z-index: 9999;
-            white-space: normal;
-
-            /* FADE + SCALE TRANSITION (VISIBILITY) */
-            opacity: 0;
-            visibility: hidden;
-
-            /* CUSTOM SCROLLBAR */
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
-
-        }}
-
-
-        #BubbleText.show {{ opacity: 1; visibility: visible; }}
-
-        #BubbleText.fade {{ transform: translateY(15px) scale(0.95); }}
-        #BubbleText.fade.show {{ transform: translateY(0) scale(1); }}
-
-        #BubbleText.bounce {{ transform: translateY(40px) scale(0.6); }}
-        #BubbleText.bounce.show {{ animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }}
-
-        #BubbleText.slide {{ transform: translateY(60px); }}
-        #BubbleText.slide.show {{ transform: translateY(0); }}
-
-        #BubbleText.zoom {{ transform: scale(0.4); }}
-        #BubbleText.zoom.show {{ transform: scale(1); }}
-
-        #BubbleText.left-text {{ text-align: left; }}
-        #BubbleText.right-text {{ text-align: right; }}
-        #BubbleText.center-text {{ text-align: center; }}
-
-        @keyframes bounceIn {{
-            0% {{ transform: translateY(40px) scale(0.6); }}
-            60% {{ transform: translateY(-15px) scale(1.15); }}
-            100% {{ transform: translateY(0) scale(1); }}
-        }}
-
-        #BubbleText::-webkit-scrollbar {{ width: 6px; }}
-        #BubbleText::-webkit-scrollbar-track {{ background: rgba(255,255,255,0.1); border-radius: 3px; }}
-        #BubbleText::-webkit-scrollbar-thumb {{ background: rgba(255,255,255,0.4); border-radius: 3px; }}
-
-        /******************************* tool Tips **************************************************************/
-
-        /* Center book title */
-        .book-title {{
-            flex: 1;                  /* takes all available space between left and right items */
-            text-align: center;
-            max-width: 50vw;
-            margin: 0 auto;
-            word-wrap: break-word;
-            font-size: 0.8em;
-            order: 2;
-            position: static;
-            transform: none;
-        }}
-
-        /* next and previous page Navigation icons */
         .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {{
-
             color: var(--text-color);
             text-decoration: none;
             font-size: 1em;
             font-family: Arial;
-            
             padding: 5px 15px;
             margin: 5px;
-
             background: rgba(0, 0, 0, 0.075) !important;
             box-sizing: border-box;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(5px);
             -webkit-overflow-scrolling: touch;
             border-radius: 20px;
-            border-bottom 1px rgba(255, 255, 255, 0.4);
-            border-right: 1px rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
             border-top: none;
             border-left: none;
-            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5),
-                        0 2px 4px rgba(0, 0, 0, 0.3),
-                        0 0 0 1.5px rgba(255, 255, 255, 0.4) inset;           
-
-            border-radius: 20px;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.5),
+                        0 2px 4px rgba(0,0,0,0.3),
+                        0 0 0 1.5px rgba(255,255,255,0.4) inset;
             transition: all 0.3s ease;
-            order: 2;
-
             position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }}
-        .back-to-toc,
-        .page-number,
-        .page-number a,
-        .glassbtn {{
+        .back-to-toc, .page-number, .page-number a, .glassbtn {{
             vertical-align: middle;
-            line-height: 1.2;            /* or match your font size */
+            line-height: 1.2;
         }}
-
-        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover{{
+        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover {{
             background: rgba(0, 0, 0, 0.55) !important;
-
-            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7),
-                0 2px 4px rgba(0, 0, 0, 0.6),
-                0 0 0 1.5px rgba(255, 255, 255, 0.6) inset;  
-                0 0 0 2px rgba(255,255,255,0.4) inset;   
-            border-radius: 20px;
-            border-top 1px rgba(255, 255, 255, 0.4);
-            border-left: 1px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 14px rgba(0,0,0,0.7),
+                        0 2px 4px rgba(0,0,0,0.6),
+                        0 0 0 1.5px rgba(255,255,255,0.6) inset,
+                        0 0 0 2px rgba(255,255,255,0.4) inset;
+            border-top: 1px solid rgba(255,255,255,0.4);
+            border-left: 1px solid rgba(255,255,255,0.4);
             border-bottom: none;
             border-right: none;
             text-decoration: underline;
-        }}    
-        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: none; }}
-
-        /* scale this 🗂️ down */
-        .back-to-toc {{ order: 1; transform: scale( 1.15, .95);  /* adjust factor */ }}
-
-
-        /* Also target the anchor to ensure it doesn't add extra background/shadow */
-        a:has(.glassbtn) {{ text-decoration: none; background: transparent; }}
-        .glassbtnlbl {{ color: #4fc3f7; font-size: 0.8em; font-family: Arial; font-weight: normal; text-decoration: none;
-                        text-decoration: none; font-style: normal;}}  
-
-
-        .paraitalicleft {{ font-style: italic; text-align: left; }}
-        .paraitalicright {{ font-style: italic; text-align: right; }}
-        .paraitaliccenter {{ font-style: italic; text-align: center; }} 
-
-        /* Fixed Custom Scrollbar */
-        .page::-webkit-scrollbar {{
-            width: 10px;
         }}
-
-        .page::-webkit-scrollbar-track {{
+        .slider-container:hover {{
+            background: rgba(0, 0, 0, 0.3) !important;
+            text-decoration: none;
+        }}
+        a:has(.glassbtn) {{
+            text-decoration: none;
             background: transparent;
         }}
 
-        .page::-webkit-scrollbar-thumb {{
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            border: 2px solid transparent;
-            background-clip: content-box;
-        }}
-
-        .page::-webkit-scrollbar-thumb:hover {{
-            background-color: rgba(0,0,0,0.3);
-        }}
-
-        .page.active {{
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            z-index: 2;
-            display: block;
-        }}
-
-        .page.exit {{
-            transform: translate(-50%, -50%) scale(0.98);
-            opacity: 0;
-            display: none;
-        }}
-
-        .heading-container {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            
-            gap: 1rem;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }}
-
-        /* Arrow Containers - Always present but visibility controlled var(--page-height)*/
         .arrow-container {{
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -668,20 +549,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             transition: all 0.3s ease;
             pointer-events: auto;
         }}
-
-        /* When arrows are visible (ARW_DISPLAY=True) */
         .arrow-container[data-visible="true"] {{
             width: {ARW_VISIBLE_WIDTH}% !important;
         }}
-
         .arrow-container.right {{
             right: 0px;
         }}
-
         .arrow-container:hover {{
             opacity: var(--arrow-hover-opacity);
         }}
-
         .nav-arrow {{
             width: 15px;
             height: 15px;
@@ -690,16 +566,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             display: inline-block;
             visibility: var(--arrow-visibility);
         }}
-
         .nav-arrow.left {{
             transform: rotate(135deg);
         }}
-
         .nav-arrow.right {{
             transform: rotate(-45deg);
         }}
-
-        /* Arrow Hover Areas - Always present but visibility controlled */
         .arrow-area {{
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -710,20 +582,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             pointer-events: auto;
             -webkit-tap-highlight-color: transparent;
         }}
-
         .arrow-area.right {{
             right: 0;
         }}
-
-        .arrow-area.left:hover ~ .arrow-container.left {{
-            opacity: var(--arrow-hover-opacity);
-        }}
-
+        .arrow-area.left:hover ~ .arrow-container.left,
         .arrow-area.right:hover ~ .arrow-container.right {{
             opacity: var(--arrow-hover-opacity);
         }}
 
-        /* Slider Container */
         .slider-container {{
             position: fixed;
             bottom: 10px;
@@ -740,19 +606,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             opacity: 0;
             pointer-events: none;
         }}
-        /* Page number text inside slider */
-        .slider-info {{
-            color: #b0e0ff;            /* matches BubbleText text color */
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }}
-
-        .slider-info #current-page {{
-            color: #b0e0ff;            /* matches BubbleText text color */
-            font-style: italic; /* or any style */
-        }}
-
         .slider-area {{
             position: fixed;
             bottom: 0;
@@ -761,50 +614,45 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             height: 60px;
             z-index: 19;
         }}
-
         .slider-area:hover ~ .slider-container,
         .slider-container:hover {{
             opacity: 1;
             pointer-events: auto;
         }}
-
         .slider-wrapper {{
             width: 80%;
             position: relative;
             margin: 0 auto;
         }}
-
         .slider {{
             width: 100%;
             margin-bottom: 5px;
             -webkit-appearance: none;
             height: 3px;
-            background: rgba(96, 96, 96, 0); 
+            background: rgba(96, 96, 96, 0);
             border-radius: 10px;
             outline: none;
             transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;  
+            border: 1px solid darkgray;
         }}
-
-        .slider::-webkit-slider-thumb {{ /* CHROME AND SAFAR */
-            -webkit-appearance: none;       /* required for custom styling */
-            width: 24px;
-            height: 16px;            
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            order: border: 1px solid darkgray !important;     
-            border-radius: 50%;
-            cursor: pointer;
-        }}
-        .slider::-moz-range-thumb {{ /* FIREFOX */
+        .slider::-webkit-slider-thumb {{
+            -webkit-appearance: none;
             width: 24px;
             height: 16px;
-            background: rrgba(176, 224, 255, 1) !important;
-            border: border: 1px solid darkgray !important;        /* remove default border in Firefox */
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
             border-radius: 50%;
             cursor: pointer;
         }}
-
+        .slider::-moz-range-thumb {{
+            width: 24px;
+            height: 16px;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+        }}
         .slider-track {{
             position: absolute;
             height: 4px;
@@ -814,10 +662,28 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             left: 0;
             pointer-events: none;
         }}
+        .slider-info {{
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }}
+        .slider-info #current-page {{
+            color: #b0e0ff;
+            font-style: italic;
+        }}
 
-        /* Content Styles */
-        .image-container {{ width: var(--content-container-max-width); position: relative; overflow: visible; /* Changed from hidden to visible for captions */ }}
-
+        .image-container, .text-only-container {{
+            width: 100%;
+            max-width: var(--content-container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }}
+        .image-container {{
+            position: relative;
+            overflow: visible;
+        }}
         .image-container img {{
             position: relative;
             display: block;
@@ -831,94 +697,46 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             transform: scale(0.98);
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
         }}
-
-        /* Add alignment-specific float rules */
-        .image-align-left img {{ float: left; margin-left: 0px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }}
-        .image-align-right img {{ float: right; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 40px; }}
-        .image-align-center img {{ float: none; display: block; margin-top: 20px; margin-bottom: 40px; left: 50%; transform: translateX(-50%) !important; }}
-        .image-container img:hover {{ opacity: 1; transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.9); filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8)); }}
-
-        .text-only-container {{ width: 90%; margin: 0px auto; padding: 0; }}
-
-        .toc-container {{ width: 90%; padding: 20px; }}
-        .toc-entry {{ margin: 8px 0; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }}
-        .toc-entry a {{ color: {TOC_FontColor} !important; text-decoration: none; display: block; }}
-        .toc-entry:hover {{ border-bottom-color: var(--primary-color); }}
-        .toc-entry:hover a {{ color: var(--primary-color); }}
-
-        .image-container,
+        .image-align-left img {{
+            float: left;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }}
+        .image-align-right img {{
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }}
+        .image-align-center img {{
+            float: none;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
+        }}
+        .image-container img:hover {{
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
+        }}
         .text-only-container {{
-            width: 100%;
-            max-width: var(--content-container-max-width);
-            margin-left: auto;
-            margin-right: auto;
-            box-sizing: border-box;
+            width: 90%;
+            margin: 0px auto;
+            padding: 0;
         }}
-
-        /* Keep the position and overflow for .image-container separately if needed */
-        .image-container {{
-            position: relative;
-            overflow: visible;
+        .image-container + .image-container {{
+            margin-top: 10px;
         }}
-
-        /* Table Styles */
-        table {{
-            width: auto;
-            max-width: 100%; /* Never exceed content block width */
-            table-layout: auto; /* Auto-size columns based on content */
-            word-wrap: break-word; /* Allow text wrapping */
-            border-collapse: collapse;
-            font-size: 0.9em;
-            min-width: 400px;
-            border-radius: 5px ;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            background: rgba(15, 15, 15, 0.25) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .content-text {{
+            font-size: inherit;
+            text-align: left;
         }}
-        /* Special styling for links in tables */
-        table a {{
-            background: rgba(0, 0, 0, 0.15);
-            padding: 2px 6px;
-            border-radius: 4px;
-            display: inline-block;
-        }}
-
-        table a:hover {{
-            background: rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-        }}
-
-        table thead tr {{
-            background: transparent !important;
-            position: relative; /* Needed for pseudo-element */
-            overflow: hidden; /* Contain the blur effect */
-        }}
-
-            /* Set minimum column width (adjust 15% as needed) */
-        table th,
-        table td {{
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            min-width: 15%; /* Minimum column width as % of table */
-            max-width: 100%; /* Prevent columns from overflowing */
-            word-break: break-word; /* Break long words if needed */
-            background: transparent !important;
-        }}
-
-        table tbody tr {{
-            transition: all 0.2s ease;
-            background: rgba(255, 255, 255, 0.05) !important;
-        }}
-
-        table tbody tr:last-of-type {{
-            border-bottom: 2px solid var(--primary-color);
-        }}
-
-        table tbody tr:hover {{
-            background-color: rgba(0, 0, 0, 0.3);
-        }}
-
         .highlight-text {{
             color: {TitleFontClr};
             font-size: 1.2em;
@@ -927,54 +745,33 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             text-decoration-color: {TitleFontClr};
             padding-bottom: 3px;
         }}
-
         p {{
             margin-bottom: 1.8em;
             text-align: left;
             line-height: 1.7;
             font-size: 1.05em;
         }}
-        /* Make the paragraph inline */
-        p.inline {{
-        display: inline;
-        }}
-    
-        /* Hide the paragraph */
-        p.none {{
-        display: none;
-        }}
-        h1 {{
-            font-size: 2.8em;
-            color: #fff;
-            font-weight: 700;
-        }}
-        h2 {{
-            font-size: 1.4em;
-            font-weight: 400;
-            color: rgba(255,255,255,0.8);
-        }}
-        h3 {{
-            font-size: 1.3em;
-            font-weight: 300;
-            color: rgba(255,255,255,0.7);
-        }}
+        p.inline {{ display: inline; }}
+        p.none {{ display: none; }}
+        h1 {{ font-size: 2.8em; color: #fff; font-weight: 700; }}
+        h2 {{ font-size: 1.4em; font-weight: 400; color: rgba(255,255,255,0.8); }}
+        h3 {{ font-size: 1.3em; font-weight: 300; color: rgba(255,255,255,0.7); }}
 
-        /* ================== */
-
-
+        .toc-container {{
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 20px;
+        }}
         .toc-button-container {{
-            width: calc(100% - var(--arrow-hover-width));
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             column-gap: 10px;
             row-gap: 12px;
         }}
         .toc-list .toc-button-container {{
-            display: block;   /* only override what changes */
+            display: block;
         }}
-
         .compact-button {{
             color: {TOC_FontColor} !important;
             border-radius: 12px;
@@ -982,108 +779,97 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             white-space: nowrap;
             margin: 0 !important;
         }}
-
         .toc-list .toc-entry {{
             margin: 8px 0;
             padding: 5px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }}
-
         .toc-list .toc-entry a {{
             color: var(--text-color);
             text-decoration: none;
             display: block;
         }}
-
         .toc-list .toc-entry:hover {{
             border-bottom-color: var(--primary-color);
         }}
-
         .toc-list .toc-entry:hover a {{
             color: var(--primary-color);
         }}
-        .content-text {{
-            font-size: inherit; /* Inherits from parent */
-            text-align: left;
-        }}
 
-        /*********************************************/
-        /* Multiple in-place images per page.                 */
-        /*********************************************/
-        .text-content-container {{
-            width: 90%;
-            padding: 0;
-        }}
-
-        /* Style for multiple image containers */
-        .image-container + .image-container {{
-            margin-top: 10px;
-        }}
-
-        /* Ensure images don't get too large when multiple are present */
-        .image-container img {{
+        table {{
+            width: auto;
             max-width: 100%;
-            height: auto;
-        }}
-
-        /* Inline image styling */
-        .inline-image-wrapper {{
-            display: block;
-            text-align: center;
-        }}
-
-        .inline-image {{
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }}
-
-        .inline-image-caption {{
-            font-style: italic;
+            table-layout: auto;
+            word-wrap: break-word;
+            border-collapse: collapse;
             font-size: 0.9em;
-            margin-top: 10px;
-            color: rgba(255,255,255,0.7);
-            text-align: center;
+            min-width: 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            background: rgba(15,15,15,0.25) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }}
+        table a {{
+            background: rgba(0,0,0,0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }}
+        table a:hover {{
+            background: rgba(0,0,0,0.3);
+            text-decoration: none;
+        }}
+        table thead tr {{
+            background: transparent !important;
+            position: relative;
+            overflow: hidden;
+        }}
+        table th, table td {{
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            min-width: 15%;
+            max-width: 100%;
+            word-break: break-word;
+            background: transparent !important;
+        }}
+        table tbody tr {{
+            transition: all 0.2s ease;
+            background: rgba(255,255,255,0.05) !important;
+        }}
+        table tbody tr:last-of-type {{
+            border-bottom: 2px solid var(--primary-color);
+        }}
+        table tbody tr:hover {{
+            background-color: rgba(0,0,0,0.3);
+        }}
+        .table-container {{
+            width: 100%;
+            overflow-x: auto;
         }}
 
-        /*********************************************/
-        /* Caption Pop-up Box - Begin */
-        /*********************************************/
-        
         .image-caption-popup {{
             position: absolute;
-            
-            /* REMOVE: left: 0; */
-            /* Position relative to the image container */
             top: 0;
             max-width: 100%;
-            /* Width handling - auto for text, but constrained */
-
             font-size: .8em;
-            padding: 0px 10px 0px 10px ! important;
+            padding: 0px 10px;
             box-sizing: border-box;
             text-align: center !important;
             pointer-events: auto;
-            Display: block !important;
-
-            /* INITIAL STATE - HIDDEN */
+            display: block !important;
             opacity: 0 !important;
             transform: translateY(-20px) scale(0.95) !important;
             transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
             pointer-events: none;
-
-            /* GLASS MORPHISM EFFECT */
-            background: rgba(0, 0, 0, 0.45) !important;
+            background: rgba(0,0,0,0.45) !important;
             backdrop-filter: blur(15px) !important;
             -webkit-backdrop-filter: blur(15px) !important;
-            
             border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.95);
+            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
             z-index: 1000;
         }}
-        /* Position captions based on alignment */
         .image-align-left .image-caption-popup {{
             top: 40px;
             right: auto;
@@ -1096,55 +882,153 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .image-align-center .image-caption-popup {{
             top: 20px;
             left: 50% !important;
-            transform: translateX(-50%) translateY(-20px) scale(0.95) !important; /* COMBINE transforms */
-            padding: 0px 10px 0px 10px ! important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px;
             box-sizing: border-box !important;
         }}
-        /* Hover state for centered captions */
-        .image-align-center .image-caption-popup:hover,
-        .image-align-center img:hover ~ .image-caption-popup {{
-            transform: translateX(-50%) t!important;
-        }}
-        /*  keeep this together.  */        
-
-        /* SHOW / HIDE POP-UP when hovering over image OR pop-up itself */
         .image-container img:hover ~ .image-caption-popup,
         .image-caption-popup:hover {{
             opacity: 1 !important;
             pointer-events: auto !important;
         }}
-
-
-        /* Ensure z-index stacking */
         body .page .image-container .image-caption-popup {{
             z-index: 1000 !important;
         }}
         body .page .image-container img {{
             z-index: 2 !important;
         }}
-                
-        /* PERMANENTLY SHOW POPUP: Force all popups to be always visible 
-        .image-caption-popup {{
-            top: 30px;
-            opacity: 1 !important;
-            transform: none; !important;
-            pointer-events: auto !important;
-            transition: none !important;
-        }}
-        /*********************************************/
-        /* Caption Pop-up Box - End */
-        /*********************************************/
 
-       /* Tablets and such */
+        .BubbleText-trigger {{
+            color: #4fc3f7;
+            font-size: 0.8em;
+            font-family: Arial;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            margin: 0 10px;
+        }}
+        .BubbleText-group {{
+            display: inline-block;
+            margin-left: var(--Lsafe-margin);
+            vertical-align: top;
+        }}
+        .BubbleText-full {{
+            height: var(--tt-max-height);
+            width: var(--tt-max-width);
+        }}
+        .BubbleText-group .BubbleText-trigger {{
+            display: inline-block !important;
+            width: auto !important;
+            margin: 0 4px !important;
+        }}
+        .BubbleText-trigger.BubbleText-full {{
+            height: auto;
+            width: auto;
+        }}
+        #BubbleText {{
+            position: fixed;
+            display: inline-block;
+            color: #b0e0ff;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            background: rgba(0,0,0,0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 10px !important;
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);
+            max-height: var(--tt-max-height);
+            overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            z-index: 9999;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }}
+        #BubbleText.show {{
+            opacity: 1;
+            visibility: visible;
+        }}
+        #BubbleText.fade {{
+            transform: translateY(15px) scale(0.95);
+        }}
+        #BubbleText.fade.show {{
+            transform: translateY(0) scale(1);
+        }}
+        #BubbleText.bounce {{
+            transform: translateY(40px) scale(0.6);
+        }}
+        #BubbleText.bounce.show {{
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }}
+        #BubbleText.slide {{
+            transform: translateY(60px);
+        }}
+        #BubbleText.slide.show {{
+            transform: translateY(0);
+        }}
+        #BubbleText.zoom {{
+            transform: scale(0.4);
+        }}
+        #BubbleText.zoom.show {{
+            transform: scale(1);
+        }}
+        #BubbleText.left-text {{ text-align: left; }}
+        #BubbleText.right-text {{ text-align: right; }}
+        #BubbleText.center-text {{ text-align: center; }}
+        @keyframes bounceIn {{
+            0% {{ transform: translateY(40px) scale(0.6); }}
+            60% {{ transform: translateY(-15px) scale(1.15); }}
+            100% {{ transform: translateY(0) scale(1); }}
+        }}
+        #BubbleText::-webkit-scrollbar {{
+            width: 6px;
+        }}
+        #BubbleText::-webkit-scrollbar-track {{
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }}
+        #BubbleText::-webkit-scrollbar-thumb {{
+            background: rgba(255,255,255,0.4);
+            border-radius: 3px;
+        }}
+
+        .page.active {{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            display: block;
+        }}
+        .page.exit {{
+            transform: translate(-50%, -50%) scale(0.98);
+            opacity: 0;
+            display: none;
+        }}
 
         @media (max-width: 768px) {{
             :root {{
                 --tt-max-height: var(--tt-768-height) !important;
                 --tt-max-width: var(--tt-768-width) !important;
-
                 --content-container-max-width: 93%;
-
-                --Lmargin-safe-factor: 0.70;
+                --Lmargin-safe-factor: 0.65;
                 --Rmargin-safe-factor: 0.85;
             }}
             .BubbleText-full {{
@@ -1156,89 +1040,77 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 height: 75% !important;
                 overflow: hidden;
             }}
-
-            /* Fix for iOS Safari */
             @supports (-webkit-touch-callout: none) {{
                 .page {{
                     height: -webkit-fill-available !important;
                     margin-top: 0 !important;
                 }}
-            }}        
-
-             a {{ color: #00b0ff !important; }} 
+            }}
+            a {{ color: #00b0ff !important; }}
             a:focus {{ outline: 2px solid #ffeb3b; outline-offset: 2px; }}
-            .text-only-container {{width: 100% !important; padding: 0 10px !important; margin: 15px auto !important; }}
-
-            /* Improved spacing for mobile text */
-            p, h1, h2, h3 {{ margin-bottom: 1.2em !important; line-height: 1.6 !important; }}
-
+            .text-only-container {{
+                width: 100% !important;
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }}
+            p, h1, h2, h3 {{
+                margin-bottom: 1.2em !important;
+                line-height: 1.6 !important;
+            }}
             .toc-entry {{ margin: 6px 0; }}
+            .toc-header-left {{ text-align: left; }}
+            .toc-header-row {{ display: flex; align-items: center; justify-content: space-between;}}
+            .toc-header-row .book-title {{ flex: 1; text-align: center; margin: 0;}}
 
-            /* Adjust heading sizes for mobile */
             h1 {{ font-size: 2.2em !important; }}
             h2 {{ font-size: 1.3em !important; }}
             h3 {{ font-size: 1.1em !important; }}
-
-            /* Mobile table styles */
             table {{
-                min-width: 0 !important /* ALlow Shrinking */
-                width: 100%; !important /* Full width on mobile */
-                overflow-x: visible !important; /* Disable scrolling */
+                min-width: 0 !important;
+                width: 100% !important;
+                overflow-x: visible !important;
                 backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                background: rgba(15, 15, 15, 0.3) !important;
+                background: rgba(15,15,15,0.3) !important;
                 font-size: 0.9em !important;
             }}
             table * {{ box-sizing: border-box !important; }}
-            
             table a {{
-                padding: 3px 8px; /* Larger tap targets */
-                background: rgba(0, 0, 0, 0.2); /* More contrast */
+                padding: 3px 8px;
+                background: rgba(0,0,0,0.2);
                 margin: 0 auto !important;
             }}
             .table-container {{
                 width: calc(100% - 10px) !important;
-                overflow-x: visible !important; /* Disable scrolling */
+                overflow-x: visible !important;
             }}
-            table th,
-            table td {{
-                min-width: 0% !important ; /* Larger minimum on small screens */
-                white-space: normal !important; /* Ensure wrapping on mobile */
-                width: auto !important; /* Reset widths */
-                max-width: 100% !important;      
+            table th, table td {{
+                min-width: 0% !important;
+                white-space: normal !important;
+                width: auto !important;
+                max-width: 100% !important;
             }}
-                /* Slightly stronger contrast on mobile for readability */
-            table thead tr {{
-                background: rgba(0, 0, 0, 0.4) !important;
-            }}
+            table thead tr {{ background: rgba(0,0,0,0.4) !important; }}
             table td.important-column {{
                 width: 60% !important;
-                word-break: break-word !important; /* Break long words */
-                overflow-wrap: anywhere !important; /* Emergency break */
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
             }}
             table td {{
                 hyphens: auto !important;
-                word-break: break-word !important; /* Break long words */
-                overflow-wrap: anywhere !important; /* Emergency break */
+                word-break: break-word !important;
+                overflow-wrap: anywhere !important;
             }}
-            /* Force links/buttons to wrap */
             table a, table button {{
-            white-space: normal !important;
-            display: inline-block !important;
+                white-space: normal !important;
+                display: inline-block !important;
             }}
         }}
 
-       /* phones and such */ 
-
-
         @media (max-width: 415px) {{
-
             :root {{
                 --tt-max-height: var(--tt-415-height) !important;
                 --tt-max-width: var(--tt-415-width) !important;
-
                 --content-container-max-width: 97%;
-
                 --Lmargin-safe-factor: 0.40;
                 --Rmargin-safe-factor: 0.80;
             }}
@@ -1251,69 +1123,55 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 height: 60% !important;
                 overflow: hidden;
             }}
-
             .page {{ height: var(--page-height-415px) !important; }}
             .content-text {{ font-size: var(--mobile-font-size) !important; }}
-            .arrow-container {{ height: var(--ARW_HOVER_HEIGHT_415px); }}
-            .arrow-area {{ height: var(--ARW_HOVER_HEIGHT_415px); }}
-            
-            /* Fix for iOS Safari */
+            .arrow-container, .arrow-area {{ height: var(--ARW_HOVER_HEIGHT_415px); }}
             @supports (-webkit-touch-callout: none) {{
                 .page {{
                     height: -webkit-fill-available !important;
                     margin-top: 0 !important;
                 }}
             }}
-
-            .back-to-list {{ font-size: 0.6em; }}
-        
-            /* Reduce gap after heading */
-            .compact-button {{ padding: 3px 8px !important; font-size: 0.65em !important; }}
-
-
-            /* FORCE SIZE FORCE TO ImageWidthMobile */
-            /* MOBILE_FORCE_PLACEHOLDER - This will be replaced with conditional CSS */
-            {ForceMobileCSS}          
-            
-            /* Make captions always visible on mobile when active */
-            .image-caption-popup.mobile-visible {{ opacity: 1; transform: translateY(0); }}
-
-            /* ===== TABLE STYLES ===== */
+            .compact-button {{
+                padding: 3px 8px !important;
+                font-size: 0.65em !important;
+                display: inline-block
+            }}
+            {ForceMobileCSS}
+            .image-caption-popup.mobile-visible {{
+                opacity: 1;
+                transform: translateY(0);
+            }}
             .table-container {{
                 width: 100% !important;
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch !important;
                 display: block;
                 margin: 15px 0;
-                background: rgba(0,0,0,0.1); /* Visual cue for scrollable area */
+                background: rgba(0,0,0,0.1);
                 border-radius: 8px;
                 padding: 8px 0;
             }}
-
             table {{
-                display: table !important; /* Revert to table layout but allow scrolling */
+                display: table !important;
                 width: auto !important;
-                min-width: 100% !important; /* Ensure it fills container */
+                min-width: 100% !important;
                 white-space: nowrap;
-                font-size: 0.85em; /* Slightly smaller text for tables */
+                font-size: 0.85em;
             }}
-
-            table th,
-            table td {{
+            table th, table td {{
                 white-space: nowrap !important;
-                min-width: 100px !important; /* Reasonable minimum column width */
+                min-width: 100px !important;
             }}
-
-            /* Optional scroll indicator */
             .table-container::-webkit-scrollbar {{
                 height: 5px;
             }}
-
             .table-container::-webkit-scrollbar-thumb {{
                 background: rgba(255,255,255,0.3);
                 border-radius: 5px;
             }}
         }}
+
 
         
     </style>
@@ -1535,196 +1393,8 @@ FOOTER_TEMPLATE = """
         });
         // BOOKMARK COPY-URL LISTENER END ============================================================
 
-        // BUBBLETEXT LISTENER START ==================== ============================================
-        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
-        // - Closes any open popup if clicking outside the popup or on a different trigger.
-        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
-        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or above the trigger depending on available space (and can limit height to avoid overflow).
-        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
-        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
-        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
-        
-        document.addEventListener('click', function(e) {
-            try {
 
-                const trigger = e.target.closest('.BubbleText-trigger');
-                const BubbleText = document.getElementById('BubbleText');
-
-                // If BubbleText is open and clicking outside, close it
-                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
-                    toggleBubbleText('', '', '', '', '', 'no');
-                    return;
-                }
-
-                if (!trigger) return;
-
-                e.stopPropagation();
-
-                // --- Collect extra classes (exclude alignment classes) ---
-                let extraClasses = [];
-                trigger.classList.forEach(cls => {
-                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
-                        extraClasses.push(cls);
-                    }
-                });
-
-                // --- Read data attributes (trim strings) ---
-                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
-                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
-                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
-                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
-                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
-                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
-                const rawHeight = trigger.dataset.height || 'auto';
-                const rawWidth = trigger.dataset.width || 'auto';
-
-                const rect = trigger.getBoundingClientRect();
-                const bodyStyles = window.getComputedStyle(document.body);
-                const padding = Math.max(24, window.innerWidth * 0.04);
-                const extra = 22;
-
-                const addPxIfNumber = (value) => {
-                    if (!isNaN(value) && value !== '') return value + 'px';
-                    return value;
-                };
-
-                if (top !== undefined) top = addPxIfNumber(top);
-                if (left !== undefined) left = addPxIfNumber(left);
-                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
-                if (right !== undefined) right = addPxIfNumber(right);
-
-                let height = addPxIfNumber(rawHeight);
-                let width = addPxIfNumber(rawWidth);
-
-                // --- Special positioning handling (center, @, 100% 100%) ---
-                if (position !== 'absolute') {
-                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
-                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
-                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
-                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
-
-                    if (top === 'center') {
-                        if (totalBubbleTextHeight) {
-                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
-                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
-                            top = centerTop + 'px';
-                        } else {
-                            top = '50%';
-                        }
-                    }
-                    if (left === 'center') {
-                        if (totalBubbleTextWidth) {
-                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
-                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
-                            left = centerLeft + 'px';
-                        } else {
-                            left = '50%';
-                        }
-                    }
-                }
-
-                // --- Clamping for normal positioning ---
-                let maxHeight = null;
-                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
-                if (!measurementModes.includes(position.toLowerCase())) {
-                    const pageElement = trigger.closest('.page');
-
-                    if (pageElement) {
-                        const pageRect = pageElement.getBoundingClientRect();
-                        const innerPadding = 10;
-
-                        let topPx = toPixels(top, 'height');
-                        let leftPx = toPixels(left, 'width');
-                        let widthPx = toPixels(width, 'width');
-                        let heightPx = toPixels(height, 'height');
-
-                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
-                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
-
-                        // clamp top/left
-                        if (!isNaN(topPx) && totalH !== null) {
-                            let newTop = topPx;
-                            const minTop = pageRect.top + innerPadding;
-                            const maxTop = pageRect.bottom - totalH - innerPadding;
-                            if (newTop < minTop) newTop = minTop;
-                            if (newTop > maxTop) newTop = maxTop;
-                            if (newTop !== topPx) {
-                                top = newTop + 'px';
-                                topPx = newTop;
-                            }
-                        }
-                        if (!isNaN(leftPx) && totalW !== null) {
-                            let newLeft = leftPx;
-                            const minLeft = pageRect.left + innerPadding;
-                            const maxLeft = pageRect.right - totalW - innerPadding;
-                            if (newLeft < minLeft) newLeft = minLeft;
-                            if (newLeft > maxLeft) newLeft = maxLeft;
-                            if (newLeft !== leftPx) {
-                                left = newLeft + 'px';
-                                leftPx = newLeft;
-                            }
-                        }
-                        // overflow handling
-                        if (!isNaN(topPx) && totalH !== null) {
-                            const availableHeight = pageRect.bottom - topPx - innerPadding;
-                            if (totalH > availableHeight) {
-                                maxHeight = availableHeight - extra;
-                            }
-                        }
-                        if (!isNaN(leftPx) && totalW !== null) {
-                            const availableWidth = pageRect.right - leftPx - innerPadding;
-                            if (totalW > availableWidth) {
-                                const newContentWidth = Math.max(0, availableWidth - extra);
-                                width = newContentWidth + 'px';
-                            }
-                        }
-                    }
-                }
-
-                // --- Prepare remaining parameters ---
-                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
-                const animation = trigger.dataset.animation || 'fade';
-                const textAlign = trigger.dataset.textalign || 'left';
-                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
-
-                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
-
-                if (isCurrentlyOpen) {
-                    toggleBubbleText('', '', '', '', '', 'no');
-                } else {
-                    const showBubbleText = () => {
-                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
-                        // Force layout recalculation after the BubbleText is visible
-                        requestAnimationFrame(() => {
-                            const t = document.getElementById('BubbleText');
-                            if (t && t.classList.contains('show')) t.scrollTop;
-                        });
-                    };
-                    if (document.fonts) {
-                        document.fonts.ready.then(showBubbleText);
-                    } else {
-                        showBubbleText();
-                    }
-                }
-
-            } catch (err) {
-                console.error('Error in click listener:', err);
-            }
-        });
-
-        // ==================== BubbleText INSIDE CLICK close START ====================================
-        document.addEventListener('click', function(e) {
-            const BubbleText = document.getElementById('BubbleText');
-            if (BubbleText.contains(e.target)) {
-                e.stopPropagation(); // prevent interfering with other listeners
-                toggleBubbleText('', '', '', '', '', 'no');
-            }
-        });
-        // ==================== BubbleText INSIDE CLICK close END ====================================
-
-        // BUBBLETEXT LISTENER END ===================================================================
-
-        // ==================== BubbleText FUNCTION Start ============================================
+                // ==================== BubbleText FUNCTION Start ============================================
         // BubbleText Management
         // Convert a CSS length string to pixels (returns NaN if not possible)
 
@@ -2077,6 +1747,198 @@ FOOTER_TEMPLATE = """
         }
 
        // ==================== BubbleText FUNCTION end ============================================
+
+
+        // BUBBLETEXT LISTENER START ==================== ============================================
+        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
+        // - Closes any open popup if clicking outside the popup or on a different trigger.
+        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
+        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or 
+        //      above the trigger depending on available space (and can limit height to avoid overflow).
+        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
+        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
+        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
+        
+        document.addEventListener('click', function(e) {
+            try {
+
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
+
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                    return;
+                }
+
+                if (!trigger) return;
+
+                e.stopPropagation();
+
+                // --- Collect extra classes (exclude alignment classes) ---
+                let extraClasses = [];
+                trigger.classList.forEach(cls => {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                        extraClasses.push(cls);
+                    }
+                });
+
+                // --- Read data attributes (trim strings) ---
+                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
+                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
+                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
+                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
+                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
+                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
+                const rawHeight = trigger.dataset.height || 'auto';
+                const rawWidth = trigger.dataset.width || 'auto';
+
+                const rect = trigger.getBoundingClientRect();
+                const bodyStyles = window.getComputedStyle(document.body);
+                const padding = Math.max(24, window.innerWidth * 0.04);
+                const extra = 22;
+
+                const addPxIfNumber = (value) => {
+                    if (!isNaN(value) && value !== '') return value + 'px';
+                    return value;
+                };
+
+                if (top !== undefined) top = addPxIfNumber(top);
+                if (left !== undefined) left = addPxIfNumber(left);
+                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
+                if (right !== undefined) right = addPxIfNumber(right);
+
+                let height = addPxIfNumber(rawHeight);
+                let width = addPxIfNumber(rawWidth);
+
+                // --- Special positioning handling (center, @, 100% 100%) ---
+                if (position !== 'absolute') {
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
+
+                    if (top === 'center') {
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
+                            top = centerTop + 'px';
+                        } else {
+                            top = '50%';
+                        }
+                    }
+                    if (left === 'center') {
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
+                            left = centerLeft + 'px';
+                        } else {
+                            left = '50%';
+                        }
+                    }
+                }
+
+                // --- Clamping for normal positioning ---
+                let maxHeight = null;
+                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
+                if (!measurementModes.includes(position.toLowerCase())) {
+                    const pageElement = trigger.closest('.page');
+
+                    if (pageElement) {
+                        const pageRect = pageElement.getBoundingClientRect();
+                        const innerPadding = 10;
+
+                        let topPx = toPixels(top, 'height');
+                        let leftPx = toPixels(left, 'width');
+                        let widthPx = toPixels(width, 'width');
+                        let heightPx = toPixels(height, 'height');
+
+                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
+                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
+
+                        // clamp top/left
+                        if (!isNaN(topPx) && totalH !== null) {
+                            let newTop = topPx;
+                            const minTop = pageRect.top + innerPadding;
+                            const maxTop = pageRect.bottom - totalH - innerPadding;
+                            if (newTop < minTop) newTop = minTop;
+                            if (newTop > maxTop) newTop = maxTop;
+                            if (newTop !== topPx) {
+                                top = newTop + 'px';
+                                topPx = newTop;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            let newLeft = leftPx;
+                            const minLeft = pageRect.left + innerPadding;
+                            const maxLeft = pageRect.right - totalW - innerPadding;
+                            if (newLeft < minLeft) newLeft = minLeft;
+                            if (newLeft > maxLeft) newLeft = maxLeft;
+                            if (newLeft !== leftPx) {
+                                left = newLeft + 'px';
+                                leftPx = newLeft;
+                            }
+                        }
+                        // overflow handling
+                        if (!isNaN(topPx) && totalH !== null) {
+                            const availableHeight = pageRect.bottom - topPx - innerPadding;
+                            if (totalH > availableHeight) {
+                                maxHeight = availableHeight - extra;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            const availableWidth = pageRect.right - leftPx - innerPadding;
+                            if (totalW > availableWidth) {
+                                const newContentWidth = Math.max(0, availableWidth - extra);
+                                width = newContentWidth + 'px';
+                            }
+                        }
+                    }
+                }
+
+                // --- Prepare remaining parameters ---
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
+                const animation = trigger.dataset.animation || 'fade';
+                const textAlign = trigger.dataset.textalign || 'left';
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
+
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
+
+                if (isCurrentlyOpen) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                } else {
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
+                        requestAnimationFrame(() => {
+                            const t = document.getElementById('BubbleText');
+                            if (t && t.classList.contains('show')) t.scrollTop;
+                        });
+                    };
+                    if (document.fonts) {
+                        document.fonts.ready.then(showBubbleText);
+                    } else {
+                        showBubbleText();
+                    }
+                }
+
+            } catch (err) {
+                console.error('Error in click listener:', err);
+            }
+        });
+
+        // ==================== BubbleText INSIDE CLICK close START ====================================
+        document.addEventListener('click', function(e) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
+                e.stopPropagation(); // prevent interfering with other listeners
+                toggleBubbleText('', '', '', '', '', 'no');
+            }
+        });
+        // ==================== BubbleText INSIDE CLICK close END ====================================
+
+        // BUBBLETEXT LISTENER END ===================================================================
+
 
         // ==================== IMAGE CAPTION LISTENER ===============================================================
         // This code enables mobile‑friendly behavior for image captions:
@@ -2674,6 +2536,7 @@ tip_string = """ <clickwordC=  |  |
         <li>For Next Page, click on right margin.</li>
         <li>Margins are 15% for your browser width.</li>
         <span style='line-height: 2.4em'>
+            <li>Click <span class='glassbtn'> 📚 </span> at top left fof the Table of contents page only. Link to list of books</li>
             <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
             <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
             <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
@@ -2687,20 +2550,12 @@ tip_string = """ <clickwordC=  |  |
         <li>Click on the Popup to make it go away.</li>
         </ul>
     "><br>
-    <span style="font-size: .8em;"><paraitalicC=\'( click here for navigation tips )\'></span>
+    <span style="font-size: .8em; text-align: center;"><paraitalicC=\'( click here for navigation tips )\'></span>
 """
 
-def rep_mdate(content):
-    """Replace _getMdate("filename") patterns with actual modification dates (case-insensitive)"""
-    def replace_mdate(match):
-        filename = match.group(1)
-        date_value = get_mdate(filename)
-        # Simple approach using opacity for lighter appearance
-        return f'<span style="font-size: 0.8em; color: {CONFIG["BkFontColor"]}; opacity: 0.65;">{date_value}</span>'
-    
-    pattern = r'_getMdate\("([^"]+)"\)'
-    return re.sub(pattern, replace_mdate, content, flags=re.IGNORECASE)
+#   CLEAN_UP START =============================================================================================
 
+# a sort of search and replace pre-compiler
 def pre_clean(content):
     
     DT = 5.5; DL = 6.5; BOTTOM_GAP= 0   # gap from page bottom in vh
@@ -2760,22 +2615,15 @@ def pre_clean(content):
     # ClickwordInline: converts <ClickwordInline='content'> into a div with both margins
 
     def replace_clickwordinline(match):
-        # match.group(2) is the content inside quotes (single or double)
-        content_text = match.group(2).strip()
-        
+
+        content_text = match.group(2).strip()     
         # Process any <clickword0> tags inside the content
         def replace_inner_clickword(m):
             a = m.group(1).strip()
             b = m.group(2).strip()
             inner_content = m.group(3) or m.group(4) or m.group(5)
-            return f'<BBL-Txt="<ClickMe_icon>", ":[ | | |{a}%| {b}% | | | center-both | left ]{inner_content}">'
-        
-        content_text = re.sub(
-            r'<\s*clickword0\s*=\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*(?:"([^"]*)"|\'([^\']*)\'|([^>]+?))\s*>',
-            replace_inner_clickword,
-            content_text,
-            flags=re.IGNORECASE
-        )
+            return f'<BBL-Txt="<ClickMe_icon>", ":[ | | |{a}%| {b}% | | | center-both | left ]{inner_content}">'  
+        content_text = re.sub( r'<\s*clickword0\s*=\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*(?:"([^"]*)"|\'([^\']*)\'|([^>]+?))\s*>', replace_inner_clickword, content_text, flags=re.IGNORECASE )
         
         # Hardcode both margins (left and right) and an empty class (so you can add later)
         margin = f'margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; '
@@ -2860,19 +2708,13 @@ def pre_clean(content):
     content = re.sub( r'<\s*clipbookmark(?:\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^>]+?)))?\s*>',
         lambda m: ( f'<DPosition=\':[ both | ] <a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>'
             + (f' <span class="glassbtnlbl">{(m.group(1) or m.group(2) or m.group(3)).strip()}</span>' if m.group(1) or m.group(2) or m.group(3) else '')
-            + f'\'>'
-        ), content, flags=re.IGNORECASE )
+            + f'\'>'), content, flags=re.IGNORECASE )
 
     # convert <IMAGEATR="label","URL"> 
     content = re.sub(
         r'<\s*imageatr\s*=\s*(.*?)\s*[,|]\s*(.*?)\s*>',
         lambda m: '<DPosition=\':[ both | ] <a href="{}" rel="noopener noreferrer"><span class="glassbtn">📸</span></a>&nbsp;<span class="glassbtnlbl";>{}</span>\'>'.format(
-            m.group(2).strip(' "\''),
-            m.group(1).strip(' "\'')
-        ),
-        content,
-        flags=re.IGNORECASE | re.DOTALL
-    )
+            m.group(2).strip(' "\''), m.group(1).strip(' "\'') ), content,flags=re.IGNORECASE | re.DOTALL )
     
     # replace <FOOTER=xxx>
     content = re.sub(r'<\s*FOOTER\s*=\s*(["\']?)([^>\'"]*)\1\s*>', "<DPosition=':[ both | glassbtnlbl ] \\2'>", content, flags=re.IGNORECASE | re.DOTALL)
@@ -2999,27 +2841,24 @@ def pre_clean(content):
 
     return content
 
-
+# This makes sure the the propoer repalcements occur in tip_string so the tip-string bubbletext can be formed.
 tip_string = pre_clean(tip_string)
 
 
 def clean_content(content):
-    """Clean content while perfectly preserving paragraph content, processing fonts, and cleaning markdown"""
+    """Clean content while perfectly preserving paragraph content, processing tables, and cleaning markdown"""
+    # The clean_content function processes a block of HTML content (converted from markdown) to prepare it for final page assembly. It performs the following steps:
 
-    #protected_content = re.sub(r'(<font[^>]*>.*?)<br>(.*?</font>)', r'\1<!--BR_TAG-->\2', content, flags=re.DOTALL)
-    protected_content = content
-    
-    # Extract title from font tags using original matching logic
+    # - Protects certain inline elements (<p>, <x>, <div>, <span>) by temporarily replacing them with unique placeholders (<!--PARAGRAPH_N-->). 
+    #   This prevents modifications inside these tags during later steps.
+    # - Converts markdown tables to HTML tables using convert_markdown_table_to_html.
+    # - Removes markdown headings (lines containing ##) as they are not needed in the final output.
+    # - Restores the protected elements (paragraphs, divs, spans) back to their original state.
+    # - Normalizes line breaks between paragraphs: multiple consecutive newlines are replaced with a single <br><br> (two line breaks), while preserving the content inside <p> tags.
+    # - Replaces _getMdate("filename") patterns with the actual modification date of the referenced file (using rep_mdate).
+    # - Returns a tuple (None, processed_content). The first element (title) is always None because font‑tag extraction was removed (titles are now handled via <TITLE=...> in pre_clean).
+    # - The result is clean, well‑formatted HTML ready to be inserted into a page.
 
-    title_match = re.search(r'<font[^>]*>(.*?)</font>', protected_content)
-    if title_match:
-        title_content = title_match.group(1).strip()
-        # Only return title if there's actual content
-        title = title_content.replace('<!--BR_TAG-->', '<br>') if title_content else None
-    else:
-        title = None
-
-    # 2. PARAGRAPH PROTECTION (No Changes Inside)
     protected_paragraphs = []
     
     def protect_paragraphs(match):
@@ -3027,15 +2866,14 @@ def clean_content(content):
         protected_paragraphs.append(match.group(0))
         return f"<!--PARAGRAPH_{len(protected_paragraphs)-1}-->"
 
-    # Find and protect all <p> tags and <x> tags (with any attributes and content)
-    #content = re.sub(r'<p\b[^>]*>.*?</p>', protect_paragraphs, content, flags=re.DOTALL)
-    #content = re.sub( r'(<p\b[^>]*>.*?</p>|<x\b[^>]*>.*?</x>)', protect_paragraphs, content, flags=re.DOTALL )
+    # This regular expression substitution finds all occurrences of the following HTML elements (with any attributes) and 
+    # their entire content (including nested tags, due to the .*? non‑greedy quantifier and re.DOTALL flag which makes . match newlines):
+    # <p ...>...</p>     <x ...>...</x>     <div ...>...</div>     <span ...>...</span>
+    # For each match, it calls the protect_paragraphs function, which stores the original matched string in a list (protected_paragraphs) 
+    # and returns a unique placeholder like <!--PARAGRAPH_0-->. This placeholder temporarily replaces the original HTML, so that later 
+    # processing steps (like line break handling) do not alter the content inside these tags. After other clean‑up operations, the
+    # placeholders are replaced back with the original tags. This protects the integrity of these elements during cleaning.
     content = re.sub( r'(<p\b[^>]*>.*?</p>|<x\b[^>]*>.*?</x>|<div\b[^>]*>.*?</div>|<span\b[^>]*>.*?</span>)', protect_paragraphs, content, flags=re.DOTALL )
-
-    # 3. ORIGINAL FONT TAG REMOVAL
-    # Remove font tags after extracting title (original behavior)
-    if title:
-        content = re.sub(r'<font[^>]*>.*?</font>', '', content, flags=re.DOTALL)
 
     # 5. TABLE PROCESSING (Original Logic)
     def process_table(match):
@@ -3043,28 +2881,26 @@ def clean_content(content):
         return convert_markdown_table_to_html(match.group(0))
 
     # Find and convert markdown tables (format: | Header | ... |)
-    content = re.sub(
-        r'(\n\|[^\n]+\|\n\|[-:|]+\|[\s\S]*?)(?=\n\n|\Z)',  # Table pattern
-        process_table,
-        content
-    )
+    content = re.sub( r'(\n\|[^\n]+\|\n\|[-:|]+\|[\s\S]*?)(?=\n\n|\Z)',  # Table pattern 
+        process_table, content )
 
-    # KEEP THIS HERE
     # Remove markdown headings (lines containing ##)
     content = re.sub(r'^.*##.*$', '', content, flags=re.MULTILINE)
 
-
     # 7. RESTORE PROTECTED PARAGRAPHS (Exactly As They Were)
-    # Put back all original paragraph tags without any changes
     for i, para in enumerate(protected_paragraphs):
         content = content.replace(f"<!--PARAGRAPH_{i}-->", para)
 
-    # 8. LINE BREAK HANDLING (Only Between Text Paragraphs)
-    # Split content by paragraphs to avoid modifying inside them
+    # This code splits the HTML content into pieces, separating complete <p>...</p> elements from everything else. It then 
+    # processes the non‑paragraph parts (text outside <p> tags) by replacing sequences of two or more newlines with a single 
+    # <br><br>, effectively converting blank lines into line breaks. Paragraphs themselves are left untouched. Finally, it 
+    # reassembles the pieces into a single string, ensuring that line breaks are normalized only outside of paragraph tags. 
+    # This preserves the structure of existing paragraphs while improving the layout of plain text.
+
     parts = re.split(r'(<p\b[^>]*>.*?</p>)', content, flags=re.DOTALL)
     processed_parts = []
     
-    for i, part in enumerate(parts):
+    for part in parts:
         if not part.startswith('<p') or not part.endswith('</p>'):
             # Only process non-paragraph parts
             # Split into paragraphs (separated by 2+ newlines)
@@ -3082,14 +2918,15 @@ def clean_content(content):
     # 9. REPLACE _getMdate PATTERNS WITH ACTUAL DATES
     processed_content = rep_mdate(processed_content)
 
-    return title, processed_content.strip()
+    # No title extracted from font tags – always return None for title
+    return processed_content.strip()
 
 def collapse_consequtive_blank_lines(html):
+    # remove multiple <br>'s or newlines.
     # Normalize line endings first
-    html = html.replace('\r\n', '\n')
-    
     # Pattern: closing </div> followed by any whitespace (including newlines) and then two or more <br> tags or three+ newlines
     # Replace with </div> + a single newline + a single <br> (or just two newlines)
+    html = html.replace('\r\n', '\n')
     
     # Case 1: Two or more <br> tags after the div
     html = re.sub(r'(</div>)\s*(<br\s*/?>\s*){2,}', r'\1<br>', html, flags=re.IGNORECASE)
@@ -3099,6 +2936,96 @@ def collapse_consequtive_blank_lines(html):
     
     return html
 
+def process_markdown(content):
+    # The process_markdown function is the core routine that converts the markdown content (after pre‑processing) 
+    # into a list of HTML page strings. It does the following:
+    #   - Calls pre_clean(content) – applies a series of regex substitutions to convert custom tags (e.g., <CHAPTER=...>, 
+    #       <IMAGE=...>, <ParaitalicL=...>) into standard HTML or intermediate markers.
+    #   - Removes everything before the first page break using remove_before_page_break_flexible(content) – ensures the 
+    #       content starts at the first <div style="break-after: page;"></div>.
+    #   - Optionally generates a TOC page (if TOC_ENABLE is True) by calling generate_toc(content).
+    #   - Splits the content at each page‑break div using re.split(r'(?=<div style="break-after: page;"></div>)', content).
+    #   - Filters out empty sections (whitespace‑only).
+    #   - For each section (page), it:
+    #       - Removes the page‑break div itself.
+    #       - Converts inline image syntax (![[...]]) with convert_inline_images.
+    #       - Cleans the content (removes markdown headings, normalises line breaks, etc.) with clean_content.
+    #       - Builds the final page HTML using build_page_html (passing None for image, description, and title).
+    #   - Inserts the TOC page at the configured position (TOC_POSITION).
+    #   - Returns the list of page HTML strings.
+    # This function essentially orchestrates the entire transformation from pre‑processed markdown to a 
+    # collection of ready‑to‑assemble pages.
+
+    """ REPLACE HTML TAGS WITH KEYWORDS"""
+    content = pre_clean(content)
+
+    """Process markdown content and return list of page HTMLs. Uses <div style="break-after: page;"></div> as page separator."""
+    pages = []
+
+    # remove everything before 1st page break
+    content = remove_before_first_page_break(content)
+
+    # Generate TOC if enabled
+    toc_html = generate_toc(content) if CONFIG['TOC_ENABLE'] else None
+    
+    try:
+        # Split the entire content by the page break div
+        page_sections = re.split(r'(?=<div style="break-after: page;"></div>)', content)
+        
+        # Filter out any empty sections
+        page_sections = [section.strip() for section in page_sections if section.strip()]
+
+        # Process each section as a separate page
+        for counter, section_content in enumerate(page_sections, 1):
+            # Remove the page break div from the start of the content, if it exists
+            cleaned_section = re.sub(r'^<div style="break-after: page;"></div>', '', section_content)
+            
+            # Convert inline images to HTML while preserving their position
+            processed_content = convert_inline_images(cleaned_section)            
+            cleaned_content = clean_content(processed_content)
+            
+            # Pass None for image_filename and description to avoid main image container
+            page_html = build_page_html(counter, None, None, cleaned_content)            
+            if page_html:
+                pages.append(page_html)
+                
+        # Insert TOC at configured position
+        if toc_html:
+            insert_pos = min(CONFIG['TOC_POSITION'], len(pages))
+            pages.insert(insert_pos, toc_html)
+            
+    except Exception as e:
+        logging.error(f"Markdown processing failed: {str(e)}")
+        raise
+        
+    return pages
+
+def remove_before_first_page_break(input_string):
+    # The remove_before_first_page_break function strips away everything in a string that appears before 
+    # the first occurrence of a page‑break <div> (i.e., <div style="break-after: page;"></div>). It uses a 
+    # flexible regular expression to match the div regardless of whitespace or case. If the pattern is found, 
+    # it returns the substring starting at that div (including the div itself). If no page break is found, 
+    # it returns the original string unchanged. This is used to discard any content (like a header or title) 
+    # that might appear before the first explicit page break in the markdown source, ensuring that the book’s 
+    # content starts at the first page break. i.e Returns str: The string content starting from the page break div
+
+    # Pattern that matches the div with possible whitespace variations
+    pattern = re.compile(r'<div\s+style\s*=\s*["\']break-after:\s*page;["\']\s*>\s*</div>', re.IGNORECASE)
+    
+    # Search for the pattern in the string
+    match = pattern.search(input_string)
+    
+    if match:
+        # Return everything from the start of the match onward
+        return input_string[match.start():]
+    
+    # If the target string is not found, return the original string
+    # or empty string depending on your preference
+    return input_string  # or return "" if you want empty when not found
+
+#   CLEAN_UP END ===================================================================================================
+
+#   CONVERTIONS FUNCTIONS START ====================================================================================
 def convert_markdown_table_to_html(markdown_table):
     """Convert markdown table to HTML with proper URL handling"""
     def convert_urls(text):
@@ -3149,260 +3076,19 @@ def convert_markdown_table_to_html(markdown_table):
     return f'<div class="table-container"><table>{header_html}<tbody>{"".join(body_rows)}</tbody></table></div>'
 
 
-
-def page_num_toc(main_string, substring_to_count, search_text):
-    """
-    Counts the number of times a substring (now the page break div) appears in a larger string,
-    but only up to a specific search text (the heading).
-
-    Args:
-        main_string (str): The string to be searched.
-        substring_to_count (str): The substring to be counted (ignored, we use the div).
-        search_text (str): The text that acts as the cutoff point for the search.
-
-    Returns:
-        int: The number of times the page break div was found before the heading.
-    """
-    # We ignore the passed-in 'substring_to_count' and instead count page breaks
-    page_break_pattern = r'<div style="break-after: page;"></div>'
-    
-    search_text_index = main_string.find(search_text)
-
-    if search_text_index == -1:
-        # If the search text is not found, count all page breaks in the string
-        return len(re.findall(page_break_pattern, main_string))
-    else:
-        # If the search text is found, count page breaks in the sliced string (content before the heading)
-        content_before_heading = main_string[:search_text_index]
-        return len(re.findall(page_break_pattern, content_before_heading))
-
-
-
-def generate_toc(content):
-    """Generate table of contents with book title header"""
-    toc_entries = []
-    
-    headings = re.findall(r'^(#+)\s+(.+)$', content, re.MULTILINE)
-    
-    for level, title in headings:
-        if level == '#':  # Skip H1
-            continue
-            
-        indent = (len(level) - 2) * 20
-
-        # page_num = page_num_toc(content, '![[', '## '+title)
-        page_num = page_num_toc(content, 'dummy_string', '## '+title)
-        href = f'#page-{page_num}'
-
-
-        if CONFIG['TOCasList']:
-            # List style TOC
-            toc_entries.append(
-                f'<div class="toc-entry" style="margin-left: {indent}px;">'
-                f'<a href="{href}" class="toc-link" style="display: flex; justify-content: space-between;">'
-                f'<span>{title.strip()}</span>'
-                f'<span>{page_num}</span>'
-                f'</a>'
-                f'</div>'
-            )
-        else:
-            # Button style TOC - Horizontal layout with CSS gap
-            toc_entries.append(
-                f'<a href="{href}" class="glassbtn compact-button toc-link">'
-                f'{title.strip() + "(" + f"{page_num}" + ")"}'
-                f'</a>'
-            )
-    
-    if not toc_entries:
-        return None
-    
-    # Add booklist link button if enabled
-    booklist_button = ''
-    if CONFIG['TOC_ENABLE'] and CONFIG['BkListLink_show'] == 1:
-        url = CONFIG['BkLinkURL']
-        if not url.startswith(('http://', 'https://')):
-            url = f'https://{url}'
-            
-        # ORIGINAL <button onclick="window.open('{url}', '_blank')" class="back-to-list">
-        booklist_button = f"""
-        <button onclick="window.open('{url}', '_self')" class="back-to-list">
-            AboutMe
-        </button>
-        """
-    
-    book_title = f'<div class="book-title">{CONFIG["BkPage0_Title"]}</div>'
-    
-    # Determine container class based on TOC style
-    container_class = "toc-list" if CONFIG['TOCasList'] else "toc-buttons"
-
-    
-    return f"""
-    <div class="page" id="page-toc">
-        <div class="page-content">
-            {book_title}
-            <div class="toc-container {container_class}">
-                <h2>{CONFIG["TOC_TITLE"]}</h2>
-                {booklist_button}
-                <div class="toc-button-container">
-                    {"".join(toc_entries)}
-                </div>
-            </div>
-            <br>
-            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
-            <br>
-            {tip_string}
-        </div>
-    </div>
-    """
-
-
-def build_page_html(counter, image_filename, description, title, content):
-    """Build HTML for a single page with image description (BubbleText and pop-up)"""
-    page_id = f"page-{counter}" if counter != "toc" else "page-toc"
-    
-    # Book title for non-cover pages
-    book_title = ''
-    
-    # Title styling - # always empty – title now lives in .page-header
-    if title and title.strip():
-        styled_title = f'<span style="font-size: {CONFIG["TitleFontSize"]}">{title}</span>'
-        title_part = f'<p><span class="highlight-text">{styled_title}</span></p>'
-    else:
-        title_part = ''
-    
-    # Image with BubbleText AND pop-up caption
-    image_html = ''
-    caption_popup = ''
-    
-    if image_filename:
-        # BubbleText (title attribute)
-        # to get BubbleText uncomment these lines
-        #title_attr = f' title="{escape(description)}"' if description else ""
-        #image_html = f'<img src="{escape(image_filename)}" alt="Image {counter}"{title_attr}>'
-        image_html = f'<img src="{escape(image_filename)}" alt="Image {counter}">'
-
-        # Pop-up caption box (only if description exists)
-        if description:
-            caption_popup = f'''
-            <div class="image-caption-popup">
-                {escape(description)}
-            </div>
-            '''
-    
-    # Content with mobile-responsive sizing
-    styled_content = f'''
-    <div class="content-text" 
-         style="font-size: {CONFIG["BkFontSize"]};
-                --mobile-font-size: {CONFIG["BkFontSizeMobile390"]}">
-        {content}
-    </div>
-    '''
-    
-    # Page assembly
-    if image_filename:
-        position = 'right' if counter % 2 else 'left'
-        return f"""
-        <div class="page" id="{page_id}">
-            <div class="page-content">
-                {book_title}
-                <div class="image-container {position}">
-                    {image_html}
-                    {caption_popup}
-                    {title_part}
-                    {styled_content}
-                </div>
-            </div>
-        </div>
-        """
-    else:
-        return f"""
-        <div class="page" id="{page_id}">
-            <div class="page-content">
-                {book_title}
-                <div class="text-only-container">
-                    {title_part}
-                    {styled_content}
-                </div>
-            </div>
-        </div>
-        """
-
-    
-
-def remove_before_page_break_flexible(input_string):
-    """
-    More flexible version that handles potential whitespace variations.
-    Removes everything from a string before the first occurrence of the page break div.
-    
-    Args:
-        input_string (str): The input string to process
-        
-    Returns:
-        str: The string content starting from the page break div
-    """
-    import re
-    
-    # Pattern that matches the div with possible whitespace variations
-    pattern = re.compile(r'<div\s+style\s*=\s*["\']break-after:\s*page;["\']\s*>\s*</div>', re.IGNORECASE)
-    
-    # Search for the pattern in the string
-    match = pattern.search(input_string)
-    
-    if match:
-        # Return everything from the start of the match onward
-        return input_string[match.start():]
-    
-    # If the target string is not found, return the original string
-    # or empty string depending on your preference
-    return input_string  # or return "" if you want empty when not found
-
-
-# Image Syntax Options: ![[ filename | description | size | alignment ]]
-# # 
-# ![[image.jpeg]] - Just filename
-# ![[image.jpeg | Beautiful sunset]] - Filename + description
-# ![[image.jpeg | | 300px]] - Filename + pixel size
-# ![[image.jpeg | | 50%]] - Filename + percentage size
-# ![[image.jpeg | | 400x300]] - Filename + dimensions
-# ![[image.jpeg | | 300]] - Filename + auto-px size
-# ![[image.jpeg | | | center]] - Filename + center alignment
-# ![[image.jpeg | | | left]] - Filename + left alignment
-# ![[image.jpeg | | | right]] - Filename + right alignment
-# ![[image.jpeg | Sunset | 300px]] - Filename + description + pixel size
-# ![[image.jpeg | Landscape | 50%]] - Filename + description + percentage size
-# ![[image.jpeg | Portrait | 400x300]] - Filename + description + dimensions
-# ![[image.jpeg | Photo | 300]] - Filename + description + auto-px size
-# ![[image.jpeg | Sunset | | center]] - Filename + description + center alignment
-# ![[image.jpeg | Landscape | | left]] - Filename + description + left alignment
-# ![[image.jpeg | Portrait | | right]] - Filename + description + right alignment
-# ![[image.jpeg | | 300px | center]] - Filename + pixel size + center alignment
-# ![[image.jpeg | | 50% | left]] - Filename + percentage size + left alignment
-# ![[image.jpeg | | 400x300 | right]] - Filename + dimensions + right alignment
-# ![[image.jpeg | | 300 | center]] - Filename + auto-px size + center alignment
-# ![[image.jpeg | Beautiful sunset | 300px | center]] - All parameters: centered
-# ![[image.jpeg | Landscape view | 50% | left]] - All parameters: left aligned
-# ![[image.jpeg | Portrait photo | 400x300 | right]] - All parameters: right aligned
-# ![[image.jpeg | Nature scene | 300 | center]] - All parameters: auto-px + centered
-# ![[image.jpeg | | 50%x200px | center]] - 50% width, 200px height, centered
-# ![[image.jpeg | | 300pxx50% | left]] - 300px width, 50% height, left aligned
-# ![[image.jpeg | | 80%x60% | right]] - 80% width, 60% height, right aligned
-# ![[image.jpeg ||300px|]] - No description, 300px size, default alignment
-# ![[image.jpeg |Description||] - Description, default size, default alignment
-# ![[image.jpeg |||center]] - No description, default size, centered
-# 
-# 300px - Fixed pixels
-# 50% - Percentage width
-# 400x300 - Width × Height
-# 400 - Auto-convert to pixels
-# Alignment Options:
-# 
-# center - Centered
-# left - Left aligned, text wraps right
-# right - Right aligned, text wraps left
-# All parameters are optional except the filename! Use empty | placeholders to skip parameters.
-
 def convert_inline_images(content):
     """Fixed parser that handles alignment correctly with px and % size support"""
+    # The convert_inline_images function transforms custom image syntax ![[ ... ]] into HTML that displays an 
+    # image with an optional caption popup. It parses the pipe‑separated fields inside the brackets:
+    #   - Filename (required) – path to the image.
+    #   - Description (optional) – text shown in a popup when hovering over the image.
+    #   - Size specification (optional) – can be a percentage (e.g., 50%), pixel value (e.g., 300px or 300), 
+    #       or dimensions like 400x300.
+    #   - Alignment (optional) – left, right, or center; defaults to left.
+    # It generates a <div class="image-container"> with an alignment class (e.g., image-align-left). 
+    # Inside, it places an <img> tag (with inline width/height from the size spec) and, if a description exists, 
+    # a <div class="image-caption-popup"> containing that description. The resulting HTML is ready to be embedded 
+    # in a page. This parser is used during markdown processing to handle inline images with advanced options.
     
     def replace_image(match):
         image_match = match.group(0)
@@ -3478,76 +3164,268 @@ def convert_inline_images(content):
     
     return re.sub(r'!\[\[.*?\]\]', replace_image, content)
 
+#   CONVERTIONS FUNCTIONS END ======================================================================================
 
-def process_markdown(content):
+#   Get PAGE NUM START =============================================================================================
+def page_num_toc(main_string, substring_to_count, search_text):
+    # The page_num_toc function determines the page number (0‑based index) where a specific heading 
+    # (e.g., ## Introduction) appears in the markdown content. It does this by:
+    #   - Counting how many page‑break divs (<div style="break-after: page;"></div>) occur before the heading.
+    #   - If the heading is not found, it returns the total number of page breaks in the entire content (which 
+    #       corresponds to the last page index).
+    #The function ignores its second parameter (substring_to_count) and always uses a fixed pattern to match 
+    # page breaks. The result is used in generate_toc to create links that jump to the correct page 
+    # when a TOC entry is clicked.
+    #Returns:        int: The number of times the page break div was found before the heading.
+    # We ignore the passed-in 'substring_to_count' and instead count page breaks 
 
-    """ REPLACE HTML TAGS WITH KEYWORDS"""
-    content = pre_clean(content)
-
-    """Process markdown content and return list of page HTMLs. Uses <div style="break-after: page;"></div> as page separator."""
-    pages = []
-
-    # remove everything before 1st page break
-    content = remove_before_page_break_flexible(content)
-
-    # Generate TOC if enabled
-    toc_html = generate_toc(content) if CONFIG['TOC_ENABLE'] else None
+    page_break_pattern = r'<div style="break-after: page;"></div>'
     
-    try:
-        # Split the entire content by the page break div
-        page_sections = re.split(r'(?=<div style="break-after: page;"></div>)', content)
-        
-        # Filter out any empty sections
-        page_sections = [section.strip() for section in page_sections if section.strip()]
-        
-        logging.debug(f"Found {len(page_sections)} page sections using break-after div")
+    search_text_index = main_string.find(search_text)
 
-        # Process each section as a separate page
-        for counter, section_content in enumerate(page_sections, 1):
-            # Remove the page break div from the start of the content, if it exists
-            cleaned_section = re.sub(r'^<div style="break-after: page;"></div>', '', section_content)
-            
-            # Convert inline images to HTML while preserving their position
-            processed_content = convert_inline_images(cleaned_section)
-            
-            title, cleaned_content = clean_content(processed_content)
-            
-            # Pass None for image_filename and description to avoid main image container
-            page_html = build_page_html(counter, None, None, title, cleaned_content)
-            
-            if page_html:
-                pages.append(page_html)
-                
-        # Insert TOC at configured position
-        if toc_html:
-            insert_pos = min(CONFIG['TOC_POSITION'], len(pages))
-            pages.insert(insert_pos, toc_html)
-            
-    except Exception as e:
-        logging.error(f"Markdown processing failed: {str(e)}")
-        raise
-        
-    return pages
-
-def get_mdate(fname):
-    # Get source file modification date
-    script_dir = Path(__file__).parent
-    source_md_path = resolve_relative_path(fname, script_dir)
-    if source_md_path.exists():
-        mod_time = datetime.fromtimestamp(source_md_path.stat().st_mtime)
-        #last_modified = mod_time.strftime('%B %d, %Y at %I:%M %p')
-        last_modified = mod_time.strftime('%b %d, %Y')
+    if search_text_index == -1:
+        # If the search text is not found, count all page breaks in the string
+        return len(re.findall(page_break_pattern, main_string))
     else:
-        last_modified = "Unknown date"
+        # If the search text is found, count page breaks in the sliced string (content before the heading)
+        content_before_heading = main_string[:search_text_index]
+        return len(re.findall(page_break_pattern, content_before_heading))
+    
+#   Get PAGE NUM START =============================================================================================
 
-    return last_modified
+
+#   BUILD PAGES START =============================================================================================
+def generate_toc(content):
+    """Generate table of contents with book title header"""
+    # The generate_toc function creates the HTML for the Table of Contents page. It scans the markdown c
+    # ontent for headings (##, ###, etc.), skips level‑1 headings (#), and for each heading it calculates 
+    # the page number (using page_num_toc which counts page breaks before the heading). Based on the 
+    # configuration flag TOCasList, it builds either a vertical list (.toc-entry) or a horizontal button 
+    # bar (.compact-button). It also adds an optional “AboutMe” button (if BkListLink_show is true) and 
+    # appends a tip_string (navigation tips) separated by a horizontal rule. The resulting HTML is wrapped 
+    # in a .page container with id page-toc and a .page-content wrapper for consistent scrolling. This 
+    # function is called only if TOC_ENABLE is true.
+
+    toc_entries = []
+    
+    headings = re.findall(r'^(#+)\s+(.+)$', content, re.MULTILINE)
+
+    # This code loops through all markdown headings found in the content (e.g., ## Title). Each heading is represented 
+    # by a tuple (level, title), where level is the string of hash symbols (e.g., '#', '##', '###') and title is the 
+    # heading text. The condition if level == '#': continue skips any heading that is a level‑1 heading (single #). 
+    # This ensures that the TOC (Table of Contents) only includes H2 and deeper headings, ignoring the main document 
+    # title (which is typically an H1).    
+
+    for level, title in headings:
+        if level == '#':  # Skip H1
+            continue
+            
+        indent = (len(level) - 2) * 20
+
+        # This code calculates the page number where a given markdown heading (## title) appears, and constructs a 
+        # URL fragment (e.g., #page-3) to link to that page in the Table of Contents.
+        #   - page_num_toc(content, 'dummy_string', '## '+title) scans the content to count how many page‑break 
+        #       divs (<div style="break-after: page;"></div>) occur before the heading. This number is the page 
+        #       index (0‑based) where that heading starts.
+        #   - The resulting page_num is then used to create the href attribute: #page-{page_num}. This fragment 
+        #       matches the id of the corresponding page element (e.g., <div id="page-3">), allowing the TOC 
+        #       link to jump directly to that page when clicked.
+        # The dummy_string argument is ignored because page_num_toc uses a fixed pattern for page breaks, not 
+        #       the substring parameter. This function effectively maps headings to their page numbers for navigation.
+
+        # The variable title in the loop contains the text of the markdown heading (excluding the leading # symbols). For example:
+        #   - ## Introduction → title = "Introduction"
+        #   - ### Detailed Analysis → title = "Detailed Analysis"
+        #   - Main Title → title = "Main Title" (but this is skipped because level == '#')
+        # It is then used to build the Table of Contents entry: the heading text appears as the link label, and it is 
+        # also passed to page_num_toc to find the corresponding page number.
+
+        page_num = page_num_toc(content, 'dummy_string', '## '+title)
+        href = f'#page-{page_num}'
+
+        # sets up the button or the list with the associated Href's
+        if CONFIG['TOCasList']:
+            # List style TOC
+            toc_entries.append(
+                f'<div class="toc-entry" style="margin-left: {indent}px;">'
+                f'<a href="{href}" class="toc-link" style="display: flex; justify-content: space-between;">'
+                f'<span>{title.strip()}</span>'
+                f'<span>{page_num}</span>'
+                f'</a>'
+                f'</div>'
+            )
+        else:
+            # Button style TOC - Horizontal layout with CSS gap
+            toc_entries.append(
+                f'<a href="{href}" class="glassbtn compact-button toc-link">'
+                f'{title.strip() + "(" + f"{page_num}" + ")"}'
+                f'</a>'
+            )
+    
+    if not toc_entries:
+        return None
+    
+    # Build the back‑to‑list button (if enabled)
+    back_to_list_html = ''
+    if CONFIG['TOC_ENABLE'] and CONFIG['BkListLink_show']:
+        url = CONFIG['BkLinkURL']
+        if not url.startswith(('http://', 'https://')):
+            url = f'https://{url}'
+        back_to_list_html = f'''
+        <div class="toc-header-left">
+            <a href="{url}" target="_self" class="glassbtn compact-button">
+                📚
+            </a>
+        </div>
+        '''
+    
+    book_title = f'<div class="book-title">{CONFIG["BkPage0_Title"]}</div>'
+    
+    # Determine container class based on TOC style
+    container_class = "toc-list" if CONFIG['TOCasList'] else "toc-buttons"
+
+    # This code returns the HTML for the Table of Contents page. It constructs a <div class="page" id="page-toc"> that contains:
+    #   - A .page-content wrapper (for consistent scrolling and styling).
+    #   - A {book_title} (usually the book title, placed inside the page content).
+    #   - A .toc-container whose class depends on container_class (e.g., toc-list or toc-buttons), which controls the TOC layout.
+    #   - An <h2> displaying the TOC title from the configuration (CONFIG["TOC_TITLE"]).
+    #   - An optional {back_to_list_html} (e.g., an "AboutMe" button) if enabled.
+    #   - A <div class="toc-button-container"> containing all the TOC entries (the toc_entries list joined into a single string).
+    #   - A horizontal rule (<hr>) with a thin, semi‑transparent line.
+    #   - A {tip_string} that typically contains navigation tips (e.g., how to use the book).
+    #   The entire block is wrapped in the .page-content to ensure it scrolls properly and maintains the same glass‑panel 
+    # appearance as other pages. This function is called by generate_toc() when TOC_ENABLE is true, and the resulting HTML 
+    # is inserted into the list of pages.
+
+    return f"""
+    <div class="page" id="page-toc">
+        <div class="page-content">
+            <div class="toc-header-row">
+                {back_to_list_html}
+                <div class="book-title">{CONFIG["BkPage0_Title"]}</div>
+            </div>
+            <div class="toc-container {container_class}" style="margin-top: 20px;">
+                <h2>{CONFIG["TOC_TITLE"]}</h2>
+                <div class="toc-button-container">
+                    {"".join(toc_entries)}
+                </div>
+            </div>
+            ...
+        </div>
+    </div>
+    """
 
 
+def build_page_html(counter, image_filename, description, content):
+    """Build HTML for a single page with image description (BubbleText and pop-up)"""
+    # The build_page_html function generates the HTML for a single content page (or the TOC page) of the book. 
+    # It takes five parameters:
+
+    #   - counter – the page number (1‑based for content pages, or "toc" for the Table of Contents page).
+    #   - image_filename – optional path to an image that will appear on the page.
+    #   - description – optional text for a pop‑up caption that appears when hovering over the image.
+    #   - title – an optional title extracted from the markdown (now always None, since font‑tag titles are no longer used).
+    #   - content – the main HTML content of the page.
+    # What it does:
+    #   - Determines the page id – e.g., page-1, page-2, or page-toc.
+    #   - Sets an empty book_title – because the book title is now placed in the .page-header by JavaScript.
+    #   - Creates a title_part – if a title is provided, it wraps it in a highlighted <span>; otherwise empty.
+    #   - Builds image and caption HTML – if image_filename is provided, it creates an <img> tag and, if a description exists, 
+    #       a .image-caption-popup div.
+    #   - Wraps the content in a .content-text div with responsive font‑size variables.
+    #   - Assembles the final page – depending on whether an image exists, it uses either an .image-container 
+    #       (with left/right alignment based on counter % 2) or a .text-only-container. Both containers are placed inside 
+    #       a .page-content div, which itself is inside the .page wrapper.
+    # The returned HTML is a complete .page element ready to be added to the list of pages. This function is called for each markdown section (page) after conversion.
+
+    """Build HTML for a single page with image description (BubbleText and pop-up)"""
+    page_id = f"page-{counter}" if counter != "toc" else "page-toc"
+    
+    # Book title for non-cover pages (now handled by .page-header in JavaScript)
+    book_title = ''
+    
+    # Title part is no longer used (titles are now in .page-header)
+    title_part = ''
+    
+    # Image with BubbleText AND pop-up caption
+    image_html = ''
+    caption_popup = ''
+    
+    if image_filename:
+        image_html = f'<img src="{escape(image_filename)}" alt="Image {counter}">'
+        if description:
+            caption_popup = f'''
+            <div class="image-caption-popup">
+                {escape(description)}
+            </div>
+            '''
+    
+    # Content with mobile-responsive sizing
+    styled_content = f'''
+    <div class="content-text" 
+         style="font-size: {CONFIG["BkFontSize"]};
+                --mobile-font-size: {CONFIG["BkFontSizeMobile390"]}">
+        {content}
+    </div>
+    '''
+    
+    # Page assembly
+    if image_filename:
+        position = 'right' if counter % 2 else 'left'
+        return f"""
+        <div class="page" id="{page_id}">
+            <div class="page-content">
+                {book_title}
+                <div class="image-container {position}">
+                    {image_html}
+                    {caption_popup}
+                    {title_part}
+                    {styled_content}
+                </div>
+            </div>
+        </div>
+        """
+    else:
+        return f"""
+        <div class="page" id="{page_id}">
+            <div class="page-content">
+                {book_title}
+                <div class="text-only-container">
+                    {title_part}
+                    {styled_content}
+                </div>
+            </div>
+        </div>
+        """
 
 def build_final_html(pages):
+    # The build_final_html(pages) function assembles the complete HTML document from 
+    # the list of individual page HTML strings. It performs the following steps:
+    #   - Calculates the total number of pages – total_pages = len(pages) + (0 if CONFIG['Page0_skip'] else 1). 
+    #       This accounts for the title page (which is not in the pages list) when it exists.
+        #   - Builds the title page HTML (if Page0_skip is False) – creates a <div class="page active" id="page-0"> 
+        #       containing the book title, tag, author name, last update date, and the tip_string. 
+        #       This page is not part of the pages list.
+        #   - Prepares mobile‑specific CSS – based on the ResizeForMobile flag, it generates either 
+        #       a forced mobile‑sizing block or a fallback rule.
+        #   - Prepares a dictionary of template variables (template_vars) – these include fonts, 
+        #       colors, image widths, page numbers visibility, and the title page HTML, etc. These 
+        #       will be inserted into the HTML_TEMPLATE string.
+        #   - Formats the main HTML template – html_template = HTML_TEMPLATE.format(**template_vars) 
+        #       replaces all placeholders (e.g., {BkFontColor}, {title_page_html}) with actual values.
+        #   - Prepares the footer – replaces placeholders in FOOTER_TEMPLATE such as SLIDER_MAX, TOTALPAGES, 
+        #       INITIAL_PAGE, ARW_HOVER_WIDTH, etc., with their final values (e.g., slider max = total_pages‑1, 
+        #       initial page = 0). Also sets arrow display properties.
+        #   - Combines everything – returns html_template + '\n'.join(pages) + footer, i.e., the header/template, 
+        #       then all page HTML strings (title page already included in html_template), then the footer 
+        #       (which contains the slider, arrows, and JavaScript).
+    # The result is a complete, standalone HTML document that can be written to a file. This function is 
+    # called after all pages have been generated.
+
     """Assemble the final HTML document with responsive font scaling"""
     total_pages = len(pages) + (0 if CONFIG['Page0_skip'] else 1)
 
+    #Build Title page
     title_page_html = ''
     if not CONFIG['Page0_skip']:
         title_page_html = f"""
@@ -3558,7 +3436,7 @@ def build_final_html(pages):
                     <h2>{escape(CONFIG['BkPage0_Tag'])}</h2> 
                     <h2>{escape(CONFIG['Author_name'])}</h2> 
                     <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                        Last updated: {get_mdate(CONFIG['source_md'])}
+                        Writing Period: {get_mdate(CONFIG['source_md'])}
                     </p>
                     <h3>{escape(CONFIG['BkPage0_head3'])}</h3>
                 </div>
@@ -3567,8 +3445,12 @@ def build_final_html(pages):
         </div>
     """
 
-
-   # Prepare mobile CSS based on flag (default to False if not specified)
+    # Prepare mobile CSS based on flag (default to False if not specified)
+    # This code prepares mobile‑specific CSS rules for images and captions 
+    # based on the ResizeForMobile flag. If enabled, it forces images to a fixed 
+    # mobile width (ImageWidthMobile), centers them, disables floating, and also 
+    # centers caption popups. If disabled, it simply limits image and caption width 
+    # to the page width. It ensures proper display on small screens.
     force_mobile = CONFIG.get('ResizeForMobile', False)
     force_mobile_css = ""
     
@@ -3662,8 +3544,94 @@ def build_final_html(pages):
         html_template = html_template.replace(key, value)
     
     return html_template + '\n'.join(pages) + footer
+#   BUILD PAGES END ==================================================================================================
+
+
+#   DATE FUNCTIONS START =============================================================================================
+def get_mdate(md_file_path):
+    # The get_mdate function returns a string containing:
+    #   - The modification date of the oldest image file (.jpg, .jpeg, .png, .svg) 
+    #       found in the same directory as the markdown file, followed by a hyphen and
+    #   - The modification date of the markdown file itself.
+    # Both dates are formatted as '%b %d, %Y' (e.g., "Jan 15, 2020 - Apr 22, 2026"). 
+    # If no images are found, it returns "No images - <md_date>". If the markdown 
+    # file is missing, the second part becomes "Unknown date". This function is used 
+    # by rep_mdate to replace _getMdate("filename") placeholders with the actual 
+    # writing period (oldest image to latest markdown edit).
+    """
+    Return a string: oldest image date in the markdown's directory - markdown file date.
+    Both dates formatted as '%b %d, %Y'.
+    md_file_path should be an absolute Path object.
+    """
+    md_path = Path(md_file_path)
+    # 1. Modification date of the markdown file
+    if md_path.exists():
+        md_mod_time = datetime.fromtimestamp(md_path.stat().st_mtime)
+        md_date_str = md_mod_time.strftime('%b %d, %Y')
+    else:
+        md_date_str = "Unknown date"
+
+    # 2. Find oldest image in the same directory as the markdown file
+    img_extensions = ('.jpg', '.jpeg', '.png', '.svg')
+    img_files = []
+    if md_path.parent.exists():
+        for ext in img_extensions:
+            # case‑insensitive glob: use lower/upper or just glob with wildcard and filter
+            img_files.extend(md_path.parent.glob(f'*{ext}'))
+            img_files.extend(md_path.parent.glob(f'*{ext.upper()}'))
+        # Remove duplicates
+        img_files = list(set(img_files))
+        if img_files:
+            oldest_mtime = min(f.stat().st_mtime for f in img_files)
+            oldest_image_date = datetime.fromtimestamp(oldest_mtime)
+            oldest_image_date_str = oldest_image_date.strftime('%b %d, %Y')
+        else:
+            oldest_image_date_str = "No images"
+    else:
+        oldest_image_date_str = "No images"
+
+    return f"{oldest_image_date_str} - {md_date_str}"
+
+def rep_mdate(content):
+    # The rep_mdate function scans the content for patterns like _getMdate("filename") and replaces each occurrence 
+    # with an HTML <span> that displays the modification date of the referenced file 
+    # (formatted as '%b %d, %Y', e.g., "Apr 22, 2026"). The date is retrieved by calling get_mdate(filename), 
+    # which obtains the last modified timestamp of the file (relative to the script’s directory). The resulting span 
+    # uses the configured BkFontColor and a reduced opacity for a subtle appearance. This function is typically 
+    # called inside clean_content to dynamically insert file dates into the final HTML.
+
+    """Replace _getMdate("filename") patterns with actual modification dates"""
+    def replace_mdate(match):
+        filename = match.group(1)   # not used anymore
+        # Use the resolved absolute path of the source markdown
+        md_abs_path = CONFIG.get('_resolved_source_md', None)
+        if md_abs_path and Path(md_abs_path).exists():
+            date_value = get_mdate(md_abs_path)
+        else:
+            date_value = "Unknown date"
+        return f'<span style="font-size: 0.8em; color: {CONFIG["BkFontColor"]}; opacity: 0.65;">{date_value}</span>'
+    
+    pattern = r'_getMdate\("([^"]+)"\)'
+    return re.sub(pattern, replace_mdate, content, flags=re.IGNORECASE)
+#   DATE FUNCTIONS END== =============================================================================================
+
 
 def main():
+    # The main() function is the entry point of the script. It:
+    #   - Parses command‑line arguments – expects a single argument: the path to a JSON configuration file.
+    #   - Loads the configuration using load_config(args.config_file) and stores it in the global CONFIG variable.
+    #   - Validates the configuration with validate_config().
+    #   - Resolves file paths – combines source_path with source_md, output_md, output_html and converts them to 
+    #       absolute paths relative to the script’s location.
+    #   - Copies the source markdown file to the output .mdx file if COPY_ENABLE is True.
+    #   - Reads the source markdown file (source_md).
+    #   - Processes the markdown content by calling process_markdown(content), which returns a list of page HTML strings.
+    #   - Builds the final HTML by passing the page list to build_final_html(pages).
+    #   - Removes extra blank lines with collapse_consequtive_blank_lines(final_html).
+    #   - Writes the final HTML to the output file (output_html).
+    #   - Logs success or catches and logs any exception, then exits with an error code if needed.
+    # In essence, main() orchestrates the entire conversion from markdown to a complete, styled HTML document.
+    
     # Set up command line argument parsing
     parser = argparse.ArgumentParser(description='Process markdown to HTML with configurable settings')
     parser.add_argument('config_file', 
@@ -3687,6 +3655,7 @@ def main():
         CONFIG['output_html'] = str(Path(CONFIG['source_path']) / CONFIG['output_html'])
 
         source_md = resolve_relative_path(CONFIG['source_md'], script_dir)
+        CONFIG['_resolved_source_md'] = str(source_md)
         output_md = resolve_relative_path(CONFIG['output_md'], script_dir)
         output_html = resolve_relative_path(CONFIG['output_html'], script_dir)
         
