@@ -215,7 +215,7 @@ def copy_file(src, dst):
 #│   ├── .page::after (vignette overlay)
 #│   ├── .page-content (scrollable container)
 #│   │   ├── .page-header (only on content pages)
-#│   │   │   ├── .back-to-toc (if TOC exists)
+#│   │   │   ├── .TOCbtn (if TOC exists)
 #│   │   │   ├── .book-title (centered)
 #│   │   │   └── .page-number
 #│   │   │       └── a (🔖 copy link)
@@ -230,11 +230,11 @@ def copy_file(src, dst):
 #│   │   ├── .content-text (main text)
 #│   │   ├── .toc-container (only on TOC page)
 #│   │   │   ├── h2 (TOC title)
-#│   │   │   ├── .back-to-list (AboutMe button, optional)
+#│   │   │   ├── .BOOKLISTbtn (AboutMe button, optional)
 #│   │   │   ├── .toc-button-container
 #│   │   │   │   ├── .toc-entry (if TOCasList true)
 #│   │   │   │   │   └── a.toc-link
-#│   │   │   │   └── a.glassbtn.compact-button.toc-link (if TOCasList false)
+#│   │   │   │   └── a.glassbtn.chapterbtn.toc-link (if TOCasList false)
 #│   │   │   └── hr + tip_string (navigation tips)
 #│   │   └── .heading-container (only on title page)
 #│   │       ├── h1, h2, h3, p (writing period)
@@ -339,6 +339,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             outline-offset: 2px;
         }}
 
+        /* PROGRESSS BAR START =====================================================================*/
         .progress-container {{
             position: fixed;
             top: 0;
@@ -354,18 +355,94 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             width: 0%;
             transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
         }}
+        /* PROGRESSS BAR END   =====================================================================*/
 
-        .page {{
-            width: var(--page-width);
-            height: var(--page-height);
-            position: absolute;
-            top: 50%;
+        /* SLIDER BAR START ========================================================================*/
+        .slider-container {{
+            position: fixed;
+            bottom: 10px;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 50px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
             opacity: 0;
-            color: {BkFontColor};
-            overflow-y: hidden;
-            padding: 20px !important;
+            pointer-events: none;
+        }}
+        .slider-area {{ /* transparent hoverzone */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }}
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
+        opacity: 1; pointer-events: auto; }}
+        
+        .slider-wrapper {{ width: 80%; position: relative; margin: 0 auto; }}
+        .slider {{
+            width: 100%;
+            margin-bottom: 5px;
+            -webkit-appearance: none;
+            height: 3px;
+            background: rgba(96, 96, 96, 0);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;
+        }}
+        .slider::-webkit-slider-thumb {{
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            width: 24px;
+            height: 16px;
+        }}
+        .slider::-moz-range-thumb {{
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+
+            width: 24px;
+            height: 16px;
+            }}
+        .slider-track {{
+            position: absolute;
+            height: 4px;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }}
+        /* styles the text container that shows the current page 
+        number and total page count next to the slider. */
+        .slider-info {{
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }}
+        .slider-info #current-page {{
+            color: #b0e0ff;
+            font-style: italic;
+        }}
+        /* SLIDER BAR END ==========================================================================*/
+
+        /* PAGES START =============================================================================*/
+        .page {{
             box-sizing: border-box;
             border: 1px solid rgba(255,255,255,0.3);
             border-right: 1.5px solid rgba(255,255,255,0.4);
@@ -375,43 +452,51 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             -webkit-overflow-scrolling: touch;
+            color: {BkFontColor};
             border-radius: 12px;
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-            z-index: 1;
-            display: none;
             -ms-overflow-style: none;
             scrollbar-width: none;
+
+            position: absolute;
+            width: var(--page-width); height: var(--page-height);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            overflow-y: hidden;
+            padding: 20px !important;
+            z-index: 1;
+            display: none;
         }}
         .page::after {{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             pointer-events: none;
             background: 
                 linear-gradient(to bottom, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
-            z-index: 2;
+            z-index: 2; 
+                       
+           content: ''; position: absolute; top: 0; left: 0;
+            width: 100%;height: 100%;
         }}
         .page-content {{
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
             box-sizing: border-box;
             -ms-overflow-style: none;
             scrollbar-width: none;
-        }}
-        .page-content::-webkit-scrollbar {{
-            display: none;
-        }}
-        #page-0::after {{
-            display: none;
-        }}
+                        
+            height: 100%; width: 100%; overflow-y: auto;
 
+        }}
+        .page-content::-webkit-scrollbar {{display: none;}}
+        #page-0::after {{display: none;}}
+        .page-content > :first-child {{margin-top: 0;}}
+        .page-content h2:first-of-type {{margin-top: 5px;}}
+
+        .image-container:first-child,
+        .text-only-container:first-child {{
+            margin-top: 0;
+        }}
         #page-0 {{
             background: none !important;
             backdrop-filter: none !important;
@@ -419,9 +504,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             border: none !important;
             box-shadow: none !important;
         }}
-        #page-0 h1, #page-0 h2, #page-0 h3 {{
-            color: {BkPage0_FontColor} !important;
-        }}
+        #page-0 h1, #page-0 h2, #page-0 h3 {{ color: {BkPage0_FontColor} !important; }}
+        /* PAGES END  =============================================================================*/
+
+        /* PAGES HEADER START  ====================================================================*/
+        /* Its CSS creates a centered, vertical flex layout for the title page content 
+        (book title, tagline, author, date, and decorative element). This class does not 
+        appear on any other page (TOC or content pages). */
         .heading-container {{
             display: flex;
             flex-direction: column;
@@ -432,19 +521,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-        }}
-
-        .page-content > :first-child {{
-            margin-top: 0;
-        }}
-        .page-content h2:first-of-type {{
-            margin-top: 5px;
-        }}
-        .image-container:first-child,
-        .text-only-container:first-child {{
-            margin-top: 0;
-        }}
-
+        }}        
         .page-header {{
             position: relative;
             width: 100%;
@@ -465,28 +542,68 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             position: static;
             transform: none;
         }}
-        .back-to-toc {{
-            order: 1;
-            transform: scale(1.15, 0.95);
-        }}
         .page-number {{
+            background: transparent !important;
+            visibility: {pageNumberStyle} !important;
+
             flex: 0 0 auto;
-            margin-top: 5px;
             order: 3;
+            margin-top: 5px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            background: transparent !important;
-            visibility: {pageNumberStyle} !important;
         }}
+        /* PAGES HEADER END    ====================================================================*/
 
-        .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {{
+        /* TOC BUILD-OUT START ====================================================================*/
+        .toc-container {{
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 20px;
+        }}
+        .toc-button-container {{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 12px;
+        }}
+        .toc-list .toc-button-container {{
+            display: block;
+        }}
+        .toc-header-left {{ margin-left: 5px; text-align: left; }}
+        .chapterbtn {{
+            color: {TOC_FontColor} !important;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 0 !important;
+        }}
+        .toc-list .toc-entry {{
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }}
+        .toc-list .toc-entry a {{
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }}
+        .toc-list .toc-entry:hover {{
+            border-bottom-color: var(--primary-color);
+        }}
+        .toc-list .toc-entry:hover a {{
+            color: var(--primary-color);
+        }}
+        /* TOC BUILD-OUT END ======================================================================*/
+
+        /* GLASS+OTHER BUTTON START ===============================================================*/
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {{
             color: var(--text-color);
             text-decoration: none;
             font-size: 1em;
             font-family: Arial;
-            padding: 5px 15px;
-            margin: 5px;
             background: rgba(0, 0, 0, 0.075) !important;
             box-sizing: border-box;
             backdrop-filter: blur(12px);
@@ -501,16 +618,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         0 2px 4px rgba(0,0,0,0.3),
                         0 0 0 1.5px rgba(255,255,255,0.4) inset;
             transition: all 0.3s ease;
+
+            padding: 5px 15px;
+            margin: 5px;
             position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }}
-        .back-to-toc, .page-number, .page-number a, .glassbtn {{
+        /* apply to all glassbtn children with <a> tags */
+        a:has(.glassbtn) {{ text-decoration: none; background: transparent; }} 
+        .TOCbtn {{ order: 1; transform: scale(1.15, 0.95); }}
+        .BOOKLISTbtn {{ transform: scale(1.15, .95); }}
+
+        .BOOKLISTbtn, .TOCbtn, .page-number, .page-number a, .glassbtn {{
             vertical-align: middle;
             line-height: 1.2;
         }}
-        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover {{
+        .nextPgbtn:hover, .prevPgbtn:hover, .TOCbtn:hover, .BOOKLISTbtn:hover, .glassbtn:hover {{
             background: rgba(0, 0, 0, 0.55) !important;
             box-shadow: 0 5px 14px rgba(0,0,0,0.7),
                         0 2px 4px rgba(0,0,0,0.6),
@@ -522,15 +647,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             border-right: none;
             text-decoration: underline;
         }}
-        .slider-container:hover {{
-            background: rgba(0, 0, 0, 0.3) !important;
-            text-decoration: none;
-        }}
-        a:has(.glassbtn) {{
-            text-decoration: none;
-            background: transparent;
-        }}
+        /* GLASS+OTHER BUTTON END  ===============================================================*/
 
+        /* ARROW HANDLING START  =================================================================*/
         .arrow-container {{
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -589,90 +708,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .arrow-area.right:hover ~ .arrow-container.right {{
             opacity: var(--arrow-hover-opacity);
         }}
+        /* ARROW HANDLING END  ===================================================================*/
 
-        .slider-container {{
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--page-width);
-            height: 50px;
-            z-index: 20;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            opacity: 0;
-            pointer-events: none;
-        }}
-        .slider-area {{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 19;
-        }}
-        .slider-area:hover ~ .slider-container,
-        .slider-container:hover {{
-            opacity: 1;
-            pointer-events: auto;
-        }}
-        .slider-wrapper {{
-            width: 80%;
-            position: relative;
-            margin: 0 auto;
-        }}
-        .slider {{
-            width: 100%;
-            margin-bottom: 5px;
-            -webkit-appearance: none;
-            height: 3px;
-            background: rgba(96, 96, 96, 0);
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;
-        }}
-        .slider::-webkit-slider-thumb {{
-            -webkit-appearance: none;
-            width: 24px;
-            height: 16px;
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-        }}
-        .slider::-moz-range-thumb {{
-            width: 24px;
-            height: 16px;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-        }}
-        .slider-track {{
-            position: absolute;
-            height: 4px;
-            border-radius: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            pointer-events: none;
-        }}
-        .slider-info {{
-            color: #b0e0ff;
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }}
-        .slider-info #current-page {{
-            color: #b0e0ff;
-            font-style: italic;
-        }}
-
+        /* IMAGE HANDLING START  =================================================================*/
         .image-container, .text-only-container {{
             width: 100%;
             max-width: var(--content-container-max-width);
@@ -733,6 +771,121 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .image-container + .image-container {{
             margin-top: 10px;
         }}
+        /* IMAGE HANDLING END  ===================================================================*/
+
+        /* IMAGE POPUP HANDLING START ============================================================*/
+        .image-caption-popup {{
+            position: absolute;
+            top: 0;
+            max-width: 100%;
+            font-size: .8em;
+            padding: 0px 10px;
+            box-sizing: border-box;
+            text-align: center !important;
+            pointer-events: auto;
+            display: block !important;
+            opacity: 0 !important;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            pointer-events: none;
+            background: rgba(0,0,0,0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
+            z-index: 1000;
+        }}
+        .image-align-left .image-caption-popup {{ top: 40px; right: auto; }}
+        .image-align-right .image-caption-popup {{ top: 40px; right: 20px; left: auto; }}
+        .image-align-center .image-caption-popup {{
+            top: 20px; left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px;
+            box-sizing: border-box !important;
+        }}
+        .image-container img:hover ~ .image-caption-popup,
+        .image-caption-popup:hover {{ opacity: 1 !important; pointer-events: auto !important; }}
+        body .page .image-container .image-caption-popup {{ z-index: 1000 !important; }}
+        body .page .image-container img {{ z-index: 2 !important; }}
+        /* IMAGE POPUP HANDLING END  =============================================================*/
+
+        /* BUBBLETEXT START  =====================================================================*/
+        .BubbleText-trigger {{
+            color: #4fc3f7;
+            font-size: 0.8em;
+            font-family: Arial;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            margin: 0 10px;
+        }}
+        .BubbleText-group {{ display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }}
+        .BubbleText-full {{ height: var(--tt-max-height); width: var(--tt-max-width); }}
+        .BubbleText-group .BubbleText-trigger {{ display: inline-block !important;
+            width: auto !important; margin: 0 4px !important; }}
+        .BubbleText-trigger.BubbleText-full {{ height: auto; width: auto; }}
+
+        #BubbleText {{
+            position: fixed;
+            display: inline-block;
+            color: #b0e0ff;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            background: rgba(0,0,0,0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 10px !important;
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);
+            max-height: var(--tt-max-height);
+            overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            z-index: 9999;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }}
+        #BubbleText.show {{ opacity: 1; visibility: visible; }}
+        #BubbleText.fade {{ transform: translateY(15px) scale(0.95); }}
+        #BubbleText.fade.show {{ transform: translateY(0) scale(1); }}
+        #BubbleText.bounce {{ transform: translateY(40px) scale(0.6); }}
+        #BubbleText.bounce.show {{ animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }}
+        #BubbleText.slide {{ transform: translateY(60px); }}
+        #BubbleText.slide.show {{ transform: translateY(0); }}
+        #BubbleText.zoom {{ transform: scale(0.4); }}
+        #BubbleText.zoom.show {{ transform: scale(1);        }}
+        #BubbleText.left-text {{ text-align: left; }}
+        #BubbleText.right-text {{ text-align: right; }}
+        #BubbleText.center-text {{ text-align: center; }}
+        @keyframes bounceIn {{
+            0% {{ transform: translateY(40px) scale(0.6); }}
+            60% {{ transform: translateY(-15px) scale(1.15); }}
+            100% {{ transform: translateY(0) scale(1); }}
+        }}
+        #BubbleText::-webkit-scrollbar {{ width: 6px; }}
+        #BubbleText::-webkit-scrollbar-track {{ background: rgba(255,255,255,0.1); border-radius: 3px; }}
+        #BubbleText::-webkit-scrollbar-thumb {{ background: rgba(255,255,255,0.4); border-radius: 3px; }}
+        /* BUBBLETEXT END  =======================================================================*/
+
+
         .content-text {{
             font-size: inherit;
             text-align: left;
@@ -757,45 +910,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         h2 {{ font-size: 1.4em; font-weight: 400; color: rgba(255,255,255,0.8); }}
         h3 {{ font-size: 1.3em; font-weight: 300; color: rgba(255,255,255,0.7); }}
 
-        .toc-container {{
-            margin-left: var(--Lsafe-margin);
-            margin-right: var(--Rsafe-margin);
-            padding: 20px;
-        }}
-        .toc-button-container {{
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 10px;
-            row-gap: 12px;
-        }}
-        .toc-list .toc-button-container {{
-            display: block;
-        }}
-        .compact-button {{
-            color: {TOC_FontColor} !important;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            margin: 0 !important;
-        }}
-        .toc-list .toc-entry {{
-            margin: 8px 0;
-            padding: 5px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }}
-        .toc-list .toc-entry a {{
-            color: var(--text-color);
-            text-decoration: none;
-            display: block;
-        }}
-        .toc-list .toc-entry:hover {{
-            border-bottom-color: var(--primary-color);
-        }}
-        .toc-list .toc-entry:hover a {{
-            color: var(--primary-color);
-        }}
+
 
         table {{
             width: auto;
@@ -849,167 +964,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             overflow-x: auto;
         }}
 
-        .image-caption-popup {{
-            position: absolute;
-            top: 0;
-            max-width: 100%;
-            font-size: .8em;
-            padding: 0px 10px;
-            box-sizing: border-box;
-            text-align: center !important;
-            pointer-events: auto;
-            display: block !important;
-            opacity: 0 !important;
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-            pointer-events: none;
-            background: rgba(0,0,0,0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
-            z-index: 1000;
-        }}
-        .image-align-left .image-caption-popup {{
-            top: 40px;
-            right: auto;
-        }}
-        .image-align-right .image-caption-popup {{
-            top: 40px;
-            right: 20px;
-            left: auto;
-        }}
-        .image-align-center .image-caption-popup {{
-            top: 20px;
-            left: 50% !important;
-            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
-            padding: 0px 10px;
-            box-sizing: border-box !important;
-        }}
-        .image-container img:hover ~ .image-caption-popup,
-        .image-caption-popup:hover {{
-            opacity: 1 !important;
-            pointer-events: auto !important;
-        }}
-        body .page .image-container .image-caption-popup {{
-            z-index: 1000 !important;
-        }}
-        body .page .image-container img {{
-            z-index: 2 !important;
-        }}
-
-        .BubbleText-trigger {{
-            color: #4fc3f7;
-            font-size: 0.8em;
-            font-family: Arial;
-            font-weight: normal;
-            text-decoration: none;
-            font-style: normal;
-            margin: 0 10px;
-        }}
-        .BubbleText-group {{
-            display: inline-block;
-            margin-left: var(--Lsafe-margin);
-            vertical-align: top;
-        }}
-        .BubbleText-full {{
-            height: var(--tt-max-height);
-            width: var(--tt-max-width);
-        }}
-        .BubbleText-group .BubbleText-trigger {{
-            display: inline-block !important;
-            width: auto !important;
-            margin: 0 4px !important;
-        }}
-        .BubbleText-trigger.BubbleText-full {{
-            height: auto;
-            width: auto;
-        }}
-        #BubbleText {{
-            position: fixed;
-            display: inline-block;
-            color: #b0e0ff;
-            font-family: Arial;
-            font-weight: normal;
-            font-size: 0.8em;
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-            background: rgba(0,0,0,0.42) !important;
-            box-sizing: border-box;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(5px);
-            -webkit-overflow-scrolling: touch;
-            border-radius: 20px;
-            border-left: 1px solid rgba(255,255,255,0.4);
-            border-right: 1px solid rgba(255,255,255,0.4);
-            border-top: none;
-            border-bottom: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
-                        0 0 0 1px rgba(255,255,255,0.2) inset;
-            padding: 10px !important;
-            width: fit-content;
-            height: fit-content;
-            min-height: 1.5em;
-            max-width: var(--tt-max-width);
-            max-height: var(--tt-max-height);
-            overflow-x: hidden;
-            overflow-y: auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            z-index: 9999;
-            white-space: normal;
-            opacity: 0;
-            visibility: hidden;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
-        }}
-        #BubbleText.show {{
-            opacity: 1;
-            visibility: visible;
-        }}
-        #BubbleText.fade {{
-            transform: translateY(15px) scale(0.95);
-        }}
-        #BubbleText.fade.show {{
-            transform: translateY(0) scale(1);
-        }}
-        #BubbleText.bounce {{
-            transform: translateY(40px) scale(0.6);
-        }}
-        #BubbleText.bounce.show {{
-            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }}
-        #BubbleText.slide {{
-            transform: translateY(60px);
-        }}
-        #BubbleText.slide.show {{
-            transform: translateY(0);
-        }}
-        #BubbleText.zoom {{
-            transform: scale(0.4);
-        }}
-        #BubbleText.zoom.show {{
-            transform: scale(1);
-        }}
-        #BubbleText.left-text {{ text-align: left; }}
-        #BubbleText.right-text {{ text-align: right; }}
-        #BubbleText.center-text {{ text-align: center; }}
-        @keyframes bounceIn {{
-            0% {{ transform: translateY(40px) scale(0.6); }}
-            60% {{ transform: translateY(-15px) scale(1.15); }}
-            100% {{ transform: translateY(0) scale(1); }}
-        }}
-        #BubbleText::-webkit-scrollbar {{
-            width: 6px;
-        }}
-        #BubbleText::-webkit-scrollbar-track {{
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-        }}
-        #BubbleText::-webkit-scrollbar-thumb {{
-            background: rgba(255,255,255,0.4);
-            border-radius: 3px;
-        }}
 
         .page.active {{
             opacity: 1;
@@ -1058,9 +1012,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 line-height: 1.6 !important;
             }}
             .toc-entry {{ margin: 6px 0; }}
-            .toc-header-left {{ text-align: left; }}
             .toc-header-row {{ display: flex; align-items: center; justify-content: space-between;}}
             .toc-header-row .book-title {{ flex: 1; text-align: center; margin: 0;}}
+
+            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.9em ; display: inline-block }}            
 
             h1 {{ font-size: 2.2em !important; }}
             h2 {{ font-size: 1.3em !important; }}
@@ -1132,11 +1087,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     margin-top: 0 !important;
                 }}
             }}
-            .compact-button {{
-                padding: 3px 8px !important;
-                font-size: 0.65em !important;
-                display: inline-block
-            }}
+            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.7em ; display: inline-block }}
+            
             {ForceMobileCSS}
             .image-caption-popup.mobile-visible {{
                 opacity: 1;
@@ -2036,13 +1988,13 @@ FOOTER_TEMPLATE = """
 
         // ==================== Navigation LISTENER Begin ==============================================
         // Page Navigation icons anywhere in content
-        document.querySelectorAll('.next-page').forEach(el => {
+        document.querySelectorAll('.nextPgbtn').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
                 nextPage();
             });
         });
-        document.querySelectorAll('.prev-page').forEach(el => {
+        document.querySelectorAll('.prevPgbtn').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
                 prevPage();
@@ -2190,7 +2142,7 @@ FOOTER_TEMPLATE = """
             // - Otherwise, it activates the page at INITIAL_PAGE (usually 0, which could be the TOC or first content page).
         // Checks the URL hash (e.g., #page-3) and navigates to that page using activatePageFromHash() (overriding 
             //the initial active page if a hash is present).
-        // Adds a click listener to a .back-to-list button (if present) that opens a configured URL ({BkLinkURL}) 
+        // Adds a click listener to a .BOOKLISTbtn button (if present) that opens a configured URL ({BkLinkURL}) 
         // add listener for keyboard
         // adds listener for left right arrow
         // adds listener for Back-to-list
@@ -2219,7 +2171,7 @@ FOOTER_TEMPLATE = """
             // After setting the initial active page, check URL hash
             activatePageFromHash();
             
-            const booklistBtn = document.querySelector('.back-to-list');
+            const booklistBtn = document.querySelector('.BOOKLISTbtn');
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -2241,7 +2193,7 @@ FOOTER_TEMPLATE = """
                 // it starts at index 0 (first content page).
             // Loops through all .page elements from startPage to the end, but skips the TOC page if its id is "page-toc".
             // For each content page, it creates a <div class="page-header"> and populates it with three elements:
-            // Left side: a back‑to‑TOC button (<a class="back-to-toc">) if a TOC page exists. The button contains the emoji 🗂️.
+            // Left side: a back‑to‑TOC button (<a class="TOCbtn">) if a TOC page exists. The button contains the emoji 🗂️.
             // Center: the book title (<div class="book-title">) with text from {BkPage0_Title} (later replaced by Python).
             // Right side: the page number (<div class="page-number">) which includes a clickable bookmark emoji (🔖) 
                 // that calls copyCurrentPageUrl(event) when clicked.
@@ -2260,7 +2212,7 @@ FOOTER_TEMPLATE = """
                 // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
-                    backButton.className = 'back-to-toc';
+                    backButton.className = 'TOCbtn';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
                     // 'Contents';
@@ -2370,7 +2322,7 @@ FOOTER_TEMPLATE = """
             rightArrowContainer.addEventListener('click', nextPage);
 
             // TOC Navigation (handles both list and button styles)
-            // This code adds click handlers to all elements with the class .back-to-toc (typically a button or link that returns to the Table of Contents). When clicked, it:
+            // This code adds click handlers to all elements with the class .TOCbtn (typically a button or link that returns to the Table of Contents). When clicked, it:
             // - Prevents the default link behavior (so the URL doesn’t change with a #).
             // - Extracts the target ID from the href attribute (e.g., #page-toc).
             // - Finds the corresponding .page element.
@@ -2379,7 +2331,7 @@ FOOTER_TEMPLATE = """
             // - Smooth‑scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
             // In short, it enables the “back to TOC” button to work correctly and ensures the TOC page appears at the top after navigation.
 
-            document.querySelectorAll('.back-to-toc').forEach(link => {
+            document.querySelectorAll('.TOCbtn').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
@@ -2579,10 +2531,10 @@ def pre_clean(content):
     # convert <tiptext> to tip_string
     content = re.sub(r'<tiptext>', tip_string, content, flags=re.IGNORECASE)
 
-    # convert <NEXTPAGE_ICON> to '<span class="next-page">👉</span>'
-    content = re.sub(r'<\s*NEXTPAGE_ICON\s*>', "<span class='next-page'>👉</span>", content, flags=re.IGNORECASE | re.DOTALL)
+    # convert <NEXTPAGE_ICON> to '<span class="nextPgbtn">👉</span>'
+    content = re.sub(r'<\s*NEXTPAGE_ICON\s*>', "<span class='nextPgbtn'>👉</span>", content, flags=re.IGNORECASE | re.DOTALL)
 
-    # convert <PREVPAGE_ICON> to '<span class="prev-page">👈</span>'
+    # convert <PREVPAGE_ICON> to '<span class="prevPgbtn">👈</span>'
     content = re.sub(r'<\s*PREVPAGE_ICON\s*>', "<span class='prev-page'>👈</span>", content, flags=re.IGNORECASE | re.DOTALL)
 
     # convert LINKS from URL [text] (url) to <a href="url>test</a>
@@ -3201,7 +3153,7 @@ def generate_toc(content):
     # ontent for headings (##, ###, etc.), skips level‑1 headings (#), and for each heading it calculates 
     # the page number (using page_num_toc which counts page breaks before the heading). Based on the 
     # configuration flag TOCasList, it builds either a vertical list (.toc-entry) or a horizontal button 
-    # bar (.compact-button). It also adds an optional “AboutMe” button (if BkListLink_show is true) and 
+    # bar (.chapterbtn). It also adds an optional “AboutMe” button (if BkListLink_show is true) and 
     # appends a tip_string (navigation tips) separated by a horizontal rule. The resulting HTML is wrapped 
     # in a .page container with id page-toc and a .page-content wrapper for consistent scrolling. This 
     # function is called only if TOC_ENABLE is true.
@@ -3257,7 +3209,7 @@ def generate_toc(content):
         else:
             # Button style TOC - Horizontal layout with CSS gap
             toc_entries.append(
-                f'<a href="{href}" class="glassbtn compact-button toc-link">'
+                f'<a href="{href}" class="glassbtn chapterbtn toc-link">'
                 f'{title.strip() + "(" + f"{page_num}" + ")"}'
                 f'</a>'
             )
@@ -3273,7 +3225,7 @@ def generate_toc(content):
             url = f'https://{url}'
         back_to_list_html = f'''
         <div class="toc-header-left">
-            <a href="{url}" target="_self" class="glassbtn compact-button">
+            <a href="{url}" target="_self" class="glassbtn ">
                 📚
             </a>
         </div>
