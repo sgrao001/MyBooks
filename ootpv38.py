@@ -2530,7 +2530,7 @@ FOOTER_TEMPLATE = """
 
 tip_string = """ <clickwordC=  |  | 
     \"
-    <underline="<bold="Navigation tips...">"><br>
+    <underline="<bold="Navigation tips ...">"><br>
         <ul>
         <li>For Previous page, click on left margin.</li>
         <li>For Next Page, click on right margin.</li>
@@ -3310,8 +3310,9 @@ def generate_toc(content):
                     {"".join(toc_entries)}
                 </div>
             </div>
-            ...
-        </div>
+            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
+            {tip_string}
+        </div>       
     </div>
     """
 
