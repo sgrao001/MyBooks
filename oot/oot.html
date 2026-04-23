@@ -84,6 +84,7 @@
             outline-offset: 2px;
         }
 
+        /* PROGRESSS BAR START =====================================================================*/
         .progress-container {
             position: fixed;
             top: 0;
@@ -99,18 +100,94 @@
             width: 0%;
             transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
         }
+        /* PROGRESSS BAR END   =====================================================================*/
 
-        .page {
-            width: var(--page-width);
-            height: var(--page-height);
-            position: absolute;
-            top: 50%;
+        /* SLIDER BAR START ========================================================================*/
+        .slider-container {
+            position: fixed;
+            bottom: 10px;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 50px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
             opacity: 0;
-            color: #abb8bb;
-            overflow-y: hidden;
-            padding: 20px !important;
+            pointer-events: none;
+        }
+        .slider-area { /* transparent hoverzone */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
+        opacity: 1; pointer-events: auto; }
+        
+        .slider-wrapper { width: 80%; position: relative; margin: 0 auto; }
+        .slider {
+            width: 100%;
+            margin-bottom: 5px;
+            -webkit-appearance: none;
+            height: 3px;
+            background: rgba(96, 96, 96, 0);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            width: 24px;
+            height: 16px;
+        }
+        .slider::-moz-range-thumb {
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+
+            width: 24px;
+            height: 16px;
+            }
+        .slider-track {
+            position: absolute;
+            height: 4px;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }
+        /* styles the text container that shows the current page 
+        number and total page count next to the slider. */
+        .slider-info {
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }
+        .slider-info #current-page {
+            color: #b0e0ff;
+            font-style: italic;
+        }
+        /* SLIDER BAR END ==========================================================================*/
+
+        /* PAGES START =============================================================================*/
+        .page {
             box-sizing: border-box;
             border: 1px solid rgba(255,255,255,0.3);
             border-right: 1.5px solid rgba(255,255,255,0.4);
@@ -120,43 +197,51 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             -webkit-overflow-scrolling: touch;
+            color: #abb8bb;
             border-radius: 12px;
             transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-            z-index: 1;
-            display: none;
             -ms-overflow-style: none;
             scrollbar-width: none;
+
+            position: absolute;
+            width: var(--page-width); height: var(--page-height);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            overflow-y: hidden;
+            padding: 20px !important;
+            z-index: 1;
+            display: none;
         }
         .page::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             pointer-events: none;
             background: 
                 linear-gradient(to bottom, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
                 linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
-            z-index: 2;
+            z-index: 2; 
+                       
+           content: ''; position: absolute; top: 0; left: 0;
+            width: 100%;height: 100%;
         }
         .page-content {
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
             box-sizing: border-box;
             -ms-overflow-style: none;
             scrollbar-width: none;
-        }
-        .page-content::-webkit-scrollbar {
-            display: none;
-        }
-        #page-0::after {
-            display: none;
-        }
+                        
+            height: 100%; width: 100%; overflow-y: auto;
 
+        }
+        .page-content::-webkit-scrollbar {display: none;}
+        #page-0::after {display: none;}
+        .page-content > :first-child {margin-top: 0;}
+        .page-content h2:first-of-type {margin-top: 5px;}
+
+        .image-container:first-child,
+        .text-only-container:first-child {
+            margin-top: 0;
+        }
         #page-0 {
             background: none !important;
             backdrop-filter: none !important;
@@ -164,9 +249,13 @@
             border: none !important;
             box-shadow: none !important;
         }
-        #page-0 h1, #page-0 h2, #page-0 h3 {
-            color: #89C2FF !important;
-        }
+        #page-0 h1, #page-0 h2, #page-0 h3 { color: #89C2FF !important; }
+        /* PAGES END  =============================================================================*/
+
+        /* PAGES HEADER START  ====================================================================*/
+        /* Its CSS creates a centered, vertical flex layout for the title page content 
+        (book title, tagline, author, date, and decorative element). This class does not 
+        appear on any other page (TOC or content pages). */
         .heading-container {
             display: flex;
             flex-direction: column;
@@ -177,19 +266,7 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-        }
-
-        .page-content > :first-child {
-            margin-top: 0;
-        }
-        .page-content h2:first-of-type {
-            margin-top: 5px;
-        }
-        .image-container:first-child,
-        .text-only-container:first-child {
-            margin-top: 0;
-        }
-
+        }        
         .page-header {
             position: relative;
             width: 100%;
@@ -210,28 +287,68 @@
             position: static;
             transform: none;
         }
-        .back-to-toc {
-            order: 1;
-            transform: scale(1.15, 0.95);
-        }
         .page-number {
+            background: transparent !important;
+            visibility: visible !important;
+
             flex: 0 0 auto;
-            margin-top: 5px;
             order: 3;
+            margin-top: 5px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            background: transparent !important;
-            visibility: visible !important;
         }
+        /* PAGES HEADER END    ====================================================================*/
 
-        .next-page, .prev-page, .back-to-toc, .back-to-list, .slider-container, .glassbtn {
+        /* TOC BUILD-OUT START ====================================================================*/
+        .toc-container {
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 20px;
+        }
+        .toc-button-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 12px;
+        }
+        .toc-list .toc-button-container {
+            display: block;
+        }
+        .toc-header-left { margin-left: 5px; text-align: left; }
+        .chapterbtn {
+            color: #8FACCA !important;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 0 !important;
+        }
+        .toc-list .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        .toc-list .toc-entry a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+        .toc-list .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+        .toc-list .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+        /* TOC BUILD-OUT END ======================================================================*/
+
+        /* GLASS+OTHER BUTTON START ===============================================================*/
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
             font-size: 1em;
             font-family: Arial;
-            padding: 5px 15px;
-            margin: 5px;
             background: rgba(0, 0, 0, 0.075) !important;
             box-sizing: border-box;
             backdrop-filter: blur(12px);
@@ -246,16 +363,24 @@
                         0 2px 4px rgba(0,0,0,0.3),
                         0 0 0 1.5px rgba(255,255,255,0.4) inset;
             transition: all 0.3s ease;
+
+            padding: 5px 15px;
+            margin: 5px;
             position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
-        .back-to-toc, .page-number, .page-number a, .glassbtn {
+        /* apply to all glassbtn children with <a> tags */
+        a:has(.glassbtn) { text-decoration: none; background: transparent; } 
+        .TOCbtn { order: 1; transform: scale(1.15, 0.95); }
+        .BOOKLISTbtn { transform: scale(1.15, .95); }
+
+        .BOOKLISTbtn, .TOCbtn, .page-number, .page-number a, .glassbtn {
             vertical-align: middle;
             line-height: 1.2;
         }
-        .next-page:hover, .prev-page:hover, .back-to-toc:hover, .back-to-list:hover, .glassbtn:hover {
+        .nextPgbtn:hover, .prevPgbtn:hover, .TOCbtn:hover, .BOOKLISTbtn:hover, .glassbtn:hover {
             background: rgba(0, 0, 0, 0.55) !important;
             box-shadow: 0 5px 14px rgba(0,0,0,0.7),
                         0 2px 4px rgba(0,0,0,0.6),
@@ -267,15 +392,9 @@
             border-right: none;
             text-decoration: underline;
         }
-        .slider-container:hover {
-            background: rgba(0, 0, 0, 0.3) !important;
-            text-decoration: none;
-        }
-        a:has(.glassbtn) {
-            text-decoration: none;
-            background: transparent;
-        }
+        /* GLASS+OTHER BUTTON END  ===============================================================*/
 
+        /* ARROW HANDLING START  =================================================================*/
         .arrow-container {
             position: fixed;
             height: var(--ARW_HOVER_HEIGHT);
@@ -334,90 +453,9 @@
         .arrow-area.right:hover ~ .arrow-container.right {
             opacity: var(--arrow-hover-opacity);
         }
+        /* ARROW HANDLING END  ===================================================================*/
 
-        .slider-container {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--page-width);
-            height: 50px;
-            z-index: 20;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .slider-area {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 19;
-        }
-        .slider-area:hover ~ .slider-container,
-        .slider-container:hover {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .slider-wrapper {
-            width: 80%;
-            position: relative;
-            margin: 0 auto;
-        }
-        .slider {
-            width: 100%;
-            margin-bottom: 5px;
-            -webkit-appearance: none;
-            height: 3px;
-            background: rgba(96, 96, 96, 0);
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;
-        }
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 24px;
-            height: 16px;
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .slider::-moz-range-thumb {
-            width: 24px;
-            height: 16px;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .slider-track {
-            position: absolute;
-            height: 4px;
-            border-radius: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            pointer-events: none;
-        }
-        .slider-info {
-            color: #b0e0ff;
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }
-        .slider-info #current-page {
-            color: #b0e0ff;
-            font-style: italic;
-        }
-
+        /* IMAGE HANDLING START  =================================================================*/
         .image-container, .text-only-container {
             width: 100%;
             max-width: var(--content-container-max-width);
@@ -478,6 +516,121 @@
         .image-container + .image-container {
             margin-top: 10px;
         }
+        /* IMAGE HANDLING END  ===================================================================*/
+
+        /* IMAGE POPUP HANDLING START ============================================================*/
+        .image-caption-popup {
+            position: absolute;
+            top: 0;
+            max-width: 100%;
+            font-size: .8em;
+            padding: 0px 10px;
+            box-sizing: border-box;
+            text-align: center !important;
+            pointer-events: auto;
+            display: block !important;
+            opacity: 0 !important;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            pointer-events: none;
+            background: rgba(0,0,0,0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
+            z-index: 1000;
+        }
+        .image-align-left .image-caption-popup { top: 40px; right: auto; }
+        .image-align-right .image-caption-popup { top: 40px; right: 20px; left: auto; }
+        .image-align-center .image-caption-popup {
+            top: 20px; left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px;
+            box-sizing: border-box !important;
+        }
+        .image-container img:hover ~ .image-caption-popup,
+        .image-caption-popup:hover { opacity: 1 !important; pointer-events: auto !important; }
+        body .page .image-container .image-caption-popup { z-index: 1000 !important; }
+        body .page .image-container img { z-index: 2 !important; }
+        /* IMAGE POPUP HANDLING END  =============================================================*/
+
+        /* BUBBLETEXT START  =====================================================================*/
+        .BubbleText-trigger {
+            color: #4fc3f7;
+            font-size: 0.8em;
+            font-family: Arial;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            margin: 0 10px;
+        }
+        .BubbleText-group { display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }
+        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); }
+        .BubbleText-group .BubbleText-trigger { display: inline-block !important;
+            width: auto !important; margin: 0 4px !important; }
+        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
+
+        #BubbleText {
+            position: fixed;
+            display: inline-block;
+            color: #b0e0ff;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            background: rgba(0,0,0,0.42) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 10px !important;
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);
+            max-height: var(--tt-max-height);
+            overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            z-index: 9999;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+        #BubbleText.show { opacity: 1; visibility: visible; }
+        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
+        #BubbleText.fade.show { transform: translateY(0) scale(1); }
+        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
+        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #BubbleText.slide { transform: translateY(60px); }
+        #BubbleText.slide.show { transform: translateY(0); }
+        #BubbleText.zoom { transform: scale(0.4); }
+        #BubbleText.zoom.show { transform: scale(1);        }
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        #BubbleText::-webkit-scrollbar { width: 6px; }
+        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+        /* BUBBLETEXT END  =======================================================================*/
+
+
         .content-text {
             font-size: inherit;
             text-align: left;
@@ -502,45 +655,7 @@
         h2 { font-size: 1.4em; font-weight: 400; color: rgba(255,255,255,0.8); }
         h3 { font-size: 1.3em; font-weight: 300; color: rgba(255,255,255,0.7); }
 
-        .toc-container {
-            margin-left: var(--Lsafe-margin);
-            margin-right: var(--Rsafe-margin);
-            padding: 20px;
-        }
-        .toc-button-container {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 10px;
-            row-gap: 12px;
-        }
-        .toc-list .toc-button-container {
-            display: block;
-        }
-        .compact-button {
-            color: #8FACCA !important;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            margin: 0 !important;
-        }
-        .toc-list .toc-entry {
-            margin: 8px 0;
-            padding: 5px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-        .toc-list .toc-entry a {
-            color: var(--text-color);
-            text-decoration: none;
-            display: block;
-        }
-        .toc-list .toc-entry:hover {
-            border-bottom-color: var(--primary-color);
-        }
-        .toc-list .toc-entry:hover a {
-            color: var(--primary-color);
-        }
+
 
         table {
             width: auto;
@@ -594,167 +709,6 @@
             overflow-x: auto;
         }
 
-        .image-caption-popup {
-            position: absolute;
-            top: 0;
-            max-width: 100%;
-            font-size: .8em;
-            padding: 0px 10px;
-            box-sizing: border-box;
-            text-align: center !important;
-            pointer-events: auto;
-            display: block !important;
-            opacity: 0 !important;
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-            pointer-events: none;
-            background: rgba(0,0,0,0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border-radius: 8px;
-            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
-            z-index: 1000;
-        }
-        .image-align-left .image-caption-popup {
-            top: 40px;
-            right: auto;
-        }
-        .image-align-right .image-caption-popup {
-            top: 40px;
-            right: 20px;
-            left: auto;
-        }
-        .image-align-center .image-caption-popup {
-            top: 20px;
-            left: 50% !important;
-            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
-            padding: 0px 10px;
-            box-sizing: border-box !important;
-        }
-        .image-container img:hover ~ .image-caption-popup,
-        .image-caption-popup:hover {
-            opacity: 1 !important;
-            pointer-events: auto !important;
-        }
-        body .page .image-container .image-caption-popup {
-            z-index: 1000 !important;
-        }
-        body .page .image-container img {
-            z-index: 2 !important;
-        }
-
-        .BubbleText-trigger {
-            color: #4fc3f7;
-            font-size: 0.8em;
-            font-family: Arial;
-            font-weight: normal;
-            text-decoration: none;
-            font-style: normal;
-            margin: 0 10px;
-        }
-        .BubbleText-group {
-            display: inline-block;
-            margin-left: var(--Lsafe-margin);
-            vertical-align: top;
-        }
-        .BubbleText-full {
-            height: var(--tt-max-height);
-            width: var(--tt-max-width);
-        }
-        .BubbleText-group .BubbleText-trigger {
-            display: inline-block !important;
-            width: auto !important;
-            margin: 0 4px !important;
-        }
-        .BubbleText-trigger.BubbleText-full {
-            height: auto;
-            width: auto;
-        }
-        #BubbleText {
-            position: fixed;
-            display: inline-block;
-            color: #b0e0ff;
-            font-family: Arial;
-            font-weight: normal;
-            font-size: 0.8em;
-            transform: translateY(-20px) scale(0.95) !important;
-            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
-            background: rgba(0,0,0,0.42) !important;
-            box-sizing: border-box;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(5px);
-            -webkit-overflow-scrolling: touch;
-            border-radius: 20px;
-            border-left: 1px solid rgba(255,255,255,0.4);
-            border-right: 1px solid rgba(255,255,255,0.4);
-            border-top: none;
-            border-bottom: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
-                        0 0 0 1px rgba(255,255,255,0.2) inset;
-            padding: 10px !important;
-            width: fit-content;
-            height: fit-content;
-            min-height: 1.5em;
-            max-width: var(--tt-max-width);
-            max-height: var(--tt-max-height);
-            overflow-x: hidden;
-            overflow-y: auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            z-index: 9999;
-            white-space: normal;
-            opacity: 0;
-            visibility: hidden;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
-        }
-        #BubbleText.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        #BubbleText.fade {
-            transform: translateY(15px) scale(0.95);
-        }
-        #BubbleText.fade.show {
-            transform: translateY(0) scale(1);
-        }
-        #BubbleText.bounce {
-            transform: translateY(40px) scale(0.6);
-        }
-        #BubbleText.bounce.show {
-            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        #BubbleText.slide {
-            transform: translateY(60px);
-        }
-        #BubbleText.slide.show {
-            transform: translateY(0);
-        }
-        #BubbleText.zoom {
-            transform: scale(0.4);
-        }
-        #BubbleText.zoom.show {
-            transform: scale(1);
-        }
-        #BubbleText.left-text { text-align: left; }
-        #BubbleText.right-text { text-align: right; }
-        #BubbleText.center-text { text-align: center; }
-        @keyframes bounceIn {
-            0% { transform: translateY(40px) scale(0.6); }
-            60% { transform: translateY(-15px) scale(1.15); }
-            100% { transform: translateY(0) scale(1); }
-        }
-        #BubbleText::-webkit-scrollbar {
-            width: 6px;
-        }
-        #BubbleText::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-        }
-        #BubbleText::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.4);
-            border-radius: 3px;
-        }
 
         .page.active {
             opacity: 1;
@@ -803,9 +757,10 @@
                 line-height: 1.6 !important;
             }
             .toc-entry { margin: 6px 0; }
-            .toc-header-left { text-align: left; }
             .toc-header-row { display: flex; align-items: center; justify-content: space-between;}
             .toc-header-row .book-title { flex: 1; text-align: center; margin: 0;}
+
+            .chapterbtn { padding: 3px 8px !important; font-size: 0.9em ; display: inline-block }            
 
             h1 { font-size: 2.2em !important; }
             h2 { font-size: 1.3em !important; }
@@ -877,11 +832,8 @@
                     margin-top: 0 !important;
                 }
             }
-            .compact-button {
-                padding: 3px 8px !important;
-                font-size: 0.65em !important;
-                display: inline-block
-            }
+            .chapterbtn { padding: 3px 8px !important; font-size: 0.7em ; display: inline-block }
+            
             
         /* FORCE SIZE FORCE TO ImageWidthMobile */
         .mobile-default-size img {
@@ -997,7 +949,7 @@
             <div class="toc-header-row">
                 
         <div class="toc-header-left">
-            <a href="https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2" target="_self" class="glassbtn compact-button">
+            <a href="https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2" target="_self" class="glassbtn ">
                 📚
             </a>
         </div>
@@ -1007,7 +959,7 @@
             <div class="toc-container toc-buttons" style="margin-top: 20px;">
                 <h2>Table of Contents</h2>
                 <div class="toc-button-container">
-                    <a href="#page-1" class="glassbtn compact-button toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="glassbtn compact-button toc-link">Awareness(2)</a><a href="#page-3" class="glassbtn compact-button toc-link">Unity(3)</a><a href="#page-4" class="glassbtn compact-button toc-link">Silence(4)</a><a href="#page-5" class="glassbtn compact-button toc-link">Serenity(5)</a><a href="#page-6" class="glassbtn compact-button toc-link">Who am I(6)</a><a href="#page-7" class="glassbtn compact-button toc-link">Words(7)</a><a href="#page-8" class="glassbtn compact-button toc-link">Acknowledgment(8)</a><a href="#page-9" class="glassbtn compact-button toc-link">Vastness(9)</a><a href="#page-10" class="glassbtn compact-button toc-link">Man and boy(10)</a><a href="#page-11" class="glassbtn compact-button toc-link">Wheels of Life(11)</a><a href="#page-12" class="glassbtn compact-button toc-link">Be well my friend(12)</a><a href="#page-13" class="glassbtn compact-button toc-link">Footsteps(13)</a><a href="#page-14" class="glassbtn compact-button toc-link">Nani(14)</a><a href="#page-15" class="glassbtn compact-button toc-link">In Crossing(15)</a><a href="#page-16" class="glassbtn compact-button toc-link">CityVerse(16)</a><a href="#page-17" class="glassbtn compact-button toc-link">Duniya(17)</a><a href="#page-18" class="glassbtn compact-button toc-link">Lessons(18)</a><a href="#page-19" class="glassbtn compact-button toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="glassbtn compact-button toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="glassbtn compact-button toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="glassbtn compact-button toc-link">Time(22)</a><a href="#page-23" class="glassbtn compact-button toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="glassbtn compact-button toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="glassbtn compact-button toc-link">Gratitude(25)</a><a href="#page-26" class="glassbtn compact-button toc-link">Energy(26)</a><a href="#page-27" class="glassbtn compact-button toc-link">Acceptance(27)</a><a href="#page-28" class="glassbtn compact-button toc-link">Choices(28)</a><a href="#page-29" class="glassbtn compact-button toc-link">The Good, The Bad(29)</a><a href="#page-30" class="glassbtn compact-button toc-link">Writing(30)</a><a href="#page-31" class="glassbtn compact-button toc-link">Let’s make a circle(31)</a><a href="#page-32" class="glassbtn compact-button toc-link">O’ Mother of mine(32)</a><a href="#page-33" class="glassbtn compact-button toc-link">Diwali(33)</a><a href="#page-34" class="glassbtn compact-button toc-link">Pathways to being.(34)</a><a href="#page-35" class="glassbtn compact-button toc-link">Pursuit of Ignorance(35)</a><a href="#page-36" class="glassbtn compact-button toc-link">Just Asking(36)</a><a href="#page-37" class="glassbtn compact-button toc-link">Fragility(37)</a><a href="#page-38" class="glassbtn compact-button toc-link">In God we Trust(38)</a><a href="#page-39" class="glassbtn compact-button toc-link">Failure(39)</a><a href="#page-40" class="glassbtn compact-button toc-link">The emperor has no clothes I & II(40)</a>
+                    <a href="#page-1" class="glassbtn chapterbtn toc-link">An Enchanting Journey(1)</a><a href="#page-2" class="glassbtn chapterbtn toc-link">Awareness(2)</a><a href="#page-3" class="glassbtn chapterbtn toc-link">Unity(3)</a><a href="#page-4" class="glassbtn chapterbtn toc-link">Silence(4)</a><a href="#page-5" class="glassbtn chapterbtn toc-link">Serenity(5)</a><a href="#page-6" class="glassbtn chapterbtn toc-link">Who am I(6)</a><a href="#page-7" class="glassbtn chapterbtn toc-link">Words(7)</a><a href="#page-8" class="glassbtn chapterbtn toc-link">Acknowledgment(8)</a><a href="#page-9" class="glassbtn chapterbtn toc-link">Vastness(9)</a><a href="#page-10" class="glassbtn chapterbtn toc-link">Man and boy(10)</a><a href="#page-11" class="glassbtn chapterbtn toc-link">Wheels of Life(11)</a><a href="#page-12" class="glassbtn chapterbtn toc-link">Be well my friend(12)</a><a href="#page-13" class="glassbtn chapterbtn toc-link">Footsteps(13)</a><a href="#page-14" class="glassbtn chapterbtn toc-link">Nani(14)</a><a href="#page-15" class="glassbtn chapterbtn toc-link">In Crossing(15)</a><a href="#page-16" class="glassbtn chapterbtn toc-link">CityVerse(16)</a><a href="#page-17" class="glassbtn chapterbtn toc-link">Duniya(17)</a><a href="#page-18" class="glassbtn chapterbtn toc-link">Lessons(18)</a><a href="#page-19" class="glassbtn chapterbtn toc-link">Stones, Wind and Water(19)</a><a href="#page-20" class="glassbtn chapterbtn toc-link">Manufacturing Conflict(20)</a><a href="#page-21" class="glassbtn chapterbtn toc-link">Ideologies & Realities(21)</a><a href="#page-22" class="glassbtn chapterbtn toc-link">Time(22)</a><a href="#page-23" class="glassbtn chapterbtn toc-link">Space, Time and Energy(23)</a><a href="#page-24" class="glassbtn chapterbtn toc-link">Passionate and Harmonious living(24)</a><a href="#page-25" class="glassbtn chapterbtn toc-link">Gratitude(25)</a><a href="#page-26" class="glassbtn chapterbtn toc-link">Energy(26)</a><a href="#page-27" class="glassbtn chapterbtn toc-link">Acceptance(27)</a><a href="#page-28" class="glassbtn chapterbtn toc-link">Choices(28)</a><a href="#page-29" class="glassbtn chapterbtn toc-link">The Good, The Bad(29)</a><a href="#page-30" class="glassbtn chapterbtn toc-link">Writing(30)</a><a href="#page-31" class="glassbtn chapterbtn toc-link">Let’s make a circle(31)</a><a href="#page-32" class="glassbtn chapterbtn toc-link">O’ Mother of mine(32)</a><a href="#page-33" class="glassbtn chapterbtn toc-link">Diwali(33)</a><a href="#page-34" class="glassbtn chapterbtn toc-link">Pathways to being.(34)</a><a href="#page-35" class="glassbtn chapterbtn toc-link">Pursuit of Ignorance(35)</a><a href="#page-36" class="glassbtn chapterbtn toc-link">Just Asking(36)</a><a href="#page-37" class="glassbtn chapterbtn toc-link">Fragility(37)</a><a href="#page-38" class="glassbtn chapterbtn toc-link">In God we Trust(38)</a><a href="#page-39" class="glassbtn chapterbtn toc-link">Failure(39)</a><a href="#page-40" class="glassbtn chapterbtn toc-link">The emperor has no clothes I & II(40)</a>
                 </div>
             </div>
             <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
@@ -1800,7 +1752,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="noclothes_1.jpeg" alt="Image" style="width: 50%;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text">The emperor has<br>no clothes - Part I</span></div><br>The man perches himself on a high pedestal, projecting power, professing virtue and proclaiming wisdom. He stands, ready and eager to be honored, for defending the good and the holy.<br><br>He claims worth, with a made up yardstick he calls money. He kills for money.<br><br>He claims ownership of lands, that have existed before him and will continue to exist long after he is gone. He kills for this land.<br><br>He claims allegiance to a nation, a made up assortment of land parcels. He kills for his nation.<br><br>He claims virtue by association with ideology, a filtered, mis-interpreted fragment of reality. He kills for his ideology.<br><br>He claims obedience to an unseen god, in anticipation of rewards in the unknown afterlife. He kills for his god.<br><br>He claims all of natures bounty as his need. He kills for his greed.<br><br>He claims his beliefs will bring him love, admiration and respect. He kills for his beliefs.<br><br>He claims nature and the divine, value all being as equals. He kills to maintain his distinction.<br><br>He claims he is secure in his abilities while being constantly fearful of every perceived adversity. He kills to protect against imagined threats.<br><br>He claims to honor beings. He kills in the name of honor and righteousness.<br><br>He claims the next kill will guarantee forever peace. He kills to prevent further killing.<br><br>He kills, because he is told to do so.<br><br>In his willingness to kill, he is goaded on by the many rationalizations he has embraced.<br><br>He feels the good. He feels the power. He is the emperor of all that he beholds. His townspeople count on him. He has to do what needs doing. No one else will. They do not have his vision, nor his understanding. They are weak. So, he dresses up in self righteous indignation and painted on grandeur. He congratulates himself on his resolve and his skill. He grants himself the authority and the right to kill.<br><br>As his first mission, he silences the child who points to him and says, “The emperor he has no clothes.” Innocents are easy prey. Truth becomes the first casualty. The false becomes a self-reinforcing truth. He hears no one.<br><br>This man lives inside each of us. Do we notice? Do we give him a voice? Do we give him power?<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his" rel="noopener noreferrer"><span class="glassbtn">📸</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution</span></div>
-<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">PART II <span class='next-page'>👉</span></div>
+<div style="margin-left: var(--Lsafe-margin) !important; " class="paraitalicleft">PART II <span class='nextPgbtn'>👉</span></div>
     </div>
     
                 </div>
@@ -2677,13 +2629,13 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
 
         // ==================== Navigation LISTENER Begin ==============================================
         // Page Navigation icons anywhere in content
-        document.querySelectorAll('.next-page').forEach(el => {
+        document.querySelectorAll('.nextPgbtn').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
                 nextPage();
             });
         });
-        document.querySelectorAll('.prev-page').forEach(el => {
+        document.querySelectorAll('.prevPgbtn').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
                 prevPage();
@@ -2831,7 +2783,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             // - Otherwise, it activates the page at 0 (usually 0, which could be the TOC or first content page).
         // Checks the URL hash (e.g., #page-3) and navigates to that page using activatePageFromHash() (overriding 
             //the initial active page if a hash is present).
-        // Adds a click listener to a .back-to-list button (if present) that opens a configured URL (https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2) 
+        // Adds a click listener to a .BOOKLISTbtn button (if present) that opens a configured URL (https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html#page-2) 
         // add listener for keyboard
         // adds listener for left right arrow
         // adds listener for Back-to-list
@@ -2860,7 +2812,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             // After setting the initial active page, check URL hash
             activatePageFromHash();
             
-            const booklistBtn = document.querySelector('.back-to-list');
+            const booklistBtn = document.querySelector('.BOOKLISTbtn');
             if (booklistBtn) {
                 booklistBtn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -2882,7 +2834,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 // it starts at index 0 (first content page).
             // Loops through all .page elements from startPage to the end, but skips the TOC page if its id is "page-toc".
             // For each content page, it creates a <div class="page-header"> and populates it with three elements:
-            // Left side: a back‑to‑TOC button (<a class="back-to-toc">) if a TOC page exists. The button contains the emoji 🗂️.
+            // Left side: a back‑to‑TOC button (<a class="TOCbtn">) if a TOC page exists. The button contains the emoji 🗂️.
             // Center: the book title (<div class="book-title">) with text from Observation of Thoughts (later replaced by Python).
             // Right side: the page number (<div class="page-number">) which includes a clickable bookmark emoji (🔖) 
                 // that calls copyCurrentPageUrl(event) when clicked.
@@ -2901,7 +2853,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 // Back to TOC button (left side)
                 if (document.getElementById('page-toc')) {
                     const backButton = document.createElement('a');
-                    backButton.className = 'back-to-toc';
+                    backButton.className = 'TOCbtn';
                     backButton.href = '#page-toc';
                     backButton.textContent = '🗂️'; 
                     // 'Contents';
@@ -3011,7 +2963,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             rightArrowContainer.addEventListener('click', nextPage);
 
             // TOC Navigation (handles both list and button styles)
-            // This code adds click handlers to all elements with the class .back-to-toc (typically a button or link that returns to the Table of Contents). When clicked, it:
+            // This code adds click handlers to all elements with the class .TOCbtn (typically a button or link that returns to the Table of Contents). When clicked, it:
             // - Prevents the default link behavior (so the URL doesn’t change with a #).
             // - Extracts the target ID from the href attribute (e.g., #page-toc).
             // - Finds the corresponding .page element.
@@ -3020,7 +2972,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             // - Smooth‑scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
             // In short, it enables the “back to TOC” button to work correctly and ensures the TOC page appears at the top after navigation.
 
-            document.querySelectorAll('.back-to-toc').forEach(link => {
+            document.querySelectorAll('.TOCbtn').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
