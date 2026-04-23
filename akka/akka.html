@@ -84,108 +84,6 @@
             outline-offset: 2px;
         }
 
-        /* PROGRESSS BAR START =====================================================================*/
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-        .progress-bar {
-            height: 100%;
-            background: #000;
-            width: 0%;
-            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-        /* PROGRESSS BAR END   =====================================================================*/
-
-        /* SLIDER BAR START ========================================================================*/
-        .slider-container {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--page-width);
-            height: 50px;
-            z-index: 20;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .slider-area { /* transparent hoverzone */
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 19;
-        }
-        .slider-area:hover ~ .slider-container,
-        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
-        opacity: 1; pointer-events: auto; }
-        
-        .slider-wrapper { width: 80%; position: relative; margin: 0 auto; }
-        .slider {
-            width: 100%;
-            margin-bottom: 5px;
-            -webkit-appearance: none;
-            height: 3px;
-            background: rgba(96, 96, 96, 0);
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;
-        }
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-            
-            width: 24px;
-            height: 16px;
-        }
-        .slider::-moz-range-thumb {
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-
-            width: 24px;
-            height: 16px;
-            }
-        .slider-track {
-            position: absolute;
-            height: 4px;
-            border-radius: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            pointer-events: none;
-        }
-        /* styles the text container that shows the current page 
-        number and total page count next to the slider. */
-        .slider-info {
-            color: #b0e0ff;
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }
-        .slider-info #current-page {
-            color: #b0e0ff;
-            font-style: italic;
-        }
-        /* SLIDER BAR END ==========================================================================*/
-
         /* PAGES START =============================================================================*/
         .page {
             box-sizing: border-box;
@@ -366,11 +264,12 @@
 
             padding: 5px 15px;
             margin: 5px;
-            position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .glassbtn { position: relative; }
+
         /* apply to all glassbtn children with <a> tags */
         a:has(.glassbtn) { text-decoration: none; background: transparent; } 
         .TOCbtn { order: 1; transform: scale(1.15, 0.95); }
@@ -629,6 +528,108 @@
         #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
         #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
         /* BUBBLETEXT END  =======================================================================*/
+        /* PROGRESSS BAR START =====================================================================*/
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #000;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        /* PROGRESSS BAR END   =====================================================================*/
+
+        /* SLIDER BAR START ========================================================================*/
+        .slider-container {
+            position: fixed ;
+            bottom: 10px ;
+            top: auto ;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 50px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .slider-area { /* transparent hoverzone */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
+        opacity: 1; pointer-events: auto; }
+        
+        .slider-wrapper { width: 80%; position: relative; margin: 0 auto; }
+        .slider {
+            width: 100%;
+            margin-bottom: 5px;
+            -webkit-appearance: none;
+            height: 3px;
+            background: rgba(96, 96, 96, 0);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            width: 24px;
+            height: 16px;
+        }
+        .slider::-moz-range-thumb {
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+
+            width: 24px;
+            height: 16px;
+            }
+        .slider-track {
+            position: absolute;
+            height: 4px;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }
+        /* styles the text container that shows the current page 
+        number and total page count next to the slider. */
+        .slider-info {
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }
+        .slider-info #current-page {
+            color: #b0e0ff;
+            font-style: italic;
+        }
+        /* SLIDER BAR END ==========================================================================*/
 
 
         .content-text {
