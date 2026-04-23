@@ -339,108 +339,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             outline-offset: 2px;
         }}
 
-        /* PROGRESSS BAR START =====================================================================*/
-        .progress-container {{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(0,0,0,0.1);
-            z-index: 100;
-        }}
-        .progress-bar {{
-            height: 100%;
-            background: #000;
-            width: 0%;
-            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-        }}
-        /* PROGRESSS BAR END   =====================================================================*/
-
-        /* SLIDER BAR START ========================================================================*/
-        .slider-container {{
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--page-width);
-            height: 50px;
-            z-index: 20;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            opacity: 0;
-            pointer-events: none;
-        }}
-        .slider-area {{ /* transparent hoverzone */
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 19;
-        }}
-        .slider-area:hover ~ .slider-container,
-        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
-        opacity: 1; pointer-events: auto; }}
-        
-        .slider-wrapper {{ width: 80%; position: relative; margin: 0 auto; }}
-        .slider {{
-            width: 100%;
-            margin-bottom: 5px;
-            -webkit-appearance: none;
-            height: 3px;
-            background: rgba(96, 96, 96, 0);
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-            border: 1px solid darkgray;
-        }}
-        .slider::-webkit-slider-thumb {{
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-            
-            width: 24px;
-            height: 16px;
-        }}
-        .slider::-moz-range-thumb {{
-            background: rgba(176, 224, 255, 1) !important;
-            border: 1px solid darkgray !important;
-            border-radius: 50%;
-            cursor: pointer;
-
-            width: 24px;
-            height: 16px;
-            }}
-        .slider-track {{
-            position: absolute;
-            height: 4px;
-            border-radius: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            pointer-events: none;
-        }}
-        /* styles the text container that shows the current page 
-        number and total page count next to the slider. */
-        .slider-info {{
-            color: #b0e0ff;
-            font-size: 0.8em;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-bottom: 5px;
-        }}
-        .slider-info #current-page {{
-            color: #b0e0ff;
-            font-style: italic;
-        }}
-        /* SLIDER BAR END ==========================================================================*/
-
         /* PAGES START =============================================================================*/
         .page {{
             box-sizing: border-box;
@@ -621,11 +519,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
             padding: 5px 15px;
             margin: 5px;
-            position: relative;
             z-index: 9999;
             pointer-events: auto !important;
             cursor: pointer !important;
         }}
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .glassbtn {{ position: relative; }}
+
         /* apply to all glassbtn children with <a> tags */
         a:has(.glassbtn) {{ text-decoration: none; background: transparent; }} 
         .TOCbtn {{ order: 1; transform: scale(1.15, 0.95); }}
@@ -884,6 +783,108 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         #BubbleText::-webkit-scrollbar-track {{ background: rgba(255,255,255,0.1); border-radius: 3px; }}
         #BubbleText::-webkit-scrollbar-thumb {{ background: rgba(255,255,255,0.4); border-radius: 3px; }}
         /* BUBBLETEXT END  =======================================================================*/
+        /* PROGRESSS BAR START =====================================================================*/
+        .progress-container {{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 100;
+        }}
+        .progress-bar {{
+            height: 100%;
+            background: #000;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }}
+        /* PROGRESSS BAR END   =====================================================================*/
+
+        /* SLIDER BAR START ========================================================================*/
+        .slider-container {{
+            position: fixed ;
+            bottom: 10px ;
+            top: auto ;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 50px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0;
+            pointer-events: none;
+        }}
+        .slider-area {{ /* transparent hoverzone */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }}
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover {{ background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
+        opacity: 1; pointer-events: auto; }}
+        
+        .slider-wrapper {{ width: 80%; position: relative; margin: 0 auto; }}
+        .slider {{
+            width: 100%;
+            margin-bottom: 5px;
+            -webkit-appearance: none;
+            height: 3px;
+            background: rgba(96, 96, 96, 0);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;
+        }}
+        .slider::-webkit-slider-thumb {{
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            width: 24px;
+            height: 16px;
+        }}
+        .slider::-moz-range-thumb {{
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+
+            width: 24px;
+            height: 16px;
+            }}
+        .slider-track {{
+            position: absolute;
+            height: 4px;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }}
+        /* styles the text container that shows the current page 
+        number and total page count next to the slider. */
+        .slider-info {{
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }}
+        .slider-info #current-page {{
+            color: #b0e0ff;
+            font-style: italic;
+        }}
+        /* SLIDER BAR END ==========================================================================*/
 
 
         .content-text {{
@@ -2535,7 +2536,7 @@ def pre_clean(content):
     content = re.sub(r'<\s*NEXTPAGE_ICON\s*>', "<span class='nextPgbtn'>👉</span>", content, flags=re.IGNORECASE | re.DOTALL)
 
     # convert <PREVPAGE_ICON> to '<span class="prevPgbtn">👈</span>'
-    content = re.sub(r'<\s*PREVPAGE_ICON\s*>', "<span class='prev-page'>👈</span>", content, flags=re.IGNORECASE | re.DOTALL)
+    content = re.sub(r'<\s*PREVPAGE_ICON\s*>', "<span class='prevPgbtn'>👈</span>", content, flags=re.IGNORECASE | re.DOTALL)
 
     # convert LINKS from URL [text] (url) to <a href="url>test</a>
     content = re.sub(r'\[([^\]]+)\]\s*\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', content, flags=re.MULTILINE | re.DOTALL)
@@ -3511,8 +3512,9 @@ def get_mdate(md_file_path):
     # file is missing, the second part becomes "Unknown date". This function is used 
     # by rep_mdate to replace _getMdate("filename") placeholders with the actual 
     # writing period (oldest image to latest markdown edit).
+    # MODIFIED: When no images are found, returns only the markdown file date (no dash, no "No images").
     """
-    Return a string: oldest image date in the markdown's directory - markdown file date.
+    Return a string: oldest image date - markdown file date, or just markdown date if no images.
     Both dates formatted as '%b %d, %Y'.
     md_file_path should be an absolute Path object.
     """
@@ -3538,12 +3540,13 @@ def get_mdate(md_file_path):
             oldest_mtime = min(f.stat().st_mtime for f in img_files)
             oldest_image_date = datetime.fromtimestamp(oldest_mtime)
             oldest_image_date_str = oldest_image_date.strftime('%b %d, %Y')
+            return f"{oldest_image_date_str} - {md_date_str}"
         else:
-            oldest_image_date_str = "No images"
+            # No images found – return only the markdown date
+            return md_date_str
     else:
-        oldest_image_date_str = "No images"
-
-    return f"{oldest_image_date_str} - {md_date_str}"
+        # Parent directory does not exist – return only the markdown date
+        return md_date_str
 
 def rep_mdate(content):
     # The rep_mdate function scans the content for patterns like _getMdate("filename") and replaces each occurrence 
