@@ -486,7 +486,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             transition: all 0.3s ease;
         }}
         .toc-list .toc-entry a {{
-            color: var(--text-color);
+            color: {TOC_FontColor} !important;
             text-decoration: none;
             display: block;
         }}
@@ -1023,7 +1023,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             .toc-header-row {{ display: flex; align-items: center; justify-content: space-between;}}
             .toc-header-row .book-title {{ flex: 1; text-align: center; margin: 0;}}
 
-            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.9em ; display: inline-block }}            
+            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.8em ; display: inline-block }}            
 
             h1 {{ font-size: 2.2em !important; }}
             h2 {{ font-size: 1.3em !important; }}
@@ -1095,7 +1095,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     margin-top: 0 !important;
                 }}
             }}
-            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.7em ; display: inline-block }}
+            .chapterbtn {{ padding: 3px 8px !important; font-size: 0.7em ; display: inline-block; color: {TOC_FontColor}; }}
             
             {ForceMobileCSS}
             .image-caption-popup.mobile-visible {{
