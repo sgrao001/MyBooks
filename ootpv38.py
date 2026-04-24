@@ -440,6 +440,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             position: static;
             transform: none;
         }}
+        .title-header-left {{ text-align: left; }}
+
         .page-number {{
             background: transparent !important;
             visibility: {pageNumberStyle} !important;
@@ -2490,7 +2492,7 @@ tip_string = """ <clickwordC=  |  |
         <li>For Next Page, click on right margin.</li>
         <li>Margins are 15% for your browser width.</li>
         <span style='line-height: 2.4em'>
-            <li>Click <span class='glassbtn'> 📚 </span> at top left fof the Table of contents page only. Link to list of books</li>
+            <li>Click <span class='glassbtn'> 📚 </span> at top left for list of books</li>
             <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
             <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
             <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
@@ -3388,9 +3390,24 @@ def build_final_html(pages):
     #Build Title page
     title_page_html = ''
     if not CONFIG['Page0_skip']:
+        # Build the back-to-list button for title page (if enabled)
+        title_back_to_list_html = ''
+        if CONFIG['TOC_ENABLE'] and CONFIG['BkListLink_show']:
+            url = CONFIG['BkLinkURL']
+            if not url.startswith(('http://', 'https://')):
+                url = f'https://{url}'
+            title_back_to_list_html = f'''
+            <div class="title-header-left">
+                <a href="{url}" target="_self" class="glassbtn">
+                    📚
+                </a>
+            </div>
+            '''
+        
         title_page_html = f"""
         <div class="page active" id="page-0">
             <div class="page-content">
+                {title_back_to_list_html}
                 <div class="heading-container">
                     <h1>{escape(CONFIG['BkPage0_Title'])}</h1> 
                     <h2>{escape(CONFIG['BkPage0_Tag'])}</h2> 
@@ -3403,7 +3420,7 @@ def build_final_html(pages):
                 {tip_string}
             </div>
         </div>
-    """
+        """
 
     # Prepare mobile CSS based on flag (default to False if not specified)
     # This code prepares mobile‑specific CSS rules for images and captions 
