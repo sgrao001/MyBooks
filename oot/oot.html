@@ -239,9 +239,15 @@
         .toc-list .toc-entry:hover a {
             color: var(--primary-color);
         }
-        /* TOC BUILD-OUT END ======================================================================*/
+        /* TOC BUILD-OUT END =======================================================================*/
 
-        /* GLASS+OTHER BUTTON START ===============================================================*/
+        /* PRE_CLEAN START =========================================================================*/        
+        .paraitalicleft { font-style: italic; text-align: left; }
+        .paraitalicright { font-style: italic; text-align: right; }
+        .paraitaliccenter { font-style: italic; text-align: center; } 
+        /* PRE_CLEAN END ===========================================================================*/  
+
+        /* GLASS+OTHER BUTTON START ================================================================*/
         .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
@@ -407,13 +413,12 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.9);
             filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
         }
-        .text-only-container {
-            width: 90%;
-            margin: 0px auto;
-            padding: 0;
-        }
-        .image-container + .image-container {
-            margin-top: 10px;
+        .text-only-container { width: 90%; margin: 0px auto;padding: 0; }
+        .image-container + .image-container {margin-top: 10px; }
+        .image-date {
+            clear: both;
+            display: block;
+            text-align: center;
         }
         /* IMAGE HANDLING END  ===================================================================*/
 
@@ -915,7 +920,7 @@
                     <h2>Listen Read Walk and Live in Chicago - Postcards to myself</h2> 
                     <h2>Sri Rao</h2> 
                     <p style="font-size: 0.9em; text-align: center; opacity: 0.8;">
-                        Writing Period: Feb 18, 2025 - Apr 21, 2026
+                        Writing Period: Feb 18, 2025 - Apr 23, 2026
                     </p>
                     <h3>~***~</h3>
                 </div>
@@ -999,7 +1004,7 @@
     <div class="content-text" 
          style="font-size: 1em;
                 --mobile-font-size: 0.9em">
-        <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ThreeElementsWassilyKandinsky1925.jpeg" alt="Image" style="width: 50%;"><div class="image-caption-popup" style="width: 50%; ">ThreeElements Wassily Kandinsky 1925</div></div>
+        <div class="image-container image-align-left mobile-align-center mobile-default-size"><img src="ThreeElementsWassilyKandinsky1925.jpeg" alt="Image" style="width: 50%;"><div class="image-caption-popup" style="width: 50%; ">ThreeElements Wassily Kandinsky 1925 right</div></div>
 <div style="color: #f09e5a;"><span class="highlight-text">An Enchanting Journey</span></div><br>There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. The infinite can be transformed into less intimidating, even navigate-able explorations.<br><br>Earth-fire-water; a necessity for life. Man-woman-child; the unit of family. Yesterday-today-tomorrow; the stuff of history, poetry and dreams.<br><br>In our attempt to appreciate the vastness of nature, its immeasurably awe inspiring presence, the never ending interplay of its manifestations and the state of constant adaptations, we might undertake three journeys - the journey into the self, the journey into our worldly existence, and the journey into the vast unknowns beyond our current life and the known world.<br><br><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
 <div style="margin-left: var(--Lsafe-margin) !important; margin-right: var(--Rsafe-margin) !important; " ><a href="https://en.wikipedia.org/wiki/Three_Elements" rel="noopener noreferrer"><span class="glassbtn">📸</span></a>&nbsp;<span class="glassbtnlbl";>Image attribution</span></div>
     </div>
@@ -2718,7 +2723,7 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         function goToPage(pageNum) {
             console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
-            if (pageNum === currentPage) return;   // Avoid unnecessary transition
+            if (pageNum === currentPage) return;
             
             const currentActive = document.querySelector('.page.active');
             if (currentActive) {
@@ -2734,6 +2739,14 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                 pages[currentPage].classList.add('active');
                 updateSlider();
                 updateProgress();
+                
+                // Scroll to top of the new page
+                const newPageContent = pages[currentPage].querySelector('.page-content');
+                if (newPageContent) {
+                    newPageContent.scrollTop = 0;      // instant scroll to top
+                } else {
+                    pages[currentPage].scrollTop = 0;  // fallback
+                }
                 
                 // Remove any #page-... from the URL bar (keep only base path)
                 history.pushState(null, '', window.location.pathname);
@@ -2949,12 +2962,6 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top of page
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });            
             });  
@@ -2991,12 +2998,6 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });
             });

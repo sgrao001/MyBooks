@@ -239,9 +239,15 @@
         .toc-list .toc-entry:hover a {
             color: var(--primary-color);
         }
-        /* TOC BUILD-OUT END ======================================================================*/
+        /* TOC BUILD-OUT END =======================================================================*/
 
-        /* GLASS+OTHER BUTTON START ===============================================================*/
+        /* PRE_CLEAN START =========================================================================*/        
+        .paraitalicleft { font-style: italic; text-align: left; }
+        .paraitalicright { font-style: italic; text-align: right; }
+        .paraitaliccenter { font-style: italic; text-align: center; } 
+        /* PRE_CLEAN END ===========================================================================*/  
+
+        /* GLASS+OTHER BUTTON START ================================================================*/
         .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {
             color: var(--text-color);
             text-decoration: none;
@@ -407,13 +413,12 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.9);
             filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
         }
-        .text-only-container {
-            width: 90%;
-            margin: 0px auto;
-            padding: 0;
-        }
-        .image-container + .image-container {
-            margin-top: 10px;
+        .text-only-container { width: 90%; margin: 0px auto;padding: 0; }
+        .image-container + .image-container {margin-top: 10px; }
+        .image-date {
+            clear: both;
+            display: block;
+            text-align: center;
         }
         /* IMAGE HANDLING END  ===================================================================*/
 
@@ -2003,7 +2008,7 @@ No float marker (trigger stays inline) <span style="display: inline; margin: 0;"
         function goToPage(pageNum) {
             console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
-            if (pageNum === currentPage) return;   // Avoid unnecessary transition
+            if (pageNum === currentPage) return;
             
             const currentActive = document.querySelector('.page.active');
             if (currentActive) {
@@ -2019,6 +2024,14 @@ No float marker (trigger stays inline) <span style="display: inline; margin: 0;"
                 pages[currentPage].classList.add('active');
                 updateSlider();
                 updateProgress();
+                
+                // Scroll to top of the new page
+                const newPageContent = pages[currentPage].querySelector('.page-content');
+                if (newPageContent) {
+                    newPageContent.scrollTop = 0;      // instant scroll to top
+                } else {
+                    pages[currentPage].scrollTop = 0;  // fallback
+                }
                 
                 // Remove any #page-... from the URL bar (keep only base path)
                 history.pushState(null, '', window.location.pathname);
@@ -2234,12 +2247,6 @@ No float marker (trigger stays inline) <span style="display: inline; margin: 0;"
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top of page
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });            
             });  
@@ -2276,12 +2283,6 @@ No float marker (trigger stays inline) <span style="display: inline; margin: 0;"
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });
             });
