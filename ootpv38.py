@@ -494,9 +494,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .toc-list .toc-entry:hover a {{
             color: var(--primary-color);
         }}
-        /* TOC BUILD-OUT END ======================================================================*/
+        /* TOC BUILD-OUT END =======================================================================*/
 
-        /* GLASS+OTHER BUTTON START ===============================================================*/
+        /* PRE_CLEAN START =========================================================================*/        
+        .paraitalicleft {{ font-style: italic; text-align: left; }}
+        .paraitalicright {{ font-style: italic; text-align: right; }}
+        .paraitaliccenter {{ font-style: italic; text-align: center; }} 
+        /* PRE_CLEAN END ===========================================================================*/  
+
+        /* GLASS+OTHER BUTTON START ================================================================*/
         .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {{
             color: var(--text-color);
             text-decoration: none;
@@ -662,13 +668,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             box-shadow: 0 15px 35px rgba(0,0,0,0.9);
             filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
         }}
-        .text-only-container {{
-            width: 90%;
-            margin: 0px auto;
-            padding: 0;
-        }}
-        .image-container + .image-container {{
-            margin-top: 10px;
+        .text-only-container {{ width: 90%; margin: 0px auto;padding: 0; }}
+        .image-container + .image-container {{margin-top: 10px; }}
+        .image-date {{
+            clear: both;
+            display: block;
+            text-align: center;
         }}
         /* IMAGE HANDLING END  ===================================================================*/
 
@@ -2077,7 +2082,7 @@ FOOTER_TEMPLATE = """
         function goToPage(pageNum) {
             console.log('goToPage called with', pageNum, 'currentPage =', currentPage, 'totalPages =', totalPages);
             if (pageNum < 0 || pageNum > totalPages) return;
-            if (pageNum === currentPage) return;   // Avoid unnecessary transition
+            if (pageNum === currentPage) return;
             
             const currentActive = document.querySelector('.page.active');
             if (currentActive) {
@@ -2093,6 +2098,14 @@ FOOTER_TEMPLATE = """
                 pages[currentPage].classList.add('active');
                 updateSlider();
                 updateProgress();
+                
+                // Scroll to top of the new page
+                const newPageContent = pages[currentPage].querySelector('.page-content');
+                if (newPageContent) {
+                    newPageContent.scrollTop = 0;      // instant scroll to top
+                } else {
+                    pages[currentPage].scrollTop = 0;  // fallback
+                }
                 
                 // Remove any #page-... from the URL bar (keep only base path)
                 history.pushState(null, '', window.location.pathname);
@@ -2308,12 +2321,6 @@ FOOTER_TEMPLATE = """
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top of page
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });            
             });  
@@ -2350,12 +2357,6 @@ FOOTER_TEMPLATE = """
                             }
                         }
                         goToPage(pageNum);
-                        
-                        // Smooth scroll to top
-                        document.querySelector('.page.active').scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
                     }
                 });
             });
@@ -3028,7 +3029,6 @@ def convert_markdown_table_to_html(markdown_table):
     
     return f'<div class="table-container"><table>{header_html}<tbody>{"".join(body_rows)}</tbody></table></div>'
 
-
 def convert_inline_images(content):
     """Fixed parser that handles alignment correctly with px and % size support"""
     # The convert_inline_images function transforms custom image syntax ![[ ... ]] into HTML that displays an 
@@ -3113,9 +3113,15 @@ def convert_inline_images(content):
         # NEW: Apply the calculated width to the caption
         caption_html = f'<div class="image-caption-popup"{caption_width_style}>{escape(description)}</div>' if description else ''
         
+        # --- NEW: Get image_date --- NOT WORKING RIGHT - POTENTIAL FOR PLACEMENT IN FOOTER at a later time - DEAD-CODE
+        # image_date = get_image_date(image_filename)   # assumes get_image_date is defined elsewhere
+        # date_html = f'<div class="image-date">{image_date}</div>' if image_date else ''
+        # return f'<div class="image-container{alignment_class}">{image_html}{caption_html}{date_html}</div>'
+    
         return f'<div class="image-container{alignment_class}">{image_html}{caption_html}</div>'
     
     return re.sub(r'!\[\[.*?\]\]', replace_image, content)
+
 
 #   CONVERTIONS FUNCTIONS END ======================================================================================
 
@@ -3569,6 +3575,19 @@ def rep_mdate(content):
     
     pattern = r'_getMdate\("([^"]+)"\)'
     return re.sub(pattern, replace_mdate, content, flags=re.IGNORECASE)
+
+def get_image_date(image_filename):
+    """Return modification date of image, formatted as mm/dd/yyyy, or empty string."""
+    md_abs_path = CONFIG.get('_resolved_source_md', None)
+    if not md_abs_path:
+        return ""
+    md_dir = Path(md_abs_path).parent
+    img_path = md_dir / image_filename
+    if img_path.exists():
+        mod_time = datetime.fromtimestamp(img_path.stat().st_mtime)
+        return mod_time.strftime('%m/%d/%Y')
+    return ""
+
 #   DATE FUNCTIONS END== =============================================================================================
 
 
