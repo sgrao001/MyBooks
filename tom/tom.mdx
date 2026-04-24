@@ -54,13 +54,18 @@ The journey into the self is a solo journey. Solitude is a pre-condition to mean
 
 Tools for the journey: 
 <br><br>
-<ParaitalicL="<u>Conviction</u>: A resolve to be true to self, with all reflections, always. <br>
-<u>Commitment</u>: A complete ownership of all contents of the halo, as it was, as it is, and as it will be.<br>
-<u>Acceptance</u>:  An acceptance that all is as it should be, no matter what!!. <br>
-<u>The three wise men of mind organs</u>: Consciousness, Intuition, and Conscience. <br>
-<u>Will to Act</u>: The use of energy to direct action and to release residual footprints left in the halo.
+<ParaitalicL="<span style='font-style:normal; font-family: Arial, sans-serif;'>Conviction<br></span> A resolve to be true to self, with all reflections, always. 
+
+<span style='font-style:normal; font-family: Arial, sans-serif;'>Commitment<br></span> A complete ownership of all contents of the halo, as it was, as it is, and as it will be.
+
+<span style='font-style:normal; font-family: Arial, sans-serif;'>Acceptance<br></span>  An acceptance that all is as it should be, no matter what!!. 
+
+<span style='font-style:normal; font-family: Arial, sans-serif;'>The three wise men of mind organs<br></span> Consciousness, Intuition, and Conscience. 
+
+<span style='font-style:normal; font-family: Arial, sans-serif;'>Will to Act<br></span> The use of energy to direct action and to release residual footprints left in the halo.
+
 ">
-<br>
+
 Energy is not to be stored in the halo, only consumed, or discarded. This frees up space for continued and effortless new energy exchanges.
 
 Whilst these tools exist in sufficient measure in all beings, they are to be applied with deliberateness. These tools draw energy from the halo and replenishment comes from the rewards of passionate living and harmonious coexistence.
