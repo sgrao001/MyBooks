@@ -299,6 +299,16 @@
             border-right: none;
             text-decoration: underline;
         }
+        /* glassbtn hover remover */ 
+        .no-hover:hover {
+            background: rgba(0, 0, 0, 0.075) !important;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3), 0 0 0 1.5px rgba(255,255,255,0.4) inset !important;
+            border-top: none;
+            border-left: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
         /* GLASS+OTHER BUTTON END  ===============================================================*/
 
         /* ARROW HANDLING START  =================================================================*/
@@ -933,28 +943,27 @@
                     </p>
                     <h3>~***~</h3>
                 </div>
-                 <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips ...</b></u><br>
+                 <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div><br>
+        <div class='glassbtn no-hover' style='color: #EBF5FF; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
+            Next page, click or touch right margin<br>
+            Previous page, click or touch left margin<br>
+            Page slider, click or touch bottom margin
+        </div>
         <ul>
-        <li>For Previous page, click on left margin.</li>
-        <li>For Next Page, click on right margin.</li>
-        <li>Margins are 15% for your browser width.</li>
-        <span style='line-height: 2.4em'>
-            <li>Click <span class='glassbtn'> 📚 </span> at top left for list of books</li>
-            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
-            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
-            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
-            <li>Click <span class='glassbtn'> 👆</span> any where you see it, </li>
-        </span>
-            <ul>
-            <li>Opens a webpage with additional information</li>
-            <li>Opens a popup box with additional information.</li>
-            </ul>
-        </li>
-        <li>Click on the Popup to make it go away.</li>
+        <div style='line-height: 2.4em'>
+            <li>Margins are 15% wide / tall</li>
+            <li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
+            <li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
+            <li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages or web links</li>
+        </div><br>
+        <l>Click anywhere on popup's to close them</li>
         </ul>
-    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
-    <span style="font-size: .8em; text-align: center;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
-
+        <div style='text-align: center; margin-top: 10px;'>
+            <span class='glassbtn' >Close</span>
+        </div>
+    <br>   <span style='font-size: .8em; text-align: center;'" class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span> <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter"><br>( click here for navigation tips )</div></span>
             </div>
         </div>
         
@@ -978,28 +987,27 @@
                 </div>
             </div>
             <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
-             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<u><b>Navigation tips ...</b></u><br>
+             <span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="%" data-width="%" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div><br>
+        <div class='glassbtn no-hover' style='color: #EBF5FF; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
+            Next page, click or touch right margin<br>
+            Previous page, click or touch left margin<br>
+            Page slider, click or touch bottom margin
+        </div>
         <ul>
-        <li>For Previous page, click on left margin.</li>
-        <li>For Next Page, click on right margin.</li>
-        <li>Margins are 15% for your browser width.</li>
-        <span style='line-height: 2.4em'>
-            <li>Click <span class='glassbtn'> 📚 </span> at top left for list of books</li>
-            <li>Click <span class='glassbtn'> 🗂️ </span> at top left for table of contents</li>
-            <li>Click <span class='glassbtn'> 🔖 </span> at top right to copy page bookmark (URL) to clipboard</li>
-            <li>Click <span class='glassbtn'> 📸</span> To see image attribution </li>
-            <li>Click <span class='glassbtn'> 👆</span> any where you see it, </li>
-        </span>
-            <ul>
-            <li>Opens a webpage with additional information</li>
-            <li>Opens a popup box with additional information.</li>
-            </ul>
-        </li>
-        <li>Click on the Popup to make it go away.</li>
+        <div style='line-height: 2.4em'>
+            <li>Margins are 15% wide / tall</li>
+            <li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
+            <li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
+            <li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages or web links</li>
+        </div><br>
+        <l>Click anywhere on popup's to close them</li>
         </ul>
-    " class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>
-    <span style="font-size: .8em; text-align: center;"><div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter">( click here for navigation tips )</div></span>
-
+        <div style='text-align: center; margin-top: 10px;'>
+            <span class='glassbtn' >Close</span>
+        </div>
+    <br>   <span style='font-size: .8em; text-align: center;'" class="BubbleText-trigger BubbleText-full BubbleText-flex"><span class='glassbtn' style='font-size: 1em;'>👆</span></span> <div style="margin-left: auto !important; margin-right: auto !important; " class="paraitaliccenter"><br>( click here for navigation tips )</div></span>
         </div>       
     </div>
     
@@ -2037,6 +2045,23 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         // - Constraints – max‑width/‑height via CSS variables or trigger data attributes, clamping to viewport edges.
         // - Cleanup – on hiding, it removes content and resets styles.
         // - In essence, it is a highly configurable tooltip / modal‑like popup that adapts its position and size to avoid overflow and provide a smooth user experience.
+        //
+        // Arguments for toggleBubbleText...
+        //    top,           // vertical position (e.g., 'center', '50px', or undefined)
+        //    left,          // horizontal position (e.g., 'center', '20px', or undefined)
+        //    height,        // explicit height (e.g., 'auto', '200px', or '@' for smart mode)
+        //    width,         // explicit width (e.g., 'auto', '300px', or '@' for smart mode)
+        //    bbbltext,      // the HTML content to display inside the popup
+        //    visible,       // 'yes' to show, 'no' to hide
+        //    animation,     // 'fade', 'bounce', 'slide', 'zoom' (default: 'fade')
+        //    textAlign,     // 'left', 'center', 'right' (default: 'left')
+        //    position,      // 'fixed', 'absolute', etc. (default: 'fixed')
+        //    extraClasses,  // array of additional CSS classes to add to the popup
+        //    bottom,        // bottom position (overrides top if set)
+        //    maxHeight,     // maximum height in pixels (or null)
+        //    bottomGap,     // gap from bottom when using bottom positioning modes
+        //    trigger,       // the DOM element that triggered the popup (used for smart positioning)
+        //    right          // right position (overrides left if set)
         
         function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
             const BubbleText = document.getElementById('BubbleText');
@@ -2365,7 +2390,9 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
         //      above the trigger depending on available space (and can limit height to avoid overflow).
         // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
         // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
-        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.        
+        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.    
+        
+            
         
         document.addEventListener('click', function(e) {
             try {
@@ -2544,6 +2571,22 @@ Mother, O’ sweet mother of mine ...</div><br><hr style="height: 1.2px; backgro
             }
         });
         // ==================== BubbleText INSIDE CLICK close END ====================================
+// TEST
+        // AUto load the Tip_string on book Launch 
+        const navtext = "\n    <div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div><br>\n        <div class='glassbtn no-hover' style='color: #EBF5FF; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>\n            Next page, click or touch right margin<br>\n            Previous page, click or touch left margin<br>\n            Page slider, click or touch bottom margin\n        </div>\n        <ul>\n        <div style='line-height: 2.4em'>\n            <li>Margins are 15% wide / tall</li>\n            <li>Click <span class='glassbtn no-hover'> \ud83d\udcda </span> at top left for list of books</li>\n            <li>Click <span class='glassbtn no-hover'> \ud83d\uddc2\ufe0f </span> at top left for table of contents</li>\n            <li>Click <span class='glassbtn no-hover'> \ud83d\udd16 </span> at top right to copy page URL to clipboard</li>\n            <li>Click <span class='glassbtn no-hover'> \ud83d\udcf8</span> To see image attribution </li>\n            <li>Click <span class='glassbtn no-hover'> \ud83d\udc46</span> for popup messages or web links</li>\n        </div><br>\n        <l>Click anywhere on popup's to close them</li>\n        </ul>\n        <div style='text-align: center; margin-top: 10px;'>\n            <span class='glassbtn' >Close</span>\n        </div>\n    ";
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleBubbleText(
+                '', '', 'auto', 'auto', navtext, 'yes', 'fade',
+                'left', 'center-both', [], undefined, null, null, null, undefined
+            );
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 10000);
+        });
+
 
         // BUBBLETEXT LISTENER END ===================================================================
 
