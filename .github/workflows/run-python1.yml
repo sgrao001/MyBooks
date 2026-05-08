@@ -1,0 +1,24 @@
+name: Run Python Script
+
+on:
+  # This allows you to run the script manually from the "Actions" tab
+  workflow_dispatch:
+  # This runs the script every time you push code to the 'main' branch
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-my-script:
+    runs-on: ubuntu-latest
+
+    [span_0](start_span)steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Downloads your code onto the runner[span_0](end_span)
+
+      - [span_1](start_span)name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'    # Specifies the Python version to use[span_1](end_span)
+
+      - [span_2](start_span)name: Run the script
+        run: python hello.py        # The actual command to execute your file[span_2](end_span)
