@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Anonymous Upload</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 50px auto; padding: 20px; }
+        input, button { margin: 10px 0; padding: 10px; width: 100%; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; }
+        #result { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Upload</h1>
+    <p>This is a test - file will go to GitHub Issues first</p>
+    
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Test Upload</button>
+    <div id="result"></div>
+
+    <script>
+        // 👇 REPLACED WITH YOUR ACTUAL CLOUDFLARE WORKER URL
+        const WORKER_URL = 'https://upload-proxy.sgrao001.workers.dev';
+        
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const resultDiv = document.getElementById('result');
+            
+            if (!fileInput.files.length) {
+                resultDiv.innerHTML = '❌ Select a file first';
+                resultDiv.className = 'error';
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            resultDiv.innerHTML = '📤 Uploading to file.io...';
+            resultDiv.className = '';
+            
+            try {
+                // Step 1: Upload to file.io
+                const formData = new FormData();
+                formData.append('file', file);
+                const fileioRes = await fetch('https://file.io', { method: 'POST', body: formData });
+                const fileioData = await fileioRes.json();
+                
+                if (!fileioData.success) throw new Error('file.io upload failed');
+                
+                resultDiv.innerHTML = '✅ file.io success, sending to GitHub...';
+                
+                // Step 2: Send to Cloudflare Worker
+                const workerRes = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        fileLink: fileioData.link,
+                        filename: file.name
+                    })
+                });
+                
+                const workerData = await workerRes.json();
+                
+                if (workerRes.ok) {
+                    resultDiv.innerHTML = `✅ TEST SUCCESS!<br>
+                        Check GitHub Issues: <a href="${workerData.issueUrl}" target="_blank">${workerData.issueUrl}</a>`;
+                    resultDiv.className = 'success';
+                } else {
+                    throw new Error(workerData.error);
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ Error: ${error.message}`;
+                resultDiv.className = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
