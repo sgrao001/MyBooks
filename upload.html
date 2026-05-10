@@ -1,118 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anonymous Upload Debug</title>
+    <title>Anonymous Upload</title>
     <style>
-        body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
+        body { font-family: Arial; max-width: 500px; margin: 50px auto; padding: 20px; }
         input, button { margin: 10px 0; padding: 10px; width: 100%; }
         button { background: #28a745; color: white; border: none; cursor: pointer; }
-        .test-btn { background: #007bff; }
-        #result, #debug { margin-top: 20px; padding: 10px; border-radius: 5px; white-space: pre-wrap; }
+        #result { margin-top: 20px; padding: 10px; border-radius: 5px; white-space: pre-wrap; }
         .success { background: #d4edda; color: #155724; }
         .error { background: #f8d7da; color: #721c24; }
-        .info { background: #d1ecf1; color: #0c5460; }
     </style>
 </head>
 <body>
-    <h1>🧪 Test Upload with Debug</h1>
-    <p>Select a file and click "Test Upload"</p>
-
+    <h1>📤 Anonymous File Upload</h1>
+    <p>Select a file – it will be saved permanently to this repository.</p>
     <input type="file" id="fileInput">
-    <button onclick="uploadFile()">Test Upload</button>
-    <button class="test-btn" onclick="testWorker()">Test Worker Connection</button>
+    <button onclick="uploadFile()">Upload</button>
     <div id="result"></div>
-    <div id="debug"></div>
 
     <script>
-        // 👇 MAKE SURE THIS URL IS 100% CORRECT
-        const WORKER_URL = 'https://upload-api.sgrao001.workers.dev';
-
-        function log(msg, type = 'info') {
-            const debugDiv = document.getElementById('debug');
-            const p = document.createElement('div');
-            p.textContent = msg;
-            p.className = type === 'error' ? 'error' : (type === 'success' ? 'success' : 'info');
-            debugDiv.appendChild(p);
-            console.log(msg);
-        }
-
-        async function testWorker() {
-            log('Testing Worker connection...');
-            try {
-                const res = await fetch(WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ fileLink: 'test', filename: 'test.txt' })
-                });
-                const text = await res.text();
-                log(`Worker responded with status ${res.status}: ${text}`);
-                if (res.ok) {
-                    log('Worker is reachable and responding.', 'success');
-                } else {
-                    log('Worker returned an error response.', 'error');
-                }
-            } catch (err) {
-                log(`Worker fetch failed: ${err.message}`, 'error');
-            }
-        }
+        const WORKER_URL = 'https://upload-api.sgrao001.workers.dev'; // your worker URL
 
         async function uploadFile() {
             const fileInput = document.getElementById('fileInput');
             const resultDiv = document.getElementById('result');
-            const debugDiv = document.getElementById('debug');
-            debugDiv.innerHTML = '';
-            resultDiv.innerHTML = '';
-
             if (!fileInput.files.length) {
                 resultDiv.innerHTML = '❌ Select a file first';
                 resultDiv.className = 'error';
                 return;
             }
-
             const file = fileInput.files[0];
-            log(`Selected file: ${file.name}, size: ${file.size} bytes`);
-            resultDiv.innerHTML = '📤 Uploading to file.io...';
+            resultDiv.innerHTML = '📤 Uploading...';
             resultDiv.className = '';
 
+            const formData = new FormData();
+            formData.append('file', file);
+
             try {
-                // Step 1: Upload to file.io
-                const formData = new FormData();
-                formData.append('file', file);
-                log('Sending to file.io...');
-                const fileioRes = await fetch('https://file.io', { method: 'POST', body: formData });
-                log(`file.io responded with status ${fileioRes.status}`);
-                const fileioData = await fileioRes.json();
-                log(`file.io response: ${JSON.stringify(fileioData)}`);
-
-                if (!fileioData.success) throw new Error('file.io upload failed: ' + (fileioData.error || 'unknown'));
-
-                resultDiv.innerHTML = '✅ file.io success, sending to GitHub...';
-                log(`file.io link: ${fileioData.link}`);
-
-                // Step 2: Send to Cloudflare Worker
-                log(`Sending to Worker: ${WORKER_URL}`);
-                const workerRes = await fetch(WORKER_URL, {
+                const res = await fetch(WORKER_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        fileLink: fileioData.link,
-                        filename: file.name
-                    })
+                    body: formData   // no Content-Type header needed – browser sets correct multipart boundary
                 });
-                log(`Worker responded with status ${workerRes.status}`);
-                const workerData = await workerRes.json();
-                log(`Worker response: ${JSON.stringify(workerData)}`);
-
-                if (workerRes.ok) {
-                    resultDiv.innerHTML = `✅ TEST SUCCESS!<br>
-                        Check GitHub Issues: <a href="${workerData.issueUrl}" target="_blank">${workerData.issueUrl}</a>`;
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    resultDiv.innerHTML = `✅ Success!<br>Issue: <a href="${data.issueUrl}" target="_blank">${data.issueUrl}</a>`;
                     resultDiv.className = 'success';
                 } else {
-                    throw new Error(workerData.error || 'Worker returned error');
+                    throw new Error(data.error || 'Upload failed');
                 }
-            } catch (error) {
-                log(`ERROR: ${error.message}`, 'error');
-                resultDiv.innerHTML = `❌ Error: ${error.message}`;
+            } catch (err) {
+                resultDiv.innerHTML = `❌ Error: ${err.message}`;
                 resultDiv.className = 'error';
             }
         }
