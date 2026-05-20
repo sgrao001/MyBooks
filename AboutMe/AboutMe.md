@@ -4,7 +4,6 @@
 Bkgrnd = ??.jpeg
 
 <NEWPAGE>
-
 <CHAPTER=About me…>
 Hello, 
 
@@ -33,11 +32,12 @@ I hope you find my writings worth your while. I thank you for taking a look.
 <tiptext>
 <NEWPAGE>
 <CHAPTER=Observation of Thoughts>
-<TITLE=Observation of Thoughts>
+<ChapterTitle=Observation of Thoughts>
 
-<DPosition=':[left| paraindientleft ]A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
+
+<DPosition=':[left  |  IndentItalicsLeft ]A collection of postcards, best described by borrowing George Carlin’s phrase “Brain Droppings”, capturing thoughts that grabbed my attention for their perspective and relevance. <br>
 _getMdate("oot/Observation of Thoughts.md")'><br>
-<DPosition=':[left  |  paraindientleft ]
+<DPosition=':[left  |  IndentItalicsleft ]
     <a href="https://sgrao001.github.io/MyBooks/oot/oot.html" 
        style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
               white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
@@ -47,10 +47,10 @@ _getMdate("oot/Observation of Thoughts.md")'><br>
     </a>'>
 
 <CHAPTER=Theater of the Mind>
-<TITLE=Theater of the Mind>
-<DPosition=':[left  |  paraitalicleft ]A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
+<ChapterTitle=Theater of the Mind>
+<DPosition=':[left  |  IndentItalicsLeft ]A collection of postcards, capturing my awareness milestones, along the journey into the self. <br>
 _getMdate("tom/Theater of the Mind.md")'><br>
-<DPosition=':[left  |  paraindientleft ]
+<DPosition=':[left  |  IndentItalicsleft ]
     <a href="https://sgrao001.github.io/MyBooks/tom/tom.html" 
        style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
               white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
@@ -60,10 +60,10 @@ _getMdate("tom/Theater of the Mind.md")'><br>
     </a>'>
 
 <CHAPTER=Akka>
-<TITLE=Akka>
-<DPosition=':[left  |  paraitalicleft ]A short story of a woman who defied her time, so that we could define ours — three generations down. <br>
+<ChapterTitle=Akka>
+<DPosition=':[left  |  IndentItalicsLeft ]A short story of a woman who defied her time, so that we could define ours — three generations down. <br>
 _getMdate("akka/akka.md")'><br>
-<DPosition=':[left  |  paraindientleft ]
+<DPosition=':[left  |  IndentItalicsleft ]
     <a href="https://sgrao001.github.io/MyBooks/akka/akka.html" 
        style="display: inline-block;  width: 40%; text-align: center; color: #a4ccf7;
               white-space: normal; word-wrap: break-word; display: inline-flex; align-items: center;
@@ -73,7 +73,8 @@ _getMdate("akka/akka.md")'><br>
     </a>'>
 
 
-<PAGEDIVIDER>
+<PAGEDIVIDER><br>
+<tiptext>
 
 
 
