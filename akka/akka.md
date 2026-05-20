@@ -6,10 +6,10 @@ Bkgrnd = Akka.jpeg
 
 <NEWPAGE>
 <CHAPTER=‘Akka’ - A quiet hero>
+<ChapterTitle='Akka’ - A quiet hero>
 <IMAGE=Akka_LaterYears.jpeg | Akka in 1976 >
-<TITLE='Akka’ - A quiet hero>
 
-<ParaitalicL="The fever came on fast. My grandfather, a man of purpose and authority, returned home from Nanjangud with a heat in his bones that wouldn’t break. At 43, my grandmother, Akka, watched helplessly, as her world began to crumble. This wasn’t just a man dying; it was their livelihood, their children’s future and their place in society, slipping away, hour by agonizing hour. <br><br>The prospect of raising her fledgling family alone, took Akka through a series of decisions, the repercussions of which would resonate three generations down. ">
+<IndentItalicsLeft="The fever came on fast. My grandfather, a man of purpose and authority, returned home from Nanjangud with a heat in his bones that wouldn’t break. At 43, my grandmother, Akka, watched helplessly, as her world began to crumble. This wasn’t just a man dying; it was their livelihood, their children’s future and their place in society, slipping away, hour by agonizing hour. <br><br>The prospect of raising her fledgling family alone, took Akka through a series of decisions, the repercussions of which would resonate three generations down. ">
 
 This is the story of Akka's journey.
 
@@ -33,9 +33,10 @@ In today's world of "in your face" progress, and "I deserve my wants" bravado, c
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=Hassan_Map.jpeg | Hassan, Karnataka>
 <CHAPTER=Legacy of an ancient town>
-<TITLE=Legacy of an ancient town>
+<ChapterTitle=Legacy of an ancient town>
+<IMAGE=Hassan_Map.jpeg | Hassan, Karnataka>
+
 
 Akka was born in 1901 in Hassan (pronounced "Hah-sun"). There is no official record of her birth. She was most likely born in her maternal grandmother's home. 
 
@@ -53,7 +54,7 @@ Caste had a profound influence on Akka’s life. It dictated every aspect of her
 
 The narrative of a ‘fate ordained’, was used as a constant reminder to Akka that ‘this was the best it could be for her’. Akka was eventually able to break free of these narratives and chart her own path forward. Her choices forked new branches in the road, upon which I was able to travel with much ease. 
 
-<ParaitalicL="Akka’s life would come to be dominated by two traditions, that were prevalent in her time. <br><br>
+<IndentItalicsLeft="Akka’s life would come to be dominated by two traditions, that were prevalent in her time. <br><br>
 The first one was regarding marriage — A girl had her husband selected for her, when she was still a mere child of 8 or 10. Although she wasn’t technically married at this age, her future was tied to her selected groom for all practical purposes. If he were to pass away, and this happened more often than not, she would be condemned to a life of widowhood.
 <br><br>
 The second one was the prescribed life of a widow — widows were required to live an austere and isolated life, away from society. She was not allowed to remarry. She was required to shave her head. She was to wear a white cotton saree, colored by soaking it in turmeric. She was to eat one meal a day.<br><br>
@@ -72,9 +73,9 @@ Akka’s youth was a precarious balance. Nutrition was scarce. Many women and ch
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=Akka_Parents.jpeg | Akka's Parents >
 <CHAPTER=A fate ordained>
-<TITLE=A fate ordained>
+<ChapterTitle=A fate ordained>
+<IMAGE=Akka_Parents.jpeg | Akka's Parents >
 
 This was the environment into which Akka was born. Akka was a light skinned child with green eyes. Her given name was “Narsubai”. 
 
@@ -143,15 +144,15 @@ The events that followed would have a profound and lasting impact on Akka. She e
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=Akkas_Family.jpeg | Akka's Family: Doddanna & Akka, Manjula, Ratna, Satya & My father 'Gopi'>
 <CHAPTER=The dawn of a family>
-<TITLE=The dawn of a family>
+<ChapterTitle=The dawn of a family>
+<IMAGE=Akkas_Family.jpeg | Akka's Family: Doddanna & Akka, Manjula, Ratna, Satya & My father 'Gopi'>
 
 Akka did not have the time to learn the skills she would need as she started a new life in Mysore. She would have to figure that out along the way. If she was lucky, she would find encouragement in her new home. 
 
 Akka knew that tragedy could strike at any moment, and she understood the need to build her inner strength in case it did.
 
-<ParaitalicL="Akka once told me that life was 'the story of the tousle between fate and faith'. Akka would need to find hope in her faith, while learning to accept her fate." >
+<IndentItalicsLeft="Akka once told me that life was 'the story of the tousle between fate and faith'. Akka would need to find hope in her faith, while learning to accept her fate." >
 
 In 1915, my grandparents' first child was a daughter, Sethubai. As was the custom, her name included the postfix "bai," meaning "lady." My eldest aunt and my father's sister, Sethubai, was a soft-spoken, gentle woman who worked hard for her family and faced life with a quiet smile. I came to know her in her later years, and her sweet demeanor left a lasting impression on me.
 
@@ -197,9 +198,10 @@ These are the only siblings of Akka I can recall being discussed. In his later y
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=Nanjangud_FairGrounds.jpeg | Nanjangud Shiva Festival fair grounds>
 <CHAPTER=A widow's silence>
-<TITLE=A widow's silence>
+<ChapterTitle=A widow's silence>
+<IMAGE=Nanjangud_FairGrounds.jpeg | Nanjangud Shiva Festival fair grounds>
+
 
 It was 1943. My father was 14 years old. By this time my grandfather’s career was progressing well. Ratna writes,” He was very sincere at his job and worked hard in his assignments. He had earned respect within the Mysore Palace office.”
 
@@ -227,12 +229,12 @@ When I stayed with her during my education in Bangalore, Akka was almost 80. I r
 
 Society offered her no mercy and no opportunities. Akka was left to rely on the kindness of a few, but mostly on her own courage, and the belief that her fledgling family's togetherness could see them through. 
 
-<ParaitalicL="Akka did what THEY thought was right, for herself, so she could allow herself to do what SHE thought was right for her children.">
+<IndentItalicsLeft="Akka did what THEY thought was right, for herself, so she could allow herself to do what SHE thought was right for her children.">
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=A tousle of fate and faith>
-<TITLE=A tousle of fate and faith>
+<ChapterTitle=A tousle of fate and faith>
 
 The year was 1944. Grandfather had just passed away. 
 
@@ -306,7 +308,7 @@ I often wonder what she might have achieved if she had been a man in these circu
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Finding a foothold>
-<TITLE=Finding a foothold>
+<ChapterTitle=Finding a foothold>
 
 Akka's first challenge came after my father graduated from his high school studies. It was common practice to have the first born son take up a job as soon as possible, so that he could take on the responsibilities of running the household. A job would establish the son as the man of the house, providing the family with much-needed stability. This would, in turn, bode well for Ratna and Manjula's futures by making it easier to arrange suitable marriages for both of them.
 
@@ -350,9 +352,10 @@ Akka had not just given my father a new beginning; she had willed a world of po
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=YSG_STUDENT2.jpeg | My father in Sikkim>
 <CHAPTER=Far away world's>
-<TITLE=Far away world's>
+<ChapterTitle=Far away world's>
+<IMAGE=YSG_STUDENT2.jpeg | My father in Sikkim>
+
 
 My father graduated from his engineering school in 1956. He applied for and was selected for a job in the State of Sikkim about 1,500 miles away. He was offered a job as a civil engineer and would be required to do land surveys for the state’s public works department. He was going to be paid Rs 75 per month. The state of Sikkim is located in the eastern Himalayas and borders China (Tibet), Bhutan, Nepal and West Bengal.
 
@@ -392,9 +395,10 @@ There would be an apprentice program to get through first. The apprentice salary
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=WOrli_seaface.jpeg | Worli Seaface>
 <CHAPTER=The City of dreams >
-<TITLE=The City of dreams>
+<ChapterTitle=The City of dreams>
+<IMAGE=WOrli_seaface.jpeg | Worli Seaface>
+
 
 Things began to look up for my father. Bombay was a very different place from Mysore. My father was lucky to have a job with a state-private corporation like Air India. It presented him with many opportunities that would not have been available to him in Bangalore. He worked in a modern technology company, with modern processes implemented by Boeing. Being a mechanical engineer he developed a skill in aircraft maintenance and airworthiness support. He obtained many licenses and certifications that helped him rise in the company. In his time with Air India, he got to travel to many distant parts of the world. 
 
@@ -427,7 +431,7 @@ Meanwhile, my father, with my mother's tacit agreement, requested Akka and his s
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=An unwelcome guest>
-<TITLE=An unwelcome guest> 
+<ChapterTitle=An unwelcome guest> 
 
 The year 1962. Akka was 61 years old. She was 2 years younger than I am today. She had just received an invite from my father to consider a move to Bombay.
 
@@ -490,9 +494,10 @@ Thinking back, it is a deep and tearful moment for me, as it must have been for 
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<IMAGE=House_RatnavilasRd.jpeg | House on Ratnavilas Road>
 <CHAPTER=A home on Ratnavilas road >
-<TITLE=A home on Ratnavilas road>
+<ChapterTitle=A home on Ratnavilas road>
+<IMAGE=House_RatnavilasRd.jpeg | House on Ratnavilas Road>
+
  
 Akka made plans to start over in Bangalore. She did not have a choice. The biggest challenge as Akka once told me, was "I cannot become a burden to Ratna and Manjula. I have to be careful. They have their own challenges. Society is not supportive of young women making their way forward in life without a man. I have to protect them."
 
@@ -552,7 +557,7 @@ Akka believed in rituals. After her daily prayers she would perform the sacred r
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=A stranger in the house >
-<TITLE=A Stranger in the house>
+<ChapterTitle=A Stranger in the house>
 
 In 1980, my father had returned from one of his visits to Bangalore. Bangalore was a growing city, a hub for Engineering schools. My father offered me an option to go to Bangalore, and apply to study at an engineering college there. 
 
@@ -594,7 +599,7 @@ I had to wait till I was grown up, to catch my understanding up to what she woul
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=A Quiet Departure >
-<TITLE=A Quiet Departure>
+<ChapterTitle=A Quiet Departure>
 
 Akka’s health was failing. She was in her early 80’s. Sethubai and Sathya would come to visit her frequently. She had to be pushed in a wheel chair around the house. She could tell when I pushed her wheel chair. She used to tell Ratna, “Papu brought me here to sit in the sun, by the window. “ She called me Papu. 
 
@@ -647,7 +652,7 @@ Thank you, Ratna — for everything!!!
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Honoring the lessons >
-<TITLE=Honoring the lessons>
+<ChapterTitle=Honoring the lessons>
 
 Akka grew up in a very different time and a very different environment from my own. My children now in the US, are even further away from her way of life. We all welcome advancements in our lives. I am deeply indebted to Akka for having gone through fire. In many ways, Akka's journey made own accomplishments more valuable to me. 
 
@@ -663,7 +668,7 @@ Our approach makes for an incredibly inefficient use of the limited time given t
 
 In re-living my conversations with Akka, I realized a fundamental difference in her approach. 
 
-<ParaitalicL="Akka’s objective was to reduce suffering, not maximize happiness." >
+<IndentItalicsLeft="Akka’s objective was to reduce suffering, not maximize happiness." >
 
 This approach made all the difference to her. She knew when to stop — when she could reduce suffering no more — then, all that was left to do was accept the situation as it was. I find the simplicity of that to be profound. Life in Akka's time was mostly about containing the damage. AKka had to find peace within that which was offered to her. 
 
