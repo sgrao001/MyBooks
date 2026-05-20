@@ -1125,11 +1125,11 @@ When you reach this seventh level, you realize that genius is not an inborn gift
 
 Mastery does not come from memorizing everything about the world. It comes from understanding how you come to understand the world. At this highest stage, thinking becomes an art form. Learning becomes more than a task—it becomes an act of personal growth. You recognize that every subject you study is also an opportunity to refine your character, your discipline, and your awareness. The process itself becomes meaningful."><br>
 
-<IndentItalicsLeft=" These are the tasks the three wise men (consciousness, conscience and intuition, along with their partner, the will-to-act), are willing to undertake, if I let them. In this effort, they are supported by a multitude of mind organs. The wise men use these mind organs to guide, not lead. I must not interject myself into this process. Left alone, the wise men will train the mind organs to protect, without being alarmist. They will create a mind that brokers peace with its surroundings, and growth within itself. The promote effortless energy exchange, with the outside universe, to reap the rewards of hamronious and passionate living.
+<IndentItalicsLeft=" These are the tasks the three wise men (consciousness, conscience and intuition, along with their partner, the will-to-act), are willing to undertake, if I let them. In this effort, they are supported by a multitude of mind organs. The wise men use these mind organs to guide, not lead. I must not interject myself into this process. Left alone, the wise men will train the mind organs to protect, without being alarmist. They will create a mind that brokers peace with its surroundings, and growth within itself. The will promote effortless energy exchanges with the outside universe and reap the rewards of harmonious and passionate living.
 
 If 'I' represent the soul; an awareness of my being, then I must form a strong working bond with the three wise men, so I can make the pursuit of oneness and harmony with nature in all is forms, an adventure of a lifetime.
 
-It is a on-ending journey, and by definition I am unable to say where I am or how far I have to go. It is clear to me that I must keep going to wherever the journey may lead till my time is up. ">
+It is a non-ending journey, and by definition I am unable to say where I am or how far I have to go. It is clear to me that I must keep going to wherever the journey may lead till my time is up. ">
 
 <PageDivider>
 <IndentItalicsLeft="Excerts from Richard Fynman">
