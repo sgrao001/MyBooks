@@ -10,12 +10,12 @@ CB| Header 1 | Header 2 |
 | Cell 1  | (https://yahoo.com)  |
 | Cell 3  | [here](https://www.google.com)  |
 | Cell 3  | https://www.cnn.com |
-image-align-{alignment} mobile-align-center mobile-default-size
+<BookImage="oot.jpeg">
 
 <NEWPAGE>
 <CHAPTER=An Enchanting Journey>
-<IMAGE=ThreeElementsWassilyKandinsky1925.jpeg | ThreeElements Wassily Kandinsky 1925>
-<TITLE=An Enchanting Journey>
+<ChapterTitle=An Enchanting Journey>
+<IMAGE=ThreeElementsWassilyKandinsky1925.jpeg | ThreeElements Wassily Kandinsky 1925 right>
 
 There is something revealing about viewing large things in three parts, each part equals the other, and the observer becoming integral to the observed. The infinite can be transformed into less intimidating, even navigate-able explorations. 
 
@@ -27,8 +27,8 @@ In our attempt to appreciate the vastness of nature, its immeasurably awe inspir
 <IMAGEATR=Image attribution | https://en.wikipedia.org/wiki/Three_Elements >
 <NEWPAGE>
 <CHAPTER=Awareness>
+<ChapterTitle=Awareness>
 <IMAGE=Awareness.jpeg>
-<TITLE=Awareness>
 
 I lie on the floor, on my left side, my head on my arm. I drive my red matchbox Citroen with springy wheels and a removable roof canoe. My Dad gave that car to me. I hum the engine noise to myself - I hear the powerful engine - the car surges forward - I shift gears - I drive with precision around imaginary curves and turns - my humming keeps my attention focused on driving the Citroen across the balcony floor - I keep humming - I park my Citroen with precision, in my imaginary parking spot. The outside world fades and time stands still. 
 
@@ -46,16 +46,16 @@ I open the door and step outside, everything is right in my world.
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Unity>
+<ChapterTitle=Unity>
 <IMAGE=Wall.jpeg>
-<TITLE=Unity>
 
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look past the metal accordion gate. I notice the randomly shaped - somewhat oval - light colored - moss patch on the compound wall - I notice the snails on that wall - I empathize that the rain drops flooded their underground home. I shift attention to the brick oval landscaping on the ground. I see the rain droplets fall into puddles in the oval. I watch the rings expand - see them bump into another ring - merge into it - and then again - and again - I follow the rings as they blend into each other - I can’t see the rings anymore - I feel the unity 
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Silence>
+<ChapterTitle=Silence>
 <IMAGE=Rope.jpeg>
-<TITLE=Silence>
 
 I sit sideways on an orange couch, back to wall, arm placed comfortably on the back. I look closely at the metal accordion gate. I notice the skipping rope hanging on the latch. I push the grip and watch the rope swing. I watch the swing reduce - and reduce - then slowly, begin to move in ever so small circles - now, I can now barely see it move - I watch the still, silent, unmoving rope - I feel the silence and the quiet within myself. 
 
@@ -76,20 +76,20 @@ Silence between the question and the answer is where “I” might be found.
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Serenity>
+<ChapterTitle=Serenity>
 <IMAGE=Serenity.jpeg>
-<TITLE=Serenity>
 
 I walk up and sit a few paces away. My energy rings wafted his way. I see him tense up. He begins rocking sideways on his feet. I sit still. I drift toward my inner silence. The outer influences drift away. The water begins to look hazy and blends with the sky. The noises reduce to a low hum. My energy rings begin to dissipate. He senses the withdrawal - relaxes - and goes back to his own inner space. We sit in silence. We sit in harmony. We sit in unity 
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Who am I>
+<ChapterTitle=Who am I>
 <IMAGE=AdiShankara-WhoAmI-800BCe.jpeg>
-<TITLE=Who am I>
 
 Advaita Vedānta tradition. 
 
-<ParaitalicL="I am other than name, form and action. <br>
+<IndentItalicsLeft="I am other than name, form and action. <br>
 My nature is ever free! <br>
 I am Self, the supreme unconditioned Brahman. <br>
 I am pure Awareness, always non-dual.">
@@ -98,16 +98,16 @@ I am pure Awareness, always non-dual.">
 <IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg>
 <NEWPAGE>
 <CHAPTER=Words>
+<ChapterTitle=Words>
 <IMAGE=Words.jpeg>
-<TITLE=Words>
 
 At the Houston Japanese garden - each flower speaks to me. I hear the bouquet say - “I let go of my grievances!!! I see beings - smiling, supporting and encouraging. Beings who are pure and pristine. Beings who have shed their wrongs through penance and punishment. I am unable to walk towards my light. I too am cleansing myself of my burdens. It will get easier. “ 
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Acknowledgment>
+<ChapterTitle=Acknowledgment>
 <IMAGE=Acknowledgement.jpeg>
-<TITLE=Acknowledgment>
 
 I saw him cross in front of me. 
 
@@ -124,16 +124,16 @@ We moved on, to our different ways. I wonder where he will sleep tonight. Be wel
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Vastness>
+<ChapterTitle=Vastness>
 <IMAGE=Vastness.jpeg>
-<TITLE=Vastness>
 
 They say, I will see farther, perched upon the shoulders of those before me. I see the parts they gave to me, of which I am made. I see the thread that connects me to them and them to me. I sense their acknowledgement as I share these moments with them. In looking outward, I see the vastness inside of me. I see I am not alone. I belong.
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Man and boy>
+<ChapterTitle=Man and Boy>
 <IMAGE=Man&boy-EmilyFelcher2025.jpeg>
-<TITLE=Man and Boy>
 
 The man busies himself, burying his fears and polishing his victories. Recognition is his just reward and adulation is his honor due. 
 
@@ -145,8 +145,8 @@ The boy is luckier than the man. He is able to make time his friend.
 <IMAGEATR= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
 <NEWPAGE>
 <CHAPTER=Wheels of Life>
+<ChapterTitle=Wheels of Life>
 <IMAGE=WheelOfLife.jpeg>
-<TITLE=Wheels of Life>
 
 It took a while for life to come into focus. I see me, rolling my wheels along many roads and alongside many travelers.
 
@@ -157,8 +157,8 @@ I look back to see my wheels moving along on their own. They are beckoning me to
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Be well my friend>
+<ChapterTitle=Be Well my Friend>
 <IMAGE=FriendshipPicasso1908.jpeg>
-<TITLE=Be Well my Friend>
 
 People before us brought us together. They journeyed to great unknowns, to find us their best gifts, to make us who we are. They reached out, offering us strength and resolve, to bring us where we are. 
 
@@ -176,8 +176,9 @@ That is the promise we kept. That is what we leave behind.
 <IMAGEATR= Image attribution | https://www.wikiart.org/en/pablo-picasso/friendship-1908>
 <NEWPAGE>
 <CHAPTER=Footsteps>
+<ChapterTitle=Footsteps>
 <IMAGE=LookingBack-EmilyFelcher2025.jpeg>
-<TITLE=Footsteps>
+
 
 Truth was often late coming to me, she got delayed crossing the bridge of believability. 
 
@@ -197,16 +198,16 @@ Kids deserve a chance to shape their contributions. My attempts to keep them fre
 <IMAGEATR= Image attribution | https://emilyfelcher.wixsite.com/portfolio>
 <NEWPAGE>
 <CHAPTER=Nani>
+<ChapterTitle=Nani>
 <IMAGE=Nani.jpeg>
-<TITLE=Nani>
 
 “I trust in love. What happens in this lifetime…? I just honor and trust that love is there, in whatever form. Love endures. And it will endure. It will carry me, and it will carry everyone else. “ - Nani
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=In Crossing>
+<ChapterTitle=In Crossing>
 <IMAGE=GeorgeInness-TheLastGlow1885.jpeg>
-<TITLE=In Crossing>
 
 I venture to the edge, toward the light, in anticipation, in uncertainty, unsure of reasons, but sure in my desire. Away from the shadows, away from safety. New beginnings, new pathways, new experiences. Rejoicing in the freedom, in the silence and in the light. 
 
@@ -218,8 +219,8 @@ We shall meet again.
 <IMAGEATR= Image attribution | https://www.facebook.com/grartmuseum/photos/a.354268873458/10158687098863459/?_rdr>
 <NEWPAGE>
 <CHAPTER=CityVerse>
+<ChapterTitle=CityVerse>
 <IMAGE=ClydeSinger-RushHour1937.jpeg>
-<TITLE=CityVerse>
 
 A place that binds people and experiences together - to co-exist, to support and to flourish. A place of majestic structures, roads, and dreams. A place where communities share discoveries, joys and sorrows. A place of inspiration to create new stories and share old ones.
 
@@ -242,8 +243,8 @@ I find new offerings every day. I am grateful for it.
 <IMAGEATR= Image attribution | https://www.bonhams.com/auction/28080/lot/27/clyde-singer-1908-1999-the-rush-hour-38-14-x-46-14-in-972-x-1175-cm-painted-in-1937/>
 <NEWPAGE>
 <CHAPTER=Duniya>
+<ChapterTitle=Duniya>
 <IMAGE=EdwardMunch-Vampire1895.jpeg>
-<TITLE=Duniya>
 
 Love envelopes nature. It nurtures bonds of togetherness and extolls virtues of harmony. It builds communities of peace. 
 
@@ -257,8 +258,8 @@ Cycles of suffering and pain continue amidst love and hope. Cycles of fame and f
 <IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/Love_and_Pain_%28Munch%29>
 <NEWPAGE>
 <CHAPTER=Lessons>
+<ChapterTitle=Lessons>
 <IMAGE=Virasana-Bahr al-hayat-Muhammad-Ghawth1602.jpeg>
-<TITLE=Lessons>
 
 Man’s ultimate destiny, depends not on whether he can learn new lessons, or make new discoveries and conquests, but on his acceptance of the lessons taught him over millions of years of life on earth. 
 
@@ -266,8 +267,8 @@ Man’s ultimate destiny, depends not on whether he can learn new lessons, or ma
 <footer=(Adapted from NY30Rock)>
 <NEWPAGE>
 <CHAPTER=Stones, Wind and Water>
+<ChapterTitle=Stones, Wind and Water>
 <IMAGE=Stones.jpeg>
-<TITLE=Stones, Wind and Water>
 
 Oh! How the mighty mountains have been ravaged by wind, water and time into pieces of stone scattered on the ground. 
 
@@ -280,8 +281,8 @@ Why did they not seize the opportunity to be stable on the ground, to be next to
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Manufacturing Conflict>
+<ChapterTitle=Manufacturing Conflict>
 <IMAGE=Wars.jpeg>
-<TITLE=Manufacturing Conflict>
 
 Wars waged on, egged by the egos of lords, masquerading as ideology. 
 
@@ -298,8 +299,8 @@ The lords are always the winners. History remembers them. The serfs have no name
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Ideologies & Realities>
+<ChapterTitle=Ideologies & Realities>
 <IMAGE=Ideology-NaziProps.jpeg>
-<TITLE=Ideologies & Realities>
 
 “A heroic leader on a white horse rallies the troops, while the wounded valiantly struggle to get on their feet to resume the fight.” , “ with illusions of honor”, “knowingly welcoming death. ”
 
@@ -344,8 +345,9 @@ History tells us stories of ideology. Time reveals the stories of reality. Reali
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Time>
+<ChapterTitle=Time>
 <IMAGE=DamielHeller-Time.jpeg>
-<TITLE=Time>
+
 
 Time as we understand it, is a powerful measure, highlighted by the universality of its acceptance and the simplicity of its function. It has half a dimension. It does not regress. It is consistent, accurate and perpetual. It is available without need to expend effort. It is ubiquitous. It creates no awareness of its presence. It has no enemies. We think of time like a meter running in the background. 
 
@@ -374,12 +376,12 @@ Maybe, we will.
 <IMAGEATR= Image attribution | https://artcloud.market/art/time-persistence-by-daniel-heller>
 <NEWPAGE>
 <CHAPTER=Space, Time and Energy>
+<ChapterTitle=Space, Time<br>and Energy>
 <IMAGE=Space-Time-Energy.jpeg>
-<TITLE=Space, Time<br>and Energy>
 
 I alter the paradigm I use to define my relationship with time. 
 
-<ParaitalicL="I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.">
+<IndentItalicsLeft="I think of time, not as a background ticker against which all things progress, but rather as a meter that reports a change of state in items that I choose to place into my basket.">
 
 Time, like space, becomes a dimension. I can change the rate at which time flows, just as I change the rate at which the space in my basket fills up - by altering what and in what order, I add / remove items from my basket. 
 
@@ -423,8 +425,8 @@ I must reach my singular state, often. It is my place of rest and validation.
 <IMAGEATR= Image attribution | https://starryai.com/app/user/joquist/creation/1023376959>
 <NEWPAGE>
 <CHAPTER=Passionate and Harmonious living >
+<ChapterTitle=Passionate and<br>Harmonious living >
 <IMAGE=Passion&Harmony.jpeg>
-<TITLE=Passionate and<br>Harmonious living >
 
 Minimalism is a pre-requisite to passionate and harmonious living. 
 
@@ -447,8 +449,8 @@ The primary goal of harmonious living is energy conservation within the entire e
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Gratitude>
+<ChapterTitle=Gratitude>
 <IMAGE=AlbrechtDurer-PrayingHands1507.jpeg>
-<TITLE=Gratitude>
 
 I have so much … so much, to be grateful for. I forget that sometimes. I get busy with my pursuits. I get pre-occupied with the joys of gifts received. 
 
@@ -474,8 +476,8 @@ There are people and things I am grateful for. Some of them are far away in my p
 <IMAGEATR= Image attribution | https://lutheranreformation.org/history/durers-praying-hands/>
 <NEWPAGE>
 <CHAPTER=Energy>
+<ChapterTitle=Energy - Food for the Soul>
 <IMAGE=Energy.jpeg>
-<TITLE=Energy - Food for the Soul>
 
 I sense that all things radiate energy. 
 
@@ -498,8 +500,8 @@ Our respect for this offering shapes the essence of our life’s journey. The en
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Acceptance>
+<ChapterTitle=Acceptance>
 <IMAGE=ShahAlamConveyingGrantOfDiwanitoLordClive-BenjaminWest1765.jpeg>
-<TITLE=Acceptance>
 
 Robert Clive of The British East India Company, a public corporation, accepted the Grant of the Diwani from Shah 'Alam, in 1765, effectively netting tax returns each year from three Indian provinces, Bihar, Bengal and Orissa, of a sum exceeding the GDP of UK at the time. 
 
@@ -509,15 +511,15 @@ Acceptance of a defeat has no relevance to the unfolding situation, nor is it of
 
 No win or loss is lasting. Like shifting sands, moving across, no acceptance is permanent. 
 
-<ParaitalicL="I accept my wins. I accept my losses. <br><br>
+<IndentItalicsLeft="I accept my wins. I accept my losses. <br><br>
 I accept my acceptances. ">
 
 <PAGEDIVIDER>
 <IMAGEATR= Image attribution | https://commons.wikimedia.org/wiki/File:Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive.jpg>
 <NEWPAGE>
 <CHAPTER=Choices>
+<ChapterTitle=Choices>
 <IMAGE=TheChoiceofHercules-VirtueandPleasure-BenjaminWest-1764.jpeg>
-<TITLE=Choices>
 
 I have choices. I hear opinions. 
 
@@ -533,8 +535,8 @@ Until then, there are choices and there are opinions.
 <IMAGEATR= Image attribution | https://www.wikiart.org/en/benjamin-west/choice-of-hercules-between-virtue-and-pleasure-1764>
 <NEWPAGE>
 <CHAPTER=The Good, The Bad>
+<ChapterTitle=The Good, <br>The Bad>
 <IMAGE=RepraisalsFromUprisingOf1857.jpeg>
-<TITLE=The Good, <br>The Bad>
 
 We seek good. Good welcomes. It opens its doors. Some come to be part of the good, and some come to profit from it. Good shares its fortunes, the bad eagerly takes it. 
 
@@ -552,7 +554,7 @@ THE BAD - In 1857, the British rode in to observe their win, "The orders went ou
 
 THE GOOD - Along a dark, dingy back passage of the fort, Russell was led to the cell of a frail 83-year-old man who was accused by the British of being one of the masterminds of the Great Rising, or Mutiny, of 1857, the most serious armed act of resistance to Western imperialism ever to be mounted anywhere in the world. "He was a dim, wandering-eyed, dreamy old man with a feeble hanging nether lip and toothless gums," wrote a surprised Russell. "Not a word came from his lips; in silence he sat day and night with his eyes cast on the ground, and as though utterly oblivious of the conditions in which he was placed.... His eyes had the dull, filmy look of very old age.... Some heard him quoting verses of his own composition, writing poetry on a wall with a burned stick." For all the tragedy of his life, he was able to see that the world continued to turn, and that however much the dogs might bark, the great caravan of life continues to move on. He wrote in a poem, shortly after his imprisonment, and as Mughal Delhi lay in ruins around him:
 
-<ParaitalicL="
+<IndentItalicsLeft="
 Delhi was once a paradise, <br>
 Where love held sway and reigned; <br>
 But its charm lies ravished now <br>
@@ -577,8 +579,8 @@ Occasionally that seems to happens too. Could it be that Gaza is going through t
 <IMAGEATR= Image attribution | https://www.nationalheraldindia.com/cafe/1857-2017-the-mutiny-which-helped-the-british-create-hindu-muslim-divide"><footer=(Excerpts from William dalrymple)>
 <NEWPAGE>
 <CHAPTER=Writing>
+<ChapterTitle=Writing>
 <IMAGE=WritingGeorgeLin.jpeg>
-<TITLE=Writing>
 
 Creativity thrives along the path from the knowledge core, to the edges of cognitive capacity. It is guided by pre-dispositions inherent to me. 
 
@@ -593,8 +595,8 @@ I would like to think that the readers of my words will get to explore their tho
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Let’s make a circle >
+<ChapterTitle=Let’s make a Circle>
 <IMAGE=Galaxy-Spiral.jpeg>
-<TITLE=Let’s make a Circle>
 
 I say “hello”, to acknowledge their entry into my conscious space. They smile and begin painting a picture. 
 
@@ -608,7 +610,7 @@ They continue to add more artifacts in ever expanding circles, each outer circle
 
 They offer to clarify and enlighten me. They invite me to add my artifacts to their circles. They say the invitation is an expression of their love for me and my best interests. I add a few of my high value artifacts, to their scene. 
 
-I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifact becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequacies of understanding or worse - my deceit. My truth which was so simple and clear is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth. I have made my truth subservient to theirs. I begin to doubt my truth. I am no longer interested in my truth. 
+I am now committed to their story. The imperfections in their scene now become mine. The blurriness of every artifact becomes a reflection of my weakness, and not their adaptation of truth. My own truth is split up and delegated to the periphery. Soon my choice becomes binary - defend their imperfections or explain my inadequate understanding or worse - my deceit. My truth, which was so simple and clear, is now barely visible, shrouded in a hazy, blurry mist. I am unable to speak my truth. I have made my truth subservient to theirs. I begin to doubt my truth. I am no longer interested in my truth. 
 
 Dissidence on my part, is a confirmation of my intent to cause them harm. Disconnection makes me a bad person and invites scorn, while staying in the circle makes me a fool and invites disrespect. 
 
@@ -622,11 +624,11 @@ They get busy looking for their next conquest.
 
 Carl Sagan’s quote from The Demon-Haunted World, reinforces the futility of the status quo,
 
-<ParaitalicL="'Once you give a charlatan power over you, you almost never get it back.'">
+<IndentItalicsLeft="'Once you give a charlatan power over you, you almost never get it back.'">
 
 I add my own words to Carl’s,
 
-<ParaitalicL="'if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you'.">
+<IndentItalicsLeft="'if you do get any of your power back, it will be corrupted enough, to where you will likely become a perpetrator of that which victimized you'.">
 
 So, I must leave. The air is clear and fresh. My path is my own. I resolve to stay away from people in circle's. 
 
@@ -634,8 +636,8 @@ So, I must leave. The air is clear and fresh. My path is my own. I resolve to st
 <IMAGEATR= Image attribution | https://depositphotos.com/photo/incredibly-beautiful-spiral-galaxy-somewhere-in-deep-space-16532077.html>
 <NEWPAGE>
 <CHAPTER=O’ Mother of mine>
+<ChapterTitle=O’ Mother of mine>
 <IMAGE=OMotherOfMine.jpeg>
-<TITLE=O’ Mother of mine>
 
 Mother made her perfect. The world would be jealous. Mother said she was innocent, and pure, and good, and fragile. Mother said she would not be able to withstand the forces of life. Mother said she would need to be protected. Only mother knew how. Mother was eager to undertake the responsibility of love. Absolute obedience would be a necessity. 
 
@@ -643,23 +645,23 @@ The child, willingly handed her all to her mother. She did not realize that this
 
 She did not realize the impossibility of the task her mother had taken on. She did not recognize that mother was fulfilling her own inadequacies. Love is blind. She felt warm and comforted. Mother felt needed. Mother would have a perfect product to showcase. They both felt rewarded. They both felt love. 
 
-Perfection is willed upon the self. So, it never learned that perfection is an illusion.  
+Perfection was willed upon the self. It was never learned that perfection is an illusion.  
 
 Pain is felt, when a thing of value is lost. Pain was never acknowledged, so nothing had ever been valued. 
 
 Nothing of value was ever lost, so nothing of value was ever learned. 
 
-Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences or accountability. 
+Fear is the anticipation of loss. Fear was never expressed, so there was never any understanding of consequences. There was never a need for accountability. 
 
-Past suffering should result in increase of empathy and compassion. It never did. 
+Pain and suffering should result in increase in empathy and compassion. It never did. 
 
-Quality cannot be imagined or willed into existence, but every attempt to do so were hailed a success. 
+Quality cannot be imagined or willed into existence, but every attempt to do so was hailed a success. 
 
 Garnering of attention is not an indication of respect or validation of quality. But it was considered as such. 
 
 She thought that she had learnt how to do everything. She had never learned, what it was that needed doing. 
 
-She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved her mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
+She only understood that which was needed, to support the image that mother projected for her. She reminded herself that she loved mother dearly. Her understanding was a story that she used to soothe, protect and validate herself. In time, that story became insufficient. 
 
 Time passes on…. she enters middle age. 
 
@@ -669,29 +671,29 @@ Days march on… and… one day, mother is no more.
 
 Suddenly, pain is all around. Fear is overwhelming. Loneliness is her shadow, with her at all times. She redirects pain as blame until excuses are found. She explains loss through victimhood. Victimhood provides solace until she finds someone willing to pay the price. Self-directed action is not an option. This cycle occupies her life. 
 
-The world is against her. The reasons are not known. What do they have to gain? What does she have to loose? Contributions of others are denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured. There is no action because delay gives her hope. 
+The world is against her. Reasons are not known. What do they have to gain? What does she have to loose? Contributions of others are denied. Accomplishments are dismissed as displays of vanity. Emotions cannot be expressed. They have no meaning for her. Responsibility is avoided. Self-sufficiency is a lie laid bare, but she does not see it. Relationships cannot be nurtured. There is no action because delay gives her hope. 
 
 She feels a strong urge to become mother. She offers the same love that mother gave her. On the same terms. But, there are no takers. And so she waits…. 
 
 Age takes a toll on all. Her sister has grown frail and asks for assistance. She reaches the ailing bedside. Her sister turns to her, trusting her and seeking the comfort of common bonds that mother had nurtured in their youth. She eagerly takes on the role of mother. She wills herself the skills of a doctor, a nurse and a caregiver. Like her mother, she knows best. So, she blocks all help. Her sister continues the struggle and slowly slips into a coma. She works hard, she worries. She professes faith and love. 
 
-Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself, convinced that she did her best. It was as it was meant to be. 
+Her sister slowly slips out of her reach. In time, her sister passes away. She feels deep sorrow, guilt, and the heavy weight of failure. She wonders if anyone notices. She wonders if anyone can help her. She comforts herself, convinced that she did her best. It was, as it was meant to be. 
 
 The world walks by, with an occasional nod and a smile, understanding nothing. In the eighth decade of her life, she waits …. unable to accept help, suspicious of all. consumed with guilt, sensing diminishing worth, proud of her convictions, unable to adapt, with disdain for all. Her time is running out. 
 
 She is reminded of a Neil Reid verse from her past,
 
-<ParaitalicL="Mother of mine, when I was young<br>
+<IndentItalicsLeft="Mother of mine, when I was young<br>
 You showed me the right way, things ought to be done<br>
 Without your love where would I be<br>
-Mother, O’ sweet mother of mine ...">
+Mother, sweet mother … of mine ...">
 
 <PAGEDIVIDER>
 <br><IMAGEATR= Image attribution | https://www.portinari.org.br/en/archive/artwork/19080/duas-criancas>
 <NEWPAGE>
 <CHAPTER=Diwali >
+<ChapterTitle=Diwali - A Festival of lights>
 <IMAGE=Diwali.jpeg>
-<TITLE=Diwali - A Festival of lights>
 
 My passion, my understanding and my perseverance, fuel my flame to illuminate the path, upon which I continue my journey of life. 
 
@@ -707,9 +709,9 @@ I never imagined that one flame could transform the world into a bright, sparkli
 
 <PAGEDIVIDER>
 <NEWPAGE>
-<CHAPTER=Pathways to being. >
+<CHAPTER=Pathways to being >
+<ChapterTitle=Pathways to being>
 <IMAGE=PathToBe.jpeg>
-<TITLE=Pathways to being>
 
 Inspiration - Awareness - Observation - Explanation - Understanding - Acceptance - Belief - Faith - Evidence - Doubt - Realization - Correction - Learning - Confidence - Achievement - Arrogance - Exploitation - Downfall - Humility - Knowledge - Inspiration 
 
@@ -719,8 +721,8 @@ LIfe seems to be about following this loop over and over again…
 <IMAGEATR= Image attribution | https://www.dreamstime.com/colorful-concentric-circles-made-wood-circular-pattern-showcasing-intricate-craftsmanship-artwork-displays-series-image340399758>
 <NEWPAGE>
 <CHAPTER=Pursuit of Ignorance>
+<ChapterTitle=Pursuit of Ignorance>
 <IMAGE=AllegoryOfTheCave.jpeg>
-<TITLE=Pursuit of Ignorance>
 
 Reaching a place of “I don’t know” is revealing. It begs the question, do I want to know? Why? What will I do, once I know? 
 
@@ -732,9 +734,8 @@ My ignorance tells me more about myself than my knowledge ever will.
 <IMAGEATR= Image attribution | 
 https://www.google.com/search?hl=en-US&rlz=1CDGOYI_enUS1149US1149&sca_esv=896419ed210a4547&cs=0&sxsrf=ANbL-n76kUCYx_GBsJQFX3FdXd6QeDWyDw:1770659188163&udm=2&tbs=rimg:CYySQo5xN0fLYZFwVoP_1pxrD4AIA&q=the+allegory+of+the+cave+images&sa=X&ved=2ahUKEwi4hLS_-8ySAxUWnokEHdaLGZsQuIIBegQIOxAA&biw=402&bih=684&dpr=3#sv=CAMSxgQamQQK8wEKuQEStgEKd0FNbjMteVNFUFBGa29odFRBb2k3U2pBdHRyOVMzX0dxRDhKc0VoblpPalVIMTZ6aGRVSzU0Y25oa05WYjBSNm9HU2ZYN0tqakk2N3lvMlJYRVgzUzJFY1lfWkIxOEJtS3NqcFNzNzVsS0tmdXZaMjBrSlFWNEJZEhc1R0tLYWFITkd1YXJwdFFQdXVhNnFRNBoiQUpLTEZtSkVkX0FBSzdrcTYxNGNDNWR4WEFiY3UyamFDQRIDODQ5GgEzIiQKAXESH3RoZSBhbGxlZ29yeSBvZiB0aGUgY2F2ZSBpbWFnZXMiBwoDdGJzEgASjgIKzwESzAEKjAFBTW4zLXlSSUFvMlYxSlB2NERua0lORGNxNk9qdnN1NGNycDFSSkVZZXFsSWhScmFOTUlmc1hjc3E2REt6U3ZZUTMxM1RwY1VZRFN6Vnp0aDQxWEg1dzlqQlpkX243WllmbU8yU0NkeXk2UGFvX01Qa0xldDMzOWVadjZNVXZia1Bka3paQ2VJWnR4WRIXNUdLS2FhSE5HdWFycHRRUHV1YTZxUTQaIkFKS0xGbUpFaGs1ZTM4SXI5NUhFc0drcDBuSk9GWXBpUHcSBDQ2OTgaATMiGAoGaW1nZGlpEg4xUmdRZjFxX0pONjZCTSIXCgVkb2NpZBIOT2EtMW1YMEVHc2JxOU0qEGUtMVJnUWYxcV9KTjY2Qk0gBCokCg5fREZadEc1UG5FOVdoTRIQZS0xUmdRZjFxX0pONjZCTRgAMAEYByCc1r2JAzABOgBKCBACGAIgAigC>
 <NEWPAGE>
-<CHAPTER=Just Asking>
+<ChapterTitle=Just Asking>
 <IMAGE=JustAsking.jpeg>
-<TITLE=Just Asking>
 
 Was a dollop of passion dropped on me and am I now purposed with the pursuit of knowledge and excellence in the exercise of that passion?
 
@@ -776,8 +777,8 @@ My ignorance knows no bounds. I look forward to the pursuit of my ignorance.
 <IMAGEATR= Image attribution | https://paintbynumbershome.com/products/cat-reading-newspaper>
 <NEWPAGE>
 <CHAPTER=Fragility>
+<ChapterTitle=Fragility>
 <IMAGE=Fragility.jpeg>
-<TITLE=Fragility>
 
 The ultimate greed for power mandates the need to mask the fragility of the human experience, by the erecting grandiose thoughts and structures, imagining that this will transpose a weakened self, into the divine, to project permanence of the imagined state. Notwithstanding, that lasting power comes from contributions made to the living condition of all beings, through love, humility, patience and not from larger than life displays. 
 
@@ -787,8 +788,8 @@ The attempt at grandiosity in itself, exposes the nonexistence of power within t
 <IMAGEATR= Image attribution | https://www.instagram.com/reel/DPO99FICRuY/>
 <NEWPAGE>
 <CHAPTER=In God we Trust>
+<ChapterTitle=In God we Trust>
 <IMAGE=InGodWeTrust.jpeg>
-<TITLE=In God we Trust>
 
 Science continues to encroach on territory formerly titled to God. Carl Sagan was once asked, “Given this demotion, is there a God to you? Is there a purpose, given that we are sitting on a spec in a sea of stars?”
 
@@ -838,19 +839,19 @@ I may object to actions of the mind, but am unable find blame with the 'soul'.
 
 There is a rationalization that goes as such,
 
-<ParaitalicL="Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. ">
-<ParaitalicL="<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. ">
-<ParaitalicL="<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. ">
-<ParaitalicL="<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. ">
-<ParaitalicL="<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. ">
+<IndentItalicsLeft="Souls impart life to the being. The soul never dies. They are eternal and part of one whole. They remain connected to each other in life, and upon release, they merge up with other souls into a welcoming infinite being. ">
+<IndentItalicsLeft="<br>Periodically, souls break away from this unified whole, to impart new life to a nascent body and mind. By imparting new life, evolution gets new criterion to evaluate its state of play. Break away souls champion the sustenance of the universe. ">
+<IndentItalicsLeft="<br>I can think of prayer as a means to bring my life’s purpose, and continuity into clear focus and eliminate all other distractions. This makes space for my body and mind to be one with my soul, in silence, in stillness and in peace. ">
+<IndentItalicsLeft="<br>I can label the holding this prayerful stance for a period of time, as meditation. The pace of my breadth keeps time. Meditation invigorates my body with strength and my mind with character and makes space for wisdom to reside. Wisdom spawns gratitude, compassion, care of the self, service to the others, and such other virtues and interactions that govern and nurture nature’s survival. Meditation helps carry my soul forward on its mission. ">
+<IndentItalicsLeft="<br>I can give myself permission to understand God, as the unified whole of all souls, with a mission to deploy souls at birth and recover them at death, and through them ensure the continued survival of the universe. ">
 
 With this rationalization I can grant myself the comfort of purpose and continuity. I can set aside reality, which may reside in the darkness of meaninglessness and eventual non-existence. This rationalization provides me with a sense of custodianship of all life in all beings. It forms the basis for empathy, compassion and unity. It provides for love and belonging. It opens up pathways that allow me to rise above the fray of my current states. It makes my failures and my suffering purposeful. It puts acceptance and inner peace within my reach. It aligns me with my purpose. 
 
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=Failure>
+<ChapterTitle=Failure>
 <IMAGE=Failure.jpeg>
-<TITLE=Failure>
 
 Work in Progress ...
 
@@ -876,8 +877,8 @@ Forgiveness may come as a needed step to aid in my journey to healing.
 <PAGEDIVIDER>
 <NEWPAGE>
 <CHAPTER=The emperor has no clothes I & II>
+<ChapterTitle=The emperor has<br>no clothes - Part I>
 <IMAGE=noclothes_1.jpeg>
-<TITLE=The emperor has<br>no clothes - Part I>
 
 The man perches himself on a high pedestal, projecting power, professing virtue and proclaiming wisdom. He stands, ready and eager to be honored, for defending the good and the holy. 
 
@@ -915,10 +916,10 @@ This man lives inside each of us. Do we notice? Do we give him a voice? Do we gi
 
 <PAGEDIVIDER>
 <IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes#:~:text=The%20Emperor's%20New%20Clothes%20is%20a%20literary,vain%20emperor%20who%20gets%20exposed%20before%20his>
-<Paraitalicl="PART II <NextPage_Icon>"> 
+<IndentItalicsLeft="PART II <NextPage_Icon>"> 
 <NEWPAGE>
 <IMAGE=noclothes_2.jpeg>
-<TITLE=The emperor has<br>no clothes - Part II>
+<ChapterTitle=The emperor has<br>no clothes - Part II>
 
 The child reaches inside of her to find reassuring innocence and eager playfulness. She wraps her innocence around her, like a warm blanket, made of delightful dreams, pure love and simple joy. She embraces playfulness to pursue creativity, exploration and learning. She gives her young life all the meaning she needs. 
 
@@ -938,4 +939,198 @@ The emperor walks with no clothes, his head held high. She looks at him. She say
 
 <PAGEDIVIDER>
 <IMAGEATR= Image attribution | https://en.wikipedia.org/wiki/Afghan_Girl>
-<ParaitalicL="PART I <PrevPage_Icon>"> 
+<IndentItalicsLeft="PART I <PrevPage_Icon>"> 
+
+<NEWPAGE>
+<CHAPTER="Discovery of me">
+<ChapterTitle="Discovery of me">
+<IMAGE="DiscoveryOfMe.svg| | 100% ">
+
+Richard Feynman: At the lowest point, an unconscious mind simply stores a copy of what it observes, without engaging in real thought. This is busy work masquerading as learning. At the highest, the living mind observes its own thinking and refines it. At each milestone on this journey, the mind reaches a new depth of awareness.” It is on this journey that I hope to discover myself.
+
+Observations: are decisions to draw from the universe’s energy pool because they satisfy a desire, an obligation or a pre-disposition in me. The items come to me, filtered and interpreted through my minds lens
+
+<SectionTitle="Remembrance:"> is the storing of a copy of these energy perturbation’s as information morsels, in my minds staging area; hastily accepted as having captured reality, while in fact made up of un-verified attributions, unclear descriptions and unconnected fragments. I often stop here and accept the powerfully satisfying illusion of knowledge - a just reward, for the effort expended to ‘grab and hoard’. However as I reflect on this acquisition, I sense incomplete recollections, tenuous associations and unexplored pathways. I become aware of the haze of inadequate understanding. Eventually, and after honest introspection, I am required to either discard the observation or to push further to qualify it with understanding <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level One: Remembrance:'>
+
+NOTES :The journey starts at the most basic—and most misunderstood—stage: remembrance. This is where the majority of learners remain, believing that memorization equals mastery. It feels productive. You repeat definitions, review notes, highlight pages, and convince yourself that effort equals progress. But repetition without comprehension is fragile.
+
+The brain at this stage behaves like a recorder. It captures words, symbols, and sounds, yet it does not build meaningful connections between them. Think of it as writing on sand. The information is there for a moment, but the slightest distraction, stress, or passage of time wipes it away. This explains why someone can study intensely for hours and then forget most of it days later. The problem is not intelligence—it is confusing recall with understanding.
+
+Memory alone is shallow when it stands isolated. At this first level, learning feels mechanical. Flashcards, rereading chapters, copying summaries—these methods create the illusion of productivity. The mind grows tired, but it does not necessarily grow stronger. Repetition can become a comforting routine. It gives the sensation of movement, like running on a treadmill. You sweat, you exert effort, but you remain in the same place. The illusion of learning is powerful because repetition feels safe. It avoids the discomfort of confusion.
+
+True growth, however, begins the moment you challenge the act of memorizing itself. Instead of asking, 'Can I repeat this?' you begin asking, 'Why is this true? Where did this idea originate? How does it connect to what I already know?' That shift marks the transition from passive storage to active reasoning.
+
+To move beyond mere remembrance, you must engage your mind differently. One simple practice is to explain what you are learning. Do not read silently and move on. Pause and speak the idea in your own words, even if your explanation feels incomplete. When you verbalize information, you force your brain to process meaning instead of echoing sounds. Speaking activates deeper cognitive pathways and exposes gaps in your understanding.
+
+Another powerful strategy is visual association. Every piece of information needs an anchor. Convert abstract words into images. Attach concepts to familiar places, people, or sensations. The brain naturally holds onto images and emotions more effectively than plain text. By linking ideas to vivid mental scenes, you transform fragile memory into structured comprehension.
+
+Creative rewriting is also essential. After studying a section, close the book and attempt to reconstruct the main points without looking. This prevents copying and encourages reconstruction. Reconstruction strengthens neural connections because it demands effort. When you struggle slightly to rebuild knowledge, your brain solidifies it.
+
+Testing yourself under pressure is equally important. Close your notes, look away from your materials, and try to recall the information aloud. If you cannot remember everything, resist frustration. That difficulty is feedback. It reveals where understanding is weak. Instead of seeing it as failure, view it as direction. The mind grows when challenged, not when comforted.
+
+Above all, be cautious of the pleasant feeling that repetition provides. Easy review sessions often create false confidence. When learning feels too smooth, question whether you are truly engaging with the material. Real progress usually carries a degree of mental strain. That strain signals that your brain is forming new connections rather than replaying old ones.
+
+As you push beyond surface memorization, something important begins to awaken: curiosity. When repetition no longer satisfies you, you start wanting deeper clarity. This desire leads you to the second level of thought."><br>
+
+<SectionTitle="Understanding:"> is a process by which I assign meaning to the observation. It is the movement from gathering ideas to interpreting them. It is the forming of connections to previous experiences. It is the incorporation of new facts into existing knowledge networks. It’s where fragments begin to find a home. Acceptance gives way to curiosity. Information is questioned and interpreted. Learning becomes about exploring not storing. Retention becomes easier. There is a new consistency in communication and in thought - a coherence emerges in the structure. Data gets anchored. This is not rearrangement. This is the natural, smooth and consistent framing of information. It is ability to explain simply that which fits. Memorization makes a copy; Understanding questions, interprets, connects and owns. Understanding needs testing to validate it association with truth. <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Two: Understanding'>
+
+NOTES: At the stage of understanding, information begins to transform into meaning. Words that once felt empty start forming patterns. Instead of simply repeating a formula, you comprehend why it works. Instead of reciting a historical date, you grasp its significance. The noise of disconnected facts becomes organized structure.
+
+Here you shift from being a collector of data to an interpreter of ideas. You begin connecting new knowledge to previous experiences. You ask how concepts relate to each other. You identify causes and consequences. Understanding builds bridges between facts, creating a network rather than isolated fragments.
+
+This level changes your relationship with learning. Studying becomes less about storing and more about exploring. You are no longer satisfied with what—you seek why and how. That shift deepens retention naturally, because meaningful knowledge is harder to forget. When ideas fit into a coherent structure, they anchor themselves.
+
+The transformation from remembrance to understanding is the foundation of intellectual growth. It is the moment when you stop acting like a machine and start thinking like a reasoning mind.
+
+Understanding doesn't happen by accident. It demands that you engage with the idea. You must talk to the content, question it, disagree with it, test it. The mind that truly understands is curious, not obedient. It doesn't accept truths without first breaking them apart and putting them back together.
+
+Remember: understanding isn't memorizing more clearly. It's uncovering the meaning hidden behind the word. That's why so many people believe they understand when they've merely rearranged what they memorized. True understanding is when you can explain something to someone else without looking at your notes, and it still sounds natural, fluid, and logical.
+
+Understanding is the first step toward freeing the mind. It's when knowledge stops being a weight and starts becoming power.
+
+To strengthen understanding:
+
+<tab="
+· Translate what you study into your own words. Close the book and say out loud what you understood. Don`t use the author`s language—use yours. That forces the brain to form original connections.<br>
+· Ask intelligent questions: 'Why does this happen? What if it were the opposite? How does this connect with what I already know?' Questioning is the fuel of comprehension.<br>
+· Teach yourself. Explain the content as if you were teaching a child or a friend. If you get stuck, that's where your understanding still has a gap.<br>
+· Build simple mind maps—not to memorize, but to see relationships. The brain understands better when it sees the structure of ideas.<br>
+· Avoid rushing. Understanding requires pause, reflection, and even discomfort. When a subject feels too difficult, that's often the sign that you're close to real comprehension.<br>
+">
+
+When you begin to understand, something changes silently. Studying stops feeling like a burden and becomes a dialogue. And that inner dialogue prepares your mind for the next leap: the moment when knowledge becomes action."><br>
+
+<SectionTitle="Application:"> is the testing of understanding. Understanding can be a failing amalgamation of belief, faith, reasoning and coherence. Application verifies if understanding can withstand a tryst with reality. It exercises the ’will to act’. It confirms value to the network. Reveals what is mastered and what needs work. Self-confidence is the outcome, recognition may be a valuable by-product. It is also the where failure is tasted. Overcoming or accepting the impasse, reveals much about the suitability, adaptability, skill, alternative mapping, and questions the effort / benefit ratio. Analysis is the light that reveals the path forward.<clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Three: Application'>
+
+NOTES: Now imagine the moment when knowledge stops being an idea on paper and becomes something you can do. This is the third level of the mind: application. Here you discover whether you've truly learned or merely believed you had. Because the real test of understanding isn't in repeating what you know—it's in using what you know.
+
+This is where theory collides with reality. The mind that applies is the mind that acts. It's not content with grasping ideas; it wants to see what happens when they're tested in the real world. At the second level, you understand. But at the third, you experiment. You step out of passivity and into the territory of error, practice, and iteration. And it's exactly there that learning becomes solid.
+
+Think about it: the human brain learns more by doing than by watching. Experience builds neural connections that no book can create. You can read a hundred times about swimming, but you'll never truly know the water until you get in it. The same is true of any skill. You can study a thousand theories, but you only master something when you apply it.
+
+And here lies the great secret of those who truly evolve: they don't wait to be ready to start. They learn while doing. They fail fast, correct fast, and learn even faster. Because every act of application is a mirror. It shows you what you truly master and what still needs work.
+
+To strengthen application:
+
+<tab="
+· Turn theory into action. After studying a concept, do something with it. If you learned a formula, apply it to a real problem. If you read about communication, test it in a conversation. If you studied focus, practice one uninterrupted hour of deep work.<br>
+· Solve simple problems daily. Apply one concept at a time—one problem, one idea. This practice creates clarity and eliminates the mental chaos of trying to use everything at once.<br>
+· Create mini-projects. Learn something new, then build something small to prove you understood it. It can be a short text, a piece of code, a simple experiment, or a quick video explanation. The point is to externalize what you learned.<br>
+· Analyze your mistakes immediately. Mistakes are the best teachers. When something doesn't work, don't run—investigate. Ask: 'Why did this fail? What could I have done differently?'<br>
+· Keep the action-reflection cycle going: apply, observe, adjust, repeat. That is the rhythm of real learning. Progress doesn't move in a straight line, but in a spiral. With every turn, you rise a little higher.<br>
+">
+
+As the mind starts to apply, it awakens a new kind of power: the power to solve. But there's something deeper. Application is only the beginning of intelligence. The next level is learning to see what others don't—patterns, relationships, the invisible connections between ideas."><br>
+
+<SectionTitle="Analysis:"> explores paths of new connections to the outside world, in light of confirmed understandings. information is no longer data molecules, it is data, function, relationship and value - all bundled up within connected knowledge nodes. Thinking advances from linear, to systemic - from data and links, - to a larger network of knowledge nodes, residing both inside and in the outside universe. I no longer think of data in isolation. I question information and relationships as a set. My thinking incorporates effort, risk, consequence, value, recognition and growth. My access and interaction with my self and my universe grows. I challenge myself, asking; Is this the simplest it can be? Do the nodes fit? Will the structure stand? Is the value sustainable? Am I accepting ideas or validating concepts? Do patterns emerge? Are more external networks accessible? Is the handshake easier? Is there mutual value amplification? Can I see over the horizon? Is looping back-and-forth between application and analysis creating a quiet confidence that the system of knowledge nodes have evolved to be accurate, reliable and repeatable? Are moving from seeking answers to seeking questions? <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Four: Analysis'>
+
+NOTES: Now imagine the moment when the world begins to connect. Nothing feels isolated anymore, and each idea starts revealing hidden links to others. This is the fourth level of the mind: analysis—where thinking stops being linear and becomes systemic.
+
+Here you no longer see pieces of information; you see relationships. While most people still try to memorize facts, the analytical mind sees how the pieces fit. It wants to understand causes and consequences, similarities and differences. It observes, compares, and quietly begins to decipher the logic of reality.
+
+This is the level where strategic thinking is born—the gaze that separates what is essential from what is noise. Because when you understand how something connects to something else, you begin to understand the whole system. And that changes everything. Information stops being a fragment and becomes structure.
+
+Analysis is the turning point between the average student and the true thinker. Those who analyze don't accept ideas as they arrive. They take concepts apart, examine each piece, and only then decide how to rebuild them. That attitude turns learning into something living, dynamic, and personal.
+
+But be warned: analysis is demanding. It requires deeper—and therefore slower—thinking. And that's exactly why few remain at this level. Many confuse mental effort with error, when in truth that discomfort is the sign that the brain is expanding. The more you compare, the more you understand. The more you take things apart, the more clarity you create. And over time, you begin to see patterns that were once invisible. That is the moment when thinking stops merely following knowledge and begins producing it.
+
+To strengthen analysis:
+
+<tab="
+· Compare opposite ideas. Take two concepts and ask: In what ways are they similar? In what ways do they contradict each other? This simple exercise forces the brain to move beyond repetition and enter deep analysis.<br>
+· Build contrast tables. List differences, causes, and consequences between themes. It's not just about remembering—it's about seeing patterns.<br>
+· Create relational mind maps. Don't just connect words—connect logical relationships: cause, effect, hierarchy, dependency. See knowledge as a living organism.<br>
+· Ask second-level questions. Don't just ask what this is, but rather how is this related to that? Or what changes if one element is altered? Comparative thinking is the training ground of the analytical mind.<br>
+· Accept slowness. Deep thinking is slower—but infinitely more powerful. Effort is the price of clarity and the proof that your brain is evolving.<br>
+">
+
+When the mind learns to analyze, it starts to think like a strategist. But something essential is still missing: the ability to judge what truly matters. Because seeing patterns is one thing; deciding which ones are relevant is another. And that's where the next level of thought is born."><br>
+
+<SectionTitle="Evaluation:"> is where priorities emerge and judgment evolves. I move from understanding something to knowing what matters. Choices are made. Freedom is experienced. Clarity appears. Judgements move closer to certainty. Frameworks that achieve predictability, get defined. Confidence in the framework becomes visible as wisdom. Knowledge links are understood; some are broken and others strengthened. Knowledge networks go from defined values to parameterized flexibility. Creation of criteria tunable networks take precedence over mature, rigid structures promising predictability. Evaluation adds weighting to knowledge nodes and links. Adaptability is the outcome. Adaptability lowers risk. Lowered risk enhances freedom - freedom to create <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Five: Evaluation'>
+
+NOTES: Pay attention now, because this is the point where thought stops being merely intelligent and becomes wise. Here you don't just understand the world; you decide what truly matters within it.
+
+So far, you've learned to remember, understand, apply, and analyze. But none of these abilities have real power unless you can choose. Knowing what to ignore is as important as knowing what to understand. A mind that cannot prioritize drowns in information. A mind that judges with clarity builds wisdom.
+
+This is the level where knowledge becomes criteria. You begin to see that not all ideas deserve the same weight. Not every argument is solid. Not every theory is applicable. Not every answer is true. The evaluating mind questions everything—even itself.
+
+At this stage, thinking becomes conscious and responsible. You stop following models and start creating your own parameters. You stop looking for answers and begin crafting better questions.
+
+But there's a challenge: judging is not the same as criticizing. Judgment requires balance—the courage to doubt without cynicism, and the humility to learn without submission. The mature mind doesn't seek to be right; it seeks to be clear. And clarity is the highest form of intellectual power.
+
+Evaluating is the art of giving weight to ideas. It's the moment when thought becomes a compass. And you finally stop being a student and become a decision-maker.
+
+To strengthen evaluation:
+
+<tab="
+· Ask 'Why does this matter?' — all the time. When studying or reflecting, don`t accept anything without purpose. If an idea doesn`t change how you see, act, or think, maybe it doesn`t deserve your time.<br>
+· Create value hierarchies. List what is essential, what is useful, and what is dispensable. This trains your mind to filter and prioritize.<br>
+· Debate with respect, but without submission. Listen to opposing opinions, but evaluate arguments, not voices. Thinking for yourself is the first act of intellectual freedom.<br>
+· Write critical syntheses. After reading something, note what you agree with, what you disagree with, and what you still don't understand. This simple habit turns reading into active thought.<br>
+· Suspend quick judgment. Rushing to conclude is the enemy of clarity. Wait, observe, question. Discernment is born in the silence between stimulus and response.<br>
+">
+
+When you learn to judge with lucidity, you begin to see the world as a board of possibilities. But the evaluating mind doesn't create—it refines. And that's why the next level is the most creative of all."><br>
+
+<SectionTitle="Creation:"> is the natural progression past evaluation where thought stops following known paths and begins to fork new trails. It takes me to the edges of my cognitive capacity, along the radius of my predispositions, to look beyond. It seeks to improve and uncover. It seeks to understand limitations. It embraces mental freedom to dialog with the unknown as equals. It makes space for reflection on what makes a journey worthwhile and offers insight on what may yet come. <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Six: Creation'>
+
+NOTES: This is the sixth level of the mind: creation—where knowledge turns into invention. Here the mind ceases to be just a tool for memory and becomes a source of originality.
+
+At the fifth level, you learn to judge what's worth your time. But at the sixth, you go further. You use everything you know to generate something that doesn't yet exist. It's the stage where thought becomes art.
+
+The creative mind combines old ideas into new forms. It sees solutions where others see limits and turns chaos into meaning. Creation isn't a gift—it's the natural result of a mind that has learned to think deeply. Those who understand, apply, analyze, and judge with clarity will inevitably create. Because creation is the reflection of a mind that has mastered the fundamentals—and dares to go beyond them.
+
+But here's the secret: creation doesn't come from overexertion. It comes from mental freedom. The best ideas appear when the brain is relaxed, curious, and playing with possibilities. Creativity is thought in its purest form: curiosity—the same state you had as a child.
+
+The creative mind doesn't fear mistakes. It understands that every mistake is just an attempt with another name. It doesn't seek perfection; it seeks discovery. That's why creation is one of the most human acts there is. It's the mind in dialogue with the unknown.
+
+To strengthen creation:
+<tab="
+· Play with what you've learned. Take something you've mastered and change the rules. If you've learned a theory, test its opposite. If you`ve mastered a technique, invent a new way to apply it. To create is to play with knowledge.<br>
+· Ask questions that have no ready answers. A truly creative mind does not move forward because it is certain; it moves because it is curious. Certainty closes doors, but curiosity opens them.<br>
+· Instead of asking 'Is this correct?' ask 'What if this could be different? Why does it have to be this way? What would happen if I tried something no one has tried before?' These questions may seem unrealistic—even impossible—but it is precisely impossible questions that reveal possibilities hidden from ordinary sight.<br>
+· Cross-pollinate ideas. Creativity grows strongest at the intersection of different worlds. Many of the greatest ideas in history were born when two unrelated fields collided. When science met art, new forms of expression emerged. When philosophy met technology, revolutions followed. Genius rarely lives in isolation within one narrow discipline. It thrives where ideas mix, overlap, and influence one another.<br>
+· Capture ideas immediately. Thoughts are fragile. A sudden insight can disappear in seconds if it is not recorded. Write everything down—even ideas that seem strange, unrealistic, or incomplete. Many groundbreaking innovations began as thoughts that sounded absurd at first. By giving those ideas space on paper, you allow them to evolve.<br>
+· Create to learn. Don't wait until you feel completely prepared before you begin producing something. When you create, you discover gaps in your knowledge. You encounter challenges that force you to think more clearly. The act of expression pushes your understanding to a deeper level.<br>
+">
+
+When you create, you approach the edge of what it means to be human. Knowledge transforms into meaning. Information stops being abstract and becomes personal. At that moment, learning is no longer just intellectual—it becomes transformative.
+
+Yet, even beyond creation, there is a higher stage of mental development: a level where the mind not only produces ideas, but examines itself in the process."><br>
+
+<SectionTitle="Reflection:"> is where I exercise my observation of the self. I watch: How do I choose? How do I learn? How do I act? how do I use my gains? … But it’s more than curiosity. I observe, so I can direct and correct. It’s where wisdom surpasses knowledge. It’s where I grant myself the freedom to question who I am, and why am so, to further my pursuit of the extraordinary vastness inside of me. It’s the realization that the ‘discovery of me’ is a continuous spiral expanding with every turn and for which I have my lifetime at my disposal. <clickwordR="<ClickMe_note>" |  | 80 | "<underline='Level Seven: Reflection'>
+NOTES: Imagine your mind standing before a mirror—not reflecting your appearance, but reflecting your thoughts. You are not just thinking; you're observing how you think. This is the seventh and highest level of mental growth: reflection.
+
+At this stage, learning is no longer something that simply happens to you. It becomes something you direct consciously. You gain awareness of your cognitive patterns. You begin to see how your mind operates. At the previous level, you create. At this level, you refine the creator within.
+
+You start noticing patterns behind your achievements. You recognize the habits that lead to clarity and the triggers that lead to confusion. You identify when your thinking becomes lazy, when you rely on repetition instead of analysis, or when distractions weaken your focus. Instead of being controlled by these patterns, you study them.
+
+Reflection is the stage where wisdom surpasses knowledge. Knowing something means being able to explain it. But understanding how you learn, how you make decisions, and how you respond to challenges gives you the power to change your entire intellectual life.
+
+The reflective thinker asks powerful questions: Why did I grasp this concept quickly but struggle with another? What methods helped me truly understand? What distracted me? What strengthened my focus? These questions do more than correct errors—they help you design a better version of your own thinking process.
+
+When you master this level, your growth becomes self-directed. You no longer rely entirely on external techniques or instructions. You become your own method. The power shifts from the content you study to the way you approach studying itself. This independence is transformative. It means that no matter what subject you encounter, you possess the internal tools to adapt and improve.
+
+One of the most profound realizations at this level is that thinking has no final end point. The reflective mind grows in cycles. Each insight reveals a deeper layer. Every mistake becomes an opportunity for refinement. Growth becomes continuous rather than occasional. The journey of understanding turns into a spiral, expanding with each turn.
+
+To strengthen reflection:
+<Tab="
+· Explain what you have learned out loud—not to impress others, but to test your own clarity. If your explanation feels confused or incomplete, that is valuable feedback. Clear expression is a sign of clear understanding. When your words flow logically, it means your thoughts are organized.<br>
+· Analyze your own learning process after completing a task. Ask yourself: How did I learn this? What strategies worked best? Where did I hesitate? What slowed me down? Writing down these observations transforms studying into deliberate self-improvement.<br>
+· Treat mistakes as diagnostic tools. When something goes wrong, observe it objectively. Approach it like a scientist studying an experiment. Every error contains information about what you have not yet mastered. Instead of feeling discouraged, become curious. Ask what the mistake reveals about your thinking.<br>
+· Create small daily rituals to strengthen metacognition—the awareness of your own thinking. Spend ten minutes each day simply observing your mental state. Ask yourself: Am I creating new ideas right now, or am I just repeating old ones? Is my mind focused, or is it drifting? This simple pause increases awareness and gradually trains your brain to operate at higher levels of consciousness.<br>
+· Keep curiosity alive. A truly wise mind is not the one that has accumulated the most information; it is the one that never stops questioning. Curiosity protects you from intellectual stagnation. It keeps your ego from convincing you that you already know enough. Reflection without curiosity becomes rigid. But reflection guided by curiosity remains dynamic and open.<br>
+">
+When you reach this seventh level, you realize that genius is not an inborn gift granted at birth. It is constructed—gradually, layer by layer, habit by habit, awareness by awareness. The mind evolves.
+
+Mastery does not come from memorizing everything about the world. It comes from understanding how you come to understand the world. At this highest stage, thinking becomes an art form. Learning becomes more than a task—it becomes an act of personal growth. You recognize that every subject you study is also an opportunity to refine your character, your discipline, and your awareness. The process itself becomes meaningful."><br>
+
+<IndentItalicsLeft=" These are the tasks the three wise men (consciousness, conscience and intuition, along with their partner, the will-to-act), are willing to undertake, if I let them. In this effort, they are supported by a multitude of mind organs. The wise men use these mind organs to guide, not lead. I must not interject myself into this process. Left alone, the wise men will train the mind organs to protect, without being alarmist. They will create a mind that brokers peace with its surroundings, and growth within itself. The promote effortless energy exchange, with the outside universe, to reap the rewards of hamronious and passionate living.
+
+If 'I' represent the soul; an awareness of my being, then I must form a strong working bond with the three wise men, so I can make the pursuit of oneness and harmony with nature in all is forms, an adventure of a lifetime.
+
+It is a on-ending journey, and by definition I am unable to say where I am or how far I have to go. It is clear to me that I must keep going to wherever the journey may lead till my time is up. ">
+
+<PageDivider>
+<IndentItalicsLeft="Excerts from Richard Fynman">
+<URLATR="Plutchik’s Wheel of Emotions:","https://www.6seconds.org/2025/02/06/plutchik-wheel-emotions/">
