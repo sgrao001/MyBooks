@@ -1,47 +1,39 @@
 {
-    "source_path": "AboutMe/",
-    "source_md": "AboutMe.md",
-    "output_md": "AboutMe.mdx",
-    "output_html": "AboutMe.html",
-
-    "BkImage": "AboutMe-bkgrnd.jpeg",
-    
-    "COPY_ENABLE": true,
-    
-    "ARW_DISPLAY": false,
-    "ARW_HOVER_WIDTH": 15,
-    "ARW_VISIBLE_WIDTH": 15,
-    
-    "SLDR_DISPLAY": true,
-
-    "Page0_skip": true,
-    
-    "BkPage0_FontColor": "#89C2FF",   
-    "BkFontColor": "#abb8bb",   
-    "BkFontSize": "1em",
-    "BkPage0_Title": "About Me",
-    "BkPage0_Description": "AboutMe",
-    "BkPage0_Tag": "AboutMe",
-    "Author_name": "Sri Rao",
-    "BkPage0_Keywords": "Sri Rao",
-    "BkPage0_head3": "~***~",
-    "BkFontSizeMobile390": "0.8em",
-    "BkListLink_show": false,
-    "BkLinkURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
-
-    "TitleFontSize": "1em",
-    "TitleFontClr": "#abb8bb",
-
-    "Hide_page_number": false,
-     
-    "ImageWidthDesktop": "100%",
-    "ImageWidthMobile": "95%",
+    "SubmitterEmail": "test@gmail.com",
+    "MDFileName": "AboutMe.md",
+    "HtmlFileName": "AboutMe/AboutMe.html",
+    "BookImage": "AboutMe-bkgrnd.jpeg",
+    "CoverPageImage": "AboutMe-bkgrnd.jpeg",
+    "CoverPageFontColor": "#89C2FF",
+    "BookFontColor": "#abb8bb",
+    "HighlightTextFontColor": "#D4E6FF",
+    "TOCFontColor": "#abb8bb",
+    "BubbleTextPopupFontColor": "#b0e0ff",
+    "SliderDisplay": true,
+    "ArrowDisplay": false,
+    "CoverPageSkip": true,
+    "HidePageNumber": false,
     "ResizeForMobile": true,
-
-    "TOC_TITLE": "Table of Contents",
-    "TOC_POSITION": 0,
-    "TOC_FontColor": "#abb8bb",
-    "TOC_ENABLE": false,
-    "TOCasList": true
+    "TOCPageSkip": true,
+    "TOCAsList": true,
+    "ShowBookListLink": false,
+    "MakeMdFileCopy": false,
+    "ArrowHoverWidth": 15,
+    "ArrowVisibleWidth": 15,
+    "BookFontSizeMobile390": "0.8em",
+    "TitleFontSize": "1em",
+    "BookFontSize": "1em",
+    "DefaultDesktopImageWidth": "100%",
+    "DefaultMobileImageWidth": "95%",
+    "BookListURL": "https://sgrao001.github.io/MyBooks/AboutMe/AboutMe.html",
+    "TOCTitle": "Table of Contents",
+    "BookTitle": "About Me",
+    "BookDescription": "AboutMe",
+    "AuthorName": "Sri Rao",
+    "MetaDescription": "INtroduction - Sri Rao",
+    "MetaKeywords": "Sri Rao",
+    "CoverPageEndMarker": "~***~",
+    "RemoveDateLabelOnCover": true,
+    "AutoPaginate": false,
+    "WordsPerPage": 250
 }
-
