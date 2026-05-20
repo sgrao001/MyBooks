@@ -12,11 +12,16 @@ CB| Header 1 | Header 2 |
 | Cell 3   | https://www.cnn.com |
 image-align-{alignment} mobile-align-center mobile-default-size
 
-<div style="break-after: page;"></div><br>
-## Elevating Understanding
-![[ElevatingUnderstanding.svg]]<br><p style="color: #f09e5a;"><span class="highlight-text">tooltip tooltip</span></p>
+<NewPage>
+<Chapter="testing">
+<Chaptertitle="Testing">
 
-<div>
+
+<Image="DiscoveryOfMe.svg"><br>
+
+<p style="color: #f09e5a;"><span class="highlight-text">tooltip tooltip</span></p>
+
+
 Position    Parameter	  Purpose	                                Example values<br>
 1           T →         data-top (default: 5.5vh)<br>
 2           L →         data-left (default: 6.5vw)<br>
@@ -32,17 +37,17 @@ Position    Parameter	  Purpose	                                Example values<b
 same as  <BBL-Txt=":[floatright]default", ":[ 10% |  |  | |  | | | center-width | left ]Some information here"><br>
 
 Only tip text (no parameters) <BBL-Txt=":[floatright]Info", ":[ ]Some information here"><br>
-Set height and width <BBL-Txt=":[floatboth]Image<ClickMe_icon>", ":[ | | |30%| 84% ]Click to view"><br>
+Set height and width <BBL-Txt=":[floatboth]Image<ClickMe_pointer>", ":[ | | |30%| 84% ]Click to view"><br>
 Set max‑height and max‑width only <BBL-Txt=":[floatcenter]Centered", ":[|||||| |center-both|center]Perfectly centered tooltip"><br>
 Combine multiple parameters <BBL-Txt=":[floatright]Flex", ":[|||200px|60vw|250px|80vw|center-width|right]Dynamic tooltip"><br>
-No float marker (trigger stays inline) <BBL-Txt="<ClickMe_icon>", ":[|||300px||| |bottom-page|center]BubbleText info">
+No float marker (trigger stays inline) <BBL-Txt="<ClickMe_pointer>", ":[|||300px||| |bottom-page|center]BubbleText info">
 
-Custom positionioned vvvvv tooltip <BBL-Txt="Check me out <ClickMe_icon>", ":[]Tip All Defaults">
+Custom positionioned vvvvv tooltip <BBL-Txt="Check me out <ClickMe_pointer>", ":[]Tip All Defaults">
 
 
 <div style="margin-left: 17%; margin-right: 17%;" class="glassbtnlbl">
     <span>XXXXX </span>
-    <BBL-Txt="<ClickMe_icon>", ":[|||150px||| |bottom-page|center]BubbleText info">
+    <BBL-Txt="<ClickMe_pointer>", ":[|||150px||| |bottom-page|center]BubbleText info">
 </div>
 <footer=Abc>
 
@@ -89,7 +94,7 @@ in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 <BBL-Txt=":[floatcenter]RC", ":[ center| calc(100% - 150px - 42px) | 0 | 160px | 150px | | | fixed | center ]📌 Right center">
 <BBL-Txt=":[floatright]BL", ":[ |  | 0 | 160px | 150px | | | bottom-left | center ]📌 Bottom left"><br>
 <BBL-Txt=":[floatright]BC", ":[ |  | 0 | 160px | 150px | | | bottom-center | center ]📌 Bottom center"><br>
-<<BBL-Txt=":[floatright]BR<ClickMe_icon>", ":[ |  | 0 | 160px | 150px | | | bottom-right | center ]<ClickMe_icon> Bottom right">>
+<<BBL-Txt=":[floatright]BR<ClickMe_pointer>", ":[ |  | 0 | 160px | 150px | | | bottom-right | center ]<ClickMe_pointer> Bottom right">>
 </div>
 
 
