@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --Lsafe-margin: 5%;
+      --Rsafe-margin: 5%;
+      --bubblefontcolor: #b0e0ff;
+    }
+    body {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    #output, #previewContent, #outputBubble { color: var(--bubblefontcolor); }
+    #previewContent {
+      background: rgba(0,0,0,0.45) !important;
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 5px 5px rgba(0,0,0,0.95);
+      padding: 1rem;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      max-height: 300px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      font-family: monospace;
+    }
+    input[type="file"] { font-size: 1.2em; font-weight: normal; }
+    .glassbtn {
+      background: rgba(0,0,0,0.075) !important;
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      border-right: 1px solid rgba(255,255,255,0.4);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.5);
+      padding: 5px 15px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--bubblefontcolor);
+      font-size: 0.9rem;
+    }
+    .glassbtn:hover {
+      background: rgba(0,0,0,0.55) !important;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.7);
+    }
+    .quick-nav { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .quick-nav .glassbtn { padding: 2px 12px; font-size: 0.9rem; }
+    .active-page-btn {
+      background: rgba(21,47,17,0.698) !important;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.513) !important;
+      border-top: none;
+      border-left: none;
+      border-bottom: 2px solid rgba(6,116,35,0.613);
+      border-right: 2px solid rgba(26,85,42,0.613);
+      text-decoration: underline;
+      color: white !important;
+    }
+    button:disabled { cursor: not-allowed; pointer-events: none; }
+    .form-page { display: none; }
+    .form-page.active { display: block; }
+    .invalid-field { border: 2px solid #e11d48 !important; background-color: rgba(225,29,72,0.1) !important; }
+    .step-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div style="margin-left: var(--Lsafe-margin); margin-right: var(--Rsafe-margin); background:transparent;">
+    <!-- Page 1: Required Fields + Meta -->
+    <div id="page1" class="form-page active" data-page-num="1">
+        <div class="quick-nav"></div>
+        <div class="page-instructions" style="font-style: italic; color: var(--bubblefontcolor); margin-bottom: 1rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            📄 Page 1 – Book metadata
+        </div>
+        <div id="loadSettingsButton" style="margin-bottom: 1rem;">
+            <button id="loadCfgBtn" class="glassbtn" style="background:#f59e0b;">📂 Load settings (.cfg)</button>
+        </div>
+        <div id="requiredFields"></div>
+        <div style="margin-top: 1rem;">
+            <div id="metaDescriptionContainer"></div>
+            <div id="metaKeywordsContainer"></div>
+        </div>
+    </div>
+    <!-- Page 2: Pagination -->
+    <div id="page2" class="form-page" data-page-num="2">
+        <div class="quick-nav"></div>
+        <div class="page-instructions" style="font-style: italic; color: var(--bubblefontcolor); margin-bottom: 1rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            📄 Page 2 – Pagination settings
+        </div>
+        <div id="paginationSection" style="margin-top: 1.5rem;">
+            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem;">📄 Pagination 
+                <span style="font-weight: normal;">(optional)</span>
+            </div>
+            <div id="paginationGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;"></div>
+        </div>
+    </div>
+    <!-- Page 3: Color Settings + Image files -->
+    <div id="page3" class="form-page" data-page-num="3">
+        <div class="quick-nav"></div>
+        <div class="page-instructions" style="font-style: italic; color: var(--bubblefontcolor); margin-bottom: 1rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            📄 Page 3 – Colors & background images
+        </div>
+        <div id="colorSection" style="margin-top: 1.5rem;">
+            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem;">🎨 Color Settings 
+                <span style="font-weight: normal;">(optional)</span>
+            </div>
+            <div id="colorGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem;"></div>
+        </div>
+        <div id="imageSection" style="margin-top: 1.5rem;">
+            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem;">🖼️ Background art for book pages<br> 
+                <span style="font-weight: normal;">(Optional – leave empty if not needed)</span>
+            </div>
+            <div id="imageGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;"></div>
+        </div>
+    </div>
+    <!-- Page 4: TOC & Book List Settings -->
+    <div id="page4" class="form-page" data-page-num="4">
+        <div class="quick-nav"></div>
+        <div class="page-instructions" style="font-style: italic; color: var(--bubblefontcolor); margin-bottom: 1rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            📄 Page 4 – Table of Contents & book list
+        </div>
+        <div id="tocSettingsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;"></div>
+    </div>
+    <!-- Page 5: Actions, Output, File Upload, Submit -->
+    <div id="page5" class="form-page" data-page-num="5">
+        <div class="quick-nav"></div>
+        <div class="page-instructions" style="font-style: italic; color: var(--bubblefontcolor); margin-bottom: 1rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+            📄 Page 5 – Generate tags, upload markdown, convert to HTML
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <div class="step-label">📝 Step 1: Generate book settings</div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button id="generateBtn" class="glassbtn" style="background:#10b981;">📝 Generate settings tags</button>
+                <button id="clearBtn" class="glassbtn" style="background:#ef4444;">🗑️ Clear all</button>
+            </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <div id="outputBubble" style="background: rgba(0,0,0,0.45); backdrop-filter: blur(12px); border-radius: 20px; padding: 1rem; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 5px 5px rgba(0,0,0,0.95); display: none;">
+                <div id="output" style="white-space: pre-wrap; word-break: break-all; font-family: monospace; font-size: 0.85rem;"></div>
+            </div>
+        </div>
+        <div id="fileUploadSection" style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; display: none;">
+            <div class="step-label">📂 Step 2: Select book markdown file</div>
+            <input type="file" id="mdFileInput" accept=".md" class="glassbtn" style="margin-bottom: 0.5rem; width: auto; font-size: inherit; margin-left: 15px; display: inline-block;">
+            <div id="fileError" style="color: #e11d48; font-size: 0.8rem; margin-bottom: 0.5rem;"></div>
+            <!-- Step 3 and Process button (initially hidden) -->
+            <div id="step3Container" style="display: none;">
+                <div class="step-label">⚙️ Step 3: Process markdown file</div>
+                <button id="processFileBtn" class="glassbtn" style="background:#3b82f6;">⚙️ Process book file</button>
+            </div>
+            <div id="previewArea" style="margin-top: 1rem; display: none;">
+                <div style="font-size: 1rem; font-weight: 600;">Preview<br><span style="font-weight: normal;">(first 50 lines after merging tags)</span></div>
+                <pre id="previewContent" style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 12px; font-size: 0.8rem; overflow-x: auto; max-height: 300px;"></pre>
+            </div>
+        </div>
+        <!-- Step 4: Download buttons (initially hidden) -->
+        <div id="step4Container" style="margin-top: 1.5rem; display: none;">
+            <div class="step-label">📥 Step 4: Download book and settings file</div>
+            <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <button id="downloadConfigBtn" class="glassbtn" style="background:#3b82f6;">📥 Download Settings (.cfg)</button>
+                <button id="convertDownloadBtn" class="glassbtn" style="background:#8b5cf6;">Convert and download<br>book (.html)</button>
+            </div>
+        </div>
+        <div id="convertStatus" style="margin-top: 0.5rem; font-size: 0.9rem; text-align: center;"></div>
+    </div>
+    <!-- Navigation buttons (Previous/Next) -->
+    <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+        <button id="prevPageBtn" class="glassbtn" style="background:#64748b;">← Previous</button>
+        <button id="nextPageBtn" class="glassbtn" style="background:#3b82f6;">Next →</button>
+    </div>
+
+    <script>
+        // ========== GLOBAL CONFIGURATION ==========
+        const MAX_MD_FILE_SIZE_BYTES = 0.5 * 1024 * 1024;   // 0.5 MB
+        let currentTags = "";
+        let currentOriginalFileName = "";   // store original filename without extension
+
+        // ========== HELPER FUNCTIONS (unchanged) ==========
+        function createTextField(fieldId, labelText, isRequired, placeholder, isTextarea, rows) {
+            var div = document.createElement('div');
+            div.style.marginBottom = '1rem';
+            div.style.background = 'transparent';
+            var label = document.createElement('label');
+            label.textContent = labelText;
+            if (isRequired) {
+                var reqSpan = document.createElement('span');
+                reqSpan.textContent = ' *';
+                reqSpan.style.color = '#e11d48';
+                label.appendChild(reqSpan);
+            }
+            label.style.display = 'block';
+            label.style.marginBottom = '0.25rem';
+            label.style.fontWeight = 'bold';
+            var input;
+            if (isTextarea) {
+                input = document.createElement('textarea');
+                input.rows = rows || 3;
+                input.style.resize = 'vertical';
+            } else {
+                input = document.createElement('input');
+                input.type = (fieldId === 'SubmitterEmail') ? 'email' : 'text';
+            }
+            input.id = fieldId;
+            input.placeholder = placeholder || '';
+            input.style.width = '100%';
+            input.style.padding = '0.5rem';
+            input.style.border = '1px solid #ccc';
+            input.style.borderRadius = '0.5rem';
+            input.style.fontSize = '0.9rem';
+            input.style.fontFamily = 'inherit';
+            input.style.boxSizing = 'border-box';
+            var errorSpan = document.createElement('div');
+            errorSpan.id = fieldId + 'Error';
+            errorSpan.style.color = '#e11d48';
+            errorSpan.style.fontSize = '0.75rem';
+            errorSpan.style.marginTop = '0.25rem';
+            errorSpan.style.display = 'none';
+            div.appendChild(label);
+            div.appendChild(input);
+            div.appendChild(errorSpan);
+            return { container: div, input: input, error: errorSpan };
+        }
+
+        function createImageInput(fieldId, labelText, placeholder) {
+            var div = document.createElement('div');
+            div.style.marginBottom = '0.5rem';
+            var label = document.createElement('label');
+            label.textContent = labelText;
+            label.style.display = 'block';
+            label.style.marginBottom = '0.25rem';
+            label.style.fontWeight = 'bold';
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.id = fieldId;
+            input.placeholder = placeholder || '';
+            input.style.width = '100%';
+            input.style.padding = '0.4rem';
+            input.style.border = '1px solid #ccc';
+            input.style.borderRadius = '0.5rem';
+            input.style.fontSize = '0.9rem';
+            input.style.fontFamily = 'inherit';
+            input.style.boxSizing = 'border-box';
+            var hint = document.createElement('div');
+            hint.textContent = '.jpg or .jpeg';
+            hint.style.fontSize = '0.7rem';
+            hint.style.color = '#64748b';
+            hint.style.marginTop = '0.2rem';
+            div.appendChild(label);
+            div.appendChild(input);
+            div.appendChild(hint);
+            return div;
+        }
+
+        var colorFields = [
+            { key: 'BookPgColor', label: 'Book Page Background Color' },
+            { key: 'CoverBgColor', label: 'Cover Page Background Color' },
+            { key: 'CoverPageFontColor', label: 'Cover Page Font Color' },
+            { key: 'TOCFontColor', label: 'TOC Font Color' },
+            { key: 'BookFontColor', label: 'Book Font Color' },
+            { key: 'HighlightTextFontColor', label: 'Highlight Text Font Color' }
+        ];
+
+        function buildColorItem(fieldKey, fieldLabel) {
+            var container = document.createElement('div');
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            container.style.marginBottom = '0.75rem';
+            container.style.background = 'transparent';
+            var label = document.createElement('label');
+            label.textContent = fieldLabel;
+            label.style.fontWeight = 'bold';
+            label.style.marginBottom = '0.25rem';
+            var controlsRow = document.createElement('div');
+            controlsRow.style.display = 'flex';
+            controlsRow.style.alignItems = 'center';
+            controlsRow.style.gap = '0.5rem';
+            controlsRow.style.flexWrap = 'wrap';
+            var colorPicker = document.createElement('input');
+            colorPicker.type = 'color';
+            colorPicker.id = fieldKey;
+            colorPicker.value = '#ffffff';
+            colorPicker.style.width = '50px';
+            colorPicker.style.height = '40px';
+            colorPicker.style.cursor = 'pointer';
+            var hexInput = document.createElement('input');
+            hexInput.type = 'text';
+            hexInput.id = fieldKey + '_hex';
+            hexInput.placeholder = '#RRGGBB';
+            hexInput.style.width = '90px';
+            hexInput.style.fontFamily = 'monospace';
+            hexInput.style.padding = '0.25rem';
+            function syncColorFromPicker() { hexInput.value = colorPicker.value; }
+            function syncColorFromHex() {
+                var hex = hexInput.value.trim();
+                if (/^#[0-9A-Fa-f]{6}$/.test(hex)) colorPicker.value = hex;
+            }
+            colorPicker.addEventListener('input', syncColorFromPicker);
+            hexInput.addEventListener('input', syncColorFromHex);
+            var defaultCheckbox = document.createElement('input');
+            defaultCheckbox.type = 'checkbox';
+            defaultCheckbox.id = fieldKey + '_default';
+            defaultCheckbox.checked = false;
+            var defaultLabel = document.createElement('label');
+            defaultLabel.textContent = 'Use system default';
+            defaultLabel.style.fontWeight = 'normal';
+            defaultLabel.style.fontSize = '0.8rem';
+            defaultLabel.style.marginLeft = '0.25rem';
+            defaultLabel.htmlFor = defaultCheckbox.id;
+            var checkboxWrapper = document.createElement('div');
+            checkboxWrapper.style.display = 'flex';
+            checkboxWrapper.style.alignItems = 'center';
+            checkboxWrapper.appendChild(defaultCheckbox);
+            checkboxWrapper.appendChild(defaultLabel);
+            controlsRow.appendChild(colorPicker);
+            controlsRow.appendChild(hexInput);
+            controlsRow.appendChild(checkboxWrapper);
+            container.appendChild(label);
+            container.appendChild(controlsRow);
+            return container;
+        }
+
+        function createPaginationSelect(id, labelText, options, defaultText) {
+            var div = document.createElement('div');
+            div.style.marginBottom = '0.5rem';
+            var label = document.createElement('label');
+            label.textContent = labelText;
+            label.style.display = 'block';
+            label.style.marginBottom = '0.25rem';
+            label.style.fontWeight = 'bold';
+            var select = document.createElement('select');
+            select.id = id;
+            select.style.width = '100%';
+            select.style.padding = '0.4rem';
+            select.style.fontSize = '0.9rem';
+            select.style.fontFamily = 'inherit';
+            var defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = defaultText;
+            select.appendChild(defaultOption);
+            for (var i = 0; i < options.length; i++) {
+                var opt = document.createElement('option');
+                opt.value = options[i].value;
+                opt.textContent = options[i].text;
+                select.appendChild(opt);
+            }
+            div.appendChild(label);
+            div.appendChild(select);
+            return div;
+        }
+
+        function createBoolSelect(id, labelText, defaultText) {
+            var div = document.createElement('div');
+            div.style.marginBottom = '0.5rem';
+            var label = document.createElement('label');
+            label.textContent = labelText;
+            label.style.display = 'block';
+            label.style.marginBottom = '0.25rem';
+            label.style.fontWeight = 'bold';
+            var select = document.createElement('select');
+            select.id = id;
+            select.style.width = '100%';
+            select.style.padding = '0.4rem';
+            select.style.fontSize = '0.9rem';
+            select.style.fontFamily = 'inherit';
+            var defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = defaultText;
+            select.appendChild(defaultOption);
+            var trueOption = document.createElement('option');
+            trueOption.value = 'true';
+            trueOption.textContent = 'True';
+            select.appendChild(trueOption);
+            var falseOption = document.createElement('option');
+            falseOption.value = 'false';
+            falseOption.textContent = 'False';
+            select.appendChild(falseOption);
+            div.appendChild(label);
+            div.appendChild(select);
+            return div;
+        }
+
+        // ========== IFRAME RESIZE FUNCTION ==========
+        function sendActivePageHeight() {
+            if (window.top === window) return;
+            var height = document.body.scrollHeight;
+            height += 20; // small buffer
+            window.top.postMessage({ type: 'iframeResize', height: height }, '*');
+        }
+
+        // ========== LOAD .cfg FILE ==========
+        function loadCfgFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const content = e.target.result;
+                    // Check ASCII (only printable ASCII and newlines)
+                    if (!/^[\x20-\x7E\r\n]*$/.test(content)) {
+                        reject(new Error('File contains non-ASCII characters. Only ASCII allowed.'));
+                        return;
+                    }
+                    // Decode base64 (content is base64 string)
+                    let decoded;
+                    try {
+                        decoded = atob(content);
+                    } catch (err) {
+                        reject(new Error('Invalid Base64 encoding.'));
+                        return;
+                    }
+                    resolve(decoded);
+                };
+                reader.onerror = () => reject(new Error('Error reading file.'));
+                reader.readAsText(file, 'UTF-8');
+            });
+        }
+
+        function parseTagsAndPopulate(tagString) {
+            // Clear all fields first
+            const textFields = ['SubmitterEmail', 'BookTitle', 'AuthorName', 'BookDescription', 'MetaDescription', 'MetaKeywords', 'BookImage', 'CoverPageImage', 'BookListURL'];
+            for (let id of textFields) {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            }
+            const selects = ['AutoPaginate', 'WordsPerPage', 'TOCPageSkip', 'CoverPageSkip', 'TOCAsList', 'ShowBookListLink'];
+            for (let id of selects) {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            }
+            for (let field of colorFields) {
+                const key = field.key;
+                const defaultCheck = document.getElementById(key + '_default');
+                const hexInput = document.getElementById(key + '_hex');
+                const colorPicker = document.getElementById(key);
+                if (defaultCheck) defaultCheck.checked = false;
+                if (hexInput) hexInput.value = '';
+                if (colorPicker) colorPicker.value = '#ffffff';
+            }
+
+            // Parse tags: <Key="value">
+            const tagRegex = /<(\w+)="([^"]*)">/g;
+            let match;
+            while ((match = tagRegex.exec(tagString)) !== null) {
+                const key = match[1];
+                const value = match[2];
+                const el = document.getElementById(key);
+                if (el) {
+                    if (el.tagName === 'SELECT') {
+                        el.value = value;
+                    } else if (el.type === 'color') {
+                        const hexInput = document.getElementById(key + '_hex');
+                        if (hexInput) hexInput.value = value;
+                        el.value = value;
+                    } else {
+                        el.value = value;
+                    }
+                }
+                if (colorFields.some(f => f.key === key)) {
+                    const defaultCheck = document.getElementById(key + '_default');
+                    if (defaultCheck && value === '') {
+                        defaultCheck.checked = true;
+                    }
+                }
+            }
+            // Update dependent UI
+            const showBookListSelect = document.getElementById('ShowBookListLink');
+            const urlInput = document.getElementById('BookListURL');
+            if (showBookListSelect && urlInput) {
+                urlInput.disabled = !(showBookListSelect.value === 'true');
+                if (urlInput.disabled) urlInput.value = '';
+            }
+            currentTags = tagString;
+            outputDiv.textContent = currentTags;
+            outputBubble.style.display = 'block';
+            fileUploadSection.style.display = 'block';
+            sendActivePageHeight();
+        }
+
+        // ========== BUILD FORM FIELDS ==========
+        var requiredContainer = document.getElementById('requiredFields');
+        requiredContainer.innerHTML = '';
+        var emailField = createTextField('SubmitterEmail', 'Submitter Email', true, 'you@example.com', false);
+        var emailInput = emailField.input;
+        var emailError = emailField.error;
+        requiredContainer.appendChild(emailField.container);
+
+        var titleAuthorGrid = document.createElement('div');
+        titleAuthorGrid.style.display = 'grid';
+        titleAuthorGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
+        titleAuthorGrid.style.gap = '1rem';
+        titleAuthorGrid.style.marginBottom = '1rem';
+        var titleField = createTextField('BookTitle', 'Book Title', true, '', false);
+        var authorField = createTextField('AuthorName', 'Author Name', true, '', false);
+        titleAuthorGrid.appendChild(titleField.container);
+        titleAuthorGrid.appendChild(authorField.container);
+        requiredContainer.appendChild(titleAuthorGrid);
+
+        var descField = createTextField('BookDescription', 'Book Description', true, 'Place your book description here', true, 4);
+        descField.input.maxLength = 127;
+        requiredContainer.appendChild(descField.container);
+
+        var metaDescField = createTextField('MetaDescription', 'Meta Description', false, 'BOOK Introduction - One liner', false);
+        document.getElementById('metaDescriptionContainer').appendChild(metaDescField.container);
+        var metaKeywordsField = createTextField('MetaKeywords', 'Meta Keywords', false, 'Book Keywords #2 - one liner', false);
+        document.getElementById('metaKeywordsContainer').appendChild(metaKeywordsField.container);
+
+        var paginationGrid = document.getElementById('paginationGrid');
+        paginationGrid.innerHTML = '';
+        var autoOptions = [{ value: 'true', text: 'True' }, { value: 'false', text: 'False' }];
+        var wordsOptions = [];
+        for (var w = 200; w <= 500; w += 50) wordsOptions.push({ value: w.toString(), text: w.toString() });
+        paginationGrid.appendChild(createPaginationSelect('AutoPaginate', 'AutoPaginate', autoOptions, '-- Use System Default (False) --'));
+        paginationGrid.appendChild(createPaginationSelect('WordsPerPage', 'Words Per Page', wordsOptions, '-- Use System Default (200) --'));
+
+        var colorGridContainer = document.getElementById('colorGrid');
+        colorGridContainer.innerHTML = '';
+        for (var i = 0; i < colorFields.length; i++) {
+            colorGridContainer.appendChild(buildColorItem(colorFields[i].key, colorFields[i].label));
+        }
+
+        var imageGrid = document.getElementById('imageGrid');
+        if (imageGrid) {
+            imageGrid.innerHTML = '';
+            imageGrid.appendChild(createImageInput('BookImage', 'Content Page Art', 'content-page-art.jpg'));
+            imageGrid.appendChild(createImageInput('CoverPageImage', 'Cover Page Art', 'cover-page-art.jpg'));
+        }
+
+        var tocGrid = document.getElementById('tocSettingsGrid');
+        tocGrid.innerHTML = '';
+        tocGrid.appendChild(createBoolSelect('TOCPageSkip', 'Skip Table of Contents (TOC) Page', '-- Use System Default (False) --'));
+        tocGrid.appendChild(createBoolSelect('CoverPageSkip', 'Skip Cover Page', '-- Use System Default (False) --'));
+        tocGrid.appendChild(createBoolSelect('TOCAsList', 'TOC as List (instead of buttons)', '-- Use System Default (False) --'));
+        var showBookListSelect = createBoolSelect('ShowBookListLink', 'Show Books List Button (📚)', '-- Use System Default (False) --');
+        tocGrid.appendChild(showBookListSelect);
+
+        var urlDiv = document.createElement('div');
+        urlDiv.style.marginBottom = '0.5rem';
+        var urlLabel = document.createElement('label');
+        urlLabel.textContent = 'Book List URL';
+        urlLabel.style.display = 'block';
+        urlLabel.style.marginBottom = '0.25rem';
+        urlLabel.style.fontWeight = 'bold';
+        var urlInput = document.createElement('input');
+        urlInput.type = 'text';
+        urlInput.id = 'BookListURL';
+        urlInput.placeholder = 'https://example.com or example.com';
+        urlInput.style.width = '100%';
+        urlInput.style.padding = '0.4rem';
+        urlInput.style.border = '1px solid #ccc';
+        urlInput.style.borderRadius = '0.5rem';
+        urlInput.disabled = true;
+        urlDiv.appendChild(urlLabel);
+        urlDiv.appendChild(urlInput);
+        tocGrid.appendChild(urlDiv);
+
+        var showBookListSelectElem = document.getElementById('ShowBookListLink');
+        if (showBookListSelectElem) {
+            function updateUrlField() {
+                urlInput.disabled = !(showBookListSelectElem.value === 'true');
+                if (urlInput.disabled) urlInput.value = '';
+                sendActivePageHeight();
+            }
+            showBookListSelectElem.addEventListener('change', updateUrlField);
+            updateUrlField();
+        }
+
+        // ========== QUICK NAVIGATION BUTTONS ==========
+        var totalPages = 5;
+        var navButtons = [];
+
+        function createQuickNav() {
+            var navDivs = document.querySelectorAll('.quick-nav');
+            navDivs.forEach(function(div) { div.innerHTML = ''; });
+            navButtons = [];
+            for (var pageNum = 1; pageNum <= totalPages; pageNum++) {
+                navDivs.forEach(function(div) {
+                    var btn = document.createElement('button');
+                    btn.textContent = pageNum;
+                    btn.className = 'glassbtn';
+                    btn.setAttribute('data-page', pageNum);
+                    btn.addEventListener('click', (function(p) {
+                        return function() { jumpToPage(p); };
+                    })(pageNum));
+                    div.appendChild(btn);
+                    navButtons.push(btn);
+                });
+            }
+        }
+
+        function jumpToPage(pageNum) {
+            var targetPage = document.getElementById('page' + pageNum);
+            if (targetPage) {
+                var pagesArr = Array.from(document.querySelectorAll('.form-page'));
+                var idx = pagesArr.indexOf(targetPage);
+                if (idx !== -1) {
+                    showPage(idx);
+                    currentPage = idx;
+                    updateActiveNavButton(pageNum);
+                }
+            }
+        }
+
+        function updateActiveNavButton(pageNum) {
+            navButtons.forEach(function(btn) {
+                if (parseInt(btn.getAttribute('data-page')) === pageNum) {
+                    btn.classList.add('active-page-btn');
+                } else {
+                    btn.classList.remove('active-page-btn');
+                }
+            });
+        }
+
+        // ========== LOCALSTORAGE & RESET PAGE 5 ==========
+        function resetPage5() {
+            outputDiv.textContent = '';
+            outputBubble.style.display = 'none';
+            fileUploadSection.style.display = 'none';
+            mdFileInput.value = '';
+            fileError.textContent = '';
+            previewArea.style.display = 'none';
+            window.modifiedMarkdown = null;
+            currentTags = '';
+            if (convertStatusDiv) convertStatusDiv.textContent = '';
+            // Hide step3 and step4 when resetting
+            document.getElementById('step3Container').style.display = 'none';
+            document.getElementById('step4Container').style.display = 'none';
+            sendActivePageHeight();
+        }
+
+        function saveFormState() {
+            var formData = {};
+            var textFields = ['SubmitterEmail', 'BookTitle', 'AuthorName', 'BookDescription', 'MetaDescription', 'MetaKeywords', 'BookImage', 'CoverPageImage', 'BookListURL'];
+            for (var i = 0; i < textFields.length; i++) {
+                var el = document.getElementById(textFields[i]);
+                if (el) formData[textFields[i]] = el.value;
+            }
+            var selects = ['AutoPaginate', 'WordsPerPage', 'TOCPageSkip', 'CoverPageSkip', 'TOCAsList', 'ShowBookListLink'];
+            for (var i = 0; i < selects.length; i++) {
+                var el = document.getElementById(selects[i]);
+                if (el) formData[selects[i]] = el.value;
+            }
+            for (var i = 0; i < colorFields.length; i++) {
+                var key = colorFields[i].key;
+                var defaultCheck = document.getElementById(key + '_default');
+                var hexInput = document.getElementById(key + '_hex');
+                if (defaultCheck) formData[key + '_default'] = defaultCheck.checked;
+                if (hexInput) formData[key + '_hex'] = hexInput.value;
+            }
+            localStorage.setItem('bookFormState', JSON.stringify(formData));
+        }
+
+        function restoreFormState() {
+            var saved = localStorage.getItem('bookFormState');
+            if (!saved) return;
+            try {
+                var formData = JSON.parse(saved);
+                var textFields = ['SubmitterEmail', 'BookTitle', 'AuthorName', 'BookDescription', 'MetaDescription', 'MetaKeywords', 'BookImage', 'CoverPageImage', 'BookListURL'];
+                for (var i = 0; i < textFields.length; i++) {
+                    var key = textFields[i];
+                    if (formData[key] !== undefined) {
+                        var el = document.getElementById(key);
+                        if (el) el.value = formData[key];
+                    }
+                }
+                var selects = ['AutoPaginate', 'WordsPerPage', 'TOCPageSkip', 'CoverPageSkip', 'TOCAsList', 'ShowBookListLink'];
+                for (var i = 0; i < selects.length; i++) {
+                    var key = selects[i];
+                    if (formData[key] !== undefined) {
+                        var el = document.getElementById(key);
+                        if (el) el.value = formData[key];
+                    }
+                }
+                for (var i = 0; i < colorFields.length; i++) {
+                    var key = colorFields[i].key;
+                    var defaultChecked = formData[key + '_default'];
+                    var hexValue = formData[key + '_hex'];
+                    var defaultCheck = document.getElementById(key + '_default');
+                    var hexInput = document.getElementById(key + '_hex');
+                    var colorPicker = document.getElementById(key);
+                    if (defaultCheck !== null && defaultChecked !== undefined) {
+                        defaultCheck.checked = defaultChecked;
+                        var evt = document.createEvent('Event');
+                        evt.initEvent('change', true, true);
+                        defaultCheck.dispatchEvent(evt);
+                    }
+                    if (hexInput !== null && hexValue !== undefined) {
+                        hexInput.value = hexValue;
+                        if (colorPicker && /^#[0-9A-Fa-f]{6}$/.test(hexValue)) {
+                            colorPicker.value = hexValue;
+                        }
+                    }
+                }
+            } catch(e) { console.warn('Failed to restore state', e); }
+            sendActivePageHeight();
+        }
+
+        function attachSaveListeners() {
+            function handleChange(event, shouldResetPage5) {
+                saveFormState();
+                if (shouldResetPage5) {
+                    resetPage5();
+                }
+                sendActivePageHeight();
+            }
+            var allFields = document.querySelectorAll('input, select, textarea');
+            for (var i = 0; i < allFields.length; i++) {
+                var field = allFields[i];
+                var isOnPage5 = field.closest('#page5') !== null;
+                var shouldReset = !isOnPage5;
+                field.addEventListener('change', function(resetFlag) {
+                    return function() { handleChange(event, resetFlag); };
+                }(shouldReset));
+                field.addEventListener('input', function(resetFlag) {
+                    return function() { handleChange(event, resetFlag); };
+                }(shouldReset));
+            }
+            for (var i = 0; i < colorFields.length; i++) {
+                var chk = document.getElementById(colorFields[i].key + '_default');
+                if (chk) {
+                    chk.addEventListener('change', function() { handleChange(event, true); });
+                }
+            }
+        }
+
+        // ========== VALIDATION ==========
+        function validateEmail() {
+            var val = emailInput.value.trim();
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (val === '') {
+                emailError.textContent = 'Email is required.';
+                emailError.style.display = 'block';
+                return false;
+            } else if (!emailPattern.test(val)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                emailError.style.display = 'block';
+                return false;
+            } else {
+                emailError.style.display = 'none';
+                return true;
+            }
+        }
+        emailInput.addEventListener('input', validateEmail);
+        emailInput.addEventListener('blur', validateEmail);
+
+        function validateTextField(fieldId, fieldName) {
+            var input = document.getElementById(fieldId);
+            var errorDiv = document.getElementById(fieldId + 'Error');
+            if (!errorDiv) return true;
+            var val = input.value.trim();
+            if (val === '') {
+                errorDiv.textContent = fieldName + ' is required.';
+                errorDiv.style.display = 'block';
+                return false;
+            } else {
+                errorDiv.style.display = 'none';
+                return true;
+            }
+        }
+
+        function validateImageExtension(value) {
+            if (!value) return true;
+            return /\.(jpg|jpeg)$/i.test(value);
+        }
+
+        // ========== DOM ELEMENTS ==========
+        var outputBubble = document.getElementById('outputBubble');
+        var outputDiv = document.getElementById('output');
+        var genBtn = document.getElementById('generateBtn');
+        var clearBtn = document.getElementById('clearBtn');
+        var fileUploadSection = document.getElementById('fileUploadSection');
+        var mdFileInput = document.getElementById('mdFileInput');
+        var fileError = document.getElementById('fileError');
+        var processFileBtn = document.getElementById('processFileBtn');
+        var previewArea = document.getElementById('previewArea');
+        var previewContent = document.getElementById('previewContent');
+        var convertDownloadBtn = document.getElementById('convertDownloadBtn');
+        var downloadConfigBtn = document.getElementById('downloadConfigBtn');
+        var convertStatusDiv = document.getElementById('convertStatus');
+        var loadCfgBtn = document.getElementById('loadCfgBtn');
+        var step3Container = document.getElementById('step3Container');
+        var step4Container = document.getElementById('step4Container');
+
+        // Show/hide step3 when file is selected (step4 remains hidden until process completes)
+        mdFileInput.addEventListener('change', function() {
+            if (mdFileInput.files && mdFileInput.files.length > 0) {
+                step3Container.style.display = 'block';
+                // step4 remains hidden until processFileBtn succeeds
+            } else {
+                step3Container.style.display = 'none';
+                step4Container.style.display = 'none';
+            }
+            sendActivePageHeight();
+        });
+
+        // ========== LOAD SETTINGS BUTTON ==========
+        if (loadCfgBtn) {
+            loadCfgBtn.onclick = function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.cfg';
+                input.onchange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+                    try {
+                        const decoded = await loadCfgFile(file);
+                        parseTagsAndPopulate(decoded);
+                        // Save loaded state to localStorage so it persists after reload
+                        saveFormState();
+                        convertStatusDiv.innerHTML = `✓ Settings loaded from ${file.name}.`;
+                        convertStatusDiv.style.color = '#4caf50';
+                    } catch (err) {
+                        convertStatusDiv.innerHTML = `✗ ${err.message}`;
+                        convertStatusDiv.style.color = '#ff6b6b';
+                    }
+                };
+                input.click();
+            };
+        }
+
+        // ========== DOWNLOAD CONFIGURATION BUTTON ==========
+        if (downloadConfigBtn) {
+            downloadConfigBtn.onclick = function() {
+                if (!currentTags || currentTags.trim().length === 0) {
+                    convertStatusDiv.innerHTML = '❌ No configuration tags to download. Please generate tags first.';
+                    convertStatusDiv.style.color = '#ff6b6b';
+                    return;
+                }
+                if (!currentOriginalFileName) {
+                    convertStatusDiv.innerHTML = '❌ No markdown file selected. Please select a .md file first.';
+                    convertStatusDiv.style.color = '#ff6b6b';
+                    return;
+                }
+                try {
+                    const base64Content = btoa(unescape(encodeURIComponent(currentTags)));
+                    const blob = new Blob([base64Content], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${currentOriginalFileName}.cfg`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    convertStatusDiv.innerHTML = `✓ Settings saved as ${currentOriginalFileName}.cfg (Base64 encoded).`;
+                    convertStatusDiv.style.color = '#4caf50';
+                } catch (err) {
+                    convertStatusDiv.innerHTML = `✗ Failed to encode settings: ${err.message}`;
+                    convertStatusDiv.style.color = '#ff6b6b';
+                }
+            };
+        }
+
+        // ========== GENERATE BUTTON ==========
+        if (genBtn) {
+            genBtn.onclick = function() {
+                if (!validateEmail() || !validateTextField('BookTitle','Book Title') || !validateTextField('AuthorName','Author Name') || !validateTextField('BookDescription','Book Description')) {
+                    outputDiv.textContent = 'Please fill all required fields.';
+                    outputBubble.style.display = 'block';
+                    fileUploadSection.style.display = 'none';
+                    return;
+                }
+                var bookImage = document.getElementById('BookImage') ? document.getElementById('BookImage').value.trim() : '';
+                var coverImage = document.getElementById('CoverPageImage') ? document.getElementById('CoverPageImage').value.trim() : '';
+                if (!validateImageExtension(bookImage) || !validateImageExtension(coverImage)) {
+                    outputDiv.textContent = 'Invalid image extension (must be .jpg or .jpeg)';
+                    outputBubble.style.display = 'block';
+                    fileUploadSection.style.display = 'none';
+                    return;
+                }
+                var showBookList = document.getElementById('ShowBookListLink').value === 'true';
+                var bookListUrlRaw = document.getElementById('BookListURL').value.trim();
+                if (showBookList && !bookListUrlRaw) {
+                    outputDiv.textContent = 'Book List URL is required when "Show Books List Button" is True.';
+                    outputBubble.style.display = 'block';
+                    fileUploadSection.style.display = 'none';
+                    return;
+                }
+                var bookListUrl = bookListUrlRaw;
+                if (bookListUrl) {
+                    var urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
+                    if (!urlPattern.test(bookListUrl)) {
+                        outputDiv.textContent = 'Invalid Book List URL.';
+                        outputBubble.style.display = 'block';
+                        fileUploadSection.style.display = 'none';
+                        return;
+                    }
+                    if (!/^https?:\/\//i.test(bookListUrl)) {
+                        bookListUrl = 'https://' + bookListUrl;
+                    }
+                }
+                var tags = [];
+                function tag(k, v) { return '<' + k + '="' + String(v).replace(/"/g, '&quot;') + '">\n'; }
+                tags.push(tag('SubmitterEmail', emailInput.value.trim()));
+                tags.push(tag('BookTitle', document.getElementById('BookTitle').value.trim()));
+                tags.push(tag('AuthorName', document.getElementById('AuthorName').value.trim()));
+                tags.push(tag('BookDescription', document.getElementById('BookDescription').value.trim()));
+                tags.push(tag('MetaDescription', document.getElementById('MetaDescription').value.trim()));
+                tags.push(tag('MetaKeywords', document.getElementById('MetaKeywords').value.trim()));
+
+                var autoSelect = document.getElementById('AutoPaginate');
+                if (autoSelect && autoSelect.value !== '') tags.push(tag('AutoPaginate', autoSelect.value === 'true' ? 'True' : 'False'));
+                var wordsSelect = document.getElementById('WordsPerPage');
+                if (wordsSelect && wordsSelect.value !== '') tags.push(tag('WordsPerPage', wordsSelect.value));
+
+                var tocPageSkip = document.getElementById('TOCPageSkip').value;
+                if (tocPageSkip !== '') tags.push(tag('TOCPageSkip', tocPageSkip === 'true' ? 'True' : 'False'));
+                var coverPageSkip = document.getElementById('CoverPageSkip').value;
+                if (coverPageSkip !== '') tags.push(tag('CoverPageSkip', coverPageSkip === 'true' ? 'True' : 'False'));
+                var tocAsList = document.getElementById('TOCAsList').value;
+                if (tocAsList !== '') tags.push(tag('TOCAsList', tocAsList === 'true' ? 'True' : 'False'));
+                var showBookListLink = document.getElementById('ShowBookListLink').value;
+                if (showBookListLink !== '') tags.push(tag('ShowBookListLink', showBookListLink === 'true' ? 'True' : 'False'));
+                if (bookListUrl) tags.push(tag('BookListURL', bookListUrl));
+
+                for (var i=0; i<colorFields.length; i++) {
+                    var key = colorFields[i].key;
+                    var defaultCheck = document.getElementById(key + '_default');
+                    var colorPicker = document.getElementById(key);
+                    if (defaultCheck && !defaultCheck.checked && colorPicker && colorPicker.value) {
+                        tags.push(tag(key, colorPicker.value));
+                    }
+                }
+                if (bookImage) tags.push(tag('BookImage', bookImage));
+                if (coverImage) tags.push(tag('CoverPageImage', coverImage));
+
+                currentTags = tags.join('');
+                outputDiv.textContent = currentTags;
+                outputBubble.style.display = 'block';
+                fileUploadSection.style.display = 'block';
+                mdFileInput.value = '';
+                fileError.textContent = '';
+                previewArea.style.display = 'none';
+                window.modifiedMarkdown = null;
+                sendActivePageHeight();
+                // Also save state after generating tags? Not necessary as fields are already saved via change listeners.
+            };
+        }
+
+        // ========== CLEAR BUTTON ==========
+        if (clearBtn) {
+            clearBtn.onclick = function() {
+                emailInput.value = '';
+                document.getElementById('BookTitle').value = '';
+                document.getElementById('AuthorName').value = '';
+                document.getElementById('BookDescription').value = '';
+                document.getElementById('MetaDescription').value = '';
+                document.getElementById('MetaKeywords').value = '';
+                var autoSelect = document.getElementById('AutoPaginate');
+                if (autoSelect) autoSelect.value = '';
+                var wordsSelect = document.getElementById('WordsPerPage');
+                if (wordsSelect) wordsSelect.value = '';
+                var tocSelects = ['TOCPageSkip', 'CoverPageSkip', 'TOCAsList', 'ShowBookListLink'];
+                for (var s=0; s<tocSelects.length; s++) {
+                    var sel = document.getElementById(tocSelects[s]);
+                    if (sel) sel.value = '';
+                }
+                var urlInput = document.getElementById('BookListURL');
+                if (urlInput) urlInput.value = '';
+                for (var i=0; i<colorFields.length; i++) {
+                    var key = colorFields[i].key;
+                    var defaultCheck = document.getElementById(key + '_default');
+                    var hexInput = document.getElementById(key + '_hex');
+                    var colorPicker = document.getElementById(key);
+                    if (defaultCheck) {
+                        defaultCheck.checked = false;
+                        var evt = document.createEvent('Event');
+                        evt.initEvent('change', true, true);
+                        defaultCheck.dispatchEvent(evt);
+                    }
+                    if (hexInput) hexInput.value = '';
+                    if (colorPicker) colorPicker.value = '#ffffff';
+                }
+                document.getElementById('BookImage').value = '';
+                document.getElementById('CoverPageImage').value = '';
+                emailError.style.display = 'none';
+                var titleErr = document.getElementById('BookTitleError');
+                if (titleErr) titleErr.style.display = 'none';
+                var authorErr = document.getElementById('AuthorNameError');
+                if (authorErr) authorErr.style.display = 'none';
+                var descErr = document.getElementById('BookDescriptionError');
+                if (descErr) descErr.style.display = 'none';
+                outputDiv.textContent = '';
+                outputBubble.style.display = 'none';
+                fileUploadSection.style.display = 'none';
+                mdFileInput.value = '';
+                fileError.textContent = '';
+                previewArea.style.display = 'none';
+                window.modifiedMarkdown = null;
+                currentTags = '';
+                currentOriginalFileName = '';
+                if (convertStatusDiv) convertStatusDiv.textContent = '';
+                // Hide step3 and step4
+                step3Container.style.display = 'none';
+                step4Container.style.display = 'none';
+                saveFormState();
+                sendActivePageHeight();
+            };
+        }
+
+        // ========== PROCESS FILE BUTTON ==========
+        if (processFileBtn) {
+            processFileBtn.onclick = function() {
+                var file = mdFileInput.files[0];
+                if (!file) { fileError.textContent = 'Please select a .md file.'; return; }
+                if (!file.name.toLowerCase().endsWith('.md')) { fileError.textContent = 'File must have .md extension.'; return; }
+
+                const maxSize = MAX_MD_FILE_SIZE_BYTES;
+                if (file.size > maxSize) {
+                    const limitKB = (maxSize / 1024).toFixed(0);
+                    const fileSizeKB = (file.size / 1024).toFixed(1);
+                    fileError.textContent = `File size exceeds ${limitKB} KB (${fileSizeKB} KB). Please choose a smaller file.`;
+                    return;
+                }
+
+                currentOriginalFileName = file.name.replace(/\.md$/i, '');
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var content = e.target.result;
+                    var asciiContent = content
+                        .replace(/[\u2018\u2019]/g, "'")
+                        .replace(/[\u201C\u201D]/g, '"')
+                        .replace(/\u2026/g, '...')
+                        .replace(/\u2013/g, '-')
+                        .replace(/\u2014/g, '--')
+                        .replace(/\u00A0/g, ' ');
+                    content = asciiContent;
+                    var hasChapter = /<chapter\s*=/i.test(content);
+                    if (!hasChapter) {
+                        fileError.innerHTML = '⚠️ Warning: No &lt;CHAPTER&gt; tag found. Without a chapter tag, there will be no Table of Contents page. The book will still be paginated and presented as a series of pages.';
+                    } else {
+                        fileError.textContent = '';
+                    }
+                    var tagRegex = /<(\w+)="([^"]*)">/g;
+                    var keysToRemove = [];
+                    var match;
+                    while ((match = tagRegex.exec(currentTags)) !== null) {
+                        keysToRemove.push(match[1]);
+                    }
+                    var removePattern = keysToRemove.map(function(key) {
+                        return '<' + key + '\\s*=\\s*"[^"]*"\\s*>';
+                    }).join('|');
+                    var removeRegex = new RegExp(removePattern, 'gi');
+                    var modifiedContent = content.replace(removeRegex, '');
+                    modifiedContent = modifiedContent.replace(/^\s*\n/, '');
+                    modifiedContent = currentTags + modifiedContent;
+                    var lines = modifiedContent.split(/\r?\n/);
+                    var first50 = lines.slice(0,50).join('\n');
+                    if (lines.length > 50) first50 += '\n... (truncated)';
+                    previewContent.textContent = first50;
+                    previewArea.style.display = 'block';
+                    window.modifiedMarkdown = modifiedContent;
+                    // After successful processing, show Step 4 container (download buttons)
+                    step4Container.style.display = 'block';
+                    sendActivePageHeight();
+                };
+                reader.onerror = function() { fileError.textContent = 'Error reading file.'; };
+                reader.readAsText(file, 'UTF-8');
+            };
+        }
+
+        // ========== CONVERT & DOWNLOAD BUTTON ==========
+        if (convertDownloadBtn) {
+            convertDownloadBtn.onclick = async function() {
+                if (!window.modifiedMarkdown || window.modifiedMarkdown.trim().length === 0) {
+                    convertStatusDiv.innerHTML = '❌ No content to upload. Please select a .md file and click "Process file" first.';
+                    convertStatusDiv.style.color = '#ff6b6b';
+                    return;
+                }
+
+                const fileInput = document.getElementById('mdFileInput');
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    convertStatusDiv.innerHTML = '❌ No file selected. Please choose a .md file.';
+                    convertStatusDiv.style.color = '#ff6b6b';
+                    return;
+                }
+                const originalFileName = fileInput.files[0].name.replace(/\.md$/i, '');
+
+                const emailInput = document.getElementById('SubmitterEmail');
+                const submitterEmail = emailInput ? emailInput.value.trim() : '';
+                if (!submitterEmail) {
+                    convertStatusDiv.innerHTML = '❌ Submitter email is required. Please fill it in Page 1.';
+                    convertStatusDiv.style.color = '#ff6b6b';
+                    return;
+                }
+
+                const desiredFileName = originalFileName + '.md';
+                convertDownloadBtn.disabled = true;
+
+                try {
+                    const response = await fetch('https://sgrao001.pythonanywhere.com/convert', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            markdown: window.modifiedMarkdown,
+                            filename: desiredFileName,
+                            email: submitterEmail
+                        })
+                    });
+
+                    const contentType = response.headers.get('content-type') || '';
+
+                    if (contentType.includes('application/json')) {
+                        const json = await response.json();
+                        if (response.status === 429) {
+                            let errorMsg = `❌ ${json.error}`;
+                            if (json.limit_crossed) {
+                                errorMsg += `\nLimit crossed: ${json.limit_crossed} window. Wait ${json.wait_seconds} seconds.`;
+                            }
+                            if (json.remaining) {
+                                errorMsg += `\nRemaining requests: minute: ${json.remaining.minute}, hour: ${json.remaining.hour}, day: ${json.remaining.day}`;
+                            }
+                            convertStatusDiv.innerHTML = errorMsg;
+                            convertStatusDiv.style.color = '#ff6b6b';
+                        } else if (response.ok && json.status === 'success') {
+                            convertStatusDiv.innerHTML = `✓ File uploaded and saved to server: ${json.filename}`;
+                            convertStatusDiv.style.color = '#4caf50';
+                        } else {
+                            let errorMsg = json.error || json.message || 'Unknown error';
+                            if (json.details) errorMsg += `\n\nDetails:\n${json.details}`;
+                            convertStatusDiv.innerHTML = `✗ ${errorMsg}`;
+                            convertStatusDiv.style.color = '#ff6b6b';
+                        }
+                    } else if (response.ok && contentType.includes('text/html')) {
+                        const blob = await response.blob();
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        const htmlFileName = desiredFileName.replace(/\.md$/, '.html');
+                        a.download = htmlFileName;
+                        a.click();
+                        URL.revokeObjectURL(url);
+
+                        const mdSize = response.headers.get('X-Markdown-Size');
+                        const htmlSize = response.headers.get('X-Html-Size');
+                        const remMin = response.headers.get('X-RateLimit-Remaining-Minute');
+                        const remHour = response.headers.get('X-RateLimit-Remaining-Hour');
+                        const remDay = response.headers.get('X-RateLimit-Remaining-Day');
+
+                        let sizeMsg = '✓ Conversion successful – HTML downloaded.';
+                        if (mdSize && htmlSize) {
+                            sizeMsg += `\nMarkdown size: ${(mdSize / 1024).toFixed(1)} KB, HTML size: ${(htmlSize / 1024).toFixed(1)} KB.`;
+                        }
+                        if (remMin && remHour && remDay) {
+                            sizeMsg += `\nRemaining requests: ${remMin} per minute, ${remHour} per hour, ${remDay} per day.`;
+                        }
+                        convertStatusDiv.innerHTML = sizeMsg;
+                        convertStatusDiv.style.color = '#4caf50';
+                    } else {
+                        const errorText = await response.text();
+                        convertStatusDiv.innerHTML = `✗ Error (${response.status}): ${errorText.substring(0, 500)}`;
+                        convertStatusDiv.style.color = '#ff6b6b';
+                    }
+                } catch (err) {
+                    convertStatusDiv.innerHTML = `✗ Network error: ${err.message}`;
+                    convertStatusDiv.style.color = '#ff6b6b';
+                } finally {
+                    setTimeout(() => { convertDownloadBtn.disabled = false; }, 3000);
+                }
+            };
+        }
+
+        // ========== PAGINATION & INITIALISATION ==========
+        var pages = document.querySelectorAll('.form-page');
+        var currentPage = 0;
+
+        function updateNavButtons() {
+            var prevBtn = document.getElementById('prevPageBtn');
+            var nextBtn = document.getElementById('nextPageBtn');
+            if (prevBtn) {
+                prevBtn.disabled = (currentPage === 0);
+                prevBtn.style.opacity = (currentPage === 0) ? '0.5' : '1';
+            }
+            if (nextBtn) {
+                nextBtn.disabled = (currentPage === pages.length - 1);
+                nextBtn.style.opacity = (currentPage === pages.length - 1) ? '0.5' : '1';
+            }
+        }
+
+        function showPage(index) {
+            pages.forEach(function(page, i) {
+                if (i === index) page.classList.add('active');
+                else page.classList.remove('active');
+            });
+            currentPage = index;
+            updateActiveNavButton(index + 1);
+            updateNavButtons();
+            sendActivePageHeight();
+        }
+
+        createQuickNav();
+        updateActiveNavButton(1);
+        window.showPage = showPage;
+
+        var prevBtn = document.getElementById('prevPageBtn');
+        var nextBtn = document.getElementById('nextPageBtn');
+
+        updateNavButtons();
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                if (currentPage > 0) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                if (currentPage < pages.length - 1) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+        }
+
+        // ========== FINAL INITIALISATION ==========
+        restoreFormState();
+        attachSaveListeners();
+        outputBubble.style.display = 'none';
+        fileUploadSection.style.display = 'none';
+        step3Container.style.display = 'none';
+        step4Container.style.display = 'none';
+        if (convertStatusDiv) convertStatusDiv.textContent = '';
+
+        sendActivePageHeight();
+        window.addEventListener('load', function() {
+            sendActivePageHeight();
+        });
+    </script>
+</div>
+</body>
+</html>
