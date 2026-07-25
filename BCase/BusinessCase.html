@@ -1,7 +1,7 @@
 <!--
 LOGBEGIN
 Status: PASS
-Timestamp: 2026-07-24 10:29:59
+Timestamp: 2026-07-25 08:50:25
 Message: Conversion successful
 
 ============================================================
@@ -15,7 +15,7 @@ Book Title (BookTitle)             ... {[_color(Green)]} [[BookMaker Business Ca
 Author Name (AuthorName)           ... By<nl><nl>{[_color(lightblue); _fontsize(1.5)]} [[BookMaker]]
 Book Description (BookDescription) ... {[_color(cyan); _fontsize(1.5);]} [[<nl><nl>
 What problem does it solve?<nl><nl>
-How much is the solution worth to the user?<nl><nl>
+What is the solution worth to the user?<nl><nl>
 What is the projected value to BookMaker?
 <nl><nl><nl> {[_fontsize(1)]} [[Considerations for Build & Sustain]]
 ]]
@@ -34,7 +34,7 @@ Cover Page Background Color (CoverBgColor)         ... None
 Cover Page Font Color (CoverPageFontColor)         ... #89C2FF
 TOC Font Color (TOCFontColor)                      ... #000000
 Book Font Color (BookFontColor)                    ... #000000
-Highlight Text Font Color (HighlightTextFontColor) ... #D4E6FF
+Highlight Text Font Color (HighlightTextFontColor) ... #000000
 Content Page Art (BookImage)                       ... None
 Cover Page Art (CoverPageImage)                    ... None
 
@@ -97,7 +97,7 @@ LOGEND
     <!-- Update viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title><span class="tobj-styled" data-has-tobj="true"><span style="color: green !important">BookMaker Business Case</span></span></title>
+    <title>BookMaker Business Case</title>
     <meta name="description" content="Meta Description - One liner">
     <meta name="keywords" content="Meta Keywords #2 - one liner">
     <style>
@@ -139,7 +139,7 @@ LOGEND
             
             /* ===== ADD THESE FALLBACKS ===== */
             --cover-font-color: #89C2FF;
-            --highlight-color: #D4E6FF;
+            --highlight-color: #000000;
             --book-color: #000000;
         }
 
@@ -152,7 +152,7 @@ LOGEND
 
         body {
             background-color: #2c2c2c;   /* dark grey fallback */
-            background-image: url('data:image/jpeg;base64,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');
+            background-image: url('data:image/jpeg;base64,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');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -835,11 +835,11 @@ LOGEND
             text-align: left;
         }
         .highlight-text {
-            color: #D4E6FF;
-            font-size: 1.2em;
+            color: #000000;
+            font-size: 1.4em;
             display: inline-block;
             text-decoration: underline;
-            text-decoration-color: #D4E6FF;
+            text-decoration-color: #000000;
             padding-bottom: 3px;
         }
         p {
@@ -1113,33 +1113,33 @@ LOGEND
                     <h2><div class="book-description"><span class="tobj-styled" data-has-tobj="true">By<br><br><span style="color: lightblue !important; font-size: 1.5rem !important">BookMaker</span></span></div></h2>
                     <div class="book-description"><span class="tobj-styled" data-has-tobj="true"><span style="color: cyan !important; font-size: 1.5rem !important"><br><br>
 What problem does it solve?<br><br>
-How much is the solution worth to the user?<br><br>
+What is the solution worth to the user?<br><br>
 What is the projected value to BookMaker?
 <br><br><br> <span style="font-size: 1rem !important">Considerations for Build & Sustain</span>
 </span></span></div>
                     <h3></h3>
                 </div>
                 <p><span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="<span class='glassbtn' style='font-size: 1em;'>👆</span>%" data-width="auto" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div>
-<div class='glassbtn no-hover' style='color: #EBF5FF; margin-top: 15px; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
-Next page, click or touch right margin<br>
-Previous page, click or touch left margin<br>
-Page slider, click or touch bottom margin
-</div>
-<ul>
-<div style='line-height: 2.4em'>
-<li>Margins are 15% wide / tall</li>
-<li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
-<li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
-<li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
-<li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
-<li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages, notes or web links</li>
-</div>
-<span style='display: block; margin-top: 15px; text-align: center;'>Click anywhere on the popup to close it</span>
-</ul>
-<div style='text-align: center; margin-top: 10px;'>
-<span class='glassbtn' >Close</span>
-</div>
-" class="BubbleText-trigger BubbleText-full"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>   <span style="font-size: .8em; text-align: center; color: var(--tip-color);"> <div style="text-align: center"><span style="font-style: italic"><br>( click here for navigation tips )</span></div></span></p>
+        <div class='glassbtn no-hover' style='color: #EBF5FF; margin-top: 15px; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
+            Next page, click or touch right margin<br>
+            Previous page, click or touch left margin<br>
+            Page slider, click or touch bottom margin
+        </div>
+        <ul>
+        <div style='line-height: 2.4em'>
+            <li>Margins are 15% wide / tall</li>
+            <li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
+            <li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
+            <li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages, notes or web links</li>
+        </div>
+        <span style='display: block; margin-top: 15px; text-align: center;'>Click anywhere on the popup to close it</span>
+        </ul>
+        <div style='text-align: center; margin-top: 10px;'>
+            <span class='glassbtn' >Close</span>
+        </div>
+    " class="BubbleText-trigger BubbleText-full"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>   <span style="font-size: .8em; text-align: center; color: var(--tip-color);"> <div style="text-align: center"><span style="font-style: italic"><br>( click here for navigation tips )</span></div></span></p>
 
             </div>
         </div>
@@ -1160,26 +1160,26 @@ Page slider, click or touch bottom margin
             </div>
             <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
             <p><span style="display: block; width: fit-content; margin-left: auto; margin-right: auto; text-align: center;" data-bottom-gap="0vh" data-position="center-both" data-textalign="left" data-height="<span class='glassbtn' style='font-size: 1em;'>👆</span>%" data-width="auto" data-maxheight="var(--tt-max-height)" data-maxwidth="var(--tt-max-width)" data-bbbltext="<div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div>
-<div class='glassbtn no-hover' style='color: #EBF5FF; margin-top: 15px; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
-Next page, click or touch right margin<br>
-Previous page, click or touch left margin<br>
-Page slider, click or touch bottom margin
-</div>
-<ul>
-<div style='line-height: 2.4em'>
-<li>Margins are 15% wide / tall</li>
-<li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
-<li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
-<li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
-<li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
-<li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages, notes or web links</li>
-</div>
-<span style='display: block; margin-top: 15px; text-align: center;'>Click anywhere on the popup to close it</span>
-</ul>
-<div style='text-align: center; margin-top: 10px;'>
-<span class='glassbtn' >Close</span>
-</div>
-" class="BubbleText-trigger BubbleText-full"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>   <span style="font-size: .8em; text-align: center; color: var(--tip-color);"> <div style="text-align: center"><span style="font-style: italic"><br>( click here for navigation tips )</span></div></span></p>
+        <div class='glassbtn no-hover' style='color: #EBF5FF; margin-top: 15px; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>
+            Next page, click or touch right margin<br>
+            Previous page, click or touch left margin<br>
+            Page slider, click or touch bottom margin
+        </div>
+        <ul>
+        <div style='line-height: 2.4em'>
+            <li>Margins are 15% wide / tall</li>
+            <li>Click <span class='glassbtn no-hover'> 📚 </span> at top left for list of books</li>
+            <li>Click <span class='glassbtn no-hover'> 🗂️ </span> at top left for table of contents</li>
+            <li>Click <span class='glassbtn no-hover'> 🔖 </span> at top right to copy page URL to clipboard</li>
+            <li>Click <span class='glassbtn no-hover'> 📸</span> To see image attribution </li>
+            <li>Click <span class='glassbtn no-hover'> 👆</span> for popup messages, notes or web links</li>
+        </div>
+        <span style='display: block; margin-top: 15px; text-align: center;'>Click anywhere on the popup to close it</span>
+        </ul>
+        <div style='text-align: center; margin-top: 10px;'>
+            <span class='glassbtn' >Close</span>
+        </div>
+    " class="BubbleText-trigger BubbleText-full"><span class='glassbtn' style='font-size: 1em;'>👆</span></span><br>   <span style="font-size: .8em; text-align: center; color: var(--tip-color);"> <div style="text-align: center"><span style="font-style: italic"><br>( click here for navigation tips )</span></div></span></p>
 
         </div>       
     </div>
@@ -1213,9 +1213,9 @@ Page slider, click or touch bottom margin
                 --mobile-font-size: 0.9em">
         <div class="chapter-marker" data-chapter-raw="The Problem" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">The Problem</span></div></p>
-<p>Based on the transcript provided, here are the cost-benefit and logistical highlights comparing Independent (Indie) publishing versus Traditional publishing:</p>
-<h2>💰 Financial &amp;amp; Royalty Highlights</h2>
-<table>
+<p>Background:  What are the cost-benefit and logistical highlights comparing Independent (Indie) publishing versus Traditional publishing:</p>
+<h2>💰 Financial & Royalty Highlights</h2>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Feature</th>
@@ -1245,8 +1245,8 @@ Page slider, click or touch bottom margin
 <td>Lower margins. Must buy own books back at a set discount (~$7–$8), requiring large bulk orders to get the best price.</td>
 </tr>
 </tbody>
-</table>
-<h2>⏱️ Cash Flow &amp;amp; Time to Market</h2>
+</table></div></div>
+<h2>⏱️ Cash Flow & Time to Market</h2>
 <ul>
 <li><strong>Payment Cycles (Cash Flow):</strong>
 <ul>
@@ -1261,20 +1261,20 @@ Page slider, click or touch bottom margin
 </ul>
 </li>
 </ul>
-<h2>📈 Marketing &amp;amp; Discoverability</h2>
+<h2>📈 Marketing & Discoverability</h2>
 <ul>
 <li><strong>The Platform Paradox:</strong> Traditional publishers rarely build an author's platform from scratch anymore; they actively seek out authors who are already established and selling books on their own.</li>
 <li><strong>Advertising Budgets:</strong> Traditional publishers rarely commit to or promise paid advertising (like Amazon or Facebook ads) in their contracts. Because indie authors have larger profit margins ($4 vs $0.80), they can afford a higher cost-per-click (CPC) on ad platforms and still remain profitable.</li>
-<li><strong>Algorithm &amp;amp; SEO Mastery:</strong> Indie authors often have a better grasp of Amazon metadata, search engine optimization (SEO), and keywords than traditional publishing executives, who frequently come from editorial or retail distribution backgrounds.</li>
+<li><strong>Algorithm & SEO Mastery:</strong> Indie authors often have a better grasp of Amazon metadata, search engine optimization (SEO), and keywords than traditional publishing executives, who frequently come from editorial or retail distribution backgrounds.</li>
 <li><strong>Bookstore Footprint:</strong> Traditional publishers excel at physical brick-and-mortar bookstore distribution and merchandising, a major hurdle for pure indie authors.</li>
 </ul>
-<h2>🎮 Creative Control &amp;amp; Agility</h2>
+<h2>🎮 Creative Control & Agility</h2>
 <p>> <strong>The Control Verdict:</strong> "If you're a perfectionist, hands-on, or a control freak... you want to be Indie."</p>
 <ul>
-<li><strong>Data &amp;amp; Tracking:</strong> Indie authors retain access to live dashboards (like KDP) showing exact daily sales and tracking pixels. Traditional authors are essentially "blindfolded," losing access to granular, real-time data.</li>
-<li><strong>Assets &amp;amp; Branding:</strong> Under a traditional contract, you lose final say over cover design and book descriptions. This can sometimes result in packaging that does not resonate with your target audience.</li>
-<li><strong>Edits &amp;amp; Revisions:</strong> If an error is spotted in an indie book, it can be fixed in the dashboard in minutes. In traditional publishing, errors cannot be corrected until the next major print run (which often requires waiting for thousands of warehoused copies to sell out).</li>
-<li><strong>Rights &amp;amp; Bridges:</strong> Buying back the rights to your book from a traditional publisher is possible (especially if you offer to buy out remaining warehouse stock), but doing so can alienate agents and burn bridges within the traditional publishing industry.</li>
+<li><strong>Data & Tracking:</strong> Indie authors retain access to live dashboards (like KDP) showing exact daily sales and tracking pixels. Traditional authors are essentially "blindfolded," losing access to granular, real-time data.</li>
+<li><strong>Assets & Branding:</strong> Under a traditional contract, you lose final say over cover design and book descriptions. This can sometimes result in packaging that does not resonate with your target audience.</li>
+<li><strong>Edits & Revisions:</strong> If an error is spotted in an indie book, it can be fixed in the dashboard in minutes. In traditional publishing, errors cannot be corrected until the next major print run (which often requires waiting for thousands of warehoused copies to sell out).</li>
+<li><strong>Rights & Bridges:</strong> Buying back the rights to your book from a traditional publisher is possible (especially if you offer to buy out remaining warehouse stock), but doing so can alienate agents and burn bridges within the traditional publishing industry.</li>
 </ul>
 <h2>⚖️ The Final Decision: Which Route to Choose?</h2>
 <ul>
@@ -1312,8 +1312,8 @@ Page slider, click or touch bottom margin
 <h3>The Financial Case</h3>
 <p>Assume the author generates <strong>600 sales per month</strong> through targeted advertising:</p>
 <ul>
-<li><strong>Traditional Model:</strong> 600 books &amp;amp;#46;imes $0.80 royalty = <strong>$480/month</strong> gross profit (minus zero ad viability).</li>
-<li><strong>Indie Model:</strong> 600 books &amp;amp;#46;imes $4.00 royalty = <strong>$2,400/month</strong> gross profit. Because Amazon pays within <strong>30 to 60 days</strong>, this creates a rapid, positive cash-flow cycle where last month's profits directly fund next month's ad budget.</li>
+<li><strong>Traditional Model:</strong> 600 books \times $0.80 royalty = <strong>$480/month</strong> gross profit (minus zero ad viability).</li>
+<li><strong>Indie Model:</strong> 600 books \times $4.00 royalty = <strong>$2,400/month</strong> gross profit. Because Amazon pays within <strong>30 to 60 days</strong>, this creates a rapid, positive cash-flow cycle where last month's profits directly fund next month's ad budget.</li>
 </ul>
 <h2>Scenario 2: The Traveling Public Speaker or Event-Driven Professional</h2>
 <p><strong>The Author Profile:</strong> A pastor, corporate consultant, or conference speaker who regularly stands on stages and sells books in the back of the room at live events.</p>
@@ -1325,11 +1325,11 @@ Page slider, click or touch bottom margin
 <h3>The Financial Case</h3>
 <p>An author speaks at 8 weekend events a year, selling <strong>250 books per event</strong> (2,000 books total) at a retail price of <strong>$15.00</strong>:</p>
 <ul>
-<li><strong>Traditional Model:</strong> Revenue ($30,000) - Author Purchase Cost ($8.00 &amp;amp;#46;imes 2,000) = <strong>$14,000 net event profit</strong>.</li>
-<li><strong>Indie Model:</strong> Revenue ($30,000) - Print Cost ($3.50 &amp;amp;#46;imes 2,000) = <strong>$23,000 net event profit</strong>.</li>
+<li><strong>Traditional Model:</strong> Revenue ($30,000) - Author Purchase Cost ($8.00 \times 2,000) = <strong>$14,000 net event profit</strong>.</li>
+<li><strong>Indie Model:</strong> Revenue ($30,000) - Print Cost ($3.50 \times 2,000) = <strong>$23,000 net event profit</strong>.</li>
 <li><em>Indie Advantage:</em> <strong>+$9,000 extra profit</strong> straight into the author's pocket, with zero warehouse storage risk.</li>
 </ul>
-<h2>Scenario 3: The Rapid-Release "Niche" Novelist (SEO &amp;amp; Algorithm-Driven)</h2>
+<h2>Scenario 3: The Rapid-Release "Niche" Novelist (SEO & Algorithm-Driven)</h2>
 <p><strong>The Author Profile:</strong> A genre fiction author (e.g., LitRPG, Romance, Cozy Mystery) who relies on rapid releases, micro-targeted niches, and organic search visibility.</p>
 <h3>The Dynamics</h3>
 <ul>
@@ -1361,8 +1361,8 @@ Page slider, click or touch bottom margin
                 --mobile-font-size: 0.9em">
         <div class="chapter-marker" data-chapter-raw="Cost Reduction with SAAS Publishing" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Cost Reduction with SAAS Publishing</span></div></p>
-<p>This shifts the paradigm entirely. By moving away from fixed formats (PDF, EPUB) to a responsive, browser-native <strong>webbook</strong>, you are effectively turning a static manuscript into a <strong>SaaS (Software-as-a-Service) delivery engine</strong> or a premium digital product.</p>
-<p>For an author utilizing an engine like this—let's call it a "BookMaker" style engine—the business metrics change drastically because it completely eliminates traditional digital format limitations and printing overhead.</p>
+<p>Moving away from fixed formats (PDF, EPUB) to a responsive, browser-native <strong>webbook</strong> Shifts the paradigm entirely, effectively turning a static manuscript into a <strong>SaaS (Software-as-a-Service) delivery engine</strong> for a premium digital product.</p>
+<p>For an author utilizing a "BookMaker" style engine—the business metrics change drastically because it completely eliminates traditional digital format limitations and printing overhead. In addition, this model makes the reading process device agnostic, removes traditional limitations of distribution, eliminates access choke-points, enables immediate updates and hands control (No censorship and algorithm driven exclusions) to the author.</p>
 <p>Here is a comprehensive business case and pricing strategy for software that autogenerates high-fidelity webbooks.</p>
 <h2>🎯 The Value Proposition (Why Authors Will Pay)</h2>
 <p>To price the software effectively, you must first understand the unique economic value it passes to the author:</p>
@@ -1378,14 +1378,14 @@ Page slider, click or touch bottom margin
 <p>Best for one-off authors or historical fiction writers who only publish a manuscript every few years.</p>
 <ul>
 <li><strong>The Price:</strong> <strong>$49 to $99 per published book.</strong></li>
-<li><strong>What they get:</strong> The author uploads their raw manuscript (e.g., Python-parsed text or Markdown). The engine outputs a fully compiled, production-ready webbook directory.</li>
+<li><strong>What they get:</strong> The author uploads their raw manuscript (e.g., Python-parsed text or Markdown). The engine outputs a fully compiled, production-ready webbook directory. Unlimited updates for each book.</li>
 <li><strong>The Business Case:</strong> Low barrier to entry for the author. It easily beats the cost of hiring a freelance web developer to hand-code a responsive book layout (which easily runs $500–$2,000).</li>
 </ul>
-<h3>Model 2: The SaaS Subscription (For Serial Content Creators &amp;amp; Organizations)</h3>
+<h3>Model 2: The SaaS Subscription (For Serial Content Creators & Organizations)</h3>
 <p>Best for technical writers, niche novelists, or businesses building an open-access resource library.</p>
 <ul>
 <li><strong>The Price:</strong> <strong>$19 to $49 / month.</strong></li>
-<li><strong>What they get:</strong> Unlimited updates, continuous hosting/deployment integration (e.g., syncing a GitHub repository directly to the webbook build), advanced analytics on reader behavior, and custom domain mapping.</li>
+<li><strong>What they get:</strong> Unlimited updates for all submissions, continuous hosting/deployment integration (e.g., syncing a GitHub repository directly to the webbook build), payment processing, advanced analytics on reader behavior, and custom domain mapping.</li>
 <li><strong>The Business Case:</strong> Predictable recurring revenue for the software. For the author, it replaces expensive hosting, analytics tools, and content management systems.</li>
 </ul>
 <h3>Model 3: The Freemium / Revenue Share Model (The High-Scale Disruptor)</h3>
@@ -1397,7 +1397,7 @@ Page slider, click or touch bottom margin
 </ul>
 <h2>📈 The Business Case Comparison</h2>
 <p>Let's look at the financial reality for an indie author selling a <strong>$20 premium technical or educational book</strong> to an audience of <strong>2,000 readers</strong> using your software versus traditional digital distribution channels:</p>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Metric</th>
@@ -1447,10 +1447,9 @@ Page slider, click or touch bottom margin
 <td><strong>Author makes an extra $10,141.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <h3>The Core Selling Point</h3>
 <p>> By investing just <strong>$99</strong> in the webbook generation software, the author prevents <strong>$12,000</strong> from being captured by third-party distribution cartels, resulting in a staggering <strong>100x+ Return on Investment (ROI)</strong> on their software purchase.</p>
-<p>How do you envision the primary distribution of this software—as a local desktop developer tool (like a Python command-line utility/wizard) or as a fully managed cloud application?</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
     </div>
@@ -1471,7 +1470,7 @@ Page slider, click or touch bottom margin
                 --mobile-font-size: 0.9em">
         <div class="chapter-marker" data-chapter-raw="Enhanced business case" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Enhanced business case</span></div></p>
-<p>Yes, absolutely. Shifting from a standalone conversion engine to a <strong>fully integrated Webbook Platform</strong>—handling hosting, paywalls, payments, and an ad ecosystem—transforms the business case from a simple utility tool into a high-margin ecosystem.</p>
+<p>Shifting from a standalone conversion engine to a <strong>fully integrated Webbook Platform</strong>—handling hosting, paywalls, payments, and an ad ecosystem—transforms the business case from a simple utility tool into a high-margin ecosystem.</p>
 <p>By verticalizing these features, you aren't just selling software; you are capturing a percentage of the entire value chain of independent publishing.</p>
 <h2>🚀 The Enhanced Business Case: Platform Ecosystem</h2>
 <p>When you own the hosting, the paywall, and the data dashboard, the economic flywheels change significantly:</p>
@@ -1500,10 +1499,10 @@ Page slider, click or touch bottom margin
 <li><strong>How it works:</strong> An author sets a budget (e.g., $50) inside your platform dashboard. Using APIs, your software automatically deploys optimized, pre-formatted book ads directly to ad networks, targeting readers of specific niches or genres.</li>
 <li><strong>Value Added:</strong> Solves the major marketing bottleneck for non-technical authors while allowing you to charge a small ad-management fee or markup on the ad spend.</li>
 </ul>
-<h3>4. Interactive Reader Layers (Community &amp;amp; Engagement)</h3>
+<h3>4. Interactive Reader Layers (Community & Engagement)</h3>
 <p>Turn the static reading experience into a collaborative or high-utility engine.</p>
 <ul>
-<li><strong>How it works:</strong> Allow authors to toggle on features like inline community annotations (similar to Medium's highlighting tool), digital book clubs, live author Q&amp;amp;A margins, or embedded multimedia (audio narrations, interactive charts, and video elements).</li>
+<li><strong>How it works:</strong> Allow authors to toggle on features like inline community annotations (similar to Medium's highlighting tool), digital book clubs, live author Q&A margins, or embedded multimedia (audio narrations, interactive charts, and video elements).</li>
 <li><strong>Value Added:</strong> Creates a premium product tier that traditional ebooks (ePub/PDF) physically cannot replicate, justifying higher retail prices for the author's webbook.</li>
 </ul>
 <h3>5. Seamless Dynamic Update Infrastructure</h3>
@@ -1514,7 +1513,7 @@ Page slider, click or touch bottom margin
 <h2>📊 Revised Tiered Monetization Strategy</h2>
 <p>With these enhanced features, your pricing model can evolve into a highly profitable matrix:</p>
 <ul>
-<li><strong>Free Tier (Growth &amp;amp; Acquisition):</strong> Free webbook generation with standard features hosted on a subdomain (e.g., `[authorname.yourplatform.com](http://authorname.yourplatform.com/)`). The platform takes a <strong>5% to 8% revenue share</strong> on any paywall sales.</li>
+<li><strong>Free Tier (Growth & Acquisition):</strong> Free webbook generation with standard features hosted on a subdomain (e.g., `[authorname.yourplatform.com](http://authorname.yourplatform.com/)`). The platform takes a <strong>5% to 8% revenue share</strong> on any paywall sales.</li>
 <li><strong>Pro Tier ($29–$49/month - The Sweet Spot):</strong> Custom domain mapping (`[[www.yourbook.com](http://www.yourbook.com/)]([https://www.yourbook.com](https://www.yourbook.com/))`), advanced reading analytics, zero revenue share (only standard Stripe processing fees), and automated multi-format exports.</li>
 <li><strong>Scale / Publisher Tier ($99+/month):</strong> Includes the automated A/B testing engine, priority ad deployment tools, advanced team collaboration features for editors/designers, and white-labeled reader interfaces.</li>
 </ul>
@@ -1545,28 +1544,28 @@ Page slider, click or touch bottom margin
 <h2>🏗️ The "Buy/Integrate" Architecture Blueprint</h2>
 <p>Instead of provisioning servers and writing custom database schemas for payment workflows, you orchestrate specialized third-party APIs.</p>
 <p>┌────────────────────────────────────────┐
-│       Author Machine / CI/CD           │
-│   (Core BookMaker Converter Engine)    │
-└───────────────────┬────────────────────┘
-│ Compiles &amp;amp; Pushes
-▼
+                    │       Author Machine / CI/CD           │
+                    │   (Core BookMaker Converter Engine)    │
+                    └───────────────────┬────────────────────┘
+                                        │ Compiles & Pushes
+                                        ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ HOSTING &amp;amp; DELIVERY LAYER (Vercel / Netlify / Cloudflare Pages)                         │
+│ HOSTING & DELIVERY LAYER (Vercel / Netlify / Cloudflare Pages)                         │
 │ • Serves edge-cached HTML webbooks instantly worldwide.                                 │
 │ • Automatically provisions free SSL certificates.                                      │
 │ • Handles custom domains (e.g., [www.mybook.com](http://www.mybook.com/)).                                       │
 └───────────────────────────────────────┬────────────────────────────────────────────────┘
-│ Restricts unauthorized traffic
-▼
+                                        │ Restricts unauthorized traffic
+                                        ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ PAYWALL &amp;amp; IDENTITY INTERFACE (Outseta / Memberstack)                                    │
+│ PAYWALL & IDENTITY INTERFACE (Outseta / Memberstack)                                    │
 │ • Injects pre-built pre-styled login boxes and paywalls over the webbook text.        │
 │ • Restricts access to selected chapters/elements based on membership tiers.            │
 └───────────────────────────────────────┬────────────────────────────────────────────────┘
-│ Delegates checkout &amp;amp; billing
-▼
+                                        │ Delegates checkout & billing
+                                        ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ SUBSCRIPTION &amp;amp; TAX ENGINE (Stripe Billing / Merchant of Record - Lemon Squeezy)        │
+│ SUBSCRIPTION & TAX ENGINE (Stripe Billing / Merchant of Record - Lemon Squeezy)        │
 │ • Standard Stripe: Manages credit card portals, coupons, and recurring plans.        │
 │ • Merchant of Record: Entirely handles global sales tax collection, VAT, and remittance.│
 └────────────────────────────────────────────────────────────────────────────────────────┘</p>
@@ -1578,14 +1577,14 @@ Page slider, click or touch bottom margin
 <li><strong>How it works:</strong> Your core engine outputs a folder containing the semantic HTML layout (Page, Block, and Inline elements). This folder is pushed straight to the host via an API or a simple Git hook.</li>
 <li><strong>Why Buy:</strong> They provide enterprise-grade <strong>Global Edge CDNs</strong>, instant loading speeds, automatic <strong>SSL certificates</strong>, and seamless <strong>custom domain mapping</strong> for the author out-of-the-box. The free and low-cost developer tiers will comfortably support thousands of books.</li>
 </ul>
-<h3>2. The Identity &amp;amp; Paywall Layer: Outseta or Memberstack</h3>
+<h3>2. The Identity & Paywall Layer: Outseta or Memberstack</h3>
 <p>Writing secure user authentication, password resets, session management, and paywall logic from scratch takes months and carries huge security risks.</p>
 <ul>
 <li><strong>The Vendor:</strong> <strong>Outseta</strong> or <strong>Memberstack</strong>.</li>
 <li><strong>How it works:</strong> You install a tiny, pre-configured JavaScript snippet into the base template of the webbook engine. When a non-paying reader hits a protected chapter, the script automatically triggers a polished modal asking them to register or purchase.</li>
 <li><strong>Why Buy:</strong> It gives you a complete user management system, secure logins, gated content tools, and pre-built UI components instantly, requiring almost zero backend code.</li>
 </ul>
-<h3>3. The Subscription &amp;amp; Merchant of Record (MoR) Layer: Lemon Squeezy or Stripe</h3>
+<h3>3. The Subscription & Merchant of Record (MoR) Layer: Lemon Squeezy or Stripe</h3>
 <p>Handling money globally is incredibly complex because of digital sales tax regulations (like EU VAT or state-by-state economic nexus rules in the US).</p>
 <ul>
 <li><strong>Option A: Stripe Billing (Standard API integration)</strong>
@@ -1603,7 +1602,7 @@ Page slider, click or touch bottom margin
 </li>
 </ul>
 <h2>📈 The Business Comparison: Build vs. Buy</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Feature</th>
@@ -1626,13 +1625,13 @@ Page slider, click or touch bottom margin
 <td><strong>Saved 4+ weeks</strong> of backend engineering.</td>
 </tr>
 <tr>
-<td><strong>Global Tax &amp;amp; Billing</strong></td>
+<td><strong>Global Tax & Billing</strong></td>
 <td>Massive legal risk + intricate accounting logic.</td>
 <td>Standard transaction fee % per sale.</td>
 <td><strong>Saved 3+ months</strong> of legal and API setup.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <h3>The Core Architectural Advantage</h3>
 <p>By buying this infrastructure, your tech stack remains incredibly lean. If the platform scales from 10 authors to 10,000 authors, your infrastructure scales automatically because it is backed by multi-billion-dollar global cloud networks. Your development focus stays exactly where it should be: <strong>optimizing the core converter engine to deliver the most beautiful browser-native reading experience on the web.</strong></p>
 <p>Would you prefer to explore how to pass the billing costs seamlessly to the authors, or how to package this stack under a single unified dashboard interface?</p>
@@ -1671,11 +1670,11 @@ Page slider, click or touch bottom margin
 <li><strong>How they operate:</strong> Dominant in the university ecosystem, these tools take manuscripts (often using Markdown plugins or ePub ingestion) and output highly interactive webbooks complete with annotations and references.</li>
 <li><strong>The Gap:</strong> They are heavily institutional and optimized for <em>free open educational resources (OER)</em>. They are not architected as a sleek commercial tool for direct-to-consumer monetization or fast, agile indie author marketing funnels.</li>
 </ul>
-<h3>3. The Content &amp;amp; Newsletter SaaS Monetizers</h3>
+<h3>3. The Content & Newsletter SaaS Monetizers</h3>
 <ul>
 <li><strong>Competitors:</strong> Ghost, Substack.</li>
 <li><strong>How they operate:</strong> These platforms excel at frictionless monetization, user identity layers, built-in paywalls, and letting authors capture 100% of their revenue (minus Stripe fees).</li>
-<li><strong>The Gap:</strong> They are fundamentally architected around <strong>chronological streams</strong> (blogs, articles, newsletters). They completely fall apart when trying to render a single, deeply structured non-fiction or fiction book that requires logical page layout, complex text hierarchy (Page &amp;amp;#46;ightarrow Block &amp;amp;#46;ightarrow Inline), dynamic cross-references, or floating image properties.</li>
+<li><strong>The Gap:</strong> They are fundamentally architected around <strong>chronological streams</strong> (blogs, articles, newsletters). They completely fall apart when trying to render a single, deeply structured non-fiction or fiction book that requires logical page layout, complex text hierarchy (Page \rightarrow Block \rightarrow Inline), dynamic cross-references, or floating image properties.</li>
 </ul>
 <h3>4. Direct-to-Consumer Ebook Marketplaces</h3>
 <ul>
@@ -1686,16 +1685,16 @@ Page slider, click or touch bottom margin
 <h2>🎯 Where Your Webbook Platform Wins (The Unfair Advantage)</h2>
 <p>When positioned against this landscape, your platform carves out a highly defensible blue ocean by executing a <strong>hybrid value proposition</strong>:</p>
 <p>[ Documentation Tools ]            [ Newsletter Platforms ]
-(Docusaurus / GitBook)               (Ghost / Substack)
-High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
-│                                    │
-└─────────────────┬──────────────────┘
-▼
-[ Your Webbook Platform ]
-• Responsive "True Book" Navigation
-• White-labeled Author Custom Domains
-• 100% Margin Retention (No Store Tax)
-• Multi-Format One-Click Exports</p>
+        (Docusaurus / GitBook)               (Ghost / Substack)
+       High-Fidelity Book Layout           SaaS Paywalls & Hosting
+                 │                                    │
+                 └─────────────────┬──────────────────┘
+                                   ▼
+                      [ Your Webbook Platform ]
+                 • Responsive "True Book" Navigation
+                 • White-labeled Author Custom Domains
+                 • 100% Margin Retention (No Store Tax)
+                 • Multi-Format One-Click Exports</p>
 <p>By keeping your execution focused on the <strong>core converter engine first</strong>—ensuring the browser-native pagination and asset rendering layers feel premium—you instantly outclass standard blogging platforms. By building the backend entirely on a <strong>"Buy" architecture</strong> (integrating Cloudflare Pages, Memberstack, and Lemon Squeezy), you can achieve feature parity with multi-million dollar platforms on day one, giving independent authors an elite infrastructure engine that simply does not exist anywhere else in the market.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -1724,21 +1723,21 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><strong>Product Designer / Front-End Developer:</strong> Builds the high-fidelity CSS boilerplate for the webbook layouts, UI/UX for the local wizard, and the eventual platform dashboard.</li>
 <li><strong>Growth Marketer / Technical Writer:</strong> Handles author beta-testing, developer documentation, and direct outreach to early indie authors.</li>
 </ol>
-<h2>📅 Platform Milestone &amp;amp; Funding Breakdown</h2>
-<h3>Phase 1: Engine Foundation &amp;amp; Semantic Layout (Months 1–3)</h3>
-<p><strong>Objective:</strong> Complete the local conversion engine pipeline (Manuscript &amp;amp;#46;ightarrow Semantic AST Tree &amp;amp;#46;ightarrow Local Browser Viewport Layout).</p>
+<h2>📅 Platform Milestone & Funding Breakdown</h2>
+<h3>Phase 1: Engine Foundation & Semantic Layout (Months 1–3)</h3>
+<p><strong>Objective:</strong> Complete the local conversion engine pipeline (Manuscript \rightarrow Semantic AST Tree \rightarrow Local Browser Viewport Layout).</p>
 <ul>
 <li><strong>Specific Deliverables:</strong>
 <ul>
 <li>Functional CLI tool/Wizard parsing Markdown text and configuration metadata tags.</li>
-<li>Core CSS rendering system executing the precise hierarchy hierarchy (Page Viewport &amp;amp;#46;ightarrow Structural Blocks/TOC &amp;amp;#46;ightarrow Inline Assets/References).</li>
+<li>Core CSS rendering system executing the precise hierarchy hierarchy (Page Viewport \rightarrow Structural Blocks/TOC \rightarrow Inline Assets/References).</li>
 <li>Local compilation mechanism outputting fully valid, zero-dependency HTML directories.</li>
 </ul>
 </li>
 <li><strong>Human Resources Engaged:</strong> Lead Engineer (100%), Product Designer (50%).</li>
 <li><strong>Funding Needed:</strong> <strong>$15,000</strong> (Covering design production tools and early developer testing sandboxes).</li>
 </ul>
-<h3>Phase 2: Integration &amp;amp; Infrastructure Setup (Months 4–6)</h3>
+<h3>Phase 2: Integration & Infrastructure Setup (Months 4–6)</h3>
 <p><strong>Objective:</strong> Transition from a local compiler to a deployed web format by hooking up the third-party infrastructure stack.</p>
 <ul>
 <li><strong>Specific Deliverables:</strong>
@@ -1751,7 +1750,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><strong>Human Resources Engaged:</strong> Lead Engineer (100%), Product Designer (75%), Growth Marketer (25%).</li>
 <li><strong>Funding Needed:</strong> <strong>$20,000</strong> (Covering infrastructure subscription fees, custom domain testing, and beta server allocation).</li>
 </ul>
-<h3>Phase 3: Premium Value Additions &amp;amp; Custom Automation (Months 7–9)</h3>
+<h3>Phase 3: Premium Value Additions & Custom Automation (Months 7–9)</h3>
 <p><strong>Objective:</strong> Build out the unique, high-value ecosystem features that differentiate the platform from traditional digital layouts.</p>
 <ul>
 <li><strong>Specific Deliverables:</strong>
@@ -1764,7 +1763,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><strong>Human Resources Engaged:</strong> Lead Engineer (100%), Product Designer (50%), Growth Marketer (50%).</li>
 <li><strong>Funding Needed:</strong> <strong>$25,000</strong> (Focusing heavily on testing multi-format layout rendering pipelines and data collection compliance).</li>
 </ul>
-<h3>Phase 4: Platform Launch &amp;amp; Growth Flywheel (Months 10–12)</h3>
+<h3>Phase 4: Platform Launch & Growth Flywheel (Months 10–12)</h3>
 <p><strong>Objective:</strong> Launch the managed tiered monetization ecosystem publicly and activate the user onboarding strategy.</p>
 <ul>
 <li><strong>Specific Deliverables:</strong>
@@ -1777,8 +1776,8 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><strong>Human Resources Engaged:</strong> Lead Engineer (50%), Product Designer (50%), Growth Marketer (100%).</li>
 <li><strong>Funding Needed:</strong> <strong>$30,000</strong> (Predominantly allocated toward developer launch campaigns, initial ad budget testing for authors, and system operational overhead).</li>
 </ul>
-<h2>📊 Summary Resource &amp;amp; Capital Matrix</h2>
-<table>
+<h2>📊 Summary Resource & Capital Matrix</h2>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Milestone Phase</th>
@@ -1806,7 +1805,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <tr>
 <td><strong>Phase 3: Value Enhancements</strong></td>
 <td>3 Months</td>
-<td>Full Team (Focus: Feature R&amp;amp;D)</td>
+<td>Full Team (Focus: Feature R&D)</td>
 <td>$25,000</td>
 <td>$60,000</td>
 </tr>
@@ -1818,7 +1817,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <td><strong>$90,000</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <h2>🔍 Key Milestone Metric</h2>
 <p>> <strong>The Go-Live Trigger:</strong> Phase 2 is considered complete only when a single raw text file can be successfully ingested locally, deployed to a global edge node automatically, and securely locked behind a fully functional payment wall without requiring a single line of manual network configuration.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
@@ -1843,11 +1842,11 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Revenue and Volume targets</span></div></p>
 <p>Based on your 12-month staged execution plan, your $90,000 cumulative budget, and your lean 3-person resource pool (Lead Engineer, Designer, Marketer), you can plan for realistic use volume and revenue targets across the four phases.</p>
 <p>Because you are utilizing a <strong>"Buy" infrastructure architecture</strong>, you don't need to spend capital on server scaling, meaning your revenue targets focus heavily on early customer validation, transaction fees, and establishing your recurring SaaS framework.</p>
-<h2>📈 Milestone Revenue &amp;amp; Volume Projections</h2>
-<h3>Phase 1: Engine Foundation &amp;amp; Semantic Layout (Months 1–3)</h3>
+<h2>📈 Milestone Revenue & Volume Projections</h2>
+<h3>Phase 1: Engine Foundation & Semantic Layout (Months 1–3)</h3>
 <ul>
 <li><strong>Funding Available:</strong> $15,000</li>
-<li><strong>Focus:</strong> Core Layout Engine &amp;amp; Parser Development</li>
+<li><strong>Focus:</strong> Core Layout Engine & Parser Development</li>
 <li><strong>Use Volume Target:</strong> <strong>10 to 15 Alpha Testers</strong>
 <ul>
 <li><em>Metrics:</em> Hand-selected, tech-savvy indie authors or technical writers who compile manuscripts locally via your CLI/Wizard tool.</li>
@@ -1856,15 +1855,15 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 </li>
 <li><strong>Revenue Target:</strong> <strong>$0</strong>
 <ul>
-<li><em>Strategy:</em> This phase is strictly an R&amp;amp;D and validation milestone. Do not charge users yet; maximize the volume of raw text layout bug reports to perfect the semantic translation pipeline.</li>
+<li><em>Strategy:</em> This phase is strictly an R&D and validation milestone. Do not charge users yet; maximize the volume of raw text layout bug reports to perfect the semantic translation pipeline.</li>
 </ul>
 </li>
 </ul>
-<h3>Phase 2: Integration &amp;amp; Infrastructure Setup (Months 4–6)</h3>
+<h3>Phase 2: Integration & Infrastructure Setup (Months 4–6)</h3>
 <ul>
 <li><strong>Funding Available:</strong> $20,000 (Cumulative: $35,000)</li>
 <li><strong>Focus:</strong> Deploying to the Edge, Paywalls, and Merchant of Record Integration</li>
-<li><strong>Use Volume Target:</strong> <strong>50 to 75 Beta Authors &amp;amp; 5,000+ End-Readers</strong>
+<li><strong>Use Volume Target:</strong> <strong>50 to 75 Beta Authors & 5,000+ End-Readers</strong>
 <ul>
 <li><em>Metrics:</em> 50 active authors hosting books dynamically on subdomains or custom domains via Vercel/Cloudflare Pages.</li>
 <li><em>Volume:</em> Tracking reading patterns of thousands of organic end-readers accessing the first 3 chapters before hitting the paywall triggers.</li>
@@ -1876,11 +1875,11 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 </ul>
 </li>
 </ul>
-<h3>Phase 3: Premium Value Additions &amp;amp; Custom Automation (Months 7–9)</h3>
+<h3>Phase 3: Premium Value Additions & Custom Automation (Months 7–9)</h3>
 <ul>
 <li><strong>Funding Available:</strong> $25,000 (Cumulative: $60,000)</li>
 <li><strong>Focus:</strong> A/B Testing, Multi-Format Exports, and Reader Layer Analytics</li>
-<li><strong>Use Volume Target:</strong> <strong>150 to 200 Active Authors &amp;amp; 25,000+ End-Readers</strong>
+<li><strong>Use Volume Target:</strong> <strong>150 to 200 Active Authors & 25,000+ End-Readers</strong>
 <ul>
 <li><em>Metrics:</em> Authors actively using advanced layers (split-testing covers, reviewing reader heatmaps/drop-off analytics, and testing interactive reader annotations).</li>
 <li><em>Volume:</em> The cumulative portfolio of webbooks starts ranking on search engines (SEO validation), driving increased reader pageviews.</li>
@@ -1892,11 +1891,11 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 </ul>
 </li>
 </ul>
-<h3>Phase 4: Platform Launch &amp;amp; Growth Flywheel (Months 10–12)</h3>
+<h3>Phase 4: Platform Launch & Growth Flywheel (Months 10–12)</h3>
 <ul>
 <li><strong>Funding Available:</strong> $30,000 (Cumulative: $90,000)</li>
-<li><strong>Focus:</strong> Public Dashboard Launch &amp;amp; "Author-Paid Ads" Middleware Engine</li>
-<li><strong>Use Volume Target:</strong> <strong>500+ Paid Active Authors &amp;amp; 100,000+ Global Readers</strong>
+<li><strong>Focus:</strong> Public Dashboard Launch & "Author-Paid Ads" Middleware Engine</li>
+<li><strong>Use Volume Target:</strong> <strong>500+ Paid Active Authors & 100,000+ Global Readers</strong>
 <ul>
 <li><em>Metrics:</em> Scaled public acquisition across the tiered matrix (Free, Pro, Scale/Publisher).</li>
 <li><em>Volume:</em> Massive throughput across the core layout engine, with significant transaction volume moving through the unified billing dashboard.</li>
@@ -1909,7 +1908,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 </li>
 </ul>
 <h2>📊 Summary Targets Dashboard</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Milestone / Phase</th>
@@ -1925,7 +1924,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <td>Months 1–3</td>
 <td>10–15 Alpha Testers</td>
 <td>Local Testing Only</td>
-<td>$0 (R&amp;amp;D Stage)</td>
+<td>$0 (R&D Stage)</td>
 </tr>
 <tr>
 <td><strong>Phase 2: Infrastructure</strong></td>
@@ -1942,14 +1941,14 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <td>$3,000 – $6,000 MRR</td>
 </tr>
 <tr>
-<td><strong>Phase 4: Launch &amp;amp; Scale</strong></td>
+<td><strong>Phase 4: Launch & Scale</strong></td>
 <td>Months 10–12</td>
 <td>500+ Platform Users</td>
 <td>100,000+ Readers</td>
 <td><strong>$15,000+ MRR / $180k ARR</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p>Given the current competitive landscape, do you want to target fiction novelists (high quantity, rapid-release volume) or technical/non-fiction writers (higher price points, heavy reliance on search engine discoverability) for your initial Phase 1 alpha cohort?</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -1979,16 +1978,16 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 │         INTERNAL (70%)      COMP (30%)│
 └───────────────────────────────────────┘</p>
 <ul>
-<li><strong>Internal Risk (70%): Core Engine Complexity &amp;amp; Scope Creep.</strong> Your unfair advantage relies entirely on the browser making a webbook feel <em>exactly</em> like a premium, responsive physical book. If the page-layout hierarchy breaks, or if the multi-format PDF/ePub export engine is buggy, authors will lose trust. Managing this codebase with just one Lead Engineer is your highest point of failure.</li>
+<li><strong>Internal Risk (70%): Core Engine Complexity & Scope Creep.</strong> Your unfair advantage relies entirely on the browser making a webbook feel <em>exactly</em> like a premium, responsive physical book. If the page-layout hierarchy breaks, or if the multi-format PDF/ePub export engine is buggy, authors will lose trust. Managing this codebase with just one Lead Engineer is your highest point of failure.</li>
 <li><strong>Competitive Positioning Risk (30%): The Discovery Shift.</strong> You aren't competing with Amazon's bookstore; you are competing for the author's faith that they can drive their own traffic. The broader threat is <strong>Generative Engine Optimization (GEO)</strong>—AI search tools summarizing web content directly, which means webbooks must be explicitly optimized to be surfaced as trusted source-of-truth citations by AI agents.</li>
 </ul>
-<h2>🔍 Key Risks &amp;amp; Tactical Mitigations</h2>
-<h3>1. The Rendering &amp;amp; Layout Bottleneck (Internal)</h3>
+<h2>🔍 Key Risks & Tactical Mitigations</h2>
+<h3>1. The Rendering & Layout Bottleneck (Internal)</h3>
 <ul>
 <li><strong>The Risk:</strong> Implementing complex visual text flow natively in the browser—such as fluid page navigation, inline community annotations, and floating image properties—strains standard CSS and can lead to fragile, broken layouts across varying mobile device screens.</li>
 <li><strong>Mitigation:</strong> <strong>Lock the styling boilerplate early.</strong> Do not give authors infinite layout design choices in Phase 1. Limit the engine to 3 rock-solid, mobile-first typography and spacing layouts. Rely heavily on robust CSS Grid structures and treat text compilation strictly as a deterministic pipeline.</li>
 </ul>
-<h3>2. The Global Tax &amp;amp; Compliance Trap (Internal)</h3>
+<h3>2. The Global Tax & Compliance Trap (Internal)</h3>
 <ul>
 <li><strong>The Risk:</strong> As an independent platform, handling global billing, tiered subscriptions, and multi-country digital sales taxes (like EU VAT) introduces massive legal and technical operational debt that a 3-person team cannot maintain.</li>
 <li><strong>Mitigation:</strong> <strong>Strictly execute the "Buy" architecture.</strong> Never write custom checkout logic or handle direct payment card data. Mandate a Merchant of Record integration (like Lemon Squeezy or Paddle) from day one. They act as the legal reseller, entirely assuming the liability for international compliance, fraud, and global tax remittance automatically.</li>
@@ -2024,10 +2023,10 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
         <div class="chapter-marker" data-chapter-raw="Projecting Valuations" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Projecting Valuations</span></div></p>
 <p>Evaluating the valuation of an early-stage software platform requires applying the metrics of the current private software market. In the private SaaS landscape, early-stage companies operating under <strong>$1 million in Annual Recurring Revenue (ARR)</strong> are valued primarily on <strong>Seller's Discretionary Earnings (SDE)</strong> or a baseline asset value, rather than aggressive revenue multiples.</p>
-<p>Once software demonstrates predictable growth and crosses into reliable recurring revenue, the market applies a conservative <strong>3&amp;amp;#46;ext{x} to 5&amp;amp;#46;ext{x} ARR multiple</strong> for bootstrapped or lean platforms.</p>
+<p>Once software demonstrates predictable growth and crosses into reliable recurring revenue, the market applies a conservative <strong>3\text{x} to 5\text{x} ARR multiple</strong> for bootstrapped or lean platforms.</p>
 <p>Because the platform relies on a <strong>"Buy" infrastructure architecture</strong>, capital expenditure remains minimal, allowing valuation to scale strictly alongside revenue growth and transactional validation. Here is the projected valuation path in 6-month increments over a 3-year period:</p>
 <h2>📈 3-Year Valuation Trajectory (6-Month Increments)</h2>
-<h3>🗓️ Year 1: Technology Validation &amp;amp; Market Proof</h3>
+<h3>🗓️ Year 1: Technology Validation & Market Proof</h3>
 <ul>
 <li><strong>Month 6 (End of Phase 2: Infrastructure Setup)</strong>
 <ul>
@@ -2036,50 +2035,50 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><em>Valuation Framework:</em> At this point, the platform does not have sufficient recurring revenue to command a standard SaaS multiple. Valuation is calculated strictly on the intellectual property of the core converter engine and the replacement cost of the completed codebase.</li>
 </ul>
 </li>
-<li><strong>Month 12 (End of Phase 4: Launch &amp;amp; Scale)</strong>
+<li><strong>Month 12 (End of Phase 4: Launch & Scale)</strong>
 <ul>
 <li><strong>Financial Metric:</strong> $15,000 MRR ($180,000 ARR).</li>
 <li><strong>Projected Valuation:</strong> <strong>$360,000 – $540,000</strong></li>
-<li><em>Valuation Framework:</em> Having successfully established traction and launched the tiered monetization structure, the platform can now be valued on a baseline <strong>2&amp;amp;#46;ext{x} to 3&amp;amp;#46;ext{x} ARR multiple</strong>. Buyers view the business at this stage as a highly functional single-founder asset rather than a fully scaled corporation.</li>
+<li><em>Valuation Framework:</em> Having successfully established traction and launched the tiered monetization structure, the platform can now be valued on a baseline <strong>2\text{x} to 3\text{x} ARR multiple</strong>. Buyers view the business at this stage as a highly functional single-founder asset rather than a fully scaled corporation.</li>
 </ul>
 </li>
 </ul>
-<h3>🗓️ Year 2: Achieving Product-Market Fit &amp;amp; Compounding ARR</h3>
+<h3>🗓️ Year 2: Achieving Product-Market Fit & Compounding ARR</h3>
 <ul>
-<li><strong>Month 18 (Accelerated Growth &amp;amp; Ad Engine Adoption)</strong>
+<li><strong>Month 18 (Accelerated Growth & Ad Engine Adoption)</strong>
 <ul>
 <li><strong>Financial Metric:</strong> $35,000 MRR ($420,000 ARR).</li>
 <li><strong>Projected Valuation:</strong> <strong>$1.26 Million – $1.68 Million</strong></li>
-<li><em>Valuation Framework:</em> As the platform scales past 1,000 active authors and revenue spreads across transaction cuts, the market rewards the platform with a formal private SaaS revenue multiple of <strong>3&amp;amp;#46;ext{x} to 4&amp;amp;#46;ext{x} ARR</strong>. The integration of the "Author-Paid Ads" middleware creates a highly sticky utility feature that dampens user churn.</li>
+<li><em>Valuation Framework:</em> As the platform scales past 1,000 active authors and revenue spreads across transaction cuts, the market rewards the platform with a formal private SaaS revenue multiple of <strong>3\text{x} to 4\text{x} ARR</strong>. The integration of the "Author-Paid Ads" middleware creates a highly sticky utility feature that dampens user churn.</li>
 </ul>
 </li>
 <li><strong>Month 24 (The $1M ARR Threshold)</strong>
 <ul>
 <li><strong>Financial Metric:</strong> $85,000 MRR ($1.02 Million ARR).</li>
 <li><strong>Projected Valuation:</strong> <strong>$4.08 Million – $5.10 Million</strong></li>
-<li><em>Valuation Framework:</em> <strong>Crossing the $1M ARR mark is a major threshold.</strong> At this level, the platform enters a higher tier of valuation metrics where the buyer pool expands to small search funds and private equity. The multiple steps up to a clean <strong>4&amp;amp;#46;ext{x} to 5&amp;amp;#46;ext{x} ARR</strong> because the business has proven it is a true commercial asset, not just a lifestyle job.</li>
+<li><em>Valuation Framework:</em> <strong>Crossing the $1M ARR mark is a major threshold.</strong> At this level, the platform enters a higher tier of valuation metrics where the buyer pool expands to small search funds and private equity. The multiple steps up to a clean <strong>4\text{x} to 5\text{x} ARR</strong> because the business has proven it is a true commercial asset, not just a lifestyle job.</li>
 </ul>
 </li>
 </ul>
-<h3>🗓️ Year 3: Maturation, System Ecosystem, &amp;amp; Platform Multiples</h3>
+<h3>🗓️ Year 3: Maturation, System Ecosystem, & Platform Multiples</h3>
 <ul>
-<li><strong>Month 30 (Publisher Scale &amp;amp; Omnichannel Dominance)</strong>
+<li><strong>Month 30 (Publisher Scale & Omnichannel Dominance)</strong>
 <ul>
 <li><strong>Financial Metric:</strong> $140,000 MRR ($1.68 Million ARR).</li>
 <li><strong>Projected Valuation:</strong> <strong>$7.56 Million – $9.24 Million</strong></li>
-<li><em>Valuation Framework:</em> The revenue composition solidifies as high-volume publishers adopt the Scale Tier ($99+/month). The business demonstrates high Net Revenue Retention (NRR) as successful authors increase their backlists, keeping the valuation resiliently in the <strong>4.5&amp;amp;#46;ext{x} to 5.5&amp;amp;#46;ext{x} ARR</strong> range.</li>
+<li><em>Valuation Framework:</em> The revenue composition solidifies as high-volume publishers adopt the Scale Tier ($99+/month). The business demonstrates high Net Revenue Retention (NRR) as successful authors increase their backlists, keeping the valuation resiliently in the <strong>4.5\text{x} to 5.5\text{x} ARR</strong> range.</li>
 </ul>
 </li>
 <li><strong>Month 36 (Ecosystem Maturation)</strong>
 <ul>
 <li><strong>Financial Metric:</strong> $220,000 MRR ($2.64 Million ARR).</li>
 <li><strong>Projected Valuation:</strong> <strong>$13.20 Million – $15.84 Million</strong></li>
-<li><em>Valuation Framework:</em> Operating at a $2.6M+ annualized run rate with low structural overhead (due to the outsourced infrastructure buy), the business qualifies for premium lower-middle-market valuations. The multiple sits at a healthy <strong>5&amp;amp;#46;ext{x} to 6&amp;amp;#46;ext{x} ARR</strong>, assuming the team has built out a light operational management layer to reduce founder dependency.</li>
+<li><em>Valuation Framework:</em> Operating at a $2.6M+ annualized run rate with low structural overhead (due to the outsourced infrastructure buy), the business qualifies for premium lower-middle-market valuations. The multiple sits at a healthy <strong>5\text{x} to 6\text{x} ARR</strong>, assuming the team has built out a light operational management layer to reduce founder dependency.</li>
 </ul>
 </li>
 </ul>
 <h2>📊 Summary Valuation Schedule</h2>
-<p>`&amp;amp;#46;egin{array}{|c|c|c|c|} &amp;amp;#46;line &amp;amp;#46;extbf{Timeline} &amp;amp; &amp;amp;#46;extbf{Monthly Revenue (MRR)} &amp;amp; &amp;amp;#46;extbf{Annual Run-Rate (ARR)} &amp;amp; &amp;amp;#46;extbf{Projected Valuation Range} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Month 6} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;5,000 (Gross Phase Total)} &amp;amp; &amp;amp;#46;ext{N/A} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;35,000 (Asset Value)} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Month 12} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;15,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;180,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;360,000 – &amp;amp;#36;540,000} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Month 18} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;35,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;420,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;1.26M – &amp;amp;#36;1.68M} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;extbf{Month 24} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;85,000} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;1,020,000} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;4.08M – &amp;amp;#36;5.10M} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Month 30} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;140,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;1,680,000} &amp;amp; &amp;amp;#46;ext{&amp;amp;#36;7.56M – &amp;amp;#36;9.24M} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;extbf{Month 36} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;220,000} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;2,640,000} &amp;amp; &amp;amp;#46;extbf{&amp;amp;#36;13.20M – &amp;amp;#36;15.84M} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;nd{array}`</p>
+<p>`\begin{array}{|c|c|c|c|} \hline \textbf{Timeline} & \textbf{Monthly Revenue (MRR)} & \textbf{Annual Run-Rate (ARR)} & \textbf{Projected Valuation Range} &#92; \hline \text{Month 6} & \text{\$5,000 (Gross Phase Total)} & \text{N/A} & \text{\$35,000 (Asset Value)} &#92; \hline \text{Month 12} & \text{\$15,000} & \text{\$180,000} & \text{\$360,000 – \$540,000} &#92; \hline \text{Month 18} & \text{\$35,000} & \text{\$420,000} & \text{\$1.26M – \$1.68M} &#92; \hline \textbf{Month 24} & \textbf{\$85,000} & \textbf{\$1,020,000} & \textbf{\$4.08M – \$5.10M} &#92; \hline \text{Month 30} & \text{\$140,000} & \text{\$1,680,000} & \text{\$7.56M – \$9.24M} &#92; \hline \textbf{Month 36} & \textbf{\$220,000} & \textbf{\$2,640,000} & \textbf{\$13.20M – \$15.84M} &#92; \hline \end{array}`</p>
 <h3>🔑 Critical Value Drivers for the Top of the Range To consistently command the highest end of these valuation ranges as you approach Year 3, the platform must hit three specific operational benchmarks:</h3>
 <ol>
 <li><strong>Low Customer Concentration:</strong> Ensure no single major publisher accounts for more than 15% of total platform revenue.</li>
@@ -2108,32 +2107,32 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Marketing plan</span></div></p>
 <p>To scale the Webbook Platform from zero to <strong>$220,000 MRR</strong> by Year 3, your marketing strategy cannot rely on traditional, high-budget corporate advertising. Because independent authors are highly clustered in specific digital watering holes, and your platform solves distinct engineering and financial pain points, you can execute a hyper-targeted, high-ROI marketing blueprint.</p>
 <p>Here is the phased marketing plan designed to achieve your strategic revenue goals.</p>
-<h2>📅 Phase 1: The Alpha Infiltration &amp;amp; Social Proof (Months 1–3)</h2>
+<h2>📅 Phase 1: The Alpha Infiltration & Social Proof (Months 1–3)</h2>
 <p><strong>Target:</strong> 10–15 Core Alpha Users | <strong>Goal:</strong> Lock in initial case studies.</p>
 <ul>
 <li><strong>The Inbound Play (Content as a Wedge):</strong> Write deeply technical, highly opinionated essays breaking down the flaws of the standard ebook format. Target these toward modern developer/indie communities (Hacker News, Subreddit groups like `r/selfpublishing`, `r/writing`, and specialized developer blogs). Titles like <em>"Why ePub is a 20-Year-Old Trap for Technical Authors"</em> will generate organic traction.</li>
 <li><strong>The Outreach Strategy:</strong> Directly approach highly visible indie writers or tech bloggers who currently host long-form content or books on poorly formatted, static web pages. Offer to manually run their manuscript through your <strong>core converter engine</strong> to give them a premium, responsive webbook entirely for free in exchange for a case study and testimonial.</li>
 </ul>
-<h2>📢 Phase 2: Frictionless Onboarding &amp;amp; Ecosystem Validation (Months 4–6)</h2>
+<h2>📢 Phase 2: Frictionless Onboarding & Ecosystem Validation (Months 4–6)</h2>
 <p><strong>Target:</strong> 50–75 Active Authors | <strong>Goal:</strong> Hit $2.5k–$5k in validation revenue.</p>
 <ul>
 <li><strong>The Product-Led Growth (PLG) Engine:</strong> Leverage a "Powered by BookMaker" (or your platform brand name) dynamic badge in the footer of every free-tier webbook. Every time a reader opens an author's webbook, enjoys the clean layout, navigation, or TOC, and clicks that link, they enter your conversion funnel. Your product serves as its own primary customer acquisition channel.</li>
-<li><strong>Affiliate &amp;amp; Community Partnerships:</strong> Form partnerships with self-publishing influencers, book formatting experts, and self-publishing industry podcasts (like <em>Novel Marketing</em>). Offer a <strong>recurring affiliate payout cut</strong> (e.g., 20% lifetime of the Pro subscription) to any creator who reviews the platform or creates a tutorial on how to use your 1-click publishing workflow.</li>
+<li><strong>Affiliate & Community Partnerships:</strong> Form partnerships with self-publishing influencers, book formatting experts, and self-publishing industry podcasts (like <em>Novel Marketing</em>). Offer a <strong>recurring affiliate payout cut</strong> (e.g., 20% lifetime of the Pro subscription) to any creator who reviews the platform or creates a tutorial on how to use your 1-click publishing workflow.</li>
 </ul>
-<h2>📈 Phase 3: High-Value Feature Retargeting &amp;amp; The SEO Moat (Months 7–9)</h2>
+<h2>📈 Phase 3: High-Value Feature Retargeting & The SEO Moat (Months 7–9)</h2>
 <p><strong>Target:</strong> 150–200 Subscribed Pro Users | <strong>Goal:</strong> Scale to $3k–$6k MRR.</p>
 <ul>
 <li><strong>Weaponizing Author SEO:</strong> Start publishing data-driven case studies showcasing the platform's unfair SEO advantage. Demonstrate how the HTML structure translates into direct organic search visibility on Google compared to hidden, un-crawlable Kindle ePub files.</li>
 <li><strong>The Feature Upgrade Campaign:</strong> Run automated email and dashboard notification campaigns targeting your free-tier users. When an author’s free webbook crosses a specific traffic threshold (e.g., 1,000 views), send a targeted prompt highlighting the exact value of upgrading to the Pro Tier: <em>“You missed out on $X in revenue this week by not mapping a custom domain and activating advanced analytics. Upgrade to Pro instantly.”</em></li>
 </ul>
-<h2>🚀 Phase 4: Launching the B2B Flywheel &amp;amp; Platform Dominance (Months 10–12+)</h2>
+<h2>🚀 Phase 4: Launching the B2B Flywheel & Platform Dominance (Months 10–12+)</h2>
 <p><strong>Target:</strong> 500+ Paid Active Authors | <strong>Goal:</strong> Breach the $15,000+ MRR milestone.</p>
 <ul>
 <li><strong>Targeting the "Scale Tier" (Micro-Publishers):</strong> Pivot a portion of your marketing focus away from individual authors toward independent boutique publishing houses and niche tech education agencies. These players manage portfolios of 10 to 50 books. Pitch them the <strong>Scale Tier ($99+/month)</strong> as a radical cost-saving tool that entirely replaces expensive in-house web development, layout typesetting, and manual distribution workflows.</li>
 <li><strong>The Ad-Engine Upsell Loop:</strong> Once the "Author-Paid Ads" middleware engine is deployed in your dashboard, market it to your existing user base as the ultimate growth catalyst. Teach authors how your platform's higher profit margins ($4–$8/copy vs. traditional publishing's low cuts) make competitive ad bidding viable. Show them how setting a $50 budget inside your simple dashboard completely bypasses the complex learning curves of running raw Meta or Amazon ad campaigns on their own.</li>
 </ul>
 <h2>📊 Summary Marketing Channel Allocation</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Phase / Timeline</th>
@@ -2168,7 +2167,7 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <td>Multi-book publisher sign-ups</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
     </div>
@@ -2217,18 +2216,18 @@ High-Fidelity Book Layout           SaaS Paywalls &amp;amp; Hosting
 <li><strong>Behavior:</strong> Low budget, highly emotionally invested, and require an immense amount of customer service and hand-holding regarding formatting, querying, and basic web mechanics.</li>
 <li><strong>Alignment:</strong> Low. They yield very low ARPU and create a massive support ticket bottleneck that will paralyze a 1-engineer team.</li>
 </ul>
-<h2>🎯 Prioritization &amp;amp; Rollout Timeline</h2>
+<h2>🎯 Prioritization & Rollout Timeline</h2>
 <p>To optimize for time and cost, you must phase your targeting so that your early users require the least amount of support while providing the highest product validation.</p>
 <p>PHASE 1 (Months 1-3)        PHASE 2 (Months 4-6)        PHASE 3 (Months 7-12+)
-[ Tech / Non-Fiction ]  ──►  [ Speakers &amp;amp; Consultants ] ──► [ Boutique B2B Publishers ]
+[ Tech / Non-Fiction ]  ──►  [ Speakers & Consultants ] ──► [ Boutique B2B Publishers ]
 Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfolio ARR</p>
-<h3>🥇 Priority 1: The Tech &amp;amp; Non-Fiction Segment (Months 1–3)</h3>
+<h3>🥇 Priority 1: The Tech & Non-Fiction Segment (Months 1–3)</h3>
 <ul>
 <li><strong>Targeting Logic:</strong> These authors already write in Markdown. They will not submit messy Microsoft Word docs that break your core converter engine pipeline. They can debug minor CLI or layout glitches themselves and will actively contribute high-quality technical feedback.</li>
 <li><strong>Geographic Focus:</strong> North America, Western Europe, and tech hubs in India (e.g., Bangalore). Keep it strictly English-fluent in Year 1 to avoid character encoding and multi-language parsing complexities in the core engine.</li>
 <li><strong>Efficiency Metric:</strong> <strong>Zero onboarding friction.</strong> They upload clean Markdown; the software outputs a beautiful HTML book tree. Support costs are essentially $0.</li>
 </ul>
-<h3>🥈 Priority 2: Professional Speakers &amp;amp; Consultants (Months 4–6)</h3>
+<h3>🥈 Priority 2: Professional Speakers & Consultants (Months 4–6)</h3>
 <ul>
 <li><strong>Targeting Logic:</strong> Once the "Buy" architecture (hosting + Memberstack paywalls + Stripe/Lemon Squeezy billing) is fully validated by the tech crowd, target the speakers. They have pre-existing audiences and will instantly validate your payment infrastructure.</li>
 <li><strong>Value Hook:</strong> Pitch the absolute elimination of inventory risk. Show them how they can drop-ship print copies straight to a church or conference hall via the dashboard, while offering a premium webbook link to their digital community.</li>
@@ -2239,7 +2238,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Targeting Logic:</strong> Do not target individual hobbyist fiction writers. Instead, go up the value chain to indie boutique publishing houses or small agencies managing multiple authors.</li>
 <li><strong>Value Hook:</strong> Pitch the <strong>Scale Tier ($99+/month)</strong> as an alternative to hiring specialized front-end developers or expensive typesetters. One publisher account managing 20 webbooks brings the MRR equivalent of 20 separate individual users, drastically lowering your customer acquisition cost (CAC).</li>
 </ul>
-<h2>🚫 The "Avoid" List (Cost &amp;amp; Time Protection)</h2>
+<h2>🚫 The "Avoid" List (Cost & Time Protection)</h2>
 <p>To keep your 3-person team focused entirely on the growth flywheel:</p>
 <ul>
 <li><strong>Blacklist Microsoft Word Ingestion Early:</strong> Force early users to input clean text or Markdown. Building a parser that sanitizes unpredictable, heavily styled `.docx` files will consume 80% of your Lead Engineer's development velocity in Year 1.</li>
@@ -2267,20 +2266,20 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Symbiotic Support</span></div></p>
 <p>To secure funding and strategic support for your Webbook Platform, you should look beyond traditional venture capital. Because your platform utilizes a lean, <strong>"Buy-centric" architecture</strong> that scales digital revenue while bypassing traditional distribution monopolies, your ideal backers are organizations and investors whose own core business metrics improve when your platform succeeds.</p>
 <p>Here are the primary categories of symbiotic partners you can lean on, categorized by their alignment with your business interests:</p>
-<h2>☁️ 1. Infrastructure Providers &amp;amp; Dev Tool Investors</h2>
+<h2>☁️ 1. Infrastructure Providers & Dev Tool Investors</h2>
 <p>Because your architecture heavily routes hosting and infrastructure delivery through enterprise edge platforms, these companies have a direct financial incentive to see you scale. As your platform grows from 50 to 500+ authors, your consumption of their edge nodes and API endpoints scales proportionally.</p>
 <ul>
 <li><strong>Cloudflare (Cloudflare Workers Launchpad / Workers Ecosystem Fund):</strong> Since your architecture leverages edge-cached static hosting (like Cloudflare Pages) to serve high-performance HTML layouts globally, you fit perfectly into their ecosystem programs. They actively fund and support startups built on their serverless edge architecture because your growth drives massive network throughput for them.</li>
 <li><strong>Vercel (Mucker Capital / Dev-Tool Focused VCs):</strong> Vercel operates with the exact same symbiotic logic. They actively back developer-focused utilities, static site frameworks, and automation pipelines that prove the speed and superiority of modern front-end web deployment over legacy web servers.</li>
 <li><strong>Developer-Founder Syndicates:</strong> Look for angel syndicates composed of senior engineers or technical founders from companies like Stripe, Twilio, or GitHub. These individuals understand the structural value of a clean, semantic text-parsing engine and can provide elite code-defensibility mentorship to a single-engineer technical architect.</li>
 </ul>
-<h2>💳 2. Financial Infrastructure &amp;amp; Billing Networks</h2>
+<h2>💳 2. Financial Infrastructure & Billing Networks</h2>
 <p>Your platform acts as a high-volume pipeline routing reader subscriptions, paywall checkouts, and author-paid advertising budgets directly through third-party financial rails. This makes you an attractive partner for modern transaction processors.</p>
 <ul>
 <li><strong>Lemon Squeezy / Paddle (Merchant of Record Ecosystems):</strong> Because you are building a Merchant of Record integration into your core system to offload global sales tax and VAT liability, these platforms act as your legal financial resellers. Every dollar an author processes through your paywalls generates guaranteed transaction fee revenue for them. They frequently highlight, support, and provide integration assistance to SaaS platforms that orchestrate high-volume digital product checkouts.</li>
 <li><strong>Stripe (Stripe Partner Ecosystem / Indie Hackers Capital):</strong> Stripe actively nurtures ecosystems that make it easy for non-technical creators to monetize content. By lowering the time-to-market friction for authors via 1-click billing setups, you act as a customer acquisition funnel for Stripe's underlying processing rail.</li>
 </ul>
-<h2>📚 3. Open-Access Foundations &amp;amp; Tech Education Syndicates</h2>
+<h2>📚 3. Open-Access Foundations & Tech Education Syndicates</h2>
 <p>Your primary market prioritization strategy focuses heavily on <strong>Tech and Non-Fiction Creators</strong> who require high-fidelity code layouts, indexable documentation, and search-optimized (SEO) text frameworks.</p>
 <ul>
 <li><strong>Mozilla Ventures:</strong> Guided by a mandate to back technologies that promote an open, decentralized, and highly accessible internet ecosystem, Mozilla is an ideal ideological and operational fit. Your webbook model directly challenges closed app-store distribution cartels (which take 30%–65% of an author's earnings) by returning 100% data sovereignty and financial control to independent authors on their own custom domains.</li>
@@ -2312,7 +2311,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <p>Here is a tailored pitch matrix and slide-by-slide structure optimized for the three symbiotic audience groups. Since you are building a lean platform using a <strong>"Buy" architecture</strong>, these pitches focus heavily on capital efficiency, infrastructure alignment, and immediate market demand.</p>
 <h2>🎯 The Universal Hook (The Core Thesis)</h2>
 <p>> <em>"Legacy publishing locks human knowledge into closed, un-crawlable black boxes (.epub and .pdf) controlled by third-party distribution cartels. We have built an automated conversion engine that transforms raw manuscripts into high-fidelity, browser-native Webbooks—giving independent authors 100% margin retention, instant edge-speed delivery, and total search engine discoverability out of the box."</em></p>
-<h2>💼 Audience 1: Infrastructure &amp;amp; Edge Providers (Cloudflare, Vercel)</h2>
+<h2>💼 Audience 1: Infrastructure & Edge Providers (Cloudflare, Vercel)</h2>
 <p><strong>The Symbiotic Angle:</strong> Your platform drives high-volume static file deployments, serverless operations, and edge network bandwidth. You are a customer-acquisition funnel for their technology stack.</p>
 <h3>🖼️ Key Pitch Slides</h3>
 <ul>
@@ -2321,7 +2320,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Slide 3: The Developer Ecosystem.</strong> Highlight why technical and non-fiction authors—your primary phase 1 targets—prefer systems that align with modern web deployment workflows.</li>
 </ul>
 <p>> <strong>💬 The Closing Ask:</strong> <em>"We are seeking $15,000 in early ecosystem infrastructure credits and technical validation partnership to optimize our automated deployment pipeline natively for your global edge nodes."</em></p>
-<h2>💳 Audience 2: Financial Platforms &amp;amp; Merchants of Record (Lemon Squeezy, Stripe Partner Fund)</h2>
+<h2>💳 Audience 2: Financial Platforms & Merchants of Record (Lemon Squeezy, Stripe Partner Fund)</h2>
 <p><strong>The Symbiotic Angle:</strong> You are eliminating checkout friction for a massive global creator base. Every author who launches a paywalled book on your system becomes a sticky, high-volume transactional merchant for their processing rails.</p>
 <h3>🖼️ Key Pitch Slides</h3>
 <ul>
@@ -2330,7 +2329,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Slide 3: The Transactional Forecast.</strong> Outline your 3-year growth model mapping the compound transactional volume (GMV) passing through the system as authors build premium backlists.</li>
 </ul>
 <p>> <strong>💬 The Closing Ask:</strong> <em>"We are seeking integration engineering support and strategic network placement to route our platform's anticipated multi-million dollar global reader transactional volume directly through your compliance framework."</em></p>
-<h2>🌐 Audience 3: Open-Access &amp;amp; Technical Education Syndicates (Mozilla Ventures, B2B Tech Content Publishers)</h2>
+<h2>🌐 Audience 3: Open-Access & Technical Education Syndicates (Mozilla Ventures, B2B Tech Content Publishers)</h2>
 <p><strong>The Symbiotic Angle:</strong> You are democratizing access to structured information, weaponizing SEO for independent creators, and fighting back against centralized digital gatekeepers.</p>
 <h3>🖼️ Key Pitch Slides</h3>
 <ul>
@@ -2340,7 +2339,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 <p>> <strong>💬 The Closing Ask:</strong> <em>"We are looking for a $50,000 strategic pre-seed investment or corporate pilot partnership to accelerate our Phase 3 premium feature pipeline and establish a new benchmark for open, crawlable, high-fidelity web literature."</em></p>
 <h2>🛠️ The Lean Implementation Strategy</h2>
-<p>`&amp;amp;#46;egin{array}{|l|l|l|} &amp;amp;#46;line &amp;amp;#46;extbf{Target Audience} &amp;amp; &amp;amp;#46;extbf{Core Value Metric} &amp;amp; &amp;amp;#46;extbf{Primary Marketing Asset Needed} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Infrastructure VCs} &amp;amp; &amp;amp;#46;ext{Edge Network Throughput} &amp;amp; &amp;amp;#46;ext{Technical Architecture &amp;amp; Parser Documentation} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Financial Rail Networks} &amp;amp; &amp;amp;#46;ext{Gross Transactional Volume (GMV)} &amp;amp; &amp;amp;#46;ext{Paywall &amp;amp; Checkout UX Interactive Mockups} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;ext{Open-Access Foundations} &amp;amp; &amp;amp;#46;ext{SEO / Content Indexability Data} &amp;amp; &amp;amp;#46;ext{Case Study on Webbook vs. Kindle ePub Discoverability} &amp;amp;#92; &amp;amp;#46;line &amp;amp;#46;nd{array}`</p>
+<p>`\begin{array}{|l|l|l|} \hline \textbf{Target Audience} & \textbf{Core Value Metric} & \textbf{Primary Marketing Asset Needed} &#92; \hline \text{Infrastructure VCs} & \text{Edge Network Throughput} & \text{Technical Architecture & Parser Documentation} &#92; \hline \text{Financial Rail Networks} & \text{Gross Transactional Volume (GMV)} & \text{Paywall & Checkout UX Interactive Mockups} &#92; \hline \text{Open-Access Foundations} & \text{SEO / Content Indexability Data} & \text{Case Study on Webbook vs. Kindle ePub Discoverability} &#92; \hline \end{array}`</p>
 <p>Which of these three audiences aligns best with your immediate networking circles for the Phase 1 launch?</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -2363,28 +2362,28 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
         <div class="chapter-marker" data-chapter-raw="Tag Lines" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Tag Lines</span></div></p>
 <p>Here are a few targeted marketing taglines and slogans for the platform, broken down by the core emotional and financial hooks that resonate with independent authors:</p>
-<h3>💰 Focus: Financial Sovereignty &amp;amp; Profit</h3>
+<h3>💰 Focus: Financial Sovereignty & Profit</h3>
 <ul>
 <li>"Kill the App Store Tax. Keep 100% of Your Words."</li>
 <li>"Why give Amazon 30%? Publish on your own domain, keep your own profits."</li>
 <li>"From manuscript to high-margin SaaS engine."</li>
 <li>"Retain your royalties. Control your data. Own your audience."</li>
 </ul>
-<h3>🌐 Focus: SEO &amp;amp; Discoverability (The Open Web Advantage)</h3>
+<h3>🌐 Focus: SEO & Discoverability (The Open Web Advantage)</h3>
 <ul>
 <li>"Ebooks are a black box. Webbooks own the internet."</li>
 <li>"Turn every chapter into a traffic magnet."</li>
 <li>"Stop hiding your knowledge in closed files. Let the web read you."</li>
 <li>"Optimized for search engines. Perfected for human eyes."</li>
 </ul>
-<h3>⚙️ Focus: The Reading Experience &amp;amp; Layout</h3>
+<h3>⚙️ Focus: The Reading Experience & Layout</h3>
 <ul>
 <li>"The soul of a physical book. The speed of the global edge."</li>
 <li>"Manuscripts converted to browser-native masterpieces in one click."</li>
 <li>"Beautiful page layout, responsive pacing, zero app required."</li>
 <li>"Where high-fidelity literature meets modern web performance."</li>
 </ul>
-<h3>🚀 Short &amp;amp; Punchy (Ideal for Footers &amp;amp; Badges)</h3>
+<h3>🚀 Short & Punchy (Ideal for Footers & Badges)</h3>
 <ul>
 <li>"Powered by BookMaker. Literature, Unbound."</li>
 <li>"Publish Direct. Read Anywhere."</li>
@@ -2419,7 +2418,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>The Teaser (Public Layer):</strong> A high-level, 1-2 page document or brief pitch deck. It focuses heavily on the <em>problem</em> and the <em>market size</em>, but describes the <em>solution</em> conceptually without revealing the proprietary mechanics.</li>
 <li><strong>The Deep Dive (Confidential Layer):</strong> The full plan, including detailed financial models, specific technical architectures, or proprietary operational workflows. This is only shared after initial vetting.</li>
 </ul>
-<h2>2. Information Security &amp;amp; Control</h2>
+<h2>2. Information Security & Control</h2>
 <p>How you share your plan is just as important as what is in it. Retain control over the digital footprint of your documents.</p>
 <ul>
 <li><strong>Use Secure Viewing Platforms:</strong> Instead of sending PDFs as email attachments, use document-sharing platforms (like DocSend, Brieflink, or secure Google Drive links) that allow you to disable downloading, printing, and forwarding.</li>
@@ -2481,7 +2480,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 </li>
 </ul>
-<h3>2. Workflow &amp;amp; Integration</h3>
+<h3>2. Workflow & Integration</h3>
 <ul>
 <li><strong>The "What" (Share This):</strong> The user experience (UX) and input/output. Describe a smooth, intuitive multi-step setup or interface.
 <ul>
@@ -2490,7 +2489,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </li>
 <li><strong>The "How" (Hide This):</strong> The exact sequence of the software's internal operations, data structures, or custom CSS framework libraries used to build the responsive output.</li>
 </ul>
-<h3>3. Efficiency &amp;amp; Metrics (The "Traction" Layer)</h3>
+<h3>3. Efficiency & Metrics (The "Traction" Layer)</h3>
 <ul>
 <li><strong>The "What" (Share This):</strong> Hard data, performance metrics, and cost/time savings. This is what investors or partners actually care about.
 <ul>
@@ -2500,7 +2499,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>The "How" (Hide This):</strong> The exact optimization tricks in your pipeline that yield those performance gains.</li>
 </ul>
 <h2>Content Blueprint: Side-by-Side Comparison</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Section</th>
@@ -2530,7 +2529,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <td>The specific developer workflows, API integrations, or proprietary features currently in active development.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p>> <strong>The Golden Rule:</strong> If a competent developer or competitor can hear your presentation and write down a checklist of instructions to recreate your software, you’ve shared the <em>How</em>. If they walk away thinking, "Wow, that saves a ton of time, I wonder how they optimized that pipeline so perfectly," you've successfully stuck to the <em>What</em>.</p>
 <p>Are you designing this content for a brief verbal pitch, a written executive summary, or a presentation deck?</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
@@ -2567,7 +2566,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 </li>
 <li><strong>Revenue Model:</strong> $0 (Pure open-access/freeware to eliminate all friction to entry).</li>
-<li><strong>Valuation Driver:</strong> <strong>Asset-Based &amp;amp; Intellectual Property (IP).</strong> At this stage, your valuation isn't based on cash flow; it’s based on the replacement cost of your proprietary automation pipeline and the raw size of your highly engaged user base.</li>
+<li><strong>Valuation Driver:</strong> <strong>Asset-Based & Intellectual Property (IP).</strong> At this stage, your valuation isn't based on cash flow; it’s based on the replacement cost of your proprietary automation pipeline and the raw size of your highly engaged user base.</li>
 <li><strong>Early Exit Scenario:</strong> A "Team + Technology" acquirer (an acqui-hire) looking to swallow your automated layout engine to bolster their own internal engineering pipeline.</li>
 </ul>
 <h3>Stage 2: The Monetization Phase (Focus: Commercial Viability)</h3>
@@ -2585,10 +2584,10 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><em>Target Annual Recurring Revenue (ARR):</em> $250k – $1M.</li>
 </ul>
 </li>
-<li><strong>Valuation Driver:</strong> <strong>Revenue Multiples &amp;amp; Growth Velocity.</strong> Software-as-a-Service (SaaS) and developer tools at this stage are typically valued at a multiple of ARR (e.g., 5x to 10x+ ARR), heavily weighted by your year-over-year growth rate and net revenue retention.</li>
+<li><strong>Valuation Driver:</strong> <strong>Revenue Multiples & Growth Velocity.</strong> Software-as-a-Service (SaaS) and developer tools at this stage are typically valued at a multiple of ARR (e.g., 5x to 10x+ ARR), heavily weighted by your year-over-year growth rate and net revenue retention.</li>
 <li><strong>Mid-Stage Exit Scenario:</strong> Strategic acquisition by a mid-sized content management system (CMS), a developer platform, or a digital publishing platform looking to instantly capture your niche market share.</li>
 </ul>
-<h3>Stage 3: The Scale &amp;amp; Strategic Exit Phase (Focus: Corporate Synergy)</h3>
+<h3>Stage 3: The Scale & Strategic Exit Phase (Focus: Corporate Synergy)</h3>
 <p>Your tool is now an established pipeline player, making it an attractive target for massive tech ecosystems or traditional publishing giants trying to modernize.</p>
 <ul>
 <li><strong>Usage Metrics:</strong> 200,000+ users, dominating the niche market for digital-first manuscript layouts.</li>
@@ -2597,7 +2596,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Final Exit Scenario:</strong> Total acquisition or merger.</li>
 </ul>
 <h2>Strategic Alignment Matrix</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Phase</th>
@@ -2618,24 +2617,24 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <tr>
 <td><strong>2. Monetization</strong></td>
 <td>Paid Tier Conversion %</td>
-<td>Premium Hosting &amp;amp; Advanced Templates (ARR)</td>
+<td>Premium Hosting & Advanced Templates (ARR)</td>
 <td>5x–10x ARR Multiple</td>
 <td>Mid-market SaaS platforms, digital publishing tools, web CMS ecosystems.</td>
 </tr>
 <tr>
 <td><strong>3. Strategic Scale</strong></td>
 <td>Market Penetration %</td>
-<td>Enterprise White-Labeling &amp;amp; Ecosystem Licensing</td>
+<td>Enterprise White-Labeling & Ecosystem Licensing</td>
 <td>Strategic Synergy Premium (Forward earnings potential)</td>
 <td>Major Tech Conglomerates, Global Publishing Houses, Cloud/Hosting Providers.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <h2>Structuring the "Perfect Match" Acquirer Profile</h2>
 <p>When building this roadmap into your confidential business plan, you must clearly identify <em>why</em> someone would buy this asset. For a modern digital-book conversion engine, your ideal acquirers fall into three distinct buckets:</p>
 <ol>
 <li><strong>The Cloud Hosting/Web Ecosystems:</strong> Platforms looking to capture the "long tail" of content creators by offering a seamless way to transform offline manuscripts into highly optimized, indexable web pages that drive hosting consumption.</li>
-<li><strong>Legacy Educational &amp;amp; Scientific Publishers:</strong> Giants who are bleed-ing margins to manual frontend developers to convert textbooks into digital formats and need an internal, fully automated pipeline tool to cut operational overhead by 80%.</li>
+<li><strong>Legacy Educational & Scientific Publishers:</strong> Giants who are bleed-ing margins to manual frontend developers to convert textbooks into digital formats and need an internal, fully automated pipeline tool to cut operational overhead by 80%.</li>
 <li><strong>Self-Publishing Platforms:</strong> Existing marketplaces that want to elevate the quality of their authors' output from ugly, standard text files to modern, fully responsive web layouts with zero technical friction.</li>
 </ol>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
@@ -2708,28 +2707,28 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <p>To protect community goodwill while monetizing an open-core or freeware engine, you must use a <strong>buyer-based framework</strong>: keep features that benefit the individual creator or developer entirely free, and charge for features that benefit <em>businesses, managers, or scaled production lines</em>.</p>
 <p>If the core tool already lets an individual successfully build and format a beautiful web book from start to finish, the community will celebrate your paid tiers rather than feeling exploited.</p>
 <p>The most strategic, high-value premium features to gate fall into three clear buckets:</p>
-<h2>1. Automated Infrastructure &amp;amp; "Convenience" SaaS</h2>
+<h2>1. Automated Infrastructure & "Convenience" SaaS</h2>
 <p>The engine is free to run locally, but you charge for saving the user operational time, server management, and deployment friction.</p>
 <ul>
-<li><strong>1-Click Cloud Publishing &amp;amp; Custom Domains:</strong> Free users run a script to generate raw HTML/CSS/JS files locally, which they must host themselves (e.g., via GitHub Pages or Netlify). Paid users get a "Publish to Web" button that handles instant, managed cloud hosting, automated SSL certificates, and custom domain mapping.</li>
+<li><strong>1-Click Cloud Publishing & Custom Domains:</strong> Free users run a script to generate raw HTML/CSS/JS files locally, which they must host themselves (e.g., via GitHub Pages or Netlify). Paid users get a "Publish to Web" button that handles instant, managed cloud hosting, automated SSL certificates, and custom domain mapping.</li>
 <li><strong>Automated Asset Optimization Pipelines:</strong> An advanced, cloud-based media pipeline. While the free tool links local images, the paid tier automatically runs images through cloud-based compression, generates modern next-gen formats (like WebP/AVIF), and serves them via a global CDN to make the web-book load instantly worldwide.</li>
-<li><strong>Webhooks &amp;amp; Automated Deployments:</strong> The ability to trigger an automated book rebuild every time the author pushes a commit to GitHub or updates a Google Doc, entirely bypassing manual CLI execution.</li>
+<li><strong>Webhooks & Automated Deployments:</strong> The ability to trigger an automated book rebuild every time the author pushes a commit to GitHub or updates a Google Doc, entirely bypassing manual CLI execution.</li>
 </ul>
-<h2>2. Organization, Collaboration &amp;amp; Enterprise Controls</h2>
+<h2>2. Organization, Collaboration & Enterprise Controls</h2>
 <p>Individual authors don't need collaboration; teams and small publishing houses do. This is your highest-margin tier.</p>
 <ul>
-<li><strong>Shared Workspace &amp;amp; Team Workflows:</strong> Allowing multiple users (e.g., an author, an editor, and a proofreader) to collaborate inside the setup wizard, leave comments on specific layout blocks, or manage a joint catalog of books.</li>
+<li><strong>Shared Workspace & Team Workflows:</strong> Allowing multiple users (e.g., an author, an editor, and a proofreader) to collaborate inside the setup wizard, leave comments on specific layout blocks, or manage a joint catalog of books.</li>
 <li><strong>Role-Based Access Control (RBAC):</strong> Restricting who can modify the core book configuration files, who can push changes live to the web, and who has read-only editing access.</li>
-<li><strong>Advanced Brand &amp;amp; Global Style Management:</strong> While free users can manually tweak theme CSS, paid enterprise accounts get centralized design tokens—allowing a publisher to update a single brand setting and instantly push those style guidelines across a portfolio of 50 different web books.</li>
+<li><strong>Advanced Brand & Global Style Management:</strong> While free users can manually tweak theme CSS, paid enterprise accounts get centralized design tokens—allowing a publisher to update a single brand setting and instantly push those style guidelines across a portfolio of 50 different web books.</li>
 </ul>
-<h2>3. Reader Engagement &amp;amp; Analytics (Value Add-Ons)</h2>
+<h2>3. Reader Engagement & Analytics (Value Add-Ons)</h2>
 <p>Features that help the publisher make money or gather data are inherently valuable, making them easy to monetize.</p>
 <ul>
 <li><strong>Advanced Reader Analytics Dashboard:</strong> A proprietary, privacy-first analytics pipeline built into the web book. It shows the publisher deep engagement metrics: <em>Which chapters have the highest drop-off rates? How far do readers scroll? What custom styling choices result in longer reading times?</em></li>
-<li><strong>Gated Content &amp;amp; Paywall Integrations:</strong> Built-in widgets that allow creators to password-protect specific chapters, integrate seamlessly with newsletter platforms (like Substack or Beehiiv) for "subscriber-only" chapters, or plug in standard payment APIs to sell access directly.</li>
+<li><strong>Gated Content & Paywall Integrations:</strong> Built-in widgets that allow creators to password-protect specific chapters, integrate seamlessly with newsletter platforms (like Substack or Beehiiv) for "subscriber-only" chapters, or plug in standard payment APIs to sell access directly.</li>
 </ul>
 <h2>The Monetization Line: Free vs. Paid</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Free / Open-Access Core</th>
@@ -2754,7 +2753,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <td>Centralized, enterprise-wide global brand templates.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p>> <strong>The Golden Rule of Goodwill:</strong> Never move a feature that was previously free behind a paywall. Keep the open core robust, high-performing, and fully functional for a single developer or indie author. When you charge, make sure you are charging for <strong>scale, infrastructure, and collaboration</strong>—things businesses are more than happy to pay for.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -2776,7 +2775,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
                 --mobile-font-size: 0.9em">
         <div class="chapter-marker" data-chapter-raw="SAAS Pricing" style="display: none;"></div>
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">SAAS Pricing</span></div></p>
-<p>The monetization plan has been structured specifically into a highly professional document mapping out features across the <strong>Open Core (Free)</strong>, <strong>Professional ($12/mo)</strong>, and <strong>Team &amp;amp; Publisher ($49/mo)</strong> tiers.</p>
+<p>The monetization plan has been structured specifically into a highly professional document mapping out features across the <strong>Open Core (Free)</strong>, <strong>Professional ($12/mo)</strong>, and <strong>Team & Publisher ($49/mo)</strong> tiers.</p>
 <h3>Strategic Value Behind the Tiers:</h3>
 <ol>
 <li><strong>Open Core ($0 / Lifetime):</strong>
@@ -2791,7 +2790,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Strategic Intent:</strong> Charges strictly for <strong>infrastructure convenience</strong>. It completely bypasses manual hosting pipelines, custom domain mapping hassles, and asset performance optimizations (like converting large images to optimized next-gen web files over global networks).</li>
 </ul>
 </li>
-<li><strong>Team &amp;amp; Publisher ($49 / Month):</strong>
+<li><strong>Team & Publisher ($49 / Month):</strong>
 <ul>
 <li><strong>Target Audience:</strong> Small indie presses, educational/academic departments, corporate technical documentation managers.</li>
 <li><strong>Strategic Intent:</strong> Charges for <strong>collaboration, governance, and business insight</strong>. This provides a massive profit margin layer featuring secure multi-user collaboration workspaces, automated webhook redeploys, and deep behavioral reading analytics data that publishing companies rely on to thrive.</li>
@@ -2846,7 +2845,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>The UI/UX "Look and Feel":</strong> While you cannot easily copyright functional layout code, you can protect distinct, non-functional visual design patterns and branding elements within your setup wizard or user interface under trade dress laws.</li>
 </ul>
 <h2>Summary Strategy for Your Roadmap</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Asset Component</th>
@@ -2866,12 +2865,12 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <td>Protects the high-value automated hosting, analytics dashboards, and team collaboration frameworks.</td>
 </tr>
 <tr>
-<td><strong>Brand &amp;amp; Interface</strong></td>
+<td><strong>Brand & Interface</strong></td>
 <td>Registered Trademark</td>
 <td>Prevents copycats from piggybacking on your community goodwill or mimicking your setup wizard UI.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p>Using this architecture, you give the developer community the total transparency they love, while building a legal and operational firewall that makes copycatting your commercial roadmap a corporate nightmare.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -2932,7 +2931,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 </li>
 </ul>
-<h3>Phase 3: The Bridge to Exit (Funding Stage 3: Scale &amp;amp; Strategic Exit)</h3>
+<h3>Phase 3: The Bridge to Exit (Funding Stage 3: Scale & Strategic Exit)</h3>
 <ul>
 <li><strong>Instrument:</strong> Strategic Corporate Equity or Venture Debt.</li>
 <li><strong>Equity Target:</strong> Dilute <strong>5% – 10%</strong> (Ideally taken by a strategic industry partner).</li>
@@ -2941,7 +2940,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Milestone Trajectory:</strong>
 <ul>
 <li>Scale the enterprise white-labeling templates and automated webhook pipelines for boutique presses and legacy publishing giants.</li>
-<li>Fund targeted corporate business development to position the business for a lucrative M&amp;amp;A transaction within 12–18 months.</li>
+<li>Fund targeted corporate business development to position the business for a lucrative M&A transaction within 12–18 months.</li>
 </ul>
 </li>
 </ul>
@@ -2954,11 +2953,11 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ol>
 <h2>Capital Utilization Breakdown</h2>
 <p>When you close a round, the capital derived from your equity should be strictly ring-fenced:</p>
-<p>[Capital Raised]
-│
-├── 65% ──► Engineering &amp;amp; Product (Pipeline optimization, SaaS infrastructure, UI/UX wizard styling)
-├── 20% ──► Infrastructure &amp;amp; Ops (Global CDN hosting networks, legal trademarking, AGPL compliance monitoring)
-└── 15% ──► Growth &amp;amp; Community (Developer relations, author ecosystem outreach, customer support)</p>
+<p>[Capital Raised] 
+   │
+   ├── 65% ──► Engineering & Product (Pipeline optimization, SaaS infrastructure, UI/UX wizard styling)
+   ├── 20% ──► Infrastructure & Ops (Global CDN hosting networks, legal trademarking, AGPL compliance monitoring)
+   └── 15% ──► Growth & Community (Developer relations, author ecosystem outreach, customer support)</p>
 <p>By tying every percentage of equity yielded directly to a hard technical or user-adoption milestone, you ensure that as your own slice of the pie shrinks, the overall value of the pie expands exponentially right up to the point of sale.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -2982,20 +2981,20 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;">Royalty and licensing agreement</span></div></p>
 <p>When executing an exit strategy for an open-core automation engine and SaaS publishing platform, structured ongoing compensation ensures you capture long-term upside even after relinquishing equity control.</p>
 <p>Here is the operational blueprint for structuring a post-acquisition <strong>Royalty Agreement</strong> and defining your <strong>Advisorship/Executive Transition Framework</strong>.</p>
-<h2>1. Post-Exit Royalty &amp;amp; Licensing Agreement</h2>
+<h2>1. Post-Exit Royalty & Licensing Agreement</h2>
 <p>A post-exit royalty agreement structures continuous financial returns based on the purchasing team's deployment of your core automation engine. This is particularly effective if a legacy publishing house or cloud provider integrates your layout pipeline across their entire ecosystem.</p>
 <h3>Key Royalty Parameters</h3>
 <ul>
 <li><strong>The Licensing Model:</strong> Net Revenue Share vs. Per-Unit Licensing.
 <ul>
-<li><em>Per-Unit Royalty:</em> A fixed fee (e.g., &amp;amp;#36;0.25 to &amp;amp;#36;0.50) paid to you for every individual book or manuscript successfully processed and compiled through the production engine into a live web-book.</li>
-<li><em>Revenue Percentage:</em> A 2&amp;amp;#37; &amp;amp;#46;ext{ to } 5&amp;amp;#37; royalty on all gross recurring revenue generated by the specific platform tiers (Pro/Team) or enterprise white-label contracts that utilize your proprietary setup wizard and distribution pipeline.</li>
+<li><em>Per-Unit Royalty:</em> A fixed fee (e.g., \$0.25 to \$0.50) paid to you for every individual book or manuscript successfully processed and compiled through the production engine into a live web-book.</li>
+<li><em>Revenue Percentage:</em> A 2\% \text{ to } 5\% royalty on all gross recurring revenue generated by the specific platform tiers (Pro/Team) or enterprise white-label contracts that utilize your proprietary setup wizard and distribution pipeline.</li>
 </ul>
 </li>
 <li><strong>The "Audit Right" Clause:</strong> Your contract must include a mandatory, independent annual look at the acquirer's database logs and financial records. Because you are tracking automated digital pipelines, you need verified API call counts and user generation metrics to ensure accurate payout tracking.</li>
-<li><strong>Royalty Cap &amp;amp; Sunset Strategy:</strong> Acquirers rarely agree to perpetual royalties. Structure the agreement with either a <strong>Time Sunset</strong> (e.g., paid out for 5 years post-acquisition) or a <strong>Financial Cap</strong> (e.g., royalties cease once total payouts reach a specific, predetermined cumulative value like &amp;amp;#36;2&amp;amp;#46;ext{M}).</li>
+<li><strong>Royalty Cap & Sunset Strategy:</strong> Acquirers rarely agree to perpetual royalties. Structure the agreement with either a <strong>Time Sunset</strong> (e.g., paid out for 5 years post-acquisition) or a <strong>Financial Cap</strong> (e.g., royalties cease once total payouts reach a specific, predetermined cumulative value like \$2\text{M}).</li>
 </ul>
-<h2>2. Post-Exit Advisory &amp;amp; Transition Roles</h2>
+<h2>2. Post-Exit Advisory & Transition Roles</h2>
 <p>Acquirers routinely require the original architecture creator to stick around to oversee system integration, prevent system breakage, and maintain developer community alignment. You should consider three distinct roles depending on how hands-on you wish to remain:</p>
 <h3>Role A: Strategic Technology Advisor (Light Touch)</h3>
 <ul>
@@ -3003,7 +3002,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Time Commitment:</strong> 5 to 10 hours per month (primarily structured via ad-hoc review meetings and asynchronous communications).</li>
 <li><strong>Compensation Framework:</strong>
 <ul>
-<li><em>Retainer:</em> A fixed monthly advisory stipend (e.g., &amp;amp;#36;3,000 &amp;amp;#46;ext{ to } &amp;amp;#36;5,000/&amp;amp;#46;ext{mo}).</li>
+<li><em>Retainer:</em> A fixed monthly advisory stipend (e.g., \$3,000 \text{ to } \$5,000/\text{mo}).</li>
 <li><em>Accelerated Vesting:</em> If a portion of your exit payout was tied to a multi-year milestone schedule (an earn-out), this advisory role keeps you technically active to ensure those milestones are hit without forcing you into full-time employment corporate drag.</li>
 </ul>
 </li>
@@ -3014,7 +3013,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>Time Commitment:</strong> 10 to 20 hours per week for a fixed duration (e.g., a 6-month post-close integration window).</li>
 <li><strong>Compensation Framework:</strong>
 <ul>
-<li><em>Hourly/Daily Contract Rate:</em> High-tier consulting fees (e.g., &amp;amp;#36;200 &amp;amp;#46;ext{ to } &amp;amp;#36;350/&amp;amp;#46;ext{hour}).</li>
+<li><em>Hourly/Daily Contract Rate:</em> High-tier consulting fees (e.g., \$200 \text{ to } \$350/\text{hour}).</li>
 <li><em>Retention Bonus:</em> A cash lump sum paid out explicitly upon the successful execution of the system migration milestone, entirely separate from your initial acquisition payout.</li>
 </ul>
 </li>
@@ -3028,8 +3027,8 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <h2>3. Structural Safeguards for Ongoing Roles</h2>
 <p>To ensure your advisory tenure remains lucrative and conflict-free, ensure the final purchase agreement includes these protective guidelines:</p>
 <ul>
-<li><strong>Strict Non-Disparagement &amp;amp; Carve-Outs:</strong> Ensure your advisory agreement does not contain overly restrictive clauses that limit your capacity to build <em>other</em>, non-competing software frameworks, automated data pipelines, or personal creative projects during your downtime.</li>
-<li><strong>Indemnification Continuity:</strong> The purchasing company must explicitly extend their corporate Directors and Officers (D&amp;amp;O) insurance and liability protections to you during your advisory tenure. You should not bear personal legal risk for system integration bugs or operational deployment errors executed by the acquirer's full-time staff.</li>
+<li><strong>Strict Non-Disparagement & Carve-Outs:</strong> Ensure your advisory agreement does not contain overly restrictive clauses that limit your capacity to build <em>other</em>, non-competing software frameworks, automated data pipelines, or personal creative projects during your downtime.</li>
+<li><strong>Indemnification Continuity:</strong> The purchasing company must explicitly extend their corporate Directors and Officers (D&O) insurance and liability protections to you during your advisory tenure. You should not bear personal legal risk for system integration bugs or operational deployment errors executed by the acquirer's full-time staff.</li>
 </ul>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -3056,20 +3055,20 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <h3>1. Royalty Grant and Consideration</h3>
 <p><strong>1.1 Structure of Royalty:</strong> As partial consideration for the acquisition of the proprietary manuscript-to-web-book conversion engine and associated setup wizard assets (collectively, the "Software Assets"), the Purchaser shall pay to the Seller an ongoing running royalty (the "Royalty") calculated as follows:</p>
 <ul>
-<li><strong>[Option A - Net Revenue Model]:</strong> Four percent (4.0&amp;amp;#37;) of all Net Revenue (as defined in Section 2) derived from the exploitation, licensing, or commercial SaaS subscription hosting tiers utilizing the Software Assets.</li>
-<li><strong>[Option B - Per-Unit Transactional Model]:</strong> A fixed fee of Thirty-Five Cents (&amp;amp;#36;0.35) per individual digital manuscript or book successfully compiled, formatted, and pushed to a live staging or production web environment using the Software Assets' automated parsing pipeline.</li>
+<li><strong>[Option A - Net Revenue Model]:</strong> Four percent (4.0\%) of all Net Revenue (as defined in Section 2) derived from the exploitation, licensing, or commercial SaaS subscription hosting tiers utilizing the Software Assets.</li>
+<li><strong>[Option B - Per-Unit Transactional Model]:</strong> A fixed fee of Thirty-Five Cents (\$0.35) per individual digital manuscript or book successfully compiled, formatted, and pushed to a live staging or production web environment using the Software Assets' automated parsing pipeline.</li>
 </ul>
 <p><strong>1.2 Royalty Term and Cap:</strong> The Purchaser’s obligation to compute and pay Royalties shall commence on the closing date of the acquisition and shall persist until the earlier of:</p>
 <ul>
-<li>The fifth (5&amp;amp;#46;ext{th}) anniversary of the execution date (the "Sunset Date"), or</li>
-<li>The date upon which the cumulative, aggregate Royalty payouts made to the Seller reach a ceiling of Two Million Dollars (&amp;amp;#36;2,000,000.00) (the "Royalty Cap").</li>
+<li>The fifth (5\text{th}) anniversary of the execution date (the "Sunset Date"), or</li>
+<li>The date upon which the cumulative, aggregate Royalty payouts made to the Seller reach a ceiling of Two Million Dollars (\$2,000,000.00) (the "Royalty Cap").</li>
 </ul>
 <h3>2. Definition of Net Revenue</h3>
 <p><strong>2.1 Gross vs. Net Formulations:</strong> "Net Revenue" shall mean all gross cash receipts and invoices billed or collected by the Purchaser, its subsidiaries, or corporate affiliates, directly attributable to the commercial exploitation of the Software Assets (including but not limited to Premium Pro, Team, or Enterprise white-label subscriptions).</p>
 <p><strong>2.2 Permissible Deductions:</strong> Net Revenue shall be calculated by deducting from Gross Revenue <em>only</em> the following actual, verifiable out-of-pocket costs, provided they are directly tied to the end-user transactional layer:</p>
 <ul>
 <li>Actual refunds, chargebacks, or billing credits issued directly to customers.</li>
-<li>Standard credit card processing fees (e.g., Stripe, PayPal merchant fees) not to exceed 3.0&amp;amp;#37; per transaction.</li>
+<li>Standard credit card processing fees (e.g., Stripe, PayPal merchant fees) not to exceed 3.0\% per transaction.</li>
 <li>Applicable state, local, or federal sales taxes explicitly collected from the consumer and remitted directly to a taxing authority.</li>
 <li><em>No allocation of Purchaser's internal engineering overhead, general corporate administrative costs, server hosting infrastructure expenses, or employee salaries may be deducted to reduce Net Revenue.</em></li>
 </ul>
@@ -3086,9 +3085,9 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <p><strong>4.1 Right to Inspect:</strong> The Seller, or a designated independent Certified Public Accountant (CPA) bound by appropriate confidentiality agreements, shall have the right, upon fifteen (15) business days’ written notice, to examine, inspect, and copy the relevant financial books, accounting ledgers, and technical deployment/database logs of the Purchaser during normal working hours.</p>
 <p><strong>4.2 Technical Verification:</strong> The Purchaser explicitly agrees to maintain immutable digital event logs capturing every automated file pipeline execution, repository sync webhook call, and manuscript-to-web parsing completion. These technical metrics must be preserved for a rolling window of three (3) years and made accessible during an audit to verify that system utilization matches financial disclosures.</p>
 <p><strong>4.3 Frequency of Audits:</strong> Such inspections may take place no more than once per calendar year, provided that the Seller’s right to audit any individual Royalty Period expires two (2) years after the statement for that period has been delivered.</p>
-<p><strong>4.4 Allocation of Audit Costs:</strong> The baseline cost of conducting an independent audit shall be borne entirely by the Seller. However, if an audit reveals an underpayment of Royalties exceeding five percent (5.0&amp;amp;#37;) of the amount actually due for any given Royalty Period:</p>
+<p><strong>4.4 Allocation of Audit Costs:</strong> The baseline cost of conducting an independent audit shall be borne entirely by the Seller. However, if an audit reveals an underpayment of Royalties exceeding five percent (5.0\%) of the amount actually due for any given Royalty Period:</p>
 <ul>
-<li>The Purchaser shall immediately pay the full deficiency amount plus accrued interest calculated at a rate of 1.5&amp;amp;#37; per month (or the maximum rate permitted by law) from the original due date.</li>
+<li>The Purchaser shall immediately pay the full deficiency amount plus accrued interest calculated at a rate of 1.5\% per month (or the maximum rate permitted by law) from the original due date.</li>
 <li>The Purchaser shall entirely reimburse the Seller for all reasonable, out-of-pocket accounting, auditing, and legal fees incurred to conduct the verification process.</li>
 </ul>
 <h3>5. Integration and Operational Continuity</h3>
@@ -3117,7 +3116,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <p>As you progress through your milestones, your NDA strategy needs to evolve from a simple protective shield into a sophisticated, multi-tiered legal framework. Asking a casual advisor to sign the same document as a potential enterprise acquisition target is a recipe for stalled deals.</p>
 <p>Here is the sequence of NDAs you will need, mapped precisely to the milestones of your business plan.</p>
 <h2>The Milestone-Based NDA Roadmap</h2>
-<h3>1. The Pre-Seed &amp;amp; Validation Phase (Milestone: Initial Engine Stability &amp;amp; User Vetting)</h3>
+<h3>1. The Pre-Seed & Validation Phase (Milestone: Initial Engine Stability & User Vetting)</h3>
 <p>During this early stage, you are engaging with early contractors, technical advisors, and individual angel investors to stabilize the core tool and prove market fit.</p>
 <ul>
 <li><strong>The Tool: The Standard Unilateral (One-Way) NDA</strong>
@@ -3128,7 +3127,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 </li>
 </ul>
-<h3>2. The Monetization &amp;amp; Infrastructure Phase (Milestone: Launching SaaS Tiers &amp;amp; Enterprise Demos)</h3>
+<h3>2. The Monetization & Infrastructure Phase (Milestone: Launching SaaS Tiers & Enterprise Demos)</h3>
 <p>As you deploy the closed-source SaaS infrastructure (such as managed cloud hosting, CDN distribution, and automated media optimization), you will begin negotiating with third-party vendors, system integrators, and strategic distribution partners.</p>
 <ul>
 <li><strong>The Tool: The Mutual (Two-Way) NDA</strong>
@@ -3138,23 +3137,23 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 </ul>
 </li>
 </ul>
-<h3>3. The Scale &amp;amp; Commercialization Phase (Milestone: Enterprise White-Label Contracts)</h3>
+<h3>3. The Scale & Commercialization Phase (Milestone: Enterprise White-Label Contracts)</h3>
 <p>When pitching to small publishing houses, academic institutions, or enterprise teams who want to white-label your technology, you are showing them the internal workflow efficiencies they will gain.</p>
 <ul>
 <li><strong>The Tool: The Commercial Pilot NDA</strong>
 <ul>
 <li><strong>Who signs it:</strong> Enterprise clients, university press directors, and boutique corporate documentation managers.</li>
-<li><strong>Key Clauses needed:</strong> <strong>Non-Solicitation &amp;amp; Use Restrictions</strong>. Enterprise clients will frequently want to test the multi-step setup wizard and conversion pipeline with their own data before buying. This NDA must strictly stipulate that they cannot use the pilot phase to reverse-engineer your pipeline mechanics or solicit your key developers to build an internal tool.</li>
+<li><strong>Key Clauses needed:</strong> <strong>Non-Solicitation & Use Restrictions</strong>. Enterprise clients will frequently want to test the multi-step setup wizard and conversion pipeline with their own data before buying. This NDA must strictly stipulate that they cannot use the pilot phase to reverse-engineer your pipeline mechanics or solicit your key developers to build an internal tool.</li>
 </ul>
 </li>
 </ul>
-<h3>4. The Exit Execution Phase (Milestone: Strategic Acquisition / Corporate M&amp;amp;A)</h3>
+<h3>4. The Exit Execution Phase (Milestone: Strategic Acquisition / Corporate M&A)</h3>
 <p>When a legacy publishing giant or cloud provider enters serious discussions to acquire the company, they will require complete, unredacted access to your codebase, financial logs, and entire system architecture.</p>
 <ul>
-<li><strong>The Tool: The Clean Team M&amp;amp;A NDA</strong>
+<li><strong>The Tool: The Clean Team M&A NDA</strong>
 <ul>
-<li><strong>Who signs it:</strong> The corporate purchasing team, M&amp;amp;A lawyers, and their independent technical due-diligence auditors.</li>
-<li><strong>Key Clauses needed:</strong> <strong>"Clean Team" Restrictions &amp;amp; Absolute Non-Use</strong>. Because the acquirer might already have a competing or adjacent internal tool, you must mandate that your proprietary source code, internal regex tag parsing systems, and reader analytics data can <em>only</em> be viewed by an isolated "clean team" of auditors who are legally barred from sharing those technical secrets with the acquirer’s active product developers. If the deal falls through, they cannot use your breakthroughs to upgrade their own platform.</li>
+<li><strong>Who signs it:</strong> The corporate purchasing team, M&A lawyers, and their independent technical due-diligence auditors.</li>
+<li><strong>Key Clauses needed:</strong> <strong>"Clean Team" Restrictions & Absolute Non-Use</strong>. Because the acquirer might already have a competing or adjacent internal tool, you must mandate that your proprietary source code, internal regex tag parsing systems, and reader analytics data can <em>only</em> be viewed by an isolated "clean team" of auditors who are legally barred from sharing those technical secrets with the acquirer’s active product developers. If the deal falls through, they cannot use your breakthroughs to upgrade their own platform.</li>
 </ul>
 </li>
 </ul>
@@ -3235,23 +3234,23 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <h2>2. Professional Author Formatting Software (The Local Giants)</h2>
 <p>These platforms dominate indie-author mindshare for formatting and book assembly, but they treat the web as an afterthought.</p>
 <ul>
-<li><strong>Atticus &amp;amp; Vellum:</strong> Atticus ($147 flat rate) acts as an all-in-one book writing and formatting editor. It lets authors select visual layout themes and export their books cleanly.
+<li><strong>Atticus & Vellum:</strong> Atticus ($147 flat rate) acts as an all-in-one book writing and formatting editor. It lets authors select visual layout themes and export their books cleanly.
 <ul>
 <li><em>Their limitation:</em> They are designed strictly for the traditional publishing ecosystem. They export to <strong>EPUB, MOBI, and print-ready PDF</strong>. If an author wants their manuscript to live natively on the web as a beautifully indexed, responsive site, these tools cannot help them.</li>
 </ul>
 </li>
 </ul>
-<h2>3. Developer Documentation &amp;amp; Git-Sync Tools (The Technical Complex)</h2>
+<h2>3. Developer Documentation & Git-Sync Tools (The Technical Complex)</h2>
 <p>These platforms specialize in turning folders of Markdown into web-books, but they target software engineers rather than publishers and general authors.</p>
 <ul>
-<li><strong>GitBook &amp;amp; Mintlify:</strong> Excellent developer-first hubs that sync text files (usually API or product docs) straight from a git repository into highly readable web layouts.
+<li><strong>GitBook & Mintlify:</strong> Excellent developer-first hubs that sync text files (usually API or product docs) straight from a git repository into highly readable web layouts.
 <ul>
 <li><em>Their limitation:</em> High technical friction. They assume the user understands Markdown variants, code editors, sitemaps, and engineering-centric workflows. They are completely misaligned with the creative self-publishing industry.</li>
 </ul>
 </li>
 </ul>
 <h2>The Strategic White Space for Your Product</h2>
-<table>
+<div class="table-container"><div class="table-container"><table>
 <thead>
 <tr>
 <th>Competitor Feature</th>
@@ -3276,7 +3275,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <td>They are built for developers; you bring advanced CSS primitives (Block, Inline-Block, Inline) to regular creators.</td>
 </tr>
 </tbody>
-</table>
+</table></div></div>
 <p><strong>The Verdict for Your Pitch:</strong> No single competitor combines the <strong>typographic layout precision</strong> of Atticus, the <strong>web delivery focus</strong> of Writebook, and the <strong>plug-and-play simplicity</strong> of a user wizard. Your competitive advantage is presenting this as an elite, infrastructure-managed "print-to-web" press for creators who want total ownership over how their prose is presented on a screen.</p>
 <p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"></p>
 <p>
@@ -3307,7 +3306,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <li><strong>r/WritersGroup:</strong> A more traditional peer-review space. It is a bit more relaxed than Destructive Readers, allowing you to share pieces of your manuscript or short stories for constructive feedback.</li>
 <li><strong>r/BetaReaders:</strong> If you want someone to look at larger, consecutive sections (like the first 3 chapters or a full act), this is the place to find a swap partner.</li>
 </ul>
-<h2>2. For General Sharing &amp;amp; Casual Feedback</h2>
+<h2>2. For General Sharing & Casual Feedback</h2>
 <p>If you are looking for general impressions or just want a casual space to share what you've written, these groups are standard go-tos.</p>
 <ul>
 <li><strong>r/writers:</strong> A very open, flexible community where people frequently post short excerpts, ask for advice on specific paragraphs, or share updates on their projects.</li>
@@ -3325,7 +3324,7 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
 <p>Sharing bite-sized, single-page non-fiction concepts—like "thought-provoking postcards"—requires communities that appreciate short-form philosophy, history, science, or personal essays without demanding a massive time investment.</p>
 <p>Because these are short, impactful, and non-fiction, target these specific corners of Reddit:</p>
 <h2>1. Where to Post "Postcard" Non-Fiction</h2>
-<h3>For General Non-Fiction &amp;amp; Micro-Essays</h3>
+<h3>For General Non-Fiction & Micro-Essays</h3>
 <ul>
 <li><strong>r/KeepWriting:</strong> This is arguably your best starting point. The community is highly receptive to non-traditional formats. You can post a single page of prose or an image of your layout, and people will engage with both the writing style and the core concept.</li>
 <li><strong>r/WritersGroup:</strong> Perfect if you want to know if the "thought-provoking" element actually lands. State clearly in your title that it is a <em>short-form, non-fiction standalone piece</em> so critics evaluate it on its own merits rather than looking for a narrative story arc.</li>
@@ -4720,8 +4719,8 @@ Low Support / High Tech     High ARPU / Event-Driven    Scale Multiples / Portfo
         // ====================ENCRYPTION FUNCTION  END ==========================================================
 
         // ========== YOUR NEW BACKGROUND SWITCHING CODE =========================================================
-        const bodyBgForContent = 'data:image/jpeg;base64,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';
-        const bodyBgForTitle = 'data:image/jpeg;base64,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elABRgj8aAc9sUuP/wBVACUYzR0NFABRRRQAZzR3oooAM0GiigAoozz60ZzQAUUd6KACjpRR655oATv7UtFB4oATjPvS9KBzQSSaADrQaKKACiiigAo70UUAHejOaO1FABRjJoooAKKM0UAGOetFJzkcUpJNABRn8qKDQALjnPH0ooooAKKKKAE6CloP1xRQAUUfhRQAd6KKKADp0ooIooAO9BGKKCMUAHSijFHSgAooooAMe9BHvRR1oABxRRnijvQAA5oNFFABRRnHSigAozzQOvNLjnjmgBKKDmigANGOc96KD2xQAHAFFFFAAABRmjFFAB1o70ZozQAUUUYzQAck0UZ7UYoAKD7UUcCgAGDzmikxS0AKfc5pMkjk5ooxigAJoNAHpgUUAFBHFFFAABgYpeR1OaTjFBoAKBRRQAGjvRRTAKN3aiikAZxR+lFLk555oASiij8aACijGelFAAMmjGKKO1ABRRRkEcUAAOKKKXigBKM80HmigA/H8KKMUUABGaKKKADrRiiigAooxQKACkHX2pxGfb2pKACjtQeaB1oAKKO9AxzQAvbGOfWkII4ooHXmgBe1N70tFABRRRQAnNLjiijtQAUUCigAHJoooAyaACijpRQAUnX2paDQAdaKQccYxSgZPOKYB3opM80vakAAc9aDRjFIev8AWgBaM+340DAPTNFAA3bHSjt7UEZoxQAE9KKO1HagANFAooAU/TFJ+GaM9qM5oABQTmgHFH0oAKO9BPtQPfigAoo7UUAHWj+VGeaQg9M5oAMUtBzR04oAM0UAkDFHagAooooAOtFFJwBTAByM9DSj0NFFIAoooxQAUdaMUYxkdTQAGijv/WkPJx2oAWjp1pM84pSKYBQaO1IeaQC0UUUAHU+lFIKUmgAoBz04oooA/9k=';
+        const bodyBgForContent = 'data:image/jpeg;base64,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';
+        const bodyBgForTitle = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8/wCjNGck0V4h+oB36/nRnP1ooHWgAxRQaDQAUCg8iigAoopenFAAe1IRRQO9AAaTvS0UAJnsetLR9aMZPWgAooooAKKKMkUAAGTRwKKOc0AFFB47UUAGKOKKSgBaKXijHtQAmMDgUCigcUAFFH4UUAFFFFABijOKBS5xQAh4o7UYozQAUHpRRmgA+lBGKTv7UtABRmiigAz2o6GkB7EUpPNABR+NHWigAoGaKKAD+dFFHTFAB1o69aKKAClPWkooAMUUUZxQAUZo4pAAOlACn2oooyPxoABSgZpBwPeigBT0pKDQB1oAT9KU0mRnFKcUAJ+NOyTSUUAAoBooJHXpQAdqM0gIPQ5pTQAA9u9FFFABRjHbFGcmigAooooAKKKKADtQaKKAE7UtB4FFMAxS9e1IQcelApAFFFFAADmgUCigAooooAKKO1AoAKKO9HSgAoz2oooAKKCSaKAAe1L9RSZxRQAUUUUAFGe3ejjtRQAUYoooAOlFGTmigAo60HpzRTAKMY60UUgAD8aM5o9ccUUAFFFGKAA5I460dKKCSaAAUdOT0ooNABRRQR70AFAxRRQAA5FFFAGKACjNHWjvQADFAHPWiigAooJzRQAUHiilz7UAJRRxRQAUAcdaKByMigA6iijtS8UAJjdSEkDgZpaAOM0AFB4PFApD9cUALRRR/OgAoOCMUgGBS8fjQAAUUUUAB7YNLnjGKSigAHX3ooooATOOtLSHGOacCPY0wEooopAFA/OjHOaKAA0HkelHUUUAFFFFAABnNGKCSBikxQAuKKKKACigUUAA4o7UYooAP1ooooABwKUYpKKACijNFAB/Ojt1ooxTAKKKM56UgF7Ug6dMUdaKAAUZoooAKKGxjNFAAKKM8UUAB5ooIzRQAAcUd6XPHekoADxz0ooooAO/pRRRQAUUUBc+uPagAoo680Y5oAKCMdaM4NFABigcUZ4xQaACijpRQAUUA4ooAO9FHAooADRRRgHigAzRkCiigAo60Cl47fnQAn1oozmigAoHX2opTjHWgAP60naiigAooooAMe9JSmgUAFFIDyaARQAtB475oo4H0oAMk9aMUZ4pTigBKO1FGOKACiig9aADNFFFABRRR7UAGaOlGPSgcUAFAooAzQAZwKQcilxRQADrQTgGiigAz04ooxx60dKAE54pfSgiigAJ70daKKACjtSkk803r60ALRQBgUnegBaKKKACgc0Y5oxg0AANFA4pCM0ALRSAYpfxxQAN8p5oJxQRnrQTmgBc5pD7UUfjQAgwDjpSkc5oooAD9cUUUUABooooABRRQBigAxxSd+9LRmgAo78UZ5xQDtPFABRSdT1pc0ABFFFFACkjsMUlHIpOR70ALRg96KKACikzil7UAFFAGB1zQfagAooooAOvt6UEAjHWgUUAIOnSlAzRQB1oAMYoNAoIxQAZozRRQAHpQKOnSge9ABRRg/hRQAAevFFHajoKACg/SijFAAelBGRikxxS0AGaCMig/wCcUAkduKACigjNJmgBeoxRR2ooAOtFANBoAKKAciigAzRRR+NABjmiiigAxQTiiigApOcdaWgmgAHvR3xRQKYAKBijr3oNIAPWg0UnegBeQMUUUUAJ39qdnjpSUUDAUdKKKBBQD+FFFAB1o7+1GOc0Hr2oAKTg0tGcGgANFBOetFABij8M0EZ5o7UAGKM0dPeigAzmgUUfrQAUUA0UAB6cUUY70UAFFFFABRRSY5zQAtFGaKAE5z7UtGeelFAAeaMA0UUAFAoFFABQOlFFAAPfpRRjqf0o5I9/egAFFGKXGKAGmlo/SigAooo70AJzn2p38qSj0oABx3ooooASl4oHPtRQAdqQ0tHfigA6UHmgjj3oPagAopKWgAooooAKBx2ox3ozmgA/L8aD2oooACc0UGgdD3oAKKOc0UwCil5pBSAKKTpS0AHeignJyaKADNFFFAAaKUcUlABQOTQaU4zQAhGKB70UUAFGaBx14oxk0AFFFFABmjrQcGjPbvQAUYoooABRSg4pMYJoAKX+VIKKADv/AFooopgA96KMnPtRSAXPekoA49aB1oAKKO9AxnmgNgoFFHXigAxzQOKKKACiijjIzQAUUGjOaYBRRjjNFIBDzS5oGc0UAHaj3oxRQAUUp4J/pSUABHPSjPNFHegAooooAQ0tFFAARRj/ACaKKAACik5zjH40tABR0ozRQAcUYoooAOM8Uhz2pRzR3oAKMUGigBe1JRRQAUUUUAGcUEA+1FFAB0UUUEcc9KAAowBQAdqO1BznNAoAKMUUUAFFBGBnt60ZoAOM+9FFB9qACjGKMYo7UAHelyT9KQnHWigAxyaAeaKKACiiigAxmjBxRRQAHOOtHXtRQOKAE70tFHf2oAKOlBo5zQB//9k=';
 
         function updateBodyBackground(pageIndex) {
             const isCoverPage = (pageIndex === 0 && !CoverPageSkipped);
