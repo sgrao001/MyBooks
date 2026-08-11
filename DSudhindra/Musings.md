@@ -1,14 +1,14 @@
 # Musings
 
-<BookTitle='{[_color(#052115); ]} [[Musings<nl>from a caring mind ]]'>
-<AuthorName='{[ _fontsize(1.3); _bold; _color(WHITE)]} [[<nl><nl><nl><nl>By<nl>Sudhindra Dankanikote]]'>
+<BookTitle='{[_bold; _color(#052115); ]} [[Musings<nl>from a caring mind ]]'>
+<AuthorName='{[ _fontsize(1.3); _bold; _color(#052115)]} [[<nl><nl><nl><nl>By<nl>Sudhindra Dankanikote]]'>
 <BookDescription='{[; _fontsize(1.2); _bold; _italic; _color(#052115)]} [[<nl><nl><nl><nl>Memories<nl>Like rolling mist, <nl>wafting through the valleys of time.]]'>
 <BookImage='SBook.jpeg'>
 <CoverPageImage='SCover.jpeg'>
 <TocPosition='0'>
 <TOCAsList='True'>
 <Autopaginate='False'>
-<TitleFontSize='5.5em'>
+<TitleFontSize='2.5em'>
 
 <StartBook>
 
@@ -263,3 +263,5 @@ And yet I wonder—
 Is it truly love reborn,
 Or merely a mirage
 In the desert of time?
+
+<PageDivider>
