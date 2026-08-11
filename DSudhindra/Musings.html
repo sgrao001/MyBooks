@@ -1,0 +1,3159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Update viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Musingsfrom a caring mind</title>
+    <meta name="description" content="Meta Description - One liner">
+    <meta name="keywords" content="Meta Keywords #2 - one liner">
+<style>
+        :root {
+            --primary-color: #f09e5a;
+            --glass-bg: rgba(0, 0, 0, 0.2);
+            --glass-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+            --text-color: #000000;
+            --bubblefontcolor: #b0e0ff;
+            --toc-font-color: #000000; 
+
+            --arrow-visibility: hidden;
+            --arrow-opacity: 0;
+            --arrow-hover-opacity: 0;
+            --arrow-hover-width: 15%;
+            --ARW_HOVER_HEIGHT: 87vh;
+            --ARW_HOVER_HEIGHT_415px: 73vh;
+            --ARW_HOVER_TOP: 10vh;
+
+            --content-container-max-width: 95%;
+
+            --page-width: 94vw;
+            --page-height: 94vh;
+            --page-height-415px: 60vh;
+
+            --tt-1024-height: 91vh;
+            --tt-1024-width: 90vw;
+            --tt-768-height: 83vh;
+            --tt-768-width: 88vw;
+            --tt-415-height: 77vh;
+            --tt-415-width: 84vw;
+            --tt-max-height: var(--tt-1024-height);
+            --tt-max-width: var(--tt-1024-width);
+
+            --Lmargin-safe-factor: 0.650;
+            --Rmargin-safe-factor: 0.650;
+            --Lsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Lmargin-safe-factor));
+            --Rsafe-margin: calc((var(--arrow-hover-width) + 0.25%) * var(--Rmargin-safe-factor));
+            
+            /* ===== ADD THESE FALLBACKS ===== */
+            --cover-font-color: #89C2FF;
+            --highlight-color: #000000;
+            --book-color: #000000;
+        }
+
+        html {
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            overflow-x: hidden;
+        }
+
+        body {
+            /* Background is now set by JavaScript at runtime */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            touch-action: pan-y;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            overscroll-behavior: none;
+        }
+
+        a {
+            color: #4fc3f7 !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        a:hover {
+            background: rgba(0,0,0,0.6);
+            text-decoration: underline;
+            color: var(--text-color);
+        }
+        a:focus {
+            outline: 2px solid #ffeb3b;
+            outline-offset: 2px;
+        }
+
+        /* PAGES START =============================================================================*/
+        .page {
+            box-sizing: border-box;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-right: 1.5px solid rgba(255,255,255,0.4);
+            border-bottom: 1.5px solid rgba(255,255,255,0.4);
+            box-shadow: var(--glass-shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            -webkit-overflow-scrolling: touch;
+            color: #000000;
+            border-radius: 12px;
+            transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            position: absolute;
+            width: var(--page-width); height: var(--page-height);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            opacity: 0;
+            overflow-y: hidden;
+            padding: 20px !important;
+            z-index: 1;
+            display: none;
+        }
+        .page::after {
+            pointer-events: none;
+            background: 
+                linear-gradient(to bottom, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to top, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to right, rgba(255,255,255,0.1), transparent 15%),
+                linear-gradient(to left, rgba(255,255,255,0.1), transparent 15%);
+            z-index: 2; 
+                       
+           content: ''; position: absolute; top: 0; left: 0;
+            width: 100%;height: 100%;
+        }
+        .page-content {
+            box-sizing: border-box;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+                        
+            height: 100%; width: 100%; overflow-y: auto;
+
+        }
+        .page-content::-webkit-scrollbar {display: none;}
+        #CoverPg::after {display: none;}
+
+        /* CLEAR GLASS PAGE removes glass effect and vignette BEGIN =============================== */
+        .page.clear-glass-panel  {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .page.clear-glass-panel::after { display: none !important; }
+        /* CLEAR GLASS PAGE – removes glass effect and vignette END ================================= */
+
+        /* ===== COVER PAGE COLORS ===== */
+        /* Base color for ALL cover page elements - applies only when NO TOBj is present */
+        #CoverPg h1,
+        #CoverPg h2,
+        #CoverPg h3,
+        #CoverPg p,
+        #CoverPg .book-description,
+        #CoverPg .IndentItalicsCenter {
+            color: var(--cover-fallback, #89C2FF);
+        }
+
+        /* Special case: h2 inside heading-container gets TOC color ONLY if no TOBj */
+        #CoverPg .heading-container h2:not(.tobj-styled):not([data-has-tobj="true"]) {
+            color: var(--toc-fallback, #000000);
+        }
+
+        /* ===== TOBj OVERRIDES - HIGHEST PRIORITY ===== */
+        /* TOBj elements should use their OWN inline colors */
+        #CoverPg .tobj-styled,
+        #CoverPg [data-has-tobj="true"],
+        #CoverPg .TOBj,
+        #CoverPg .tobj-styled *,
+        #CoverPg [data-has-tobj="true"] *,
+        #CoverPg .TOBj * {
+            color: inherit !important;
+        }
+
+        /* ===== INLINE STYLES FROM TOBj MUST BE PRESERVED ===== */
+        /* DO NOT remove inline styles - they ARE the TOBj colors! */
+        /* This rule is WRONG and should be REMOVED:
+        #CoverPg [style*="color"] {
+            color: unset !important;
+        }
+        */
+
+        /* ===== COVER PAGE SETTINGS ===== */
+        #CoverPg {
+            --tip-color: var(--cover-font-color, #89C2FF);
+            background: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+
+
+        #page-toc .IndentItalicsCenter { color: var(--toc-font-color, #000000); }
+        #page-toc .book-title { color: var(--toc-font-color, #000000); }
+
+        .page-header .book-title { color: var(--text-color, #000000); }
+
+        .page-content > :first-child {margin-top: 0;}
+        .page-content h2:first-of-type {margin-top: 5px;}
+
+        .image-container:first-child,
+        .text-only-container:first-child {
+            margin-top: 0;
+        }
+
+
+        .book-link { color: #000000 !important; text-decoration: none !important; background: none !important;}
+        .book-link:hover { text-decoration: underline !important; background: none !important;}
+
+        /* PAGES END  =============================================================================*/
+
+        /* PAGES HEADER START  ====================================================================*/
+        /* Its CSS creates a centered, vertical flex layout for the title page content 
+        (book title, tagline, author, date, and decorative element). This class does not 
+        appear on any other page (TOC or content pages). */
+        .heading-container > * { padding: 0.5rem; }
+        .heading-container > *:nth-child(1) { }
+        .heading-container > *:nth-child(2) { }
+        .heading-container > *:nth-child(3) {  }    
+          
+        .page-header {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            margin-bottom: 20px;
+        }
+        .book-title {
+            flex: 1;
+            text-align: center;
+            max-width: 50vw;
+            margin: 0 auto;
+            word-wrap: break-word;
+            font-size: 0.8em;
+            order: 2;
+            position: static;
+            transform: none;
+        }
+
+        .title-header-left { text-align: left; }
+        .book-description {
+            max-width: 70vw;
+            margin: 0 auto;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-size: var(--title-font-size, 1em); /* adjust as needed */
+        }
+
+        .page-number {
+            background: transparent !important;
+            visibility: visible !important;
+
+            flex: 0 0 auto;
+            order: 3;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        /* PAGES HEADER END    ====================================================================*/
+
+        /* TOC BUILD-OUT START ====================================================================*/
+        .toc-container {
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 20px;
+        }
+        .toc-button-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 12px;
+        }
+        .toc-list .toc-button-container {
+            display: block;
+        }
+
+        .chapterbtn {
+            color: #000000 !important;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin: 0 !important;
+        }
+        .toc-list .toc-entry {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--toc-font-color), white 70%);
+            transition: all 0.3s ease;
+        }
+        .toc-list .toc-entry a {
+            color: #000000 !important;
+            text-decoration: none;
+            display: block;
+        }
+        .toc-list .toc-entry:hover {
+            border-bottom-color: var(--primary-color);
+        }
+        .toc-list .toc-entry:hover a {
+            color: var(--primary-color);
+        }
+        /* TOC BUILD-OUT END =======================================================================*/
+ 
+
+        /* GLASS+OTHER BUTTON START ================================================================*/
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .slider-container, .glassbtn {
+            color: var(--bubblefontcolor);
+            text-decoration: none;
+            font-size: 1em;
+            font-family: Arial;
+            background: rgba(0, 0, 0, 0.075) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-left: none;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.5),
+                        0 2px 4px rgba(0,0,0,0.3),
+                        0 0 0 1.5px rgba(255,255,255,0.4) inset;
+            transition: all 0.3s ease;
+
+            padding: 5px 15px;
+            margin: 5px;
+            z-index: 9999;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+        }
+        .nextPgbtn, .prevPgbtn, .TOCbtn, .BOOKLISTbtn, .glassbtn { position: relative; }
+
+        /* apply to all glassbtn children with <a> tags */
+        a:has(.glassbtn) { text-decoration: none; background: transparent; } 
+        .TOCbtn { order: 1; transform: scale(1.15, 0.95); }
+        .BOOKLISTbtn { transform: scale(1.15, .95); }
+
+        .BOOKLISTbtn, .TOCbtn, .page-number, .page-number a, .glassbtn {
+            vertical-align: middle;
+            line-height: 1.2;
+        }
+        .nextPgbtn:hover, .prevPgbtn:hover, .TOCbtn:hover, .BOOKLISTbtn:hover, .glassbtn:hover {
+            background-color: color-mix(in srgb, var(--TOCFONTCOLOR), white 30%)
+            background: rgba(0, 0, 0, 0.55) !important;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.7),
+                        0 2px 4px rgba(0,0,0,0.6),
+                        0 0 0 1.5px rgba(255,255,255,0.6) inset,
+                        0 0 0 2px rgba(255,255,255,0.4) inset;
+            border-top: 1px solid rgba(255,255,255,0.4);
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-bottom: none;
+            border-right: none;
+            text-decoration: underline;
+        }
+        /* glassbtn hover remover */ 
+        .no-hover:hover {
+            background: rgba(0, 0, 0, 0.075) !important;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3), 0 0 0 1.5px rgba(255,255,255,0.4) inset !important;
+            border-top: none;
+            border-left: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
+
+        /* GLASS+OTHER BUTTON END  ===============================================================*/
+
+        /* ARROW HANDLING START  =================================================================*/
+        .arrow-container {
+            position: fixed;
+            height: var(--ARW_HOVER_HEIGHT);
+            top: var(--ARW_HOVER_TOP);
+            width: 15%;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: var(--arrow-opacity);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+        .arrow-container[data-visible="true"] {
+            width: 15% !important;
+        }
+        .arrow-container.right {
+            right: 0;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        .arrow-container:hover {
+            opacity: var(--arrow-hover-opacity);
+        }
+        .nav-arrow {
+            width: 15px;
+            height: 15px;
+            border: solid #000000;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            visibility: var(--arrow-visibility);
+        }
+        .nav-arrow.left {
+            transform: rotate(135deg);
+        }
+        .nav-arrow.right {
+            transform: rotate(-45deg);
+        }
+        .arrow-area {
+            position: fixed;
+            height: var(--ARW_HOVER_HEIGHT);
+            top: var(--ARW_HOVER_TOP);
+            width: 15%;
+            z-index: 9;
+            display: flex;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .arrow-area.right {
+            right: 0 !important;
+            left: auto !important;
+        }
+        .arrow-container.right {
+            right: 0 !important;
+            left: auto !important;
+        }        
+        .arrow-area.left:hover ~ .arrow-container.left,
+        .arrow-area.right:hover ~ .arrow-container.right {
+            opacity: var(--arrow-hover-opacity);
+        }
+        /* ARROW HANDLING END  ===================================================================*/
+
+        /* IMAGE HANDLING START  =================================================================*/
+        .image-container, .text-only-container {
+            width: 100%;
+            max-width: var(--content-container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        .image-container {
+            position: relative;
+            overflow: visible;
+        }
+        .image-container img {
+            position: relative;
+            display: block;
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            shape-outside: margin-box;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0.95;
+            transform: scale(0.98);
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+        }
+        .image-align-left img {
+            float: left;
+            margin-left: 0px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .image-align-right img {
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .image-align-center img {
+            float: none;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) !important;
+        }
+        .image-container img:hover {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.8));
+        }
+        .text-only-container { width: 90%; margin: 0px auto;padding: 0; }
+        .image-container + .image-container {margin-top: 10px; }
+        .image-date {
+            clear: both;
+            display: block;
+            text-align: center;
+        }
+        /* IMAGE HANDLING END  ===================================================================*/
+
+        /* IMAGE POPUP HANDLING START ============================================================*/
+        .image-caption-popup {
+            position: absolute;
+            color: lightskyblue;
+            top: 0;
+            max-width: 100%;
+            font-size: .8em;
+            padding: 0px 10px;
+            box-sizing: border-box;
+            text-align: center !important;
+            pointer-events: auto;
+            display: block !important;
+            opacity: 0 !important;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            pointer-events: none;
+            background: rgba(0,0,0,0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border-radius: 8px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.95);
+            z-index: 1000;
+            word-wrap: break-word;          /* ← ADD THIS */
+            overflow-wrap: break-word;      /* ← ADD THIS */
+            white-space: normal;            /* ← ADD THIS */
+        }
+        .image-align-left .image-caption-popup { top: 40px; right: auto; }
+        .image-align-right .image-caption-popup { top: 40px; right: 20px; left: auto; }
+        .image-align-center .image-caption-popup {
+            top: 20px; left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px;
+            box-sizing: border-box !important;
+        }
+        .image-container img:hover ~ .image-caption-popup,
+        .image-caption-popup:hover { opacity: 1 !important; pointer-events: auto !important; }
+        body .page .image-container .image-caption-popup { z-index: 1000 !important; }
+        body .page .image-container img { z-index: 2 !important; }
+        /* IMAGE POPUP HANDLING END  =============================================================*/
+
+        /* BUBBLETEXT START  =====================================================================*/
+        .BubbleText-trigger {
+            /* color: color-mix(in srgb, #000000, white 20%); */
+            color: color-mix(in srgb, #000000, transparent 40%);
+            filter: brightness(1.5);
+            font-size: 0.8em;
+            font-family: Arial;
+            font-weight: normal;
+            text-decoration: underline;
+            font-style: normal;
+            margin: 0 10px;
+        }
+        .BubbleText-group { display: inline-block; margin-left: var(--Lsafe-margin); vertical-align: top; }
+        .BubbleText-full { height: var(--tt-max-height); width: var(--tt-max-width); }
+        .BubbleText-group .BubbleText-trigger { display: inline-block !important;
+            width: auto !important; margin: 0 4px !important; }
+        .BubbleText-trigger.BubbleText-full { height: auto; width: auto; }
+        .BubbleText-trigger:hover { text-decoration: underline !important;
+            text-decoration-color: currentColor;  /* or a specific color like #ffcc00 */
+            cursor: pointer;
+        }
+
+        #BubbleText {
+            position: fixed;
+            display: inline-block;
+            color: #b0e0ff;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 0.8em;
+            transform: translateY(-20px) scale(0.95) !important;
+            transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1) !important;
+            background: rgba(0,0,0,0.62) !important;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(5px);
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-top: none;
+            border-bottom: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.2) inset;
+            padding: 10px !important;
+            width: fit-content;
+            height: fit-content;
+            min-height: 1.5em;
+            max-width: var(--tt-max-width);
+            max-height: var(--tt-max-height);
+            overflow-x: hidden;
+            overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            z-index: 9999;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+        }
+        #BubbleText.show { opacity: 1; visibility: visible; }
+        #BubbleText.fade { transform: translateY(15px) scale(0.95); }
+        #BubbleText.fade.show { transform: translateY(0) scale(1); }
+        #BubbleText.bounce { transform: translateY(40px) scale(0.6); }
+        #BubbleText.bounce.show { animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        #BubbleText.slide { transform: translateY(60px); }
+        #BubbleText.slide.show { transform: translateY(0); }
+        #BubbleText.zoom { transform: scale(0.4); }
+        #BubbleText.zoom.show { transform: scale(1);        }
+        #BubbleText.left-text { text-align: left; }
+        #BubbleText.right-text { text-align: right; }
+        #BubbleText.center-text { text-align: center; }
+        @keyframes bounceIn {
+            0% { transform: translateY(40px) scale(0.6); }
+            60% { transform: translateY(-15px) scale(1.15); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        #BubbleText::-webkit-scrollbar { width: 6px; }
+        #BubbleText::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
+        #BubbleText::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 3px; }
+        /* BUBBLETEXT END  =======================================================================*/
+        /* PROGRESSS BAR START =====================================================================*/
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #000;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        /* PROGRESSS BAR END   =====================================================================*/
+
+        /* SLIDER BAR START ========================================================================*/
+        .slider-container {
+            position: fixed ;
+            bottom: 10px ;
+            top: auto ;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--page-width);
+            height: 50px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .slider-area { /* transparent hoverzone */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 19;
+        }
+        .slider-area:hover ~ .slider-container,
+        .slider-container:hover { background: rgba(0, 0, 0, 0.3) !important; text-decoration: none;
+        opacity: 1; pointer-events: auto; }
+        
+        .slider-wrapper { width: 80%; position: relative; margin: 0 auto; }
+        .slider {
+            width: 100%;
+            margin-bottom: 5px;
+            -webkit-appearance: none;
+            height: 3px;
+            background: rgba(96, 96, 96, 0);
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+            border: 1px solid darkgray;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            width: 24px;
+            height: 16px;
+        }
+        .slider::-moz-range-thumb {
+            background: rgba(176, 224, 255, 1) !important;
+            border: 1px solid darkgray !important;
+            border-radius: 50%;
+            cursor: pointer;
+
+            width: 24px;
+            height: 16px;
+            }
+        .slider-track {
+            position: absolute;
+            height: 4px;
+            border-radius: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            pointer-events: none;
+        }
+        /* styles the text container that shows the current page 
+        number and total page count next to the slider. */
+        .slider-info {
+            color: #b0e0ff;
+            font-size: 0.8em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 5px;
+        }
+        .slider-info #current-page {
+            color: #b0e0ff;
+            font-style: italic;
+        }
+        /* SLIDER BAR END ==========================================================================*/
+
+
+        .content-text {
+            font-size: inherit;
+            text-align: left;
+        }
+        .highlight-text {
+            color: #000000;
+            font-size: 1.4em;
+            display: inline-block;
+            text-decoration: underline;
+            text-decoration-color: #000000;
+            padding-bottom: 3px;
+        }
+        p {
+            margin-bottom: 1.8em;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        p.inline { display: inline; }
+        p.none { display: none; }
+        /* ✅ KEEP */
+        .toc-container h2 { color: #000000; text-align: center; }
+
+        /* ✅ ADD NEW */
+        h1{font-size:2.8em;font-weight:700;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.2}
+        h2{font-size:2.2em;font-weight:600;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.25}
+        h3{font-size:1.8em;font-weight:500;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.3}
+        h4{font-size:1.4em;font-weight:500;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.35}
+        h5{font-size:1.1em;font-weight:500;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.4}
+        h6{font-size:0.9em;font-weight:500;margin:0.5em 0 0.3em;color:var(--heading-color,{BookFontColor});line-height:1.4;text-transform:uppercase}
+
+        .page.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 2;
+            display: block;
+        }
+        .page.exit {
+            transform: translate(-50%, -50%) scale(0.98);
+            opacity: 0;
+            display: none;
+        }
+
+
+        /* Frame Placement Begin  ================================================================== */
+
+        #form-placement-container {
+            margin-left: var(--Lsafe-margin);
+            margin-right: var(--Rsafe-margin);
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+            float: none;
+            /* Centered by default */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #form-placement-container iframe {
+            width: 100%;
+            border: none;
+            overflow: hidden;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        /* Desktop 1024px+ */
+        @media (min-width: 1024px) {
+            #form-placement-container {
+                width: var(--desktop-width, 50%);
+            }
+            #form-placement-container[data-float="right"] {
+                float: right;
+                margin-left: 10px; //var(--Lsafe-margin);
+                margin-right: var(--Rsafe-margin);
+            }
+            #form-placement-container[data-float="left"] {
+                float: left;
+                margin-left: var(--Lsafe-margin);
+                margin-right: 10px; var(--Rsafe-margin);
+            }
+        }
+
+        /* Tablet 768px–1023px */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #form-placement-container {
+                width: var(--tablet-width, 50%);
+            }
+            #form-placement-container[data-float="right"] {
+                float: right;
+                margin-left: 10px; //var(--Lsafe-margin);
+                margin-right: var(--Rsafe-margin);
+            }
+            #form-placement-container[data-float="left"] {
+                float: left;
+                margin-left: var(--Lsafe-margin);
+                margin-right: 10px; //var(--Rsafe-margin);
+            }
+        }
+
+        /* Mobile ≤415px – centered, full width, no float */
+        @media (max-width: 415px) {
+            #form-placement-container {
+                width: 100% !important;
+                float: none !important;
+                margin-left: var(--Lsafe-margin) !important;
+                margin-right: var(--Rsafe-margin) !important;
+                text-align: center;
+            }
+            #form-placement-container iframe {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+        /* Frame Placement END ================================================================== */
+
+        /* Tables Begin ================================================================== */
+        /* TABLES - Compact */
+        table {
+            width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.9em;
+            color: var(--text-color, {BookFontColor});
+            border: 2px solid var(--text-color, {BookFontColor});
+        }
+        th, td {
+            border: 2px solid var(--text-color, {BookFontColor});
+            padding: 0.6em 0.8em; text-align: left; vertical-align: top;
+        }
+        th { background: rgba(0,0,0,0.15); font-weight: 600; }
+        tbody tr:hover { background: rgba(255,255,255,0.05); }
+        table a { color: #4fc3f7; text-decoration: none; }
+        table a:hover { text-decoration: underline; }
+        .table-container { width: 100%; overflow-x: auto; margin: 0.5em 0; }
+
+        @media (max-width: 768px) {
+            table { font-size: 0.85em; border-width: 1px; }
+            th, td { border-width: 1px; padding: 0.4em 0.6em; min-width: 60px; }
+            .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        }
+        @media (max-width: 415px) {
+            table { font-size: 0.8em; border-width: 1px; white-space: nowrap; }
+            th, td { border-width: 1px; padding: 0.3em 0.5em; min-width: 50px; white-space: nowrap; }
+            .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .table-container::-webkit-scrollbar { height: 4px; }
+            .table-container::-webkit-scrollbar-thumb { border-radius: 4px; background: rgba(255,255,255,0.3); }
+        }
+        
+        /* Tables END ================================================================== */
+
+
+        @media (max-width: 768px) {
+            :root {
+                --tt-max-height: var(--tt-768-height) !important;
+                --tt-max-width: var(--tt-768-width) !important;
+                --content-container-max-width: 93%;
+                --Lmargin-safe-factor: 0.65;
+                --Rmargin-safe-factor: 0.85;
+            }
+            .BubbleText-full {
+                height: var(--tt-max-height);
+                width: var(--tt-max-width);
+            }
+            body {
+                margin-top: 0px !important;
+                height: 75% !important;
+                overflow: hidden;
+            }
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }
+            a { color: #00b0ff !important; }
+            a:focus { outline: 2px solid #ffeb3b; outline-offset: 2px; }
+            .text-only-container {
+                width: 100% !important;
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }
+            p, h1, h2, h3, h4, h5, h6 {
+                margin-bottom: 1.2em !important;
+                line-height: 1.6 !important;
+            }
+            .toc-entry { margin: 6px 0; }
+
+
+            .chapterbtn { padding: 3px 8px !important; font-size: 0.8em ; display: inline-block }            
+
+            h1 { font-size: 2.2em !important; }
+            h2 { font-size: 1.8em !important; }
+            h3 { font-size: 1.5em !important; }
+            h4 { font-size: 1.2em !important; }
+            h5 { font-size: 1.0em !important; }
+            h6 { font-size: 0.85em !important; }
+
+        }
+
+        @media (max-width: 415px) {
+            :root {
+                --tt-max-height: var(--tt-415-height) !important;
+                --tt-max-width: var(--tt-415-width) !important;
+                --content-container-max-width: 97%;
+                --Lmargin-safe-factor: 0.40;
+                --Rmargin-safe-factor: 0.80;
+            }
+            .BubbleText-full {
+                height: var(--tt-max-height);
+                width: var(--tt-max-width);
+            }
+            body {
+                margin-top: 0px !important;
+                height: 60% !important;
+                overflow: hidden;
+            }
+            .page { height: var(--page-height-415px) !important; }
+            .content-text { font-size: var(--mobile-font-size) !important; }
+            .arrow-container, .arrow-area { height: var(--ARW_HOVER_HEIGHT_415px); }
+            @supports (-webkit-touch-callout: none) {
+                .page {
+                    height: -webkit-fill-available !important;
+                    margin-top: 0 !important;
+                }
+            }
+            .chapterbtn { padding: 3px 8px !important; font-size: 0.7em ; display: inline-block; color: #000000; }
+            .book-title { font-size: 0.8em; }
+            
+        .mobile-default-size img {
+            width:  95% !important;
+            max-width:  95% !important;
+            margin-top: 20px !important;
+            margin-bottom: 40px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;            
+            left: 50% !important;
+            transform: translateX(-50%) !important;     
+            height: auto !important;
+            float: none !important;
+            display: block !important;
+        }
+        .image-align-left .image-caption-popup,
+        .image-align-right .image-caption-popup,
+        .image-align-center .image-caption-popup {
+            width:  95% !important;
+            max-width:  95% !important;
+            top: 20px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(-20px) scale(0.95) !important;
+            padding: 0px 10px 0px 10px !important;
+        }
+        
+            .image-caption-popup.mobile-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            h1 { font-size: 1.8em !important; }
+            h2 { font-size: 1.5em !important; }
+            h3 { font-size: 1.3em !important; }
+            h4 { font-size: 1.1em !important; }
+            h5 { font-size: 0.95em !important; }
+            h6 { font-size: 0.8em !important; }
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    
+        <div class="page active" id="CoverPg">
+            <div class="page-content">
+                <!-- Button Row (optional) -->
+                <div style="display: flex; justify-content: flex-start; gap: 0.5rem; margin: 0.5rem 0;">
+                    
+                </div>
+                
+                <!-- Cover Page Content -->
+                <div class="heading-container">
+                    <!-- 1. BOOK TITLE (TOP) -->
+                    <div class="book-title" style="font-size: 5.5em !important;">
+                        <span class="tobj-styled" data-has-tobj="true"><span style="color: #052115 !important">Musings<br>from a caring mind </span></span>
+                    </div>
+                    
+                    <!-- 2. BOOK DESCRIPTION (MIDDLE) -->
+                    <div class="book-description">
+                        <span class="tobj-styled" data-has-tobj="true"><span style="font-size: 1.2rem !important; font-weight: bold; font-style: italic; color: #052115 !important"><br><br><br><br>Memories<br>Like rolling mist, <br>wafting through the valleys of time.</span></span>
+                    </div>
+                    
+                    <!-- 3. AUTHOR NAME (BOTTOM) -->
+                    <h2>
+                        <div class="book-description">
+                            <span class="tobj-styled" data-has-tobj="true"><span style="font-size: 1.3rem !important; font-weight: bold; color: white !important"><br><br><br><br>By<br>Sudhindra Dankanikote</span></span>
+                        </div>
+                    </h2>
+                    
+                    <!-- 4. COVER PAGE END MARKER (optional) -->
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+        
+
+    <div class="page clear-glass-panel" id="page-toc">
+        <div class="page-content">
+            <div class="page-header" style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: nowrap;">
+                <div style="flex: 0 0 auto; order: 1;"></div>
+                <div class="book-title" style="font-size: 0.8em;"><span class="tobj-styled" data-has-tobj="true"><span style="color: #052115 !important">Musings<br>from a caring mind </span></span></div>
+                <div style="flex: 0 0 auto; order: 3;"><a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;" class="glassbtn">🔖</a></div>
+            </div>
+            <div class="toc-container toc-list" style="margin-top: 20px;">
+                <h2>Table of Contents</h2>
+                <div class="toc-button-container">
+                    <div class="toc-entry" style="margin-left: 0px;"><a href="#CoverPg" class="toc-link" style="display: flex; justify-content: space-between;"><span>Cover Page (0)</span><span>0</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-2" class="toc-link" style="display: flex; justify-content: space-between;"><span>1. From Teens to Senior Teens — Such a Long Journey</span><span>2</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-3" class="toc-link" style="display: flex; justify-content: space-between;"><span>2. Mother Cauvery</span><span>3</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-4" class="toc-link" style="display: flex; justify-content: space-between;"><span>3. The keeper of memories</span><span>4</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-5" class="toc-link" style="display: flex; justify-content: space-between;"><span>4. A thousand miles, Someone, Somewhere</span><span>5</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-6" class="toc-link" style="display: flex; justify-content: space-between;"><span>5. Autumn Sonata</span><span>6</span></a></div><div class="toc-entry" style="margin-left: 0px;"><a href="#page-7" class="toc-link" style="display: flex; justify-content: space-between;"><span>6. A Million Sonatas</span><span>7</span></a></div>
+                </div>
+            </div>
+            <hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;"><br>
+        </div>       
+    </div>
+    
+
+        <div class="page clear-glass-panel" id="page-1">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <p><p><div class="image-container image-align-center mobile-align-center mobile-default-size"><img src="Photos.jpeg" alt="Image" style="width: 100%; max-width: 100%;" /></div></p>
+<p>
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-2">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="From Teens to Senior Teens — Such a Long Journey" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">From Teens to Senior Teens — Such a Long Journey</span></span></div></p>
+<p>Fifty years ago,
+we walked out of our school gates—
+fresh, radiant,
+with dreams and excitement 
+For the future ahead</p>
+<p>We said goodbye to classmates,
+filled autograph books
+with thoughtful notes and signatures,
+promising to stay in touch forever.</p>
+<p>Some were for friends,
+Some for secret crushes.
+We never said it then—
+now we smile.</p>
+<p>Uniforms were folded away,
+and we stepped on to
+Life's great highway</p>
+<p>The years rolled on.</p>
+<p>Life had other plans
+Dreams became deadlines.
+Pocket money became EMIs. 
+Report cards became report meetings.
+And before we knew it, the mirrors showed silver, 
+But the smiles... were still sixteen.</p>
+<p>Life took each of us
+different journeys—
+yet somehow,
+it brought us all back here.</p>
+<p>Along the way, we lost dear friends—
+now forever young in our hearts.</p>
+<p>And then, almost before we knew it…
+fifty years had passed.
+We met again.
+We were sixteen then.
+Today, we are sixty-five.
+One smile. One handshake. One embrace…
+and the years vanished.</p>
+<p>Laughter returned. Memories rushed back
+Those crushes of our teens
+Still looking youthful and radiant.</p>
+<p>Over coffee—
+or a sip of amber and brown—
+we were sixteen again.</p>
+<p>So let us toast, dear friends—</p>
+<p>to friendships that outlast time,
+to memories grown richer,
+to lives well lived,
+and to the years ahead.</p>
+<p>We were once Teens.
+Today, we are Senior Teens.</p>
+<p>May our laughter stay young,
+our bonds, evergreen,
+and may time disappear when we meet again.</p>
+<p>For friendships,
+like the best school lessons,
+never grow old.</p>
+<p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-3">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="Mother Cauvery" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">Mother Cauvery</span></span></div></p>
+<p>You flow gently and unhurried,
+With ageless grace and beauty,
+Serene and calm.
+Oh, Mother Cauvery, the daughter of the Mountains
+You have witnessed the ages of history.
+Within your gentle bosom
+Lie countless moments of time gone by.</p>
+<p>You have watched
+The passage of generations,
+The rise and fall of kingdoms,
+The joys and sorrows of humanity.</p>
+<p>You give solace to one and all,
+To the sons and daughters, 
+To the husbands and wives, 
+Grieving souls who have 
+Bid farewell to those they loved.
+Blessed are those who rest in your embrace</p>
+<p>You bring smiles 
+To the tillers of the land.
+Giving life to the fields
+You comfort every heart you touch</p>
+<p>When you are angry, Cauvery, 
+You surge and gush in a torrent.
+You flood and you roar,
+But your anger is fleeting.
+Even in your fury,you leave behind the gift of life. 
+And when peace returns,
+You inspire songs and stories,
+Paeans of prose and poetry,
+Filling hearts with hope,
+Happiness,
+And the promise of tomorrow</p>
+<p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-4">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="The keeper of memories" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">The keeper of memories</span></span></div></p>
+<p>Old Father Time,
+ memories,
+The Keeper of the silent songs of the heart,
+Who stirs a restless soul,
+With memories stored in
+The fog of the mind.</p>
+<p>Old Father Time,
+Who plays the strings of the heart,
+And stirs those whispers,
+Of a bruised heart.</p>
+<p>Old Father Time, 
+Who preserves the fragments of 
+The forgotten yesterdays,
+Some pleasant, Some weary.
+Like the waves of the sea,
+Washing the sandy beach,
+Golden and peaceful,
+With the eternal rhythm of the sea.</p>
+<p>When He feels it is time to close,
+The pages of Time,
+He opens yet another page,
+Reminding us
+Of new chapters yet to come.</p>
+<p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-5">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="A thousand miles, Someone, Somewhere" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">A thousand miles, Someone, Somewhere</span></span></div></p>
+<p>My heart danced with joy
+When I heard that voice again.
+I am not a poet,
+Yet a million songs arose within my heart.</p>
+<p>A million melodies,
+Awakened by the magic of forgotten time.
+A million magical moments,
+A million sonatas,
+A million dreams,</p>
+<p>Swirling like illusions through time,
+Like a mirage in the desert of memory,
+A vision that beckons
+The weary traveller
+Across the endless sands of time.</p>
+<p>My heart,
+Broken into a million pieces
+A million years ago,
+Danced once more
+With the joy of rekindled passion.</p>
+<p>Those million songs
+Became a healing balm</p>
+<p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-6">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="Autumn Sonata" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">Autumn Sonata</span></span></div></p>
+<p>A gentle rain on an autumn morning,
+Like a sonata greeting the dawn, 
+Like a waltz that softly accompanies 
+The melody of a waking day. 
+Yet my heart lay dry and empty, 
+And then I saw her coming</p>
+<p>Like a morning sonata
+My heart missed a beat
+And it missed many more beats
+My mind a whirlwind of emotions 
+As she passed me like a fragrant breeze</p>
+<p>Years have passed since that thunderclap 
+She moved on and I moved on
+Yet within my heart Lives that radiant smile. 
+Within my heart Echoes that first thunderclap, 
+That first awakening of love.</p>
+<p>Days passed into months and decades
+Those memories woven Into beautiful brocades of time.
+And then one day she waltzed back into my life 
+Like an Autumn Sonata in my weary life
+My heart once again Resonated with forgotten music. 
+The embers of lost emotions Glowed once more, 
+And love returned Like a thunderclap, Once again.</p>
+<p><hr style="height: 1.2px; background-color: var(--text-color); opacity: 0.3; border: none;">
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="page clear-glass-panel" id="page-7">
+            <div class="page-content">
+                
+                <div class="text-only-container">
+                    
+                    
+    <div class="content-text" 
+         style="font-size: 1em;
+                --mobile-font-size: 0.9em">
+        <div class="chapter-marker" data-chapter-raw="A Million Sonatas" style="display: none;"></div>
+<div style="color: #f09e5a;"><span class="highlight-text" style="font-size: 1.2em;"><span style="font-style: italic">A Million Sonatas</span></div></span></p>
+<p>My heart danced with joy
+When I heard that voice again.
+I am not a poet,
+Yet a million songs arose within my heart.</p>
+<p>A million melodies,
+Awakened by the magic of forgotten time.
+A million magical moments,
+A million sonatas,
+A million dreams,</p>
+<p>Swirling like illusions through time,
+Like a mirage in the desert of memory,
+A vision that beckons
+The weary traveller
+Across the endless sands of time.</p>
+<p>My heart,
+Broken into a million pieces
+A million years ago,
+Danced once more
+With the joy of rekindled passion.</p>
+<p>Those million songs
+Became a healing balm
+Their melodies gently mending
+The wounds of yesterday.</p>
+<p>And yet I wonder—
+Is it truly love reborn,
+Or merely a mirage
+In the desert of time?</p></p>
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+    <!-- Arrow Hover Areas - Always present -->
+    <div class="arrow-area left"></div>
+    <div class="arrow-area right"></div>
+    
+    <!-- Arrow Containers - Always present -->
+    <div class="arrow-container left" id="left-arrow-container" data-visible="false">
+    <div class="nav-arrow left"></div>
+    </div>
+    <div class="arrow-container right" id="right-arrow-container" data-visible="false">
+        <div class="nav-arrow right"></div>
+    </div>
+
+    <!-- Slider Hover Area -->
+    <div class="slider-area"></div>
+    
+    <!-- Slider Container -->
+    <div class="slider-container" id="slider-container" style="">
+        <div class="slider-wrapper">
+            <div class="slider-track" id="slider-track"></div>
+            <input type="range" min="0" max="8" value="0" class="slider" id="page-slider">
+        </div>
+        <div class="slider-info">
+            <span id="current-page">0</span>/<span id="total-pages">9</span>
+        </div>
+    </div>
+
+    <script>
+        // Background variables for content pages
+        const contentBgImage = 'SBook.jpeg';
+        const contentBgFallback = 'data:image/jpeg;base64,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';
+
+        // Background variables for cover page
+        const coverBgImage = 'SCover.jpeg';
+        const coverBgFallback = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAEAAQADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8/wCgk9OooJzRXiH6gAoo5Le1BoAKKKKADGaUZIxSUe/egAFFAGe+KWgBKKKKAF7YpKKKACjPNFGM0AGaCMnPSig80AAOKKKKAAijPtRRQAUZGeelHU+lFABSnApKKACigjtRQAUUdKKACjPNHUdaB155FABj1oNFGKAAZopOaWgAooyKKADkc0d6KKACjNAo60AFHNHNFABRQQRR1oAKKMGjFABz0ooozQAE84NHajGeaKADB69qAaOQemaD+tABR0pBSg0AHej+XtRRmmAcCjHelIBFIKQAetFL26UgoAKKKKAE5zSjj3o70E4oAKKOtBGTQAUUh96XrQAUUnA4pc8elAAKKKPwxQADg5FHXFFFAC4pKKKACjP50YooAKBR1ooAKKKAOvNABRRR2NAB096KBycDrRyBQAUUUUAFGMikH5UtABjijGKMYFJjnNAC0hOM0oH40UwCg0UUgAHFGM0UUAGTgcUZoooAMcUUdRijGKACj8KKMcUAFGKKOtMAoNC++KKQCkAUgPHSiigAxmilGMe9JQAlLRR3FMAGaKD1opAGKB8oNGaKACjFFFABgnoKKKQ0ALiiiigBCaWjHeigAooo60ALjnrSHGKKMZoASloooATPalI4o60UAGM0A4oHFGaACjGaM4Bo5xntQAh9uKXtRSZx2NACjmiiigAFGc0HmigAooooAKB15o6+9FABRzzRRnFABnFFFFABRnJAoFAFABRRRQAUD1zR6UdKACigc0UAIRuFFLRQAUdKAehoHNABkYo70nf2paACjvR36UZ596ACj0oFBxn0oAMcUY4ooJ/GgAxRRRg9e1ABSAcUtFABRRR0FABQTziiigAxRRnn3ooAKD9KKKAFGKSg0g65oAWik70tACdBS9aKKAD60EUhGTS5oAKKKOAKADHHNFGaMUAHSjPNHSigA6mk5B9qD6GloAO9FGOtAoAAMUUH6c0UAGaKMUd6AAe/FFFBoAKM0UUAGeKKKMUAJ3paUDNJQAYo6UUmPegBaQDjFHQdaWgAxR2oAyaKAEweMdKWigcGgApBS0UAFFFFAARz60o4P9abnnFHt2oAWjvR7UUAHeiijrQAUUfjRQAUUZoAxzQAUnQ4xSjrmigAFGPejqPSkoAcB780lFFABRnJzk0UUAGKKKO9AAODRniiigAPFFFFABRRzRQADrwKTrSiigAoxQcUUAAPNFFFABjFFFFABiilyKTpQAUUDB9KKADOaKKM4oAKKBiigAooopgGcUUUUgDtRSA0vWgBD70vShgDj2o5oAOc0dTRRmgAoJA70UUAFFBoByKADtRjNFFABRignNAHQUAA5oIzR0ooAAM0ppuOc0o6D1oAKKDRQAUd/agiigAooHNAoACcUY4oooACeKKDRQAY49frQKMkdKKADpRgjrRijrQAbTjPY0v6UmeKDQAUCiigAHvRmiigBTjgUmMmjOOnFB/WgAxRSc0uQP8A69ABn0ooooAKKKDQACkJxSk4oHFACHkelLRRQADjNFFFAATRR2ooADzRR+FHWgAoByKKTvQApGaDRQRigAzx159KTqOKdSd6ACig0UABoAzRnPbFFAAMtQeKM4ooAKMZB5xSd6XNAAeRyKTr2pRSUALRRR0oAOc+1FHaigAzmijHSjGKACijH4UUAFFFHOOtABzR+FB4ooABRwKO/Wjr15oAOtB5ozmgDkUAFBoooAKKO2KKAE5z7UoNHWg8UAFHejiigBelJRjmjoaAExxiloo60AHSiiigAoozQelABRQDmigAoz2oycUCgAoIBpBnJ549KUUAFFHeigA6UmOMUoNHfpQAUUUc+lABRRRmgApB0pevtRQAD3o6UYooAO2aKKCcdaAAYx60dKTqPSloAD0oo7UucdKAGg0tFFABRRR2oAAMHNFA496KACg80GigBoXrmnUUHmgAooxmjPtQAe9AOaKMjGKAAgUUUZ46UAApDS/yooACKKKKADtRRRQAc56cUGjOKKACg4AFGKKACgdfaigg4oAPaikBz+FLQAYo45NFAoAB0o6ZoJoJxQAhz2NLRRQAUY55oJpM/lQAtGe1FFABRRR39aAA8mjOB6UYooAKUHFJQBmgAopBS0AFFB6Ug96AFoozgdKKACiiigBB70vWlPr60lAAOKKD0ooAM4ooo+lAB0oo60UAGKM470UUAFFGKKADtSEUp60dSKACgUUdKACg+1FA5oAKO3vRR2oAMUUUdaAAH2oFHSjPNABmk60tH8qAA0Cg8H2oNABQBmkJA68UoFAC9qSj2ooAM0UcfjQaACjNFGcCgAo47UHrx0pOM+9MBaKOtFIA60UUg5FAC5oGe9FB4OKADv7UUUUAFFH60YxQAE4oOcUZGMUCgAxwM0UY4oweaACgHHbNJn14paADPOKCMHmij69KAP/Z';
+
+        let currentPage = 0;
+        const totalPages = 9;
+        //================================================================================================
+        // DO THIS ONLY IF YOU WANT THE Total PAGES TO COUNT ONLY  CONTENT PAGES - NOT TITLE AND TOC PAGES
+        const totalContentPages = getTotalContentPages(); // compute
+        document.getElementById('total-pages').textContent = totalContentPages;
+        //================================================================================================
+
+        const pages = document.querySelectorAll('.page');
+        const CoverPageSkipped = false;
+
+        const slider = document.getElementById('page-slider');
+        const sliderTrack = document.getElementById('slider-track');
+        const progressBar = document.getElementById('progress-bar');
+        const currentPageDisplay = document.getElementById('current-page');
+        const totalPagesDisplay = document.getElementById('total-pages');
+        const leftArrowContainer = document.getElementById('left-arrow-container');
+        const rightArrowContainer = document.getElementById('right-arrow-container');
+        const sliderContainer = document.getElementById('slider-container');
+
+        // PRPOGRESS BAR FUNCTIONS START =========================================================================
+        // The getContentPageNumber(index) function maps a page index (0‑based, including title and TOC) to a content page number (1‑based), returning 0 for non‑content pages (title or TOC). It works as follows:
+        // - If the title page exists (!CoverPageSkipped) and index === 0, it returns 0 (title page, no content number).
+        // - If a TOC page exists (hasTOC) and the index matches the TOC’s position (which is 0 if title is skipped, else 1), it returns 0 (TOC page, no content number).
+        // - Otherwise, it calculates the offset: offset = (title exists ? 1 : 0) + (TOC exists ? 1 : 0).
+        // - The content page number is then index - offset + 1 (1‑based).
+        //This function is useful for progress calculations (e.g., showing “Page 3 of 20”) where you want to ignore title and TOC pages.
+
+        function getContentPageNumber(index) {
+            const CoverPageSkipped = false;
+            const hasTOC = document.getElementById('page-toc') !== null;
+            
+            // If this is the title page or TOC page, return 0 (no progress)
+            if (!CoverPageSkipped && index === 0) return 0;      // title page
+            if (hasTOC && index === (CoverPageSkipped ? 0 : 1)) return 0; // TOC page
+            
+            // Calculate offset: number of non‑content pages before content starts
+            let offset = 0;
+            if (!CoverPageSkipped) offset++;   // title page exists
+            if (hasTOC) offset++;          // TOC page exists
+            const contentPage = index - offset + 1;  // 1‑based content page number
+            return contentPage;
+        }
+
+        // used to update both SLider and progress bar calculations
+        function getTotalContentPages() {
+            const CoverPageSkipped = false;
+            const pages = document.querySelectorAll('.page');
+            let count = 0;
+            for (let i = 0; i < pages.length; i++) {
+                const p = pages[i];
+                if (p && p.id !== 'page-toc' && !(i === 0 && !CoverPageSkipped)) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        // Updates the prpogress bar on top.
+        function updateProgress() {
+            const displayNum = getSliderDisplay(currentPage);
+            let contentPage = 0;
+            if (typeof displayNum === 'number') {
+                contentPage = displayNum;
+            }
+            const totalContent = getTotalContentPages();
+            let progress = 0;
+            if (totalContent > 0 && contentPage > 0) {
+                progress = (contentPage / totalContent) * 100;
+            }
+            progressBar.style.width = `${progress}%`;
+        }
+        // PROGRESS BAR FUNCTIOND END ===========================================================================
+
+        // SLIDER FUNCTIONS START =========================================================================
+        // Map page index to slider display number (-1, 0, 1, 2, ...)
+        // Uses getTotalContentPages() from slider bar for count updates
+
+        function getSliderDisplay(index) {
+            const CoverPageSkipped = false;
+            const pages = document.querySelectorAll('.page');
+            const page = pages[index];
+            
+            // Title page
+            if (!CoverPageSkipped && index === 0) return "Title";
+            
+            // TOC page – detect by id
+            if (page && page.id === 'page-toc') return "TOC";
+            
+            // Content pages
+            let nonContentBefore = 0;
+            for (let i = 0; i < index; i++) {
+                const p = pages[i];
+                if (p && (p.id === 'page-toc' || (!CoverPageSkipped && i === 0))) {
+                    nonContentBefore++;
+                }
+            }
+            return index - nonContentBefore + 1;
+        }
+
+        function updateSlider() {
+            slider.value = currentPage;
+            const displayNum = getSliderDisplay(currentPage);
+            currentPageDisplay.textContent = displayNum;
+            updateSliderTrack();
+        }
+       // SLIDER FUNCTIONS END =========================================================================
+ 
+
+        // BOOKMARK - COPY URL FUNCTIONS START =========================================================
+        // This function copies the URL of the current page (including the fragment identifier #page-...) 
+            // to the clipboard. It:
+        // - Prevents the default event behavior.
+        // - Finds the active page (.page.active) and gets its id.
+        // - Builds the full URL: baseUrl + '#' + pageId.
+        // - Uses the modern Clipboard API (navigator.clipboard.writeText) to copy the URL.
+        // - If the Clipboard API fails or is unavailable, falls back to creating a hidden <textarea>, 
+            // selecting its content, and using document.execCommand('copy').
+        // - Shows a popup message (via showPopup) indicating success (with the copied URL) or an error.
+        // - If no active page is found, it shows an error popup.
+        // In short, it lets users copy a direct link to the current page (bookmark) to share or revisit later.
+
+        function copyCurrentPageUrl(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) {
+                console.error('No active page found');
+                showPopup('Error: No active page');   // ← changed
+                return;
+            }
+
+            const pageId = activePage.id;
+            const baseUrl = window.location.href.split('#')[0];
+            const fullUrl = baseUrl + '#' + pageId;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(fullUrl).then(() => {
+                    showPopup('URL copied to clipboard<br>' + fullUrl);   // ← changed
+                }).catch(err => {
+                    console.error('Clipboard write failed:', err);
+                    showPopup('Copy failed. Use Ctrl+C');   // ← changed
+                });
+            } else {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = fullUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showPopup('URL copied to Clipboard<br>' + fullUrl);   // ← changed
+            }
+        }  
+        
+         function showPopup(msg) {
+            // Use your existing toggleBubbleText to display a centered popup
+            toggleBubbleText('', '', 'auto', 'auto', msg, 'yes', 'fade', 'center', 'center-both', [], undefined, null, null, null, undefined);
+            // Auto-close after 3 seconds (optional)
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 4000);
+        }  
+        // BOOKMARK COPY-URL FUNCTION======= END ============================================================
+
+        // BOOKMARK COPY-URL LISTENER END ============================================================
+        // Listener for ctrl-C or cmd-C to bookmark - <ClipBookMark>
+        document.addEventListener('keydown', function(event) {
+            // Check for Ctrl+C (Windows/Linux) or Cmd+C (Mac)
+            if ((event.ctrlKey || event.metaKey) && event.key === 'c') {
+                // Optionally, avoid interfering with normal copy if text is selected
+                const selection = window.getSelection().toString();
+                if (selection.length === 0) {
+                    // No text selected – call your custom copy function
+                    copyCurrentPageUrl(event);
+                    // Prevent default browser copy (optional, but you might want to keep it)
+                    // event.preventDefault();
+                }
+                // If text is selected, let the default copy happen
+            }
+        });
+        // BOOKMARK COPY-URL LISTENER END ============================================================
+
+
+        // ==================== BubbleText FUNCTION Start ============================================
+        // BubbleText Management
+        // Convert a CSS length string to pixels (returns NaN if not possible)
+
+        function toPixels(value, dimension) {
+            if (typeof value !== 'string') return NaN;
+            value = value.trim();
+            if (value.endsWith('px')) return parseFloat(value);
+            if (value.endsWith('%')) {
+                const percent = parseFloat(value) / 100;
+                return dimension === 'width' ? window.innerWidth * percent : window.innerHeight * percent;
+            }
+            if (value.endsWith('vh')) return (parseFloat(value) / 100) * window.innerHeight;
+            if (value.endsWith('vw')) return (parseFloat(value) / 100) * window.innerWidth;
+            if (!isNaN(parseFloat(value))) return parseFloat(value);
+            return NaN; // calc() or other complex expressions
+        }
+
+        // htmlEncodeBubbleTextText (keep your existing version)
+        function htmlEncodeBubbleTextText(str) {
+            const div = document.createElement('div');
+            div.innerHTML = str;
+            return div.innerHTML;
+        }
+
+        // The toggleBubbleText function manages a custom popup element (with id BubbleText) that appears when the user clicks on certain triggers (.BubbleText-trigger). It supports:
+        // - Showing/hiding the popup based on the visible parameter.
+        // - Flexible positioning – can place the popup relative to a trigger element, at specific coordinates, centered, or at the bottom of the page.
+        // - Smart positioning (“@” mode) – automatically places the popup below the trigger if enough space, otherwise above; can also cap the height to fit the viewport.
+        // - Sizing modes – explicit width/height (using block display) or growing box (inline-block with fit-content).
+        // - Animations – fade, bounce, slide, zoom.
+        // - Text alignment – left, right, center.
+        // - Constraints – max‑width/‑height via CSS variables or trigger data attributes, clamping to viewport edges.
+        // - Cleanup – on hiding, it removes content and resets styles.
+        // - In essence, it is a highly configurable tooltip / modal‑like popup that adapts its position and size to avoid overflow and provide a smooth user experience.
+        //
+        // Arguments for toggleBubbleText...
+        //    top,           // vertical position (e.g., 'center', '50px', or undefined)
+        //    left,          // horizontal position (e.g., 'center', '20px', or undefined)
+        //    height,        // explicit height (e.g., 'auto', '200px', or '@' for smart mode)
+        //    width,         // explicit width (e.g., 'auto', '300px', or '@' for smart mode)
+        //    bbbltext,      // the HTML content to display inside the popup
+        //    visible,       // 'yes' to show, 'no' to hide
+        //    animation,     // 'fade', 'bounce', 'slide', 'zoom' (default: 'fade')
+        //    textAlign,     // 'left', 'center', 'right' (default: 'left')
+        //    position,      // 'fixed', 'absolute', etc. (default: 'fixed')
+        //    extraClasses,  // array of additional CSS classes to add to the popup
+        //    bottom,        // bottom position (overrides top if set)
+        //    maxHeight,     // maximum height in pixels (or null)
+        //    bottomGap,     // gap from bottom when using bottom positioning modes
+        //    trigger,       // the DOM element that triggered the popup (used for smart positioning)
+        //    right          // right position (overrides left if set)
+        
+        function decodeHtmlEntities(str) {
+            const div = document.createElement('div');
+            div.innerHTML = str;
+            return div.innerHTML;
+        }
+
+        function toggleBubbleText(top, left, height, width, bbbltext, visible, animation = 'fade', textAlign = 'left', position = 'fixed', extraClasses = [], bottom = undefined, maxHeight = null, bottomGap = null, trigger = null, right = undefined) {
+            const BubbleText = document.getElementById('BubbleText');
+
+            // If width or height is '@', activate @ mode and clear the respective dimension
+            if (width === '@') { top = '@'; width = ''; }
+            if (height === '@') { top = '@';height = ''; }
+
+            if (visible === 'yes') {
+                // --- Prepare BubbleText for display ---
+                BubbleText.className = '';
+                extraClasses.forEach(cls => BubbleText.classList.add(cls));
+                BubbleText.style.setProperty('position', position, 'important');
+
+                // Determine if explicit width/height are provided (non-empty, not 'auto')
+                const hasExplicitWidth = (width && width !== 'auto');
+                const hasExplicitHeight = (height && height !== 'auto');
+
+                // Read max-width / max-height from trigger
+                const datasetMaxWidth = trigger?.dataset?.maxwidth;
+                const datasetMaxHeight = trigger?.dataset?.maxheight;
+
+                // Set display mode FIRST
+                if (hasExplicitWidth || hasExplicitHeight) {
+                    BubbleText.style.display = 'block';
+                } else {
+                    BubbleText.style.display = 'inline-block';
+                }
+
+                // Text alignment
+                if (textAlign !== 'left') BubbleText.classList.add(textAlign + '-text');
+
+                // Animation
+                if (animation !== 'fade') BubbleText.classList.add(animation);
+                else BubbleText.classList.add('fade');
+
+                BubbleText.innerHTML = decodeHtmlEntities(bbbltext);
+
+                // ===== APPLY WIDTH WITH MAX LIMIT =====
+                if (hasExplicitWidth) {
+                    BubbleText.style.width = width;
+                    
+                    let maxW = width;
+                    if (datasetMaxWidth) {
+                        const explicitNum = parseFloat(width);
+                        const maxNum = parseFloat(datasetMaxWidth);
+                        if (!isNaN(explicitNum) && !isNaN(maxNum)) {
+                            if (width.includes('vw') && datasetMaxWidth.includes('vw')) {
+                                maxW = Math.min(explicitNum, maxNum) + 'vw';
+                            } else if (width.includes('vh') && datasetMaxWidth.includes('vh')) {
+                                maxW = Math.min(explicitNum, maxNum) + 'vh';
+                            } else if (width.includes('px') && datasetMaxWidth.includes('px')) {
+                                maxW = Math.min(explicitNum, maxNum) + 'px';
+                            } else if (width.includes('%') && datasetMaxWidth.includes('%')) {
+                                maxW = Math.min(explicitNum, maxNum) + '%';
+                            } else {
+                                maxW = width;
+                            }
+                        } else {
+                            maxW = width;
+                        }
+                    }
+                    BubbleText.style.maxWidth = maxW;
+                    BubbleText.style.overflowX = 'hidden';
+                } else if (datasetMaxWidth) {
+                    BubbleText.style.maxWidth = datasetMaxWidth;
+                    BubbleText.style.overflowX = 'hidden';
+                } else {
+                    BubbleText.style.maxWidth = '';
+                }
+
+                // ===== APPLY HEIGHT WITH MAX LIMIT =====
+                if (hasExplicitHeight) {
+                    BubbleText.style.height = height;
+                    
+                    let maxH = height;
+                    if (datasetMaxHeight) {
+                        const explicitNum = parseFloat(height);
+                        const maxNum = parseFloat(datasetMaxHeight);
+                        if (!isNaN(explicitNum) && !isNaN(maxNum)) {
+                            if (height.includes('vh') && datasetMaxHeight.includes('vh')) {
+                                maxH = Math.min(explicitNum, maxNum) + 'vh';
+                            } else if (height.includes('vw') && datasetMaxHeight.includes('vw')) {
+                                maxH = Math.min(explicitNum, maxNum) + 'vw';
+                            } else if (height.includes('px') && datasetMaxHeight.includes('px')) {
+                                maxH = Math.min(explicitNum, maxNum) + 'px';
+                            } else if (height.includes('%') && datasetMaxHeight.includes('%')) {
+                                maxH = Math.min(explicitNum, maxNum) + '%';
+                            } else {
+                                maxH = height;
+                            }
+                        } else {
+                            maxH = height;
+                        }
+                    }
+                    BubbleText.style.maxHeight = maxH;
+                    BubbleText.style.overflowY = 'auto';
+                } else if (datasetMaxHeight) {
+                    BubbleText.style.maxHeight = datasetMaxHeight;
+                    BubbleText.style.overflowY = 'auto';
+                } else if (maxHeight !== null) {
+                    BubbleText.style.maxHeight = maxHeight + 'px';
+                    BubbleText.style.overflowY = 'auto';
+                } else {
+                    BubbleText.style.maxHeight = '';
+                }
+
+                // Set overflow for scrolling when content exceeds dimensions
+                if (hasExplicitHeight || hasExplicitWidth || datasetMaxHeight || datasetMaxWidth) {
+                    // Overflow is already set above
+                }
+                const pos = position.toLowerCase();
+                const bottomModes = ['bottom-left', 'bottom-center', 'bottom-right', 'bottom-page'];
+                const usesAt = top === '@' || left === '@' || bottom === '@' || right === '@';
+                const needsLayout = ['center-height', 'center-width', 'center-both', ...bottomModes].includes(pos) || usesAt;
+
+                if (needsLayout) {
+                    BubbleText.style.visibility = 'visible';
+                    BubbleText.style.opacity = '0';
+
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            const pageElement = trigger ? trigger.closest('.page') : null;
+                            let finalTop = null;
+                            let finalLeft = null;
+                            let finalBottom = null;
+                            let finalRight = null;
+                            let positioned = false;
+
+                            // ========== SMART @ MODE (triggered by data-top="@") ==========
+
+                            if (top === '@' && trigger) {
+                                console.log('===== SMART @ MODE ACTIVATED =====');
+                                // Completely reset inline styles
+                                BubbleText.removeAttribute('style');
+                                BubbleText.style.cssText = '';
+                                
+                                // Set base styles
+                                BubbleText.style.setProperty('width', 'fit-content', 'important');
+                                BubbleText.style.setProperty('height', 'fit-content', 'important');
+                                BubbleText.style.setProperty('max-width', 'var(--tt-max-width)');
+
+                                // Do NOT set max-height here – will be set later based on available space
+                                BubbleText.style.setProperty('overflow-x', 'hidden');
+                                BubbleText.style.setProperty('overflow-y', 'auto');
+                                BubbleText.style.setProperty('word-wrap', 'break-word');
+                                BubbleText.style.setProperty('overflow-wrap', 'break-word');
+                                BubbleText.style.setProperty('box-sizing', 'border-box', 'important');
+                                BubbleText.style.setProperty('position', 'fixed', 'important');
+                                BubbleText.style.setProperty('visibility', 'visible');
+                                BubbleText.style.setProperty('opacity', '0');
+                                BubbleText.style.setProperty('transition', 'all 0.5s cubic-bezier(0.65, 0, 0.35, 1)');
+                                BubbleText.style.setProperty('background', 'rgba(0, 0, 0, 0.45)');
+                                BubbleText.style.setProperty('backdrop-filter', 'blur(15px)');
+                                BubbleText.style.setProperty('border-radius', '8px');
+                                BubbleText.style.setProperty('box-shadow', '0 5px 5px rgba(0, 0, 0, 0.95)');
+                                BubbleText.style.setProperty('border', '1px solid rgba(255, 255, 255, 0.2)');
+                                BubbleText.style.setProperty('padding', '10px');
+                                BubbleText.style.setProperty('font-size', '0.8em');
+                                BubbleText.style.setProperty('color', '#b0e0ff');
+                                BubbleText.style.setProperty('font-family', 'Arial, sans-serif');
+                                BubbleText.style.setProperty('z-index', '9999');
+                                BubbleText.style.setProperty('white-space', 'normal');
+                                
+                                // Force layout to get accurate dimensions
+                                const BubbleTextHeightNow = BubbleText.offsetHeight;
+                                const BubbleTextWidthNow = BubbleText.offsetWidth;
+                                console.log('Computed width:', BubbleTextWidthNow);
+                                console.log('Computed height:', BubbleTextHeightNow);
+                                
+                                const triggerRect = trigger.getBoundingClientRect();
+                                const viewportWidth = window.innerWidth;
+                                const viewportHeight = window.innerHeight;
+                                
+                                // ----- Horizontal positioning (align with trigger's left edge, prevent overflow) -----
+                                const sideMargin = viewportWidth * 0.05;   // 5vw from edges
+                                let leftPos = triggerRect.left;            // start at trigger's left edge
+                                if (leftPos + BubbleTextWidthNow + sideMargin > viewportWidth) {
+                                    leftPos = viewportWidth - BubbleTextWidthNow - sideMargin;
+                                }
+                                leftPos = Math.max(sideMargin, leftPos);    // ensure left margin
+                                
+                                // ----- Vertical positioning (smart flip: below if enough space, else above) -----
+                                // Full content fits below → place below with natural height.
+                                // Full content doesn’t fit below, but a 3‑line (4.5em) version does → place below with max-height: 4.5em.
+                                // Full content fits above → place above with natural height (popup bottom aligned to trigger top – gap).
+                                // Else → place above with max-height clamped to available space, and popup’s top aligned to vertMargin (or bottom fixed).
+
+                                // ----- Vertical positioning with multi‑case logic (using top positioning only) -----
+                                const gap = 20;
+                                const vertMargin = viewportHeight * 0.05;   // 5% of viewport height
+                                const threeLineHeight = parseFloat(getComputedStyle(BubbleText).fontSize) * 1.5 * 3; // ≈4.5em in px
+
+                                // Case 1: natural popup fits below
+                                const naturalFitsBelow = (triggerRect.bottom + gap + BubbleTextHeightNow + vertMargin) <= viewportHeight;
+
+                                // Case 2: shrunk to 3 lines fits below
+                                const shrunkFitsBelow = (triggerRect.bottom + gap + threeLineHeight + vertMargin) <= viewportHeight;
+
+                                // Case 3: natural popup fits above
+                                const naturalTop = triggerRect.top - gap - BubbleTextHeightNow;
+                                const naturalFitsAbove = (naturalTop - vertMargin) >= 0;
+
+                                if (naturalFitsBelow) {
+                                    // Place below with natural height (no max-height limit)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    console.log('Case 1: natural below, finalTop =', finalTop);
+                                } 
+                                else if (shrunkFitsBelow) {
+                                    // Place below, but cap max-height to available space below (prevent overflow)
+                                    finalTop = triggerRect.bottom + gap;
+                                    finalBottom = null;
+                                    const availableBelow = viewportHeight - (triggerRect.bottom + gap + vertMargin);
+                                    BubbleText.style.maxHeight = Math.max(0, availableBelow) + 'px';
+                                    BubbleText.style.minHeight = '4.5em';   // force at least 3 lines (optional)
+                                    console.log('Case 2: shrunk below (maxHeight = available space), finalTop =', finalTop);
+                                }
+                                else if (naturalFitsAbove) {
+                                    // Place above with natural height
+                                    finalTop = triggerRect.top - BubbleTextHeightNow + gap;
+                                    finalBottom = null;
+                                    console.log('Case 3: natural above, finalTop =', finalTop);
+                                } 
+                                else {
+                                    // Place above and clamp height to available space
+                                    finalTop = vertMargin + gap;
+                                    finalBottom = null;
+                                    const maxHeightAbove = triggerRect.top  - vertMargin;
+                                    BubbleText.style.maxHeight = Math.max(0, maxHeightAbove) + 'px';
+                                    console.log('Case 4: clamped above, finalTop =', finalTop, 'maxHeight =', BubbleText.style.maxHeight);
+                                }
+                                
+                                finalLeft = leftPos;
+                                positioned = true;
+                                console.log('Final top:', finalTop, 'final bottom:', finalBottom, 'left:', finalLeft);
+                            }
+                                                        
+                            // ========== END SMART @ MODE ==========
+
+                            if (!positioned) {
+                                // Vertical centering (center-height or center-both)
+                                if (pos === 'center-height' || pos === 'center-both') {
+                                    const BubbleTextHeight = BubbleText.getBoundingClientRect().height;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        const cs = getComputedStyle(pageElement);
+                                        const paddingTop = parseFloat(cs.paddingTop);
+                                        const paddingBottom = parseFloat(cs.paddingBottom);
+                                        const contentHeight = pageRect.height - paddingTop - paddingBottom;
+                                        const contentTop = pageRect.top + paddingTop;
+                                        finalTop = contentTop + (contentHeight / 2) - (BubbleTextHeight / 2);
+                                    } else {
+                                        finalTop = (window.innerHeight / 2) - (BubbleTextHeight / 2);
+                                    }
+                                }
+
+                                // Horizontal centering (center-width or center-both)
+                                if (pos === 'center-width' || pos === 'center-both') {
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        const cs = getComputedStyle(pageElement);
+                                        const paddingLeft = parseFloat(cs.paddingLeft);
+                                        const paddingRight = parseFloat(cs.paddingRight);
+                                        const contentWidth = pageRect.width - paddingLeft - paddingRight;
+                                        const contentLeft = pageRect.left + paddingLeft;
+                                        finalLeft = contentLeft + (contentWidth / 2) - (BubbleTextWidthNow / 2);
+                                    } else {
+                                        finalLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
+                                    }
+                                    if (pos === 'center-width') {
+                                        if (bottom !== undefined) BubbleText.style.bottom = bottom;
+                                        else if (top !== undefined && top !== '@') BubbleText.style.top = top;
+                                    }
+                                }
+
+                                // Bottom positioning modes
+                                if (bottomModes.includes(pos)) {
+                                    let gapPx = 0;
+                                    if (bottomGap) {
+                                        const gapMatch = bottomGap.match(/^([\d.]+)(vh|px)$/);
+                                        if (gapMatch) {
+                                            const num = parseFloat(gapMatch[1]);
+                                            const unit = gapMatch[2];
+                                            if (unit === 'vh') gapPx = (num / 100) * window.innerHeight;
+                                            else gapPx = num;
+                                        }
+                                    }
+                                    const BubbleTextHeight = BubbleText.offsetHeight;
+                                    let newTop;
+                                    if (pageElement) {
+                                        const pageRect = pageElement.getBoundingClientRect();
+                                        newTop = pageRect.bottom - BubbleTextHeight - gapPx;
+                                        newTop = Math.max(pageRect.top + 10, newTop);
+                                    } else {
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
+                                        newTop = Math.max(10, newTop);
+                                    }
+                                    finalTop = newTop;
+
+                                    const BubbleTextWidthNow = BubbleText.getBoundingClientRect().width;
+                                    const innerPadding = 10;
+                                    let newLeft = null;
+
+                                    if (pos === 'bottom-left') {
+                                        // Always use viewport positioning for bottom-left
+                                        newLeft = innerPadding;
+                                        // Calculate top from viewport bottom
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
+                                        newTop = Math.max(10, newTop);
+                                    } else if (pos === 'bottom-right') {
+                                        // Always use viewport positioning for bottom-right
+                                        newLeft = window.innerWidth - BubbleTextWidthNow - innerPadding;
+                                        newTop = window.innerHeight - BubbleTextHeight - gapPx;
+                                        newTop = Math.max(10, newTop);
+                                    } else if (pos === 'bottom-center') {
+                                        if (pageElement) {
+                                            const pageRect = pageElement.getBoundingClientRect();
+                                            newLeft = (pageRect.left + pageRect.right) / 2 - BubbleTextWidthNow / 2;
+                                            newLeft = Math.max(pageRect.left + innerPadding, Math.min(newLeft, pageRect.right - BubbleTextWidthNow - innerPadding));
+                                        } else {
+                                            newLeft = (window.innerWidth / 2) - (BubbleTextWidthNow / 2);
+                                            newLeft = Math.max(innerPadding, Math.min(newLeft, window.innerWidth - BubbleTextWidthNow - innerPadding));
+                                        }
+                                    } else if (pos === 'bottom-page') {
+                                        if (left !== undefined && left !== '@') newLeft = left;
+                                    }
+                                    if (newLeft !== null) finalLeft = newLeft;                                }
+                            }
+
+                            // Apply final positions
+                            if (finalTop !== null) BubbleText.style.top = (typeof finalTop === 'number' ? finalTop + 'px' : finalTop);
+                            if (finalBottom !== null) BubbleText.style.bottom = (typeof finalBottom === 'number' ? finalBottom + 'px' : finalBottom);
+                            if (finalLeft !== null) BubbleText.style.left = (typeof finalLeft === 'number' ? finalLeft + 'px' : finalLeft);
+                            if (finalRight !== null) BubbleText.style.right = (typeof finalRight === 'number' ? finalRight + 'px' : finalRight);
+                            if (finalBottom !== null && finalTop === null) BubbleText.style.top = 'auto';
+                            if (finalRight !== null && finalLeft === null) BubbleText.style.left = 'auto';
+
+                            BubbleText.classList.add('show');
+                            BubbleText.style.opacity = '';
+                        });
+                    });
+                } else {
+                    // Normal positioning (no special modes, no @)
+                    if (bottom !== undefined) {
+                        BubbleText.style.bottom = bottom;
+                        BubbleText.style.top = 'auto';
+                    } else if (top !== undefined) {
+                        BubbleText.style.top = top;
+                        BubbleText.style.bottom = 'auto';
+                    }
+                    if (right !== undefined) {
+                        BubbleText.style.right = right;
+                        BubbleText.style.left = 'auto';
+                    } else if (left !== undefined) {
+                        BubbleText.style.left = left;
+                        BubbleText.style.right = 'auto';
+                    }
+                    BubbleText.classList.add('show');
+                }
+            } else {
+                // Hide BubbleText
+                BubbleText.classList.remove('show');
+                const onTransitionEnd = () => {
+                    BubbleText.className = '';
+                    BubbleText.style.cssText = '';
+                    BubbleText.innerHTML = '';
+                    BubbleText.removeEventListener('transitionend', onTransitionEnd);
+                };
+                BubbleText.addEventListener('transitionend', onTransitionEnd);
+                setTimeout(onTransitionEnd, 500);
+            }
+        }
+
+       // ==================== BubbleText FUNCTION end ============================================
+
+
+        // BUBBLETEXT LISTENER START ==================== ============================================
+        // This click listener manages the BubbleText popup (tooltip-like overlay). When a user clicks on an element with class BubbleText-trigger, it:
+        // - Closes any open popup if clicking outside the popup or on a different trigger.
+        // - Gathers configuration from the trigger’s data attributes (data-top, data-left, data-position, data-animation, etc.) and from the trigger’s own CSS classes.
+        // - Calculates optimal positioning – handles centering, clamping to viewport or page edges, and a “smart” @ mode that automatically places the popup below or 
+        //      above the trigger depending on available space (and can limit height to avoid overflow).
+        // - Shows the popup by calling toggleBubbleText(…) with the appropriate parameters.
+        // - Handles font loading – waits for fonts to load before showing to avoid layout shifts.
+        // - In essence, it’s a custom popup system that adapts its size and position to always stay fully visible within the viewport or its parent page.    
+        
+            
+        
+        document.addEventListener('click', function(e) {
+            try {
+
+                const trigger = e.target.closest('.BubbleText-trigger');
+                const BubbleText = document.getElementById('BubbleText');
+
+                // If BubbleText is open and clicking outside, close it
+                if (BubbleText.classList.contains('show') && !trigger && !BubbleText.contains(e.target)) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                    return;
+                }
+
+                if (!trigger) return;
+
+                e.stopPropagation();
+
+                // --- Collect extra classes (exclude alignment classes) ---
+                let extraClasses = [];
+                trigger.classList.forEach(cls => {
+                    if (cls !== 'BubbleText-trigger' && !cls.startsWith('left-justified') && !cls.startsWith('right-justified') && !cls.startsWith('center-justified')) {
+                        extraClasses.push(cls);
+                    }
+                });
+
+                // --- Read data attributes (trim strings) ---
+                let top = trigger.dataset.top ? trigger.dataset.top.trim() : undefined;
+                let left = trigger.dataset.left ? trigger.dataset.left.trim() : undefined;
+                let bottom = trigger.dataset.bottom ? trigger.dataset.bottom.trim() : undefined;
+                let right = trigger.dataset.right ? trigger.dataset.right.trim() : undefined;
+                let bottomGap = trigger.dataset.bottomGap ? trigger.dataset.bottomGap.trim() : undefined;
+                let position = trigger.dataset.position ? trigger.dataset.position.trim() : 'fixed';
+                const rawHeight = trigger.dataset.height || 'auto';
+                const rawWidth = trigger.dataset.width || 'auto';
+
+                const rect = trigger.getBoundingClientRect();
+                const bodyStyles = window.getComputedStyle(document.body);
+                const padding = Math.max(24, window.innerWidth * 0.04);
+                const extra = 22;
+
+                const addPxIfNumber = (value) => {
+                    if (!isNaN(value) && value !== '') return value + 'px';
+                    return value;
+                };
+
+                if (top !== undefined) top = addPxIfNumber(top);
+                if (left !== undefined) left = addPxIfNumber(left);
+                if (bottom !== undefined) bottom = addPxIfNumber(bottom);
+                if (right !== undefined) right = addPxIfNumber(right);
+
+                let height = addPxIfNumber(rawHeight);
+                let width = addPxIfNumber(rawWidth);
+
+                // --- Special positioning handling (center, @, 100% 100%) ---
+                if (position !== 'absolute') {
+                    let BubbleTextWidth = parseFloat(trigger.dataset.width);
+                    let BubbleTextHeight = parseFloat(trigger.dataset.height);
+                    let totalBubbleTextWidth = BubbleTextWidth ? BubbleTextWidth + extra : null;
+                    let totalBubbleTextHeight = BubbleTextHeight ? BubbleTextHeight + extra : null;
+
+                    if (top === 'center') {
+                        if (totalBubbleTextHeight) {
+                            let centerTop = (window.innerHeight / 2) - (totalBubbleTextHeight / 2);
+                            centerTop = Math.max(padding, Math.min(centerTop, window.innerHeight - totalBubbleTextHeight - padding));
+                            top = centerTop + 'px';
+                        } else {
+                            top = '50%';
+                        }
+                    }
+                    if (left === 'center') {
+                        if (totalBubbleTextWidth) {
+                            let centerLeft = (window.innerWidth / 2) - (totalBubbleTextWidth / 2);
+                            centerLeft = Math.max(padding, Math.min(centerLeft, window.innerWidth - totalBubbleTextWidth - padding));
+                            left = centerLeft + 'px';
+                        } else {
+                            left = '50%';
+                        }
+                    }
+                }
+
+                // --- Clamping for normal positioning ---
+                let maxHeight = null;
+                const measurementModes = ['bottom-page', 'center-height', 'center-width', 'center-both'];
+                if (!measurementModes.includes(position.toLowerCase())) {
+                    const pageElement = trigger.closest('.page');
+
+                    if (pageElement) {
+                        const pageRect = pageElement.getBoundingClientRect();
+                        const innerPadding = 10;
+
+                        let topPx = toPixels(top, 'height');
+                        let leftPx = toPixels(left, 'width');
+                        let widthPx = toPixels(width, 'width');
+                        let heightPx = toPixels(height, 'height');
+
+                        let totalW = !isNaN(widthPx) ? widthPx + extra : null;
+                        let totalH = !isNaN(heightPx) ? heightPx + extra : null;
+
+                        // clamp top/left
+                        if (!isNaN(topPx) && totalH !== null) {
+                            let newTop = topPx;
+                            const minTop = pageRect.top + innerPadding;
+                            const maxTop = pageRect.bottom - totalH - innerPadding;
+                            if (newTop < minTop) newTop = minTop;
+                            if (newTop > maxTop) newTop = maxTop;
+                            if (newTop !== topPx) {
+                                top = newTop + 'px';
+                                topPx = newTop;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            let newLeft = leftPx;
+                            const minLeft = pageRect.left + innerPadding;
+                            const maxLeft = pageRect.right - totalW - innerPadding;
+                            if (newLeft < minLeft) newLeft = minLeft;
+                            if (newLeft > maxLeft) newLeft = maxLeft;
+                            if (newLeft !== leftPx) {
+                                left = newLeft + 'px';
+                                leftPx = newLeft;
+                            }
+                        }
+                        // overflow handling
+                        if (!isNaN(topPx) && totalH !== null) {
+                            const availableHeight = pageRect.bottom - topPx - innerPadding;
+                            if (totalH > availableHeight) {
+                                maxHeight = availableHeight - extra;
+                            }
+                        }
+                        if (!isNaN(leftPx) && totalW !== null) {
+                            const availableWidth = pageRect.right - leftPx - innerPadding;
+                            if (totalW > availableWidth) {
+                                const newContentWidth = Math.max(0, availableWidth - extra);
+                                width = newContentWidth + 'px';
+                            }
+                        }
+                    }
+                }
+
+                // --- Prepare remaining parameters ---
+                const rawTiptext = trigger.dataset.bbbltext || 'Default BubbleText';
+                const animation = trigger.dataset.animation || 'fade';
+                const textAlign = trigger.dataset.textalign || 'left';
+                const bbbltext = htmlEncodeBubbleTextText(rawTiptext);
+
+                const isCurrentlyOpen = BubbleText.classList.contains('show') && BubbleText.innerHTML.includes(rawTiptext);
+
+                if (isCurrentlyOpen) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                } else {
+                    const showBubbleText = () => {
+                        toggleBubbleText(top, left, height, width, bbbltext, 'yes', animation, textAlign, position, extraClasses, bottom, maxHeight, bottomGap, trigger, right);
+                        // Force layout recalculation after the BubbleText is visible
+                        requestAnimationFrame(() => {
+                            const t = document.getElementById('BubbleText');
+                            if (t && t.classList.contains('show')) t.scrollTop;
+                        });
+                    };
+                    if (document.fonts) {
+                        document.fonts.ready.then(showBubbleText);
+                    } else {
+                        showBubbleText();
+                    }
+                }
+
+            } catch (err) {
+                console.error('Error in click listener:', err);
+            }
+        });
+
+        // ==================== BubbleText INSIDE CLICK close START ====================================
+        document.addEventListener('click', function(e) {
+            const BubbleText = document.getElementById('BubbleText');
+            if (BubbleText.contains(e.target)) {
+                e.stopPropagation(); // prevent interfering with other listeners
+                toggleBubbleText('', '', '', '', '', 'no');
+            }
+        });
+        // ==================== BubbleText INSIDE CLICK close END ====================================
+
+        // AUto load the Tip_string on book Launch 
+        const navtext = "\n    <div style='font-weight: bold; text-decoration: underline; text-align: center;'>Navigation tips</div>\n        <div class='glassbtn no-hover' style='color: #EBF5FF; margin-top: 15px; font-size: 1.2em; text-align: center; line-height: 2em; border-radius: 12px; '>\n            Next page, click or touch right margin<br>\n            Previous page, click or touch left margin<br>\n            Page slider, click or touch bottom margin\n            <br>\n            <span class=\"glassbtn\">Close</span>\n        </div>\n    ";
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleBubbleText(
+                '', '', 'auto', 'auto', navtext, 'yes', 'fade',
+                'left', 'center-both', [], undefined, null, null, null, undefined
+            );
+            setTimeout(() => {
+                const bt = document.getElementById('BubbleText');
+                if (bt && bt.classList.contains('show')) {
+                    toggleBubbleText('', '', '', '', '', 'no');
+                }
+            }, 20000);
+        });
+
+
+        // BUBBLETEXT LISTENER END ===================================================================
+
+
+        // ==================== IMAGE CAPTION LISTENER ===============================================================
+        // This code enables mobile‑friendly behavior for image captions:
+        // - Captions can be shown/hidden by tapping on them.
+        // - Tapping outside any caption closes all open captions.
+        // - Touching a caption does not cause the page to scroll (improves usability).
+
+        // FIXED: Image caption handling
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Adds a click listener to each caption popup.
+            // When tapped, it toggles the popup’s visibility:
+            // If visible → hides it (opacity 0, move up, remove class).
+            // If hidden → shows it (opacity 1, reset position, add class).
+            // e.stopPropagation() prevents the click from bubbling up to the global click handler (which would close it immediately).
+
+            document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                caption.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Toggle visibility
+                    if (caption.style.opacity === '1' || 
+                        getComputedStyle(caption).opacity === '1') {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    } else {
+                        caption.style.opacity = '1';
+                        caption.style.transform = 'translateY(0)';
+                        caption.classList.add('mobile-visible');
+                    }
+                });
+            });
+
+            // Close all captions when clicking elsewhere (only on mobile)
+            // Listens for clicks anywhere on the page.
+            // If the click target is not inside any caption popup (.closest('.image-caption-popup') returns null), it hides all open captions.
+            // This ensures that tapping outside a popup closes it.
+
+            document.addEventListener('click', (e) => {
+                // Only close if not clicking on a caption
+                if (!e.target.closest('.image-caption-popup')) {
+                    document.querySelectorAll('.image-caption-popup').forEach(caption => {
+                        caption.style.opacity = '0';
+                        caption.style.transform = 'translateY(-10px)';
+                        caption.classList.remove('mobile-visible');
+                    });
+                }
+            });
+
+            // For each image container, listens for touchstart events.
+            // If the touch starts on a caption popup, it calls e.preventDefault() to prevent the browser from scrolling while the user interacts with the popup (e.g., toggling visibility).
+            // { passive: false } allows preventDefault() to work.
+            // Add touch events for mobile
+
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.addEventListener('touchstart', (e) => {
+                    // Prevent default to avoid scrolling issues
+                    if (e.target.closest('.image-caption-popup')) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+            });
+        });  
+
+        // Force reflow for all right-floated image containers
+        // The fixFloatRight function forces a browser reflow (layout recalculation) for all elements with class image-align-right. It does this by:
+        // - Reading a layout property (container.offsetHeight) – this forces the browser to compute the current layout.
+        // - Temporarily setting display: none and reading offsetHeight again to force another reflow.
+        // - Restoring display to its original value (empty string).
+        //This sequence forces the browser to recalculate the positions and dimensions of those containers, which can fix rendering bugs where 
+            //right‑floated images are not properly wrapped by text (especially after images load asynchronously).
+        // The function is triggered:
+        // - On the window load event (after all images and resources have loaded).
+        // - After a 100ms delay (fallback in case the load event already fired before the listener was attached).
+        // - This ensures that right‑floated images display correctly (text wraps around them) even if the initial layout was incorrect due to image loading timing.
+
+        function fixFloatRight() {
+            document.querySelectorAll('.image-align-right').forEach(container => {
+                // Trigger a reflow by reading a layout property
+                container.offsetHeight; 
+                // Optionally, add/remove a class to force repaint
+                container.style.display = 'none';
+                container.offsetHeight; // force reflow
+                container.style.display = '';
+            });
+        }
+
+        // Run after all images are loaded
+        window.addEventListener('load', fixFloatRight);
+        // Also run after a short delay (fallback)
+        setTimeout(fixFloatRight, 100);
+
+        // ==================== IMAGE CAPTION LISTENER END ===========================================================
+
+        // ==================== Navigation LISTENER Begin ==============================================
+        // Page Navigation icons anywhere in content
+        document.querySelectorAll('.nextPgbtn').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextPage();
+            });
+        });
+        document.querySelectorAll('.prevPgbtn').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevPage();
+            });
+        });
+        // ==================== Navigation LISTENER End ================================================  
+
+        // ==================== Page Build Function Start ================================================ 
+
+        // This function activatePageFromHash is used to restore the last viewed page when the page is loaded with a URL fragment (e.g., #page-3). It:
+        // Reads the URL’s hash (the part after #).
+        // Tries to find a .page element whose id matches the hash (e.g., page-3).
+        // If found, it determines the index of that page in the list of all pages.
+        // If the page exists and is not already active, it calls goToPage(pageNum) to navigate there.
+        // This enables deep linking – sharing a link that opens the book directly at a specific page, not just the first page. It is called during initial page load after the default active page is set, allowing the hash to override the default.
+        
+        function activatePageFromHash() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetPage = document.querySelector(hash);
+                if (targetPage && targetPage.classList.contains('page')) {
+                    const allPages = document.querySelectorAll('.page');
+                    let pageNum = -1;
+                    for (let i = 0; i < allPages.length; i++) {
+                        if (allPages[i].id === hash.substring(1)) {
+                            pageNum = i;
+                            break;
+                        }
+                    }
+                    if (pageNum !== -1 && pageNum !== currentPage) {
+                        goToPage(pageNum);
+                    }
+                }
+            }
+        }
+
+        // Calculate proper page number based on CoverPageSkip and TOC
+        // The calculatePageNumber(index) function determines what text to display as the page number in the 
+        // page header (e.g., “Title”, an empty string, or a numeric page number). It uses the configuration 
+        // flags CoverPageSkip and whether a TOC page exists to decide the mapping from the page index (0‑based) to the displayed label.
+        // - If title page is skipped and TOC exists:
+        //      Index 0 → "" (TOC page shows no number), Index 1 → 1, Index 2 → 2, etc.
+        // - If title page exists and TOC exists:
+        //      Index 0 → "Title", Index 1 → "" (TOC), Index 2 → 1, Index 3 → 2, etc.
+        // - If title page is skipped and no TOC:
+        //      Index 0 → 1, Index 1 → 2, etc. (direct numbering)
+        // - If title page exists and no TOC:
+        //      Index 0 → "Title", Index 1 → 1, Index 2 → 2, etc.
+        // This function is used when generating the page number in the header (via pageNumber.innerHTML). 
+        //      It ensures that the displayed page number matches the expected labeling (e.g., the first content page is “1”, not “2”).
+
+        function calculatePageNumber(index) {
+            const CoverPageSkipped = false;
+            const pages = document.querySelectorAll('.page');
+            const page = pages[index];
+            
+            // Title page
+            if (!CoverPageSkipped && index === 0) return "Title";
+            
+            // TOC page – detect by id
+            if (page && page.id === 'page-toc') return "";
+            
+            // Content pages
+            let nonContentBefore = 0;
+            for (let i = 0; i < index; i++) {
+                const p = pages[i];
+                if (p && (p.id === 'page-toc' || (!CoverPageSkipped && i === 0))) {
+                    nonContentBefore++;
+                }
+            }
+            return index - nonContentBefore + 1;
+        }
+
+        function updateSliderTrack() {
+            const value = slider.value;
+            const max = slider.max;
+            const percent = (value / max) * 100;
+            sliderTrack.style.width = `${percent}%`;
+        }
+
+        function goToPage(pageNum) {
+            if (pageNum < 0 || pageNum > totalPages) return;
+            if (pageNum === currentPage) return;
+            
+            const currentActive = document.querySelector('.page.active');
+            if (currentActive) {
+                currentActive.classList.remove('active');
+                currentActive.classList.add('exit');
+            }
+            
+            setTimeout(() => {
+                if (currentActive) {
+                    currentActive.classList.remove('exit');
+                }
+                currentPage = pageNum;
+                pages[currentPage].classList.add('active');
+                updateSlider();
+                updateProgress();
+                
+                // Scroll to top of the new page
+                const newPageContent = pages[currentPage].querySelector('.page-content');
+                if (newPageContent) {
+                    newPageContent.scrollTop = 0;
+                } else {
+                    pages[currentPage].scrollTop = 0;
+                }
+                
+                // Remove any #page-... from the URL bar
+                history.pushState(null, '', window.location.pathname);
+                
+                // Update body background for the new page
+                updateBodyBackground(pageNum);
+            }, 300);
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                goToPage(currentPage + 1);
+            } else {
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                // If we're on the first content page and CoverPage is skipped, don't go back
+                if (CoverPageSkipped && currentPage === 0) {
+                    return;
+                }
+                goToPage(currentPage - 1);
+            }
+        }
+
+        function handleSwipe() {
+            const threshold = window.innerWidth * (CONFIG.ArrowHoverWidth / 100);
+            const distance = touchStartX - touchEndX;
+            
+            if (Math.abs(distance) < threshold) return;
+            
+            if (distance > 0) {
+                nextPage();
+            } else {
+                prevPage();
+            }
+        } 
+
+        // ==================== Page Build Function end ================================================
+
+        // ==================== Page Build Listener Start ========================================================
+
+        // Initialize with correct active page
+        // Deactivates all pages by removing the active class from every .page element.
+        // Sets the active page based on configuration:
+            // - If the title page exists and is not skipped (!CoverPageSkipped), it activates the title page (index 0).
+            // - Otherwise, it activates the page at 0 (usually 0, which could be the TOC or first content page).
+        // Checks the URL hash (e.g., #page-3) and navigates to that page using activatePageFromHash() (overriding 
+            //the initial active page if a hash is present).
+        // Adds a click listener to a .BOOKLISTbtn button (if present) that opens a configured URL () 
+        // add listener for keyboard
+        // adds listener for left right arrow
+        // adds listener for Back-to-list
+        // Enabbles back-to-TOC to work correctly
+        // update SLIDER
+        // UPDATE PROGRESSBAR
+        // Append children to page-header
+        // Insert Header to Page-content (Page content is only child of .page creater for .apge::after - whitewash glass effect)
+        // in the same tab (_self).
+        // In essence, it handles the initial page activation and supports deep linking via URL fragments.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // First deactivate all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // If title page exists and isn't skipped, start there
+            if (!CoverPageSkipped && document.getElementById('CoverPg')) {
+                currentPage = 0;
+                document.getElementById('CoverPg').classList.add('active');
+            } else {
+                // Otherwise start at TOC or first content page
+                currentPage = 0;
+                pages[currentPage].classList.add('active');
+            }
+
+            // After setting the initial active page, check URL hash
+            activatePageFromHash();
+
+            // Set initial body background
+            updateBodyBackground(currentPage);
+            
+            const booklistBtn = document.querySelector('.BOOKLISTbtn');
+            if (booklistBtn) {
+                booklistBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let url = '';
+                    if (!url.startsWith('http')) {
+                        url = 'https://' + url;
+                    }
+                    // window.open(url, '_blank');
+                    window.open(url, '_self');
+                });
+            }
+
+            updateSlider();
+            updateProgress();
+            
+            // Add header elements to all pages except the title page (if shown)
+            // Determines the starting index (startPage) based on whether the title page is skipped (CoverPageSkip). If the title page exists (
+                // CoverPageSkip = false), it starts at index 1 (skipping the title page at index 0). If the title page is skipped, 
+                // it starts at index 0 (first content page).
+            // Loops through all .page elements from startPage to the end, but skips the TOC page if its id is "page-toc".
+            // For each content page, it creates a <div class="page-header"> and populates it with three elements:
+            // Left side: a back‑to‑TOC button (<a class="TOCbtn">) if a TOC page exists. The button contains the emoji 🗂️.
+            // Center: the book title (<div class="book-title">) with text from <span class="tobj-styled" data-has-tobj="true"><span style="color: #052115 !important">Musings<br>from a caring mind </span></span> (later replaced by Python).
+            // Right side: the page number (<div class="page-number">) which includes a clickable bookmark emoji (🔖) 
+                // that calls copyCurrentPageUrl(event) when clicked.
+            // Inserts the header as the first child of the page’s .page-content container (so it appears at the top of the scrollable area). 
+                // If .page-content is not found, it falls back to inserting directly into the .page element.
+            // In summary, this code adds a consistent navigation header (with TOC button, book title, and copy‑link + page number) to every 
+                //content page, making the user interface functional and uniform across all pages.
+            
+            const startPage = false ? 0 : 1;
+            for (let i = startPage; i < pages.length; i++) {
+                if (pages[i].id === 'page-toc') continue;   
+                         
+                const header = document.createElement('div');
+                header.className = 'page-header';
+                
+                // Back to TOC button (left side)
+                if (document.getElementById('page-toc')) {
+                    const backButton = document.createElement('a');
+                    backButton.className = 'TOCbtn';
+                    backButton.href = '#page-toc';
+                    backButton.textContent = '🗂️'; 
+                    // 'Contents';
+                    header.appendChild(backButton);
+                }
+
+                // Book title (center) – create new element
+                const titleSpan = document.createElement('div');
+                titleSpan.className = 'book-title';
+                titleSpan.style.cssText = 'font-size: 1.0rem !important;';
+
+                let bookTitle = '<span class="tobj-styled" data-has-tobj="true"><span style="color: #052115 !important">Musings<br>from a caring mind </span></span>';
+
+                // ============================================================
+                // 🧪 DEBUG: Print BEFORE stripping
+                // ============================================================
+                console.log('🔴 BEFORE stripping:');
+                console.log('  BookTitle:', bookTitle);
+                console.log('  Length:', bookTitle.length);
+                console.log('  Contains _fontsize?', bookTitle.includes('_fontsize'));
+
+                // ============================================================
+                // STRIP _fontsize
+                // ============================================================
+                bookTitle = bookTitle.replace(/_fontsize\([^)]*\)\s*;?\s*/g, '');
+                bookTitle = bookTitle.replace(/\{\[\s*\]\}\s*\[\[/g, '[[');
+                bookTitle = bookTitle.replace(/;\s*}/g, '}');
+                bookTitle = bookTitle.replace(/;\s*;/g, ';');
+                bookTitle = bookTitle.replace(/\{\[\s*;/g, '{[');
+                bookTitle = bookTitle.replace(/;\s*\]/g, ']');
+
+                // ============================================================
+                // 🧪 DEBUG: Print AFTER stripping
+                // ============================================================
+                console.log('🟢 AFTER stripping:');
+                console.log('  BookTitle:', bookTitle);
+                console.log('  Length:', bookTitle.length);
+                console.log('  Contains _fontsize?', bookTitle.includes('_fontsize'));
+                console.log('  ✅ Font size stripped successfully!');
+
+                bookTitle = bookTitle.replace(/<nl>/gi, '<br>');
+                titleSpan.innerHTML = bookTitle;
+                header.appendChild(titleSpan);
+                                        
+                // Page number (right side)
+                const pageNumber = document.createElement('div');
+                pageNumber.className = 'page-number';
+                // to remove 🔖 <ClickbookMark> uncomment this
+                // pageNumber.textContent = calculatePageNumber(i);
+                // and comment this
+                pageNumber.innerHTML = '<a href="javascript:void(0)" onclick="copyCurrentPageUrl(event); return false;"><span class="glassbtn">🔖</span></a>' + calculatePageNumber(i);
+                header.appendChild(pageNumber);
+                
+                // Insert header into .page-content (instead of .page)
+                const pageContent = pages[i].querySelector('.page-content');
+                if (pageContent) {
+                    pageContent.insertBefore(header, pageContent.firstChild);
+                } else {
+                    // Fallback (should not happen)
+                    pages[i].insertBefore(header, pages[i].firstChild);
+                }
+            }
+            
+            // Touch events for swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            //TouchScreen Swipe. TO be tested Later
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });            
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                    case 'PageDown':
+                        nextPage();
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                    case 'PageUp':
+                        prevPage();
+                        break;
+                }
+            });
+
+            // Update slider track fill
+            slider.addEventListener('input', updateSliderTrack);
+            updateSliderTrack();
+            
+            // Connect slider to page navigation
+            slider.addEventListener('change', function() {
+                goToPage(parseInt(this.value));
+            });
+            
+            //This code listens for clicks on any element with the class toc-link (typically Table of Contents links). When clicked, it:
+            //Prevents the default link behavior (so the URL doesn’t change with a #).
+            //Extracts the target ID from the link’s href attribute (e.g., #page-3).
+            //Finds the corresponding .page element by matching its id.
+            //Determines the page index by iterating over all .page elements.
+            //Calls goToPage(pageNum) to navigate to that page.
+            //Smoothly scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
+
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = document.querySelector(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.substring(1)) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                    }
+                });            
+            });  
+
+            // Arrow click events for next and previous page 
+            leftArrowContainer.addEventListener('click', prevPage);
+            rightArrowContainer.addEventListener('click', nextPage);
+
+            // TOC Navigation (handles both list and button styles)
+            // This code adds click handlers to all elements with the class .TOCbtn (typically a button or link that returns to the Table of Contents). When clicked, it:
+            // - Prevents the default link behavior (so the URL doesn’t change with a #).
+            // - Extracts the target ID from the href attribute (e.g., #page-toc).
+            // - Finds the corresponding .page element.
+            // - Determines the index of that page by iterating over all .page elements.
+            // - Calls goToPage(pageNum) to navigate to that page.
+            // - Smooth‑scrolls the newly active page to the top (using scrollTo({ top: 0, behavior: 'smooth' })).
+            // In short, it enables the “back to TOC” button to work correctly and ensures the TOC page appears at the top after navigation.
+
+            document.querySelectorAll('.TOCbtn').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetPage = targetId.startsWith('#') 
+                        ? document.querySelector(targetId)
+                        : document.getElementById(targetId);
+                    
+                    if (targetPage) {
+                        const allPages = document.querySelectorAll('.page');
+                        let pageNum = 0;
+                        for (let i = 0; i < allPages.length; i++) {
+                            if (allPages[i].id === targetId.replace('#', '')) {
+                                pageNum = i;
+                                break;
+                            }
+                        }
+                        goToPage(pageNum);
+                    }
+                });
+            });
+                        
+
+        });
+
+        // ==================== Page Build Listener END ========================================================
+          
+        
+       // ====================ENCRYPTION FUNCTION  Start ========================================================
+
+        // The next set of functions are for code handling and encryption
+
+        // Generate a random IV for AES-GCM
+        function generateIV() {
+            return crypto.getRandomValues(new Uint8Array(12));
+        }
+
+        // Generate salt for key derivation
+        function generateSalt() {
+            return crypto.getRandomValues(new Uint8Array(16));
+        }
+
+        // Convert string to Uint8Array
+        function strToBuf(str) {
+            return new TextEncoder().encode(str);
+        }
+
+        // Convert Uint8Array to string
+        function bufToStr(buf) {
+            return new TextDecoder().decode(buf);
+        }
+
+        // Derive a key from password and salt using PBKDF2
+        async function deriveKey(password, salt) {
+            const passBuf = strToBuf(password);
+            const keyMaterial = await crypto.subtle.importKey(
+                "raw", passBuf, "PBKDF2", false, ["deriveKey"]
+            );
+            return crypto.subtle.deriveKey(
+                {
+                name: "PBKDF2",
+                salt: salt,
+                iterations: 100000,
+                hash: "SHA-256"
+                },
+                keyMaterial,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["encrypt", "decrypt"]
+            );
+        }
+
+        // Encrypt plaintext with password
+        async function encrypt(plaintext, password) {
+            const salt = generateSalt();
+            const iv = generateIV();
+            const key = await deriveKey(password, salt);
+            const encrypted = await crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                strToBuf(plaintext)
+            );
+            // Combine salt, iv, and encrypted data in base64 for storage/transmission
+            const combined = new Uint8Array(salt.byteLength + iv.byteLength + encrypted.byteLength);
+            combined.set(salt, 0);
+            combined.set(iv, salt.byteLength);
+            combined.set(new Uint8Array(encrypted), salt.byteLength + iv.byteLength);
+            return btoa(String.fromCharCode(...combined));
+        }
+
+        // Decrypt encrypted base64 string with password
+        async function decrypt(encryptedBase64, password) {
+            const combined = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
+            const salt = combined.slice(0, 16);
+            const iv = combined.slice(16, 28);
+            const data = combined.slice(28);
+            const key = await deriveKey(password, salt);
+            const decrypted = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                data
+            );
+            return bufToStr(decrypted);
+        }    
+
+        // Make this function async and use await
+        async function handleRedirect(inputId, correctCode, redirectUrl) {
+            const input = document.getElementById(inputId);
+
+            try {
+                const password = "your-strong-password";
+                
+                const decrypted = await decrypt(redirectUrl, password);
+                alert("Decrypted: " + decrypted);
+                
+                // Then the redirect logic
+                if (input.value === correctCode) {
+                    window.location.href = decrypted;
+                } else {
+                    alert("Invalid code - (" + input.value + "). Please try with the correct provided code.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred during encryption/decryption");
+            }
+        }        
+        // ====================ENCRYPTION FUNCTION  END ==========================================================
+
+        // ========== YOUR NEW BACKGROUND SWITCHING CODE =========================================================
+        const bodyBgForContent = 'SBook.jpeg';
+        const bodyBgForTitle = 'SCover.jpeg';
+
+        function updateBodyBackground(pageIndex) {
+            const isCover = (pageIndex === 0 && !CoverPageSkipped);
+            
+            let bgImage, bgFallback;
+            
+            if (isCover) {
+                bgImage = coverBgImage;
+                bgFallback = coverBgFallback;
+            } else {
+                bgImage = contentBgImage;
+                bgFallback = contentBgFallback;
+            }
+            
+            // If image exists, try to load it with fallback
+            if (bgImage) {
+                document.body.style.backgroundImage = `url('${bgImage}'), url('${bgFallback}')`;
+            } else {
+                // No image, just use fallback
+                document.body.style.backgroundImage = `url('${bgFallback}')`;
+            }
+            
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundAttachment = 'fixed';
+        }
+
+        // Override goToPage to update background
+        const originalGoToPage = goToPage;
+        goToPage = function(pageNum) {
+            originalGoToPage(pageNum);
+            updateBodyBackground(pageNum);
+        };
+
+        // Initial call after pages are ready
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBodyBackground(currentPage);
+        });
+        // ========== END ADDED CODE =============================================================================
+
+        // ========== GOOGLE UPLOAD CONFIRMATION =============================================================================
+
+        // ========== HANDLE MESSAGES FROM IFRAMES ==========
+        //TESTING in CONSOLE
+        // Inside the iframe content window
+        //let iframe = document.getElementById('bookTopFrame');
+        //let iframeDoc = iframe.contentWindow.document;
+        //let builder = iframeDoc.querySelector('.builder');
+        //console.log('Iframe height (element):', iframe.offsetHeight);
+        //console.log('Iframe content .builder.scrollHeight:', builder.scrollHeight);
+        //console.log('Difference:', iframe.offsetHeight - builder.scrollHeight);
+        //let container = document.getElementById('booktop-container');
+        //console.log('Container offsetHeight:', container.offsetHeight);
+        //console.log('Container computed padding:', getComputedStyle(container).padding);
+
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.type === 'iframeResize' && typeof event.data.height === 'number') {
+                const iframes = document.querySelectorAll('iframe');
+                for (let i = 0; i < iframes.length; i++) {
+                    if (iframes[i].contentWindow === event.source) {
+                        let newHeight = event.data.height;
+                        // Add safety margin for specific iframes
+                        if (iframes[i].id === 'bookTopFrame' ||
+                            iframes[i].id === 'bookMiddleFrame' ||
+                            iframes[i].id === 'bookSectionFrame' ||
+                            iframes[i].id === 'bookMiscFrame' ||
+                            iframes[i].id === 'bookSettingsTemplateFrame' ||
+                            iframes[i].id === 'bookTemplateConvertFrame' ||
+                            iframes[i].id === 'DesignerFrame') {  // ← ADDED DesignerFrame
+                            newHeight += 35;
+                        }
+                        iframes[i].style.height = newHeight + 'px';
+                        iframes[i].style.width = '100%';
+                        iframes[i].style.minHeight = 'auto';
+                        break;
+                    }
+                }
+            }
+        });
+
+        // ========== RUNTIME COLOR GENERATION ==========
+        // ===== TOBJ COLOR DETECTION HELPER =====
+        function hasTOBjColor(el) {
+            // Check element itself for inline color
+            if (el.style.color && el.style.color !== '') {
+                return true;
+            }
+            
+            // Check if element has TOBj class
+            if (el.classList && el.classList.contains('tobj-styled')) {
+                return true;
+            }
+            
+            // Check data attribute
+            if (el.dataset && el.dataset.hasTobj === 'true') {
+                return true;
+            }
+            
+            // Check for child spans with inline color (TOBj creates spans)
+            const childSpans = el.querySelectorAll('span[style*="color"]');
+            if (childSpans.length > 0) {
+                return true;
+            }
+            
+            // Check for TOBj class on descendants
+            const tobjDescendants = el.querySelectorAll('.tobj-styled, [data-has-tobj="true"], .TOBj');
+            if (tobjDescendants.length > 0) {
+                return true;
+            }
+            
+            // Check for any element with inline color style
+            const allChildren = el.querySelectorAll('*');
+            for (let i = 0; i < allChildren.length; i++) {
+                if (allChildren[i].style.color && allChildren[i].style.color !== '') {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            return {
+                r: parseInt(hex.substring(0, 2), 16),
+                g: parseInt(hex.substring(2, 4), 16),
+                b: parseInt(hex.substring(4, 6), 16)
+            };
+        }
+
+        function rgbToHex(r, g, b) {
+            return '#' + [r, g, b]
+                .map(c => Math.round(Math.min(255, Math.max(0, c))).toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        function getContrastColor(hexColor, mode) {
+            hexColor = hexColor.replace('#', '');
+            const r = parseInt(hexColor.substring(0, 2), 16);
+            const g = parseInt(hexColor.substring(2, 4), 16);
+            const b = parseInt(hexColor.substring(4, 6), 16);
+            
+            const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+            
+            const rNorm = r / 255, gNorm = g / 255, bNorm = b / 255;
+            const max = Math.max(rNorm, gNorm, bNorm);
+            const min = Math.min(rNorm, gNorm, bNorm);
+            const l = (max + min) / 2;
+            const s = max === min ? 0 : (l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min));
+            
+            let h = 0;
+            if (max !== min) {
+                if (max === rNorm) h = (gNorm - bNorm) / (max - min);
+                else if (max === gNorm) h = 2 + (bNorm - rNorm) / (max - min);
+                else h = 4 + (rNorm - gNorm) / (max - min);
+                h = (h * 60 + 360) % 360;
+            }
+            
+            let hFinal, lFinal, sFinal;
+            
+            switch (mode) {
+                case 0: lFinal = brightness > 0.5 ? 0.15 : 0.85; sFinal = 0; hFinal = 0; break;
+                case 1: hFinal = 0.66; lFinal = 0.2; sFinal = 0.8; break;
+                case 2: hFinal = 0.07; lFinal = brightness > 0.5 ? 0.7 : 0.8; sFinal = 0.9; break;
+                case 3: hFinal = 0.10; lFinal = brightness > 0.5 ? 0.7 : 0.3; sFinal = 0.2; break;
+                case 4: hFinal = 0.33; lFinal = brightness > 0.5 ? 0.15 : 0.85; sFinal = 0.8; break;
+                case 5: hFinal = 0.80; lFinal = brightness > 0.5 ? 0.6 : 0.4; sFinal = 0.7; break;
+                case 6: hFinal = (h / 360 + 0.5) % 1.0; lFinal = brightness > 0.5 ? 0.15 : 0.85; sFinal = s; break;
+                case 7: return brightness > 0.55 ? '#000000' : '#FFFFFF';
+                case 8: hFinal = 0.5; lFinal = brightness > 0.5 ? 0.15 : 0.85; sFinal = 0.8; break;
+                default: lFinal = brightness > 0.5 ? 0.15 : 0.85; sFinal = 0; hFinal = 0;
+            }
+            
+            const c = (1 - Math.abs(2 * lFinal - 1)) * sFinal;
+            const x = c * (1 - Math.abs((hFinal * 360 / 60) % 2 - 1));
+            const m = lFinal - c / 2;
+            
+            let rOut, gOut, bOut;
+            const hDeg = hFinal * 360;
+            if (hDeg < 60) { rOut = c; gOut = x; bOut = 0; }
+            else if (hDeg < 120) { rOut = x; gOut = c; bOut = 0; }
+            else if (hDeg < 180) { rOut = 0; gOut = c; bOut = x; }
+            else if (hDeg < 240) { rOut = 0; gOut = x; bOut = c; }
+            else if (hDeg < 300) { rOut = x; gOut = 0; bOut = c; }
+            else { rOut = c; gOut = 0; bOut = x; }
+            
+            return rgbToHex((rOut + m) * 255, (gOut + m) * 255, (bOut + m) * 255);
+        }
+
+        function getDominantColor(imageUrl) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'Anonymous';
+                img.onload = function() {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = 100;
+                        canvas.height = 100;
+                        ctx.drawImage(img, 0, 0, 100, 100);
+                        const data = ctx.getImageData(0, 0, 100, 100).data;
+                        let totalR = 0, totalG = 0, totalB = 0, count = 0;
+                        for (let i = 0; i < data.length; i += 4) {
+                            if (data[i + 3] > 128) {
+                                totalR += data[i];
+                                totalG += data[i + 1];
+                                totalB += data[i + 2];
+                                count++;
+                            }
+                        }
+                        resolve(count > 0 ? rgbToHex(totalR/count, totalG/count, totalB/count) : '#808080');
+                    } catch(e) { reject(e); }
+                };
+                img.onerror = function() { reject(new Error('Failed to load: ' + imageUrl)); };
+                img.src = imageUrl;
+            });
+        }
+
+        async function applyRuntimeColors() {
+            try {
+                // ... existing code to get colors ...
+                
+                // ===== APPLY COVER COLORS - ONLY if NO TOBj =====
+                if (coverEl) {
+                    coverEl.querySelectorAll('h1, h2, h3, p, .book-description, .heading-container *').forEach(el => {
+                        // Skip if element has TOBj styling
+                        if (hasTOBjColor(el)) {
+                            console.log('[RuntimeColors] Skipping TOBj element:', el);
+                            return;
+                        }
+                        el.style.setProperty('color', colors.cover, 'important');
+                    });
+                    
+                    coverEl.style.setProperty('--tip-color', colors.cover, 'important');
+                    document.documentElement.style.setProperty('--cover-font-color', colors.cover);
+                }
+                
+                // ===== APPLY TOC COLORS - ONLY if NO TOBj =====
+                document.querySelectorAll('#page-toc .book-title, #page-toc .toc-container h2, #page-toc .toc-entry a, #page-toc .chapterbtn').forEach(el => {
+                    if (hasTOBjColor(el)) {
+                        return;
+                    }
+                    el.style.setProperty('color', colors.toc, 'important');
+                });
+                document.documentElement.style.setProperty('--toc-font-color', colors.toc);
+                
+                const tocPage = document.querySelector('#page-toc');
+                if (tocPage) {
+                    tocPage.style.setProperty('--tip-color', colors.toc, 'important');
+                }
+                
+                // ===== APPLY BOOK COLORS - ONLY if NO TOBj =====
+                document.querySelectorAll('.page:not(#CoverPg):not(#page-toc) .book-title, .page:not(#CoverPg):not(#page-toc) .content-text').forEach(el => {
+                    if (hasTOBjColor(el)) {
+                        return;
+                    }
+                    el.style.setProperty('color', colors.book, 'important');
+                });
+                document.documentElement.style.setProperty('--text-color', colors.book);
+                document.documentElement.style.setProperty('--bookfontcolor', colors.book);
+                
+                document.querySelectorAll('.page:not(#CoverPg):not(#page-toc)').forEach(page => {
+                    if (hasTOBjColor(page)) {
+                        return;
+                    }
+                    page.style.setProperty('color', colors.book, 'important');
+                });
+                
+                // ===== APPLY HIGHLIGHT COLORS - ONLY if NO TOBj =====
+                document.querySelectorAll('.highlight-text').forEach(el => {
+                    if (hasTOBjColor(el)) {
+                        return;
+                    }
+                    el.style.setProperty('color', colors.highlight, 'important');
+                    el.style.setProperty('text-decoration-color', colors.highlight, 'important');
+                });
+                document.documentElement.style.setProperty('--highlight-color', colors.highlight);
+                
+                console.log('[RuntimeColors] ✅ Colors applied successfully (preserving TOBj)');
+                
+            } catch(err) {
+                console.warn('[RuntimeColors] ❌ Failed:', err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('load', function() {
+                setTimeout(applyRuntimeColors, 300);
+            });
+        });
+                
+    </script>
+
+        
+
+
+    <!--
+    # The <div id="BubbleText"></div> is the container element for the custom popup (tooltip) system. All the 
+    # JavaScript functions that manage popups (toggleBubbleText, the click listeners, etc.) use this div to display 
+    # the popup content. Without this element, the popup would have nowhere to appear, and the code would throw 
+    # errors (e.g., document.getElementById('BubbleText') would return null). It is required for the popup 
+    # functionality to work.
+    -->
+
+    <div id="BubbleText"></div>
+        
+</body>
+</html>
+
